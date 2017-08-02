@@ -26,8 +26,6 @@ class HomeViewController: UIViewController {
         
         BabyStore.shared.loadBaby()
         updateBabyInfo()
-        
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
