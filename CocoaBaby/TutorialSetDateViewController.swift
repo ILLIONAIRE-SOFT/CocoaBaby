@@ -26,6 +26,14 @@ class TutorialSetDateViewController: UIViewController, UITextFieldDelegate {
         self.pregnantDateTextField.delegate = self
         self.birthDateTextField.delegate = self
         self.registerButton.isEnabled = false
+        
+        self.registerButton.layer.cornerRadius = 4
+        self.pregnantDateTextField.attributedPlaceholder = NSAttributedString(string: "아이를 임신한 날짜를 선택해 주세요", attributes: [NSForegroundColorAttributeName: UIColor.white])
+        self.birthDateTextField.attributedPlaceholder = NSAttributedString(string: "아이의 출산 예정일을 선택해 주세요", attributes: [NSForegroundColorAttributeName: UIColor.white])
+        
+//        self.pregnantDateTextField.backgroundColor = UIColor.blue
+        pregnantDateTextField.setBottomBorder()
+        birthDateTextField.setBottomBorder()
     }
 
     override func didReceiveMemoryWarning() {
@@ -93,7 +101,7 @@ class TutorialSetDateViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        if pregnantDateTextField.text != "" && birthDateTextField.text != "" {
+        if pregnantDate != nil && birthDate != nil {
             self.registerButton.isEnabled = true
         }
     }
