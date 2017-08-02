@@ -13,6 +13,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        BabyStore.shared.loadBaby()
+        
+        if let baby = BabyStore.shared.baby {
+            print(baby)
+        }
     }
 
     override func didReceiveMemoryWarning() {

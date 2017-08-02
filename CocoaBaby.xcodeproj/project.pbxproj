@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		496FB1DA1F31943D00E4042D /* CocoaBaby.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 496FB1D81F31943D00E4042D /* CocoaBaby.xcdatamodeld */; };
+		496FB1DD1F31982500E4042D /* Baby+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496FB1DB1F31982500E4042D /* Baby+CoreDataClass.swift */; };
+		496FB1DE1F31982500E4042D /* Baby+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496FB1DC1F31982500E4042D /* Baby+CoreDataProperties.swift */; };
+		496FB1E11F31986E00E4042D /* BabyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496FB1E01F31986E00E4042D /* BabyStore.swift */; };
 		49F6C77D1F318AF200373F06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F6C77C1F318AF200373F06 /* AppDelegate.swift */; };
 		49F6C77F1F318AF200373F06 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F6C77E1F318AF200373F06 /* ViewController.swift */; };
 		49F6C7821F318AF200373F06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49F6C7801F318AF200373F06 /* Main.storyboard */; };
@@ -34,6 +38,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		496FB1D91F31943D00E4042D /* CocoaBaby.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CocoaBaby.xcdatamodel; sourceTree = "<group>"; };
+		496FB1DB1F31982500E4042D /* Baby+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Baby+CoreDataClass.swift"; path = "Model/Baby+CoreDataClass.swift"; sourceTree = "<group>"; };
+		496FB1DC1F31982500E4042D /* Baby+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Baby+CoreDataProperties.swift"; path = "Model/Baby+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		496FB1E01F31986E00E4042D /* BabyStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BabyStore.swift; path = Model/BabyStore.swift; sourceTree = "<group>"; };
 		49F6C7791F318AF200373F06 /* CocoaBaby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaBaby.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49F6C77C1F318AF200373F06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49F6C77E1F318AF200373F06 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -74,6 +82,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		496FB1D71F3193CB00E4042D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				496FB1DF1F31985400E4042D /* Baby */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		496FB1DF1F31985400E4042D /* Baby */ = {
+			isa = PBXGroup;
+			children = (
+				496FB1DB1F31982500E4042D /* Baby+CoreDataClass.swift */,
+				496FB1DC1F31982500E4042D /* Baby+CoreDataProperties.swift */,
+				496FB1D81F31943D00E4042D /* CocoaBaby.xcdatamodeld */,
+				496FB1E01F31986E00E4042D /* BabyStore.swift */,
+			);
+			name = Baby;
+			sourceTree = "<group>";
+		};
 		49F6C7701F318AF200373F06 = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +124,7 @@
 		49F6C77B1F318AF200373F06 /* CocoaBaby */ = {
 			isa = PBXGroup;
 			children = (
+				496FB1D71F3193CB00E4042D /* Model */,
 				49F6C77C1F318AF200373F06 /* AppDelegate.swift */,
 				49F6C77E1F318AF200373F06 /* ViewController.swift */,
 				49F6C7801F318AF200373F06 /* Main.storyboard */,
@@ -263,7 +291,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				49F6C77F1F318AF200373F06 /* ViewController.swift in Sources */,
+				496FB1DD1F31982500E4042D /* Baby+CoreDataClass.swift in Sources */,
 				49F6C77D1F318AF200373F06 /* AppDelegate.swift in Sources */,
+				496FB1E11F31986E00E4042D /* BabyStore.swift in Sources */,
+				496FB1DE1F31982500E4042D /* Baby+CoreDataProperties.swift in Sources */,
+				496FB1DA1F31943D00E4042D /* CocoaBaby.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -514,6 +546,7 @@
 				49F6C7A31F318AF200373F06 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		49F6C7A41F318AF200373F06 /* Build configuration list for PBXNativeTarget "CocoaBabyTests" */ = {
 			isa = XCConfigurationList;
@@ -522,6 +555,7 @@
 				49F6C7A61F318AF200373F06 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		49F6C7A71F318AF200373F06 /* Build configuration list for PBXNativeTarget "CocoaBabyUITests" */ = {
 			isa = XCConfigurationList;
@@ -530,8 +564,23 @@
 				49F6C7A91F318AF200373F06 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		496FB1D81F31943D00E4042D /* CocoaBaby.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				496FB1D91F31943D00E4042D /* CocoaBaby.xcdatamodel */,
+			);
+			currentVersion = 496FB1D91F31943D00E4042D /* CocoaBaby.xcdatamodel */;
+			name = CocoaBaby.xcdatamodeld;
+			path = ViewController/CocoaBaby.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 49F6C7711F318AF200373F06 /* Project object */;
 }
