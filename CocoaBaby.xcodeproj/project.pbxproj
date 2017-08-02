@@ -13,13 +13,14 @@
 		496FB1E11F31986E00E4042D /* BabyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496FB1E01F31986E00E4042D /* BabyStore.swift */; };
 		49D7F44A1F319D99004DF036 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D7F4481F319D99004DF036 /* HomeViewController.swift */; };
 		49D7F44D1F31A32E004DF036 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49D7F44C1F31A32E004DF036 /* Tutorial.storyboard */; };
-		49D7F4501F31A386004DF036 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D7F44F1F31A386004DF036 /* TutorialViewController.swift */; };
 		49F6C77D1F318AF200373F06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F6C77C1F318AF200373F06 /* AppDelegate.swift */; };
 		49F6C7821F318AF200373F06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49F6C7801F318AF200373F06 /* Main.storyboard */; };
 		49F6C7841F318AF200373F06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49F6C7831F318AF200373F06 /* Assets.xcassets */; };
 		49F6C7871F318AF200373F06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49F6C7851F318AF200373F06 /* LaunchScreen.storyboard */; };
 		49F6C7921F318AF200373F06 /* CocoaBabyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F6C7911F318AF200373F06 /* CocoaBabyTests.swift */; };
 		49F6C79D1F318AF200373F06 /* CocoaBabyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F6C79C1F318AF200373F06 /* CocoaBabyUITests.swift */; };
+		DAB5A40B1F31B0C4000235B0 /* TutorialSetNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB5A40A1F31B0C4000235B0 /* TutorialSetNameViewController.swift */; };
+		DAB5A40D1F31B185000235B0 /* TutorialSetDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB5A40C1F31B185000235B0 /* TutorialSetDateViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,7 +47,6 @@
 		496FB1E01F31986E00E4042D /* BabyStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BabyStore.swift; path = Model/BabyStore.swift; sourceTree = "<group>"; };
 		49D7F4481F319D99004DF036 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ViewController/HomeViewController.swift; sourceTree = "<group>"; };
 		49D7F44C1F31A32E004DF036 /* Tutorial.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Tutorial.storyboard; path = Storyboard/Tutorial.storyboard; sourceTree = "<group>"; };
-		49D7F44F1F31A386004DF036 /* TutorialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TutorialViewController.swift; path = ViewController/TutorialViewController.swift; sourceTree = "<group>"; };
 		49F6C7791F318AF200373F06 /* CocoaBaby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaBaby.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49F6C77C1F318AF200373F06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49F6C7811F318AF200373F06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -59,6 +59,8 @@
 		49F6C7981F318AF200373F06 /* CocoaBabyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocoaBabyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49F6C79C1F318AF200373F06 /* CocoaBabyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocoaBabyUITests.swift; sourceTree = "<group>"; };
 		49F6C79E1F318AF200373F06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DAB5A40A1F31B0C4000235B0 /* TutorialSetNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TutorialSetNameViewController.swift; path = ViewController/TutorialSetNameViewController.swift; sourceTree = "<group>"; };
+		DAB5A40C1F31B185000235B0 /* TutorialSetDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialSetDateViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,7 +128,8 @@
 		49D7F44E1F31A376004DF036 /* Tutorial */ = {
 			isa = PBXGroup;
 			children = (
-				49D7F44F1F31A386004DF036 /* TutorialViewController.swift */,
+				DAB5A40A1F31B0C4000235B0 /* TutorialSetNameViewController.swift */,
+				DAB5A40C1F31B185000235B0 /* TutorialSetDateViewController.swift */,
 			);
 			name = Tutorial;
 			sourceTree = "<group>";
@@ -259,7 +262,6 @@
 				TargetAttributes = {
 					49F6C7781F318AF200373F06 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 23EFP3FERN;
 						ProvisioningStyle = Automatic;
 					};
 					49F6C78C1F318AF200373F06 = {
@@ -330,11 +332,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				496FB1DD1F31982500E4042D /* Baby+CoreDataClass.swift in Sources */,
-				49D7F4501F31A386004DF036 /* TutorialViewController.swift in Sources */,
 				49F6C77D1F318AF200373F06 /* AppDelegate.swift in Sources */,
 				496FB1E11F31986E00E4042D /* BabyStore.swift in Sources */,
+				DAB5A40D1F31B185000235B0 /* TutorialSetDateViewController.swift in Sources */,
 				496FB1DE1F31982500E4042D /* Baby+CoreDataProperties.swift in Sources */,
 				496FB1DA1F31943D00E4042D /* CocoaBaby.xcdatamodeld in Sources */,
+				DAB5A40B1F31B0C4000235B0 /* TutorialSetNameViewController.swift in Sources */,
 				49D7F44A1F319D99004DF036 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -487,12 +490,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 23EFP3FERN;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CocoaBaby/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Sohn.CocoaBaby;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -500,12 +504,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 23EFP3FERN;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = CocoaBaby/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Sohn.CocoaBaby;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

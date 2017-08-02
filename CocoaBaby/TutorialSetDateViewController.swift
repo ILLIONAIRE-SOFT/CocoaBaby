@@ -1,15 +1,19 @@
 //
-//  TutorialViewController.swift
+//  TutorialSetDateViewController.swift
 //  CocoaBaby
 //
-//  Created by Sohn on 02/08/2017.
-//  Copyright © 2017 Sohn. All rights reserved.
+//  Created by LEOFALCON on 2017. 8. 2..
+//  Copyright © 2017년 Sohn. All rights reserved.
 //
 
 import UIKit
 
-class TutorialViewController: UIViewController {
+class TutorialSetDateViewController: UIViewController {
 
+    var babyName : String?
+    var pregnantDate : Date?
+    var birthDate : Date?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
