@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  HomeViewController.swift
 //  CocoaBaby
 //
 //  Created by Sohn on 02/08/2017.
@@ -8,24 +8,19 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class HomeViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
         
         BabyStore.shared.loadBaby()
         
-        if let baby = BabyStore.shared.baby {
-            print(baby)
-        }
+        print(BabyStore.shared.baby.name)
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
 }
-
