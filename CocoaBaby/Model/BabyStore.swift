@@ -77,4 +77,27 @@ class BabyStore {
         }
     }
     
+    func deleteBaby() {
+        let context = persistentContainer.viewContext
+        
+        if let baby = self.baby {
+            context.delete(baby)
+        } else {
+            return
+        }
+        
+        context.performAndWait {
+            do {
+                try context.save()
+            } catch let error {
+                print(error)
+            }
+        }
+    }
+    
+    func getDday() -> Int {
+        
+        return 150
+    }
+    
 }

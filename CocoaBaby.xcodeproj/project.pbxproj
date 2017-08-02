@@ -12,6 +12,7 @@
 		496FB1DE1F31982500E4042D /* Baby+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496FB1DC1F31982500E4042D /* Baby+CoreDataProperties.swift */; };
 		496FB1E11F31986E00E4042D /* BabyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496FB1E01F31986E00E4042D /* BabyStore.swift */; };
 		49D7F44A1F319D99004DF036 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D7F4481F319D99004DF036 /* HomeViewController.swift */; };
+		49D7F44D1F31A32E004DF036 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49D7F44C1F31A32E004DF036 /* Tutorial.storyboard */; };
 		49F6C77D1F318AF200373F06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F6C77C1F318AF200373F06 /* AppDelegate.swift */; };
 		49F6C7821F318AF200373F06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49F6C7801F318AF200373F06 /* Main.storyboard */; };
 		49F6C7841F318AF200373F06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49F6C7831F318AF200373F06 /* Assets.xcassets */; };
@@ -43,6 +44,7 @@
 		496FB1DC1F31982500E4042D /* Baby+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Baby+CoreDataProperties.swift"; path = "Model/Baby+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		496FB1E01F31986E00E4042D /* BabyStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BabyStore.swift; path = Model/BabyStore.swift; sourceTree = "<group>"; };
 		49D7F4481F319D99004DF036 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ViewController/HomeViewController.swift; sourceTree = "<group>"; };
+		49D7F44C1F31A32E004DF036 /* Tutorial.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Tutorial.storyboard; path = Storyboard/Tutorial.storyboard; sourceTree = "<group>"; };
 		49F6C7791F318AF200373F06 /* CocoaBaby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaBaby.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49F6C77C1F318AF200373F06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49F6C7811F318AF200373F06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				49F6C7801F318AF200373F06 /* Main.storyboard */,
+				49D7F44C1F31A32E004DF036 /* Tutorial.storyboard */,
 			);
 			name = Storyboard;
 			sourceTree = "<group>";
@@ -281,6 +284,7 @@
 			files = (
 				49F6C7871F318AF200373F06 /* LaunchScreen.storyboard in Resources */,
 				49F6C7841F318AF200373F06 /* Assets.xcassets in Resources */,
+				49D7F44D1F31A32E004DF036 /* Tutorial.storyboard in Resources */,
 				49F6C7821F318AF200373F06 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

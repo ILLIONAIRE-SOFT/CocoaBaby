@@ -14,8 +14,6 @@ class HomeViewController: UIViewController {
         super.viewDidLoad()
         
         BabyStore.shared.loadBaby()
-        
-        print(BabyStore.shared.baby.name)
     }
 
     override func didReceiveMemoryWarning() {
