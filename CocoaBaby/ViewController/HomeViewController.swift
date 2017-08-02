@@ -28,9 +28,6 @@ class HomeViewController: UIViewController {
         
        
         updateBabyInfo()
-        
-        
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
