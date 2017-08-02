@@ -23,45 +23,41 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="DSD-Oa-74v">
-                                <rect key="frame" x="28" y="56" width="318" height="482"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="DSD-Oa-74v">
+                                <rect key="frame" x="28" y="62" width="318" height="490"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WXI-VJ-Evp">
-                                        <rect key="frame" x="0.0" y="0.0" width="318" height="24"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="318" height="27.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D - 150" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q76-eA-cfl">
+                                        <rect key="frame" x="0.0" y="38.5" width="318" height="72"/>
+                                        <fontDescription key="fontDescription" name="AppleSDGothicNeo-Thin" family="Apple SD Gothic Neo" pointSize="60"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="EU3-gn-bBs">
-                                        <rect key="frame" x="0.0" y="32" width="318" height="420.5"/>
+                                        <rect key="frame" x="0.0" y="121.5" width="318" height="338"/>
                                         <subviews>
-                                            <view alpha="0.84999999999999998" contentMode="scaleToFill" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="r5z-nd-37X">
-                                                <rect key="frame" x="8" y="66.5" width="302" height="302"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D - 150" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q76-eA-cfl">
-                                                        <rect key="frame" x="122.5" y="40" width="58.5" height="19"/>
-                                                        <fontDescription key="fontDescription" name="Symbol" family="Symbol" pointSize="19"/>
-                                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                                <color key="backgroundColor" red="0.84705882352941175" green="0.59999999999999998" blue="0.4823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <view contentMode="scaleToFill" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="r5z-nd-37X">
+                                                <rect key="frame" x="8" y="10" width="302" height="302"/>
+                                                <color key="backgroundColor" red="0.91060772399237466" green="0.6391951195987654" blue="0.58022620506535949" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstItem="q76-eA-cfl" firstAttribute="top" secondItem="r5z-nd-37X" secondAttribute="top" constant="40" id="bXS-Du-fzB"/>
-                                                    <constraint firstItem="q76-eA-cfl" firstAttribute="centerX" secondItem="r5z-nd-37X" secondAttribute="centerX" id="cwV-W5-hHT"/>
                                                     <constraint firstAttribute="width" secondItem="r5z-nd-37X" secondAttribute="height" multiplier="1:1" id="jSz-96-BCk"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="r5z-nd-37X" secondAttribute="bottom" constant="52" id="4Ie-hy-3h6"/>
+                                            <constraint firstAttribute="bottom" secondItem="r5z-nd-37X" secondAttribute="bottom" constant="26" id="4Ie-hy-3h6"/>
                                             <constraint firstItem="r5z-nd-37X" firstAttribute="leading" secondItem="EU3-gn-bBs" secondAttribute="leading" constant="8" id="TvN-L9-MTx"/>
                                             <constraint firstItem="r5z-nd-37X" firstAttribute="centerX" secondItem="EU3-gn-bBs" secondAttribute="centerX" id="uRD-6o-hhh"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nG0-ug-ems">
-                                        <rect key="frame" x="0.0" y="460.5" width="318" height="21.5"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nG0-ug-ems">
+                                        <rect key="frame" x="0.0" y="470.5" width="318" height="19.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -72,8 +68,8 @@
                         <constraints>
                             <constraint firstItem="DSD-Oa-74v" firstAttribute="centerX" secondItem="n98-Ys-Pap" secondAttribute="centerX" id="5IZ-Jr-zAx"/>
                             <constraint firstItem="DSD-Oa-74v" firstAttribute="leading" secondItem="n98-Ys-Pap" secondAttribute="leadingMargin" constant="12" id="5uH-YO-Kec"/>
-                            <constraint firstItem="DSD-Oa-74v" firstAttribute="top" secondItem="eW3-jb-481" secondAttribute="bottom" constant="36" id="CAt-6C-Zyh"/>
-                            <constraint firstItem="9s6-Dt-Bp4" firstAttribute="top" secondItem="DSD-Oa-74v" secondAttribute="bottom" constant="80" id="Nur-qc-1M7"/>
+                            <constraint firstItem="DSD-Oa-74v" firstAttribute="top" secondItem="eW3-jb-481" secondAttribute="bottom" constant="42" id="CAt-6C-Zyh"/>
+                            <constraint firstItem="9s6-Dt-Bp4" firstAttribute="top" secondItem="DSD-Oa-74v" secondAttribute="bottom" constant="66" id="Nur-qc-1M7"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Item" id="NSM-vg-ZCt"/>
@@ -81,6 +77,7 @@
                     <connections>
                         <outlet property="babyView" destination="r5z-nd-37X" id="qS1-Vs-3Cc"/>
                         <outlet property="dDayLabel" destination="q76-eA-cfl" id="L3e-8m-Li7"/>
+                        <outlet property="infoLabel" destination="nG0-ug-ems" id="OlM-Le-fQy"/>
                         <outlet property="nameLabel" destination="WXI-VJ-Evp" id="7Ru-A5-GiA"/>
                     </connections>
                 </viewController>
@@ -97,6 +94,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="barTintColor" red="0.2627450980392157" green="0.29019607843137252" blue="0.47843137254901957" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="jvX-dQ-vlI" kind="relationship" relationship="viewControllers" id="gX0-vf-3tw"/>
