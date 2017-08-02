@@ -82,6 +82,10 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gradation2" translatesAutoresizingMaskIntoConstraints="NO" id="REz-CV-o1p">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="Vki-35-SsF" appends="YES" id="6iG-Lb-xLg"/>
+                                </connections>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="아이를 임신한 날짜를 선택해 주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EKV-yR-JSQ">
                                 <rect key="frame" x="62.5" y="209" width="250" height="30"/>
@@ -153,6 +157,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fl5-Uy-xHM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="Vki-35-SsF">
+                    <connections>
+                        <action selector="resignKeyBoard" destination="zx7-G8-vGI" id="Cbm-YX-uUV"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1144.8" y="-107.49625187406298"/>
         </scene>

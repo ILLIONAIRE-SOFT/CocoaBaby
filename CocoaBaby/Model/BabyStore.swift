@@ -45,7 +45,6 @@ class BabyStore {
     }
     
     func registerBaby(from pregnantDate: Date?, to birthDate: Date?, name: String?) {
-        
         let context = persistentContainer.viewContext
         
         loadBaby()

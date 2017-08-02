@@ -31,15 +31,20 @@ class TutorialSetDateViewController: UIViewController, UITextFieldDelegate {
         self.pregnantDateTextField.attributedPlaceholder = NSAttributedString(string: "아이를 임신한 날짜를 선택해 주세요", attributes: [NSForegroundColorAttributeName: UIColor.white])
         self.birthDateTextField.attributedPlaceholder = NSAttributedString(string: "아이의 출산 예정일을 선택해 주세요", attributes: [NSForegroundColorAttributeName: UIColor.white])
         
-//        self.pregnantDateTextField.backgroundColor = UIColor.blue
         pregnantDateTextField.setBottomBorder()
         birthDateTextField.setBottomBorder()
+        
+        pregnantDateTextField.becomeFirstResponder()
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
+    @IBAction func resignKeyBoard() {
+        self.resignFirstResponder()
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
 
     func pickUpDate(_ textField : UITextField){
         // DatePicker
@@ -64,6 +69,10 @@ class TutorialSetDateViewController: UIViewController, UITextFieldDelegate {
         textField.inputAccessoryView = toolBar
     }
 
+    //
+    // Mark : relate to date Picker
+    //
+    
     func doneClick() {
         if pregnantDateTextField.isFirstResponder {
             let dateFormatter = DateFormatter()
@@ -106,6 +115,8 @@ class TutorialSetDateViewController: UIViewController, UITextFieldDelegate {
         }
     }
 
+    // register Baby
+    
     @IBAction func registerBaby(_ sender: Any) {
         if
             let pregnantDate = pregnantDate,
