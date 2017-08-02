@@ -15,8 +15,11 @@ class TutorialSetNameViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationController?.navigationBar.isHidden = true
         
+        self.navigationController?.navigationBar.isHidden = true
+        nextButton.isEnabled = false
+        
+        babyNameTextField.delegate = self
     }
     
     override func didReceiveMemoryWarning() {
@@ -29,7 +32,11 @@ class TutorialSetNameViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func babyNameTextFieldEditChange(_ textField: UITextField) {
-        
+        if textField.text == "" {
+            nextButton.isEnabled = false
+        }else {
+            nextButton.isEnabled = true
+        }
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {

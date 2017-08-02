@@ -23,6 +23,14 @@ class HomeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+       // updateBabyView()
+        //updateBabyInfo()
+
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         BabyStore.shared.loadBaby()
         
         if BabyStore.shared.baby == nil {
@@ -30,9 +38,6 @@ class HomeViewController: UIViewController {
             let viewController = tutorialStoryboard.instantiateViewController(withIdentifier: "tutorialNavigationViewController")
             self.present(viewController, animated: false, completion: nil)
         }
-        
-        updateBabyView()
-        updateBabyInfo()
 
     }
 
