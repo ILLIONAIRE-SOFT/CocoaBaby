@@ -16,7 +16,6 @@ class TabBarViewController: UITabBarController {
         tabBar.backgroundImage = UIImage(named: "transparentBackground")
         tabBar.shadowImage = UIImage(named: "transparentBackground")
         tabBar.unselectedItemTintColor = UIColor.white
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {

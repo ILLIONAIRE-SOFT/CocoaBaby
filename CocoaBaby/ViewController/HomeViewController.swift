@@ -31,7 +31,7 @@ class HomeViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-         updateBabyView()
+        updateBabyView()
         
         if BabyStore.shared.baby == nil {
             let tutorialStoryboard = UIStoryboard(name: "Tutorial", bundle: nil)
