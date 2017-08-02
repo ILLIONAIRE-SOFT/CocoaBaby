@@ -25,10 +25,7 @@ class HomeViewController: UIViewController {
         super.viewWillAppear(animated)
         
         BabyStore.shared.loadBaby()
-        
-       
         updateBabyInfo()
-        
         
         
     }
