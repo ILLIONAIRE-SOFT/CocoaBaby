@@ -49,7 +49,8 @@ class HomeViewController: UIViewController {
     
     private func updateBabyView() {
         
-        babyView.layer.cornerRadius = 64
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "HomeGradation")!)
+        babyView.layer.cornerRadius = babyView.frame.width/2
     }
     
 }
