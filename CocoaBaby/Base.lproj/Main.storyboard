@@ -90,7 +90,7 @@
         <!--Tab Bar Controller-->
         <scene sceneID="u86-qa-NG0">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="xmu-Gx-PNz" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="mainTabBarViewController" automaticallyAdjustsScrollViewInsets="NO" id="xmu-Gx-PNz" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="cxh-Zq-ftf">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
