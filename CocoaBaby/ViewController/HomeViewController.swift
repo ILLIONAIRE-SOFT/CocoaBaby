@@ -41,7 +41,7 @@ class HomeViewController: UIViewController {
         if BabyStore.shared.baby == nil {
             let tutorialStoryboard = UIStoryboard(name: "Tutorial", bundle: nil)
             let viewController = tutorialStoryboard.instantiateViewController(withIdentifier: "tutorialNavigationViewController")
-            self.present(viewController, animated: false, completion: nil)
+            present(viewController, animated: false, completion: nil)
         }
         
     }
