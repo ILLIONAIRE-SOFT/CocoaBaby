@@ -100,4 +100,18 @@ class BabyStore {
         return 150
     }
     
+    func getName() -> String {
+    
+        guard let baby = self.baby else {
+            return "No Baby"
+        }
+        
+        if let name = baby.name {
+            return name
+        } else {
+            return "No Name"
+        }
+    }
+    
+    
 }
