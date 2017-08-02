@@ -14,6 +14,8 @@ class TutorialSetDateViewController: UIViewController, UITextFieldDelegate {
     var pregnantDate : Date?
     var birthDate : Date?
     
+    @IBOutlet var registerButton: UIButton!
+    
     @IBOutlet weak var pregnantDateTextField: UITextField!
     @IBOutlet weak var birthDateTextField: UITextField!
     var datePicker : UIDatePicker!
@@ -23,6 +25,7 @@ class TutorialSetDateViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         self.pregnantDateTextField.delegate = self
         self.birthDateTextField.delegate = self
+        self.registerButton.isEnabled = false
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,6 +65,9 @@ class TutorialSetDateViewController: UIViewController, UITextFieldDelegate {
             pregnantDateTextField.text = dateFormatter.string(from: datePicker.date)
             pregnantDateTextField.resignFirstResponder()
             birthDateTextField.text = dateFormatter.string(from: datePicker.date.addingTimeInterval(60*60*24*280))
+            
+            pregnantDate = datePicker.date
+            birthDate = datePicker.date.addingTimeInterval(60*60*24*280)
         } else {
             let dateFormatter = DateFormatter()
             dateFormatter.dateStyle = .medium
@@ -69,6 +75,8 @@ class TutorialSetDateViewController: UIViewController, UITextFieldDelegate {
             
             birthDateTextField.text = dateFormatter.string(from: datePicker.date)
             birthDateTextField.resignFirstResponder()
+            
+            birthDate = datePicker.date
         }
     }
     
@@ -83,5 +91,22 @@ class TutorialSetDateViewController: UIViewController, UITextFieldDelegate {
             self.pickUpDate(self.birthDateTextField)
         }
     }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if pregnantDateTextField.text != "" && birthDateTextField.text != "" {
+            self.registerButton.isEnabled = true
+        }
+    }
 
+    @IBAction func registerBaby(_ sender: Any) {
+        if
+            let pregnantDate = pregnantDate,
+            let birthDate = birthDate,
+            let name = babyName
+        {
+            BabyStore.shared.registerBaby(from: pregnantDate, to: birthDate, name: name)
+            print("success")
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
 }

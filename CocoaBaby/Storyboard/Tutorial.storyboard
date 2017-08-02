@@ -80,31 +80,75 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fY4-3d-sQJ">
-                                <rect key="frame" x="169" y="604" width="37" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Done"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gradation2" translatesAutoresizingMaskIntoConstraints="NO" id="REz-CV-o1p">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="아이를 임신한 날짜를 선택해 주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EKV-yR-JSQ">
+                                <rect key="frame" x="62.5" y="209" width="250" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="Mfa-WJ-tgS"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="엄마! 저는 언제 생겼나요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h3N-JO-6sK">
+                                <rect key="frame" x="100" y="180" width="174" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="엄마! 저는 태어나나요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BBe-Ga-sAL">
+                                <rect key="frame" x="110" y="335" width="155" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="아이의 출산 예정일을 선택해 주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vRY-a3-o2A">
+                                <rect key="frame" x="62.5" y="379" width="250" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="x0u-v1-FjY"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fY4-3d-sQJ">
+                                <rect key="frame" x="157.5" y="494" width="60" height="40"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="WjU-cF-eTm"/>
+                                    <constraint firstAttribute="width" constant="60" id="e7l-xZ-dmK"/>
+                                </constraints>
+                                <state key="normal" title="완료"/>
+                                <connections>
+                                    <action selector="registerBaby:" destination="zx7-G8-vGI" eventType="touchUpInside" id="VgJ-t8-kCZ"/>
+                                </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EKV-yR-JSQ">
-                                <rect key="frame" x="139" y="194" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vRY-a3-o2A">
-                                <rect key="frame" x="139" y="282" width="97" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vRY-a3-o2A" firstAttribute="top" secondItem="BBe-Ga-sAL" secondAttribute="bottom" constant="23" id="2ba-02-C59"/>
+                            <constraint firstItem="vRY-a3-o2A" firstAttribute="centerX" secondItem="GU9-O9-75n" secondAttribute="centerX" id="Cgi-4P-Xqd"/>
+                            <constraint firstItem="fY4-3d-sQJ" firstAttribute="top" secondItem="vRY-a3-o2A" secondAttribute="bottom" constant="85" id="FpL-sQ-DeH"/>
+                            <constraint firstAttribute="trailing" secondItem="REz-CV-o1p" secondAttribute="trailing" id="JT0-ni-721"/>
+                            <constraint firstItem="MH4-PH-JMl" firstAttribute="top" secondItem="REz-CV-o1p" secondAttribute="bottom" id="MJH-zY-dJw"/>
+                            <constraint firstItem="REz-CV-o1p" firstAttribute="top" secondItem="h3N-JO-6sK" secondAttribute="bottom" constant="-201" id="V2B-Gz-RAQ"/>
+                            <constraint firstItem="REz-CV-o1p" firstAttribute="top" secondItem="GU9-O9-75n" secondAttribute="top" id="XoL-dW-a5k"/>
+                            <constraint firstItem="EKV-yR-JSQ" firstAttribute="centerX" secondItem="GU9-O9-75n" secondAttribute="centerX" id="Ze2-4r-1Z1"/>
+                            <constraint firstItem="BBe-Ga-sAL" firstAttribute="centerX" secondItem="GU9-O9-75n" secondAttribute="centerX" id="emV-If-PVc"/>
+                            <constraint firstItem="REz-CV-o1p" firstAttribute="leading" secondItem="GU9-O9-75n" secondAttribute="leading" id="liK-YP-6OO"/>
+                            <constraint firstItem="h3N-JO-6sK" firstAttribute="centerX" secondItem="GU9-O9-75n" secondAttribute="centerX" id="nMG-tP-qut"/>
+                            <constraint firstItem="BBe-Ga-sAL" firstAttribute="top" secondItem="EKV-yR-JSQ" secondAttribute="bottom" constant="96" id="tDW-Ky-6OG"/>
+                            <constraint firstItem="EKV-yR-JSQ" firstAttribute="top" secondItem="h3N-JO-6sK" secondAttribute="bottom" constant="8" id="tM8-OX-gWj"/>
+                            <constraint firstItem="fY4-3d-sQJ" firstAttribute="centerX" secondItem="GU9-O9-75n" secondAttribute="centerX" id="zqS-0a-Y0E"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="birthDateTextField" destination="vRY-a3-o2A" id="ALT-9b-EJW"/>
                         <outlet property="pregnantDateTextField" destination="EKV-yR-JSQ" id="AEU-p8-Cyl"/>
+                        <outlet property="registerButton" destination="fY4-3d-sQJ" id="l2l-Jw-pPt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fl5-Uy-xHM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -130,4 +174,7 @@
             <point key="canvasLocation" x="-511.19999999999999" y="-107.49625187406298"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Gradation2" width="621" height="1104"/>
+    </resources>
 </document>
