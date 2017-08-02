@@ -13,12 +13,22 @@ class HomeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         BabyStore.shared.loadBaby()
+        
+        if BabyStore.shared.baby == nil {
+            let tutorialStoryboard = UIStoryboard(name: "Tutorial", bundle: nil)
+            let viewController = tutorialStoryboard.instantiateViewController(withIdentifier: "tutorialNavigationViewController")
+            self.present(viewController, animated: false, completion: nil)
+        }
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
     
 }
