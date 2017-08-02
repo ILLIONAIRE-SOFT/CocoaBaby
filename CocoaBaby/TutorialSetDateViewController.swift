@@ -22,7 +22,7 @@ class TutorialSetDateViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.pregnantDateTextField.delegate = self
-
+        self.birthDateTextField.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,7 +31,6 @@ class TutorialSetDateViewController: UIViewController, UITextFieldDelegate {
     }
 
     func pickUpDate(_ textField : UITextField){
-        
         // DatePicker
         self.datePicker = UIDatePicker(frame:CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 216))
         self.datePicker.backgroundColor = UIColor.white
@@ -42,7 +41,7 @@ class TutorialSetDateViewController: UIViewController, UITextFieldDelegate {
         let toolBar = UIToolbar()
         toolBar.barStyle = .default
         toolBar.isTranslucent = true
-        toolBar.tintColor = UIColor(red: 92/255, green: 216/255, blue: 255/255, alpha: 1)
+        toolBar.tintColor = UIColor.black
         toolBar.sizeToFit()
         
         // Adding Button ToolBar
@@ -55,21 +54,34 @@ class TutorialSetDateViewController: UIViewController, UITextFieldDelegate {
     }
 
     func doneClick() {
-        let dateFormatter1 = DateFormatter()
-        dateFormatter1.dateStyle = .medium
-        dateFormatter1.timeStyle = .none
-        pregnantDateTextField.text = dateFormatter1.string(from: datePicker.date)
-        pregnantDateTextField.resignFirstResponder()
+        if pregnantDateTextField.isFirstResponder {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .medium
+            dateFormatter.timeStyle = .none
+            
+            pregnantDateTextField.text = dateFormatter.string(from: datePicker.date)
+            pregnantDateTextField.resignFirstResponder()
+            birthDateTextField.text = dateFormatter.string(from: datePicker.date.addingTimeInterval(60*60*24*280))
+        } else {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .medium
+            dateFormatter.timeStyle = .none
+            
+            birthDateTextField.text = dateFormatter.string(from: datePicker.date)
+            birthDateTextField.resignFirstResponder()
+        }
     }
+    
     func cancelClick() {
         pregnantDateTextField.resignFirstResponder()
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        self.pickUpDate(self.pregnantDateTextField)
+        if textField == pregnantDateTextField {
+            self.pickUpDate(self.pregnantDateTextField)
+        } else if textField == birthDateTextField {
+            self.pickUpDate(self.birthDateTextField)
+        }
     }
-
-
-    
 
 }
