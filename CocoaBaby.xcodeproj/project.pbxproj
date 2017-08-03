@@ -23,6 +23,7 @@
 		DAB5A40B1F31B0C4000235B0 /* TutorialSetNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB5A40A1F31B0C4000235B0 /* TutorialSetNameViewController.swift */; };
 		DAB5A40D1F31B185000235B0 /* TutorialSetDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB5A40C1F31B185000235B0 /* TutorialSetDateViewController.swift */; };
 		DAB5A40F1F32126C000235B0 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB5A40E1F32126C000235B0 /* Extension.swift */; };
+		DAB5A4171F33331C000235B0 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB5A4161F33331C000235B0 /* ColorExtension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -65,6 +66,7 @@
 		DAB5A40A1F31B0C4000235B0 /* TutorialSetNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TutorialSetNameViewController.swift; path = ViewController/TutorialSetNameViewController.swift; sourceTree = "<group>"; };
 		DAB5A40C1F31B185000235B0 /* TutorialSetDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialSetDateViewController.swift; sourceTree = "<group>"; };
 		DAB5A40E1F32126C000235B0 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		DAB5A4161F33331C000235B0 /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorExtension.swift; path = Extension/ColorExtension.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +134,7 @@
 		49D7F4471F319D5F004DF036 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
+				49F6C7851F318AF200373F06 /* LaunchScreen.storyboard */,
 				49F6C7801F318AF200373F06 /* Main.storyboard */,
 				49D7F44C1F31A32E004DF036 /* Tutorial.storyboard */,
 			);
@@ -178,14 +181,12 @@
 		49F6C77B1F318AF200373F06 /* CocoaBaby */ = {
 			isa = PBXGroup;
 			children = (
-				49F6C77C1F318AF200373F06 /* AppDelegate.swift */,
+				DAB5A4141F3332DB000235B0 /* Utilities */,
+				DAB5A4131F3332C4000235B0 /* Asset */,
+				DAB5A4121F3332B9000235B0 /* AppDelegate */,
 				49D7F4471F319D5F004DF036 /* Storyboard */,
 				49D7F4461F319D5A004DF036 /* ViewController */,
 				496FB1D71F3193CB00E4042D /* Model */,
-				49F6C7831F318AF200373F06 /* Assets.xcassets */,
-				49F6C7851F318AF200373F06 /* LaunchScreen.storyboard */,
-				49F6C7881F318AF200373F06 /* Info.plist */,
-				DAB5A40E1F32126C000235B0 /* Extension.swift */,
 			);
 			path = CocoaBaby;
 			sourceTree = "<group>";
@@ -206,6 +207,40 @@
 				49F6C79E1F318AF200373F06 /* Info.plist */,
 			);
 			path = CocoaBabyUITests;
+			sourceTree = "<group>";
+		};
+		DAB5A4121F3332B9000235B0 /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				49F6C77C1F318AF200373F06 /* AppDelegate.swift */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		DAB5A4131F3332C4000235B0 /* Asset */ = {
+			isa = PBXGroup;
+			children = (
+				49F6C7831F318AF200373F06 /* Assets.xcassets */,
+				49F6C7881F318AF200373F06 /* Info.plist */,
+			);
+			name = Asset;
+			sourceTree = "<group>";
+		};
+		DAB5A4141F3332DB000235B0 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				DAB5A4151F3332E2000235B0 /* Extension */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		DAB5A4151F3332E2000235B0 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				DAB5A40E1F32126C000235B0 /* Extension.swift */,
+				DAB5A4161F33331C000235B0 /* ColorExtension.swift */,
+			);
+			name = Extension;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -355,6 +390,7 @@
 				496FB1DE1F31982500E4042D /* Baby+CoreDataProperties.swift in Sources */,
 				496FB1DA1F31943D00E4042D /* CocoaBaby.xcdatamodeld in Sources */,
 				DAB5A40B1F31B0C4000235B0 /* TutorialSetNameViewController.swift in Sources */,
+				DAB5A4171F33331C000235B0 /* ColorExtension.swift in Sources */,
 				49D7F44A1F319D99004DF036 /* HomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

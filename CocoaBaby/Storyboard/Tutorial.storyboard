@@ -21,16 +21,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="이기의 태명은 무엇인가요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndm-6a-fl1">
-                                <rect key="frame" x="98" y="102" width="179" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xFT-j3-jl4">
-                                <rect key="frame" x="103" y="162" width="174" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gradation2" translatesAutoresizingMaskIntoConstraints="NO" id="Oa2-u8-fe5">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <gestureRecognizers/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="아이의 태명을 입력해 주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xFT-j3-jl4">
+                                <rect key="frame" x="107" y="294" width="161" height="17"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -38,17 +34,41 @@
                                     <action selector="babyNameTextFieldEditChange:" destination="K3U-e6-Sth" eventType="editingChanged" id="X3f-GQ-hjh"/>
                                 </connections>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qca-BA-SwF">
-                                <rect key="frame" x="171" y="235" width="32" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qca-BA-SwF">
+                                <rect key="frame" x="157" y="400" width="60" height="30"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="D6U-vC-7GR"/>
+                                </constraints>
                                 <state key="normal" title="Next"/>
                                 <connections>
                                     <segue destination="zx7-G8-vGI" kind="show" identifier="goToSetDate" id="Y3C-ro-Gu0"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아기의 태명은 무엇인가요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndm-6a-fl1">
+                                <rect key="frame" x="98" y="243" width="179" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="Oa2-u8-fe5" secondAttribute="trailing" id="13U-EY-9cq"/>
+                            <constraint firstItem="xFT-j3-jl4" firstAttribute="centerX" secondItem="diH-bF-TeY" secondAttribute="centerX" id="5uM-fa-iKA"/>
+                            <constraint firstItem="Oa2-u8-fe5" firstAttribute="leading" secondItem="diH-bF-TeY" secondAttribute="leading" id="6hf-fz-Q5a"/>
+                            <constraint firstItem="Oa2-u8-fe5" firstAttribute="leading" secondItem="diH-bF-TeY" secondAttribute="leading" id="87S-Kc-uWS"/>
+                            <constraint firstItem="ndm-6a-fl1" firstAttribute="centerX" secondItem="diH-bF-TeY" secondAttribute="centerX" id="EWz-sC-YYp"/>
+                            <constraint firstItem="Qca-BA-SwF" firstAttribute="top" secondItem="xFT-j3-jl4" secondAttribute="bottom" constant="89" id="Omx-7A-ILx"/>
+                            <constraint firstAttribute="trailing" secondItem="Oa2-u8-fe5" secondAttribute="trailing" id="cqe-8s-upL"/>
+                            <constraint firstItem="Qca-BA-SwF" firstAttribute="centerX" secondItem="diH-bF-TeY" secondAttribute="centerX" id="e9d-08-H6z"/>
+                            <constraint firstItem="ndm-6a-fl1" firstAttribute="bottom" secondItem="Oa2-u8-fe5" secondAttribute="top" constant="200" id="l4U-nM-FPj"/>
+                            <constraint firstItem="xFT-j3-jl4" firstAttribute="top" secondItem="ndm-6a-fl1" secondAttribute="bottom" constant="30" id="m4A-RF-5w0"/>
+                            <constraint firstItem="Oa2-u8-fe5" firstAttribute="top" secondItem="pd2-64-VOS" secondAttribute="bottom" id="qFo-Mq-o3v"/>
+                            <constraint firstAttribute="bottom" secondItem="Oa2-u8-fe5" secondAttribute="bottom" id="rMg-6E-VIe"/>
+                            <constraint firstAttribute="bottom" secondItem="Oa2-u8-fe5" secondAttribute="bottom" id="uAw-iH-Xpw"/>
+                        </constraints>
                         <connections>
                             <outletCollection property="gestureRecognizers" destination="BSk-DV-yad" appends="YES" id="QGd-rh-6LQ"/>
                         </connections>
@@ -80,73 +100,71 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gradation2" translatesAutoresizingMaskIntoConstraints="NO" id="REz-CV-o1p">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                                <gestureRecognizers/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="Vki-35-SsF" appends="YES" id="6iG-Lb-xLg"/>
-                                </connections>
-                            </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="아이를 임신한 날짜를 선택해 주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EKV-yR-JSQ">
-                                <rect key="frame" x="62.5" y="209" width="250" height="30"/>
+                                <rect key="frame" x="62.5" y="135" width="250" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="Mfa-WJ-tgS"/>
                                     <constraint firstAttribute="height" constant="30" id="Pjw-CG-pPH"/>
                                 </constraints>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="엄마! 저는 언제 생겼나요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h3N-JO-6sK">
-                                <rect key="frame" x="100" y="180" width="174" height="21"/>
+                                <rect key="frame" x="100" y="104" width="174" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="엄마! 저는 태어나나요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BBe-Ga-sAL">
-                                <rect key="frame" x="110" y="335" width="155" height="21"/>
+                                <rect key="frame" x="110" y="235" width="155" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="아이의 출산 예정일을 선택해 주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vRY-a3-o2A">
-                                <rect key="frame" x="62.5" y="379" width="250" height="30"/>
+                                <rect key="frame" x="62.5" y="266" width="250" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="Gjw-cy-Jx2"/>
                                     <constraint firstAttribute="width" constant="250" id="x0u-v1-FjY"/>
                                 </constraints>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fY4-3d-sQJ">
-                                <rect key="frame" x="157.5" y="494" width="60" height="40"/>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <rect key="frame" x="157.5" y="346" width="60" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="WjU-cF-eTm"/>
                                     <constraint firstAttribute="width" constant="60" id="e7l-xZ-dmK"/>
                                 </constraints>
-                                <state key="normal" title="완료"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="완료">
+                                    <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="1"/>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
+                                        <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="registerBaby:" destination="zx7-G8-vGI" eventType="touchUpInside" id="VgJ-t8-kCZ"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.90588235294117647" green="0.63829337724673196" blue="0.5905410666870915" alpha="0.66978809931506844" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="vRY-a3-o2A" firstAttribute="top" secondItem="BBe-Ga-sAL" secondAttribute="bottom" constant="23" id="2ba-02-C59"/>
+                            <constraint firstItem="vRY-a3-o2A" firstAttribute="top" secondItem="BBe-Ga-sAL" secondAttribute="bottom" constant="10" id="2ba-02-C59"/>
+                            <constraint firstItem="h3N-JO-6sK" firstAttribute="top" secondItem="pCc-Dp-kbE" secondAttribute="bottom" constant="40" id="4Up-Cv-mhW"/>
                             <constraint firstItem="vRY-a3-o2A" firstAttribute="centerX" secondItem="GU9-O9-75n" secondAttribute="centerX" id="Cgi-4P-Xqd"/>
-                            <constraint firstItem="fY4-3d-sQJ" firstAttribute="top" secondItem="vRY-a3-o2A" secondAttribute="bottom" constant="85" id="FpL-sQ-DeH"/>
-                            <constraint firstAttribute="trailing" secondItem="REz-CV-o1p" secondAttribute="trailing" id="JT0-ni-721"/>
-                            <constraint firstItem="MH4-PH-JMl" firstAttribute="top" secondItem="REz-CV-o1p" secondAttribute="bottom" id="MJH-zY-dJw"/>
-                            <constraint firstItem="REz-CV-o1p" firstAttribute="top" secondItem="h3N-JO-6sK" secondAttribute="bottom" constant="-201" id="V2B-Gz-RAQ"/>
-                            <constraint firstItem="REz-CV-o1p" firstAttribute="top" secondItem="GU9-O9-75n" secondAttribute="top" id="XoL-dW-a5k"/>
+                            <constraint firstItem="fY4-3d-sQJ" firstAttribute="top" secondItem="vRY-a3-o2A" secondAttribute="bottom" constant="50" id="FpL-sQ-DeH"/>
                             <constraint firstItem="EKV-yR-JSQ" firstAttribute="centerX" secondItem="GU9-O9-75n" secondAttribute="centerX" id="Ze2-4r-1Z1"/>
                             <constraint firstItem="BBe-Ga-sAL" firstAttribute="centerX" secondItem="GU9-O9-75n" secondAttribute="centerX" id="emV-If-PVc"/>
-                            <constraint firstItem="REz-CV-o1p" firstAttribute="leading" secondItem="GU9-O9-75n" secondAttribute="leading" id="liK-YP-6OO"/>
                             <constraint firstItem="h3N-JO-6sK" firstAttribute="centerX" secondItem="GU9-O9-75n" secondAttribute="centerX" id="nMG-tP-qut"/>
-                            <constraint firstItem="BBe-Ga-sAL" firstAttribute="top" secondItem="EKV-yR-JSQ" secondAttribute="bottom" constant="96" id="tDW-Ky-6OG"/>
-                            <constraint firstItem="EKV-yR-JSQ" firstAttribute="top" secondItem="h3N-JO-6sK" secondAttribute="bottom" constant="8" id="tM8-OX-gWj"/>
+                            <constraint firstItem="BBe-Ga-sAL" firstAttribute="top" secondItem="EKV-yR-JSQ" secondAttribute="bottom" constant="70" id="tDW-Ky-6OG"/>
+                            <constraint firstItem="EKV-yR-JSQ" firstAttribute="top" secondItem="h3N-JO-6sK" secondAttribute="bottom" constant="10" id="tM8-OX-gWj"/>
                             <constraint firstItem="fY4-3d-sQJ" firstAttribute="centerX" secondItem="GU9-O9-75n" secondAttribute="centerX" id="zqS-0a-Y0E"/>
                         </constraints>
                     </view>
@@ -159,7 +177,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fl5-Uy-xHM" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="Vki-35-SsF">
                     <connections>
-                        <action selector="resignKeyBoard" destination="zx7-G8-vGI" id="Cbm-YX-uUV"/>
+                        <action selector="resignKeyBoard" destination="zx7-G8-vGI" id="bWD-Gu-BI0"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
