@@ -18,7 +18,9 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    }
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -31,7 +33,7 @@ class HomeViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-         updateBabyView()
+        updateBabyView()
         
         if BabyStore.shared.baby == nil {
             let tutorialStoryboard = UIStoryboard(name: "Tutorial", bundle: nil)
