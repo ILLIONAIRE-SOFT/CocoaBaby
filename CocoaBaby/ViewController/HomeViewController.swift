@@ -18,9 +18,7 @@ class HomeViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    }
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -58,6 +56,10 @@ class HomeViewController: UIViewController {
         
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Gradation2")!)
         babyView.layer.cornerRadius = babyView.frame.width/2
+    }
+    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
     }
     
 }
