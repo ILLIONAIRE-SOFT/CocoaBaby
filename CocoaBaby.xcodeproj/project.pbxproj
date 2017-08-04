@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		4911D9CB1F3444A70031B74A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4911D9CA1F3444A70031B74A /* BaseViewController.swift */; };
+		4911D9CE1F34455D0031B74A /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4911D9CD1F34455D0031B74A /* DiaryViewController.swift */; };
 		493631DE1F31C662008C774E /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493631DD1F31C662008C774E /* TabBarViewController.swift */; };
 		496FB1DA1F31943D00E4042D /* CocoaBaby.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 496FB1D81F31943D00E4042D /* CocoaBaby.xcdatamodeld */; };
 		496FB1DD1F31982500E4042D /* Baby+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496FB1DB1F31982500E4042D /* Baby+CoreDataClass.swift */; };
@@ -46,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		4911D9CA1F3444A70031B74A /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = ViewController/BaseViewController.swift; sourceTree = "<group>"; };
+		4911D9CD1F34455D0031B74A /* DiaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiaryViewController.swift; path = ViewController/DiaryViewController.swift; sourceTree = "<group>"; };
 		493631DD1F31C662008C774E /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarViewController.swift; path = ViewController/TabBarViewController.swift; sourceTree = "<group>"; };
 		496FB1D91F31943D00E4042D /* CocoaBaby.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CocoaBaby.xcdatamodel; sourceTree = "<group>"; };
 		496FB1DB1F31982500E4042D /* Baby+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Baby+CoreDataClass.swift"; path = "Model/Baby+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -104,6 +106,14 @@
 			name = Base;
 			sourceTree = "<group>";
 		};
+		4911D9CC1F34453D0031B74A /* Diary */ = {
+			isa = PBXGroup;
+			children = (
+				4911D9CD1F34455D0031B74A /* DiaryViewController.swift */,
+			);
+			name = Diary;
+			sourceTree = "<group>";
+		};
 		493631DC1F31C64F008C774E /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -134,10 +144,11 @@
 		49D7F4461F319D5A004DF036 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				4911D9CC1F34453D0031B74A /* Diary */,
 				4911D9C91F3444990031B74A /* Base */,
-				493631DC1F31C64F008C774E /* TabBar */,
 				49D7F4511F31A389004DF036 /* Home */,
 				49D7F44E1F31A376004DF036 /* Tutorial */,
+				493631DC1F31C64F008C774E /* TabBar */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -401,6 +412,7 @@
 				DAB5A40F1F32126C000235B0 /* Extension.swift in Sources */,
 				496FB1DE1F31982500E4042D /* Baby+CoreDataProperties.swift in Sources */,
 				496FB1DA1F31943D00E4042D /* CocoaBaby.xcdatamodeld in Sources */,
+				4911D9CE1F34455D0031B74A /* DiaryViewController.swift in Sources */,
 				DAB5A40B1F31B0C4000235B0 /* TutorialSetNameViewController.swift in Sources */,
 				DAB5A4171F33331C000235B0 /* ColorExtension.swift in Sources */,
 				49D7F44A1F319D99004DF036 /* HomeViewController.swift in Sources */,
