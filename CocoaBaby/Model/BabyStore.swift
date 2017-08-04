@@ -100,12 +100,15 @@ class BabyStore {
         }
         
         let calendar = Calendar.current
+
+        let startDate = calendar.startOfDay(for: Date())
         
-        // Replace the hour (time) of both dates with 00:00
-        let date1 = calendar.startOfDay(for: Date())
-        let date2 = calendar.startOfDay(for: baby.expectedBirthDate! as Date)
+        guard let expectedBirthDate = baby.expectedBirthDate else {
+            return 0
+        }
         
-        let components = calendar.dateComponents([.day], from: date1, to: date2)
+        let endDate = calendar.startOfDay(for: expectedBirthDate as Date)
+        let components = calendar.dateComponents([.day], from: startDate, to: endDate)
         
         guard let result = components.day else {
             return 0
