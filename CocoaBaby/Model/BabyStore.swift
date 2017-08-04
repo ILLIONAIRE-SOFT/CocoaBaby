@@ -95,8 +95,23 @@ class BabyStore {
     }
     
     func getDday() -> Int {
+        guard let baby = self.baby else {
+            return 0
+        }
         
-        return 150
+        let calendar = Calendar.current
+        
+        // Replace the hour (time) of both dates with 00:00
+        let date1 = calendar.startOfDay(for: Date())
+        let date2 = calendar.startOfDay(for: baby.expectedBirthDate! as Date)
+        
+        let components = calendar.dateComponents([.day], from: date1, to: date2)
+        
+        guard let result = components.day else {
+            return 0
+        }
+        
+        return result
     }
     
     func getName() -> String {
