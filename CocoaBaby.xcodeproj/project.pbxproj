@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4911D9CB1F3444A70031B74A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4911D9CA1F3444A70031B74A /* BaseViewController.swift */; };
 		493631DE1F31C662008C774E /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493631DD1F31C662008C774E /* TabBarViewController.swift */; };
 		496FB1DA1F31943D00E4042D /* CocoaBaby.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 496FB1D81F31943D00E4042D /* CocoaBaby.xcdatamodeld */; };
 		496FB1DD1F31982500E4042D /* Baby+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496FB1DB1F31982500E4042D /* Baby+CoreDataClass.swift */; };
@@ -44,6 +45,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4911D9CA1F3444A70031B74A /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = ViewController/BaseViewController.swift; sourceTree = "<group>"; };
 		493631DD1F31C662008C774E /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarViewController.swift; path = ViewController/TabBarViewController.swift; sourceTree = "<group>"; };
 		496FB1D91F31943D00E4042D /* CocoaBaby.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CocoaBaby.xcdatamodel; sourceTree = "<group>"; };
 		496FB1DB1F31982500E4042D /* Baby+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Baby+CoreDataClass.swift"; path = "Model/Baby+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -94,6 +96,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4911D9C91F3444990031B74A /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				4911D9CA1F3444A70031B74A /* BaseViewController.swift */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
 		493631DC1F31C64F008C774E /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -124,6 +134,7 @@
 		49D7F4461F319D5A004DF036 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				4911D9C91F3444990031B74A /* Base */,
 				493631DC1F31C64F008C774E /* TabBar */,
 				49D7F4511F31A389004DF036 /* Home */,
 				49D7F44E1F31A376004DF036 /* Tutorial */,
@@ -386,6 +397,7 @@
 				496FB1E11F31986E00E4042D /* BabyStore.swift in Sources */,
 				DAB5A40D1F31B185000235B0 /* TutorialSetDateViewController.swift in Sources */,
 				493631DE1F31C662008C774E /* TabBarViewController.swift in Sources */,
+				4911D9CB1F3444A70031B74A /* BaseViewController.swift in Sources */,
 				DAB5A40F1F32126C000235B0 /* Extension.swift in Sources */,
 				496FB1DE1F31982500E4042D /* Baby+CoreDataProperties.swift in Sources */,
 				496FB1DA1F31943D00E4042D /* CocoaBaby.xcdatamodeld in Sources */,

@@ -8,24 +8,23 @@
 
 import UIKit
 
-class HomeViewController: UIViewController {
+class HomeViewController: BaseViewController {
     
     @IBOutlet var babyView: UIView!
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var dDayLabel: UILabel!
     @IBOutlet var infoLabel: UILabel!
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        BabyStore.shared.loadBaby()
+        updateBabyInfo()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        BabyStore.shared.loadBaby()
-        updateBabyInfo()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -53,8 +52,6 @@ class HomeViewController: UIViewController {
     }
     
     private func updateBabyView() {
-        
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Gradation2")!)
         babyView.layer.cornerRadius = babyView.frame.width/2
     }
     
