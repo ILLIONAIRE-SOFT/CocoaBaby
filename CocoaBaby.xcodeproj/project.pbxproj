@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4911D9CB1F3444A70031B74A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4911D9CA1F3444A70031B74A /* BaseViewController.swift */; };
 		4911D9CE1F34455D0031B74A /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4911D9CD1F34455D0031B74A /* DiaryViewController.swift */; };
+		4911D9D11F3446110031B74A /* TipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4911D9D01F3446110031B74A /* TipsViewController.swift */; };
+		4911D9D41F34461F0031B74A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4911D9D31F34461F0031B74A /* SettingsViewController.swift */; };
 		493631DE1F31C662008C774E /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493631DD1F31C662008C774E /* TabBarViewController.swift */; };
 		496FB1DA1F31943D00E4042D /* CocoaBaby.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 496FB1D81F31943D00E4042D /* CocoaBaby.xcdatamodeld */; };
 		496FB1DD1F31982500E4042D /* Baby+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496FB1DB1F31982500E4042D /* Baby+CoreDataClass.swift */; };
@@ -48,6 +50,8 @@
 /* Begin PBXFileReference section */
 		4911D9CA1F3444A70031B74A /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = ViewController/BaseViewController.swift; sourceTree = "<group>"; };
 		4911D9CD1F34455D0031B74A /* DiaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiaryViewController.swift; path = ViewController/DiaryViewController.swift; sourceTree = "<group>"; };
+		4911D9D01F3446110031B74A /* TipsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TipsViewController.swift; path = ViewController/TipsViewController.swift; sourceTree = "<group>"; };
+		4911D9D31F34461F0031B74A /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = ViewController/SettingsViewController.swift; sourceTree = "<group>"; };
 		493631DD1F31C662008C774E /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarViewController.swift; path = ViewController/TabBarViewController.swift; sourceTree = "<group>"; };
 		496FB1D91F31943D00E4042D /* CocoaBaby.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CocoaBaby.xcdatamodel; sourceTree = "<group>"; };
 		496FB1DB1F31982500E4042D /* Baby+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Baby+CoreDataClass.swift"; path = "Model/Baby+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -114,6 +118,22 @@
 			name = Diary;
 			sourceTree = "<group>";
 		};
+		4911D9CF1F3445FD0031B74A /* Tips */ = {
+			isa = PBXGroup;
+			children = (
+				4911D9D01F3446110031B74A /* TipsViewController.swift */,
+			);
+			name = Tips;
+			sourceTree = "<group>";
+		};
+		4911D9D21F3446140031B74A /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				4911D9D31F34461F0031B74A /* SettingsViewController.swift */,
+			);
+			name = Settings;
+			sourceTree = "<group>";
+		};
 		493631DC1F31C64F008C774E /* TabBar */ = {
 			isa = PBXGroup;
 			children = (
@@ -144,6 +164,8 @@
 		49D7F4461F319D5A004DF036 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				4911D9D21F3446140031B74A /* Settings */,
+				4911D9CF1F3445FD0031B74A /* Tips */,
 				4911D9CC1F34453D0031B74A /* Diary */,
 				4911D9C91F3444990031B74A /* Base */,
 				49D7F4511F31A389004DF036 /* Home */,
@@ -405,11 +427,13 @@
 			files = (
 				496FB1DD1F31982500E4042D /* Baby+CoreDataClass.swift in Sources */,
 				49F6C77D1F318AF200373F06 /* AppDelegate.swift in Sources */,
+				4911D9D11F3446110031B74A /* TipsViewController.swift in Sources */,
 				496FB1E11F31986E00E4042D /* BabyStore.swift in Sources */,
 				DAB5A40D1F31B185000235B0 /* TutorialSetDateViewController.swift in Sources */,
 				493631DE1F31C662008C774E /* TabBarViewController.swift in Sources */,
 				4911D9CB1F3444A70031B74A /* BaseViewController.swift in Sources */,
 				DAB5A40F1F32126C000235B0 /* Extension.swift in Sources */,
+				4911D9D41F34461F0031B74A /* SettingsViewController.swift in Sources */,
 				496FB1DE1F31982500E4042D /* Baby+CoreDataProperties.swift in Sources */,
 				496FB1DA1F31943D00E4042D /* CocoaBaby.xcdatamodeld in Sources */,
 				4911D9CE1F34455D0031B74A /* DiaryViewController.swift in Sources */,

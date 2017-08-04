@@ -106,10 +106,10 @@
             </objects>
             <point key="canvasLocation" x="-39" y="354"/>
         </scene>
-        <!--View Controller-->
+        <!--Tips View Controller-->
         <scene sceneID="F8u-HJ-OBt">
             <objects>
-                <viewController id="jau-BR-TMk" sceneMemberID="viewController">
+                <viewController id="jau-BR-TMk" customClass="TipsViewController" customModule="CocoaBaby" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="txl-HY-iKo"/>
                         <viewControllerLayoutGuide type="bottom" id="UNM-cA-Llw"/>
@@ -125,10 +125,10 @@
             </objects>
             <point key="canvasLocation" x="756" y="358"/>
         </scene>
-        <!--View Controller-->
+        <!--Settings View Controller-->
         <scene sceneID="Yrc-CL-jbQ">
             <objects>
-                <viewController id="t3C-Yt-Ko2" sceneMemberID="viewController">
+                <viewController id="t3C-Yt-Ko2" customClass="SettingsViewController" customModule="CocoaBaby" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="L6K-dF-8v4"/>
                         <viewControllerLayoutGuide type="bottom" id="GZa-xw-83R"/>
