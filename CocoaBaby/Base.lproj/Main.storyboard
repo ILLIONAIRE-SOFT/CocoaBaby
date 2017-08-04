@@ -25,7 +25,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="DSD-Oa-74v">
-                                <rect key="frame" x="28" y="62" width="318" height="490"/>
+                                <rect key="frame" x="28" y="62" width="318" height="514"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WXI-VJ-Evp">
                                         <rect key="frame" x="0.0" y="0.0" width="318" height="27.5"/>
@@ -40,17 +40,17 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="EU3-gn-bBs">
-                                        <rect key="frame" x="0.0" y="121.5" width="318" height="338"/>
+                                        <rect key="frame" x="0.0" y="121.5" width="318" height="362"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="r5z-nd-37X">
-                                                <rect key="frame" x="8" y="10" width="302" height="302"/>
+                                            <view clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="r5z-nd-37X">
+                                                <rect key="frame" x="8" y="34" width="302" height="302"/>
                                                 <color key="backgroundColor" red="1" green="0.82311560477625534" blue="0.81501124706533812" alpha="0.7985354548929664" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="r5z-nd-37X" secondAttribute="height" multiplier="1:1" id="jSz-96-BCk"/>
                                                 </constraints>
                                             </view>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CocoaBaby" translatesAutoresizingMaskIntoConstraints="NO" id="IDx-rO-jJO">
-                                                <rect key="frame" x="83.5" y="93.5" width="151" height="151"/>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="CocoaBaby" translatesAutoresizingMaskIntoConstraints="NO" id="IDx-rO-jJO">
+                                                <rect key="frame" x="83.5" y="105.5" width="151" height="151"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="IDx-rO-jJO" secondAttribute="height" multiplier="1:1" id="QNz-Tr-GPd"/>
                                                 </constraints>
@@ -66,7 +66,7 @@
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nG0-ug-ems">
-                                        <rect key="frame" x="0.0" y="470.5" width="318" height="19.5"/>
+                                        <rect key="frame" x="0.0" y="494.5" width="318" height="19.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -79,7 +79,7 @@
                             <constraint firstItem="DSD-Oa-74v" firstAttribute="centerX" secondItem="n98-Ys-Pap" secondAttribute="centerX" id="5IZ-Jr-zAx"/>
                             <constraint firstItem="DSD-Oa-74v" firstAttribute="leading" secondItem="n98-Ys-Pap" secondAttribute="leadingMargin" constant="12" id="5uH-YO-Kec"/>
                             <constraint firstItem="DSD-Oa-74v" firstAttribute="top" secondItem="eW3-jb-481" secondAttribute="bottom" constant="42" id="CAt-6C-Zyh"/>
-                            <constraint firstItem="9s6-Dt-Bp4" firstAttribute="top" secondItem="DSD-Oa-74v" secondAttribute="bottom" constant="66" id="Nur-qc-1M7"/>
+                            <constraint firstItem="9s6-Dt-Bp4" firstAttribute="top" secondItem="DSD-Oa-74v" secondAttribute="bottom" constant="42" id="Nur-qc-1M7"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" image="ic_face_white" id="NSM-vg-ZCt">
