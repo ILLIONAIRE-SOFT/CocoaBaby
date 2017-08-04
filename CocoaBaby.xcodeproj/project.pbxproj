@@ -167,10 +167,10 @@
 				4911D9D21F3446140031B74A /* Settings */,
 				4911D9CF1F3445FD0031B74A /* Tips */,
 				4911D9CC1F34453D0031B74A /* Diary */,
-				4911D9C91F3444990031B74A /* Base */,
 				49D7F4511F31A389004DF036 /* Home */,
 				49D7F44E1F31A376004DF036 /* Tutorial */,
 				493631DC1F31C64F008C774E /* TabBar */,
+				4911D9C91F3444990031B74A /* Base */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
