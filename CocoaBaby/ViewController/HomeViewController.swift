@@ -18,13 +18,12 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        BabyStore.shared.loadBaby()
-        updateBabyInfo()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        updateBabyInfo()
     }
     
     override func viewDidAppear(_ animated: Bool) {
