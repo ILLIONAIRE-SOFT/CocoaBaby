@@ -43,10 +43,10 @@ class HomeViewController: BaseViewController {
     }
     
     // MARK: - Methods
-    
     private func updateBabyInfo() {
         self.nameLabel.text = BabyStore.shared.getName()
-        self.dDayLabel.text = "D-\(BabyStore.shared.getDday())"
+        let dDay = BabyStore.shared.getDday()
+        self.dDayLabel.text = "D\(dDay.mark)\(dDay.value)"
         self.infoLabel.text = "1주차에는 5대 영양소를 골고루!"
     }
     
