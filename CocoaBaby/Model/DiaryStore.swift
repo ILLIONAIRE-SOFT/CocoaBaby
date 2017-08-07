@@ -61,7 +61,6 @@ class DiaryStore {
         let context = persistentContainer.viewContext
         
         context.performAndWait {
-            
             let diary = Diary(context: context)
             
             guard
@@ -79,7 +78,7 @@ class DiaryStore {
             
             do {
                 try context.save()
-            } catch let error {
+            } catch {
                 print(DiaryStoreError.saveError)
             }
             
