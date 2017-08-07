@@ -72,7 +72,6 @@ class DiaryStore {
             
             do {
                 try context.save()
-                print("Save \(text)")
             } catch let error {
                 print(error)
             }
@@ -83,8 +82,25 @@ class DiaryStore {
         }
     }
     
-    func updateDiary() {
+    func updateDiary(text: String, diary: Diary, completion: (() -> ())?) {
+        let context = persistentContainer.viewContext
         
+        context.performAndWait {
+            diary.text = text
+            
+            do {
+                try context.save()
+                
+            } catch let error {
+                print(error)
+            }
+            
+            OperationQueue.main.addOperation {
+                if let completion = completion {
+                    completion()
+                }
+            }
+        }
     }
     
     func deleteDiary() {
