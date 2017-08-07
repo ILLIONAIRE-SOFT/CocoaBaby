@@ -130,14 +130,14 @@
                                                     <rect key="frame" x="7" y="3.5" width="360" height="100"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sbl-QM-uBX">
-                                                            <rect key="frame" x="20" y="53" width="35.5" height="17"/>
+                                                            <rect key="frame" x="20" y="50" width="320" height="17"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PdD-zw-KZk">
-                                                            <rect key="frame" x="177" y="21.5" width="39.5" height="19.5"/>
-                                                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                                            <rect key="frame" x="177" y="24" width="33" height="16"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <color key="textColor" red="0.58780255305039786" green="0.58780255305039786" blue="0.58780255305039786" alpha="0.97568778757668717" colorSpace="custom" customColorSpace="sRGB"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -145,8 +145,9 @@
                                                     <color key="backgroundColor" red="0.97223143236074272" green="0.97223143236074272" blue="0.97223143236074272" alpha="0.97568778757668717" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstItem="Sbl-QM-uBX" firstAttribute="leading" secondItem="sa3-sv-JX6" secondAttribute="leading" constant="20" id="Pz4-6l-EFl"/>
+                                                        <constraint firstAttribute="trailing" secondItem="Sbl-QM-uBX" secondAttribute="trailing" constant="20" id="TYp-fZ-1KY"/>
                                                         <constraint firstAttribute="height" constant="100" id="cKF-2c-lUg"/>
-                                                        <constraint firstAttribute="bottom" secondItem="Sbl-QM-uBX" secondAttribute="bottom" constant="30" id="efq-gc-CUN"/>
+                                                        <constraint firstItem="Sbl-QM-uBX" firstAttribute="top" secondItem="PdD-zw-KZk" secondAttribute="bottom" constant="10" id="g7F-E7-cSN"/>
                                                         <constraint firstAttribute="width" constant="360" id="jgt-h4-z6R"/>
                                                         <constraint firstItem="PdD-zw-KZk" firstAttribute="leading" secondItem="sa3-sv-JX6" secondAttribute="leading" constant="177" id="roW-z2-Rjs"/>
                                                     </constraints>

@@ -46,7 +46,9 @@ class DiaryViewController: BaseViewController, UITableViewDelegate, UITableViewD
         
         
         //다이어리를 생성한 날짜를 기준으로 출산일까지 D-day계산해서 표시
-       cell.cellLabel.text = "D-\(BabyStore.shared.getDday())" //
+       cell.cellLabel.text = "D-180"
+        cell.contentsLabel.text = "어쩌구저쩌구 컨텐츠ddㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ"
+        cell.dateLabel.text = "17.08.02"
         //cell.labelBackgroundView.tag = indexPath.row
        // cell.labelBackgroundView.isUserInteractionEnabled = true
         
