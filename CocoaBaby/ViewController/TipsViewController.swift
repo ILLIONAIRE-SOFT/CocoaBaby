@@ -10,7 +10,7 @@ import UIKit
 
 class TipsViewController: BaseViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
-    var weeks = ["week 1", "week 2","week 3", "week 4", "week 5"]
+    var weeks = ["임신 사실을\n처음 알게되었다면?", "week 2","week 3", "week 4", "week 5"]
     
     @IBOutlet var tipsCollectionView: UICollectionView!
     //@IBOutlet var tipsTabelView: UITableView!
@@ -20,8 +20,8 @@ class TipsViewController: BaseViewController, UICollectionViewDelegate, UICollec
         super.viewDidLoad()
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 20 , left: 20, bottom: 20, right: 20)
-        layout.itemSize = CGSize(width: view.frame.width/2 - 30, height: 160)
+        layout.sectionInset = UIEdgeInsets(top: 20 , left: 10, bottom: 20, right: 10)
+        layout.itemSize = CGSize(width: view.frame.width/2 - 20, height: 140)
         layout.minimumInteritemSpacing = 10
         layout.minimumLineSpacing = 20
         
@@ -31,8 +31,10 @@ class TipsViewController: BaseViewController, UICollectionViewDelegate, UICollec
         self.tipsCollectionView.delegate = self
         self.tipsCollectionView.dataSource = self
         
-        self.navigationController?.setNavigationBarHidden(true, animated: false)
-
+        self.navigationController?.navigationBar.isTranslucent = false
+        self.navigationController?.navigationBar.barTintColor = UIColor.mainBlueColor
+        self.navigationController?.navigationBar.tintColor = UIColor.white
+        self.navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: UIColor.white]
         
         
     }
@@ -46,11 +48,13 @@ class TipsViewController: BaseViewController, UICollectionViewDelegate, UICollec
         cell.imageView.backgroundColor = .white
         cell.imageView.image = #imageLiteral(resourceName: "CocoaBaby")
         cell.title.text = weeks[indexPath.row]
+        cell.title.lineBreakMode = .byWordWrapping // or NSLineBreakMode.ByWordWrapping
+        cell.title.numberOfLines = 0
         cell.title.font = UIFont(name: cell.title.font.fontName, size: 13)
         cell.title.textColor = .white
         cell.backgroundColor = UIColor.clear
         cell.layer.borderColor = UIColor.white.cgColor
-        cell.layer.borderWidth = 1
+        cell.layer.borderWidth = 0.5
         
         return cell
     }
