@@ -16,6 +16,7 @@ class TutorialSetNameViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        babyNameTextField.setBottomBorder()
         self.navigationController?.navigationBar.isHidden = true
         nextButton.isEnabled = false
         

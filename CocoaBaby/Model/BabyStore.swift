@@ -20,6 +20,7 @@ class BabyStore {
     var baby: Baby! = nil
     
     let persistentContainer: NSPersistentContainer = {
+        
         let container = NSPersistentContainer(name: "CocoaBaby")
         container.loadPersistentStores(completionHandler: { (description, error) in
             if let error = error {
@@ -30,6 +31,7 @@ class BabyStore {
     }()
     
     func loadBaby() {
+        
         let fetchRequest: NSFetchRequest<Baby> = Baby.fetchRequest()
         
         let viewContext = persistentContainer.viewContext
@@ -45,6 +47,7 @@ class BabyStore {
     }
     
     func registerBaby(from pregnantDate: Date?, to birthDate: Date?, name: String?) {
+        
         let context = persistentContainer.viewContext
         
         loadBaby()
@@ -77,6 +80,7 @@ class BabyStore {
     }
     
     func deleteBaby() {
+        
         let context = persistentContainer.viewContext
         
         if let baby = self.baby {
@@ -96,7 +100,26 @@ class BabyStore {
     
     func getDday() -> Int {
         
-        return 150
+        guard let baby = self.baby else {
+            return 0
+        }
+        
+        let calendar = Calendar.current
+
+        let startDate = calendar.startOfDay(for: Date())
+        
+        guard let expectedBirthDate = baby.expectedBirthDate else {
+            return 0
+        }
+        
+        let endDate = calendar.startOfDay(for: expectedBirthDate as Date)
+        let components = calendar.dateComponents([.day], from: startDate, to: endDate)
+        
+        guard let result = components.day else {
+            return 0
+        }
+        
+        return result
     }
     
     func getName() -> String {
