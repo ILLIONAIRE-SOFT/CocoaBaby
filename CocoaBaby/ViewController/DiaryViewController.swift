@@ -44,11 +44,13 @@ class DiaryViewController: BaseViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomTableViewCell") as! CustomTableViewCell
         
-        
         //다이어리를 생성한 날짜를 기준으로 출산일까지 D-day계산해서 표시
-       cell.cellLabel.text = "D-180"
-        cell.contentsLabel.text = "어쩌구저쩌구 컨텐츠ddㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇㅇ"
+        cell.cellLabel.text = "Week 3"
         cell.dateLabel.text = "17.08.02"
+        cell.contentsLabel.text = "sadadadd"
+        cell.addtionalDate.text = "+ 3"
+        
+        
         //cell.labelBackgroundView.tag = indexPath.row
        // cell.labelBackgroundView.isUserInteractionEnabled = true
         

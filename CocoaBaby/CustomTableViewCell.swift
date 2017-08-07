@@ -10,10 +10,12 @@ import UIKit
 
 class CustomTableViewCell: UITableViewCell {
     
+   
     @IBOutlet var labelBackgroundView: UIView!
     @IBOutlet var cellLabel: UILabel!
     @IBOutlet var contentsLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
+    @IBOutlet var addtionalDate: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
