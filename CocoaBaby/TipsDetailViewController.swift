@@ -20,10 +20,12 @@ class TipsDetailViewController: BaseViewController, UITableViewDataSource, UITab
 
         self.tipsDetailTableView.delegate = self
         self.tipsDetailTableView.dataSource = self
-
-        
     }
 
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 100
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.tipList.count
     }
@@ -35,9 +37,4 @@ class TipsDetailViewController: BaseViewController, UITableViewDataSource, UITab
         
         return cell
     }
-    
-    
-    
-
-
 }
