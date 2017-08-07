@@ -20,5 +20,5 @@ extension Baby {
     @NSManaged public var createdAt: NSDate?
     @NSManaged public var expectedBirthDate: NSDate?
     @NSManaged public var expectedPregnantDate: NSDate?
-
+    
 }
