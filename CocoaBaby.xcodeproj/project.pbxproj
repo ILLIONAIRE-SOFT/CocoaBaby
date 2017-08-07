@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		490D6C221F383EA300EE0283 /* TestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490D6C211F383EA300EE0283 /* TestViewController.swift */; };
 		4911D9CB1F3444A70031B74A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4911D9CA1F3444A70031B74A /* BaseViewController.swift */; };
 		4911D9CE1F34455D0031B74A /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4911D9CD1F34455D0031B74A /* DiaryViewController.swift */; };
 		4911D9D11F3446110031B74A /* TipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4911D9D01F3446110031B74A /* TipsViewController.swift */; };
@@ -55,6 +56,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		490D6C211F383EA300EE0283 /* TestViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestViewController.swift; sourceTree = "<group>"; };
 		4911D9CA1F3444A70031B74A /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = ViewController/BaseViewController.swift; sourceTree = "<group>"; };
 		4911D9CD1F34455D0031B74A /* DiaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiaryViewController.swift; path = ViewController/DiaryViewController.swift; sourceTree = "<group>"; };
 		4911D9D01F3446110031B74A /* TipsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TipsViewController.swift; path = ViewController/TipsViewController.swift; sourceTree = "<group>"; };
@@ -219,6 +221,7 @@
 				49D7F44E1F31A376004DF036 /* Tutorial */,
 				493631DC1F31C64F008C774E /* TabBar */,
 				4911D9C91F3444990031B74A /* Base */,
+				490D6C211F383EA300EE0283 /* TestViewController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -478,6 +481,7 @@
 			files = (
 				DAEE34BB1F382E8B0090DBF5 /* TipsTableViewCell.swift in Sources */,
 				496FB1DD1F31982500E4042D /* Baby+CoreDataClass.swift in Sources */,
+				490D6C221F383EA300EE0283 /* TestViewController.swift in Sources */,
 				49F6C77D1F318AF200373F06 /* AppDelegate.swift in Sources */,
 				4911D9D11F3446110031B74A /* TipsViewController.swift in Sources */,
 				496FB1E11F31986E00E4042D /* BabyStore.swift in Sources */,
