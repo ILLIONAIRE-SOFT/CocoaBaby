@@ -9,6 +9,12 @@
 import Foundation
 import CoreData
 
+enum DiaryStoreError: Error {
+    case invalidDateComponents
+    case saveError
+    case fetchError
+}
+
 class DiaryStore {
     
     static let shared: DiaryStore = DiaryStore()
@@ -46,7 +52,7 @@ class DiaryStore {
                     completion()
                 }
             } catch {
-                //                print(DiaryStoreError.fetchDiariesError)
+                print(DiaryStoreError.fetchError)
             }
         }
     }
@@ -62,6 +68,7 @@ class DiaryStore {
                 let year = dateComponents.year,
                 let month = dateComponents.month,
                 let day = dateComponents.day else {
+                    print(DiaryStoreError.invalidDateComponents)
                     return
             }
             
@@ -73,7 +80,7 @@ class DiaryStore {
             do {
                 try context.save()
             } catch let error {
-                print(error)
+                print(DiaryStoreError.saveError)
             }
             
             OperationQueue.main.addOperation {
@@ -90,9 +97,8 @@ class DiaryStore {
             
             do {
                 try context.save()
-                
-            } catch let error {
-                print(error)
+            } catch {
+                print(DiaryStoreError.saveError)
             }
             
             OperationQueue.main.addOperation {
