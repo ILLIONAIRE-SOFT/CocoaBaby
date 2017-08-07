@@ -10,6 +10,7 @@ import UIKit
 
 class HomeViewController: BaseViewController {
     
+    @IBOutlet var babyImageView: UIImageView!
     @IBOutlet var babyView: UIView!
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var dDayLabel: UILabel!
@@ -18,6 +19,8 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        babyImageView.image = UIImage(named: "CocoaBaby")?.withRenderingMode(.alwaysTemplate)
+        babyImageView.tintColor = UIColor.mainBlueColor
     }
     
     override func viewWillAppear(_ animated: Bool) {
