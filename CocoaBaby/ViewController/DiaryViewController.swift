@@ -12,7 +12,20 @@ class DiaryViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+//        let dateComponents = Calendar.current.dateComponents([.year, .month, .day], from: Date())
+//        DiaryStore.shared.createDiary(text: "김다동", dateComponents: dateComponents) {
+//            print("Save")
+//        }
+        
+        DiaryStore.shared.fetchDiaries(year: 2017, month: 8) { 
+            print("Load")
+        }
     }
 
 }
