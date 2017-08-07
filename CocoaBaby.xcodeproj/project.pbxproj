@@ -29,6 +29,7 @@
 		49F6C7871F318AF200373F06 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49F6C7851F318AF200373F06 /* LaunchScreen.storyboard */; };
 		49F6C7921F318AF200373F06 /* CocoaBabyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F6C7911F318AF200373F06 /* CocoaBabyTests.swift */; };
 		49F6C79D1F318AF200373F06 /* CocoaBabyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F6C79C1F318AF200373F06 /* CocoaBabyUITests.swift */; };
+		D45189B61F38420400937869 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45189B51F38420400937869 /* CustomTableViewCell.swift */; };
 		DAB5A40B1F31B0C4000235B0 /* TutorialSetNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB5A40A1F31B0C4000235B0 /* TutorialSetNameViewController.swift */; };
 		DAB5A40D1F31B185000235B0 /* TutorialSetDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB5A40C1F31B185000235B0 /* TutorialSetDateViewController.swift */; };
 		DAB5A40F1F32126C000235B0 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB5A40E1F32126C000235B0 /* Extension.swift */; };
@@ -87,6 +88,7 @@
 		49F6C7981F318AF200373F06 /* CocoaBabyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocoaBabyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49F6C79C1F318AF200373F06 /* CocoaBabyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocoaBabyUITests.swift; sourceTree = "<group>"; };
 		49F6C79E1F318AF200373F06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D45189B51F38420400937869 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
 		DAB5A40A1F31B0C4000235B0 /* TutorialSetNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TutorialSetNameViewController.swift; path = ViewController/TutorialSetNameViewController.swift; sourceTree = "<group>"; };
 		DAB5A40C1F31B185000235B0 /* TutorialSetDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialSetDateViewController.swift; sourceTree = "<group>"; };
 		DAB5A40E1F32126C000235B0 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				4911D9CD1F34455D0031B74A /* DiaryViewController.swift */,
+				D45189B51F38420400937869 /* CustomTableViewCell.swift */,
 			);
 			name = Diary;
 			sourceTree = "<group>";
@@ -478,6 +481,7 @@
 			files = (
 				DAEE34BB1F382E8B0090DBF5 /* TipsTableViewCell.swift in Sources */,
 				496FB1DD1F31982500E4042D /* Baby+CoreDataClass.swift in Sources */,
+				D45189B61F38420400937869 /* CustomTableViewCell.swift in Sources */,
 				49F6C77D1F318AF200373F06 /* AppDelegate.swift in Sources */,
 				4911D9D11F3446110031B74A /* TipsViewController.swift in Sources */,
 				496FB1E11F31986E00E4042D /* BabyStore.swift in Sources */,

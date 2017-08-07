@@ -10,8 +10,14 @@ import UIKit
 
 class DiaryViewController: BaseViewController {
 
+    @IBOutlet var diaryTableView: UITableView!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        diaryTableView.backgroundColor = UIColor.mainBlueColor
         
     }
     
