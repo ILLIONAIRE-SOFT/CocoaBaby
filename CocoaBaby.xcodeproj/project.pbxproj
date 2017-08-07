@@ -495,11 +495,8 @@
 				DAB5A4171F33331C000235B0 /* ColorExtension.swift in Sources */,
 				499CABDB1F382A170008FF8E /* Diary+CoreDataProperties.swift in Sources */,
 				49D7F44A1F319D99004DF036 /* HomeViewController.swift in Sources */,
-<<<<<<< HEAD
 				DAEE34BF1F3834FC0090DBF5 /* TipsDetailViewController.swift in Sources */,
-=======
 				499CABDA1F382A170008FF8E /* Diary+CoreDataClass.swift in Sources */,
->>>>>>> 843de6b14adb25aa36ec1edf3389a9efa685dead
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
