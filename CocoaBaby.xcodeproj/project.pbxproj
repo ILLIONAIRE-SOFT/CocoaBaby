@@ -30,6 +30,8 @@
 		DAB5A40D1F31B185000235B0 /* TutorialSetDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB5A40C1F31B185000235B0 /* TutorialSetDateViewController.swift */; };
 		DAB5A40F1F32126C000235B0 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB5A40E1F32126C000235B0 /* Extension.swift */; };
 		DAB5A4171F33331C000235B0 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB5A4161F33331C000235B0 /* ColorExtension.swift */; };
+		DAEE34BB1F382E8B0090DBF5 /* TipsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEE34BA1F382E8B0090DBF5 /* TipsTableViewCell.swift */; };
+		DAEE34BF1F3834FC0090DBF5 /* TipsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEE34BE1F3834FC0090DBF5 /* TipsDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -83,6 +85,8 @@
 		DAB5A40C1F31B185000235B0 /* TutorialSetDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialSetDateViewController.swift; sourceTree = "<group>"; };
 		DAB5A40E1F32126C000235B0 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		DAB5A4161F33331C000235B0 /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorExtension.swift; path = Extension/ColorExtension.swift; sourceTree = "<group>"; };
+		DAEE34BA1F382E8B0090DBF5 /* TipsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TipsTableViewCell.swift; path = ViewController/TipsTableViewCell.swift; sourceTree = "<group>"; };
+		DAEE34BE1F3834FC0090DBF5 /* TipsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,6 +134,8 @@
 			isa = PBXGroup;
 			children = (
 				4911D9D01F3446110031B74A /* TipsViewController.swift */,
+				DAEE34BE1F3834FC0090DBF5 /* TipsDetailViewController.swift */,
+				DAEE34BA1F382E8B0090DBF5 /* TipsTableViewCell.swift */,
 			);
 			name = Tips;
 			sourceTree = "<group>";
@@ -453,6 +459,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAEE34BB1F382E8B0090DBF5 /* TipsTableViewCell.swift in Sources */,
 				496FB1DD1F31982500E4042D /* Baby+CoreDataClass.swift in Sources */,
 				49F6C77D1F318AF200373F06 /* AppDelegate.swift in Sources */,
 				4911D9D11F3446110031B74A /* TipsViewController.swift in Sources */,
@@ -469,6 +476,7 @@
 				DAB5A40B1F31B0C4000235B0 /* TutorialSetNameViewController.swift in Sources */,
 				DAB5A4171F33331C000235B0 /* ColorExtension.swift in Sources */,
 				49D7F44A1F319D99004DF036 /* HomeViewController.swift in Sources */,
+				DAEE34BF1F3834FC0090DBF5 /* TipsDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
