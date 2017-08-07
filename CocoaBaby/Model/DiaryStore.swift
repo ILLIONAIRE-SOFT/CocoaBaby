@@ -9,6 +9,12 @@
 import Foundation
 import CoreData
 
+enum DiaryStoreError: Error {
+    case invalidDateComponents
+    case saveError
+    case fetchError
+}
+
 class DiaryStore {
     
     static let shared: DiaryStore = DiaryStore()
@@ -46,7 +52,7 @@ class DiaryStore {
                     completion()
                 }
             } catch {
-                //                print(DiaryStoreError.fetchDiariesError)
+                print(DiaryStoreError.fetchError)
             }
         }
     }
@@ -55,13 +61,13 @@ class DiaryStore {
         let context = persistentContainer.viewContext
         
         context.performAndWait {
-            
             let diary = Diary(context: context)
             
             guard
                 let year = dateComponents.year,
                 let month = dateComponents.month,
                 let day = dateComponents.day else {
+                    print(DiaryStoreError.invalidDateComponents)
                     return
             }
             
@@ -72,9 +78,8 @@ class DiaryStore {
             
             do {
                 try context.save()
-                print("Save \(text)")
-            } catch let error {
-                print(error)
+            } catch {
+                print(DiaryStoreError.saveError)
             }
             
             OperationQueue.main.addOperation {
@@ -83,8 +88,24 @@ class DiaryStore {
         }
     }
     
-    func updateDiary() {
+    func updateDiary(text: String, diary: Diary, completion: (() -> ())?) {
+        let context = persistentContainer.viewContext
         
+        context.performAndWait {
+            diary.text = text
+            
+            do {
+                try context.save()
+            } catch {
+                print(DiaryStoreError.saveError)
+            }
+            
+            OperationQueue.main.addOperation {
+                if let completion = completion {
+                    completion()
+                }
+            }
+        }
     }
     
     func deleteDiary() {

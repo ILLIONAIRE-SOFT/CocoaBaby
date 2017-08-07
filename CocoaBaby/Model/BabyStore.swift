@@ -13,6 +13,11 @@ enum BabyError: Error {
     case invalidInput
 }
 
+struct DdayResult {
+    var value: Int
+    var mark: String
+}
+
 class BabyStore {
     
     static let shared: BabyStore = BabyStore()
@@ -98,10 +103,12 @@ class BabyStore {
         }
     }
     
-    func getDday() -> Int {
+    func getDday() -> DdayResult {
+        
+        var result = DdayResult(value: 0, mark: "+")
         
         guard let baby = self.baby else {
-            return 0
+            return result
         }
         
         let calendar = Calendar.current
@@ -109,14 +116,22 @@ class BabyStore {
         let startDate = calendar.startOfDay(for: Date())
         
         guard let expectedBirthDate = baby.expectedBirthDate else {
-            return 0
+            return result
         }
         
         let endDate = calendar.startOfDay(for: expectedBirthDate as Date)
         let components = calendar.dateComponents([.day], from: startDate, to: endDate)
         
-        guard let result = components.day else {
-            return 0
+        guard let value = components.day else {
+            return result
+        }
+        
+        if value >= 0 {
+            result.value = value
+            result.mark = "-"
+        } else {
+            result.mark = "+"
+            result.value = abs(value)
         }
         
         return result
