@@ -8,7 +8,6 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
-        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -24,8 +23,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" axis="vertical" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="DSD-Oa-74v">
-                                <rect key="frame" x="28" y="62" width="318" height="514"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="DSD-Oa-74v">
+                                <rect key="frame" x="28" y="62" width="318" height="506"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WXI-VJ-Evp">
                                         <rect key="frame" x="0.0" y="0.0" width="318" height="27.5"/>
@@ -34,39 +33,43 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D - 150" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="q76-eA-cfl">
-                                        <rect key="frame" x="0.0" y="38.5" width="318" height="72"/>
+                                        <rect key="frame" x="0.0" y="31.5" width="318" height="72"/>
                                         <fontDescription key="fontDescription" name="AppleSDGothicNeo-Thin" family="Apple SD Gothic Neo" pointSize="60"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <view contentMode="scaleToFill" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="EU3-gn-bBs">
-                                        <rect key="frame" x="0.0" y="121.5" width="318" height="362"/>
+                                        <rect key="frame" x="0.0" y="107.5" width="318" height="375"/>
                                         <subviews>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="r5z-nd-37X">
-                                                <rect key="frame" x="8" y="34" width="302" height="302"/>
+                                                <rect key="frame" x="12" y="40.5" width="294" height="294"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="CocoaBaby" translatesAutoresizingMaskIntoConstraints="NO" id="IDx-rO-jJO">
+                                                        <rect key="frame" x="39.5" y="40" width="214" height="214"/>
+                                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" secondItem="IDx-rO-jJO" secondAttribute="height" multiplier="1:1" id="QNz-Tr-GPd"/>
+                                                            <constraint firstAttribute="width" secondItem="IDx-rO-jJO" secondAttribute="height" multiplier="1:1" id="fNq-fO-seP"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
                                                 <color key="backgroundColor" red="1" green="0.82311560477625534" blue="0.81501124706533812" alpha="0.7985354548929664" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
+                                                    <constraint firstItem="IDx-rO-jJO" firstAttribute="top" secondItem="r5z-nd-37X" secondAttribute="top" constant="40" id="5o5-Rg-BPr"/>
+                                                    <constraint firstItem="IDx-rO-jJO" firstAttribute="centerX" secondItem="r5z-nd-37X" secondAttribute="centerX" id="Cbt-S1-YqC"/>
+                                                    <constraint firstItem="IDx-rO-jJO" firstAttribute="centerY" secondItem="r5z-nd-37X" secondAttribute="centerY" id="E6A-dF-qFT"/>
                                                     <constraint firstAttribute="width" secondItem="r5z-nd-37X" secondAttribute="height" multiplier="1:1" id="jSz-96-BCk"/>
                                                 </constraints>
                                             </view>
-                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="CocoaBaby" translatesAutoresizingMaskIntoConstraints="NO" id="IDx-rO-jJO">
-                                                <rect key="frame" x="83.5" y="105.5" width="151" height="151"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="IDx-rO-jJO" secondAttribute="height" multiplier="1:1" id="QNz-Tr-GPd"/>
-                                                </constraints>
-                                            </imageView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="IDx-rO-jJO" firstAttribute="centerY" secondItem="EU3-gn-bBs" secondAttribute="centerY" id="2k1-WL-jvC"/>
-                                            <constraint firstAttribute="bottom" secondItem="r5z-nd-37X" secondAttribute="bottom" constant="26" id="4Ie-hy-3h6"/>
-                                            <constraint firstItem="IDx-rO-jJO" firstAttribute="width" secondItem="r5z-nd-37X" secondAttribute="width" multiplier="0.5" id="849-d7-UsV"/>
-                                            <constraint firstItem="IDx-rO-jJO" firstAttribute="centerX" secondItem="EU3-gn-bBs" secondAttribute="centerX" id="P9Y-FT-yuN"/>
-                                            <constraint firstItem="r5z-nd-37X" firstAttribute="leading" secondItem="EU3-gn-bBs" secondAttribute="leading" constant="8" id="TvN-L9-MTx"/>
+                                            <constraint firstItem="r5z-nd-37X" firstAttribute="centerY" secondItem="EU3-gn-bBs" secondAttribute="centerY" id="P30-qh-3eZ"/>
+                                            <constraint firstItem="r5z-nd-37X" firstAttribute="leading" secondItem="EU3-gn-bBs" secondAttribute="leading" constant="12" id="TvN-L9-MTx"/>
                                             <constraint firstItem="r5z-nd-37X" firstAttribute="centerX" secondItem="EU3-gn-bBs" secondAttribute="centerX" id="uRD-6o-hhh"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.90000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nG0-ug-ems">
-                                        <rect key="frame" x="0.0" y="494.5" width="318" height="19.5"/>
+                                        <rect key="frame" x="0.0" y="486.5" width="318" height="19.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -79,7 +82,7 @@
                             <constraint firstItem="DSD-Oa-74v" firstAttribute="centerX" secondItem="n98-Ys-Pap" secondAttribute="centerX" id="5IZ-Jr-zAx"/>
                             <constraint firstItem="DSD-Oa-74v" firstAttribute="leading" secondItem="n98-Ys-Pap" secondAttribute="leadingMargin" constant="12" id="5uH-YO-Kec"/>
                             <constraint firstItem="DSD-Oa-74v" firstAttribute="top" secondItem="eW3-jb-481" secondAttribute="bottom" constant="42" id="CAt-6C-Zyh"/>
-                            <constraint firstItem="9s6-Dt-Bp4" firstAttribute="top" secondItem="DSD-Oa-74v" secondAttribute="bottom" constant="42" id="Nur-qc-1M7"/>
+                            <constraint firstItem="9s6-Dt-Bp4" firstAttribute="top" secondItem="DSD-Oa-74v" secondAttribute="bottom" constant="50" id="Nur-qc-1M7"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" image="ic_face_white" id="NSM-vg-ZCt">
@@ -87,6 +90,7 @@
                     </tabBarItem>
                     <navigationItem key="navigationItem" title="Baby" id="cBx-QP-5NU"/>
                     <connections>
+                        <outlet property="babyImageView" destination="IDx-rO-jJO" id="udd-d0-YBh"/>
                         <outlet property="babyView" destination="r5z-nd-37X" id="qS1-Vs-3Cc"/>
                         <outlet property="dDayLabel" destination="q76-eA-cfl" id="L3e-8m-Li7"/>
                         <outlet property="infoLabel" destination="nG0-ug-ems" id="OlM-Le-fQy"/>
