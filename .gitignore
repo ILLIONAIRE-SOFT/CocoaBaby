@@ -27,7 +27,7 @@ xcuserdata/
 
 ### Xcode Patch ###
 *.xcodeproj/*
-CocoaBaby.xcodeproj/project.pbxproj
+!*.xcodeproj/project.pbxproj
 !*.xcodeproj/xcshareddata/
 !*.xcworkspace/contents.xcworkspacedata
 /*.gcno
