@@ -94,8 +94,51 @@
                     <view key="view" contentMode="scaleToFill" id="aLf-pX-XhV">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UM1-fq-rQn">
+                                <rect key="frame" x="24" y="56" width="327" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="V3U-CU-7q1"/>
+                                </constraints>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sFJ-M9-d43">
+                                <rect key="frame" x="24" y="94" width="327" height="0.5"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="0.5" id="Sk0-23-sUF"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fic-02-ua1">
+                                <rect key="frame" x="170" y="601" width="34" height="30"/>
+                                <state key="normal" title="Save">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tappedSave:" destination="s9y-kI-1Xb" eventType="touchUpInside" id="K9c-Kk-N9j"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tWE-FB-SHi" firstAttribute="top" secondItem="Fic-02-ua1" secondAttribute="bottom" constant="36" id="8Qd-UC-Ccu"/>
+                            <constraint firstItem="sFJ-M9-d43" firstAttribute="top" secondItem="UM1-fq-rQn" secondAttribute="bottom" constant="8" id="A5Q-UZ-5Z3"/>
+                            <constraint firstAttribute="trailing" secondItem="UM1-fq-rQn" secondAttribute="trailing" constant="24" id="B1O-Mc-tgw"/>
+                            <constraint firstItem="sFJ-M9-d43" firstAttribute="leading" secondItem="UM1-fq-rQn" secondAttribute="leading" id="QkN-mG-USd"/>
+                            <constraint firstItem="sFJ-M9-d43" firstAttribute="trailing" secondItem="UM1-fq-rQn" secondAttribute="trailing" id="TT8-KC-tQG"/>
+                            <constraint firstItem="UM1-fq-rQn" firstAttribute="top" secondItem="Nhz-Qj-RTm" secondAttribute="bottom" constant="36" id="ftM-Yt-lY8"/>
+                            <constraint firstItem="Fic-02-ua1" firstAttribute="centerX" secondItem="aLf-pX-XhV" secondAttribute="centerX" id="na2-jR-6Fv"/>
+                            <constraint firstItem="UM1-fq-rQn" firstAttribute="leading" secondItem="aLf-pX-XhV" secondAttribute="leading" constant="24" id="tc6-vA-hSI"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="nameField" destination="UM1-fq-rQn" id="VCQ-ip-SPk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KqJ-HE-Lvg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

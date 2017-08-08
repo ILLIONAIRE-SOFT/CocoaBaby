@@ -84,9 +84,44 @@ class BabyStore {
             
             do {
                 try context.save()
-                print("Save")
             } catch let error {
                 print(error)
+            }
+        }
+    }
+    
+    func updateBaby(name: String?, pregnantDate: Date?, birthDate: Date?, completion: ((Baby) -> ())?) {
+        
+        let context = persistentContainer.viewContext
+        
+        context.performAndWait {
+            if self.baby == nil {
+                self.baby = Baby(context: context)
+                self.baby.createdAt = Date() as NSDate
+            }
+            
+            if let name = name {
+                self.baby.name = name
+            }
+            
+            if let pregnantDate = pregnantDate {
+                self.baby.expectedPregnantDate = pregnantDate as NSDate
+            }
+            
+            if let birthDate = birthDate {
+                self.baby.expectedBirthDate = birthDate as NSDate
+            }
+            
+            do {
+                try context.save()
+            } catch let error {
+                print(error)
+            }
+            
+            if let completion = completion {
+                OperationQueue.main.addOperation {
+                    completion(self.baby)
+                }
             }
         }
     }
