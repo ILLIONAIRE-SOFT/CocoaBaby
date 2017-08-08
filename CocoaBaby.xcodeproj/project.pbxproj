@@ -31,6 +31,10 @@
 		49F6C79D1F318AF200373F06 /* CocoaBabyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F6C79C1F318AF200373F06 /* CocoaBabyUITests.swift */; };
 		49FEEE321F3844C70046D5A3 /* CocoaDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FEEE311F3844C70046D5A3 /* CocoaDateFormatter.swift */; };
 		D45189B61F38420400937869 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45189B51F38420400937869 /* CustomTableViewCell.swift */; };
+		D45189B81F39669D00937869 /* Diary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D45189B71F39669D00937869 /* Diary.storyboard */; };
+		D45189BB1F39679700937869 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D45189B91F39679700937869 /* Home.storyboard */; };
+		D45189BE1F3968C100937869 /* Tips.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D45189BC1F3968C100937869 /* Tips.storyboard */; };
+		D45189C11F39692E00937869 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D45189BF1F39692E00937869 /* Settings.storyboard */; };
 		DAB5A40B1F31B0C4000235B0 /* TutorialSetNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB5A40A1F31B0C4000235B0 /* TutorialSetNameViewController.swift */; };
 		DAB5A40D1F31B185000235B0 /* TutorialSetDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB5A40C1F31B185000235B0 /* TutorialSetDateViewController.swift */; };
 		DAB5A40F1F32126C000235B0 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB5A40E1F32126C000235B0 /* Extension.swift */; };
@@ -92,6 +96,10 @@
 		49F6C79E1F318AF200373F06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49FEEE311F3844C70046D5A3 /* CocoaDateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CocoaDateFormatter.swift; path = Utilities/CocoaDateFormatter.swift; sourceTree = "<group>"; };
 		D45189B51F38420400937869 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		D45189B71F39669D00937869 /* Diary.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Diary.storyboard; sourceTree = "<group>"; };
+		D45189BA1F39679700937869 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
+		D45189BD1F3968C100937869 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Tips.storyboard; sourceTree = "<group>"; };
+		D45189C01F39692E00937869 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
 		DAB5A40A1F31B0C4000235B0 /* TutorialSetNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TutorialSetNameViewController.swift; path = ViewController/TutorialSetNameViewController.swift; sourceTree = "<group>"; };
 		DAB5A40C1F31B185000235B0 /* TutorialSetDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialSetDateViewController.swift; sourceTree = "<group>"; };
 		DAB5A40E1F32126C000235B0 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
@@ -237,6 +245,10 @@
 				49F6C7851F318AF200373F06 /* LaunchScreen.storyboard */,
 				49F6C7801F318AF200373F06 /* Main.storyboard */,
 				49D7F44C1F31A32E004DF036 /* Tutorial.storyboard */,
+				D45189B71F39669D00937869 /* Diary.storyboard */,
+				D45189B91F39679700937869 /* Home.storyboard */,
+				D45189BC1F3968C100937869 /* Tips.storyboard */,
+				D45189BF1F39692E00937869 /* Settings.storyboard */,
 			);
 			name = Storyboard;
 			sourceTree = "<group>";
@@ -464,10 +476,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D45189BB1F39679700937869 /* Home.storyboard in Resources */,
 				4911D9DA1F344DCA0031B74A /* Localizable.strings in Resources */,
 				49F6C7871F318AF200373F06 /* LaunchScreen.storyboard in Resources */,
+				D45189B81F39669D00937869 /* Diary.storyboard in Resources */,
 				49F6C7841F318AF200373F06 /* Assets.xcassets in Resources */,
 				49D7F44D1F31A32E004DF036 /* Tutorial.storyboard in Resources */,
+				D45189C11F39692E00937869 /* Settings.storyboard in Resources */,
+				D45189BE1F3968C100937869 /* Tips.storyboard in Resources */,
 				49F6C7821F318AF200373F06 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -578,6 +594,30 @@
 				4911D9D51F344CF10031B74A /* ko */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		D45189B91F39679700937869 /* Home.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D45189BA1F39679700937869 /* Base */,
+			);
+			name = Home.storyboard;
+			sourceTree = "<group>";
+		};
+		D45189BC1F3968C100937869 /* Tips.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D45189BD1F3968C100937869 /* Base */,
+			);
+			name = Tips.storyboard;
+			sourceTree = "<group>";
+		};
+		D45189BF1F39692E00937869 /* Settings.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D45189C01F39692E00937869 /* Base */,
+			);
+			name = Settings.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
