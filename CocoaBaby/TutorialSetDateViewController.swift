@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TutorialSetDateViewController: UIViewController, UITextFieldDelegate {
+class TutorialSetDateViewController: BaseViewController, UITextFieldDelegate {
 
     var babyName : String?
     var pregnantDate : Date?
@@ -16,6 +16,8 @@ class TutorialSetDateViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet var registerButton: UIButton!
     
+    @IBOutlet var pregnantDateLabel: UILabel!
+    @IBOutlet var birthDateLabel: UILabel!
     @IBOutlet weak var pregnantDateTextField: UITextField!
     @IBOutlet weak var birthDateTextField: UITextField!
     var datePicker : UIDatePicker!
@@ -27,20 +29,28 @@ class TutorialSetDateViewController: UIViewController, UITextFieldDelegate {
         self.birthDateTextField.delegate = self
         self.registerButton.isEnabled = false
         
-        self.view.backgroundColor = UIColor(colorWithHexValue: 0xe7a396)
+        
+        self.pregnantDateLabel.text = "마지막 생리일이 언제인가요?" // localize 필요
+        self.birthDateLabel.text = "출산 예정일이 언제인가요?" // localize 필요
+        
+        
+        self.pregnantDateTextField.tintColor = .clear
+        self.birthDateTextField.tintColor = .clear
+
         
         self.registerButton.layer.cornerRadius = 4
-        self.pregnantDateTextField.attributedPlaceholder = NSAttributedString(string: "아이를 임신한 날짜를 선택해 주세요", attributes: [NSForegroundColorAttributeName: UIColor.white])
-        self.birthDateTextField.attributedPlaceholder = NSAttributedString(string: "아이의 출산 예정일을 선택해 주세요", attributes: [NSForegroundColorAttributeName: UIColor.white])
+        self.registerButton.backgroundColor = .white
+        self.pregnantDateTextField.attributedPlaceholder = NSAttributedString(string: "마지막 생리일을 선택해 주세요.", attributes: [NSForegroundColorAttributeName: UIColor.lightGray])
+        self.birthDateTextField.attributedPlaceholder = NSAttributedString(string: "아이의 출산 예정일을 선택해 주세요", attributes: [NSForegroundColorAttributeName: UIColor.lightGray])
         
         pregnantDateTextField.setBottomBorder()
         birthDateTextField.setBottomBorder()
         
-        //pregnantDateTextField.becomeFirstResponder()
     }
     
-    override var preferredStatusBarStyle: UIStatusBarStyle {
-        return .lightContent
+    @IBAction func back(_ sender: Any) {
+        self.navigationController?.popViewController(animated: true)
+        
     }
     
     @IBAction func resignKeyBoard() {
@@ -105,7 +115,12 @@ class TutorialSetDateViewController: UIViewController, UITextFieldDelegate {
     }
     
     func cancelClick() {
-        pregnantDateTextField.resignFirstResponder()
+        if pregnantDateTextField.isFirstResponder {
+            pregnantDateTextField.resignFirstResponder()
+        }
+        else {
+            birthDateTextField.resignFirstResponder()
+        }
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {

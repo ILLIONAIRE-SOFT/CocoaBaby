@@ -15,6 +15,7 @@ class HomeViewController: BaseViewController {
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var dDayLabel: UILabel!
     @IBOutlet var infoLabel: UILabel!
+    @IBOutlet var weekLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +49,7 @@ class HomeViewController: BaseViewController {
         let dDay = BabyStore.shared.getDday()
         self.dDayLabel.text = "D\(dDay.mark)\(dDay.value)"
         self.infoLabel.text = "1주차에는 5대 영양소를 골고루!"
+        self.weekLabel.text = "Week \(BabyStore.shared.getPregnantWeek().week)"
     }
     
     private func updateBabyView() {
