@@ -156,7 +156,6 @@ class BabyStore {
         }
     }
     
-    // (일수 - 1) % 7 + 1
     func getPregnantWeek() -> Week {
         
         var week = Week(week: 0, dayOfWeek: 0)
