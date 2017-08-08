@@ -9,6 +9,6 @@
 import UIKit
 
 class TipsCollectionViewCell: UICollectionViewCell {
-    @IBOutlet var imageView : UIImageView!
-    @IBOutlet var title : UILabel!
+    @IBOutlet var weekLabel: UILabel!
+    @IBOutlet var weekNum : UILabel!
 }

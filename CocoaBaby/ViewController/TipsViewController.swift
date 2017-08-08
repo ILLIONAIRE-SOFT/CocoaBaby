@@ -10,19 +10,19 @@ import UIKit
 
 class TipsViewController: BaseViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
-    var weeks = ["임신 사실을\n처음 알게되었다면?", "week 2","week 3", "week 4", "week 5"]
+    let weeks = Array(1...40)
     
     @IBOutlet var tipsCollectionView: UICollectionView!
-    //@IBOutlet var tipsTabelView: UITableView!
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 20 , left: 10, bottom: 20, right: 10)
-        layout.itemSize = CGSize(width: view.frame.width/2 - 20, height: 140)
-        layout.minimumInteritemSpacing = 10
+        let itemWidthAndHeight = view.frame.width/4 - 25
+        
+        layout.sectionInset = UIEdgeInsets(top: 20 , left: 20, bottom: 20, right: 20)
+        layout.itemSize = CGSize(width: itemWidthAndHeight, height: itemWidthAndHeight)
+        layout.minimumInteritemSpacing = 20
         layout.minimumLineSpacing = 20
         
         self.tipsCollectionView.collectionViewLayout = layout
@@ -45,16 +45,22 @@ class TipsViewController: BaseViewController, UICollectionViewDelegate, UICollec
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = tipsCollectionView.dequeueReusableCell(withReuseIdentifier: "TipsCollectionViewCell", for: indexPath) as! TipsCollectionViewCell 
-        cell.imageView.backgroundColor = .white
-        cell.imageView.image = #imageLiteral(resourceName: "CocoaBaby")
-        cell.title.text = weeks[indexPath.row]
-        cell.title.lineBreakMode = .byWordWrapping // or NSLineBreakMode.ByWordWrapping
-        cell.title.numberOfLines = 0
-        cell.title.font = UIFont(name: cell.title.font.fontName, size: 13)
-        cell.title.textColor = .white
+        cell.weekNum.text = String(weeks[indexPath.row])
+        cell.weekNum.lineBreakMode = .byWordWrapping
+        cell.weekNum.numberOfLines = 0
+        cell.weekNum.font = UIFont(name: cell.weekNum.font.fontName, size: 20)
+        cell.weekNum.textColor = .white
+        cell.weekLabel.textColor = UIColor.white
         cell.backgroundColor = UIColor.clear
+        cell.layer.cornerRadius = 8
         cell.layer.borderColor = UIColor.white.cgColor
         cell.layer.borderWidth = 0.5
+        
+        if BabyStore.shared.getPregnantWeek().week == indexPath.row + 1 {
+            cell.backgroundColor = UIColor.white
+            cell.weekLabel.textColor = UIColor.mainBlueColor
+            cell.weekNum.textColor = UIColor.mainBlueColor
+        }
         
         return cell
     }
