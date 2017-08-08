@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="r8V-ei-x0C">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="r8V-ei-x0C">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -24,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="UXk-Ov-myg">
-                                <rect key="frame" x="28" y="62" width="318" height="555"/>
+                                <rect key="frame" x="28" y="62" width="318" height="565"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cZ-ux-bAi">
                                         <rect key="frame" x="0.0" y="0.0" width="318" height="27.5"/>
@@ -38,17 +38,16 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <view contentMode="scaleToFill" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="WSq-6I-iYr">
-                                        <rect key="frame" x="0.0" y="107.5" width="318" height="424"/>
+                                    <view contentMode="scaleToFill" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="748" translatesAutoresizingMaskIntoConstraints="NO" id="WSq-6I-iYr">
+                                        <rect key="frame" x="0.0" y="107.5" width="318" height="434"/>
                                         <subviews>
                                             <view clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="UoX-Al-Kmz">
-                                                <rect key="frame" x="12" y="65" width="294" height="294"/>
+                                                <rect key="frame" x="12" y="70" width="294" height="294"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="CocoaBaby" translatesAutoresizingMaskIntoConstraints="NO" id="5t2-ah-DW0">
-                                                        <rect key="frame" x="39.5" y="40" width="214" height="214"/>
+                                                        <rect key="frame" x="40" y="40" width="214" height="214"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
-                                                            <constraint firstAttribute="width" secondItem="5t2-ah-DW0" secondAttribute="height" multiplier="1:1" id="Yvl-wn-cTg"/>
                                                             <constraint firstAttribute="width" secondItem="5t2-ah-DW0" secondAttribute="height" multiplier="1:1" id="wQI-vf-3lC"/>
                                                         </constraints>
                                                     </imageView>
@@ -63,13 +62,13 @@
                                             </view>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="UoX-Al-Kmz" secondAttribute="trailing" constant="12" id="Kd9-sw-aQs"/>
                                             <constraint firstItem="UoX-Al-Kmz" firstAttribute="centerY" secondItem="WSq-6I-iYr" secondAttribute="centerY" id="f8C-xe-GT8"/>
                                             <constraint firstItem="UoX-Al-Kmz" firstAttribute="centerX" secondItem="WSq-6I-iYr" secondAttribute="centerX" id="rpP-8O-NSn"/>
-                                            <constraint firstItem="UoX-Al-Kmz" firstAttribute="leading" secondItem="WSq-6I-iYr" secondAttribute="leading" constant="12" id="yYz-4m-GA9"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.89999997615814209" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Op6-Ka-edG">
-                                        <rect key="frame" x="0.0" y="535.5" width="318" height="19.5"/>
+                                        <rect key="frame" x="0.0" y="545.5" width="318" height="19.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -80,7 +79,7 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="UXk-Ov-myg" firstAttribute="centerX" secondItem="HF2-wf-7sp" secondAttribute="centerX" id="JyW-Tm-dUr"/>
-                            <constraint firstItem="997-ew-oh3" firstAttribute="top" secondItem="UXk-Ov-myg" secondAttribute="bottom" constant="50" id="mQ6-Ta-ESz"/>
+                            <constraint firstItem="997-ew-oh3" firstAttribute="top" secondItem="UXk-Ov-myg" secondAttribute="bottom" constant="40" id="mQ6-Ta-ESz"/>
                             <constraint firstItem="UXk-Ov-myg" firstAttribute="top" secondItem="Ka9-KU-qB1" secondAttribute="bottom" constant="42" id="q2D-ux-y4S"/>
                             <constraint firstItem="UXk-Ov-myg" firstAttribute="leading" secondItem="HF2-wf-7sp" secondAttribute="leadingMargin" constant="12" id="vNo-zM-mcH"/>
                         </constraints>
@@ -99,7 +98,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q5d-Jc-uF9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-823" y="358"/>
+            <point key="canvasLocation" x="-823.20000000000005" y="357.57121439280365"/>
         </scene>
     </scenes>
     <resources>
