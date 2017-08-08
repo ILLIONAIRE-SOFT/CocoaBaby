@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TutorialSetNameViewController: UIViewController, UITextFieldDelegate {
+class TutorialSetNameViewController: BaseViewController, UITextFieldDelegate {
 
     @IBOutlet var babyNameTextField : UITextField!
     @IBOutlet var nextButton: UIButton!
@@ -16,16 +16,14 @@ class TutorialSetNameViewController: UIViewController, UITextFieldDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        babyNameTextField.delegate = self
         babyNameTextField.setBottomBorder()
         self.navigationController?.navigationBar.isHidden = true
         nextButton.isEnabled = false
         
-        babyNameTextField.delegate = self
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+        babyNameTextField.textColor = .white
+        babyNameTextField.attributedPlaceholder = NSAttributedString(string: "아이의 태명을 입력해 주세요", attributes: [NSForegroundColorAttributeName: UIColor.lightGray])
+        self.nextButton.layer.cornerRadius = 5
     }
     
     @IBAction func resignKeyBoard() {
