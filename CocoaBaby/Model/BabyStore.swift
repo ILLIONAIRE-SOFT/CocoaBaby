@@ -11,11 +11,18 @@ import CoreData
 
 enum BabyError: Error {
     case invalidInput
+    case invalidBaby
+    case invalidName
 }
 
 struct DdayResult {
     var value: Int
     var mark: String
+}
+
+struct Week {
+    var week: Int
+    var dayOfWeek: Int
 }
 
 class BabyStore {
@@ -112,7 +119,6 @@ class BabyStore {
         }
         
         let calendar = Calendar.current
-
         let startDate = calendar.startOfDay(for: Date())
         
         guard let expectedBirthDate = baby.expectedBirthDate else {
@@ -150,5 +156,32 @@ class BabyStore {
         }
     }
     
+    // (일수 - 1) % 7 + 1
+    func getPregnantWeek() -> Week {
+        
+        var week = Week(week: 0, dayOfWeek: 0)
+        
+        guard let baby = self.baby else {
+            print(BabyError.invalidBaby)
+            return week
+        }
+        
+        let calendar = Calendar.current
+        let today = calendar.startOfDay(for: Date())
+        
+        guard let expectedPregnantDate = baby.expectedPregnantDate else {
+            return week
+        }
+        
+        let pregnantDate = calendar.startOfDay(for: expectedPregnantDate as Date)
+        let components = calendar.dateComponents([.day], from: pregnantDate, to: today)
+        
+        if let day = components.day {
+            week.week = (day - 1) / 7 + 1
+            week.dayOfWeek = (day - 1) % 7 + 1
+        }
+        
+        return week
+    }
     
 }

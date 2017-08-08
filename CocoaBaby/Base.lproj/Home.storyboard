@@ -105,6 +105,7 @@
                         <outlet property="dDayLabel" destination="59f-cp-ErD" id="BS0-0G-p1j"/>
                         <outlet property="infoLabel" destination="Op6-Ka-edG" id="et6-YY-grN"/>
                         <outlet property="nameLabel" destination="3cZ-ux-bAi" id="kqW-AF-EG0"/>
+                        <outlet property="weekLabel" destination="ekc-pe-RTr" id="bS4-J7-X98"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q5d-Jc-uF9" userLabel="First Responder" sceneMemberID="firstResponder"/>
