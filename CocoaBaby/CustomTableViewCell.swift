@@ -16,12 +16,16 @@ class CustomTableViewCell: UITableViewCell {
     @IBOutlet var contentsLabel: UILabel!
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var addtionalDate: UILabel!
+    @IBOutlet var weekLabel: UILabel!
+    
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         
         labelBackgroundView.layer.cornerRadius = 5
+        
         
        // labelBackgroundView.layer.borderWidth = 0.5
        //labelBackgroundView.layer.borderColor = UIColor.lightGray.cgColor

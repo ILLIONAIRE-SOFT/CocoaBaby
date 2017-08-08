@@ -149,5 +149,70 @@ class DiaryStore {
         return result
     }
     
+    func getDday(from diary: Diary) -> DdayResult {
+        var result = DdayResult(value: 0, mark: "+")
+        
+        guard let baby = BabyStore.shared.baby else {
+            return result
+        }
+        
+        let calendar = Calendar.current
+        let diaryDateComponents = CocoaDateFormatter.createComponents(year: Int(diary.year), month: Int(diary.month), day: Int(diary.day))
+        
+        let diaryDate = calendar.date(from: diaryDateComponents)
+        
+        guard let expectedBirthDate = baby.expectedBirthDate else {
+            return result
+        }
+        
+        let birthDate = expectedBirthDate as Date
+        
+        let components = calendar.dateComponents([.day], from: diaryDate!, to: birthDate)
+        
+        guard let day = components.day else {
+            return result
+        }
+        
+        if day >= 0 {
+            result.value = day
+            result.mark = "+"
+        } else {
+            result.value = abs(day)
+            result.mark = "-"
+        }
+  
+        return result
+
+    }
+    
+    func getPregnantWeek(of diary: Diary) -> Week {
+        
+        var week = Week(week: 0, dayOfWeek: 0)
+        
+        guard let baby = BabyStore.shared.baby else {
+            print(BabyError.invalidBaby)
+            return week
+        }
+        
+        let calendar = Calendar.current
+//        let today = calendar.startOfDay(for: Date())
+        let diaryDateComponents = CocoaDateFormatter.createComponents(year: Int(diary.year), month: Int(diary.month), day: Int(diary.day))
+        let diaryDate = calendar.date(from: diaryDateComponents)
+        
+        guard let expectedPregnantDate = baby.expectedPregnantDate else {
+            return week
+        }
+        
+        let pregnantDate = calendar.startOfDay(for: expectedPregnantDate as Date)
+        let components = calendar.dateComponents([.day], from: pregnantDate, to: diaryDate!)
+        
+        if let day = components.day {
+            week.week = (day - 1) / 7 + 1
+            week.dayOfWeek = (day - 1) % 7 + 1
+        }
+        
+        return week
+    }
+    
     
 }
