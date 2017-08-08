@@ -23,7 +23,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="124" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="vrF-dx-IH1">
-                                <rect key="frame" x="0.0" y="32" width="375" height="575"/>
+                                <rect key="frame" x="0.0" y="70" width="375" height="537"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -95,18 +95,37 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XTh-bu-1Nw">
+                                <rect key="frame" x="160" y="45" width="57" height="29"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wd6-eV-RlC">
+                                <rect key="frame" x="114" y="-70" width="375" height="216"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="ggf-Te-aAy" id="Tmn-GT-AGI"/>
+                                    <outlet property="delegate" destination="ggf-Te-aAy" id="LEZ-vR-LZX"/>
+                                </connections>
+                            </pickerView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="XTh-bu-1Nw" firstAttribute="top" secondItem="4f6-uQ-zxo" secondAttribute="bottom" constant="25" id="3cd-2J-G2H"/>
+                            <constraint firstItem="XTh-bu-1Nw" firstAttribute="centerX" secondItem="FGU-Gm-tX2" secondAttribute="centerX" id="E1T-4y-wG5"/>
                             <constraint firstItem="vrF-dx-IH1" firstAttribute="leading" secondItem="FGU-Gm-tX2" secondAttribute="leading" id="Nvp-34-RgW"/>
                             <constraint firstAttribute="trailing" secondItem="vrF-dx-IH1" secondAttribute="trailing" id="Q0X-Ei-VQR"/>
-                            <constraint firstItem="vrF-dx-IH1" firstAttribute="top" secondItem="4f6-uQ-zxo" secondAttribute="bottom" constant="12" id="acH-qK-7tb"/>
+                            <constraint firstItem="vrF-dx-IH1" firstAttribute="top" secondItem="4f6-uQ-zxo" secondAttribute="bottom" constant="50" id="acH-qK-7tb"/>
                             <constraint firstItem="vIq-kd-Fgd" firstAttribute="top" secondItem="vrF-dx-IH1" secondAttribute="bottom" constant="60" id="uEa-Yf-SBK"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" image="ic_create_white" id="Aqt-9a-pt8"/>
                     <connections>
                         <outlet property="diaryTableView" destination="vrF-dx-IH1" id="KZT-nf-GiG"/>
+                        <outlet property="yearPickLabel" destination="XTh-bu-1Nw" id="5Ex-3M-c4s"/>
+                        <outlet property="yearPickerView" destination="wd6-eV-RlC" id="Wny-on-6hH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EZ6-qC-eHx" userLabel="First Responder" sceneMemberID="firstResponder"/>

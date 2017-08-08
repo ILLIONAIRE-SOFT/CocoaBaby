@@ -8,10 +8,33 @@
 
 import UIKit
 
-class DiaryViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource {
+class DiaryViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, UIPickerViewDataSource, UIPickerViewDelegate {
 
     @IBOutlet var diaryTableView: UITableView!
+    @IBOutlet var yearPickLabel: UILabel!
+    @IBOutlet var yearPickerView: UIPickerView!
     
+    let years = ["2016", "2017", "2018"]
+    
+    
+    // MARK : PickerView
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return years[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return years.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        yearPickLabel.text = years[row]
+        //self.view.endEditing(true)
+        yearPickerView.isHidden = true
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +45,29 @@ class DiaryViewController: BaseViewController, UITableViewDelegate, UITableViewD
         diaryTableView.delegate = self
         diaryTableView.dataSource = self
         
+        
+        // MARK : PickerView
+        var pickerRect = yearPickerView.frame
+       
+        pickerRect.origin.x = -5// some desired value
+        pickerRect.origin.y = 2// some desired value
+        yearPickerView.frame = pickerRect
+        yearPickerView.delegate = self
+        yearPickerView.dataSource = self
+        yearPickerView.isHidden = true
+        view.addSubview(yearPickerView)
+        
+        let tap = UITapGestureRecognizer(target: self, action: #selector(tap(gestureReconizer:)))
+        yearPickLabel.addGestureRecognizer(tap)
+            
+        yearPickLabel.isUserInteractionEnabled = true
+        
+        
+    }
+    
+    func tap(gestureReconizer: UITapGestureRecognizer) {
+        print("picked!")
+        yearPickerView.isHidden = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,7 +95,7 @@ class DiaryViewController: BaseViewController, UITableViewDelegate, UITableViewD
         cell.dateLabel.text = "17.08.02"
         cell.contentsLabel.text = "sadadadd"
         cell.addtionalDate.text = "+ 3"
-        
+        cell.selectionStyle = UITableViewCellSelectionStyle.none
         
         //cell.labelBackgroundView.tag = indexPath.row
        // cell.labelBackgroundView.isUserInteractionEnabled = true
