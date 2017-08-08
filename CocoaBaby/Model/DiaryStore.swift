@@ -28,6 +28,7 @@ class DiaryStore {
                 print("Error setting up Core Data (\(error))")
             }
         })
+        
         return container
     }()
     
