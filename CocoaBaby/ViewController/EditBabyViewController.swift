@@ -19,12 +19,27 @@ class EditBabyViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        nameField.returnKeyType = .done
+        nameField.delegate = self
+        
+        initGesture()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         nameField.placeholder = BabyStore.shared.getName()
+    }
+    
+    func initGesture() {
+        let tapView = UITapGestureRecognizer(target: self, action: #selector(hideKeyboard))
+        
+        self.view.addGestureRecognizer(tapView)
+    }
+    
+    // MARK: Methods
+    func hideKeyboard() {
+        view.endEditing(true)
     }
     
     // MARK: IBActions
@@ -43,5 +58,12 @@ class EditBabyViewController: BaseViewController {
         }
     }
     
+}
 
+extension EditBabyViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        
+        return true
+    }
 }
