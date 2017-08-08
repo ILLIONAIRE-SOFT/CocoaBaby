@@ -14,6 +14,7 @@
 		4911D9DA1F344DCA0031B74A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4911D9DC1F344DCA0031B74A /* Localizable.strings */; };
 		4911D9E31F3450EF0031B74A /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4911D9E21F3450EF0031B74A /* ErrorMessage.swift */; };
 		493631DE1F31C662008C774E /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493631DD1F31C662008C774E /* TabBarViewController.swift */; };
+		4948E0A61F39799C008542F6 /* EditBabyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4948E0A51F39799C008542F6 /* EditBabyViewController.swift */; };
 		496FB1DA1F31943D00E4042D /* CocoaBaby.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 496FB1D81F31943D00E4042D /* CocoaBaby.xcdatamodeld */; };
 		496FB1DD1F31982500E4042D /* Baby+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496FB1DB1F31982500E4042D /* Baby+CoreDataClass.swift */; };
 		496FB1DE1F31982500E4042D /* Baby+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496FB1DC1F31982500E4042D /* Baby+CoreDataProperties.swift */; };
@@ -73,6 +74,7 @@
 		4911D9DE1F344DDE0031B74A /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4911D9E21F3450EF0031B74A /* ErrorMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ErrorMessage.swift; path = Utilities/ErrorMessage.swift; sourceTree = "<group>"; };
 		493631DD1F31C662008C774E /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarViewController.swift; path = ViewController/TabBarViewController.swift; sourceTree = "<group>"; };
+		4948E0A51F39799C008542F6 /* EditBabyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditBabyViewController.swift; path = ViewController/EditBabyViewController.swift; sourceTree = "<group>"; };
 		496FB1D91F31943D00E4042D /* CocoaBaby.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CocoaBaby.xcdatamodel; sourceTree = "<group>"; };
 		496FB1DB1F31982500E4042D /* Baby+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Baby+CoreDataClass.swift"; path = "Model/Baby+CoreDataClass.swift"; sourceTree = "<group>"; };
 		496FB1DC1F31982500E4042D /* Baby+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Baby+CoreDataProperties.swift"; path = "Model/Baby+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -166,6 +168,7 @@
 			isa = PBXGroup;
 			children = (
 				4911D9D31F34461F0031B74A /* SettingsViewController.swift */,
+				4948E0A51F39799C008542F6 /* EditBabyViewController.swift */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -433,7 +436,7 @@
 				TargetAttributes = {
 					49F6C7781F318AF200373F06 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 34UH748CF3;
+						DevelopmentTeam = 23EFP3FERN;
 						ProvisioningStyle = Automatic;
 					};
 					49F6C78C1F318AF200373F06 = {
@@ -533,6 +536,7 @@
 				DAEE34BF1F3834FC0090DBF5 /* TipsDetailViewController.swift in Sources */,
 				DAEE34C31F3849870090DBF5 /* TipsCollectionViewCell.swift in Sources */,
 				499CABDA1F382A170008FF8E /* Diary+CoreDataClass.swift in Sources */,
+				4948E0A61F39799C008542F6 /* EditBabyViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -722,7 +726,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 34UH748CF3;
+				DEVELOPMENT_TEAM = 23EFP3FERN;
 				INFOPLIST_FILE = CocoaBaby/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Sohn.CocoaBaby;
@@ -736,7 +740,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 34UH748CF3;
+				DEVELOPMENT_TEAM = 23EFP3FERN;
 				INFOPLIST_FILE = CocoaBaby/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Sohn.CocoaBaby;
