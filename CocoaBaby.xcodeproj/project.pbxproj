@@ -75,6 +75,7 @@
 		4911D9E21F3450EF0031B74A /* ErrorMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ErrorMessage.swift; path = Utilities/ErrorMessage.swift; sourceTree = "<group>"; };
 		493631DD1F31C662008C774E /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarViewController.swift; path = ViewController/TabBarViewController.swift; sourceTree = "<group>"; };
 		4948E0A51F39799C008542F6 /* EditBabyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditBabyViewController.swift; path = ViewController/EditBabyViewController.swift; sourceTree = "<group>"; };
+		4948E0A71F39A0FB008542F6 /* CocoaBaby.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CocoaBaby.entitlements; sourceTree = "<group>"; };
 		496FB1D91F31943D00E4042D /* CocoaBaby.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CocoaBaby.xcdatamodel; sourceTree = "<group>"; };
 		496FB1DB1F31982500E4042D /* Baby+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Baby+CoreDataClass.swift"; path = "Model/Baby+CoreDataClass.swift"; sourceTree = "<group>"; };
 		496FB1DC1F31982500E4042D /* Baby+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Baby+CoreDataProperties.swift"; path = "Model/Baby+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -198,6 +199,13 @@
 			name = TabBar;
 			sourceTree = "<group>";
 		};
+		4948E0A81F39A103008542F6 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		496FB1D71F3193CB00E4042D /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -280,6 +288,7 @@
 				49F6C7901F318AF200373F06 /* CocoaBabyTests */,
 				49F6C79B1F318AF200373F06 /* CocoaBabyUITests */,
 				49F6C77A1F318AF200373F06 /* Products */,
+				4948E0A81F39A103008542F6 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -296,6 +305,7 @@
 		49F6C77B1F318AF200373F06 /* CocoaBaby */ = {
 			isa = PBXGroup;
 			children = (
+				4948E0A71F39A0FB008542F6 /* CocoaBaby.entitlements */,
 				4911D9D71F344D920031B74A /* Supporting Files */,
 				DAB5A4141F3332DB000235B0 /* Utilities */,
 				DAB5A4131F3332C4000235B0 /* Asset */,
@@ -438,6 +448,14 @@
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 23EFP3FERN;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 0;
+							};
+							com.apple.iCloud = {
+								enabled = 0;
+							};
+						};
 					};
 					49F6C78C1F318AF200373F06 = {
 						CreatedOnToolsVersion = 8.3.3;
