@@ -19,12 +19,12 @@
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="selectedImageTintColor" red="1" green="0.4560931157" blue="0.29770405220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="selectedImageTintColor" red="0.96078431372549022" green="0.80784313725490198" blue="0.792156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBar>
                     <connections>
                         <segue destination="r9n-OU-Qmi" kind="relationship" relationship="viewControllers" id="HAN-42-Npe"/>
                         <segue destination="pCB-UA-ebN" kind="relationship" relationship="viewControllers" id="bm5-qY-bgB"/>
-                        <segue destination="Dgu-Ue-iBT" kind="relationship" relationship="viewControllers" id="Frg-VR-ysq"/>
+                        <segue destination="Gzn-1j-shM" kind="relationship" relationship="viewControllers" id="Zhv-0z-Rpf"/>
                         <segue destination="XRN-cR-wfI" kind="relationship" relationship="viewControllers" id="VdP-8v-uKz"/>
                     </connections>
                 </tabBarController>
@@ -53,14 +53,14 @@
             <point key="canvasLocation" x="197" y="-176"/>
         </scene>
         <!--Tips-->
-        <scene sceneID="LGt-QA-YZJ">
+        <scene sceneID="Lcm-w8-DWq">
             <objects>
-                <viewControllerPlaceholder storyboardName="Tips" id="Dgu-Ue-iBT" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="" image="ic_lightbulb_outline_white" id="kpk-9z-RQb"/>
+                <viewControllerPlaceholder storyboardName="Tips" id="Gzn-1j-shM" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="ic_lightbulb_outline_white" id="ZzP-jY-nEH"/>
                 </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="3oS-Az-pIO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x7Y-uA-G62" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="489" y="-176"/>
+            <point key="canvasLocation" x="582" y="-156"/>
         </scene>
         <!--Settings-->
         <scene sceneID="qFf-rx-7ts">
