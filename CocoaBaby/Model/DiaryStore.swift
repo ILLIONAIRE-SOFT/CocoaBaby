@@ -123,7 +123,6 @@ class DiaryStore {
         
         let calendar = Calendar.current
         
-       //////////?? let startDate =
         let startDate = calendar.startOfDay(for: Date())
         
         

@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4911634A1F3AB3CB00938AAF /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 491163491F3AB3CB00938AAF /* CloudKit.framework */; };
 		4911634D1F3ABDB400938AAF /* CloudKitController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4911634C1F3ABDB400938AAF /* CloudKitController.swift */; };
+		4911634F1F3ADEEE00938AAF /* CKDiary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4911634E1F3ADEEE00938AAF /* CKDiary.swift */; };
+		491163511F3ADF0900938AAF /* CKDiaryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 491163501F3ADF0900938AAF /* CKDiaryStore.swift */; };
 		4911D9CB1F3444A70031B74A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4911D9CA1F3444A70031B74A /* BaseViewController.swift */; };
 		4911D9CE1F34455D0031B74A /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4911D9CD1F34455D0031B74A /* DiaryViewController.swift */; };
 		4911D9D11F3446110031B74A /* TipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4911D9D01F3446110031B74A /* TipsViewController.swift */; };
@@ -67,6 +69,8 @@
 /* Begin PBXFileReference section */
 		491163491F3AB3CB00938AAF /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		4911634C1F3ABDB400938AAF /* CloudKitController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CloudKitController.swift; path = Utilities/CloudKitController.swift; sourceTree = "<group>"; };
+		4911634E1F3ADEEE00938AAF /* CKDiary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CKDiary.swift; path = Model/CKDiary.swift; sourceTree = "<group>"; };
+		491163501F3ADF0900938AAF /* CKDiaryStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CKDiaryStore.swift; path = Model/CKDiaryStore.swift; sourceTree = "<group>"; };
 		4911D9CA1F3444A70031B74A /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = ViewController/BaseViewController.swift; sourceTree = "<group>"; };
 		4911D9CD1F34455D0031B74A /* DiaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiaryViewController.swift; path = ViewController/DiaryViewController.swift; sourceTree = "<group>"; };
 		4911D9D01F3446110031B74A /* TipsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TipsViewController.swift; path = ViewController/TipsViewController.swift; sourceTree = "<group>"; };
@@ -246,6 +250,8 @@
 				499CABD81F382A170008FF8E /* Diary+CoreDataClass.swift */,
 				499CABD91F382A170008FF8E /* Diary+CoreDataProperties.swift */,
 				499CABDC1F382A310008FF8E /* DiaryStore.swift */,
+				4911634E1F3ADEEE00938AAF /* CKDiary.swift */,
+				491163501F3ADF0900938AAF /* CKDiaryStore.swift */,
 			);
 			name = Diary;
 			sourceTree = "<group>";
@@ -564,11 +570,13 @@
 				4911D9CE1F34455D0031B74A /* DiaryViewController.swift in Sources */,
 				4911D9E31F3450EF0031B74A /* ErrorMessage.swift in Sources */,
 				DAB5A40B1F31B0C4000235B0 /* TutorialSetNameViewController.swift in Sources */,
+				4911634F1F3ADEEE00938AAF /* CKDiary.swift in Sources */,
 				DAB5A4171F33331C000235B0 /* ColorExtension.swift in Sources */,
 				499CABDB1F382A170008FF8E /* Diary+CoreDataProperties.swift in Sources */,
 				49D7F44A1F319D99004DF036 /* HomeViewController.swift in Sources */,
 				DAEE34BF1F3834FC0090DBF5 /* TipsDetailViewController.swift in Sources */,
 				DAEE34C31F3849870090DBF5 /* TipsCollectionViewCell.swift in Sources */,
+				491163511F3ADF0900938AAF /* CKDiaryStore.swift in Sources */,
 				499CABDA1F382A170008FF8E /* Diary+CoreDataClass.swift in Sources */,
 				4948E0A61F39799C008542F6 /* EditBabyViewController.swift in Sources */,
 			);

@@ -22,6 +22,10 @@ class HomeViewController: BaseViewController {
         
         babyImageView.image = UIImage(named: "CocoaBaby")?.withRenderingMode(.alwaysTemplate)
         babyImageView.tintColor = UIColor.mainBlueColor
+        
+//        CloudKitController.shared.fetchRecords(type: CloudKitFetchType.diary) { (diaries) in
+//            
+//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
