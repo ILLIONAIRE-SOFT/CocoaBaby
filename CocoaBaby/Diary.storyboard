@@ -142,7 +142,7 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.93333333333333335" green="0.76470588235294112" blue="0.73725490196078436" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.96078431372549022" green="0.80784313725490198" blue="0.792156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="2nY-BU-Ee8"/>
                                     <constraint firstItem="N06-9K-rkK" firstAttribute="top" secondItem="XYS-Cu-YL1" secondAttribute="top" constant="-5" id="FLx-6b-Zs5"/>
@@ -188,17 +188,18 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FL6-eK-92a">
-                                <rect key="frame" x="28" y="135" width="319" height="460"/>
+                                <rect key="frame" x="28" y="135" width="319" height="454"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Pee-sP-GhJ">
-                                        <rect key="frame" x="22" y="20" width="275" height="420"/>
+                                        <rect key="frame" x="22" y="20" width="275" height="414"/>
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <color key="textColor" red="0.22154757957559679" green="0.22154757957559679" blue="0.22154757957559679" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                 </subviews>
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.97223686733128833" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="Pee-sP-GhJ" secondAttribute="bottom" constant="20" id="2pd-Hk-Ymt"/>
                                     <constraint firstAttribute="trailing" secondItem="Pee-sP-GhJ" secondAttribute="trailing" constant="22" id="GnP-i0-x86"/>
@@ -209,30 +210,34 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Week 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6xb-29-cOe">
-                                <rect key="frame" x="145" y="48" width="85.5" height="32.5"/>
+                                <rect key="frame" x="145" y="50" width="85.5" height="32.5"/>
                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="27"/>
                                 <color key="textColor" red="0.2199208389" green="0.2199208389" blue="0.2199208389" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TUE MAY 22 2017" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="481-QA-cKe">
-                                <rect key="frame" x="130" y="84" width="116" height="17"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <rect key="frame" x="131" y="86" width="114" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="14"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v0f-U7-kzh">
+                            <toolbar opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v0f-U7-kzh">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="FUu-CQ-fLr"/>
                                 </constraints>
                                 <items>
+                                    <barButtonItem systemItem="flexibleSpace" id="zOY-Pw-rnu"/>
                                     <barButtonItem style="done" systemItem="done" id="eL4-Q2-2Kx">
-                                        <color key="tintColor" red="0.22154757959999999" green="0.22154757959999999" blue="0.22154757959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <segue destination="q34-qD-csP" kind="unwind" unwindAction="myUnwindActionWithUnwindSegue:" id="1Jl-9J-p0L"/>
+                                        </connections>
                                     </barButtonItem>
                                 </items>
-                                <color key="tintColor" red="0.3065732759" green="0.3065732759" blue="0.3065732759" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="tintColor" red="0.96078431372549022" green="0.80784313725490198" blue="0.792156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="barTintColor" red="0.96078431372549022" green="0.80784313725490198" blue="0.792156862745098" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                             </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -245,14 +250,29 @@
                             <constraint firstItem="FL6-eK-92a" firstAttribute="centerX" secondItem="46e-b3-zYS" secondAttribute="centerX" id="R4f-53-WFO"/>
                             <constraint firstItem="481-QA-cKe" firstAttribute="centerX" secondItem="46e-b3-zYS" secondAttribute="centerX" id="VaA-ZS-NOe"/>
                             <constraint firstAttribute="trailingMargin" secondItem="FL6-eK-92a" secondAttribute="trailing" constant="12" id="WbT-Tp-Xkl"/>
-                            <constraint firstItem="6xb-29-cOe" firstAttribute="top" secondItem="s9d-mp-6hl" secondAttribute="bottom" constant="28" id="bRc-h3-VGJ"/>
-                            <constraint firstItem="FL6-eK-92a" firstAttribute="top" secondItem="481-QA-cKe" secondAttribute="bottom" constant="34" id="iCa-d3-Kep"/>
-                            <constraint firstItem="v0f-U7-kzh" firstAttribute="top" secondItem="FL6-eK-92a" secondAttribute="bottom" constant="28" id="ySn-97-3m4"/>
+                            <constraint firstItem="6xb-29-cOe" firstAttribute="top" secondItem="s9d-mp-6hl" secondAttribute="bottom" constant="30" id="bRc-h3-VGJ"/>
+                            <constraint firstItem="FL6-eK-92a" firstAttribute="top" secondItem="481-QA-cKe" secondAttribute="bottom" constant="32" id="iCa-d3-Kep"/>
+                            <constraint firstItem="v0f-U7-kzh" firstAttribute="top" secondItem="FL6-eK-92a" secondAttribute="bottom" constant="34" id="ySn-97-3m4"/>
                             <constraint firstItem="C3W-Eo-JCX" firstAttribute="top" secondItem="v0f-U7-kzh" secondAttribute="bottom" id="zWR-X2-ogD"/>
                         </constraints>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="7Jr-nG-OQA" appends="YES" id="XR5-OS-sMP"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="addDiraryUIToolbar" destination="v0f-U7-kzh" id="22y-PI-LBO"/>
+                        <outlet property="doneAddDiaryBtn" destination="eL4-Q2-2Kx" id="RjT-wl-dhU"/>
+                        <outlet property="textView" destination="Pee-sP-GhJ" id="ccY-zd-DWT"/>
+                        <outlet property="textViewBg" destination="FL6-eK-92a" id="Vwb-E9-osM"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hmU-IC-1xH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="q34-qD-csP" userLabel="Exit" sceneMemberID="exit"/>
+                <tapGestureRecognizer id="7Jr-nG-OQA">
+                    <connections>
+                        <action selector="dismissKeyboard:" destination="Uo9-5P-rrE" id="JrX-EV-wQU"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="776.79999999999995" y="353.9730134932534"/>
         </scene>

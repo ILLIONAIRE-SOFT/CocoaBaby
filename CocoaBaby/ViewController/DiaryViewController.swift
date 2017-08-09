@@ -15,7 +15,8 @@ class DiaryViewController: BaseViewController, UIPickerViewDataSource, UIPickerV
     @IBOutlet var yearPickerView: UIPickerView!
     @IBOutlet var addDiaryBtnBg: UIView!
     @IBOutlet var addDiaryBtn: UIButton!
-
+    @IBAction func myUnwindAction(unwindSegue: UIStoryboardSegue) {
+    }
     
     let years = ["2016", "2017", "2018"]
     

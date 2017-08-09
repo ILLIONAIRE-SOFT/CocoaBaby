@@ -10,15 +10,27 @@ import UIKit
 
 class DiaryAddViewController: DiaryBaseViewController {
 
+    @IBOutlet var addDiraryUIToolbar: UIToolbar!
+    @IBOutlet var doneAddDiaryBtn: UIBarButtonItem!
+    @IBOutlet var textViewBg: UIView!
+    @IBOutlet var textView: UITextView!
+    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        textViewBg.layer.cornerRadius = 4
+ 
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
+        textView.resignFirstResponder()
     }
     
 
