@@ -47,7 +47,7 @@ class TipsViewController: BaseViewController, UIScrollViewDelegate {
         if (targetIndex > kMaxIndex) {
             targetIndex = kMaxIndex;
         }
-        targetContentOffset->x = targetIndex * (self.scrollView.frame.width - 20 + 10);
+       // targetContentOffset->x = targetIndex * (self.scrollView.frame.width - 20 + 10);
 
     }
         

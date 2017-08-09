@@ -135,7 +135,7 @@
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
                                         <state key="normal" title="+">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <color key="titleColor" red="0.23529411764705882" green="0.29411764705882354" blue="0.4823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
                                         <connections>
                                             <segue destination="Uo9-5P-rrE" kind="show" id="Yem-OY-5oK"/>
