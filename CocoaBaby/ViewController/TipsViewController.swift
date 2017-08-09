@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TipsViewController: BaseViewController, UICollectionViewDelegate {
+class TipsViewController: BaseViewController, UIScrollViewDelegate {
 
     let weeks = Array(1...40)
     var colors:[UIColor] = [UIColor.red, UIColor.blue, UIColor.green, UIColor.yellow]
@@ -23,8 +23,8 @@ class TipsViewController: BaseViewController, UICollectionViewDelegate {
         super.viewDidLoad()
         for index in 0..<colors.count {
             
-            frame.origin.x = self.scrollView.frame.width * CGFloat(index) + 10
-            frame.size = CGSize(width: self.scrollView.frame.width, height: self.scrollView.frame.height)
+            frame.origin.x += (self.scrollView.frame.width ) * CGFloat(index)
+            frame.size = CGSize(width: self.scrollView.frame.width - 20, height: self.scrollView.frame.height)
             self.scrollView.isPagingEnabled = true
             
             let subView = UIView(frame: frame)
@@ -33,8 +33,22 @@ class TipsViewController: BaseViewController, UICollectionViewDelegate {
         
         }
         
-        self.scrollView.contentSize = CGSize(width: (self.scrollView.frame.width -
-            20) * CGFloat(colors.count), height: self.scrollView.frame.height)
+        self.scrollView.contentSize = CGSize(width: self.scrollView.frame.width  * CGFloat(colors.count), height: self.scrollView.frame.height)
+    }
+    
+    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
+        
+        let kMaxIndex : CGFloat = 23
+        let targetX :CGFloat = scrollView.contentOffset.x + velocity.x * 60.0
+        var targetIndex = round(targetX / (self.scrollView.frame.width - 20 + 10));
+        if (targetIndex < 0) {
+            targetIndex = 0;
+        }
+        if (targetIndex > kMaxIndex) {
+            targetIndex = kMaxIndex;
+        }
+        targetContentOffset->x = targetIndex * (self.scrollView.frame.width - 20 + 10);
+
     }
         
 //        
