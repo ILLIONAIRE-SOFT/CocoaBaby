@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="r8V-ei-x0C">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16F73" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="r8V-ei-x0C">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -63,7 +63,7 @@
                                                         </constraints>
                                                     </imageView>
                                                 </subviews>
-                                                <color key="backgroundColor" red="1" green="0.85801367581600207" blue="0.86717126869981498" alpha="0.7985354549" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="1" green="0.82430626475127089" blue="0.8666666666666667" alpha="0.7985354549" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstItem="5t2-ah-DW0" firstAttribute="top" secondItem="UoX-Al-Kmz" secondAttribute="top" constant="40" id="IRK-YP-5YI"/>
                                                     <constraint firstItem="5t2-ah-DW0" firstAttribute="centerY" secondItem="UoX-Al-Kmz" secondAttribute="centerY" id="hyw-ir-RlT"/>
