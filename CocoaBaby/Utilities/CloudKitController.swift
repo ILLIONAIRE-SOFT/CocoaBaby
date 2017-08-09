@@ -19,11 +19,11 @@ class CloudKitController {
        return container.publicCloudDatabase
     }
     
-    func saveRecord() {
+    func saveRecord(text: String) {
         
         let diaryRecordID = CKRecordID(recordName: "115")
         let diaryRecord = CKRecord(recordType: "Diary", recordID: diaryRecordID)
-        diaryRecord["text"] = "Test Record" as NSString
+        diaryRecord["text"] = text as NSString
         diaryRecord["year"] = 2017 as CKRecordValue
         diaryRecord["month"] = 8 as CKRecordValue
         diaryRecord["day"] = 9 as CKRecordValue
