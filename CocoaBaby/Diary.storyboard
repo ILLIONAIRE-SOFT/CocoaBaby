@@ -137,9 +137,12 @@
                                         <state key="normal" title="+">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="Uo9-5P-rrE" kind="show" id="Yem-OY-5oK"/>
+                                        </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.91060772400000001" green="0.63919511959999997" blue="0.5802262051" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" red="0.93333333333333335" green="0.76470588235294112" blue="0.73725490196078436" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="2nY-BU-Ee8"/>
                                     <constraint firstItem="N06-9K-rkK" firstAttribute="top" secondItem="XYS-Cu-YL1" secondAttribute="top" constant="-5" id="FLx-6b-Zs5"/>
@@ -162,7 +165,6 @@
                     </view>
                     <tabBarItem key="tabBarItem" image="ic_create_white" id="Aqt-9a-pt8"/>
                     <connections>
-                        <outlet property="addDiaryBtn" destination="N06-9K-rkK" id="9ys-dl-Fup"/>
                         <outlet property="addDiaryBtnBg" destination="XYS-Cu-YL1" id="3t9-m8-PcZ"/>
                         <outlet property="diaryTableView" destination="vrF-dx-IH1" id="KZT-nf-GiG"/>
                         <outlet property="yearPickLabel" destination="XTh-bu-1Nw" id="5Ex-3M-c4s"/>
@@ -172,6 +174,84 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EZ6-qC-eHx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-39.200000000000003" y="353.9730134932534"/>
+        </scene>
+        <!--Diary Add View Controller-->
+        <scene sceneID="c4s-Cf-xjK">
+            <objects>
+                <viewController id="Uo9-5P-rrE" customClass="DiaryAddViewController" customModule="CocoaBaby" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="s9d-mp-6hl"/>
+                        <viewControllerLayoutGuide type="bottom" id="C3W-Eo-JCX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="46e-b3-zYS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view alpha="0.94999999999999996" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FL6-eK-92a">
+                                <rect key="frame" x="28" y="135" width="319" height="460"/>
+                                <subviews>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Pee-sP-GhJ">
+                                        <rect key="frame" x="22" y="20" width="275" height="420"/>
+                                        <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                        <color key="textColor" red="0.22154757957559679" green="0.22154757957559679" blue="0.22154757957559679" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="Pee-sP-GhJ" secondAttribute="bottom" constant="20" id="2pd-Hk-Ymt"/>
+                                    <constraint firstAttribute="trailing" secondItem="Pee-sP-GhJ" secondAttribute="trailing" constant="22" id="GnP-i0-x86"/>
+                                    <constraint firstItem="Pee-sP-GhJ" firstAttribute="top" secondItem="FL6-eK-92a" secondAttribute="top" constant="20" id="Pfq-Wl-YnI"/>
+                                    <constraint firstItem="Pee-sP-GhJ" firstAttribute="centerX" secondItem="FL6-eK-92a" secondAttribute="centerX" id="kdn-RC-ohQ"/>
+                                    <constraint firstItem="Pee-sP-GhJ" firstAttribute="leading" secondItem="FL6-eK-92a" secondAttribute="leading" constant="22" id="v05-u8-HTm"/>
+                                    <constraint firstItem="Pee-sP-GhJ" firstAttribute="centerY" secondItem="FL6-eK-92a" secondAttribute="centerY" id="vfS-yd-idL"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Week 3" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6xb-29-cOe">
+                                <rect key="frame" x="145" y="48" width="85.5" height="32.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="27"/>
+                                <color key="textColor" red="0.2199208389" green="0.2199208389" blue="0.2199208389" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="TUE MAY 22 2017" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="481-QA-cKe">
+                                <rect key="frame" x="130" y="84" width="116" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <toolbar hidden="YES" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v0f-U7-kzh">
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <items>
+                                    <barButtonItem style="done" systemItem="done" id="eL4-Q2-2Kx">
+                                        <color key="tintColor" red="0.22154757959999999" green="0.22154757959999999" blue="0.22154757959999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </barButtonItem>
+                                </items>
+                                <color key="tintColor" red="0.3065732759" green="0.3065732759" blue="0.3065732759" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="barTintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </toolbar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="6xb-29-cOe" firstAttribute="centerX" secondItem="46e-b3-zYS" secondAttribute="centerX" id="BNd-Ll-U8k"/>
+                            <constraint firstItem="FL6-eK-92a" firstAttribute="leading" secondItem="46e-b3-zYS" secondAttribute="leadingMargin" constant="12" id="FfU-A5-zTb"/>
+                            <constraint firstAttribute="trailing" secondItem="v0f-U7-kzh" secondAttribute="trailing" id="KRq-7H-MTd"/>
+                            <constraint firstItem="v0f-U7-kzh" firstAttribute="leading" secondItem="46e-b3-zYS" secondAttribute="leading" id="QNy-oD-DSk"/>
+                            <constraint firstItem="481-QA-cKe" firstAttribute="top" secondItem="6xb-29-cOe" secondAttribute="bottom" constant="4" id="QYy-3e-w0P"/>
+                            <constraint firstItem="FL6-eK-92a" firstAttribute="centerX" secondItem="46e-b3-zYS" secondAttribute="centerX" id="R4f-53-WFO"/>
+                            <constraint firstItem="481-QA-cKe" firstAttribute="centerX" secondItem="46e-b3-zYS" secondAttribute="centerX" id="VaA-ZS-NOe"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FL6-eK-92a" secondAttribute="trailing" constant="12" id="WbT-Tp-Xkl"/>
+                            <constraint firstItem="6xb-29-cOe" firstAttribute="top" secondItem="s9d-mp-6hl" secondAttribute="bottom" constant="28" id="bRc-h3-VGJ"/>
+                            <constraint firstItem="FL6-eK-92a" firstAttribute="top" secondItem="481-QA-cKe" secondAttribute="bottom" constant="34" id="iCa-d3-Kep"/>
+                            <constraint firstItem="v0f-U7-kzh" firstAttribute="top" secondItem="FL6-eK-92a" secondAttribute="bottom" constant="28" id="ySn-97-3m4"/>
+                            <constraint firstItem="C3W-Eo-JCX" firstAttribute="top" secondItem="v0f-U7-kzh" secondAttribute="bottom" id="zWR-X2-ogD"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hmU-IC-1xH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="776.79999999999995" y="353.9730134932534"/>
         </scene>
     </scenes>
     <resources>
