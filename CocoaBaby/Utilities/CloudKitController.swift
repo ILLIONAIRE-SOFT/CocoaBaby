@@ -45,9 +45,6 @@ class CloudKitController {
     
     func saveRecord(text: String) {
         let diaryRecord = CKRecord(recordType: CloudKitFetchType.diary.rawValue, zoneID: CKRecordZoneID(zoneName: "diaryZone", ownerName: diaryZoneOwnerID))
-        //        let diaryRecord = CKRecord(recordType: "Diary", recordID: diaryRecordID)
-        //        let diaryRecord = CKRecord(recordType: "Diary", recordID: diaryRecordID)
-        let diaryRecordID = CKRecordID(recordName: "116")
 
         diaryRecord["text"] = text as NSString
         diaryRecord["year"] = 2017 as CKRecordValue
@@ -58,8 +55,6 @@ class CloudKitController {
             if let error = error {
                 print(error)
             }
-            
-            print(record)
         }
     }
     
