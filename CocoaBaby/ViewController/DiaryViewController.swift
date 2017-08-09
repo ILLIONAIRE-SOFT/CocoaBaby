@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DiaryViewController: BaseViewController, UITableViewDelegate, UITableViewDataSource, UIPickerViewDataSource, UIPickerViewDelegate {
+class DiaryViewController: BaseViewController, UIPickerViewDataSource, UIPickerViewDelegate {
 
     @IBOutlet var diaryTableView: UITableView!
     @IBOutlet var yearPickLabel: UILabel!
@@ -64,8 +64,6 @@ class DiaryViewController: BaseViewController, UITableViewDelegate, UITableViewD
         yearPickLabel.addGestureRecognizer(tap)
             
         yearPickLabel.isUserInteractionEnabled = true
-        
-        
     }
     
     func tap(gestureReconizer: UITapGestureRecognizer) {
@@ -87,33 +85,36 @@ class DiaryViewController: BaseViewController, UITableViewDelegate, UITableViewD
         
         addDiaryBtnBg.layer.cornerRadius = 20
         
+        fetchDiaries()
     }
     
+    func fetchDiaries() {
+        CKDiaryStore.shared.fetchDiaries(year: 2017, month: 8) { 
+            self.diaryTableView.reloadData()
+        }
+    }
+    
+    
+}
+
+// MARK: UITableViewDelegate, UITableViewDataSource
+extension DiaryViewController: UITableViewDelegate, UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 8
+        return CKDiaryStore.shared.currentDiaries.count
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomTableViewCell") as! CustomTableViewCell
         
-        //다이어리를 생성한 날짜를 기준으로 출산일까지 D-day계산해서 표시
-//        cell.cellLabel.text = "\(DiaryStore.shared.getPregnantWeek(of: diary).week)"
-        cell.dateLabel.text = "17.08.02"
-        cell.contentsLabel.text = "오늘은 태동이 많이 느껴졌다. 우리 애기는 잘 있을까? 쪼만한 내새꾸가 배에서 꼬물 거리고 있다는게 너무 신기하다!. 남편이 오늘 딸기를 사와서 먹었다. 우리 꼬물이도 좋아하는 것 같다"
-        cell.addtionalDate.text = "3"
-        cell.weekLabel.text = "TUE"
+        //        cell.cellLabel.text = "\(DiaryStore.shared.getPregnantWeek(of: diary).week)"
+//        cell.dateLabel.text = CKDiaryStore.shared.currentDiaries[indexPath.row].
+        cell.contentsLabel.text = CKDiaryStore.shared.currentDiaries[indexPath.row].text
+        cell.addtionalDate.text = "\(CKDiaryStore.shared.currentDiaries[indexPath.row].day)"
+        cell.weekLabel.text = "\(CKDiaryStore.shared.currentDiaries[indexPath.row].month)"
         cell.selectionStyle = UITableViewCellSelectionStyle.none
-        
-        //cell.labelBackgroundView.tag = indexPath.row
-       // cell.labelBackgroundView.isUserInteractionEnabled = true
         
         return cell
     }
-    
-    
- 
-    
-    
-
 }
