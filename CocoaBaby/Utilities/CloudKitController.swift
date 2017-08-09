@@ -43,13 +43,17 @@ class CloudKitController {
     let diaryRecordID = CKRecordID(recordName: "114")
     let diaryZoneOwnerID = "_ddd57ebe59df8c2acd843a09cf1cc570"
     
-    func saveRecord(text: String) {
+    func fetchId() {
+        
+    }
+    
+    func saveDiaryRecord(text: String, year: Int, month: Int, day: Int) {
         let diaryRecord = CKRecord(recordType: CloudKitFetchType.diary.rawValue, zoneID: CKRecordZoneID(zoneName: "diaryZone", ownerName: diaryZoneOwnerID))
 
         diaryRecord["text"] = text as NSString
-        diaryRecord["year"] = 2017 as CKRecordValue
-        diaryRecord["month"] = 8 as CKRecordValue
-        diaryRecord["day"] = 9 as CKRecordValue
+        diaryRecord["year"] = year as CKRecordValue
+        diaryRecord["month"] = month as CKRecordValue
+        diaryRecord["day"] = day as CKRecordValue
         
         targetDatabase.save(diaryRecord) { (record, error) in
             if let error = error {
@@ -58,28 +62,31 @@ class CloudKitController {
         }
     }
     
-    func fetchRecord() {
-        publicDatabase.fetch(withRecordID: diaryRecordID) { (record, error) in
-            if let error = error {
-                print(error)
-            }
-        }
-        
-        let ownerID: String = "_ddd57ebe59df8c2acd843a09cf1cc570"
-        
-        publicDatabase.fetch(withRecordZoneID: CKRecordZoneID(zoneName: CKRecordZoneDefaultName, ownerName: ownerID)) { (recordZone, error) in
-            if let error = error {
-                print(error)
-            }
-        }
-    }
+//    func fetchRecord() {
+//        publicDatabase.fetch(withRecordID: diaryRecordID) { (record, error) in
+//            if let error = error {
+//                print(error)
+//            }
+//        }
+//        
+//        publicDatabase.fetch(withRecordZoneID: CKRecordZoneID(zoneName: CKRecordZoneDefaultName, ownerName: ownerID)) { (recordZone, error) in
+//            if let error = error {
+//                print(error)
+//            }
+//        }
+//    }
     
-    func fetchRecords(type: CloudKitFetchType, completion: @escaping ([CKDiary]) -> ()) {
-        let predicate = NSPredicate(format: "year == 2017")
-        let query = CKQuery(recordType: type.rawValue, predicate: predicate)
+    func fetchDiaryRecords(year: Int, month: Int, completion: @escaping ([CKDiary]) -> ()) {
+//        publicDatabase.perform(<#T##query: CKQuery##CKQuery#>, inZoneWith: <#T##CKRecordZoneID?#>, completionHandler: <#T##([CKRecord]?, Error?) -> Void#>)
+        
+        let predicate = NSCompoundPredicate(type: .and, subpredicates: [
+            NSPredicate(format: "year == \(Int64(year))"),
+            NSPredicate(format: "month == \(Int64(month))")
+            ])
+
+        let query = CKQuery(recordType: CloudKitFetchType.diary.rawValue, predicate: predicate)
         let operation = CKQueryOperation(query: query)
-        let ownerID: String = "_ddd57ebe59df8c2acd843a09cf1cc570"
-        let recordZoneID = CKRecordZoneID(zoneName: CloudKitZoneName.diary.rawValue, ownerName: ownerID)
+        let recordZoneID = CKRecordZoneID(zoneName: CloudKitZoneName.diary.rawValue, ownerName: diaryZoneOwnerID)
         
         operation.zoneID = recordZoneID
         
@@ -94,6 +101,36 @@ class CloudKitController {
         }
         
         targetDatabase.add(operation)
+    }
+    
+    func fetchDiaryRecordss(year: Int, month: Int, completion: @escaping ([CKDiary]) -> ()) {
+        let predicate = NSCompoundPredicate(type: .and, subpredicates: [
+            NSPredicate(format: "year == \(Int64(year))"),
+            NSPredicate(format: "month == \(Int64(month))")
+            ])
+        
+        let query = CKQuery(recordType: CloudKitFetchType.diary.rawValue, predicate: predicate)
+//        query.sortDescriptors = NSSortDescriptor(key: #keypath(), ascending: <#T##Bool#>)
+        let sortByMonth = NSSortDescriptor(key: "month", ascending: true)
+        let sortByDay = NSSortDescriptor(key: "day", ascending: true)
+        query.sortDescriptors = [sortByMonth, sortByDay]
+        var result: [CKDiary] = [CKDiary]()
+        
+        privateDatabase.perform(query, inZoneWith: nil) { (records, error) in
+            if let error = error {
+                print(error)
+            }
+            
+            guard let records = records else {
+                return
+            }
+            
+            for record in records {
+                result.append(self.diary(from: record))
+            }
+            
+            completion(result)
+        }
     }
     
     private func diary(from record: CKRecord) -> CKDiary {
@@ -126,7 +163,7 @@ class CloudKitController {
         
         modifyRecordsOperation.modifyRecordsCompletionBlock = { records, recordIDs, error in
             if error != nil {
-                print(error?.localizedDescription)
+//                print(error?.localizedDescription)
             }
             
             completion(share)
@@ -143,7 +180,7 @@ class CloudKitController {
         
         operation.perRecordCompletionBlock = { record, _, error in
             if error != nil {
-                print(error?.localizedDescription)
+//                print(error?.localizedDescription)
             }
             
             if let shareRecord = record {
@@ -157,7 +194,7 @@ class CloudKitController {
         
         operation.fetchRecordsCompletionBlock = { _, error in
             if error != nil {
-                print(error?.localizedDescription)
+//                print(error?.localizedDescription)
             }
         }
     }

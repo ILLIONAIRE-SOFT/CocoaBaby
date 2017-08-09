@@ -8,7 +8,7 @@
 
 import UIKit
 
-class DiaryViewController: BaseViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class DiaryViewController: BaseViewController {
 
     @IBOutlet var diaryTableView: UITableView!
     @IBOutlet var yearPickLabel: UILabel!
@@ -20,26 +20,6 @@ class DiaryViewController: BaseViewController, UIPickerViewDataSource, UIPickerV
     
     let years = ["2016", "2017", "2018"]
     
-    
-    // MARK : PickerView
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return years[row]
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return years.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        yearPickLabel.text = years[row]
-        //self.view.endEditing(true)
-        yearPickerView.isHidden = true
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,10 +29,34 @@ class DiaryViewController: BaseViewController, UIPickerViewDataSource, UIPickerV
         diaryTableView.delegate = self
         diaryTableView.dataSource = self
         
+        initPickerView()
         
-        // MARK : PickerView
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
+        addDiaryBtnBg.layer.cornerRadius = 20
+        
+        fetchDiaries()
+    }
+    
+    // MARK: Methods
+    func fetchDiaries() {
+        CKDiaryStore.shared.fetchDiaries(year: 2017, month: 8) {
+            self.diaryTableView.reloadData()
+        }
+    }
+    
+    func tap(gestureReconizer: UITapGestureRecognizer) {
+        print("picked!")
+        yearPickerView.isHidden = false
+    }
+    
+    // MARK : PickerView
+    func initPickerView() {
         var pickerRect = yearPickerView.frame
-       
+        
         pickerRect.origin.x = -5// some desired value
         pickerRect.origin.y = 2// some desired value
         yearPickerView.frame = pickerRect
@@ -63,38 +67,9 @@ class DiaryViewController: BaseViewController, UIPickerViewDataSource, UIPickerV
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(tap(gestureReconizer:)))
         yearPickLabel.addGestureRecognizer(tap)
-            
+        
         yearPickLabel.isUserInteractionEnabled = true
     }
-    
-    func tap(gestureReconizer: UITapGestureRecognizer) {
-        print("picked!")
-        yearPickerView.isHidden = false
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-//        let dateComponents = Calendar.current.dateComponents([.year, .month, .day], from: Date())
-//        DiaryStore.shared.createDiary(text: "김다동", dateComponents: dateComponents) {
-//            print("Save")
-//        }
-        
-        DiaryStore.shared.fetchDiaries(year: 2017, month: 8) { 
-            print("Load")
-        }
-        
-        addDiaryBtnBg.layer.cornerRadius = 20
-        
-        fetchDiaries()
-    }
-    
-    func fetchDiaries() {
-        CKDiaryStore.shared.fetchDiaries(year: 2017, month: 8) { 
-            self.diaryTableView.reloadData()
-        }
-    }
-    
     
 }
 
@@ -117,5 +92,26 @@ extension DiaryViewController: UITableViewDelegate, UITableViewDataSource {
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         
         return cell
+    }
+}
+
+// MARK: - UIPickerViewDataSource, UIPickerViewDelegate
+extension DiaryViewController: UIPickerViewDataSource, UIPickerViewDelegate {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return years[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return years.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        yearPickLabel.text = years[row]
+        //self.view.endEditing(true)
+        yearPickerView.isHidden = true
     }
 }

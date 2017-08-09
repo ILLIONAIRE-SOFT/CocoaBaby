@@ -24,13 +24,13 @@ class HomeViewController: BaseViewController {
         babyImageView.image = UIImage(named: "CocoaBaby")?.withRenderingMode(.alwaysTemplate)
         babyImageView.tintColor = UIColor.mainBlueColor
         
-        CloudKitController.shared.shareData { (share) in
-            let controller = UICloudSharingController(share: share, container: CKContainer.default())
-            
-            controller.availablePermissions = .allowReadOnly
-            
-            self.present(controller, animated: true, completion: nil)
-        }
+//        CloudKitController.shared.shareData { (share) in
+//            let controller = UICloudSharingController(share: share, container: CKContainer.default())
+//            
+//            controller.availablePermissions = .allowReadOnly
+//            
+//            self.present(controller, animated: true, completion: nil)
+//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

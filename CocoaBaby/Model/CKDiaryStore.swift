@@ -15,18 +15,16 @@ class CKDiaryStore {
     var currentDiaries: [CKDiary] = [CKDiary]()
     
     func fetchDiaries(year: Int, month: Int, completion: @escaping () -> ()) {
-        CloudKitController.shared.fetchRecords(type: .diary) { (diaries) in
-            print(diaries.count)
+        CloudKitController.shared.fetchDiaryRecordss(year: year, month: month) { (diaries) in
             self.currentDiaries = diaries
             
             OperationQueue.main.addOperation {
                 completion()
             }
-            
         }
     }
     
     func saveDiaries(text: String, year: Int, month: Int, day: Int) {
-        
+        CloudKitController.shared.saveDiaryRecord(text: text, year: year, month: month, day: day)
     }
 }

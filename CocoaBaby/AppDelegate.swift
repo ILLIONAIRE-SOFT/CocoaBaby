@@ -54,12 +54,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         acceptSharesOperation.perShareCompletionBlock = {
             metadata, share, error in
             if error != nil {
-//                print(error?.localizedDescription)
+                
             }
-            
-            // Add code here to fetch shared record and display to user
         }
-        
+    
         CKContainer(identifier: cloudKitShareMetadata.containerIdentifier)
             .add(acceptSharesOperation)
     }
