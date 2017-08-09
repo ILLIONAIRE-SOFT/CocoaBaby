@@ -16,8 +16,13 @@ class CKDiaryStore {
     
     func fetchDiaries(year: Int, month: Int, completion: @escaping () -> ()) {
         CloudKitController.shared.fetchRecords(type: .diary) { (diaries) in
+            print("fetch complete")
             self.currentDiaries = diaries
-            completion()
+            
+            OperationQueue.main.addOperation {
+                completion()
+            }
+            
         }
     }
     
