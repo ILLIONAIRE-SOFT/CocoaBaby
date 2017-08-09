@@ -26,6 +26,7 @@ class CloudKitController {
     let diaryRecordID = CKRecordID(recordName: "115")
     
     func saveRecord(text: String) {
+        let diaryRecordID = CKRecordID(recordName: "116")
         let diaryRecord = CKRecord(recordType: "Diary", recordID: diaryRecordID)
         diaryRecord["text"] = text as NSString
         diaryRecord["year"] = 2017 as CKRecordValue

@@ -8,33 +8,34 @@
 
 import UIKit
 
-class TipsDetailViewController: BaseViewController, UITableViewDataSource, UITableViewDelegate {
+class TipsDetailViewController: UIViewController {
 
-    @IBOutlet var tipsDetailTableView: UITableView!
-    var tipList = ["지금 아기는요","엄마의 몸 상태","아빠는 이렇게 해주세요"]
+    @IBOutlet var scrollView: UIScrollView!
+    @IBOutlet var weekTitle: UILabel!
+    @IBOutlet var babyTipTitle: UILabel!
+    @IBOutlet var babyTip: UILabel!
+    @IBOutlet var motherTipTitle: UILabel!
+    @IBOutlet var motherTip: UILabel!
+    @IBOutlet var fatherTipTitle: UILabel!
+    @IBOutlet var fatherTip: UILabel!
+    
+    @IBOutlet var contentsView: UIView!
     override func viewDidLoad() {
-        super.viewDidLoad()
-        
-        self.tipsDetailTableView.backgroundColor = UIColor(patternImage: UIImage(named: "Gradation2")!)
-        self.tipsDetailTableView.separatorStyle = .none
 
-        self.tipsDetailTableView.delegate = self
-        self.tipsDetailTableView.dataSource = self
+        
+        babyTip.lineBreakMode = .byWordWrapping
+        babyTip.numberOfLines = 0;
+
+        motherTip.lineBreakMode = .byWordWrapping
+        motherTip.numberOfLines = 0;
+
+        fatherTip.lineBreakMode = .byWordWrapping
+        fatherTip.numberOfLines = 0;
+
+        babyTip.text = "지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는"
+        motherTip.text = "지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는"
+        fatherTip.text = "지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는"
     }
 
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.tipList.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tipsDetailTableView.dequeueReusableCell(withIdentifier: "TipsDetailViewCell", for: indexPath) as! TipsTableViewCell
-        
-        cell.title.text = tipList[indexPath.row]
-        
-        return cell
-    }
+
 }
