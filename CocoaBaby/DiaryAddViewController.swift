@@ -15,6 +15,7 @@ class DiaryAddViewController: DiaryBaseViewController {
     @IBOutlet var textViewBg: UIView!
     @IBOutlet var textView: UITextView!
     @IBOutlet weak var toolbarBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var keyBoardHideBtn: UIBarButtonItem!
     var toolbarBottomConstraintInitialValue: CGFloat?
     
     override func viewDidLoad() {
@@ -61,6 +62,11 @@ class DiaryAddViewController: DiaryBaseViewController {
     @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
         textView.resignFirstResponder()
     }
+    
+    @IBAction func tappedHideKeyboard(_ sender: UIBarButtonItem) {
+        self.view.endEditing(true)
+    }
+    
     
     @IBAction func tappedDone(_ sender: UIBarButtonItem) {
         let components = CocoaDateFormatter.createComponents(from: Date())
