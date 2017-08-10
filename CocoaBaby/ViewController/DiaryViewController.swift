@@ -50,6 +50,22 @@ class DiaryViewController: BaseViewController {
         yearPickerView.isHidden = false
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        switch segue.identifier {
+        case "tappedDiaryCell"?:
+            let controller = segue.destination as! DiaryAddViewController
+            controller.diary = CKDiaryStore.shared.currentDiaries[(self.diaryTableView.indexPathForSelectedRow?.row)!]
+        case "tappedAddDiary"?:
+            let controller = segue.destination as! DiaryAddViewController
+            
+            if let diary = CKDiaryStore.shared.todayDiary {
+                controller.diary = diary
+            }
+        default:
+            return
+        }
+    }
+    
     // MARK : PickerView
     func initPickerView() {
         var pickerRect = yearPickerView.frame
@@ -64,7 +80,6 @@ class DiaryViewController: BaseViewController {
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(tap(gestureReconizer:)))
         yearPickLabel.addGestureRecognizer(tap)
-        
         yearPickLabel.isUserInteractionEnabled = true
     }
     
@@ -84,10 +99,6 @@ extension DiaryViewController: UITableViewDelegate, UITableViewDataSource {
         cell.initViews(with: CKDiaryStore.shared.currentDiaries[indexPath.row])
         
         return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        CKDiaryStore.shared.updateDiary(diary: CKDiaryStore.shared.currentDiaries[indexPath.row])
     }
 }
 

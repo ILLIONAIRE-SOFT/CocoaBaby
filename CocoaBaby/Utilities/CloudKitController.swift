@@ -61,22 +61,32 @@ class CloudKitController {
     }
  
     func saveDiaryRecord(text: String, year: Int, month: Int, day: Int) {
-        guard let zone = UserStore.shared.diaryZone else {
-            return
-        }
+//        guard let zone = UserStore.shared.diaryZone else {
+//            return
+//        }
+//        
+//        var diaryRecrod: CKRecord
         
-        let diaryRecord = CKRecord(recordType: CloudKitFetchType.diary.rawValue, zoneID: zone.zoneID)
+//        let diaryRecord = CKRecord(recordType: CloudKitFetchType.diary.rawValue, zoneID: zone.zoneID)
+//        if UserStore.shared.diaryZone == nil {
+//            diaryRecord = CKRecord(recordType: CloudKitFetchType.diary.rawValue)
+//            
+////            privateDatabase.zone
+////            CKRecord(
+//        }
+//        CKRecordZone(zoneName: CloudKitZoneName.diary.rawValue)
+//        let diaryRecord = CKRecord(recordType: CloudKitFetchType.diary.rawValue)
 
-        diaryRecord["text"] = text as NSString
-        diaryRecord["year"] = year as CKRecordValue
-        diaryRecord["month"] = month as CKRecordValue
-        diaryRecord["day"] = day as CKRecordValue
-        
-        targetDatabase.save(diaryRecord) { (record, error) in
-            if let error = error {
-                print(error)
-            }
-        }
+//        diaryRecord["text"] = text as NSString
+//        diaryRecord["year"] = year as CKRecordValue
+//        diaryRecord["month"] = month as CKRecordValue
+//        diaryRecord["day"] = day as CKRecordValue
+//        
+//        targetDatabase.save(diaryRecord) { (record, error) in
+//            if let error = error {
+//                print(error)
+//            }
+//        }
     }
     
 //    func fetchRecord() {
@@ -177,7 +187,7 @@ class CloudKitController {
         }
     }
     
-    func updateRecord(with id: CKRecordID) {
+    func updateRecord(with id: CKRecordID, text: String) {
 //        let diaryRecord = CKRecord(recordType: CloudKitFetchType.diary.rawValue, recordID: id)
 //        diaryRecord["text"] = "Modified" as CKRecordValue
         
@@ -186,7 +196,7 @@ class CloudKitController {
                 print(error)
             }
             
-            record?["text"] = "Modified" as CKRecordValue
+            record?["text"] = text as CKRecordValue
             
             self.privateDatabase.save(record!, completionHandler: { (record, error) in
                 if let error = error {

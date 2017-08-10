@@ -27,6 +27,7 @@
 		499CABDB1F382A170008FF8E /* Diary+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499CABD91F382A170008FF8E /* Diary+CoreDataProperties.swift */; };
 		499CABDD1F382A310008FF8E /* DiaryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499CABDC1F382A310008FF8E /* DiaryStore.swift */; };
 		49B88EAE1F3BF5A4005043B6 /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B88EAD1F3BF5A4005043B6 /* UserStore.swift */; };
+		49B88EB01F3C2774005043B6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49B88EAF1F3C2774005043B6 /* GoogleService-Info.plist */; };
 		49D7F44A1F319D99004DF036 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D7F4481F319D99004DF036 /* HomeViewController.swift */; };
 		49D7F44D1F31A32E004DF036 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49D7F44C1F31A32E004DF036 /* Tutorial.storyboard */; };
 		49F6C77D1F318AF200373F06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F6C77C1F318AF200373F06 /* AppDelegate.swift */; };
@@ -95,6 +96,7 @@
 		499CABD91F382A170008FF8E /* Diary+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Diary+CoreDataProperties.swift"; path = "Model/Diary+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		499CABDC1F382A310008FF8E /* DiaryStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiaryStore.swift; path = Model/DiaryStore.swift; sourceTree = "<group>"; };
 		49B88EAD1F3BF5A4005043B6 /* UserStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserStore.swift; path = Model/UserStore.swift; sourceTree = "<group>"; };
+		49B88EAF1F3C2774005043B6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		49D7F4481F319D99004DF036 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ViewController/HomeViewController.swift; sourceTree = "<group>"; };
 		49D7F44C1F31A32E004DF036 /* Tutorial.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Tutorial.storyboard; path = Storyboard/Tutorial.storyboard; sourceTree = "<group>"; };
 		49F6C7791F318AF200373F06 /* CocoaBaby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaBaby.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -202,6 +204,7 @@
 		4911D9D71F344D920031B74A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				49B88EAF1F3C2774005043B6 /* GoogleService-Info.plist */,
 				49F6C7881F318AF200373F06 /* Info.plist */,
 				4911D9DC1F344DCA0031B74A /* Localizable.strings */,
 			);
@@ -541,6 +544,7 @@
 				49F6C7841F318AF200373F06 /* Assets.xcassets in Resources */,
 				49D7F44D1F31A32E004DF036 /* Tutorial.storyboard in Resources */,
 				D45189C11F39692E00937869 /* Settings.storyboard in Resources */,
+				49B88EB01F3C2774005043B6 /* GoogleService-Info.plist in Resources */,
 				D45189BE1F3968C100937869 /* Tips.storyboard in Resources */,
 				49F6C7821F318AF200373F06 /* Main.storyboard in Resources */,
 			);

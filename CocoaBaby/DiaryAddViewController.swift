@@ -18,16 +18,31 @@ class DiaryAddViewController: DiaryBaseViewController {
     @IBOutlet weak var keyBoardHideBtn: UIBarButtonItem!
     var toolbarBottomConstraintInitialValue: CGFloat?
     
+    var diary: CKDiary?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         textViewBg.layer.cornerRadius = 4
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        if let diary = diary {
+            updateOriginalValue(diary: diary)
+        }
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         self.toolbarBottomConstraintInitialValue = toolbarBottomConstraint.constant
         
         enableKeyboardHideOnTap()
+    }
+    
+    // MARK: Methods
+    func updateOriginalValue(diary: CKDiary) {
+        self.textView.text = diary.text
     }
     
     private func enableKeyboardHideOnTap(){
@@ -69,6 +84,15 @@ class DiaryAddViewController: DiaryBaseViewController {
     
     
     @IBAction func tappedDone(_ sender: UIBarButtonItem) {
+        if let diary = diary {
+            updateDiary(diary: diary)
+        } else {
+            saveDiary()
+        }
+    }
+    
+    // MARK: Methods
+    func saveDiary() {
         let components = CocoaDateFormatter.createComponents(from: Date())
         
         guard
@@ -80,8 +104,12 @@ class DiaryAddViewController: DiaryBaseViewController {
         
         CKDiaryStore.shared.saveDiaries(text: textView.text, year: year, month: month, day: day)
         
-        self.dismiss(animated: true) {
-            
-        }
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    func updateDiary(diary: CKDiary) {
+        CKDiaryStore.shared.updateDiary(diary: diary, text: self.textView.text)
+        
+        self.dismiss(animated: true, completion: nil)
     }
 }
