@@ -9,6 +9,7 @@ target 'CocoaBaby' do
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
   pod 'GoogleSignIn'
+  pod 'EasyAnimation'
 
   # Pods for CocoaBaby
 
