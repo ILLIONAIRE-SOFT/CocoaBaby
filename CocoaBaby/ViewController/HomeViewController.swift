@@ -24,13 +24,6 @@ class HomeViewController: BaseViewController {
         babyImageView.image = UIImage(named: "CocoaBaby")?.withRenderingMode(.alwaysTemplate)
         babyImageView.tintColor = UIColor.mainBlueColor
         
-//        CloudKitController.shared.shareData { (share) in
-//            let controller = UICloudSharingController(share: share, container: CKContainer.default())
-//            
-//            controller.availablePermissions = .allowReadOnly
-//            
-//            self.present(controller, animated: true, completion: nil)
-//        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,8 +34,10 @@ class HomeViewController: BaseViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-
+        
         updateBabyView()
+        
+        print(CKShareMetadata())
         
         if BabyStore.shared.baby == nil {
             let tutorialStoryboard = UIStoryboard(name: "Tutorial", bundle: nil)

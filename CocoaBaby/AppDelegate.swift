@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().barStyle = .blackOpaque
 
         BabyStore.shared.loadBaby()
+        CloudKitController.shared.fetchRecodZones()
         
         return true
     }

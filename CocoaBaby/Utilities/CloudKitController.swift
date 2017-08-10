@@ -32,8 +32,7 @@ class CloudKitController {
     }
     
     var sharedDatabase: CKDatabase {
-        let database = container.sharedCloudDatabase
-        return database
+        return container.sharedCloudDatabase
     }
     
     var targetDatabase: CKDatabase {
@@ -47,8 +46,26 @@ class CloudKitController {
         
     }
     
+    func fetchRecodZones() {
+        privateDatabase.fetchAllRecordZones { (zones, error) in
+            guard let zones = zones else {
+                return
+            }
+            
+            for zone in zones {
+                if zone.zoneID.zoneName == CloudKitZoneName.diary.rawValue {
+                    UserStore.shared.diaryZone = zone
+                }
+            }
+        }
+    }
+    
     func saveDiaryRecord(text: String, year: Int, month: Int, day: Int) {
-        let diaryRecord = CKRecord(recordType: CloudKitFetchType.diary.rawValue, zoneID: CKRecordZoneID(zoneName: "diaryZone", ownerName: diaryZoneOwnerID))
+        guard let zone = UserStore.shared.diaryZone else {
+            return
+        }
+        
+        let diaryRecord = CKRecord(recordType: CloudKitFetchType.diary.rawValue, zoneID: zone.zoneID)
 
         diaryRecord["text"] = text as NSString
         diaryRecord["year"] = year as CKRecordValue
@@ -77,7 +94,6 @@ class CloudKitController {
 //    }
     
     func fetchDiaryRecords(year: Int, month: Int, completion: @escaping ([CKDiary]) -> ()) {
-//        publicDatabase.perform(<#T##query: CKQuery##CKQuery#>, inZoneWith: <#T##CKRecordZoneID?#>, completionHandler: <#T##([CKRecord]?, Error?) -> Void#>)
         
         let predicate = NSCompoundPredicate(type: .and, subpredicates: [
             NSPredicate(format: "year == \(Int64(year))"),
@@ -110,7 +126,6 @@ class CloudKitController {
             ])
         
         let query = CKQuery(recordType: CloudKitFetchType.diary.rawValue, predicate: predicate)
-//        query.sortDescriptors = NSSortDescriptor(key: #keypath(), ascending: <#T##Bool#>)
         let sortByMonth = NSSortDescriptor(key: "month", ascending: true)
         let sortByDay = NSSortDescriptor(key: "day", ascending: true)
         query.sortDescriptors = [sortByMonth, sortByDay]
