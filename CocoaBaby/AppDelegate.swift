@@ -8,15 +8,22 @@
 
 import UIKit
 import CloudKit
+import Firebase
+import GoogleSignIn
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, GIDSignInUIDelegate {
 
     var window: UIWindow?
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-
+        
+        FirebaseApp.configure()
+        
+        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
+        GIDSignIn.sharedInstance().delegate = self
+        
         UINavigationBar.appearance().barStyle = .blackOpaque
 
         BabyStore.shared.loadBaby()
@@ -47,21 +54,48 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    func application(_ application: UIApplication, userDidAcceptCloudKitShareWith cloudKitShareMetadata: CKShareMetadata) {
+//    func application(_ application: UIApplication, userDidAcceptCloudKitShareWith cloudKitShareMetadata: CKShareMetadata) {
+//        
+//        let acceptSharesOperation = CKAcceptSharesOperation(
+//            shareMetadatas: [cloudKitShareMetadata])
+//        
+//        acceptSharesOperation.perShareCompletionBlock = {
+//            metadata, share, error in
+//            if error != nil {
+//                
+//            }
+//        }
+//    
+//        CKContainer(identifier: cloudKitShareMetadata.containerIdentifier)
+//            .add(acceptSharesOperation)
+//    }
+    
+    func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
+        return GIDSignIn.sharedInstance().handle(url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String, annotation: [:])
+    }
+    
+    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
+        if let error = error {
+            print(error)
+            return
+        }
         
-        let acceptSharesOperation = CKAcceptSharesOperation(
-            shareMetadatas: [cloudKitShareMetadata])
+        guard let authentication = user.authentication else {
+            return
+        }
         
-        acceptSharesOperation.perShareCompletionBlock = {
-            metadata, share, error in
-            if error != nil {
-                
+        let credential = GoogleAuthProvider.credential(withIDToken: authentication.idToken, accessToken: authentication.accessToken)
+        
+        Auth.auth().signIn(with: credential) { (user, error) in
+            if let error = error {
+                print(error)
+                return
             }
         }
-    
-        CKContainer(identifier: cloudKitShareMetadata.containerIdentifier)
-            .add(acceptSharesOperation)
     }
-
+    
+    func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
+        
+    }
 }
 
