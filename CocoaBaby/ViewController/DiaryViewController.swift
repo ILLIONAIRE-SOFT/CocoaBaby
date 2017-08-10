@@ -14,9 +14,6 @@ class DiaryViewController: BaseViewController {
     @IBOutlet var yearPickLabel: UILabel!
     @IBOutlet var yearPickerView: UIPickerView!
     @IBOutlet var addDiaryBtnBg: UIView!
-    @IBOutlet var addDiaryBtn: UIButton!
-    @IBAction func myUnwindAction(unwindSegue: UIStoryboardSegue) {
-    }
     
     let years = ["2016", "2017", "2018"]
     
@@ -84,10 +81,7 @@ extension DiaryViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomTableViewCell") as! CustomTableViewCell
         
-        cell.contentsLabel.text = CKDiaryStore.shared.currentDiaries[indexPath.row].text
-        cell.addtionalDate.text = "\(CKDiaryStore.shared.currentDiaries[indexPath.row].day)"
-        cell.weekLabel.text = "\(CKDiaryStore.shared.currentDiaries[indexPath.row].month)"
-        cell.selectionStyle = UITableViewCellSelectionStyle.none
+        cell.initViews(with: CKDiaryStore.shared.currentDiaries[indexPath.row])
         
         return cell
     }

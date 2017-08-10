@@ -10,9 +10,11 @@ import Foundation
 
 class CocoaDateFormatter {
     
+    static let weekDays = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"]
+    
     static func createComponents(from date: Date) -> DateComponents {
         
-        let components = Calendar.current.dateComponents([.year, .month, .day], from: date)
+        let components = Calendar.current.dateComponents([.year, .month, .day, .weekday], from: date)
         return components
     }
     
@@ -22,5 +24,22 @@ class CocoaDateFormatter {
         
         return components
     }
-
+    
+    static func createDate(year: Int, month: Int, day: Int) -> Date {
+        let date = Calendar.current.date(from: createComponents(year: year, month: month, day: day))
+        
+        return date!
+    }
+    
+    static func getDay(from diary: CKDiary) -> String {
+        let date = createDate(year: diary.year, month: diary.month, day: diary.day)
+        
+        let components = createComponents(from: date)
+        
+        if let weekDay = components.weekday {
+            return weekDays[weekDay - 1]
+        } else {
+            return ""
+        }
+    }
 }

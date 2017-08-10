@@ -9,34 +9,30 @@
 import UIKit
 
 class CustomTableViewCell: UITableViewCell {
-    
    
     @IBOutlet var labelBackgroundView: UIView!
-    @IBOutlet var cellLabel: UILabel!
     @IBOutlet var contentsLabel: UILabel!
-    @IBOutlet var dateLabel: UILabel!
     @IBOutlet var addtionalDate: UILabel!
     @IBOutlet var weekLabel: UILabel!
-    
-    
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         
         labelBackgroundView.layer.cornerRadius = 5
-        
-        
-       // labelBackgroundView.layer.borderWidth = 0.5
-       //labelBackgroundView.layer.borderColor = UIColor.lightGray.cgColor
-//        labelBackgroundView.layer.masksToBounds = false
-        
+        self.selectionStyle = UITableViewCellSelectionStyle.none
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func initViews(with diary: CKDiary) {
+        self.contentsLabel.text = diary.text
+        self.addtionalDate.text = "\(diary.day)"
+        self.weekLabel.text = "\(CocoaDateFormatter.getDay(from: diary))"
     }
 
 }
