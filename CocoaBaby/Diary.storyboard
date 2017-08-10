@@ -36,10 +36,10 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view alpha="0.89999997615814209" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x4X-fh-F7X">
-                                                    <rect key="frame" x="15" y="50" width="384" height="70"/>
+                                                    <rect key="frame" x="15" y="50" width="345" height="70"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="58A-Nt-Plp">
-                                                            <rect key="frame" x="76" y="14" width="288" height="46"/>
+                                                            <rect key="frame" x="76" y="14" width="249" height="46"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -80,7 +80,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fd1-Td-phK">
-                                                    <rect key="frame" x="366" y="27" width="33" height="16"/>
+                                                    <rect key="frame" x="327" y="27" width="33" height="16"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                     <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
@@ -195,7 +195,7 @@
                                         <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                         <color key="textColor" red="0.22154757957559679" green="0.22154757957559679" blue="0.22154757957559679" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                                     </textView>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="0.97223686733128833" colorSpace="custom" customColorSpace="sRGB"/>
@@ -228,6 +228,12 @@
                                     <constraint firstAttribute="height" constant="44" id="FUu-CQ-fLr"/>
                                 </constraints>
                                 <items>
+                                    <barButtonItem image="ic_keyboard_hide" id="AzH-RN-g3p">
+                                        <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <action selector="tappedHideKeyboard:" destination="Uo9-5P-rrE" id="afq-nl-SFw"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem systemItem="flexibleSpace" id="zOY-Pw-rnu"/>
                                     <barButtonItem style="done" systemItem="done" id="eL4-Q2-2Kx">
                                         <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
@@ -262,6 +268,7 @@
                     <connections>
                         <outlet property="addDiraryUIToolbar" destination="v0f-U7-kzh" id="22y-PI-LBO"/>
                         <outlet property="doneAddDiaryBtn" destination="eL4-Q2-2Kx" id="RjT-wl-dhU"/>
+                        <outlet property="keyBoardHideBtn" destination="AzH-RN-g3p" id="TC9-zs-tJx"/>
                         <outlet property="textView" destination="Pee-sP-GhJ" id="ccY-zd-DWT"/>
                         <outlet property="textViewBg" destination="FL6-eK-92a" id="Vwb-E9-osM"/>
                         <outlet property="toolbarBottomConstraint" destination="zWR-X2-ogD" id="GBn-fI-vx8"/>
@@ -279,5 +286,6 @@
     </scenes>
     <resources>
         <image name="ic_create_white" width="24" height="24"/>
+        <image name="ic_keyboard_hide" width="24" height="24"/>
     </resources>
 </document>
