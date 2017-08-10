@@ -18,7 +18,7 @@ class DiaryAddViewController: DiaryBaseViewController {
     @IBOutlet weak var keyBoardHideBtn: UIBarButtonItem!
     var toolbarBottomConstraintInitialValue: CGFloat?
     
-    var diary: CKDiary?
+//    var diary: CKDiary?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,9 +29,9 @@ class DiaryAddViewController: DiaryBaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if let diary = diary {
-            updateOriginalValue(diary: diary)
-        }
+//        if let diary = diary {
+//            updateOriginalValue(diary: diary)
+//        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -41,9 +41,9 @@ class DiaryAddViewController: DiaryBaseViewController {
     }
     
     // MARK: Methods
-    func updateOriginalValue(diary: CKDiary) {
-        self.textView.text = diary.text
-    }
+//    func updateOriginalValue(diary: CKDiary) {
+//        self.textView.text = diary.text
+//    }
     
     private func enableKeyboardHideOnTap(){
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
@@ -84,11 +84,11 @@ class DiaryAddViewController: DiaryBaseViewController {
     
     
     @IBAction func tappedDone(_ sender: UIBarButtonItem) {
-        if let diary = diary {
-            updateDiary(diary: diary)
-        } else {
-            saveDiary()
-        }
+//        if let diary = diary {
+//            updateDiary(diary: diary)
+//        } else {
+//            saveDiary()
+//        }
     }
     
     // MARK: Methods
@@ -102,14 +102,14 @@ class DiaryAddViewController: DiaryBaseViewController {
                 return
         }
         
-        CKDiaryStore.shared.saveDiaries(text: textView.text, year: year, month: month, day: day)
+//        CKDiaryStore.shared.saveDiaries(text: textView.text, year: year, month: month, day: day)
         
         self.dismiss(animated: true, completion: nil)
     }
     
-    func updateDiary(diary: CKDiary) {
-        CKDiaryStore.shared.updateDiary(diary: diary, text: self.textView.text)
-        
-        self.dismiss(animated: true, completion: nil)
-    }
+//    func updateDiary(diary: CKDiary) {
+//        CKDiaryStore.shared.updateDiary(diary: diary, text: self.textView.text)
+//        
+//        self.dismiss(animated: true, completion: nil)
+//    }
 }

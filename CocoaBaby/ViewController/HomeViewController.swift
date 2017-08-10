@@ -46,7 +46,10 @@ class HomeViewController: BaseViewController {
         }
         
 //        FirebaseDataController.shared.saveUser()
-        FirebaseDataController.shared.loadUser()
+//        FirebaseDataController.shared.saveDiary(year: 2017, month: 8, day: 9)
+//        FirebaseDataController.shared.fetchDiaries(year: 2017, month: 8) { (_) in
+        
+//        }
     }
     
     // MARK: - Methods

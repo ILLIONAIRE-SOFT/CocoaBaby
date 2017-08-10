@@ -31,15 +31,15 @@ class CocoaDateFormatter {
         return date!
     }
     
-    static func getDay(from diary: CKDiary) -> String {
-        let date = createDate(year: diary.year, month: diary.month, day: diary.day)
-        
-        let components = createComponents(from: date)
-        
-        if let weekDay = components.weekday {
-            return weekDays[weekDay - 1]
-        } else {
-            return ""
-        }
-    }
+//    static func getDay(from diary: CKDiary) -> String {
+//        let date = createDate(year: diary.year, month: diary.month, day: diary.day)
+//        
+//        let components = createComponents(from: date)
+//        
+//        if let weekDay = components.weekday {
+//            return weekDays[weekDay - 1]
+//        } else {
+//            return ""
+//        }
+//    }
 }

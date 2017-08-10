@@ -9,8 +9,22 @@
 import Foundation
 import FirebaseDatabase
 import Firebase
-//import Firebase
 
+enum FirebaseDirectoryName: String {
+    case diaries = "diaries"
+    case year = "year"
+    case month = "month"
+    case day = "day"
+}
+
+struct DiaryData {
+    var text: String
+    struct Date {
+        var year: Int
+        var month: Int
+        var day: Int
+    }
+}
 
 class FirebaseDataController {
     
@@ -19,27 +33,45 @@ class FirebaseDataController {
     var ref: DatabaseReference = Database.database().reference()
     
     func saveUser() {
+        self.ref.child("users").child((Auth.auth().currentUser?.uid)!).setValue(["username": "Sohn"])
+    }
+    
+    func saveDiary(year: Int, month: Int, day: Int) {
+        guard let uid = Auth.auth().currentUser?.uid else {
+            return
+        }
         
-        self.ref.child("users").child((Auth.auth().currentUser?.uid)!).setValue(["username" : "Sohn"])
-        print("complete")
+        let post = [
+            "text": "Test",
+            "year": year,
+            "month": month,
+            "day": day
+            ] as [String : Any]
+        
+        ref.child(FirebaseDirectoryName.diaries.rawValue).child(uid).child("\(year)").child("\(month)").child("\(day)").setValue(post)
+    }
+    
+    func fetchDiaries(date: DiaryData.Date, completion: @escaping ([Diary]) -> ()) {
+        guard let uid = Auth.auth().currentUser?.uid else {
+            return
+        }
+        
+        ref.child(FirebaseDirectoryName.diaries.rawValue).child(uid).child("\(date.year)").child("\(date.month)").observeSingleEvent(of: .value, with: { (snapshot) in
+            let dict = snapshot.value as? [String:[String:Any]]
+            
+            for dic in dict! {
+                print(dic.value)
+            }
+        })
     }
     
     func loadUser() {
         let userID = Auth.auth().currentUser?.uid
-
+        
         ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? NSDictionary
             let username = value?["username"] as? String ?? ""
             print(username)
         })
-//        ref.child("users").child(userID!).observeSingleEventOfType(.Value, withBlock: { (snapshot) in
-//            // Get user value
-//            let username = snapshot.value!["username"] as! String
-//            let user = User.init(username: username)
-//            
-//            // ...
-//        }) { (error) in
-//            print(error.localizedDescription)
-//        }
     }
 }
