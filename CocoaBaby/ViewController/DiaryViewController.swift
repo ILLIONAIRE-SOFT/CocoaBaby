@@ -40,9 +40,9 @@ class DiaryViewController: BaseViewController {
     
     // MARK: Methods
     func fetchDiaries() {
-        CKDiaryStore.shared.fetchDiaries(year: 2017, month: 8) {
-            self.diaryTableView.reloadData()
-        }
+//        CKDiaryStore.shared.fetchDiaries(year: 2017, month: 8) {
+//            self.diaryTableView.reloadData()
+//        }
     }
     
     func tap(gestureReconizer: UITapGestureRecognizer) {
@@ -51,19 +51,19 @@ class DiaryViewController: BaseViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        switch segue.identifier {
-        case "tappedDiaryCell"?:
-            let controller = segue.destination as! DiaryAddViewController
-            controller.diary = CKDiaryStore.shared.currentDiaries[(self.diaryTableView.indexPathForSelectedRow?.row)!]
-        case "tappedAddDiary"?:
-            let controller = segue.destination as! DiaryAddViewController
-            
-            if let diary = CKDiaryStore.shared.todayDiary {
-                controller.diary = diary
-            }
-        default:
-            return
-        }
+//        switch segue.identifier {
+//        case "tappedDiaryCell"?:
+//            let controller = segue.destination as! DiaryAddViewController
+//            controller.diary = CKDiaryStore.shared.currentDiaries[(self.diaryTableView.indexPathForSelectedRow?.row)!]
+//        case "tappedAddDiary"?:
+//            let controller = segue.destination as! DiaryAddViewController
+//            
+//            if let diary = CKDiaryStore.shared.todayDiary {
+//                controller.diary = diary
+//            }
+//        default:
+//            return
+//        }
     }
     
     // MARK : PickerView
@@ -89,14 +89,14 @@ class DiaryViewController: BaseViewController {
 extension DiaryViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return CKDiaryStore.shared.currentDiaries.count
+        return 0
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomTableViewCell") as! CustomTableViewCell
         
-        cell.initViews(with: CKDiaryStore.shared.currentDiaries[indexPath.row])
+//        cell.initViews(with: CKDiaryStore.shared.currentDiaries[indexPath.row])
         
         return cell
     }
