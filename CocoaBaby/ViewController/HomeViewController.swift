@@ -45,7 +45,8 @@ class HomeViewController: BaseViewController {
             present(viewController, animated: false, completion: nil)
         }
         
-        FirebaseDataController.shared.saveUser()
+//        FirebaseDataController.shared.saveUser()
+        FirebaseDataController.shared.loadUser()
     }
     
     // MARK: - Methods
