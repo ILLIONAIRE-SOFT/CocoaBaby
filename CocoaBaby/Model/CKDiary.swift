@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CloudKit
 
 class CKDiary: NSObject {
     
@@ -14,6 +15,7 @@ class CKDiary: NSObject {
     var year: Int = 0
     var month: Int = 0
     var day: Int = 0
+    var recordID: CKRecordID?
     
     override init() {
         

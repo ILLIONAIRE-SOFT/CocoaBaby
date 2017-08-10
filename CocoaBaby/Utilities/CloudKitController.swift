@@ -59,7 +59,7 @@ class CloudKitController {
             }
         }
     }
-    
+ 
     func saveDiaryRecord(text: String, year: Int, month: Int, day: Int) {
         guard let zone = UserStore.shared.diaryZone else {
             return
@@ -92,6 +92,35 @@ class CloudKitController {
 //            }
 //        }
 //    }
+    func fetchDiaryRecordsWithRecordID(year: Int, month: Int, completion: @escaping ([CKDiary]) -> ()) {
+        let predicate = NSCompoundPredicate(type: .and, subpredicates: [
+            NSPredicate(format: "year == \(Int64(year))"),
+            NSPredicate(format: "month == \(Int64(month))")
+            ])
+        
+        let query = CKQuery(recordType: CloudKitFetchType.diary.rawValue, predicate: predicate)
+        let sortByMonth = NSSortDescriptor(key: "month", ascending: true)
+        let sortByDay = NSSortDescriptor(key: "day", ascending: true)
+        query.sortDescriptors = [sortByMonth, sortByDay]
+        var result: [CKDiary] = [CKDiary]()
+        
+        privateDatabase.perform(query, inZoneWith: nil) { (records, error) in
+            if let error = error {
+                print(error)
+            }
+            
+            guard let records = records else {
+                return
+            }
+            
+            for record in records {
+                result.append(self.diary(from: record))
+            }
+            
+            completion(result)
+        }
+    }
+
     
     func fetchDiaryRecords(year: Int, month: Int, completion: @escaping ([CKDiary]) -> ()) {
         
@@ -148,6 +177,32 @@ class CloudKitController {
         }
     }
     
+    func updateRecord(with id: CKRecordID) {
+//        let diaryRecord = CKRecord(recordType: CloudKitFetchType.diary.rawValue, recordID: id)
+//        diaryRecord["text"] = "Modified" as CKRecordValue
+        
+        privateDatabase.fetch(withRecordID: id) { (record, error) in
+            if let error = error {
+                print(error)
+            }
+            
+            record?["text"] = "Modified" as CKRecordValue
+            
+            self.privateDatabase.save(record!, completionHandler: { (record, error) in
+                if let error = error {
+                    print(error)
+                }
+            })
+        }
+//        privateDatabase.save(diaryRecord) { (record, error) in
+//            if let error = error {
+//                print(error)
+//            }
+//            
+//            print("update complete")
+//        }
+    }
+    
     private func diary(from record: CKRecord) -> CKDiary {
         let diary = CKDiary()
         
@@ -158,6 +213,7 @@ class CloudKitController {
         diary.month = record["month"] as! Int
         diary.day = record["day"] as! Int
         diary.text = record["text"] as! String
+        diary.recordID = record.recordID
         
         return diary
     }

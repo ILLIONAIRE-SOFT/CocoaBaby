@@ -84,14 +84,16 @@ extension DiaryViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomTableViewCell") as! CustomTableViewCell
         
-        //        cell.cellLabel.text = "\(DiaryStore.shared.getPregnantWeek(of: diary).week)"
-//        cell.dateLabel.text = CKDiaryStore.shared.currentDiaries[indexPath.row].
         cell.contentsLabel.text = CKDiaryStore.shared.currentDiaries[indexPath.row].text
         cell.addtionalDate.text = "\(CKDiaryStore.shared.currentDiaries[indexPath.row].day)"
         cell.weekLabel.text = "\(CKDiaryStore.shared.currentDiaries[indexPath.row].month)"
         cell.selectionStyle = UITableViewCellSelectionStyle.none
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        CKDiaryStore.shared.updateDiary(diary: CKDiaryStore.shared.currentDiaries[indexPath.row])
     }
 }
 
