@@ -235,9 +235,10 @@
 		496FB1D71F3193CB00E4042D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				49A4B0E31F3DEEF000CC09A7 /* Diary */,
+				49A4B0E21F3DEEC800CC09A7 /* CoreData */,
 				49A4B0E11F3DEDD000CC09A7 /* FireBase */,
 				49B88EAC1F3BF595005043B6 /* User */,
-				496FB1D81F31943D00E4042D /* CocoaBaby.xcdatamodeld */,
 				496FB1DF1F31985400E4042D /* Baby */,
 			);
 			name = Model;
@@ -259,6 +260,21 @@
 				49CBF1861F3C29DE00426D61 /* FireBaseDataController.swift */,
 			);
 			name = FireBase;
+			sourceTree = "<group>";
+		};
+		49A4B0E21F3DEEC800CC09A7 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				496FB1D81F31943D00E4042D /* CocoaBaby.xcdatamodeld */,
+			);
+			name = CoreData;
+			sourceTree = "<group>";
+		};
+		49A4B0E31F3DEEF000CC09A7 /* Diary */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Diary;
 			sourceTree = "<group>";
 		};
 		49B88EAC1F3BF595005043B6 /* User */ = {
