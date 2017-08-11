@@ -7,3 +7,21 @@
 //
 
 import Foundation
+
+class DiaryStore {
+    
+    static let shared = DiaryStore()
+    
+    var currentDiaries: [Diary] = [Diary]()
+    
+    func fetchDiaries(date: Diary.Date, completion: @escaping () -> ()) {
+        
+        FireBaseAPI.fetchDiaries(date: date) { (diaries) in
+            self.currentDiaries = diaries
+            
+            OperationQueue.main.addOperation {
+                completion()
+            }
+        }
+    }
+}

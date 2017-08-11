@@ -40,9 +40,11 @@ class DiaryViewController: BaseViewController {
     
     // MARK: Methods
     func fetchDiaries() {
-//        CKDiaryStore.shared.fetchDiaries(year: 2017, month: 8) {
-//            self.diaryTableView.reloadData()
-//        }
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        DiaryStore.shared.fetchDiaries(date: Diary.Date(year: 2017, month: 8, day: 0)) { 
+            self.diaryTableView.reloadData()
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+        }
     }
     
     func tap(gestureReconizer: UITapGestureRecognizer) {
