@@ -1,5 +1,5 @@
 //
-//  FirbaseDataController.swift
+//  FirBaseDataController.swift
 //  CocoaBaby
 //
 //  Created by Sohn on 10/08/2017.
@@ -11,13 +11,14 @@ import FirebaseDatabase
 import Firebase
 
 enum FireBaseDirectoryName: String {
+    case babies = "babies"
     case diaries = "diaries"
     case year = "year"
     case month = "month"
     case day = "day"
 }
 
-struct DiaryData {
+struct Diary {
     var text: String
     struct Date {
         var year: Int
@@ -51,7 +52,7 @@ class FireBaseDataController {
         ref.child(FireBaseDirectoryName.diaries.rawValue).child(uid).child("\(year)").child("\(month)").child("\(day)").setValue(post)
     }
     
-    func fetchDiaries(date: DiaryData.Date, completion: @escaping ([Diary]) -> ()) {
+    func fetchDiaries(date: Diary.Date, completion: @escaping ([Diary]) -> ()) {
         guard let uid = Auth.auth().currentUser?.uid else {
             return
         }

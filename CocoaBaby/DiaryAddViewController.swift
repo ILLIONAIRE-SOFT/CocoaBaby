@@ -84,11 +84,7 @@ class DiaryAddViewController: DiaryBaseViewController {
     
     
     @IBAction func tappedDone(_ sender: UIBarButtonItem) {
-//        if let diary = diary {
-//            updateDiary(diary: diary)
-//        } else {
-//            saveDiary()
-//        }
+
     }
     
     // MARK: Methods

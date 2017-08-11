@@ -22,9 +22,6 @@
 		496FB1DE1F31982500E4042D /* Baby+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496FB1DC1F31982500E4042D /* Baby+CoreDataProperties.swift */; };
 		496FB1E11F31986E00E4042D /* BabyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496FB1E01F31986E00E4042D /* BabyStore.swift */; };
 		499B6AE799D70C5EF0497B9D /* Pods_CocoaBabyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D030A7C3DA05CE73E2A7E35 /* Pods_CocoaBabyUITests.framework */; };
-		499CABDA1F382A170008FF8E /* Diary+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499CABD81F382A170008FF8E /* Diary+CoreDataClass.swift */; };
-		499CABDB1F382A170008FF8E /* Diary+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499CABD91F382A170008FF8E /* Diary+CoreDataProperties.swift */; };
-		499CABDD1F382A310008FF8E /* DiaryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499CABDC1F382A310008FF8E /* DiaryStore.swift */; };
 		49B88EAE1F3BF5A4005043B6 /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B88EAD1F3BF5A4005043B6 /* UserStore.swift */; };
 		49B88EB01F3C2774005043B6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49B88EAF1F3C2774005043B6 /* GoogleService-Info.plist */; };
 		49CBF1871F3C29DE00426D61 /* FireBaseDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CBF1861F3C29DE00426D61 /* FireBaseDataController.swift */; };
@@ -90,9 +87,6 @@
 		496FB1DB1F31982500E4042D /* Baby+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Baby+CoreDataClass.swift"; path = "Model/Baby+CoreDataClass.swift"; sourceTree = "<group>"; };
 		496FB1DC1F31982500E4042D /* Baby+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Baby+CoreDataProperties.swift"; path = "Model/Baby+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		496FB1E01F31986E00E4042D /* BabyStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BabyStore.swift; path = Model/BabyStore.swift; sourceTree = "<group>"; };
-		499CABD81F382A170008FF8E /* Diary+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Diary+CoreDataClass.swift"; path = "Model/Diary+CoreDataClass.swift"; sourceTree = "<group>"; };
-		499CABD91F382A170008FF8E /* Diary+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Diary+CoreDataProperties.swift"; path = "Model/Diary+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		499CABDC1F382A310008FF8E /* DiaryStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiaryStore.swift; path = Model/DiaryStore.swift; sourceTree = "<group>"; };
 		49B88EAD1F3BF5A4005043B6 /* UserStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserStore.swift; path = Model/UserStore.swift; sourceTree = "<group>"; };
 		49B88EAF1F3C2774005043B6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		49CBF1861F3C29DE00426D61 /* FireBaseDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FireBaseDataController.swift; path = Model/FireBaseDataController.swift; sourceTree = "<group>"; };
@@ -244,7 +238,6 @@
 				49A4B0E11F3DEDD000CC09A7 /* FireBase */,
 				49B88EAC1F3BF595005043B6 /* User */,
 				496FB1D81F31943D00E4042D /* CocoaBaby.xcdatamodeld */,
-				499CABD71F3824000008FF8E /* Diary */,
 				496FB1DF1F31985400E4042D /* Baby */,
 			);
 			name = Model;
@@ -258,16 +251,6 @@
 				496FB1E01F31986E00E4042D /* BabyStore.swift */,
 			);
 			name = Baby;
-			sourceTree = "<group>";
-		};
-		499CABD71F3824000008FF8E /* Diary */ = {
-			isa = PBXGroup;
-			children = (
-				499CABD81F382A170008FF8E /* Diary+CoreDataClass.swift */,
-				499CABD91F382A170008FF8E /* Diary+CoreDataProperties.swift */,
-				499CABDC1F382A310008FF8E /* DiaryStore.swift */,
-			);
-			name = Diary;
 			sourceTree = "<group>";
 		};
 		49A4B0E11F3DEDD000CC09A7 /* FireBase */ = {
@@ -783,7 +766,6 @@
 				DAB5A40F1F32126C000235B0 /* Extension.swift in Sources */,
 				4911D9D41F34461F0031B74A /* SettingsViewController.swift in Sources */,
 				496FB1DE1F31982500E4042D /* Baby+CoreDataProperties.swift in Sources */,
-				499CABDD1F382A310008FF8E /* DiaryStore.swift in Sources */,
 				49FEEE321F3844C70046D5A3 /* CocoaDateFormatter.swift in Sources */,
 				496FB1DA1F31943D00E4042D /* CocoaBaby.xcdatamodeld in Sources */,
 				49CBF1871F3C29DE00426D61 /* FireBaseDataController.swift in Sources */,
@@ -793,12 +775,10 @@
 				DAB5A40B1F31B0C4000235B0 /* TutorialSetNameViewController.swift in Sources */,
 				49CBF18A1F3C33E400426D61 /* LoginViewController.swift in Sources */,
 				DAB5A4171F33331C000235B0 /* ColorExtension.swift in Sources */,
-				499CABDB1F382A170008FF8E /* Diary+CoreDataProperties.swift in Sources */,
 				49D7F44A1F319D99004DF036 /* HomeViewController.swift in Sources */,
 				D45189C71F3AD25200937869 /* DiaryBaseViewController.swift in Sources */,
 				DAEE34BF1F3834FC0090DBF5 /* TipsDetailViewController.swift in Sources */,
 				DAEE34C31F3849870090DBF5 /* TipsCollectionViewCell.swift in Sources */,
-				499CABDA1F382A170008FF8E /* Diary+CoreDataClass.swift in Sources */,
 				4948E0A61F39799C008542F6 /* EditBabyViewController.swift in Sources */,
 				49B88EAE1F3BF5A4005043B6 /* UserStore.swift in Sources */,
 			);
