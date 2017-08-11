@@ -33,10 +33,6 @@ struct FireBaseAPI {
     
     static var ref: DatabaseReference = Database.database().reference()
     
-    static func saveUser() {
-        self.ref.child("users").child((Auth.auth().currentUser?.uid)!).setValue(["username": "Sohn"])
-    }
-    
     static func saveDiary(diary: Diary) {
         guard let uid = Auth.auth().currentUser?.uid else {
             return
