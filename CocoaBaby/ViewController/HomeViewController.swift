@@ -49,8 +49,6 @@ class HomeViewController: BaseViewController {
             present(viewController, animated: false, completion: nil)
         }
         
-        FireBaseDataController.shared.saveUser()
-        
         // MARK: WaterDropOne
         waterDrop.layer.cornerRadius = 5
         // position

@@ -1,5 +1,5 @@
 //
-//  FirBaseDataController.swift
+//  FireBaseAPI.swift
 //  CocoaBaby
 //
 //  Created by Sohn on 10/08/2017.
@@ -20,6 +20,8 @@ enum FireBaseDirectoryName: String {
 
 struct Diary {
     var text: String
+    var date: Date
+    
     struct Date {
         var year: Int
         var month: Int
@@ -27,32 +29,30 @@ struct Diary {
     }
 }
 
-class FireBaseDataController {
+struct FireBaseAPI {
     
-    static let shared = FireBaseDataController()
+    static var ref: DatabaseReference = Database.database().reference()
     
-    var ref: DatabaseReference = Database.database().reference()
-    
-    func saveUser() {
+    static func saveUser() {
         self.ref.child("users").child((Auth.auth().currentUser?.uid)!).setValue(["username": "Sohn"])
     }
     
-    func saveDiary(year: Int, month: Int, day: Int) {
+    static func saveDiary(diary: Diary) {
         guard let uid = Auth.auth().currentUser?.uid else {
             return
         }
         
         let post = [
-            "text": "Test",
-            "year": year,
-            "month": month,
-            "day": day
+            "text": diary.text,
+            "year": diary.date.year,
+            "month": diary.date.month,
+            "day": diary.date.day
             ] as [String : Any]
         
-        ref.child(FireBaseDirectoryName.diaries.rawValue).child(uid).child("\(year)").child("\(month)").child("\(day)").setValue(post)
+        ref.child(FireBaseDirectoryName.diaries.rawValue).child(uid).child("\(diary.date.year)").child("\(diary.date.month)").child("\(diary.date.day)").setValue(post)
     }
     
-    func fetchDiaries(date: Diary.Date, completion: @escaping ([Diary]) -> ()) {
+    static func fetchDiaries(date: Diary.Date, completion: @escaping ([Diary]) -> ()) {
         guard let uid = Auth.auth().currentUser?.uid else {
             return
         }
@@ -66,7 +66,7 @@ class FireBaseDataController {
         })
     }
     
-    func loadUser() {
+    static func loadUser() {
         let userID = Auth.auth().currentUser?.uid
         
         ref.child("users").child(userID!).observeSingleEvent(of: .value, with: { (snapshot) in
