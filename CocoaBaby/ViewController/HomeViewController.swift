@@ -49,7 +49,9 @@ class HomeViewController: BaseViewController {
             present(viewController, animated: false, completion: nil)
         }
         
-<<<<<<< HEAD
+//        UIView.animate(withDuration: 1, delay: 0, options: [.repeat,.autoreverse], animations: {
+        
+
         FirebaseDataController.shared.saveUser()
         
         // MARK: WaterDropOne
@@ -95,13 +97,13 @@ class HomeViewController: BaseViewController {
             self.waterDropTwo.alpha = 0.0
         })
 
-=======
+
 //        FirebaseDataController.shared.saveUser()
 //        FirebaseDataController.shared.saveDiary(year: 2017, month: 8, day: 9)
 //        FirebaseDataController.shared.fetchDiaries(year: 2017, month: 8) { (_) in
         
 //        }
->>>>>>> e0f32d94cd1996a40478f475f48cafed5c78b6e4
+
     }
     
     
