@@ -10,7 +10,7 @@ import Foundation
 import FirebaseDatabase
 import Firebase
 
-enum FirebaseDirectoryName: String {
+enum FireBaseDirectoryName: String {
     case diaries = "diaries"
     case year = "year"
     case month = "month"
@@ -26,9 +26,9 @@ struct DiaryData {
     }
 }
 
-class FirebaseDataController {
+class FireBaseDataController {
     
-    static let shared = FirebaseDataController()
+    static let shared = FireBaseDataController()
     
     var ref: DatabaseReference = Database.database().reference()
     
@@ -48,7 +48,7 @@ class FirebaseDataController {
             "day": day
             ] as [String : Any]
         
-        ref.child(FirebaseDirectoryName.diaries.rawValue).child(uid).child("\(year)").child("\(month)").child("\(day)").setValue(post)
+        ref.child(FireBaseDirectoryName.diaries.rawValue).child(uid).child("\(year)").child("\(month)").child("\(day)").setValue(post)
     }
     
     func fetchDiaries(date: DiaryData.Date, completion: @escaping ([Diary]) -> ()) {
@@ -56,7 +56,7 @@ class FirebaseDataController {
             return
         }
         
-        ref.child(FirebaseDirectoryName.diaries.rawValue).child(uid).child("\(date.year)").child("\(date.month)").observeSingleEvent(of: .value, with: { (snapshot) in
+        ref.child(FireBaseDirectoryName.diaries.rawValue).child(uid).child("\(date.year)").child("\(date.month)").observeSingleEvent(of: .value, with: { (snapshot) in
             let dict = snapshot.value as? [String:[String:Any]]
             
             for dic in dict! {

@@ -27,7 +27,7 @@
 		499CABDD1F382A310008FF8E /* DiaryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 499CABDC1F382A310008FF8E /* DiaryStore.swift */; };
 		49B88EAE1F3BF5A4005043B6 /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B88EAD1F3BF5A4005043B6 /* UserStore.swift */; };
 		49B88EB01F3C2774005043B6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49B88EAF1F3C2774005043B6 /* GoogleService-Info.plist */; };
-		49CBF1871F3C29DE00426D61 /* FirbaseDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CBF1861F3C29DE00426D61 /* FirbaseDataController.swift */; };
+		49CBF1871F3C29DE00426D61 /* FireBaseDataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CBF1861F3C29DE00426D61 /* FireBaseDataController.swift */; };
 		49CBF18A1F3C33E400426D61 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CBF1891F3C33E400426D61 /* LoginViewController.swift */; };
 		49D7F44A1F319D99004DF036 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D7F4481F319D99004DF036 /* HomeViewController.swift */; };
 		49D7F44D1F31A32E004DF036 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49D7F44C1F31A32E004DF036 /* Tutorial.storyboard */; };
@@ -95,7 +95,7 @@
 		499CABDC1F382A310008FF8E /* DiaryStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiaryStore.swift; path = Model/DiaryStore.swift; sourceTree = "<group>"; };
 		49B88EAD1F3BF5A4005043B6 /* UserStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserStore.swift; path = Model/UserStore.swift; sourceTree = "<group>"; };
 		49B88EAF1F3C2774005043B6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		49CBF1861F3C29DE00426D61 /* FirbaseDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FirbaseDataController.swift; path = Model/FirbaseDataController.swift; sourceTree = "<group>"; };
+		49CBF1861F3C29DE00426D61 /* FireBaseDataController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FireBaseDataController.swift; path = Model/FireBaseDataController.swift; sourceTree = "<group>"; };
 		49CBF1891F3C33E400426D61 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = ViewController/LoginViewController.swift; sourceTree = "<group>"; };
 		49D7F4481F319D99004DF036 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ViewController/HomeViewController.swift; sourceTree = "<group>"; };
 		49D7F44C1F31A32E004DF036 /* Tutorial.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Tutorial.storyboard; path = Storyboard/Tutorial.storyboard; sourceTree = "<group>"; };
@@ -241,11 +241,11 @@
 		496FB1D71F3193CB00E4042D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				49A4B0E11F3DEDD000CC09A7 /* FireBase */,
 				49B88EAC1F3BF595005043B6 /* User */,
 				496FB1D81F31943D00E4042D /* CocoaBaby.xcdatamodeld */,
 				499CABD71F3824000008FF8E /* Diary */,
 				496FB1DF1F31985400E4042D /* Baby */,
-				49CBF1861F3C29DE00426D61 /* FirbaseDataController.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -268,6 +268,14 @@
 				499CABDC1F382A310008FF8E /* DiaryStore.swift */,
 			);
 			name = Diary;
+			sourceTree = "<group>";
+		};
+		49A4B0E11F3DEDD000CC09A7 /* FireBase */ = {
+			isa = PBXGroup;
+			children = (
+				49CBF1861F3C29DE00426D61 /* FireBaseDataController.swift */,
+			);
+			name = FireBase;
 			sourceTree = "<group>";
 		};
 		49B88EAC1F3BF595005043B6 /* User */ = {
@@ -778,7 +786,7 @@
 				499CABDD1F382A310008FF8E /* DiaryStore.swift in Sources */,
 				49FEEE321F3844C70046D5A3 /* CocoaDateFormatter.swift in Sources */,
 				496FB1DA1F31943D00E4042D /* CocoaBaby.xcdatamodeld in Sources */,
-				49CBF1871F3C29DE00426D61 /* FirbaseDataController.swift in Sources */,
+				49CBF1871F3C29DE00426D61 /* FireBaseDataController.swift in Sources */,
 				4911D9CE1F34455D0031B74A /* DiaryViewController.swift in Sources */,
 				D45189C31F3ACD0700937869 /* DiaryAddViewController.swift in Sources */,
 				4911D9E31F3450EF0031B74A /* ErrorMessage.swift in Sources */,
