@@ -31,7 +31,7 @@ struct Diary {
 
 struct FireBaseAPI {
     
-    static var ref: DatabaseReference = Database.database().reference()
+    static private var ref: DatabaseReference = Database.database().reference()
     
     static func saveDiary(diary: Diary) {
         guard let uid = Auth.auth().currentUser?.uid else {
