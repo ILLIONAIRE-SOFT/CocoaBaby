@@ -81,17 +81,6 @@ struct FireBaseAPI {
         }
     }
     
-    static func updateDiary(diary: Diary) {
-        guard let uid = Auth.auth().currentUser?.uid else {
-            print(FireBaseAPIError.invalidUser)
-            return
-        }
-        
-        
-    }
-    
-    
-    
     static func fetchDiaries(date: Diary.Date, completion: @escaping ([Diary]) -> ()) {
         guard let uid = Auth.auth().currentUser?.uid else {
             return
