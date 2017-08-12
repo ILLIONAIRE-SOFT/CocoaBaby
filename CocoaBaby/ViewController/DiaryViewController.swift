@@ -9,7 +9,7 @@
 import UIKit
 
 class DiaryViewController: BaseViewController {
-
+    
     @IBOutlet var diaryTableView: UITableView!
     @IBOutlet var yearPickLabel: UILabel!
     @IBOutlet var yearPickerView: UIPickerView!
@@ -21,7 +21,7 @@ class DiaryViewController: BaseViewController {
         super.viewDidLoad()
         
         diaryTableView.backgroundColor = UIColor.mainBlueColor
-       // diaryTableView.estimatedRowHeight = 300
+        // diaryTableView.estimatedRowHeight = 300
         // diaryTableView.rowHeight = UITableViewAutomaticDimension
         diaryTableView.delegate = self
         diaryTableView.dataSource = self
@@ -32,7 +32,7 @@ class DiaryViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+        
         addDiaryBtnBg.layer.cornerRadius = 20
         
         fetchDiaries()
@@ -41,31 +41,30 @@ class DiaryViewController: BaseViewController {
     // MARK: Methods
     func fetchDiaries() {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
-        DiaryStore.shared.fetchDiaries(date: Diary.Date(year: 2017, month: 8, day: 0)) { 
+        DiaryStore.shared.fetchDiaries(date: Diary.Date(year: 2017, month: 8, day: 0)) {
             self.diaryTableView.reloadData()
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
         }
     }
     
     func tap(gestureReconizer: UITapGestureRecognizer) {
-        print("picked!")
         yearPickerView.isHidden = false
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//        switch segue.identifier {
-//        case "tappedDiaryCell"?:
-//            let controller = segue.destination as! DiaryAddViewController
-//            controller.diary = CKDiaryStore.shared.currentDiaries[(self.diaryTableView.indexPathForSelectedRow?.row)!]
-//        case "tappedAddDiary"?:
-//            let controller = segue.destination as! DiaryAddViewController
-//            
-//            if let diary = CKDiaryStore.shared.todayDiary {
-//                controller.diary = diary
-//            }
-//        default:
-//            return
-//        }
+        //        switch segue.identifier {
+        //        case "tappedDiaryCell"?:
+        //            let controller = segue.destination as! DiaryAddViewController
+        //            controller.diary = CKDiaryStore.shared.currentDiaries[(self.diaryTableView.indexPathForSelectedRow?.row)!]
+        //        case "tappedAddDiary"?:
+        //            let controller = segue.destination as! DiaryAddViewController
+        //
+        //            if let diary = CKDiaryStore.shared.todayDiary {
+        //                controller.diary = diary
+        //            }
+        //        default:
+        //            return
+        //        }
     }
     
     // MARK : PickerView
@@ -91,14 +90,14 @@ class DiaryViewController: BaseViewController {
 extension DiaryViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return DiaryStore.shared.currentDiaries.count
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "CustomTableViewCell") as! CustomTableViewCell
         
-//        cell.initViews(with: CKDiaryStore.shared.currentDiaries[indexPath.row])
+        cell.initViews(with: DiaryStore.shared.currentDiaries[indexPath.row])
         
         return cell
     }
