@@ -10,6 +10,8 @@ import Foundation
 
 class CocoaDateFormatter {
     
+    static let dateFormatter = DateFormatter()
+    
     static let weekDays = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"]
     
     static func createComponents(from date: Date) -> DateComponents {
@@ -29,6 +31,12 @@ class CocoaDateFormatter {
         let date = Calendar.current.date(from: createComponents(year: diaryDate.year, month: diaryDate.month, day: diaryDate.day))
         
         return date!
+    }
+    
+    static func getDateExcludeTime(from date: Date) -> String {
+        dateFormatter.dateStyle = .medium
+        
+        return dateFormatter.string(from: date)
     }
     
     static func getCalendarComponents(from date: Date) -> DateComponents {
@@ -54,7 +62,7 @@ class CocoaDateFormatter {
         return numDays
     }
     
-    static func getDay(from diary: Diary) -> String {
+    static func getWeekDay(from diary: Diary) -> String {
         let date = createDate(from: diary.date)
         
         let components = createComponents(from: date)
@@ -65,4 +73,15 @@ class CocoaDateFormatter {
             return ""
         }
     }
+    
+    static func getDay(from date: Date) -> Int {
+        let components = getCalendarComponents(from: date)
+        
+        if let day = components.day {
+            return day
+        } else {
+            return 0
+        }
+    }
+    
 }

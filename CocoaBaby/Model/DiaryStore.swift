@@ -16,6 +16,8 @@ class DiaryStore {
     
     func fetchDiaries(date: Diary.Date, completion: @escaping () -> ()) {
         
+        currentDiaries.removeAll()
+        
         FireBaseAPI.fetchDiaries(date: date) { (diaries) in
             
             for diary in diaries {
@@ -34,7 +36,9 @@ class DiaryStore {
             OperationQueue.main.addOperation {
                 // currentDiary에 방금 넣은 다이어리 추가
                 switch diaryResult {
-                case .success(_):
+                case let .success(diary):
+                    self.currentDiaries[diary.date.day] = diary
+                    
                     completion(diaryResult)
                 case .failure(_):
                     completion(diaryResult)

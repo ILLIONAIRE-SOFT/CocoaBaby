@@ -32,7 +32,7 @@ class CustomTableViewCell: UITableViewCell {
     func initViews(with diary: Diary) {
         self.contentsLabel.text = diary.text
         self.addtionalDate.text = "\(diary.date.day)"
-        self.weekLabel.text = "\(CocoaDateFormatter.getDay(from: diary))"
+        self.weekLabel.text = "\(CocoaDateFormatter.getWeekDay(from: diary))"
     }
 
 }

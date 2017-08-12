@@ -23,8 +23,8 @@ class DiaryViewController: BaseViewController {
         super.viewDidLoad()
         
         diaryTableView.backgroundColor = UIColor.mainBlueColor
-        // diaryTableView.estimatedRowHeight = 300
-        // diaryTableView.rowHeight = UITableViewAutomaticDimension
+        diaryTableView.estimatedRowHeight = 300
+        diaryTableView.rowHeight = UITableViewAutomaticDimension
         diaryTableView.delegate = self
         diaryTableView.dataSource = self
         
@@ -35,6 +35,7 @@ class DiaryViewController: BaseViewController {
         super.viewWillAppear(animated)
         
         addDiaryBtnBg.layer.cornerRadius = 20
+        initTodayLabel()
         
         fetchDiaries()
     }
@@ -53,19 +54,32 @@ class DiaryViewController: BaseViewController {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        //        switch segue.identifier {
-        //        case "tappedDiaryCell"?:
-        //            let controller = segue.destination as! DiaryAddViewController
-        //            controller.diary = CKDiaryStore.shared.currentDiaries[(self.diaryTableView.indexPathForSelectedRow?.row)!]
-        //        case "tappedAddDiary"?:
-        //            let controller = segue.destination as! DiaryAddViewController
-        //
-        //            if let diary = CKDiaryStore.shared.todayDiary {
-        //                controller.diary = diary
-        //            }
-        //        default:
-        //            return
-        //        }
+        switch segue.identifier {
+        case "tappedDiaryCell"?:
+            let controller = segue.destination as! DiaryAddViewController
+            
+//            if let diary = DiaryStore.shared.currentDiaries[CocoaDateFormatter.getDay(from: Date()) + 1] {
+//                controller.diary = diary
+//            } else {
+//                let components = CocoaDateFormatter.createComponents(from: Date())
+//                let diary = Diary(text: "", date: Diary.Date(year: components.year!, month: components.month!, day: components.day!))
+//                controller.diary = diary
+//            }
+            
+        case "tappedAddDiary"?:
+            let controller = segue.destination as! DiaryAddViewController
+            
+            // 다른 연도, 월에 있는 경우 today 다이어리를 따로 저장해놔야 한다.
+            if let diary = DiaryStore.shared.currentDiaries[CocoaDateFormatter.getDay(from: Date())] {
+                controller.diary = diary
+            } else {
+                let components = CocoaDateFormatter.createComponents(from: Date())
+                let diary = Diary(text: "", date: Diary.Date(year: components.year!, month: components.month!, day: components.day!))
+                controller.diary = diary
+            }
+        default:
+            return
+        }
     }
     
     // MARK : PickerView
@@ -85,6 +99,10 @@ class DiaryViewController: BaseViewController {
         yearPickLabel.isUserInteractionEnabled = true
     }
     
+    func initTodayLabel() {
+        yearPickLabel.text = CocoaDateFormatter.getDateExcludeTime(from: Date())
+    }
+    
 }
 
 // MARK: UITableViewDelegate, UITableViewDataSource
@@ -102,8 +120,9 @@ extension DiaryViewController: UITableViewDelegate, UITableViewDataSource {
             cell.initViews(with: diary)
             return cell
         } else {
-            let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
-            cell.textLabel?.text = "empty cell"
+            let cell = tableView.dequeueReusableCell(withIdentifier: "DiaryEmptyCell", for: indexPath) as! DiaryEmptyCell
+//            cell.textLabel?.text = "empty cell"
+            
             return cell
         }
     }
