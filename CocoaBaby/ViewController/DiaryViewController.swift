@@ -15,6 +15,8 @@ class DiaryViewController: BaseViewController {
     @IBOutlet var yearPickerView: UIPickerView!
     @IBOutlet var addDiaryBtnBg: UIView!
     
+    var targetDate: Diary.Date = Diary.Date(year: 2017, month: 8, day: 0)
+    
     let years = ["2016", "2017", "2018"]
     
     override func viewDidLoad() {
@@ -27,7 +29,6 @@ class DiaryViewController: BaseViewController {
         diaryTableView.dataSource = self
         
         initPickerView()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,7 +42,7 @@ class DiaryViewController: BaseViewController {
     // MARK: Methods
     func fetchDiaries() {
         UIApplication.shared.isNetworkActivityIndicatorVisible = true
-        DiaryStore.shared.fetchDiaries(date: Diary.Date(year: 2017, month: 8, day: 0)) {
+        DiaryStore.shared.fetchDiaries(date: targetDate) {
             self.diaryTableView.reloadData()
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
         }
@@ -90,16 +91,21 @@ class DiaryViewController: BaseViewController {
 extension DiaryViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return DiaryStore.shared.currentDiaries.count
+        return CocoaDateFormatter.getNumberOfDay(from: targetDate)
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomTableViewCell") as! CustomTableViewCell
         
-        cell.initViews(with: DiaryStore.shared.currentDiaries[indexPath.row])
-        
-        return cell
+        if let diary = DiaryStore.shared.currentDiaries[indexPath.row + 1] {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CustomTableViewCell") as! CustomTableViewCell
+            cell.initViews(with: diary)
+            return cell
+        } else {
+            let cell = UITableViewCell(style: .default, reuseIdentifier: "cell")
+            cell.textLabel?.text = "empty cell"
+            return cell
+        }
     }
 }
 

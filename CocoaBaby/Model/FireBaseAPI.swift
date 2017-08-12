@@ -10,12 +10,21 @@ import Foundation
 import FirebaseDatabase
 import Firebase
 
+enum FireBaseAPIError: Error {
+    case invalidUser
+}
+
 enum FireBaseDirectoryName: String {
     case babies = "babies"
     case diaries = "diaries"
     case year = "year"
     case month = "month"
     case day = "day"
+}
+
+enum DiaryResult {
+    case success(Diary)
+    case failure(Error)
 }
 
 struct Diary {
@@ -26,11 +35,22 @@ struct Diary {
         var year: Int
         var month: Int
         var day: Int
+        
+        init(year: Int, month: Int, day: Int) {
+            self.year = year
+            self.month = month
+            self.day = day
+        }
     }
     
     init() {
         text = ""
         date = Diary.Date(year: 0, month: 0, day: 0)
+    }
+    
+    init(text: String, date: Diary.Date) {
+        self.text = text
+        self.date = date
     }
 }
 
@@ -38,8 +58,9 @@ struct FireBaseAPI {
     
     static private var ref: DatabaseReference = Database.database().reference()
     
-    static func saveDiary(diary: Diary) {
+    static func saveDiary(diary: Diary, completion: @escaping (DiaryResult) -> ()) {
         guard let uid = Auth.auth().currentUser?.uid else {
+            print(FireBaseAPIError.invalidUser)
             return
         }
         
@@ -50,8 +71,26 @@ struct FireBaseAPI {
             "day": diary.date.day
             ] as [String : Any]
         
-        ref.child(FireBaseDirectoryName.diaries.rawValue).child(uid).child("\(diary.date.year)").child("\(diary.date.month)").child("\(diary.date.day)").setValue(post)
+        ref.child(FireBaseDirectoryName.diaries.rawValue).child("\(uid)/\(diary.date.year)/\(diary.date.month)/\(diary.date.day)").setValue(post, andPriority: nil) { (error, ref) in
+            if let error = error {
+                print(error)
+                completion(DiaryResult.failure(error))
+            } else {
+                completion(DiaryResult.success(diary))
+            }
+        }
     }
+    
+    static func updateDiary(diary: Diary) {
+        guard let uid = Auth.auth().currentUser?.uid else {
+            print(FireBaseAPIError.invalidUser)
+            return
+        }
+        
+        
+    }
+    
+    
     
     static func fetchDiaries(date: Diary.Date, completion: @escaping ([Diary]) -> ()) {
         guard let uid = Auth.auth().currentUser?.uid else {

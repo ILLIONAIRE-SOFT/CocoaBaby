@@ -25,14 +25,37 @@ class CocoaDateFormatter {
         return components
     }
     
-    static func createDate(year: Int, month: Int, day: Int) -> Date {
-        let date = Calendar.current.date(from: createComponents(year: year, month: month, day: day))
+    static func createDate(from diaryDate: Diary.Date) -> Date {
+        let date = Calendar.current.date(from: createComponents(year: diaryDate.year, month: diaryDate.month, day: diaryDate.day))
         
         return date!
     }
     
+    static func getCalendarComponents(from date: Date) -> DateComponents {
+        let components = Calendar.current.dateComponents([.year, .month, .day], from: date)
+        
+        return components
+    }
+    
+    static func getNumberOfDay(from diaryDate: Diary.Date) -> Int {
+        let todayComponents = getCalendarComponents(from: Date())
+        
+        let dateComponents = DateComponents(year: diaryDate.year, month: diaryDate.month)
+        let calendar = Calendar.current
+        let date = calendar.date(from: dateComponents)!
+        
+        let range = calendar.range(of: .day, in: .month, for: date)!
+        var numDays = range.count
+        
+        if diaryDate.year == todayComponents.year, diaryDate.month == todayComponents.month {
+            numDays = todayComponents.day!
+        }
+        
+        return numDays
+    }
+    
     static func getDay(from diary: Diary) -> String {
-        let date = createDate(year: diary.date.year, month: diary.date.month, day: diary.date.day)
+        let date = createDate(from: diary.date)
         
         let components = createComponents(from: date)
         

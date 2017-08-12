@@ -12,15 +12,34 @@ class DiaryStore {
     
     static let shared = DiaryStore()
     
-    var currentDiaries: [Diary] = [Diary]()
+    var currentDiaries: [Int:Diary] = [:]
     
     func fetchDiaries(date: Diary.Date, completion: @escaping () -> ()) {
         
         FireBaseAPI.fetchDiaries(date: date) { (diaries) in
-            self.currentDiaries = diaries
+            
+            for diary in diaries {
+                self.currentDiaries[diary.date.day] = diary
+            }
             
             OperationQueue.main.addOperation {
                 completion()
+            }
+        }
+    }
+    
+    func saveDiary(diary: Diary, completion: @escaping (DiaryResult) -> ()) {
+        
+        FireBaseAPI.saveDiary(diary: diary) { diaryResult in
+            OperationQueue.main.addOperation {
+                // currentDiary에 방금 넣은 다이어리 추가
+                switch diaryResult {
+                case .success(_):
+                    completion(diaryResult)
+                case .failure(_):
+                    completion(diaryResult)
+                }
+                
             }
         }
     }
