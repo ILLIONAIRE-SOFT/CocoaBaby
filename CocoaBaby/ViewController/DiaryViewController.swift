@@ -58,13 +58,16 @@ class DiaryViewController: BaseViewController {
         case "tappedDiaryCell"?:
             let controller = segue.destination as! DiaryAddViewController
             
-//            if let diary = DiaryStore.shared.currentDiaries[CocoaDateFormatter.getDay(from: Date()) + 1] {
-//                controller.diary = diary
-//            } else {
-//                let components = CocoaDateFormatter.createComponents(from: Date())
-//                let diary = Diary(text: "", date: Diary.Date(year: components.year!, month: components.month!, day: components.day!))
-//                controller.diary = diary
-//            }
+            guard let selectedIndexPath = diaryTableView.indexPathForSelectedRow else {
+                return
+            }
+            
+            if let diary = DiaryStore.shared.currentDiaries[selectedIndexPath.row + 1] {
+                controller.diary = diary
+            } else {
+                let diary = Diary(text: "", date: Diary.Date(year: targetDate.year, month: targetDate.month, day: diaryTableView.indexPathForSelectedRow!.row + 1))
+                controller.diary = diary
+            }
             
         case "tappedAddDiary"?:
             let controller = segue.destination as! DiaryAddViewController
