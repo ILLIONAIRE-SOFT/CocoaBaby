@@ -15,6 +15,8 @@ class DiaryViewController: BaseViewController {
     @IBOutlet var yearPickerView: UIPickerView!
     @IBOutlet var addDiaryBtnBg: UIView!
     
+    var refreshControl: UIRefreshControl = UIRefreshControl()
+    
     var targetDate: Diary.Date = Diary.Date(year: 2017, month: 8, day: 0)
     
     let years = ["2016", "2017", "2018"]
@@ -29,6 +31,7 @@ class DiaryViewController: BaseViewController {
         diaryTableView.dataSource = self
         
         initPickerView()
+        initRefreshControl()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -49,6 +52,10 @@ class DiaryViewController: BaseViewController {
             self.diaryTableView.reloadData()
             self.stopLoading()
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
+            
+            if self.refreshControl.isRefreshing {
+                self.refreshControl.endRefreshing()
+            }
         }
     }
     
@@ -117,6 +124,13 @@ class DiaryViewController: BaseViewController {
     
     func initTodayLabel() {
         yearPickLabel.text = CocoaDateFormatter.getDateExcludeTime(from: Date())
+    }
+    
+    func initRefreshControl() {
+        refreshControl.addTarget(self, action: #selector(fetchDiaries), for: .valueChanged)
+        refreshControl.tintColor = UIColor.white
+        
+        diaryTableView.addSubview(refreshControl)
     }
     
 }
