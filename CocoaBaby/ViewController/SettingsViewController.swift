@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FirebaseAuth
 
 class SettingsViewController: BaseViewController {
 
@@ -29,6 +30,16 @@ class SettingsViewController: BaseViewController {
         
         sendEmailButton.backgroundColor = UIColor.black.withAlphaComponent(0.15)
         sendEmailButton.layer.cornerRadius = 16
+    }
+    
+    @IBAction func tappedLogout(_ sender: UIButton) {
+        let firebaseAuth = Auth.auth()
+        
+        do {
+            try firebaseAuth.signOut()
+        } catch let signOutError {
+            print("Error sigining out: %@", signOutError)
+        }
     }
     
 }
