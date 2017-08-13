@@ -23,6 +23,12 @@ class BaseViewController: UIViewController {
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Gradation2")!)
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        stopLoading()
+    }
+    
     func startLoading() {
         overlay = UIView(frame: view.frame)
         overlay?.backgroundColor = UIColor.black.withAlphaComponent(0.5)

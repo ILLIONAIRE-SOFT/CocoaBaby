@@ -68,9 +68,19 @@ class DiaryViewController: BaseViewController {
             if let diary = DiaryStore.shared.currentDiaries[selectedIndexPath.row + 1] {
                 controller.diary = diary
             } else {
-                let diary = Diary(text: "", date: Diary.Date(year: targetDate.year, month: targetDate.month, day: diaryTableView.indexPathForSelectedRow!.row + 1))
+                let diary = Diary(text: "", date: Diary.Date(year: targetDate.year, month: targetDate.month, day: selectedIndexPath.row + 1))
                 controller.diary = diary
             }
+            
+        case "tappedEmptyCell"?:
+            let controller = segue.destination as! DiaryAddViewController
+            
+            guard let selectedIndexPath = diaryTableView.indexPathForSelectedRow else {
+                return
+            }
+            
+            let diary = Diary(text: "", date: Diary.Date(year: targetDate.year, month: targetDate.month, day: selectedIndexPath.row + 1))
+            controller.diary = diary
             
         case "tappedAddDiary"?:
             let controller = segue.destination as! DiaryAddViewController

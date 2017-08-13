@@ -166,6 +166,7 @@
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="emptyLine" destination="A4m-dT-JLJ" id="cHa-9t-eU7"/>
+                                            <segue destination="Uo9-5P-rrE" kind="show" identifier="tappedEmptyCell" id="5sN-0H-sTX"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -308,6 +309,6 @@
         <image name="ic_keyboard_hide" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Yem-OY-5oK"/>
+        <segue reference="5sN-0H-sTX"/>
     </inferredMetricsTieBreakers>
 </document>
