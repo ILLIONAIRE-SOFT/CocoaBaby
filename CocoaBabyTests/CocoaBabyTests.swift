@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import CocoaBaby
+//@testable import CocoaBaby
 
 class CocoaBabyTests: XCTestCase {
     

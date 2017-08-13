@@ -16,7 +16,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, GIDSig
 
     var window: UIWindow?
 
-
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         FirebaseApp.configure()
@@ -27,7 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, GIDSig
         UINavigationBar.appearance().barStyle = .blackOpaque
 
         BabyStore.shared.loadBaby()
-        CloudKitController.shared.fetchRecodZones()
         
         return true
     }
@@ -53,22 +51,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, GIDSig
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-    
-//    func application(_ application: UIApplication, userDidAcceptCloudKitShareWith cloudKitShareMetadata: CKShareMetadata) {
-//        
-//        let acceptSharesOperation = CKAcceptSharesOperation(
-//            shareMetadatas: [cloudKitShareMetadata])
-//        
-//        acceptSharesOperation.perShareCompletionBlock = {
-//            metadata, share, error in
-//            if error != nil {
-//                
-//            }
-//        }
-//    
-//        CKContainer(identifier: cloudKitShareMetadata.containerIdentifier)
-//            .add(acceptSharesOperation)
-//    }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
         return GIDSignIn.sharedInstance().handle(url, sourceApplication: options[UIApplicationOpenURLOptionsKey.sourceApplication] as? String, annotation: [:])

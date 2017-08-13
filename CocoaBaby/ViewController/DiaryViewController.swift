@@ -9,11 +9,13 @@
 import UIKit
 
 class DiaryViewController: BaseViewController {
-
+    
     @IBOutlet var diaryTableView: UITableView!
     @IBOutlet var yearPickLabel: UILabel!
     @IBOutlet var yearPickerView: UIPickerView!
     @IBOutlet var addDiaryBtnBg: UIView!
+    
+    var targetDate: Diary.Date = Diary.Date(year: 2017, month: 8, day: 0)
     
     let years = ["2016", "2017", "2018"]
     
@@ -21,32 +23,36 @@ class DiaryViewController: BaseViewController {
         super.viewDidLoad()
         
         diaryTableView.backgroundColor = UIColor.mainBlueColor
-       // diaryTableView.estimatedRowHeight = 300
-        // diaryTableView.rowHeight = UITableViewAutomaticDimension
+        diaryTableView.estimatedRowHeight = 300
+        diaryTableView.rowHeight = UITableViewAutomaticDimension
         diaryTableView.delegate = self
         diaryTableView.dataSource = self
         
         initPickerView()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+        
         addDiaryBtnBg.layer.cornerRadius = 20
+        initTodayLabel()
         
         fetchDiaries()
     }
     
     // MARK: Methods
     func fetchDiaries() {
-        CKDiaryStore.shared.fetchDiaries(year: 2017, month: 8) {
+        startLoading()
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        
+        DiaryStore.shared.fetchDiaries(date: targetDate) {
             self.diaryTableView.reloadData()
+            self.stopLoading()
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
         }
     }
     
     func tap(gestureReconizer: UITapGestureRecognizer) {
-        print("picked!")
         yearPickerView.isHidden = false
     }
     
@@ -54,11 +60,37 @@ class DiaryViewController: BaseViewController {
         switch segue.identifier {
         case "tappedDiaryCell"?:
             let controller = segue.destination as! DiaryAddViewController
-            controller.diary = CKDiaryStore.shared.currentDiaries[(self.diaryTableView.indexPathForSelectedRow?.row)!]
+            
+            guard let selectedIndexPath = diaryTableView.indexPathForSelectedRow else {
+                return
+            }
+            
+            if let diary = DiaryStore.shared.currentDiaries[selectedIndexPath.row + 1] {
+                controller.diary = diary
+            } else {
+                let diary = Diary(text: "", date: Diary.Date(year: targetDate.year, month: targetDate.month, day: selectedIndexPath.row + 1))
+                controller.diary = diary
+            }
+            
+        case "tappedEmptyCell"?:
+            let controller = segue.destination as! DiaryAddViewController
+            
+            guard let selectedIndexPath = diaryTableView.indexPathForSelectedRow else {
+                return
+            }
+            
+            let diary = Diary(text: "", date: Diary.Date(year: targetDate.year, month: targetDate.month, day: selectedIndexPath.row + 1))
+            controller.diary = diary
+            
         case "tappedAddDiary"?:
             let controller = segue.destination as! DiaryAddViewController
             
-            if let diary = CKDiaryStore.shared.todayDiary {
+            // 다른 연도, 월에 있는 경우 today 다이어리를 따로 저장해놔야 한다.
+            if let diary = DiaryStore.shared.currentDiaries[CocoaDateFormatter.getDay(from: Date())] {
+                controller.diary = diary
+            } else {
+                let components = CocoaDateFormatter.createComponents(from: Date())
+                let diary = Diary(text: "", date: Diary.Date(year: components.year!, month: components.month!, day: components.day!))
                 controller.diary = diary
             }
         default:
@@ -83,22 +115,32 @@ class DiaryViewController: BaseViewController {
         yearPickLabel.isUserInteractionEnabled = true
     }
     
+    func initTodayLabel() {
+        yearPickLabel.text = CocoaDateFormatter.getDateExcludeTime(from: Date())
+    }
+    
 }
 
 // MARK: UITableViewDelegate, UITableViewDataSource
 extension DiaryViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return CKDiaryStore.shared.currentDiaries.count
+        return CocoaDateFormatter.getNumberOfDay(from: targetDate)
     }
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "CustomTableViewCell") as! CustomTableViewCell
         
-        cell.initViews(with: CKDiaryStore.shared.currentDiaries[indexPath.row])
-        
-        return cell
+        if let diary = DiaryStore.shared.currentDiaries[indexPath.row + 1] {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "CustomTableViewCell") as! CustomTableViewCell
+            cell.initViews(with: diary)
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "DiaryEmptyCell", for: indexPath) as! DiaryEmptyCell
+//            cell.textLabel?.text = "empty cell"
+            
+            return cell
+        }
     }
 }
 
