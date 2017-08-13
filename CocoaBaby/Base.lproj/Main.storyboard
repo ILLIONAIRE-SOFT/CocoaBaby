@@ -20,7 +20,18 @@
                     <view key="view" contentMode="scaleToFill" id="ONT-pX-Tjt">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gradation2" translatesAutoresizingMaskIntoConstraints="NO" id="Srg-Vc-eB0">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Srg-Vc-eB0" firstAttribute="leading" secondItem="ONT-pX-Tjt" secondAttribute="leading" id="46H-4C-Fjd"/>
+                            <constraint firstAttribute="trailing" secondItem="Srg-Vc-eB0" secondAttribute="trailing" id="aSt-16-DU7"/>
+                            <constraint firstItem="Aw6-7i-vef" firstAttribute="top" secondItem="Srg-Vc-eB0" secondAttribute="bottom" id="g1A-yU-FKk"/>
+                            <constraint firstItem="Srg-Vc-eB0" firstAttribute="top" secondItem="ONT-pX-Tjt" secondAttribute="top" id="olX-tE-FKv"/>
+                        </constraints>
                     </view>
                     <connections>
                         <segue destination="xmu-Gx-PNz" kind="show" identifier="showHomeController" id="fwg-Lx-zyY"/>
@@ -28,7 +39,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PuR-OP-7RH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="450" y="-1369"/>
+            <point key="canvasLocation" x="448.80000000000001" y="-1369.5652173913045"/>
         </scene>
         <!--Tab Bar View Controller-->
         <scene sceneID="u86-qa-NG0">
@@ -95,6 +106,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Gradation2" width="621" height="1104"/>
         <image name="ic_create_white" width="24" height="24"/>
         <image name="ic_face_white" width="24" height="24"/>
         <image name="ic_lightbulb_outline_white" width="24" height="24"/>
