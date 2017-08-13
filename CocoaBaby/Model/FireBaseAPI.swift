@@ -97,29 +97,13 @@ struct FireBaseAPI {
                 }
             }
             
-//            if let json = snapshot as? [String:[String:Any]] {
-//                for diaryJson in json {
-//                    
-//                    if let diary = diary(from: diaryJson.value) {
-//                        result.append(diary)
-//                    }
-//                }
-//            }
-            
             completion(result)
         })
-        
-//        ref.child(FireBaseDirectoryName.diaries.rawValue).child(uid).child("\(date.year)").child("\(date.month)").observe((.value) { (snapshot) in
-//            print(snapshot.value)
-//        })
-//        ref.child(FireBaseDirectoryName.diaries.rawValue).child(uid).child("\(date.year)").child("\(date.month)").observe(.value) { (snapshot) in
-//            print(snapshot.value)
-//        }
     }
     
     static private func diary(from json: [String:Any]) -> Diary? {
         var diary = Diary()
-
+        
         guard
             let text = json["text"],
             let year = json["year"],
@@ -135,5 +119,5 @@ struct FireBaseAPI {
         
         return diary
     }
-
+    
 }
