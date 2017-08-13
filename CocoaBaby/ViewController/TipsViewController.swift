@@ -53,7 +53,7 @@ class TipsViewController: BaseViewController, UIScrollViewDelegate {
 //        let cell = tipsCollectionView.dequeueReusableCell(withReuseIdentifier: "TipsCollectionViewCell", for: indexPath) as! TipsCollectionViewCell 
 //        cell.weekNum.text = String(weeks[indexPath.row])
 //        cell.weekNum.lineBreakMode = .byWordWrapping
-//        cell.weekNum.numberOfLines = 0
+//        cell.weekNum.numberOfLines = 0 
 //        cell.weekNum.font = UIFont(name: cell.weekNum.font.fontName, size: 20)
 //        cell.weekNum.textColor = .white
 //        cell.weekLabel.textColor = UIColor.white

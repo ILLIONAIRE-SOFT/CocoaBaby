@@ -8,32 +8,71 @@
 
 import UIKit
 
-class TipsDetailViewController: UIViewController {
+class TipsDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
-    var weekTitle =  UILabel()
 
+    
+    @IBOutlet var tableView: UITableView!
+//    @IBOutlet var headTitle: UILabel!
+    
+    var week : Int!
+    
+//    @IBOutlet var weekTitle: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        print("llooaadd")
-        self.view.backgroundColor = .white
-        
-        
-        weekTitle.frame = CGRect(x: 50, y: 50, width: 80, height: 20)
-        view.addSubview(weekTitle)
-        
-//        babyTip.lineBreakMode = .byWordWrapping
-//        babyTip.numberOfLines = 0;
-//
-//        motherTip.lineBreakMode = .byWordWrapping
-//        motherTip.numberOfLines = 0;
-//
-//        fatherTip.lineBreakMode = .byWordWrapping
-//        fatherTip.numberOfLines = 0;
-//
-//        babyTip.text = "지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는"
-//        motherTip.text = "지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는"
-//        fatherTip.text = "지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는지금 아기는"
-    }
+        self.tableView.dataSource = self
+        self.tableView.delegate = self
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "header")
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "content")
 
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        if week == nil {
+            week = 1
+        }
+
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 2
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let identifier = indexPath.section == 0 ? "header" : "content"
+        let cell = tableView.dequeueReusableCell(withIdentifier: identifier)
+        
+        return cell!
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        if section == 1 {
+            let segmentedControl = UISegmentedControl(items: ["baby","mama","papa"])
+            segmentedControl.tintColor = .blue
+            
+            return segmentedControl
+        }
+        return nil
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return section == 0 ? 0 : 44
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return indexPath.section == 0 ?  80 : 1000
+    }
+    
+    
+    
+    
+    
 
 }
