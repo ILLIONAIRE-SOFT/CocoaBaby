@@ -18,7 +18,6 @@ class TipsDetailViewController: UIViewController {
         self.view.backgroundColor = .white
         
         
-        weekTitle.text = ""
         weekTitle.frame = CGRect(x: 50, y: 50, width: 80, height: 20)
         view.addSubview(weekTitle)
         
