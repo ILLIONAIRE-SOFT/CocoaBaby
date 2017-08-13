@@ -51,6 +51,7 @@
 		DAEE34BB1F382E8B0090DBF5 /* TipsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEE34BA1F382E8B0090DBF5 /* TipsTableViewCell.swift */; };
 		DAEE34BF1F3834FC0090DBF5 /* TipsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEE34BE1F3834FC0090DBF5 /* TipsDetailViewController.swift */; };
 		DAEE34C31F3849870090DBF5 /* TipsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEE34C21F3849870090DBF5 /* TipsCollectionViewCell.swift */; };
+		DAEE35071F3CC4B70090DBF5 /* TipsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEE35061F3CC4B70090DBF5 /* TipsPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +130,7 @@
 		DAEE34BA1F382E8B0090DBF5 /* TipsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TipsTableViewCell.swift; path = ViewController/TipsTableViewCell.swift; sourceTree = "<group>"; };
 		DAEE34BE1F3834FC0090DBF5 /* TipsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsDetailViewController.swift; sourceTree = "<group>"; };
 		DAEE34C21F3849870090DBF5 /* TipsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsCollectionViewCell.swift; sourceTree = "<group>"; };
+		DAEE35061F3CC4B70090DBF5 /* TipsPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsPageViewController.swift; sourceTree = "<group>"; };
 		DFE61576B8B378C8E3F88AB6 /* Pods-CocoaBabyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaBabyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CocoaBabyTests/Pods-CocoaBabyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E058B86FDCDD49D6B0B683BE /* Pods_CocoaBaby.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CocoaBaby.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -185,6 +187,7 @@
 			isa = PBXGroup;
 			children = (
 				4911D9D01F3446110031B74A /* TipsViewController.swift */,
+				DAEE35061F3CC4B70090DBF5 /* TipsPageViewController.swift */,
 				DAEE34C21F3849870090DBF5 /* TipsCollectionViewCell.swift */,
 				DAEE34BE1F3834FC0090DBF5 /* TipsDetailViewController.swift */,
 				DAEE34BA1F382E8B0090DBF5 /* TipsTableViewCell.swift */,
@@ -532,7 +535,7 @@
 				TargetAttributes = {
 					49F6C7781F318AF200373F06 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 23EFP3FERN;
+						DevelopmentTeam = 34UH748CF3;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
@@ -798,6 +801,7 @@
 				DAB5A40B1F31B0C4000235B0 /* TutorialSetNameViewController.swift in Sources */,
 				49CBF18A1F3C33E400426D61 /* LoginViewController.swift in Sources */,
 				DAB5A4171F33331C000235B0 /* ColorExtension.swift in Sources */,
+				DAEE35071F3CC4B70090DBF5 /* TipsPageViewController.swift in Sources */,
 				49D7F44A1F319D99004DF036 /* HomeViewController.swift in Sources */,
 				49A4B0E71F3F17BD00CC09A7 /* DiaryEmptyCell.swift in Sources */,
 				D45189C71F3AD25200937869 /* DiaryBaseViewController.swift in Sources */,
@@ -995,7 +999,7 @@
 			baseConfigurationReference = 59B3D35B11C642E2AC5DE763 /* Pods-CocoaBaby.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 23EFP3FERN;
+				DEVELOPMENT_TEAM = 34UH748CF3;
 				INFOPLIST_FILE = CocoaBaby/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Sohn.CocoaBaby;
@@ -1010,7 +1014,7 @@
 			baseConfigurationReference = 82B4242C76CF19998F67AC6F /* Pods-CocoaBaby.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 23EFP3FERN;
+				DEVELOPMENT_TEAM = 34UH748CF3;
 				INFOPLIST_FILE = CocoaBaby/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Sohn.CocoaBaby;
