@@ -18,7 +18,7 @@ class DiaryEmptyCell: UITableViewCell {
         
         self.selectionStyle = .none
         emptyLine.layer.cornerRadius = 5
-        emptyLine.backgroundColor = UIColor.black.withAlphaComponent(0.8)
+        //emptyLine.backgroundColor = UIColor.black.withAlphaComponent(0.8)
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
