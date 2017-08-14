@@ -17,11 +17,11 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
         
         GIDSignIn.sharedInstance().uiDelegate = self
         
-        if Auth.auth().currentUser != nil {
-            
-        } else {
-            GIDSignIn.sharedInstance().signIn()
-        }
+//        if Auth.auth().currentUser != nil {
+//            
+//        } else {
+//            GIDSignIn.sharedInstance().signIn()
+//        }
     }
     
     override func viewDidAppear(_ animated: Bool) {

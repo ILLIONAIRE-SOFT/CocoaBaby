@@ -49,32 +49,31 @@ class BabyStore {
     }()
     
     
-    func loadBaby() {
+    func fetchBaby(completion: @escaping (Baby?) -> ()) {
         
         FireBaseAPI.fetchBaby { (result) in
             switch result {
             case let .success(baby):
                 self.baby = baby
+                completion(baby)
+            case let .failure(_):
+                completion(nil)
             default:
                 return
             }
         }
-//        let fetchRequest: NSFetchRequest<Baby> = Baby.fetchRequest()
-//        
-//        let viewContext = persistentContainer.viewContext
-//        
-//        viewContext.performAndWait {
-//            do {
-//                let baby = try viewContext.fetch(fetchRequest)
-//                self.baby = baby.first
-//            } catch {
-//                print(error)
-//            }
-//        }
     }
     
-    func registerBaby(from pregnantDate: Date?, to birthDate: Date?, name: String?) {
+    func saveBaby(baby: Baby, completion: @escaping (BabyResult) -> ()) {
         
+        FireBaseAPI.saveBaby(baby: baby) { (result) in
+            switch result {
+            case .success(_):
+                completion(result)
+            case .failure(_):
+                completion(result)
+            }
+        }
 //        let context = persistentContainer.viewContext
 //        
 //        loadBaby()

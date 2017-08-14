@@ -21,6 +21,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, GIDSig
         FirebaseApp.configure()
         Database.database().isPersistenceEnabled = true
         
+        let babyRef = Database.database().reference(withPath: "babies/\((Auth.auth().currentUser?.uid)!)")
+        print(babyRef)
+        babyRef.keepSynced(true)
+        
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
         
