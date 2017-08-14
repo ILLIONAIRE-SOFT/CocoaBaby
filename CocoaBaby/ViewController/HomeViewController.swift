@@ -8,7 +8,6 @@
 
 import UIKit
 import CloudKit
-//import EasyAnimation
 
 class HomeViewController: BaseViewController {
     
@@ -100,4 +99,5 @@ class BabyView: UIView {
         
         self.layer.cornerRadius = self.frame.width/2
     }
+    
 }
