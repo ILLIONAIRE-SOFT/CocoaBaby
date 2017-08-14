@@ -96,12 +96,10 @@ class DiaryViewController: BaseViewController {
     // MARK: Methods
     func fetchDiaries() {
         startLoading()
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
         DiaryStore.shared.fetchDiaries(date: targetDate) {
             self.diaryTableView.reloadData()
             self.stopLoading()
-            UIApplication.shared.isNetworkActivityIndicatorVisible = false
             
             if self.refreshControl.isRefreshing {
                 self.refreshControl.endRefreshing()
