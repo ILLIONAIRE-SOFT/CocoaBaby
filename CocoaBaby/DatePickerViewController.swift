@@ -35,6 +35,7 @@ class DatePickerViewController: UIViewController {
         pickerView.selectRow((currentDate?.month)! - 1, inComponent: 1, animated: false)
         
         initViews()
+        
     }
     
     private func initViews() {
@@ -45,7 +46,7 @@ class DatePickerViewController: UIViewController {
         
         dismiss(animated: true) { 
             if let datePicked = self.datePicked {
-                datePicked(2017, 7)
+                datePicked(nil, nil)
             }
         }
     }
