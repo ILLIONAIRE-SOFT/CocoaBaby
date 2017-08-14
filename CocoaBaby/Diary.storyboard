@@ -150,8 +150,8 @@
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pk8-l3-KDF">
-                                                    <rect key="frame" x="72" y="5.5" width="12.5" height="12"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="10"/>
+                                                    <rect key="frame" x="72" y="4.5" width="15" height="14.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
@@ -166,6 +166,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
+                                            <outlet property="emptyCellDate" destination="Pk8-l3-KDF" id="ldr-vo-YcS"/>
                                             <outlet property="emptyLine" destination="A4m-dT-JLJ" id="cHa-9t-eU7"/>
                                             <segue destination="Uo9-5P-rrE" kind="show" identifier="tappedEmptyCell" id="5sN-0H-sTX"/>
                                         </connections>

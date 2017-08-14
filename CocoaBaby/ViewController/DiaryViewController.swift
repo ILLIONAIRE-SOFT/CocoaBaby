@@ -175,6 +175,7 @@ extension DiaryViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "DiaryEmptyCell", for: indexPath) as! DiaryEmptyCell
+            cell.initCell(with: indexPath.row + 1)
             
             return cell
         }
