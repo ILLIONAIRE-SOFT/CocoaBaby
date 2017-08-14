@@ -13,11 +13,13 @@ import Firebase
 enum FireBaseAPIError: Error {
     case invalidUser
     case noBaby
+    case noTips
 }
 
 enum FireBaseDirectoryName: String {
     case babies = "babies"
     case diaries = "diaries"
+    case tips = "tips"
     case year = "year"
     case month = "month"
     case day = "day"
@@ -43,6 +45,11 @@ enum DiaryResult {
 
 enum BabyResult {
     case success(Baby?)
+    case failure(Error)
+}
+
+enum TipsResult {
+    case success(Tips)
     case failure(Error)
 }
 
@@ -183,3 +190,50 @@ extension FireBaseAPI {
         return baby
     }
 }
+
+// MARK: - Tips
+/*
+extension FireBaseAPI {
+    static func fetchTips(completion: @escaping (TipsResult) -> ()) {
+        
+        ref.child(FireBaseDirectoryName.tips.rawValue).observeSingleEvent(of: .value, with: {
+            (snapshot) in
+            
+            guard snapshot.exists() else {
+                completion(TipsResult.failure(FireBaseAPIError.noTips))
+            }
+            
+            var result: Tips? = nil
+            
+//            let dict = snapshot.value as! [String:Any]
+//            if let tips = baby(from: dict) {
+//                result = baby
+//                
+//                completion(BabyResult.success(result))
+//                
+//            } else {
+//                completion(BabyResult.failure(FireBaseAPIError.noBaby))
+//            }
+
+        })
+        
+    }
+    
+    static private func baby(from json: [String: Any]) -> Baby? {
+        var baby = Baby()
+        
+        guard
+            let name = json[BabyPayloadName.name.rawValue],
+            let pregnantDate = json[BabyPayloadName.pregnantDate.rawValue],
+            let birthDate = json[BabyPayloadName.birthDate.rawValue] else {
+                return nil
+        }
+        
+        baby.name = name as! String
+        baby.pregnantDate = pregnantDate as! Double
+        baby.birthDate = birthDate as! Double
+        
+        return baby
+    }
+
+}*/
