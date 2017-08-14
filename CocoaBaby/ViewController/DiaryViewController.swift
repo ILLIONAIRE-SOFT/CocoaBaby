@@ -12,14 +12,17 @@ class DiaryViewController: BaseViewController {
     
     @IBOutlet var diaryTableView: UITableView!
     @IBOutlet var yearPickLabel: UILabel!
-    @IBOutlet var yearPickerView: UIPickerView!
     @IBOutlet var addDiaryBtnBg: UIView!
     
     var refreshControl: UIRefreshControl = UIRefreshControl()
     
-    var targetDate: Diary.Date = Diary.Date(year: 2017, month: 8, day: 0)
+    var targetDate: Diary.Date = Diary.Date(year: 2017, month: 8, day: 0) {
+        didSet {
+            self.fetchDiaries()
+        }
+    }
     
-    let years = ["2016", "2017", "2018"]
+    let pickerDelegate = YearPickerDelegate()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,7 +33,6 @@ class DiaryViewController: BaseViewController {
         diaryTableView.delegate = self
         diaryTableView.dataSource = self
         
-        initPickerView()
         initRefreshControl()
     }
     
@@ -41,26 +43,6 @@ class DiaryViewController: BaseViewController {
         initTodayLabel()
         
         fetchDiaries()
-    }
-    
-    // MARK: Methods
-    func fetchDiaries() {
-        startLoading()
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
-        
-        DiaryStore.shared.fetchDiaries(date: targetDate) {
-            self.diaryTableView.reloadData()
-            self.stopLoading()
-            UIApplication.shared.isNetworkActivityIndicatorVisible = false
-            
-            if self.refreshControl.isRefreshing {
-                self.refreshControl.endRefreshing()
-            }
-        }
-    }
-    
-    func tap(gestureReconizer: UITapGestureRecognizer) {
-        yearPickerView.isHidden = false
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -105,21 +87,20 @@ class DiaryViewController: BaseViewController {
         }
     }
     
-    // MARK : PickerView
-    func initPickerView() {
-        var pickerRect = yearPickerView.frame
+    // MARK: Methods
+    func fetchDiaries() {
+        startLoading()
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
-        pickerRect.origin.x = -5// some desired value
-        pickerRect.origin.y = 2// some desired value
-        yearPickerView.frame = pickerRect
-        yearPickerView.delegate = self
-        yearPickerView.dataSource = self
-        yearPickerView.isHidden = true
-        view.addSubview(yearPickerView)
-        
-        let tap = UITapGestureRecognizer(target: self, action: #selector(tap(gestureReconizer:)))
-        yearPickLabel.addGestureRecognizer(tap)
-        yearPickLabel.isUserInteractionEnabled = true
+        DiaryStore.shared.fetchDiaries(date: targetDate) {
+            self.diaryTableView.reloadData()
+            self.stopLoading()
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+            
+            if self.refreshControl.isRefreshing {
+                self.refreshControl.endRefreshing()
+            }
+        }
     }
     
     func initTodayLabel() {
@@ -151,30 +132,8 @@ extension DiaryViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "DiaryEmptyCell", for: indexPath) as! DiaryEmptyCell
-//            cell.textLabel?.text = "empty cell"
             
             return cell
         }
-    }
-}
-
-// MARK: - UIPickerViewDataSource, UIPickerViewDelegate
-extension DiaryViewController: UIPickerViewDataSource, UIPickerViewDelegate {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return years[row]
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return years.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        yearPickLabel.text = years[row]
-        //self.view.endEditing(true)
-        yearPickerView.isHidden = true
     }
 }

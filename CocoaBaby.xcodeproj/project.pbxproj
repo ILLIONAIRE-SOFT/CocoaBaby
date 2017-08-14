@@ -16,6 +16,8 @@
 		4911D9DA1F344DCA0031B74A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4911D9DC1F344DCA0031B74A /* Localizable.strings */; };
 		4911D9E31F3450EF0031B74A /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4911D9E21F3450EF0031B74A /* ErrorMessage.swift */; };
 		4920577C1F413FAB00F232E2 /* Diary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920577B1F413FAB00F232E2 /* Diary.swift */; };
+		4920577E1F41427100F232E2 /* YearPickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920577D1F41427100F232E2 /* YearPickerDelegate.swift */; };
+		492057801F4143C500F232E2 /* CocoaDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920577F1F4143C500F232E2 /* CocoaDatePickerView.swift */; };
 		493631DE1F31C662008C774E /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493631DD1F31C662008C774E /* TabBarViewController.swift */; };
 		4948E0A61F39799C008542F6 /* EditBabyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4948E0A51F39799C008542F6 /* EditBabyViewController.swift */; };
 		496FB1DA1F31943D00E4042D /* CocoaBaby.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 496FB1D81F31943D00E4042D /* CocoaBaby.xcdatamodeld */; };
@@ -88,6 +90,8 @@
 		4911D9DE1F344DDE0031B74A /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4911D9E21F3450EF0031B74A /* ErrorMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ErrorMessage.swift; path = Utilities/ErrorMessage.swift; sourceTree = "<group>"; };
 		4920577B1F413FAB00F232E2 /* Diary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Diary.swift; path = Model/Diary.swift; sourceTree = "<group>"; };
+		4920577D1F41427100F232E2 /* YearPickerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YearPickerDelegate.swift; sourceTree = "<group>"; };
+		4920577F1F4143C500F232E2 /* CocoaDatePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocoaDatePickerView.swift; sourceTree = "<group>"; };
 		493631DD1F31C662008C774E /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarViewController.swift; path = ViewController/TabBarViewController.swift; sourceTree = "<group>"; };
 		4948E0A51F39799C008542F6 /* EditBabyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditBabyViewController.swift; path = ViewController/EditBabyViewController.swift; sourceTree = "<group>"; };
 		496FB1D91F31943D00E4042D /* CocoaBaby.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CocoaBaby.xcdatamodel; sourceTree = "<group>"; };
@@ -185,6 +189,8 @@
 				D45189C21F3ACD0700937869 /* DiaryAddViewController.swift */,
 				D45189C61F3AD25200937869 /* DiaryBaseViewController.swift */,
 				49A4B0E61F3F17BD00CC09A7 /* DiaryEmptyCell.swift */,
+				4920577D1F41427100F232E2 /* YearPickerDelegate.swift */,
+				4920577F1F4143C500F232E2 /* CocoaDatePickerView.swift */,
 			);
 			name = Diary;
 			sourceTree = "<group>";
@@ -818,7 +824,9 @@
 				4920577C1F413FAB00F232E2 /* Diary.swift in Sources */,
 				49A4B0E71F3F17BD00CC09A7 /* DiaryEmptyCell.swift in Sources */,
 				D45189C71F3AD25200937869 /* DiaryBaseViewController.swift in Sources */,
+				492057801F4143C500F232E2 /* CocoaDatePickerView.swift in Sources */,
 				DAEE34BF1F3834FC0090DBF5 /* TipsDetailViewController.swift in Sources */,
+				4920577E1F41427100F232E2 /* YearPickerDelegate.swift in Sources */,
 				4948E0A61F39799C008542F6 /* EditBabyViewController.swift in Sources */,
 				49B88EAE1F3BF5A4005043B6 /* UserStore.swift in Sources */,
 			);
