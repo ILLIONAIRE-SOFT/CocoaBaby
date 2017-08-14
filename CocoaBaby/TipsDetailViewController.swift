@@ -25,12 +25,13 @@ class TipsDetailViewController: UIViewController, UITableViewDelegate, UITableVi
         self.tableView.delegate = self
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "header")
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "content")
-
-        
+        tableView.backgroundColor = .clear
+        tableView.allowsSelection = false
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.tableView.reloadData()
         if week == nil {
             week = 1
         }
@@ -48,6 +49,17 @@ class TipsDetailViewController: UIViewController, UITableViewDelegate, UITableVi
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let identifier = indexPath.section == 0 ? "header" : "content"
         let cell = tableView.dequeueReusableCell(withIdentifier: identifier)
+        
+        
+        if indexPath.section == 0 {
+            let weekLabel = UILabel(frame: CGRect(x: 30, y: 30, width: 200, height: 40))
+            weekLabel.font = UIFont.systemFont(ofSize: 30, weight: UIFontWeightThin)
+            weekLabel.text = "Week \(self.week!)"
+                
+            cell?.contentView.addSubview(weekLabel)
+        } else {
+            
+        }
         
         return cell!
     }
