@@ -41,6 +41,12 @@ class HomeViewController: BaseViewController {
         
         updateBabyView()
         
+//        if BabyStore.shared.baby == nil {
+//            let tutorialStoryboard = UIStoryboard(name: "Tutorial", bundle: nil)
+//            let viewController = tutorialStoryboard.instantiateViewController(withIdentifier: "tutorialNavigationViewController")
+//            present(viewController, animated: false, completion: nil)
+//        }
+        
         // MARK: WaterDropOne
         waterDrop.layer.cornerRadius = 5
         // position
