@@ -31,6 +31,8 @@ class BaseViewController: UIViewController {
     }
     
     func startLoading() {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+        
         overlay = UIView(frame: view.frame)
         overlay?.backgroundColor = UIColor.black.withAlphaComponent(0.5)
         
@@ -45,6 +47,8 @@ class BaseViewController: UIViewController {
     }
     
     func stopLoading() {
+        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+        
         guard
             let overlay = overlay,
             let indicator = activityIndicator else {

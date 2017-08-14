@@ -13,7 +13,7 @@ import CloudKit
 class HomeViewController: BaseViewController {
     
     @IBOutlet var babyImageView: UIImageView!
-    @IBOutlet var babyView: UIView!
+    @IBOutlet var babyView: BabyView!
     @IBOutlet var nameLabel: UILabel!
     @IBOutlet var dDayLabel: UILabel!
     @IBOutlet var infoLabel: UILabel!
@@ -27,7 +27,6 @@ class HomeViewController: BaseViewController {
         
         babyImageView.image = UIImage(named: "CocoaBaby")?.withRenderingMode(.alwaysTemplate)
         babyImageView.tintColor = UIColor.mainBlueColor
-        //EasyAnimation.enable()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -39,19 +38,6 @@ class HomeViewController: BaseViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        updateBabyView()
-        
-//        if BabyStore.shared.baby == nil {
-//            let tutorialStoryboard = UIStoryboard(name: "Tutorial", bundle: nil)
-//            let viewController = tutorialStoryboard.instantiateViewController(withIdentifier: "tutorialNavigationViewController")
-//            present(viewController, animated: false, completion: nil)
-//        }
-        
-//        UIView.animate(withDuration: 1, delay: 0, options: [.repeat,.autoreverse], animations: {
-        
-
-       // FirebaseDataController.shared.saveUser()
-
         // MARK: WaterDropOne
         waterDrop.layer.cornerRadius = 5
         // position
@@ -94,11 +80,7 @@ class HomeViewController: BaseViewController {
             UIView.setAnimationDelay(1.0)
             self.waterDropTwo.alpha = 0.0
         })
-
-
     }
-    
-    
     
     // MARK: - Methods
     private func updateBabyInfo() {
@@ -108,11 +90,14 @@ class HomeViewController: BaseViewController {
         self.infoLabel.text = "1주차에는 5대 영양소를 골고루!"
         self.weekLabel.text = "Week \(BabyStore.shared.getPregnantWeek().week)"
     }
-    
-    private func updateBabyView() {
-        babyView.layer.cornerRadius = babyView.frame.width/2
-    }
-    
-   
 
+}
+
+class BabyView: UIView {
+    
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        
+        self.layer.cornerRadius = self.frame.width/2
+    }
 }
