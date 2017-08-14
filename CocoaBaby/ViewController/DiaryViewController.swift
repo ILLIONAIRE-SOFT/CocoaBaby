@@ -22,7 +22,8 @@ class DiaryViewController: BaseViewController {
         }
     }
     
-    let pickerDelegate = YearPickerDelegate()
+    let pickerDelegate = CocoaDatePickerDelegate()
+    let datePicker = CocoaDatePickerView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,6 +44,11 @@ class DiaryViewController: BaseViewController {
         initTodayLabel()
         
         fetchDiaries()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -112,6 +118,31 @@ class DiaryViewController: BaseViewController {
         refreshControl.tintColor = UIColor.white
         
         diaryTableView.addSubview(refreshControl)
+    }
+    
+    func initDatePicker() {
+        datePicker.backgroundColor = UIColor.white.withAlphaComponent(0.8)
+        datePicker.frame = CGRect(x: 0, y: 0, width: 160, height: 100)
+        datePicker.layer.cornerRadius = 16
+        datePicker.delegate = pickerDelegate
+        
+        self.view.addSubview(datePicker)
+    }
+    
+    func showDatePicker() {
+//        addOverlay()
+        let diarySB = UIStoryboard(name: "Diary", bundle: nil)
+        let modalViewCotroller = diarySB.instantiateViewController(withIdentifier: "DatePickerViewController") as! DatePickerViewController
+        modalViewCotroller.modalPresentationStyle = .overCurrentContext
+        modalViewCotroller.datePicked = { (year, month) in
+//            self.hideOverlay()
+            print(year)
+        }
+        present(modalViewCotroller, animated: true, completion: nil)
+    }
+    
+    @IBAction func tappedCalendar(_ sender: UIButton) {
+        showDatePicker()
     }
     
 }
