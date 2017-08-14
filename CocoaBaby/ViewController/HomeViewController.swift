@@ -41,11 +41,11 @@ class HomeViewController: BaseViewController {
         
         updateBabyView()
         
-        if BabyStore.shared.baby == nil {
-            let tutorialStoryboard = UIStoryboard(name: "Tutorial", bundle: nil)
-            let viewController = tutorialStoryboard.instantiateViewController(withIdentifier: "tutorialNavigationViewController")
-            present(viewController, animated: false, completion: nil)
-        }
+//        if BabyStore.shared.baby == nil {
+//            let tutorialStoryboard = UIStoryboard(name: "Tutorial", bundle: nil)
+//            let viewController = tutorialStoryboard.instantiateViewController(withIdentifier: "tutorialNavigationViewController")
+//            present(viewController, animated: false, completion: nil)
+//        }
         
 //        UIView.animate(withDuration: 1, delay: 0, options: [.repeat,.autoreverse], animations: {
         

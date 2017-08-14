@@ -28,15 +28,6 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wd6-eV-RlC">
-                                <rect key="frame" x="80" y="-70" width="214" height="107"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="ggf-Te-aAy" id="Tmn-GT-AGI"/>
-                                    <outlet property="delegate" destination="ggf-Te-aAy" id="LEZ-vR-LZX"/>
-                                </connections>
-                            </pickerView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XYS-Cu-YL1">
                                 <rect key="frame" x="167.5" y="617" width="40" height="40"/>
                                 <subviews>
@@ -171,15 +162,24 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bwh-19-bqx">
+                                <rect key="frame" x="16" y="44" width="62" height="30"/>
+                                <state key="normal" title="Calendar"/>
+                                <connections>
+                                    <action selector="tappedCalendar:" destination="ggf-Te-aAy" eventType="touchUpInside" id="SZQ-KO-9Cm"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="vIq-kd-Fgd" firstAttribute="top" secondItem="XYS-Cu-YL1" secondAttribute="bottom" constant="10" id="01e-Pk-Ro6"/>
                             <constraint firstItem="XTh-bu-1Nw" firstAttribute="top" secondItem="4f6-uQ-zxo" secondAttribute="bottom" constant="25" id="3cd-2J-G2H"/>
+                            <constraint firstItem="bwh-19-bqx" firstAttribute="leading" secondItem="FGU-Gm-tX2" secondAttribute="leading" constant="16" id="ARu-DF-gBe"/>
                             <constraint firstItem="XTh-bu-1Nw" firstAttribute="centerX" secondItem="FGU-Gm-tX2" secondAttribute="centerX" id="E1T-4y-wG5"/>
                             <constraint firstItem="vrF-dx-IH1" firstAttribute="top" secondItem="XTh-bu-1Nw" secondAttribute="bottom" constant="12" id="KMs-C9-sTw"/>
                             <constraint firstItem="vrF-dx-IH1" firstAttribute="leading" secondItem="FGU-Gm-tX2" secondAttribute="leading" id="Nvp-34-RgW"/>
                             <constraint firstAttribute="trailing" secondItem="vrF-dx-IH1" secondAttribute="trailing" id="Q0X-Ei-VQR"/>
+                            <constraint firstItem="bwh-19-bqx" firstAttribute="top" secondItem="4f6-uQ-zxo" secondAttribute="bottom" constant="24" id="fAK-Rf-dNU"/>
                             <constraint firstItem="XYS-Cu-YL1" firstAttribute="centerX" secondItem="FGU-Gm-tX2" secondAttribute="centerX" id="oHU-nI-Gs7"/>
                             <constraint firstItem="vIq-kd-Fgd" firstAttribute="top" secondItem="vrF-dx-IH1" secondAttribute="bottom" constant="64" id="uEa-Yf-SBK"/>
                         </constraints>
@@ -189,12 +189,92 @@
                         <outlet property="addDiaryBtnBg" destination="XYS-Cu-YL1" id="3t9-m8-PcZ"/>
                         <outlet property="diaryTableView" destination="vrF-dx-IH1" id="KZT-nf-GiG"/>
                         <outlet property="yearPickLabel" destination="XTh-bu-1Nw" id="5Ex-3M-c4s"/>
-                        <outlet property="yearPickerView" destination="wd6-eV-RlC" id="Wny-on-6hH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EZ6-qC-eHx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-39.5" y="353.5"/>
+        </scene>
+        <!--Date Picker View Controller-->
+        <scene sceneID="fmJ-Jd-zwf">
+            <objects>
+                <viewController storyboardIdentifier="DatePickerViewController" id="zaM-MT-qpa" customClass="DatePickerViewController" customModule="CocoaBaby" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="wa2-CS-9mJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="GI1-yL-38C"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Nuu-Q3-bZg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ef2-Z4-jgQ">
+                                <rect key="frame" x="67" y="273" width="240" height="120"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6GF-ej-jgH">
+                                        <rect key="frame" x="0.0" y="90" width="120" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="hNX-Vv-Q24"/>
+                                        </constraints>
+                                        <state key="normal" title="Cancel"/>
+                                        <connections>
+                                            <action selector="tappedCancel:" destination="zaM-MT-qpa" eventType="touchUpInside" id="Xxw-In-zCt"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X3u-bE-FAs">
+                                        <rect key="frame" x="120" y="90" width="120" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="N0q-Cs-BIG"/>
+                                        </constraints>
+                                        <state key="normal" title="Done"/>
+                                        <connections>
+                                            <action selector="tappedDone:" destination="zaM-MT-qpa" eventType="touchUpInside" id="UEm-se-eVo"/>
+                                        </connections>
+                                    </button>
+                                    <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="owl-Nd-dVa">
+                                        <rect key="frame" x="0.0" y="0.0" width="240" height="89.5"/>
+                                    </pickerView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nyK-CW-6a1">
+                                        <rect key="frame" x="0.0" y="89.5" width="240" height="0.5"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="0.5" id="NAx-s1-IoZ"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="nyK-CW-6a1" firstAttribute="leading" secondItem="ef2-Z4-jgQ" secondAttribute="leading" id="1xl-f7-Sqk"/>
+                                    <constraint firstAttribute="trailing" secondItem="owl-Nd-dVa" secondAttribute="trailing" id="6L3-6Y-5mV"/>
+                                    <constraint firstItem="owl-Nd-dVa" firstAttribute="top" secondItem="ef2-Z4-jgQ" secondAttribute="top" id="8qd-cc-4sa"/>
+                                    <constraint firstItem="X3u-bE-FAs" firstAttribute="top" secondItem="nyK-CW-6a1" secondAttribute="bottom" id="P9o-Ns-h6h"/>
+                                    <constraint firstItem="6GF-ej-jgH" firstAttribute="leading" secondItem="ef2-Z4-jgQ" secondAttribute="leading" id="PBn-in-MhZ"/>
+                                    <constraint firstItem="owl-Nd-dVa" firstAttribute="leading" secondItem="ef2-Z4-jgQ" secondAttribute="leading" id="Pe7-dA-0uS"/>
+                                    <constraint firstItem="nyK-CW-6a1" firstAttribute="top" secondItem="owl-Nd-dVa" secondAttribute="bottom" id="TKq-9Z-FuB"/>
+                                    <constraint firstAttribute="trailing" secondItem="nyK-CW-6a1" secondAttribute="trailing" id="TMy-3U-lWF"/>
+                                    <constraint firstItem="X3u-bE-FAs" firstAttribute="width" secondItem="6GF-ej-jgH" secondAttribute="width" id="WLs-Hm-Hvm"/>
+                                    <constraint firstAttribute="trailing" secondItem="X3u-bE-FAs" secondAttribute="trailing" id="X3B-ZZ-aEG"/>
+                                    <constraint firstAttribute="height" constant="120" id="XZj-8f-d6n"/>
+                                    <constraint firstItem="X3u-bE-FAs" firstAttribute="leading" secondItem="6GF-ej-jgH" secondAttribute="trailing" id="h2I-lE-beO"/>
+                                    <constraint firstAttribute="bottom" secondItem="X3u-bE-FAs" secondAttribute="bottom" id="lu3-e4-N4E"/>
+                                    <constraint firstAttribute="bottom" secondItem="6GF-ej-jgH" secondAttribute="bottom" id="sWS-uU-B7S"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ef2-Z4-jgQ" firstAttribute="leading" secondItem="Nuu-Q3-bZg" secondAttribute="leading" constant="67" id="6TB-s8-d19"/>
+                            <constraint firstItem="ef2-Z4-jgQ" firstAttribute="centerY" secondItem="Nuu-Q3-bZg" secondAttribute="centerY" id="KWu-Nz-cCR"/>
+                            <constraint firstItem="ef2-Z4-jgQ" firstAttribute="centerX" secondItem="Nuu-Q3-bZg" secondAttribute="centerX" id="kZc-Jc-BQx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="containerView" destination="ef2-Z4-jgQ" id="seE-6b-IU4"/>
+                        <outlet property="pickerView" destination="owl-Nd-dVa" id="AjT-rG-j2Q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BUy-eb-RWL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-42.399999999999999" y="1065.5172413793105"/>
         </scene>
         <!--Diary Add View Controller-->
         <scene sceneID="c4s-Cf-xjK">

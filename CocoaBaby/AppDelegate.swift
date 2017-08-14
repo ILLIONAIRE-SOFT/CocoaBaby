@@ -19,13 +19,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, GIDSig
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         FirebaseApp.configure()
+        Database.database().isPersistenceEnabled = true
+        
+        if let uid = Auth.auth().currentUser?.uid {
+            let babyRef = Database.database().reference(withPath: "babies/\(uid)")
+            babyRef.keepSynced(true)
+            
+            let diaryRef = Database.database().reference(withPath: "diaries/\(uid)")
+            diaryRef.keepSynced(true)
+        }
         
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
         
         UINavigationBar.appearance().barStyle = .blackOpaque
 
-        BabyStore.shared.loadBaby()
+//        BabyStore.shared.loadBaby()
         
         return true
     }
@@ -72,6 +81,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, GIDSig
             if let error = error {
                 print(error)
                 return
+            }
+            
+            let mainSB = UIStoryboard(name: "Main", bundle: nil)
+            let viewController = mainSB.instantiateViewController(withIdentifier: "SplashViewController")
+            
+            self.window?.rootViewController = viewController
+            self.window?.makeKeyAndVisible()
+            
+            if let uid = Auth.auth().currentUser?.uid {
+                let babyRef = Database.database().reference(withPath: "babies/\(uid)")
+                babyRef.keepSynced(true)
+                
+                let diaryRef = Database.database().reference(withPath: "diaries/\(uid)")
+                diaryRef.keepSynced(true)
             }
         }
     }

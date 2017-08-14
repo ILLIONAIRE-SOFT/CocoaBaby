@@ -12,12 +12,19 @@ class DiaryViewController: BaseViewController {
     
     @IBOutlet var diaryTableView: UITableView!
     @IBOutlet var yearPickLabel: UILabel!
-    @IBOutlet var yearPickerView: UIPickerView!
     @IBOutlet var addDiaryBtnBg: UIView!
     
-    var targetDate: Diary.Date = Diary.Date(year: 2017, month: 8, day: 0)
+    var refreshControl: UIRefreshControl = UIRefreshControl()
     
-    let years = ["2016", "2017", "2018"]
+    var targetDate: Diary.Date = Diary.Date(year: 2017, month: 8, day: 0) {
+        didSet {
+            self.yearPickLabel.text = "\(targetDate.year), \(targetDate.month)"
+            self.fetchDiaries()
+        }
+    }
+    
+    let pickerDelegate = CocoaDatePickerDelegate()
+    let datePicker = CocoaDatePickerView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,32 +35,20 @@ class DiaryViewController: BaseViewController {
         diaryTableView.delegate = self
         diaryTableView.dataSource = self
         
-        initPickerView()
+        initRefreshControl()
+        initTodayLabel()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         addDiaryBtnBg.layer.cornerRadius = 20
-        initTodayLabel()
-        
-        fetchDiaries()
+        self.diaryTableView.reloadData()
     }
     
-    // MARK: Methods
-    func fetchDiaries() {
-        startLoading()
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         
-        DiaryStore.shared.fetchDiaries(date: targetDate) {
-            self.diaryTableView.reloadData()
-            self.stopLoading()
-            UIApplication.shared.isNetworkActivityIndicatorVisible = false
-        }
-    }
-    
-    func tap(gestureReconizer: UITapGestureRecognizer) {
-        yearPickerView.isHidden = false
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -98,25 +93,68 @@ class DiaryViewController: BaseViewController {
         }
     }
     
-    // MARK : PickerView
-    func initPickerView() {
-        var pickerRect = yearPickerView.frame
+    // MARK: Methods
+    func fetchDiaries() {
+        startLoading()
+        UIApplication.shared.isNetworkActivityIndicatorVisible = true
         
-        pickerRect.origin.x = -5// some desired value
-        pickerRect.origin.y = 2// some desired value
-        yearPickerView.frame = pickerRect
-        yearPickerView.delegate = self
-        yearPickerView.dataSource = self
-        yearPickerView.isHidden = true
-        view.addSubview(yearPickerView)
-        
-        let tap = UITapGestureRecognizer(target: self, action: #selector(tap(gestureReconizer:)))
-        yearPickLabel.addGestureRecognizer(tap)
-        yearPickLabel.isUserInteractionEnabled = true
+        DiaryStore.shared.fetchDiaries(date: targetDate) {
+            self.diaryTableView.reloadData()
+            self.stopLoading()
+            UIApplication.shared.isNetworkActivityIndicatorVisible = false
+            
+            if self.refreshControl.isRefreshing {
+                self.refreshControl.endRefreshing()
+            }
+        }
     }
     
     func initTodayLabel() {
-        yearPickLabel.text = CocoaDateFormatter.getDateExcludeTime(from: Date())
+        let components = CocoaDateFormatter.getCalendarComponents(from: Date())
+        
+        guard
+            let year = components.year,
+            let month = components.month else {
+                return
+        }
+        
+        targetDate = Diary.Date(year: year, month: month, day: 0)
+    }
+    
+    func initRefreshControl() {
+        refreshControl.addTarget(self, action: #selector(fetchDiaries), for: .valueChanged)
+        refreshControl.tintColor = UIColor.white
+        
+        diaryTableView.addSubview(refreshControl)
+    }
+    
+    func initDatePicker() {
+        datePicker.backgroundColor = UIColor.white.withAlphaComponent(0.8)
+        datePicker.frame = CGRect(x: 0, y: 0, width: 160, height: 100)
+        datePicker.layer.cornerRadius = 16
+        datePicker.delegate = pickerDelegate
+        
+        self.view.addSubview(datePicker)
+    }
+    
+    func showDatePicker() {
+        let diarySB = UIStoryboard(name: "Diary", bundle: nil)
+        let modalViewCotroller = diarySB.instantiateViewController(withIdentifier: "DatePickerViewController") as! DatePickerViewController
+        modalViewCotroller.modalPresentationStyle = .overCurrentContext
+        modalViewCotroller.currentDate = targetDate
+        modalViewCotroller.datePicked = { (year, month) in
+            guard
+                let year = year,
+                let month = month else {
+                    return
+            }
+            self.targetDate = Diary.Date(year: year, month: month, day: 0)
+        }
+        present(modalViewCotroller, animated: true, completion: nil)
+    }
+    
+    @IBAction func tappedCalendar(_ sender: UIButton) {
+        showDatePicker()
     }
     
 }
@@ -128,7 +166,6 @@ extension DiaryViewController: UITableViewDelegate, UITableViewDataSource {
         return CocoaDateFormatter.getNumberOfDay(from: targetDate)
     }
     
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         if let diary = DiaryStore.shared.currentDiaries[indexPath.row + 1] {
@@ -137,30 +174,8 @@ extension DiaryViewController: UITableViewDelegate, UITableViewDataSource {
             return cell
         } else {
             let cell = tableView.dequeueReusableCell(withIdentifier: "DiaryEmptyCell", for: indexPath) as! DiaryEmptyCell
-//            cell.textLabel?.text = "empty cell"
             
             return cell
         }
-    }
-}
-
-// MARK: - UIPickerViewDataSource, UIPickerViewDelegate
-extension DiaryViewController: UIPickerViewDataSource, UIPickerViewDelegate {
-    func numberOfComponents(in pickerView: UIPickerView) -> Int {
-        return 1
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return years[row]
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return years.count
-    }
-    
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        yearPickLabel.text = years[row]
-        //self.view.endEditing(true)
-        yearPickerView.isHidden = true
     }
 }

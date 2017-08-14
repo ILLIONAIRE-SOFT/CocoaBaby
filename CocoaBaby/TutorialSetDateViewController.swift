@@ -9,7 +9,7 @@
 import UIKit
 
 class TutorialSetDateViewController: BaseViewController, UITextFieldDelegate {
-
+    
     var babyName : String?
     var pregnantDate : Date?
     var birthDate : Date?
@@ -21,7 +21,7 @@ class TutorialSetDateViewController: BaseViewController, UITextFieldDelegate {
     @IBOutlet weak var pregnantDateTextField: UITextField!
     @IBOutlet weak var birthDateTextField: UITextField!
     var datePicker : UIDatePicker!
-
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,13 +30,13 @@ class TutorialSetDateViewController: BaseViewController, UITextFieldDelegate {
         self.registerButton.isEnabled = false
         
         
-        self.pregnantDateLabel.text = "마지막 생리일이 언제인가요?" // localize 필요
+        self.pregnantDateLabel.text = "출산 전 마지막 생리일이 언제인가요?" // localize 필요
         self.birthDateLabel.text = "출산 예정일이 언제인가요?" // localize 필요
         
         
         self.pregnantDateTextField.tintColor = .clear
         self.birthDateTextField.tintColor = .clear
-
+        
         
         self.registerButton.layer.cornerRadius = 4
         self.registerButton.backgroundColor = .white
@@ -56,8 +56,8 @@ class TutorialSetDateViewController: BaseViewController, UITextFieldDelegate {
     @IBAction func resignKeyBoard() {
         self.resignFirstResponder()
     }
-
-
+    
+    
     func pickUpDate(_ textField : UITextField){
         // DatePicker
         self.datePicker = UIDatePicker(frame:CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 216))
@@ -83,7 +83,7 @@ class TutorialSetDateViewController: BaseViewController, UITextFieldDelegate {
         toolBar.isUserInteractionEnabled = true
         textField.inputAccessoryView = toolBar
     }
-
+    
     //
     // Mark : relate to date Picker
     //
@@ -136,7 +136,7 @@ class TutorialSetDateViewController: BaseViewController, UITextFieldDelegate {
             self.registerButton.isEnabled = true
         }
     }
-
+    
     // register Baby
     
     @IBAction func registerBaby(_ sender: Any) {
@@ -155,11 +155,29 @@ class TutorialSetDateViewController: BaseViewController, UITextFieldDelegate {
                 let ok = UIAlertAction(title: "확인", style: .default, handler: nil)
                 alertController.addAction(ok)
                 present(alertController, animated: true, completion: nil)
-            }else {
-            BabyStore.shared.registerBaby(from: pregnantDate, to: birthDate, name: name)
-            print("success")
-            self.dismiss(animated: true, completion: nil)
+            } else {
+                let baby = Baby(name: name, birthDate: birthDate.timeIntervalSince1970, pregnantDate: pregnantDate.timeIntervalSince1970)
+                
+                BabyStore.shared.saveBaby(baby: baby, completion: { (result) in
+                    switch result {
+                    case .success(_):
+                        self.showSplashView()
+                    case .failure(_):
+                        return
+                    }
+                })
             }
         }
     }
+    
+    func showSplashView() {
+        let appDelegate = UIApplication.shared.delegate! as! AppDelegate
+        
+        let mainSB = UIStoryboard(name: "Main", bundle: nil)
+        let initialViewController = mainSB.instantiateViewController(withIdentifier: "SplashViewController")
+        appDelegate.window?.rootViewController = initialViewController
+        appDelegate.window?.makeKeyAndVisible()
+    }
+    
+        
 }
