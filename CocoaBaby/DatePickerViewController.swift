@@ -26,7 +26,13 @@ class DatePickerViewController: UIViewController {
         let tapBackground = UITapGestureRecognizer(target: self, action: #selector(tappedBackground))
         self.view.addGestureRecognizer(tapBackground)
         
+        datePickerDelegate.targetYear = (currentDate?.year)!
+        datePickerDelegate.targetMonth = (currentDate?.month)!
+        
         pickerView.delegate = datePickerDelegate
+        
+        pickerView.selectRow((currentDate?.year)! - 2010, inComponent: 0, animated: false)
+        pickerView.selectRow((currentDate?.month)! - 1, inComponent: 1, animated: false)
         
         initViews()
     }
@@ -47,7 +53,7 @@ class DatePickerViewController: UIViewController {
     @IBAction func tappedDone(_ sender: UIButton) {
         dismiss(animated: true) {
             if let datePicked = self.datePicked {
-                datePicked(2017, 7)
+                datePicked(self.datePickerDelegate.targetYear, self.datePickerDelegate.targetMonth)
             }
         }
     }

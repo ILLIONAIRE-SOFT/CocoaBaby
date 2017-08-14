@@ -18,6 +18,7 @@ class DiaryViewController: BaseViewController {
     
     var targetDate: Diary.Date = Diary.Date(year: 2017, month: 8, day: 0) {
         didSet {
+            self.yearPickLabel.text = "\(targetDate.year), \(targetDate.month)"
             self.fetchDiaries()
         }
     }
@@ -43,7 +44,7 @@ class DiaryViewController: BaseViewController {
         addDiaryBtnBg.layer.cornerRadius = 20
         initTodayLabel()
         
-        fetchDiaries()
+//        fetchDiaries()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -110,7 +111,15 @@ class DiaryViewController: BaseViewController {
     }
     
     func initTodayLabel() {
-        yearPickLabel.text = CocoaDateFormatter.getDateExcludeTime(from: Date())
+        let components = CocoaDateFormatter.getCalendarComponents(from: Date())
+        
+        guard
+            let year = components.year,
+            let month = components.month else {
+                return
+        }
+        
+        targetDate = Diary.Date(year: year, month: month, day: 0)
     }
     
     func initRefreshControl() {
@@ -134,9 +143,14 @@ class DiaryViewController: BaseViewController {
         let diarySB = UIStoryboard(name: "Diary", bundle: nil)
         let modalViewCotroller = diarySB.instantiateViewController(withIdentifier: "DatePickerViewController") as! DatePickerViewController
         modalViewCotroller.modalPresentationStyle = .overCurrentContext
+        modalViewCotroller.currentDate = targetDate
         modalViewCotroller.datePicked = { (year, month) in
-//            self.hideOverlay()
-            print(year)
+            guard
+                let year = year,
+                let month = month else {
+                    return
+            }
+            self.targetDate = Diary.Date(year: year, month: month, day: 0)
         }
         present(modalViewCotroller, animated: true, completion: nil)
     }
