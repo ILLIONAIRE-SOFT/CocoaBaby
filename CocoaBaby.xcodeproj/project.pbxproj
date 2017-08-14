@@ -48,9 +48,7 @@
 		DAB5A40D1F31B185000235B0 /* TutorialSetDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB5A40C1F31B185000235B0 /* TutorialSetDateViewController.swift */; };
 		DAB5A40F1F32126C000235B0 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB5A40E1F32126C000235B0 /* Extension.swift */; };
 		DAB5A4171F33331C000235B0 /* ColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB5A4161F33331C000235B0 /* ColorExtension.swift */; };
-		DAEE34BB1F382E8B0090DBF5 /* TipsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEE34BA1F382E8B0090DBF5 /* TipsTableViewCell.swift */; };
 		DAEE34BF1F3834FC0090DBF5 /* TipsDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEE34BE1F3834FC0090DBF5 /* TipsDetailViewController.swift */; };
-		DAEE34C31F3849870090DBF5 /* TipsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEE34C21F3849870090DBF5 /* TipsCollectionViewCell.swift */; };
 		DAEE35071F3CC4B70090DBF5 /* TipsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAEE35061F3CC4B70090DBF5 /* TipsPageViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -127,9 +125,7 @@
 		DAB5A40C1F31B185000235B0 /* TutorialSetDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialSetDateViewController.swift; sourceTree = "<group>"; };
 		DAB5A40E1F32126C000235B0 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
 		DAB5A4161F33331C000235B0 /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorExtension.swift; path = Extension/ColorExtension.swift; sourceTree = "<group>"; };
-		DAEE34BA1F382E8B0090DBF5 /* TipsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TipsTableViewCell.swift; path = ViewController/TipsTableViewCell.swift; sourceTree = "<group>"; };
 		DAEE34BE1F3834FC0090DBF5 /* TipsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsDetailViewController.swift; sourceTree = "<group>"; };
-		DAEE34C21F3849870090DBF5 /* TipsCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsCollectionViewCell.swift; sourceTree = "<group>"; };
 		DAEE35061F3CC4B70090DBF5 /* TipsPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsPageViewController.swift; sourceTree = "<group>"; };
 		DFE61576B8B378C8E3F88AB6 /* Pods-CocoaBabyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaBabyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CocoaBabyTests/Pods-CocoaBabyTests.debug.xcconfig"; sourceTree = "<group>"; };
 		E058B86FDCDD49D6B0B683BE /* Pods_CocoaBaby.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CocoaBaby.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -188,9 +184,7 @@
 			children = (
 				4911D9D01F3446110031B74A /* TipsViewController.swift */,
 				DAEE35061F3CC4B70090DBF5 /* TipsPageViewController.swift */,
-				DAEE34C21F3849870090DBF5 /* TipsCollectionViewCell.swift */,
 				DAEE34BE1F3834FC0090DBF5 /* TipsDetailViewController.swift */,
-				DAEE34BA1F382E8B0090DBF5 /* TipsTableViewCell.swift */,
 			);
 			name = Tips;
 			sourceTree = "<group>";
@@ -779,7 +773,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DAEE34BB1F382E8B0090DBF5 /* TipsTableViewCell.swift in Sources */,
 				496FB1DD1F31982500E4042D /* Baby+CoreDataClass.swift in Sources */,
 				D45189B61F38420400937869 /* CustomTableViewCell.swift in Sources */,
 				49F6C77D1F318AF200373F06 /* AppDelegate.swift in Sources */,
@@ -806,7 +799,6 @@
 				49A4B0E71F3F17BD00CC09A7 /* DiaryEmptyCell.swift in Sources */,
 				D45189C71F3AD25200937869 /* DiaryBaseViewController.swift in Sources */,
 				DAEE34BF1F3834FC0090DBF5 /* TipsDetailViewController.swift in Sources */,
-				DAEE34C31F3849870090DBF5 /* TipsCollectionViewCell.swift in Sources */,
 				4948E0A61F39799C008542F6 /* EditBabyViewController.swift in Sources */,
 				49B88EAE1F3BF5A4005043B6 /* UserStore.swift in Sources */,
 			);
