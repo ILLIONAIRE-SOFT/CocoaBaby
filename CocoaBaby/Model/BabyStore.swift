@@ -56,6 +56,8 @@ class BabyStore {
             case let .success(baby):
                 self.baby = baby
                 completion(baby)
+            case let .failure(_):
+                completion(nil)
             default:
                 return
             }

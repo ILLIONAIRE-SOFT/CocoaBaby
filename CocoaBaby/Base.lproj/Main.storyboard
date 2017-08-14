@@ -37,12 +37,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cKu-BX-ODE" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="770" y="-2052"/>
+            <point key="canvasLocation" x="449" y="-2101"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="DNq-jM-N3y">
             <objects>
-                <viewController id="4Db-Yu-bUk" customClass="LoginViewController" customModule="CocoaBaby" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="4Db-Yu-bUk" customClass="LoginViewController" customModule="CocoaBaby" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="IGl-9W-jsf"/>
                         <viewControllerLayoutGuide type="bottom" id="Aw6-7i-vef"/>

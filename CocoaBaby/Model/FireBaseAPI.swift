@@ -12,6 +12,7 @@ import Firebase
 
 enum FireBaseAPIError: Error {
     case invalidUser
+    case noBaby
 }
 
 enum FireBaseDirectoryName: String {
@@ -142,27 +143,26 @@ extension FireBaseAPI {
         guard let uid = Auth.auth().currentUser?.uid else {
             return
         }
+        
         ref.child(FireBaseDirectoryName.babies.rawValue).child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
             
-            print(snapshot)
-            print(snapshot.value)
+            guard snapshot.exists() else {
+                completion(BabyResult.failure(FireBaseAPIError.noBaby))
+                return
+            }
             
             var result: Baby? = nil
             
             let dict = snapshot.value as! [String:Any]
-            
             if let baby = baby(from: dict) {
                 result = baby
+                
+                completion(BabyResult.success(result))
+                
+            } else {
+                completion(BabyResult.failure(FireBaseAPIError.noBaby))
             }
-//            for snap in snapshot.children.allObjects as! [DataSnapshot] {
-//                
-//                let dict = snap.value as! [String:Any]
-//                if let baby = baby(from: dict) {
-//                    result = baby
-//                }
-//            }
             
-            completion(BabyResult.success(result))
         })
     }
     
