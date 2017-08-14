@@ -24,6 +24,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, GIDSig
         if let uid = Auth.auth().currentUser?.uid {
             let babyRef = Database.database().reference(withPath: "babies/\(uid)")
             babyRef.keepSynced(true)
+            
+            let diaryRef = Database.database().reference(withPath: "diaries/\(uid)")
+            diaryRef.keepSynced(true)
         }
         
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
@@ -85,6 +88,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, GIDSig
             
             self.window?.rootViewController = viewController
             self.window?.makeKeyAndVisible()
+            
+            if let uid = Auth.auth().currentUser?.uid {
+                let babyRef = Database.database().reference(withPath: "babies/\(uid)")
+                babyRef.keepSynced(true)
+                
+                let diaryRef = Database.database().reference(withPath: "diaries/\(uid)")
+                diaryRef.keepSynced(true)
+            }
         }
     }
     

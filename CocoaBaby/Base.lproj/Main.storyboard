@@ -21,17 +21,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Splash" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="heU-Bp-3eG">
-                                <rect key="frame" x="161" y="323" width="52" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gradation2" translatesAutoresizingMaskIntoConstraints="NO" id="LZ4-aq-hGi">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="heU-Bp-3eG" firstAttribute="centerY" secondItem="2gS-6S-nyu" secondAttribute="centerY" id="6V5-l5-aCQ"/>
-                            <constraint firstItem="heU-Bp-3eG" firstAttribute="centerX" secondItem="2gS-6S-nyu" secondAttribute="centerX" id="peJ-Mo-Kao"/>
+                            <constraint firstItem="LZ4-aq-hGi" firstAttribute="top" secondItem="2gS-6S-nyu" secondAttribute="top" id="5wo-ta-omf"/>
+                            <constraint firstItem="LZ4-aq-hGi" firstAttribute="leading" secondItem="2gS-6S-nyu" secondAttribute="leading" id="TWI-cg-M2i"/>
+                            <constraint firstAttribute="trailing" secondItem="LZ4-aq-hGi" secondAttribute="trailing" id="ilw-KV-fq9"/>
+                            <constraint firstItem="TqH-lQ-qMb" firstAttribute="top" secondItem="LZ4-aq-hGi" secondAttribute="bottom" id="vDn-Cj-s8i"/>
                         </constraints>
                     </view>
                 </viewController>
