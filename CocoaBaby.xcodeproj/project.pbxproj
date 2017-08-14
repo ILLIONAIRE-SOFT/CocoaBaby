@@ -21,9 +21,6 @@
 		492057821F41479100F232E2 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492057811F41479100F232E2 /* DatePickerViewController.swift */; };
 		493631DE1F31C662008C774E /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493631DD1F31C662008C774E /* TabBarViewController.swift */; };
 		4948E0A61F39799C008542F6 /* EditBabyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4948E0A51F39799C008542F6 /* EditBabyViewController.swift */; };
-		496FB1DA1F31943D00E4042D /* CocoaBaby.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 496FB1D81F31943D00E4042D /* CocoaBaby.xcdatamodeld */; };
-		496FB1DD1F31982500E4042D /* Baby+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496FB1DB1F31982500E4042D /* Baby+CoreDataClass.swift */; };
-		496FB1DE1F31982500E4042D /* Baby+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496FB1DC1F31982500E4042D /* Baby+CoreDataProperties.swift */; };
 		496FB1E11F31986E00E4042D /* BabyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496FB1E01F31986E00E4042D /* BabyStore.swift */; };
 		499B6AE799D70C5EF0497B9D /* Pods_CocoaBabyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D030A7C3DA05CE73E2A7E35 /* Pods_CocoaBabyUITests.framework */; };
 		49A4B0E51F3DEF5C00CC09A7 /* DiaryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A4B0E41F3DEF5C00CC09A7 /* DiaryStore.swift */; };
@@ -96,9 +93,6 @@
 		492057811F41479100F232E2 /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		493631DD1F31C662008C774E /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarViewController.swift; path = ViewController/TabBarViewController.swift; sourceTree = "<group>"; };
 		4948E0A51F39799C008542F6 /* EditBabyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditBabyViewController.swift; path = ViewController/EditBabyViewController.swift; sourceTree = "<group>"; };
-		496FB1D91F31943D00E4042D /* CocoaBaby.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CocoaBaby.xcdatamodel; sourceTree = "<group>"; };
-		496FB1DB1F31982500E4042D /* Baby+CoreDataClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Baby+CoreDataClass.swift"; path = "Model/Baby+CoreDataClass.swift"; sourceTree = "<group>"; };
-		496FB1DC1F31982500E4042D /* Baby+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Baby+CoreDataProperties.swift"; path = "Model/Baby+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		496FB1E01F31986E00E4042D /* BabyStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BabyStore.swift; path = Model/BabyStore.swift; sourceTree = "<group>"; };
 		49A4B0E41F3DEF5C00CC09A7 /* DiaryStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiaryStore.swift; path = Model/DiaryStore.swift; sourceTree = "<group>"; };
 		49A4B0E61F3F17BD00CC09A7 /* DiaryEmptyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiaryEmptyCell.swift; path = View/DiaryEmptyCell.swift; sourceTree = "<group>"; };
@@ -272,8 +266,6 @@
 		496FB1DF1F31985400E4042D /* Baby */ = {
 			isa = PBXGroup;
 			children = (
-				496FB1DB1F31982500E4042D /* Baby+CoreDataClass.swift */,
-				496FB1DC1F31982500E4042D /* Baby+CoreDataProperties.swift */,
 				496FB1E01F31986E00E4042D /* BabyStore.swift */,
 			);
 			name = Baby;
@@ -290,7 +282,6 @@
 		49A4B0E21F3DEEC800CC09A7 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
-				496FB1D81F31943D00E4042D /* CocoaBaby.xcdatamodeld */,
 			);
 			name = CoreData;
 			sourceTree = "<group>";
@@ -800,7 +791,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				DA5C8F241F41404000AA3185 /* TIpsDetailContentTableViewCell.swift in Sources */,
-				496FB1DD1F31982500E4042D /* Baby+CoreDataClass.swift in Sources */,
 				D45189B61F38420400937869 /* CustomTableViewCell.swift in Sources */,
 				49F6C77D1F318AF200373F06 /* AppDelegate.swift in Sources */,
 				4911D9D11F3446110031B74A /* TipsViewController.swift in Sources */,
@@ -812,10 +802,8 @@
 				DAB5A40F1F32126C000235B0 /* Extension.swift in Sources */,
 				4911D9D41F34461F0031B74A /* SettingsViewController.swift in Sources */,
 				492057821F41479100F232E2 /* DatePickerViewController.swift in Sources */,
-				496FB1DE1F31982500E4042D /* Baby+CoreDataProperties.swift in Sources */,
 				49FEEE321F3844C70046D5A3 /* CocoaDateFormatter.swift in Sources */,
 				DA5C8F201F41402500AA3185 /* TipsDetailHeaderTableViewCell.swift in Sources */,
-				496FB1DA1F31943D00E4042D /* CocoaBaby.xcdatamodeld in Sources */,
 				49CBF1871F3C29DE00426D61 /* FireBaseAPI.swift in Sources */,
 				4911D9CE1F34455D0031B74A /* DiaryViewController.swift in Sources */,
 				D45189C31F3ACD0700937869 /* DiaryAddViewController.swift in Sources */,
@@ -1150,20 +1138,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		496FB1D81F31943D00E4042D /* CocoaBaby.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				496FB1D91F31943D00E4042D /* CocoaBaby.xcdatamodel */,
-			);
-			currentVersion = 496FB1D91F31943D00E4042D /* CocoaBaby.xcdatamodel */;
-			name = CocoaBaby.xcdatamodeld;
-			path = ViewController/CocoaBaby.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 49F6C7711F318AF200373F06 /* Project object */;
 }
