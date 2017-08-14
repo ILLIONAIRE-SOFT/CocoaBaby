@@ -36,15 +36,14 @@ class DiaryViewController: BaseViewController {
         diaryTableView.dataSource = self
         
         initRefreshControl()
+        initTodayLabel()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         addDiaryBtnBg.layer.cornerRadius = 20
-        initTodayLabel()
-        
-//        fetchDiaries()
+        self.diaryTableView.reloadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -139,7 +138,6 @@ class DiaryViewController: BaseViewController {
     }
     
     func showDatePicker() {
-//        addOverlay()
         let diarySB = UIStoryboard(name: "Diary", bundle: nil)
         let modalViewCotroller = diarySB.instantiateViewController(withIdentifier: "DatePickerViewController") as! DatePickerViewController
         modalViewCotroller.modalPresentationStyle = .overCurrentContext
@@ -167,7 +165,6 @@ extension DiaryViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return CocoaDateFormatter.getNumberOfDay(from: targetDate)
     }
-    
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
