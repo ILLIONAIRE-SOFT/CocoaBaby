@@ -10,15 +10,21 @@ import UIKit
 
 class TipsDetailHeaderTableViewCell: UITableViewCell {
 
+    @IBOutlet var weekTitle : UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.contentView.backgroundColor = UIColor.clear
+        self.layer.backgroundColor = UIColor.clear.cgColor
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state
+    }
+    
+    func initWeekTitle(week : Int)  {
+        self.weekTitle?.text = "Week \(week)"
     }
     
 }
