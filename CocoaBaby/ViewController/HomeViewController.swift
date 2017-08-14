@@ -33,6 +33,12 @@ class HomeViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        if BabyStore.shared.baby == nil {
+            let tutorialStoryboard = UIStoryboard(name: "Tutorial", bundle: nil)
+            let viewController = tutorialStoryboard.instantiateViewController(withIdentifier: "tutorialNavigationViewController")
+            present(viewController, animated: false, completion: nil)
+        }
+        
         updateBabyInfo()
     }
     
@@ -40,12 +46,6 @@ class HomeViewController: BaseViewController {
         super.viewDidAppear(animated)
         
         updateBabyView()
-        
-        if BabyStore.shared.baby == nil {
-            let tutorialStoryboard = UIStoryboard(name: "Tutorial", bundle: nil)
-            let viewController = tutorialStoryboard.instantiateViewController(withIdentifier: "tutorialNavigationViewController")
-            present(viewController, animated: false, completion: nil)
-        }
         
         // MARK: WaterDropOne
         waterDrop.layer.cornerRadius = 5
