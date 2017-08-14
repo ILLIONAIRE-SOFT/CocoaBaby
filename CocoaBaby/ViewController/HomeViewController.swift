@@ -8,7 +8,6 @@
 
 import UIKit
 import CloudKit
-//import EasyAnimation
 
 class HomeViewController: BaseViewController {
     
