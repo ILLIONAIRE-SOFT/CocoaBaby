@@ -142,17 +142,25 @@ extension FireBaseAPI {
         guard let uid = Auth.auth().currentUser?.uid else {
             return
         }
-        
         ref.child(FireBaseDirectoryName.babies.rawValue).child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            print(snapshot)
+            print(snapshot.value)
             
             var result: Baby? = nil
             
-            for snap in snapshot.children.allObjects as! [DataSnapshot] {
-                let dict = snap.value as! [String:Any]
-                if let baby = baby(from: dict) {
-                    result = baby
-                }
+            let dict = snapshot.value as! [String:Any]
+            
+            if let baby = baby(from: dict) {
+                result = baby
             }
+//            for snap in snapshot.children.allObjects as! [DataSnapshot] {
+//                
+//                let dict = snap.value as! [String:Any]
+//                if let baby = baby(from: dict) {
+//                    result = baby
+//                }
+//            }
             
             completion(BabyResult.success(result))
         })

@@ -62,8 +62,16 @@ class BabyStore {
         }
     }
     
-    func registerBaby(from pregnantDate: Date?, to birthDate: Date?, name: String?) {
+    func saveBaby(baby: Baby, completion: @escaping (BabyResult) -> ()) {
         
+        FireBaseAPI.saveBaby(baby: baby) { (result) in
+            switch result {
+            case .success(_):
+                completion(result)
+            case .failure(_):
+                completion(result)
+            }
+        }
 //        let context = persistentContainer.viewContext
 //        
 //        loadBaby()
