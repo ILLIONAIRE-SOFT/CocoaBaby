@@ -21,9 +21,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, GIDSig
         FirebaseApp.configure()
         Database.database().isPersistenceEnabled = true
         
-        let babyRef = Database.database().reference(withPath: "babies/\((Auth.auth().currentUser?.uid)!)")
-        print(babyRef)
-        babyRef.keepSynced(true)
+        if let uid = Auth.auth().currentUser?.uid {
+            let babyRef = Database.database().reference(withPath: "babies/\(uid)")
+            babyRef.keepSynced(true)
+        }
         
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
@@ -78,6 +79,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, GIDSig
                 print(error)
                 return
             }
+            
+            let mainSB = UIStoryboard(name: "Main", bundle: nil)
+            let viewController = mainSB.instantiateViewController(withIdentifier: "SplashViewController")
+            
+            self.window?.rootViewController = viewController
+            self.window?.makeKeyAndVisible()
         }
     }
     
