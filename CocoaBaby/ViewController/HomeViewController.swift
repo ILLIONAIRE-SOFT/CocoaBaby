@@ -99,4 +99,5 @@ class BabyView: UIView {
         
         self.layer.cornerRadius = self.frame.width/2
     }
+    
 }
