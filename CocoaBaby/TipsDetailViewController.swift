@@ -8,23 +8,17 @@
 
 import UIKit
 
-class TipsDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-
-
+class TipsDetailViewController: UIViewController {
     
     @IBOutlet var tableView: UITableView!
-//    @IBOutlet var headTitle: UILabel!
+    let sectionHeight : CGFloat = 30
     
     var week : Int!
     
-//    @IBOutlet var weekTitle: UILabel!
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.dataSource = self
-        self.tableView.delegate = self
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "header")
-        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "content")
+        tableView.dataSource = self
+        tableView.delegate = self
         tableView.backgroundColor = .clear
         tableView.allowsSelection = false
     }
@@ -37,6 +31,10 @@ class TipsDetailViewController: UIViewController, UITableViewDelegate, UITableVi
         }
 
     }
+
+}
+
+extension TipsDetailViewController : UITableViewDelegate, UITableViewDataSource{
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 2
@@ -47,44 +45,57 @@ class TipsDetailViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let identifier = indexPath.section == 0 ? "header" : "content"
-        let cell = tableView.dequeueReusableCell(withIdentifier: identifier)
+        let identifier = indexPath.section == 0 ? "TipsDetailHeaderTableViewCell" : "TipsDetailContentTableViewCell"
         
         
         if indexPath.section == 0 {
-            let weekLabel = UILabel(frame: CGRect(x: 30, y: 30, width: 200, height: 40))
-            weekLabel.font = UIFont.systemFont(ofSize: 30, weight: UIFontWeightThin)
-            weekLabel.text = "Week \(self.week!)"
-                
-            cell?.contentView.addSubview(weekLabel)
+            let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as! TipsDetailHeaderTableViewCell
+            if let week = week {
+                cell.initWeekTitle(week: week)
+            }
+            return cell
         } else {
-            
+            let cell  = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! TipsDetailContentTableViewCell
+            return cell
         }
-        
-        return cell!
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section == 1 {
             let segmentedControl = UISegmentedControl(items: ["baby","mama","papa"])
-            segmentedControl.tintColor = .blue
+
+            let sectionView = UIView(frame: CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: sectionHeight))
+            sectionView.addSubview(segmentedControl)
             
-            return segmentedControl
+            segmentedControl.translatesAutoresizingMaskIntoConstraints = false
+            
+            
+            let topConstraint = segmentedControl.topAnchor.constraint(equalTo: sectionView.topAnchor)
+            let bottomConstraint = segmentedControl.bottomAnchor.constraint(equalTo: sectionView.bottomAnchor)
+            let leadingConstraint = segmentedControl.leadingAnchor.constraint(equalTo: sectionView.leadingAnchor, constant: 10)
+            let trailingConstraint = segmentedControl.trailingAnchor.constraint(equalTo: sectionView.trailingAnchor, constant : -10)
+            
+            topConstraint.isActive = true
+            bottomConstraint.isActive = true
+            leadingConstraint.isActive = true
+            trailingConstraint.isActive = true
+
+            segmentedControl.selectedSegmentIndex = 0
+            segmentedControl.tintColor = .gray
+            
+            
+            return sectionView
         }
         return nil
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return section == 0 ? 0 : 44
+        return section == 0 ? 0 : sectionHeight
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return indexPath.section == 0 ?  80 : 1000
     }
-    
-    
-    
-    
-    
 
 }
+

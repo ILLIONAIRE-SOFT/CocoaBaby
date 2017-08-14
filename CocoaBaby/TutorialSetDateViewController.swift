@@ -30,7 +30,7 @@ class TutorialSetDateViewController: BaseViewController, UITextFieldDelegate {
         self.registerButton.isEnabled = false
         
         
-        self.pregnantDateLabel.text = "마지막 생리일이 언제인가요?" // localize 필요
+        self.pregnantDateLabel.text = "출산 전 마지막 생리일이 언제인가요?" // localize 필요
         self.birthDateLabel.text = "출산 예정일이 언제인가요?" // localize 필요
         
         

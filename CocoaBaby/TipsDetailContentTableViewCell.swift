@@ -1,5 +1,5 @@
 //
-//  TIpsDetailContentTableViewCell.swift
+//  TipsDetailContentTableViewCell.swift
 //  CocoaBaby
 //
 //  Created by LEOFALCON on 2017. 8. 14..
@@ -8,11 +8,11 @@
 
 import UIKit
 
-class TIpsDetailContentTableViewCell: UITableViewCell {
+class TipsDetailContentTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        self.backgroundColor = UIColor.clear
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
