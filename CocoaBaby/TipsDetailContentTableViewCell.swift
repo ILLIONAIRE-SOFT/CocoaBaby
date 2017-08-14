@@ -10,15 +10,14 @@ import UIKit
 
 class TipsDetailContentTableViewCell: UITableViewCell {
 
+    @IBOutlet var content: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         self.backgroundColor = UIColor.clear
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    func setContent(content : String)  {
+        self.content.text = content
     }
     
 }

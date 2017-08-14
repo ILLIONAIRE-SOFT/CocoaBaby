@@ -76,15 +76,18 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sMZ-Sy-vi8">
-                                                    <rect key="frame" x="28" y="28" width="68.5" height="36"/>
+                                                    <rect key="frame" x="28" y="32" width="200" height="36"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="200" id="VMX-FJ-k5o"/>
+                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="sMZ-Sy-vi8" firstAttribute="top" secondItem="9x8-Gv-0b3" secondAttribute="topMargin" constant="20" id="FxF-6M-rla"/>
                                                 <constraint firstItem="sMZ-Sy-vi8" firstAttribute="leading" secondItem="9x8-Gv-0b3" secondAttribute="leadingMargin" constant="20" id="PvF-xA-btA"/>
+                                                <constraint firstItem="sMZ-Sy-vi8" firstAttribute="centerY" secondItem="9x8-Gv-0b3" secondAttribute="centerY" id="cQl-1x-hH1"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -98,8 +101,32 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bqy-ES-Rmj" id="rkq-9o-ew4">
                                             <rect key="frame" x="0.0" y="0.0" width="355" height="450.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hou-nB-qVU">
+                                                    <rect key="frame" x="28" y="28" width="299" height="216"/>
+                                                    <attributedString key="attributedText">
+                                                        <fragment>
+                                                            <string key="content">태아는 이미 성별, 피부색, 머리카락 모양 등 대부분의 유전형질이 결정되어 있는 상태입니다. 머리가 몸 전체의 1/3을 차지하며 눈의 색소 침착도 확실해집니다. 아직 태아처럼 보이지는 않지만 뇌가 생기기 시작합니다. 신장이나 심장과 같은 주요 장기들도 발달하며 손가락, 발가락, 눈이 생기며, 4cm까지 성장합니다. 그러나 아직 엄마는 몸 속에서 일어나는 이 드라마틱한 변화를 느낄 수는 없습니다</string>
+                                                            <attributes>
+                                                                <color key="NSColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <font key="NSFont" size="15" name="AppleSDGothicNeo-Light"/>
+                                                                <paragraphStyle key="NSParagraphStyle" alignment="justified" lineBreakMode="wordWrapping" baseWritingDirection="natural" lineHeightMultiple="1.5" tighteningFactorForTruncation="0.0"/>
+                                                            </attributes>
+                                                        </fragment>
+                                                    </attributedString>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="hou-nB-qVU" secondAttribute="trailing" constant="20" id="kdP-kq-CES"/>
+                                                <constraint firstItem="hou-nB-qVU" firstAttribute="leading" secondItem="rkq-9o-ew4" secondAttribute="leadingMargin" constant="20" id="rri-RX-WSO"/>
+                                                <constraint firstItem="hou-nB-qVU" firstAttribute="top" secondItem="rkq-9o-ew4" secondAttribute="topMargin" constant="20" id="sWk-xc-YFw"/>
+                                            </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <outlet property="content" destination="hou-nB-qVU" id="JOa-W1-2Ae"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <sections/>
