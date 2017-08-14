@@ -44,6 +44,10 @@
 		D45189C11F39692E00937869 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D45189BF1F39692E00937869 /* Settings.storyboard */; };
 		D45189C31F3ACD0700937869 /* DiaryAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45189C21F3ACD0700937869 /* DiaryAddViewController.swift */; };
 		D45189C71F3AD25200937869 /* DiaryBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45189C61F3AD25200937869 /* DiaryBaseViewController.swift */; };
+		DA5C8F201F41402500AA3185 /* TipsDetailHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5C8F1E1F41402500AA3185 /* TipsDetailHeaderTableViewCell.swift */; };
+		DA5C8F211F41402500AA3185 /* TipsDetailHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA5C8F1F1F41402500AA3185 /* TipsDetailHeaderTableViewCell.xib */; };
+		DA5C8F241F41404000AA3185 /* TIpsDetailContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5C8F221F41404000AA3185 /* TIpsDetailContentTableViewCell.swift */; };
+		DA5C8F251F41404000AA3185 /* TIpsDetailContentTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA5C8F231F41404000AA3185 /* TIpsDetailContentTableViewCell.xib */; };
 		DAB5A40B1F31B0C4000235B0 /* TutorialSetNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB5A40A1F31B0C4000235B0 /* TutorialSetNameViewController.swift */; };
 		DAB5A40D1F31B185000235B0 /* TutorialSetDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB5A40C1F31B185000235B0 /* TutorialSetDateViewController.swift */; };
 		DAB5A40F1F32126C000235B0 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB5A40E1F32126C000235B0 /* Extension.swift */; };
@@ -121,6 +125,10 @@
 		D45189C01F39692E00937869 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
 		D45189C21F3ACD0700937869 /* DiaryAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryAddViewController.swift; sourceTree = "<group>"; };
 		D45189C61F3AD25200937869 /* DiaryBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryBaseViewController.swift; sourceTree = "<group>"; };
+		DA5C8F1E1F41402500AA3185 /* TipsDetailHeaderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsDetailHeaderTableViewCell.swift; sourceTree = "<group>"; };
+		DA5C8F1F1F41402500AA3185 /* TipsDetailHeaderTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TipsDetailHeaderTableViewCell.xib; sourceTree = "<group>"; };
+		DA5C8F221F41404000AA3185 /* TIpsDetailContentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TIpsDetailContentTableViewCell.swift; sourceTree = "<group>"; };
+		DA5C8F231F41404000AA3185 /* TIpsDetailContentTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TIpsDetailContentTableViewCell.xib; sourceTree = "<group>"; };
 		DAB5A40A1F31B0C4000235B0 /* TutorialSetNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TutorialSetNameViewController.swift; path = ViewController/TutorialSetNameViewController.swift; sourceTree = "<group>"; };
 		DAB5A40C1F31B185000235B0 /* TutorialSetDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialSetDateViewController.swift; sourceTree = "<group>"; };
 		DAB5A40E1F32126C000235B0 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
@@ -185,6 +193,10 @@
 				4911D9D01F3446110031B74A /* TipsViewController.swift */,
 				DAEE35061F3CC4B70090DBF5 /* TipsPageViewController.swift */,
 				DAEE34BE1F3834FC0090DBF5 /* TipsDetailViewController.swift */,
+				DA5C8F1E1F41402500AA3185 /* TipsDetailHeaderTableViewCell.swift */,
+				DA5C8F1F1F41402500AA3185 /* TipsDetailHeaderTableViewCell.xib */,
+				DA5C8F221F41404000AA3185 /* TIpsDetailContentTableViewCell.swift */,
+				DA5C8F231F41404000AA3185 /* TIpsDetailContentTableViewCell.xib */,
 			);
 			name = Tips;
 			sourceTree = "<group>";
@@ -580,7 +592,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA5C8F251F41404000AA3185 /* TIpsDetailContentTableViewCell.xib in Resources */,
 				D45189BB1F39679700937869 /* Home.storyboard in Resources */,
+				DA5C8F211F41402500AA3185 /* TipsDetailHeaderTableViewCell.xib in Resources */,
 				4911D9DA1F344DCA0031B74A /* Localizable.strings in Resources */,
 				49F6C7871F318AF200373F06 /* LaunchScreen.storyboard in Resources */,
 				D45189B81F39669D00937869 /* Diary.storyboard in Resources */,
@@ -773,6 +787,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DA5C8F241F41404000AA3185 /* TIpsDetailContentTableViewCell.swift in Sources */,
 				496FB1DD1F31982500E4042D /* Baby+CoreDataClass.swift in Sources */,
 				D45189B61F38420400937869 /* CustomTableViewCell.swift in Sources */,
 				49F6C77D1F318AF200373F06 /* AppDelegate.swift in Sources */,
@@ -786,6 +801,7 @@
 				4911D9D41F34461F0031B74A /* SettingsViewController.swift in Sources */,
 				496FB1DE1F31982500E4042D /* Baby+CoreDataProperties.swift in Sources */,
 				49FEEE321F3844C70046D5A3 /* CocoaDateFormatter.swift in Sources */,
+				DA5C8F201F41402500AA3185 /* TipsDetailHeaderTableViewCell.swift in Sources */,
 				496FB1DA1F31943D00E4042D /* CocoaBaby.xcdatamodeld in Sources */,
 				49CBF1871F3C29DE00426D61 /* FireBaseAPI.swift in Sources */,
 				4911D9CE1F34455D0031B74A /* DiaryViewController.swift in Sources */,
