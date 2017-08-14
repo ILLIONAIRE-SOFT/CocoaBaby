@@ -41,8 +41,6 @@ class HomeViewController: BaseViewController {
         
         updateBabyView()
         
-        print(CKShareMetadata())
-        
         if BabyStore.shared.baby == nil {
             let tutorialStoryboard = UIStoryboard(name: "Tutorial", bundle: nil)
             let viewController = tutorialStoryboard.instantiateViewController(withIdentifier: "tutorialNavigationViewController")
@@ -52,8 +50,8 @@ class HomeViewController: BaseViewController {
 //        UIView.animate(withDuration: 1, delay: 0, options: [.repeat,.autoreverse], animations: {
         
 
-        FirebaseDataController.shared.saveUser()
-        
+       // FirebaseDataController.shared.saveUser()
+
         // MARK: WaterDropOne
         waterDrop.layer.cornerRadius = 5
         // position
@@ -97,12 +95,6 @@ class HomeViewController: BaseViewController {
             self.waterDropTwo.alpha = 0.0
         })
 
-
-//        FirebaseDataController.shared.saveUser()
-//        FirebaseDataController.shared.saveDiary(year: 2017, month: 8, day: 9)
-//        FirebaseDataController.shared.fetchDiaries(year: 2017, month: 8) { (_) in
-        
-//        }
 
     }
     

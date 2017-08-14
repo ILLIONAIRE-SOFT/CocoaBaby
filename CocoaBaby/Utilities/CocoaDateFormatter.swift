@@ -10,6 +10,8 @@ import Foundation
 
 class CocoaDateFormatter {
     
+    static let dateFormatter = DateFormatter()
+    
     static let weekDays = ["SUN", "MON", "TUE", "WED", "THU", "FRI", "SAT"]
     
     static func createComponents(from date: Date) -> DateComponents {
@@ -25,21 +27,61 @@ class CocoaDateFormatter {
         return components
     }
     
-    static func createDate(year: Int, month: Int, day: Int) -> Date {
-        let date = Calendar.current.date(from: createComponents(year: year, month: month, day: day))
+    static func createDate(from diaryDate: Diary.Date) -> Date {
+        let date = Calendar.current.date(from: createComponents(year: diaryDate.year, month: diaryDate.month, day: diaryDate.day))
         
         return date!
     }
     
-//    static func getDay(from diary: CKDiary) -> String {
-//        let date = createDate(year: diary.year, month: diary.month, day: diary.day)
-//        
-//        let components = createComponents(from: date)
-//        
-//        if let weekDay = components.weekday {
-//            return weekDays[weekDay - 1]
-//        } else {
-//            return ""
-//        }
-//    }
+    static func getDateExcludeTime(from date: Date) -> String {
+        dateFormatter.dateStyle = .medium
+        
+        return dateFormatter.string(from: date)
+    }
+    
+    static func getCalendarComponents(from date: Date) -> DateComponents {
+        let components = Calendar.current.dateComponents([.year, .month, .day], from: date)
+        
+        return components
+    }
+    
+    static func getNumberOfDay(from diaryDate: Diary.Date) -> Int {
+        let todayComponents = getCalendarComponents(from: Date())
+        
+        let dateComponents = DateComponents(year: diaryDate.year, month: diaryDate.month)
+        let calendar = Calendar.current
+        let date = calendar.date(from: dateComponents)!
+        
+        let range = calendar.range(of: .day, in: .month, for: date)!
+        var numDays = range.count
+        
+        if diaryDate.year == todayComponents.year, diaryDate.month == todayComponents.month {
+            numDays = todayComponents.day!
+        }
+        
+        return numDays
+    }
+    
+    static func getWeekDay(from diary: Diary) -> String {
+        let date = createDate(from: diary.date)
+        
+        let components = createComponents(from: date)
+        
+        if let weekDay = components.weekday {
+            return weekDays[weekDay - 1]
+        } else {
+            return ""
+        }
+    }
+    
+    static func getDay(from date: Date) -> Int {
+        let components = getCalendarComponents(from: date)
+        
+        if let day = components.day {
+            return day
+        } else {
+            return 0
+        }
+    }
+    
 }
