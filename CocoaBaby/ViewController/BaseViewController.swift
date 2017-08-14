@@ -27,6 +27,7 @@ class BaseViewController: UIViewController {
         super.viewWillDisappear(animated)
         
         stopLoading()
+//        hideOverlay()
     }
     
     func startLoading() {
@@ -55,6 +56,28 @@ class BaseViewController: UIViewController {
         }) { (_) in
             indicator.stopAnimating()
             indicator.removeFromSuperview()
+            overlay.removeFromSuperview()
+        }
+    }
+    
+    func addOverlay() {
+        overlay = UIView(frame: view.frame)
+        overlay?.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        
+        view.addSubview(overlay!)
+    }
+    
+    func hideOverlay() {
+        print("Hide Overlay")
+        guard let overlay = overlay else {
+            print("Overlay not exist")
+            return
+        }
+        
+        UIView.animate(withDuration: 0.3, animations: {
+            print("Make overlay alpha 0")
+            overlay.alpha = 0
+        }) { (_) in
             overlay.removeFromSuperview()
         }
     }
