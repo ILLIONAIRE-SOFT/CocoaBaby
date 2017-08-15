@@ -297,9 +297,6 @@ extension FireBaseAPI {
 extension FireBaseAPI {
     static func fetchTips(completion: @escaping (TipsResult) -> ()) {
         
-        
-        
-        
         ref.child(FireBaseDirectoryName.tips.rawValue).observeSingleEvent(of: .value, with: {
             (snapshot) in
             
@@ -318,7 +315,6 @@ extension FireBaseAPI {
                     result[week] = tips
                 }
             }
-            print(result)
             completion(TipsResult.success(result))
         })
         

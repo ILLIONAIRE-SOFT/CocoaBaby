@@ -15,7 +15,6 @@ class TipsViewController: BaseViewController, UIScrollViewDelegate {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        FireBaseAPI.fetchTips { (tipsResult) in
-        }
+        print(TipsStore.shared.Tips)
     }
 }

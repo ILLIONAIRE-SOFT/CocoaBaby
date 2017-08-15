@@ -1,4 +1,4 @@
-//
+    //
 //  AppDelegate.swift
 //  CocoaBaby
 //
@@ -35,6 +35,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, GIDSig
         UINavigationBar.appearance().barStyle = .blackOpaque
 
 //        BabyStore.shared.loadBaby()
+        if TipsStore.shared.Tips == nil {
+            TipsStore.shared.fetchTips()
+        }
+
         
         return true
     }
