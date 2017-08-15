@@ -22,7 +22,7 @@ class TipsPageViewController: UIPageViewController {
         self.delegate = self
         let initialViewController = self.unusedViewController()
         
-        self.setViewControllers([ initialViewController ], direction: .forward, animated: false,completion: { bool in
+        self.setViewControllers([ initialViewController ], direction: .forward, animated: true,completion: { bool in
             // 리팩토링 필요
             initialViewController.week = self.weekIndex
             initialViewController.weekTitle.text = "Week \(initialViewController.week!)"
