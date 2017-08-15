@@ -13,12 +13,13 @@ class DiaryViewController: BaseViewController {
     @IBOutlet var diaryTableView: UITableView!
     @IBOutlet var yearPickLabel: UILabel!
     @IBOutlet var addDiaryBtnBg: UIView!
+    let months: [String] = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
     
     var refreshControl: UIRefreshControl = UIRefreshControl()
     
     var targetDate: Diary.Date = Diary.Date(year: 2017, month: 8, day: 0) {
         didSet {
-            self.yearPickLabel.text = "\(targetDate.year), \(targetDate.month)"
+            self.yearPickLabel.text = "\(months[targetDate.month - 1]) \(targetDate.year)"
             self.fetchDiaries()
         }
     }

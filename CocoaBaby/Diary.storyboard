@@ -142,15 +142,15 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A4m-dT-JLJ">
-                                                    <rect key="frame" x="38" y="10" width="26" height="2"/>
+                                                    <rect key="frame" x="46" y="7" width="8" height="8"/>
                                                     <color key="backgroundColor" red="0.88879103120000003" green="0.73807780469999995" blue="0.76475317990000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="height" constant="2" id="CGk-s5-e9J"/>
-                                                        <constraint firstAttribute="width" constant="26" id="SRf-54-E7d"/>
+                                                        <constraint firstAttribute="height" constant="8" id="CGk-s5-e9J"/>
+                                                        <constraint firstAttribute="width" constant="8" id="SRf-54-E7d"/>
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pk8-l3-KDF">
-                                                    <rect key="frame" x="72" y="4.5" width="15" height="14.5"/>
+                                                    <rect key="frame" x="62" y="4.5" width="15" height="14.5"/>
                                                     <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
@@ -161,7 +161,7 @@
                                                 <constraint firstItem="A4m-dT-JLJ" firstAttribute="centerY" secondItem="UAp-bb-gyM" secondAttribute="centerY" id="2lM-68-o3k"/>
                                                 <constraint firstItem="Pk8-l3-KDF" firstAttribute="leading" secondItem="A4m-dT-JLJ" secondAttribute="trailing" constant="8" id="Hsg-VI-7Uc"/>
                                                 <constraint firstItem="Pk8-l3-KDF" firstAttribute="centerY" secondItem="A4m-dT-JLJ" secondAttribute="centerY" id="NLR-af-Ira"/>
-                                                <constraint firstItem="A4m-dT-JLJ" firstAttribute="leading" secondItem="UAp-bb-gyM" secondAttribute="leading" constant="38" id="rJT-QD-qkG"/>
+                                                <constraint firstItem="A4m-dT-JLJ" firstAttribute="leading" secondItem="UAp-bb-gyM" secondAttribute="leading" constant="46" id="rJT-QD-qkG"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -380,11 +380,13 @@
                     </view>
                     <connections>
                         <outlet property="addDiraryUIToolbar" destination="v0f-U7-kzh" id="22y-PI-LBO"/>
+                        <outlet property="dateLabel" destination="481-QA-cKe" id="ZW7-KV-UPX"/>
                         <outlet property="doneAddDiaryBtn" destination="eL4-Q2-2Kx" id="RjT-wl-dhU"/>
                         <outlet property="keyBoardHideBtn" destination="AzH-RN-g3p" id="TC9-zs-tJx"/>
                         <outlet property="textView" destination="Pee-sP-GhJ" id="ccY-zd-DWT"/>
                         <outlet property="textViewBg" destination="FL6-eK-92a" id="Vwb-E9-osM"/>
                         <outlet property="toolbarBottomConstraint" destination="zWR-X2-ogD" id="GBn-fI-vx8"/>
+                        <outlet property="weekLabel" destination="6xb-29-cOe" id="eYR-04-vRl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hmU-IC-1xH" userLabel="First Responder" sceneMemberID="firstResponder"/>
