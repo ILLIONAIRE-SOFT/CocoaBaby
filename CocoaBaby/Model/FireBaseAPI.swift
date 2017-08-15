@@ -113,11 +113,15 @@ struct FireBaseAPI {
     
     static func fetchDiaries(date: Diary.Date, completion: @escaping ([Diary]) -> ()) {
         guard var uid = Auth.auth().currentUser?.uid else {
+            print("Uid가 없습니다")
             return
         }
         
         if let partnerUID = UserStore.shared.user?.partnerUID {
-            uid = partnerUID
+            print("partner uid 존재합니다. \(partnerUID)")
+            if UserStore.shared.user?.gender == "male" {
+                uid = partnerUID
+            }
         }
         
         ref.child(FireBaseDirectoryName.diaries.rawValue).child(uid).child("\(date.year)").child("\(date.month)").observeSingleEvent(of: .value, with: { (snapshot) in
@@ -126,7 +130,7 @@ struct FireBaseAPI {
             
             for snap in snapshot.children.allObjects as! [DataSnapshot] {
                 let dict = snap.value as! [String:Any]
-                print(dict)
+                
                 if let diary = diary(from: dict) {
                     result.append(diary)
                 }

@@ -9,7 +9,7 @@
 import UIKit
 
 class BaseViewController: UIViewController {
-
+    
     var overlay: UIView?
     var activityIndicator: UIActivityIndicatorView?
     
@@ -19,7 +19,7 @@ class BaseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Gradation2")!)
     }
     
@@ -27,7 +27,7 @@ class BaseViewController: UIViewController {
         super.viewWillDisappear(animated)
         
         stopLoading()
-//        hideOverlay()
+        //        hideOverlay()
     }
     
     func startLoading() {
@@ -52,9 +52,16 @@ class BaseViewController: UIViewController {
         guard
             let overlay = overlay,
             let indicator = activityIndicator else {
-            return
+                return
         }
         
+        UIView.animate(withDuration: 0.2, animations: {
+            overlay.alpha = 0
+        }) { (_) in
+            indicator.stopAnimating()
+            indicator.removeFromSuperview()
+            overlay.removeFromSuperview()
+        }
     }
     
     func addOverlay() {
