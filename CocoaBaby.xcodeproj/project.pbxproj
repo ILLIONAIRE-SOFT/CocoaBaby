@@ -34,6 +34,7 @@
 		49D7F44D1F31A32E004DF036 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49D7F44C1F31A32E004DF036 /* Tutorial.storyboard */; };
 		49E659131F42C64A00D85C53 /* UserSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49E659111F42C64A00D85C53 /* UserSettings.storyboard */; };
 		49E659151F42C66200D85C53 /* UserSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E659141F42C66200D85C53 /* UserSettingsViewController.swift */; };
+		49E659181F42E54800D85C53 /* ShareHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E659171F42E54800D85C53 /* ShareHelper.swift */; };
 		49F6C77D1F318AF200373F06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F6C77C1F318AF200373F06 /* AppDelegate.swift */; };
 		49F6C7821F318AF200373F06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49F6C7801F318AF200373F06 /* Main.storyboard */; };
 		49F6C7841F318AF200373F06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49F6C7831F318AF200373F06 /* Assets.xcassets */; };
@@ -107,6 +108,7 @@
 		49D7F44C1F31A32E004DF036 /* Tutorial.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Tutorial.storyboard; path = Storyboard/Tutorial.storyboard; sourceTree = "<group>"; };
 		49E659121F42C64A00D85C53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/UserSettings.storyboard; sourceTree = "<group>"; };
 		49E659141F42C66200D85C53 /* UserSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserSettingsViewController.swift; path = ViewController/UserSettingsViewController.swift; sourceTree = "<group>"; };
+		49E659171F42E54800D85C53 /* ShareHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShareHelper.swift; path = Model/ShareHelper.swift; sourceTree = "<group>"; };
 		49F6C7791F318AF200373F06 /* CocoaBaby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaBaby.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49F6C77C1F318AF200373F06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49F6C7811F318AF200373F06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 		496FB1D71F3193CB00E4042D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				49E659161F42E53300D85C53 /* ShareHelper */,
 				49A4B0E31F3DEEF000CC09A7 /* Diary */,
 				49A4B0E21F3DEEC800CC09A7 /* CoreData */,
 				49A4B0E11F3DEDD000CC09A7 /* FireBase */,
@@ -369,6 +372,14 @@
 				49D7F4481F319D99004DF036 /* HomeViewController.swift */,
 			);
 			name = Home;
+			sourceTree = "<group>";
+		};
+		49E659161F42E53300D85C53 /* ShareHelper */ = {
+			isa = PBXGroup;
+			children = (
+				49E659171F42E54800D85C53 /* ShareHelper.swift */,
+			);
+			name = ShareHelper;
 			sourceTree = "<group>";
 		};
 		49F6C7701F318AF200373F06 = {
@@ -834,6 +845,7 @@
 				DAB5A40B1F31B0C4000235B0 /* TutorialSetNameViewController.swift in Sources */,
 				49CBF18A1F3C33E400426D61 /* LoginViewController.swift in Sources */,
 				DAB5A4171F33331C000235B0 /* ColorExtension.swift in Sources */,
+				49E659181F42E54800D85C53 /* ShareHelper.swift in Sources */,
 				DAEE35071F3CC4B70090DBF5 /* TipsPageViewController.swift in Sources */,
 				49D7F44A1F319D99004DF036 /* HomeViewController.swift in Sources */,
 				4920577C1F413FAB00F232E2 /* Diary.swift in Sources */,

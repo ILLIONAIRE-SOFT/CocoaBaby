@@ -24,6 +24,7 @@ enum FireBaseDirectoryName: String {
     case year = "year"
     case month = "month"
     case day = "day"
+    case share = "share"
 }
 
 enum DiaryPayloadName: String {
@@ -54,6 +55,10 @@ enum UserPayloadName: String {
     case partnerUID = "partnerUID"
 }
 
+enum SharePayloadName: String {
+    case uid = "uid"
+}
+
 enum DiaryResult {
     case success(Diary)
     case failure(Error)
@@ -72,6 +77,11 @@ enum TipsResult {
 enum UserResult {
     case success(User?)
     case failure(Error)
+}
+
+enum ShareResult {
+    case success()
+    case failure()
 }
 
 struct FireBaseAPI {
@@ -217,6 +227,8 @@ extension FireBaseAPI {
 extension FireBaseAPI {
     
     static func saveUser(user: User, completion: @escaping (UserResult) -> ()) {
+        print("saveUser")
+        print(user)
         guard let uid = Auth.auth().currentUser?.uid else {
             print(FireBaseAPIError.invalidUser)
             return
@@ -227,7 +239,7 @@ extension FireBaseAPI {
             UserPayloadName.partnerUID.rawValue: user.partnerUID ?? ""
             ] as [String : Any]
         
-        ref.child(FireBaseDirectoryName.babies.rawValue).child("\(uid)").setValue(post, andPriority: nil) { (error, ref) in
+        ref.child(FireBaseDirectoryName.users.rawValue).child("\(uid)").setValue(post, andPriority: nil) { (error, ref) in
             if let error = error {
                 print(error)
                 completion(UserResult.failure(error))
@@ -346,4 +358,39 @@ extension FireBaseAPI {
     
     }
 
+}
+
+// MARK: - Share
+extension FireBaseAPI {
+    
+    static func createShareSection(sixDigits: Int, completion: @escaping (ShareResult) -> ()) {
+        guard let uid = Auth.auth().currentUser?.uid else {
+            print(FireBaseAPIError.invalidUser)
+            return
+        }
+        
+        let post = [
+            SharePayloadName.uid.rawValue: uid
+            ] as [String : Any]
+        
+        // 먼저 observe single event로 해당 번호의 세션이 있는지 확인해줘야 한다. 없는 경우에 fail 줘서 다시 번호를 생성하도록..
+        
+        ref.child(FireBaseDirectoryName.share.rawValue).child("\(sixDigits)").setValue(post, andPriority: nil) { (error, ref) in
+            if let _ = error {
+                completion(ShareResult.failure())
+            } else {
+                completion(ShareResult.success())
+            }
+        }
+    }
+    
+    static func removeShareSection(sixDigits: Int, completion: @escaping (ShareResult) -> ()) {
+//        guard let uid = Auth.auth().currentUser?.uid else {
+//            print(FireBaseAPIError.invalidUser)
+//            return
+//        }
+        
+        ref.child(FireBaseDirectoryName.share.rawValue).child("\(sixDigits)").removeValue()
+        completion(ShareResult.success())
+    }
 }

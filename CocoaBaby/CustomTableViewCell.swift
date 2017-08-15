@@ -21,6 +21,8 @@ class CustomTableViewCell: UITableViewCell {
         
         labelBackgroundView.layer.cornerRadius = 5
         self.selectionStyle = UITableViewCellSelectionStyle.none
+
+        
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -34,5 +36,8 @@ class CustomTableViewCell: UITableViewCell {
         self.addtionalDate.text = "\(diary.date.day)"
         self.weekLabel.text = "\(CocoaDateFormatter.getWeekDay(from: diary))"
     }
+    
+    //만약에 contentsLabel의 텍스트가 공백이면 동그라미로
+
 
 }

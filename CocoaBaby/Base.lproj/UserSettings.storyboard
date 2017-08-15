@@ -20,7 +20,47 @@
                     <view key="view" contentMode="scaleToFill" id="3Ij-KM-TcG">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1nd-9V-sb9">
+                                <rect key="frame" x="169" y="465" width="37" height="30"/>
+                                <state key="normal" title="Done"/>
+                                <connections>
+                                    <action selector="tappedDone:" destination="0lr-z3-xOo" eventType="touchUpInside" id="k3n-1d-zXu"/>
+                                </connections>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="1gr-hD-gy5">
+                                <rect key="frame" x="107.5" y="308.5" width="160" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kGC-N8-T1z">
+                                        <rect key="frame" x="0.0" y="0.0" width="70" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="70" id="wrs-pp-3Au"/>
+                                        </constraints>
+                                        <state key="normal" title="Female"/>
+                                        <connections>
+                                            <action selector="tappedFemaleButton:" destination="0lr-z3-xOo" eventType="touchUpInside" id="yhR-0o-9nw"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1J-in-FqW">
+                                        <rect key="frame" x="90" y="0.0" width="70" height="50"/>
+                                        <state key="normal" title="Male"/>
+                                        <connections>
+                                            <action selector="tappedMaleButton:" destination="0lr-z3-xOo" eventType="touchUpInside" id="hdF-cq-HMR"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="My0-oR-JSP"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1nd-9V-sb9" firstAttribute="centerX" secondItem="3Ij-KM-TcG" secondAttribute="centerX" id="FR0-E8-LDH"/>
+                            <constraint firstItem="1gr-hD-gy5" firstAttribute="centerY" secondItem="3Ij-KM-TcG" secondAttribute="centerY" id="LCv-dk-82s"/>
+                            <constraint firstItem="1gr-hD-gy5" firstAttribute="centerX" secondItem="3Ij-KM-TcG" secondAttribute="centerX" id="MH8-8j-Jx4"/>
+                            <constraint firstItem="1nd-9V-sb9" firstAttribute="top" secondItem="1gr-hD-gy5" secondAttribute="bottom" constant="106.5" id="UWq-fJ-3g5"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NCk-8i-VSc" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -31,8 +31,6 @@ class DiaryEmptyCell: UITableViewCell {
     func initCell(with date: Int) {
         self.emptyCellDate.text = "\(date)"
         
-
-        
     }
 
 }
