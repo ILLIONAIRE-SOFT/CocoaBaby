@@ -71,6 +71,13 @@ class SplashViewController: UIViewController {
     }
     
     private func presentUserSettingsViewController() {
+        let appDelegate = UIApplication.shared.delegate! as! AppDelegate
         
+        let userSettingsSB = UIStoryboard(name: "UserSettings", bundle: nil)
+        let viewController = userSettingsSB.instantiateViewController(withIdentifier: "UserSettingsViewController")
+        
+        appDelegate.window?.rootViewController = viewController
+        appDelegate.window?.makeKeyAndVisible()
+
     }
 }

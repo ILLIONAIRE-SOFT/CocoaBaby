@@ -32,6 +32,8 @@
 		49CBF18A1F3C33E400426D61 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CBF1891F3C33E400426D61 /* LoginViewController.swift */; };
 		49D7F44A1F319D99004DF036 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D7F4481F319D99004DF036 /* HomeViewController.swift */; };
 		49D7F44D1F31A32E004DF036 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49D7F44C1F31A32E004DF036 /* Tutorial.storyboard */; };
+		49E659131F42C64A00D85C53 /* UserSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49E659111F42C64A00D85C53 /* UserSettings.storyboard */; };
+		49E659151F42C66200D85C53 /* UserSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E659141F42C66200D85C53 /* UserSettingsViewController.swift */; };
 		49F6C77D1F318AF200373F06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F6C77C1F318AF200373F06 /* AppDelegate.swift */; };
 		49F6C7821F318AF200373F06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49F6C7801F318AF200373F06 /* Main.storyboard */; };
 		49F6C7841F318AF200373F06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49F6C7831F318AF200373F06 /* Assets.xcassets */; };
@@ -103,6 +105,8 @@
 		49CBF1891F3C33E400426D61 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = ViewController/LoginViewController.swift; sourceTree = "<group>"; };
 		49D7F4481F319D99004DF036 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ViewController/HomeViewController.swift; sourceTree = "<group>"; };
 		49D7F44C1F31A32E004DF036 /* Tutorial.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Tutorial.storyboard; path = Storyboard/Tutorial.storyboard; sourceTree = "<group>"; };
+		49E659121F42C64A00D85C53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/UserSettings.storyboard; sourceTree = "<group>"; };
+		49E659141F42C66200D85C53 /* UserSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserSettingsViewController.swift; path = ViewController/UserSettingsViewController.swift; sourceTree = "<group>"; };
 		49F6C7791F318AF200373F06 /* CocoaBaby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaBaby.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49F6C77C1F318AF200373F06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49F6C7811F318AF200373F06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -209,6 +213,7 @@
 			children = (
 				4911D9D31F34461F0031B74A /* SettingsViewController.swift */,
 				4948E0A51F39799C008542F6 /* EditBabyViewController.swift */,
+				49E659141F42C66200D85C53 /* UserSettingsViewController.swift */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -344,6 +349,7 @@
 				D45189B91F39679700937869 /* Home.storyboard */,
 				D45189BC1F3968C100937869 /* Tips.storyboard */,
 				D45189BF1F39692E00937869 /* Settings.storyboard */,
+				49E659111F42C64A00D85C53 /* UserSettings.storyboard */,
 			);
 			name = Storyboard;
 			sourceTree = "<group>";
@@ -613,6 +619,7 @@
 			files = (
 				D45189BB1F39679700937869 /* Home.storyboard in Resources */,
 				4911D9DA1F344DCA0031B74A /* Localizable.strings in Resources */,
+				49E659131F42C64A00D85C53 /* UserSettings.storyboard in Resources */,
 				49F6C7871F318AF200373F06 /* LaunchScreen.storyboard in Resources */,
 				D45189B81F39669D00937869 /* Diary.storyboard in Resources */,
 				49F6C7841F318AF200373F06 /* Assets.xcassets in Resources */,
@@ -808,6 +815,7 @@
 				49F6C77D1F318AF200373F06 /* AppDelegate.swift in Sources */,
 				4911D9D11F3446110031B74A /* TipsViewController.swift in Sources */,
 				49A4B0E51F3DEF5C00CC09A7 /* DiaryStore.swift in Sources */,
+				49E659151F42C66200D85C53 /* UserSettingsViewController.swift in Sources */,
 				496FB1E11F31986E00E4042D /* BabyStore.swift in Sources */,
 				DAB5A40D1F31B185000235B0 /* TutorialSetDateViewController.swift in Sources */,
 				493631DE1F31C662008C774E /* TabBarViewController.swift in Sources */,
@@ -880,6 +888,14 @@
 				4911D9DE1F344DDE0031B74A /* ko */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		49E659111F42C64A00D85C53 /* UserSettings.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				49E659121F42C64A00D85C53 /* Base */,
+			);
+			name = UserSettings.storyboard;
 			sourceTree = "<group>";
 		};
 		49F6C7801F318AF200373F06 /* Main.storyboard */ = {

@@ -258,19 +258,22 @@ extension FireBaseAPI {
         var user = User()
         
         guard
-            let gender = json[UserPayloadName.gender.rawValue],
-            let partnerUID = json[UserPayloadName.partnerUID.rawValue] else {
+            let gender = json[UserPayloadName.gender.rawValue] else {
                 return nil
         }
         
+        let partnerUID = json[UserPayloadName.partnerUID.rawValue]
+        
         user.gender = gender as! String
         
-        let uid = partnerUID as! String
-        
-        if uid == "" {
-            user.partnerUID = nil
-        } else {
-            user.partnerUID = uid
+        if partnerUID != nil {
+            let uid = partnerUID as! String
+            
+            if uid == "" {
+                user.partnerUID = nil
+            } else {
+                user.partnerUID = uid
+            }
         }
         
         return user
