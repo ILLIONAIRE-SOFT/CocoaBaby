@@ -33,12 +33,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, GIDSig
         GIDSignIn.sharedInstance().delegate = self
         
         UINavigationBar.appearance().barStyle = .blackOpaque
-
-//        BabyStore.shared.loadBaby()
-        if TipsStore.shared.Tips == nil {
-            TipsStore.shared.fetchTips()
-        }
-
         
         return true
     }

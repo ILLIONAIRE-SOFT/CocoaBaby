@@ -55,13 +55,6 @@ class BaseViewController: UIViewController {
             return
         }
         
-        UIView.animate(withDuration: 0.2, animations: { 
-            overlay.alpha = 0
-        }) { (_) in
-            indicator.stopAnimating()
-            indicator.removeFromSuperview()
-            overlay.removeFromSuperview()
-        }
     }
     
     func addOverlay() {

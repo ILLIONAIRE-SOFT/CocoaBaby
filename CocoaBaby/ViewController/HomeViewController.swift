@@ -32,6 +32,7 @@ class HomeViewController: BaseViewController {
         super.viewWillAppear(animated)
         
         updateBabyInfo()
+        updateInfoLabel(week: BabyStore.shared.getPregnantWeek().week)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -40,54 +41,62 @@ class HomeViewController: BaseViewController {
         // MARK: WaterDropOne
         waterDrop.layer.cornerRadius = 5
         // position
-        UIView.animate(withDuration: 5.0) {
-            self.waterDrop.layer.position.y = -200.0
-           // self.waterDrop.layer.position.x =
-        }
-        // alpha
-        UIView.animate(withDuration: 12, animations: {
+        UIView.animate(withDuration: 5, delay: 0, options: [.repeat], animations: {
+            self.waterDrop.frame.origin.y = 70
             self.waterDrop.alpha = 1.0
-           // self.waterd
-        })
-        UIView.animate(withDuration: 12, animations: {
-            self.waterDrop.alpha = 1.0
-        })
-        UIView.animate(withDuration: 2, animations: {
             self.waterDrop.alpha = 0.0
-        })
-        
+      
+        }, completion: nil)
+      
         // MARK: WaterDropTwo
         waterDropTwo.layer.cornerRadius = 3
         // position
-        
-        UIView.animate(withDuration: 3.0) {
-            UIView.setAnimationDelay(1.0)
-            self.waterDropTwo.layer.position.y = -200.0
-            // self.waterDrop.layer.position.x =
-        }
-        // alpha
-        UIView.animate(withDuration: 16, animations: {
-          // UIView.setAnimationDelay(1.0)
+        UIView.animate(withDuration: 5, delay: 1, options: [.repeat], animations: {
+            self.waterDropTwo.frame.origin.y = 800
             self.waterDropTwo.alpha = 1.0
-            // self.waterd
-        })
-        UIView.animate(withDuration: 16, animations: {
-           // UIView.setAnimationDelay(1.0)
-            self.waterDropTwo.alpha = 1.0
-        })
-        UIView.animate(withDuration: 2, animations: {
-            UIView.setAnimationDelay(1.0)
             self.waterDropTwo.alpha = 0.0
-        })
+            
+        }, completion: nil)
+        
     }
+    
+    
+    
     
     // MARK: - Methods
     private func updateBabyInfo() {
         self.nameLabel.text = BabyStore.shared.getName()
         let dDay = BabyStore.shared.getDday()
         self.dDayLabel.text = "D\(dDay.mark)\(dDay.value)"
-        self.infoLabel.text = "1주차에는 5대 영양소를 골고루!"
-        self.weekLabel.text = "Week \(BabyStore.shared.getPregnantWeek().week)"
+        
+        let week = BabyStore.shared.getPregnantWeek().week
+        
+        updateInfoLabel(week: week)
+        self.weekLabel.text = "Week \(week)"
+    }
+    
+    // Info label content randomly
+    
+    private func updateInfoLabel(week: Int) {
+        let randomNum = arc4random_uniform(2)
+        if TipsStore.shared.Tips == nil {
+            TipsStore.shared.fetchTips(completion: { (tips) in
+                self.infoLabel.text = TipsStore.shared.Tips[week]?.babyTitle
+            })
+        }
+        else if UserStore.shared.user?.gender == "female" {
+            if randomNum == 1 {
+                self.infoLabel.text = TipsStore.shared.Tips[week]?.babyTitle
+            } else {
+                self.infoLabel.text = TipsStore.shared.Tips[week]?.mamaTitle
+            }
+        } else {
+            if randomNum == 1 {
+                self.infoLabel.text = TipsStore.shared.Tips[week]?.babyTitle
+            } else {
+                self.infoLabel.text = TipsStore.shared.Tips[week]?.papaTitle
+            }
+        }
     }
 
 }

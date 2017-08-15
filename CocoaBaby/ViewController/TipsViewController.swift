@@ -15,6 +15,6 @@ class TipsViewController: BaseViewController, UIScrollViewDelegate {
     }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        print(TipsStore.shared.Tips)
+        
     }
 }

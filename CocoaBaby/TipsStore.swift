@@ -23,13 +23,15 @@ class TipsStore {
     
     var Tips: [Int:Tips]! = nil
         
-    func fetchTips() {
+    func fetchTips(completion : @escaping ([Int:Tips]?) -> ()) {
         
         FireBaseAPI.fetchTips { (result) in
             switch result {
             case let .success(tips):
                 self.Tips = tips
+                completion(tips)
             case .failure(_):
+                completion(nil)
                 break
             }
         }
