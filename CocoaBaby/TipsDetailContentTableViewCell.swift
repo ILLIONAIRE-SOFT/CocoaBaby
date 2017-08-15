@@ -19,9 +19,10 @@ class TipsDetailContentTableViewCell: UITableViewCell {
         self.backgroundColor = UIColor.clear
     }
 
-    func setContent(title: String,content : String)  {
+    func setContent(title: String, content: String)  {
         self.title.text = title
         self.content.text = content
     }
+    
     
 }

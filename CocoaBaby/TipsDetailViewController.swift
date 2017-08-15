@@ -27,6 +27,9 @@ class TipsDetailViewController: UIViewController {
         tableView.delegate = self
         tableView.backgroundColor = .clear
         tableView.allowsSelection = false
+        tableView.rowHeight = UITableViewAutomaticDimension
+        tableView.estimatedRowHeight = 140
+        tableView.separatorStyle = .none
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -78,10 +81,7 @@ extension TipsDetailViewController : UITableViewDelegate, UITableViewDataSource{
             return cell
     }
     
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 1000
-    }
+
 }
 
 
