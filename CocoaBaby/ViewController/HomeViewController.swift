@@ -32,6 +32,7 @@ class HomeViewController: BaseViewController {
         super.viewWillAppear(animated)
         
         updateBabyInfo()
+        updateInfoLabel(week: BabyStore.shared.getPregnantWeek().week)
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -86,8 +87,35 @@ class HomeViewController: BaseViewController {
         self.nameLabel.text = BabyStore.shared.getName()
         let dDay = BabyStore.shared.getDday()
         self.dDayLabel.text = "D\(dDay.mark)\(dDay.value)"
-        self.infoLabel.text = "1주차에는 5대 영양소를 골고루!"
-        self.weekLabel.text = "Week \(BabyStore.shared.getPregnantWeek().week)"
+        
+        let week = BabyStore.shared.getPregnantWeek().week
+        
+        updateInfoLabel(week: week)
+        self.weekLabel.text = "Week \(week)"
+    }
+    
+    // Info label content randomly
+    
+    private func updateInfoLabel(week: Int) {
+        let randomNum = arc4random_uniform(2)
+        if TipsStore.shared.Tips == nil {
+            TipsStore.shared.fetchTips(completion: { (tips) in
+                self.infoLabel.text = TipsStore.shared.Tips[week]?.babyTitle
+            })
+        }
+        else if UserStore.shared.user?.gender == "female" {
+            if randomNum == 1 {
+                self.infoLabel.text = TipsStore.shared.Tips[week]?.babyTitle
+            } else {
+                self.infoLabel.text = TipsStore.shared.Tips[week]?.mamaTitle
+            }
+        } else {
+            if randomNum == 1 {
+                self.infoLabel.text = TipsStore.shared.Tips[week]?.babyTitle
+            } else {
+                self.infoLabel.text = TipsStore.shared.Tips[week]?.papaTitle
+            }
+        }
     }
 
 }
