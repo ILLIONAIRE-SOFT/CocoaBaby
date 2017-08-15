@@ -23,21 +23,17 @@ class TipsStore {
     
     var Tips: [Int:Tips]! = nil
         
+    func fetchTips() {
+        
+        FireBaseAPI.fetchTips { (result) in
+            switch result {
+            case let .success(tips):
+                self.Tips = tips
+            case .failure(_):
+                break
+            }
+        }
+    }
     
-//    func fetchBaby(completion: @escaping (Tips?) -> ()) {
-//        
-//        FireBaseAPI.fetchTips { (result) in
-//            switch result {
-//            case let .success(tips):
-//                self.Tips = tips
-//                completion(tips)
-//            case let .failure(_):
-//                completion(nil)
-//            default:
-//                return
-//            }
-//        }
-//    }
-//    
     
 }

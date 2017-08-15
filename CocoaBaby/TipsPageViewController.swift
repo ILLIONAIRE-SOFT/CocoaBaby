@@ -22,12 +22,15 @@ class TipsPageViewController: UIPageViewController {
         self.delegate = self
         let initialViewController = self.unusedViewController()
         
-        self.setViewControllers([ initialViewController ],
-                                direction: .forward,
-                                animated: false,
-                                completion: nil)
-        initialViewController.week = self.weekIndex
-     //   self.reloadInputViews()
+        self.setViewControllers([ initialViewController ], direction: .forward, animated: false,completion: { bool in
+            // 리팩토링 필요
+            initialViewController.week = self.weekIndex
+            initialViewController.weekTitle.text = "Week \(initialViewController.week!)"
+            initialViewController.segmentedControl.selectedSegmentIndex = 0
+            initialViewController.segmentedControl.addTarget(initialViewController, action: #selector(initialViewController.tipTargetChanged(segControl:)), for: .valueChanged)
+            initialViewController.tipTargetChanged(segControl: initialViewController.segmentedControl)
+        })
+        
     }
 
     // Tips pageView에서 재사용되는 뷰를 만들기 위함. 만약 reusableViewControllers set에 남은 것이 있으면 그것을 사용하고

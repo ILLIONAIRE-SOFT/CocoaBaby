@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -67,7 +66,7 @@
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="401" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qcH-v4-VJm">
                                 <rect key="frame" x="0.0" y="150" width="355" height="428"/>
-                                <color key="backgroundColor" red="1" green="0.98823529409999999" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TipsDetailContentTableViewCell" rowHeight="401" id="bqy-ES-Rmj" customClass="TipsDetailContentTableViewCell" customModule="CocoaBaby" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="355" height="401"/>
@@ -77,7 +76,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hou-nB-qVU">
-                                                    <rect key="frame" x="28" y="28" width="299" height="216"/>
+                                                    <rect key="frame" x="20" y="55.5" width="315" height="216"/>
                                                     <attributedString key="attributedText">
                                                         <fragment>
                                                             <string key="content">태아는 이미 성별, 피부색, 머리카락 모양 등 대부분의 유전형질이 결정되어 있는 상태입니다. 머리가 몸 전체의 1/3을 차지하며 눈의 색소 침착도 확실해집니다. 아직 태아처럼 보이지는 않지만 뇌가 생기기 시작합니다. 신장이나 심장과 같은 주요 장기들도 발달하며 손가락, 발가락, 눈이 생기며, 4cm까지 성장합니다. 그러나 아직 엄마는 몸 속에서 일어나는 이 드라마틱한 변화를 느낄 수는 없습니다</string>
@@ -90,16 +89,26 @@
                                                     </attributedString>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="luV-kx-UmM">
+                                                    <rect key="frame" x="20" y="10" width="315" height="25.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailingMargin" secondItem="hou-nB-qVU" secondAttribute="trailing" constant="20" id="kdP-kq-CES"/>
-                                                <constraint firstItem="hou-nB-qVU" firstAttribute="leading" secondItem="rkq-9o-ew4" secondAttribute="leadingMargin" constant="20" id="rri-RX-WSO"/>
-                                                <constraint firstItem="hou-nB-qVU" firstAttribute="top" secondItem="rkq-9o-ew4" secondAttribute="topMargin" constant="20" id="sWk-xc-YFw"/>
+                                                <constraint firstAttribute="trailing" secondItem="luV-kx-UmM" secondAttribute="trailing" constant="20" id="3FQ-hf-6KR"/>
+                                                <constraint firstItem="luV-kx-UmM" firstAttribute="top" secondItem="rkq-9o-ew4" secondAttribute="top" constant="10" id="Lxw-3a-YGF"/>
+                                                <constraint firstItem="hou-nB-qVU" firstAttribute="top" secondItem="luV-kx-UmM" secondAttribute="bottom" constant="20" id="TE6-iL-ezB"/>
+                                                <constraint firstItem="luV-kx-UmM" firstAttribute="leading" secondItem="rkq-9o-ew4" secondAttribute="leading" constant="20" id="iwx-Kl-9Hj"/>
+                                                <constraint firstAttribute="trailing" secondItem="hou-nB-qVU" secondAttribute="trailing" constant="20" id="kdP-kq-CES"/>
+                                                <constraint firstItem="hou-nB-qVU" firstAttribute="leading" secondItem="rkq-9o-ew4" secondAttribute="leading" constant="20" id="rri-RX-WSO"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
                                             <outlet property="content" destination="hou-nB-qVU" id="JOa-W1-2Ae"/>
+                                            <outlet property="title" destination="luV-kx-UmM" id="ZhA-gO-RCM"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -109,34 +118,33 @@
                                 <rect key="frame" x="0.0" y="0.0" width="355" height="150"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zm4-2H-B9U">
-                                        <rect key="frame" x="30" y="30" width="68.5" height="36"/>
+                                        <rect key="frame" x="20" y="30" width="68.5" height="36"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="O37-w5-hNA">
                                         <rect key="frame" x="20" y="102" width="315" height="29"/>
-                                        <color key="backgroundColor" red="1" green="0.98823529409999999" blue="0.86666666670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <segments>
-                                            <segment title="First"/>
-                                            <segment title="Second"/>
-                                            <segment title=""/>
+                                            <segment title="Baby"/>
+                                            <segment title="Mama"/>
+                                            <segment title="Papa"/>
                                         </segments>
-                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="tintColor" red="1" green="0.82352941176470584" blue="0.8666666666666667" alpha="0.5" colorSpace="calibratedRGB"/>
                                     </segmentedControl>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="O37-w5-hNA" secondAttribute="trailing" constant="20" id="09x-db-lRb"/>
                                     <constraint firstItem="O37-w5-hNA" firstAttribute="leading" secondItem="ONB-mx-CaQ" secondAttribute="leading" constant="20" id="4uY-nY-oFH"/>
                                     <constraint firstItem="Zm4-2H-B9U" firstAttribute="top" secondItem="ONB-mx-CaQ" secondAttribute="top" constant="30" id="Aa1-zw-JcY"/>
                                     <constraint firstAttribute="height" constant="150" id="cN1-M6-yeK"/>
                                     <constraint firstAttribute="bottom" secondItem="O37-w5-hNA" secondAttribute="bottom" constant="20" id="kyA-Be-H9t"/>
-                                    <constraint firstItem="Zm4-2H-B9U" firstAttribute="leading" secondItem="ONB-mx-CaQ" secondAttribute="leading" constant="30" id="or5-hg-0FQ"/>
+                                    <constraint firstItem="Zm4-2H-B9U" firstAttribute="leading" secondItem="ONB-mx-CaQ" secondAttribute="leading" constant="20" id="or5-hg-0FQ"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="0.9882352941176471" blue="0.8666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="ONB-mx-CaQ" firstAttribute="leading" secondItem="n0c-lD-Xxf" secondAttribute="leading" id="Het-Ox-mWy"/>
                             <constraint firstAttribute="trailing" secondItem="ONB-mx-CaQ" secondAttribute="trailing" id="MAg-hj-uA2"/>

@@ -33,7 +33,7 @@ class SplashViewController: UIViewController {
                         } else {
                             self.presentTutorialViewController()
                         }
-                    })
+                    })                    
                 case .failure(_): // UserSettingsViewController로 이동
                     self.presentUserSettingsViewController()
                 }

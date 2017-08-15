@@ -10,13 +10,15 @@ import UIKit
 
 class TipsDetailContentTableViewCell: UITableViewCell {
 
+    @IBOutlet var title: UILabel!
     @IBOutlet var content: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         self.backgroundColor = UIColor.clear
     }
 
-    func setContent(content : String)  {
+    func setContent(title: String,content : String)  {
+        self.title.text = title
         self.content.text = content
     }
     
