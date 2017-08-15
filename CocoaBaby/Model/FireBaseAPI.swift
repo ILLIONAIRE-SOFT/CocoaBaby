@@ -17,6 +17,7 @@ enum FireBaseAPIError: Error {
 }
 
 enum FireBaseDirectoryName: String {
+    case users = "users"
     case babies = "babies"
     case diaries = "diaries"
     case tips = "tips"
@@ -48,6 +49,11 @@ enum TipsPayloadName: String {
     case week = "week"
 }
 
+enum UserPayloadName: String {
+    case gender = "gender"
+    case partnerUID = "partnerUID"
+}
+
 enum DiaryResult {
     case success(Diary)
     case failure(Error)
@@ -60,6 +66,11 @@ enum BabyResult {
 
 enum TipsResult {
     case success([Int:Tips])
+    case failure(Error)
+}
+
+enum UserResult {
+    case success(User?)
     case failure(Error)
 }
 
@@ -200,6 +211,85 @@ extension FireBaseAPI {
         
         return baby
     }
+}
+
+// MARK: - User
+extension FireBaseAPI {
+    
+    static func saveUser(user: User, completion: @escaping (UserResult) -> ()) {
+        guard let uid = Auth.auth().currentUser?.uid else {
+            print(FireBaseAPIError.invalidUser)
+            return
+        }
+        
+        let post = [
+            UserPayloadName.gender.rawValue: user.gender,
+            UserPayloadName.partnerUID.rawValue: user.partnerUID ?? ""
+            ] as [String : Any]
+        
+        ref.child(FireBaseDirectoryName.babies.rawValue).child("\(uid)").setValue(post, andPriority: nil) { (error, ref) in
+            if let error = error {
+                print(error)
+                completion(UserResult.failure(error))
+            } else {
+                completion(UserResult.success(user))
+            }
+        }
+    }
+    
+    static func fetchUser(completion: @escaping (UserResult) -> ()) {
+        guard let uid = Auth.auth().currentUser?.uid else {
+            print(FireBaseAPIError.invalidUser)
+            return
+        }
+        
+        ref.child(FireBaseDirectoryName.users.rawValue).child(uid).observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            guard snapshot.exists() else {
+                completion(UserResult.failure(FireBaseAPIError.invalidUser))
+                return
+            }
+            
+            var result: User? = nil
+            
+            let dict = snapshot.value as! [String:Any]
+            if let user = user(from: dict) {
+                result = user
+                completion(UserResult.success(result))
+                
+            } else {
+                completion(UserResult.failure(FireBaseAPIError.invalidUser))
+            }
+            
+        })
+    }
+    
+    private static func user(from json: [String:Any]) -> User? {
+        
+        var user = User()
+        
+        guard
+            let gender = json[UserPayloadName.gender.rawValue] else {
+                return nil
+        }
+        
+        let partnerUID = json[UserPayloadName.partnerUID.rawValue]
+        
+        user.gender = gender as! String
+        
+        if partnerUID != nil {
+            let uid = partnerUID as! String
+            
+            if uid == "" {
+                user.partnerUID = nil
+            } else {
+                user.partnerUID = uid
+            }
+        }
+        
+        return user
+    }
+    
 }
 
 // MARK: - Tips

@@ -19,7 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, GIDSig
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         FirebaseApp.configure()
-        Database.database().isPersistenceEnabled = true
+        Database.database().isPersistenceEnabled = false
         
         if let uid = Auth.auth().currentUser?.uid {
             let babyRef = Database.database().reference(withPath: "babies/\(uid)")

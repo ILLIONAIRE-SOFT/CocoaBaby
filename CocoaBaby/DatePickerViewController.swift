@@ -14,7 +14,6 @@ class DatePickerViewController: UIViewController {
     var currentDate: Diary.Date?
     let datePickerDelegate = CocoaDatePickerDelegate()
     @IBOutlet var containerView: UIView!
-    
     @IBOutlet var pickerView: UIPickerView!
     
     override func viewDidLoad() {

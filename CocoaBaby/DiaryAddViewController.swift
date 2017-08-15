@@ -10,6 +10,9 @@ import UIKit
 
 class DiaryAddViewController: DiaryBaseViewController {
     
+    
+    @IBOutlet weak var weekLabel: UILabel!
+    @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet var addDiraryUIToolbar: UIToolbar!
     @IBOutlet var doneAddDiaryBtn: UIBarButtonItem!
     @IBOutlet var textViewBg: UIView!
@@ -19,11 +22,16 @@ class DiaryAddViewController: DiaryBaseViewController {
     var toolbarBottomConstraintInitialValue: CGFloat?
     
     var diary: Diary?
+    let months: [String] = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         textViewBg.layer.cornerRadius = 4
+        
+        if let diary = self.diary {
+            initDate(with: diary)
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -41,6 +49,13 @@ class DiaryAddViewController: DiaryBaseViewController {
     }
     
     // MARK: Methods
+    
+    func initDate(with diary: Diary) {
+        self.weekLabel.text = "Week \(BabyStore.shared.getPregnantWeekBasedOnDiary(from: diary).week)"
+        self.dateLabel.text = "\(CocoaDateFormatter.getWeekDay(from: diary)) \(months[diary.date.month - 1]) \(diary.date.day) \(diary.date.year)"
+        
+    }
+    
     func updateOriginalValue(diary: Diary) {
         self.textView.text = diary.text
     }

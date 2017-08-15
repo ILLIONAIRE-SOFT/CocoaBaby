@@ -143,4 +143,23 @@ class BabyStore {
         return week
     }
     
+    func getPregnantWeekBasedOnDiary(from diary: Diary) -> Week {
+        
+        var week = Week(week: 0, dayOfWeek: 0)
+        let calendar = Calendar.current
+        let today = calendar.startOfDay(for: Date())
+        
+        let diaryDate = CocoaDateFormatter.createDate(from: diary.date)
+        let pregnantDate = calendar.startOfDay(for: Date(timeIntervalSince1970: baby.pregnantDate))
+        
+        let components = calendar.dateComponents([.day], from: pregnantDate, to: diaryDate)
+        
+        if let day = components.day {
+            week.week = (day - 1) / 7 + 1
+        }
+    
+        return week
+    }
+    
+    
 }
