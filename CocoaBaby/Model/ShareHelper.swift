@@ -33,4 +33,16 @@ class ShareHelper {
             }
         }
     }
+    
+    static func linkWithPartner(sixDigits: Int, completion: @escaping () -> ()) {
+        
+        FireBaseAPI.linkWithPartner(me: UserStore.shared.user!, sixDigits: sixDigits) { (shareResult) in
+            switch shareResult {
+            case .success():
+                return
+            case .failure():
+                return
+            }
+        }
+    }
 }
