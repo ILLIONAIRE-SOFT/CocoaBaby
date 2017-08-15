@@ -54,7 +54,9 @@ class SettingsViewController: BaseViewController {
         
         alertController.addAction(doneAction)
         
+        startLoading()
         ShareHelper.createShareSession {
+            self.stopLoading()
             self.present(alertController, animated: true, completion: nil)
         }
     }
