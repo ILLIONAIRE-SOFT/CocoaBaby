@@ -142,17 +142,17 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A4m-dT-JLJ">
-                                                    <rect key="frame" x="46" y="7" width="8" height="8"/>
-                                                    <color key="backgroundColor" red="0.88879103120000003" green="0.73807780469999995" blue="0.76475317990000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <rect key="frame" x="40" y="7" width="8" height="8"/>
+                                                    <color key="backgroundColor" red="0.8901960784313725" green="0.73725490196078436" blue="0.76470588235294112" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="8" id="CGk-s5-e9J"/>
                                                         <constraint firstAttribute="width" constant="8" id="SRf-54-E7d"/>
                                                     </constraints>
                                                 </view>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="23" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pk8-l3-KDF">
-                                                    <rect key="frame" x="62" y="4.5" width="15" height="14.5"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
-                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <rect key="frame" x="56" y="5" width="12.5" height="12"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="10"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
@@ -160,8 +160,8 @@
                                             <constraints>
                                                 <constraint firstItem="A4m-dT-JLJ" firstAttribute="centerY" secondItem="UAp-bb-gyM" secondAttribute="centerY" id="2lM-68-o3k"/>
                                                 <constraint firstItem="Pk8-l3-KDF" firstAttribute="leading" secondItem="A4m-dT-JLJ" secondAttribute="trailing" constant="8" id="Hsg-VI-7Uc"/>
-                                                <constraint firstItem="Pk8-l3-KDF" firstAttribute="centerY" secondItem="A4m-dT-JLJ" secondAttribute="centerY" id="NLR-af-Ira"/>
-                                                <constraint firstItem="A4m-dT-JLJ" firstAttribute="leading" secondItem="UAp-bb-gyM" secondAttribute="leading" constant="46" id="rJT-QD-qkG"/>
+                                                <constraint firstItem="Pk8-l3-KDF" firstAttribute="centerY" secondItem="A4m-dT-JLJ" secondAttribute="centerY" id="ovK-zQ-1cs"/>
+                                                <constraint firstItem="A4m-dT-JLJ" firstAttribute="leading" secondItem="UAp-bb-gyM" secondAttribute="leading" constant="40" id="rJT-QD-qkG"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
