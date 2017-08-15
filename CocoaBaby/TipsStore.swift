@@ -9,18 +9,21 @@
 import Foundation
 
 struct Tips {
-    var name: String = ""
-    var birthDate: Double = 0
-    var pregnantDate: Double = 0
+    var babyTitle: String = ""
+    var babyContent: String = ""
+    var mamaTitle: String = ""
+    var mamaContent: String = ""
+    var papaTitle: String = ""
+    var papaContent: String = ""
 }
 
-//class TipsStore {
-//    
-//    static let shared: TipsStore = TipsStore()
-//    
-//    var Tips: Tips! = nil
-//        
-//    
+class TipsStore {
+    
+    static let shared: TipsStore = TipsStore()
+    
+    var Tips: [Int:Tips]! = nil
+        
+    
 //    func fetchBaby(completion: @escaping (Tips?) -> ()) {
 //        
 //        FireBaseAPI.fetchTips { (result) in
@@ -36,5 +39,5 @@ struct Tips {
 //        }
 //    }
 //    
-//    
-//}
+    
+}

@@ -27,8 +27,12 @@ class TipsPageViewController: UIPageViewController {
                                 animated: false,
                                 completion: nil)
         initialViewController.week = self.weekIndex
+     //   self.reloadInputViews()
     }
 
+    // Tips pageView에서 재사용되는 뷰를 만들기 위함. 만약 reusableViewControllers set에 남은 것이 있으면 그것을 사용하고
+    // 없으면 새로 만듦.
+    
     func unusedViewController() -> TipsDetailViewController {
         let unusedViewControllers = reusableViewControllers.filter { $0.parent == nil }
         if let someUnusedViewController = unusedViewControllers.last {
@@ -44,6 +48,8 @@ class TipsPageViewController: UIPageViewController {
 
 extension TipsPageViewController: UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     
+    
+    // 이전 페이지와 이후 페이지를 만들어줌.
 
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         let previousViewController = unusedViewController()
@@ -79,9 +85,15 @@ extension TipsPageViewController: UIPageViewControllerDataSource, UIPageViewCont
         return nextViewController
     }
     
+    // 애니메이션 중간에는 transaction 막기 위해서
+    // pageIsAnimating이 true인 상태에서는 페이지 변환이 일어나지 않음.
+    
     func pageViewController(_ pageViewController: UIPageViewController, willTransitionTo pendingViewControllers: [UIViewController]) {
         pageIsAnimating = true
     }
+    
+    
+    // 애니메이션이 끝난 뒤에 현재 보여지는 week를 1개씩 늘림 && pageIsAnimating를 false 로 만들어줌.
     
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         let previousViewControllers = previousViewControllers.first! as! TipsDetailViewController
