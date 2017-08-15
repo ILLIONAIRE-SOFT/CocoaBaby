@@ -24,6 +24,7 @@
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rU4-ye-hvf">
                                 <rect key="frame" x="10" y="30" width="355" height="578"/>
+                                <color key="backgroundColor" red="1" green="0.1339938855682955" blue="0.28075255344668693" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <segue destination="Wma-sI-8je" kind="embed" id="S6S-Yz-3pr"/>
                                 </connections>
@@ -64,42 +65,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="355" height="578"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qcH-v4-VJm">
-                                <rect key="frame" x="0.0" y="20" width="355" height="558"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="401" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qcH-v4-VJm">
+                                <rect key="frame" x="0.0" y="150" width="355" height="428"/>
                                 <color key="backgroundColor" red="1" green="0.98823529409999999" blue="0.86666666670000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TipsDetailHeaderTableViewCell" rowHeight="100" id="ndT-la-bRo" customClass="TipsDetailHeaderTableViewCell" customModule="CocoaBaby" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="355" height="100"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ndT-la-bRo" id="9x8-Gv-0b3">
-                                            <rect key="frame" x="0.0" y="0.0" width="355" height="99.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                            <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sMZ-Sy-vi8">
-                                                    <rect key="frame" x="28" y="32" width="200" height="36"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" constant="200" id="VMX-FJ-k5o"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                            </subviews>
-                                            <constraints>
-                                                <constraint firstItem="sMZ-Sy-vi8" firstAttribute="leading" secondItem="9x8-Gv-0b3" secondAttribute="leadingMargin" constant="20" id="PvF-xA-btA"/>
-                                                <constraint firstItem="sMZ-Sy-vi8" firstAttribute="centerY" secondItem="9x8-Gv-0b3" secondAttribute="centerY" id="cQl-1x-hH1"/>
-                                            </constraints>
-                                        </tableViewCellContentView>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <connections>
-                                            <outlet property="weekTitle" destination="sMZ-Sy-vi8" id="sei-ey-ZBe"/>
-                                        </connections>
-                                    </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TipsDetailContentTableViewCell" rowHeight="451" id="bqy-ES-Rmj" customClass="TipsDetailContentTableViewCell" customModule="CocoaBaby" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="128" width="355" height="451"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TipsDetailContentTableViewCell" rowHeight="401" id="bqy-ES-Rmj" customClass="TipsDetailContentTableViewCell" customModule="CocoaBaby" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="355" height="401"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bqy-ES-Rmj" id="rkq-9o-ew4">
-                                            <rect key="frame" x="0.0" y="0.0" width="355" height="450.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="355" height="400.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hou-nB-qVU">
@@ -131,19 +105,55 @@
                                 </prototypes>
                                 <sections/>
                             </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ONB-mx-CaQ">
+                                <rect key="frame" x="0.0" y="0.0" width="355" height="150"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zm4-2H-B9U">
+                                        <rect key="frame" x="30" y="30" width="68.5" height="36"/>
+                                        <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="O37-w5-hNA">
+                                        <rect key="frame" x="20" y="102" width="315" height="29"/>
+                                        <color key="backgroundColor" red="1" green="0.98823529409999999" blue="0.86666666670000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <segments>
+                                            <segment title="First"/>
+                                            <segment title="Second"/>
+                                            <segment title=""/>
+                                        </segments>
+                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                    </segmentedControl>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="O37-w5-hNA" secondAttribute="trailing" constant="20" id="09x-db-lRb"/>
+                                    <constraint firstItem="O37-w5-hNA" firstAttribute="leading" secondItem="ONB-mx-CaQ" secondAttribute="leading" constant="20" id="4uY-nY-oFH"/>
+                                    <constraint firstItem="Zm4-2H-B9U" firstAttribute="top" secondItem="ONB-mx-CaQ" secondAttribute="top" constant="30" id="Aa1-zw-JcY"/>
+                                    <constraint firstAttribute="height" constant="150" id="cN1-M6-yeK"/>
+                                    <constraint firstAttribute="bottom" secondItem="O37-w5-hNA" secondAttribute="bottom" constant="20" id="kyA-Be-H9t"/>
+                                    <constraint firstItem="Zm4-2H-B9U" firstAttribute="leading" secondItem="ONB-mx-CaQ" secondAttribute="leading" constant="30" id="or5-hg-0FQ"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.9882352941176471" blue="0.8666666666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="ONB-mx-CaQ" firstAttribute="leading" secondItem="n0c-lD-Xxf" secondAttribute="leading" id="Het-Ox-mWy"/>
+                            <constraint firstAttribute="trailing" secondItem="ONB-mx-CaQ" secondAttribute="trailing" id="MAg-hj-uA2"/>
                             <constraint firstItem="DeE-4S-K1t" firstAttribute="top" secondItem="qcH-v4-VJm" secondAttribute="bottom" id="T7i-ri-erb"/>
                             <constraint firstAttribute="trailing" secondItem="qcH-v4-VJm" secondAttribute="trailing" id="VMW-mw-cM8"/>
+                            <constraint firstItem="qcH-v4-VJm" firstAttribute="top" secondItem="ONB-mx-CaQ" secondAttribute="bottom" id="h26-Tp-WuE"/>
+                            <constraint firstItem="ONB-mx-CaQ" firstAttribute="top" secondItem="RDF-6N-d2k" secondAttribute="bottom" id="iNV-xz-m4F"/>
                             <constraint firstItem="qcH-v4-VJm" firstAttribute="leading" secondItem="n0c-lD-Xxf" secondAttribute="leading" id="jDr-Hp-R8P"/>
-                            <constraint firstItem="qcH-v4-VJm" firstAttribute="top" secondItem="RDF-6N-d2k" secondAttribute="bottom" id="wXP-tk-vkm"/>
                         </constraints>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="355" height="578"/>
                     <connections>
+                        <outlet property="segmentedControl" destination="O37-w5-hNA" id="GIm-Lb-lA9"/>
                         <outlet property="tableView" destination="qcH-v4-VJm" id="zd0-ve-dEP"/>
+                        <outlet property="weekTitle" destination="Zm4-2H-B9U" id="fac-i3-KIp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Kd-vG-Tox" userLabel="First Responder" sceneMemberID="firstResponder"/>

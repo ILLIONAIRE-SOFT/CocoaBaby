@@ -11,13 +11,14 @@ import UIKit
 class DiaryEmptyCell: UITableViewCell {
 
     @IBOutlet var emptyLine: UIView!
+    @IBOutlet weak var emptyCellDate: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
         
         self.selectionStyle = .none
-        emptyLine.layer.cornerRadius = 5
+        emptyLine.layer.cornerRadius = 1
         //emptyLine.backgroundColor = UIColor.black.withAlphaComponent(0.8)
     }
 
@@ -27,7 +28,10 @@ class DiaryEmptyCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func initCell() {
+    func initCell(with date: Int) {
+        self.emptyCellDate.text = "\(date)"
+        
+
         
     }
 

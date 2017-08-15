@@ -10,11 +10,12 @@ import UIKit
 
 class TipsDetailViewController: UIViewController {
     
+    @IBOutlet var weekTitle: UILabel!
     @IBOutlet var tableView: UITableView!
+    @IBOutlet var segmentedControl: UISegmentedControl!
+    
     let sectionHeight : CGFloat = 40
     var currentContent : String = ""
-    
-    let segmentedControl = UISegmentedControl(items: ["baby","mama","papa"])
     
     var week : Int!
     
@@ -38,7 +39,6 @@ class TipsDetailViewController: UIViewController {
         if week == nil {
             week = 1
         }
-
     }
     
     func tipTargetChanged(segControl : UISegmentedControl)  {
@@ -59,63 +59,22 @@ class TipsDetailViewController: UIViewController {
 
 extension TipsDetailViewController : UITableViewDelegate, UITableViewDataSource{
     
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 2
-    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let identifier = indexPath.section == 0 ? "TipsDetailHeaderTableViewCell" : "TipsDetailContentTableViewCell"
+        let identifier = "TipsDetailContentTableViewCell"
         
-        
-        if indexPath.section == 0 {
-            let cell = tableView.dequeueReusableCell(withIdentifier: identifier) as! TipsDetailHeaderTableViewCell
-            if let week = week {
-                cell.initWeekTitle(week: week)
-            }
-            return cell
-        } else {
             let cell  = tableView.dequeueReusableCell(withIdentifier: identifier, for: indexPath) as! TipsDetailContentTableViewCell
             cell.setContent(content: currentContent)
             return cell
-        }
     }
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        if section == 1 {
-
-            let sectionView = UIView(frame: CGRect(x: 0, y: 0, width: self.tableView.frame.width, height: sectionHeight))
-            sectionView.addSubview(segmentedControl)
-            
-            segmentedControl.translatesAutoresizingMaskIntoConstraints = false
-            
-            
-            let topConstraint = segmentedControl.topAnchor.constraint(equalTo: sectionView.topAnchor, constant: 5)
-            let bottomConstraint = segmentedControl.bottomAnchor.constraint(equalTo: sectionView.bottomAnchor,constant: -5)
-            let leadingConstraint = segmentedControl.leadingAnchor.constraint(equalTo: sectionView.leadingAnchor, constant: 10)
-            let trailingConstraint = segmentedControl.trailingAnchor.constraint(equalTo: sectionView.trailingAnchor, constant : -10)
-            
-            topConstraint.isActive = true
-            bottomConstraint.isActive = true
-            leadingConstraint.isActive = true
-            trailingConstraint.isActive = true
-
-            segmentedControl.tintColor = .gray
-            
-            return sectionView
-        }
-        return nil
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return section == 0 ? 0 : sectionHeight
-    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return indexPath.section == 0 ?  100 : 1000
+        return 1000
     }
 }
 // 수정 필요
