@@ -68,9 +68,11 @@ class SettingsViewController: BaseViewController {
         
         let doneAction = UIAlertAction(title: "Done", style: .default) { (action) in
             if let linkCode = alertController.textFields?.first?.text {
-                ShareHelper.linkWithPartner(sixDigits: Int(linkCode)!, completion: {
-                    print("link complete")
-                })
+                if let intCode = Int(linkCode) {
+                    ShareHelper.linkWithPartner(sixDigits: intCode, completion: {
+                        print("link complete")
+                    })
+                }
             }
         }
         
