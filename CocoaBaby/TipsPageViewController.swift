@@ -104,6 +104,7 @@ extension TipsPageViewController: UIPageViewControllerDataSource, UIPageViewCont
         let currentViewControllers = pageViewController.viewControllers?.first! as! TipsDetailViewController
         
         
+        
         if finished || completed{
             pageIsAnimating = false
             if let previousWeek = previousViewControllers.week,
