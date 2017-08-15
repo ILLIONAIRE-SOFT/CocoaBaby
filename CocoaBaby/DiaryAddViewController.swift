@@ -98,7 +98,8 @@ class DiaryAddViewController: DiaryBaseViewController {
     }
     
     @IBAction func tappedDone(_ sender: UIBarButtonItem) {
-        saveDiary()
+            saveDiary()
+        
     }
     
     // MARK: Methods
