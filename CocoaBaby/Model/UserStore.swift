@@ -32,4 +32,17 @@ class UserStore {
             }
         }
     }
+    
+    func saveUser(user: User, completion: @escaping (UserResult) -> ()) {
+        
+        FireBaseAPI.saveUser(user: user) { (userResult) in
+            switch userResult {
+            case let .success(user):
+                self.user = user
+                completion(userResult)
+            case .failure(_):
+                completion(userResult)
+            }
+        }
+    }
 }
