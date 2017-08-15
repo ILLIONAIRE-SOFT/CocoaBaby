@@ -18,7 +18,7 @@ class DiaryStore {
     func fetchDiaries(date: Diary.Date, completion: @escaping () -> ()) {
         
         FireBaseAPI.fetchDiaries(date: date) { (diaries) in
-            currentDiaries.removeAll()
+            self.currentDiaries.removeAll()
             for diary in diaries {
                 self.currentDiaries[diary.date.day] = diary
             }
