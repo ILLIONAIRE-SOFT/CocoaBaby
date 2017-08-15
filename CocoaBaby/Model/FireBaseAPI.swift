@@ -347,7 +347,7 @@ extension FireBaseAPI {
             let papaTitle = json[TipsPayloadName.papaTitle.rawValue],
             let papaContent = json[TipsPayloadName.papaContent.rawValue],
             let week = json[TipsPayloadName.week.rawValue] as? Int
-        else {
+            else {
                 return nil
         }
         
@@ -358,10 +358,10 @@ extension FireBaseAPI {
         tips.papaTitle = papaTitle as! String
         tips.papaContent = papaContent as! String
         
-    return (week,tips)
-    
+        return (week,tips)
+        
     }
-
+    
 }
 
 // MARK: - Share
@@ -389,12 +389,57 @@ extension FireBaseAPI {
     }
     
     static func removeShareSection(sixDigits: Int, completion: @escaping (ShareResult) -> ()) {
-//        guard let uid = Auth.auth().currentUser?.uid else {
-//            print(FireBaseAPIError.invalidUser)
-//            return
-//        }
+        //        guard let uid = Auth.auth().currentUser?.uid else {
+        //            print(FireBaseAPIError.invalidUser)
+        //            return
+        //        }
         
         ref.child(FireBaseDirectoryName.share.rawValue).child("\(sixDigits)").removeValue()
         completion(ShareResult.success())
     }
+    
+    static func linkWithPartner(me: User, sixDigits: Int, completion: @escaping (ShareResult) -> ()) {
+        guard let uid = Auth.auth().currentUser?.uid else {
+            print(FireBaseAPIError.invalidUser)
+            return
+        }
+        
+        ref.child(FireBaseDirectoryName.share.rawValue).child("\(sixDigits)").observeSingleEvent(of: .value, with: { (snapshot) in
+            
+            guard snapshot.exists() else {
+                completion(ShareResult.failure())
+                return
+            }
+            
+            let dict = snapshot.value as! [String:Any]
+            
+            if let partnerUID = partnerUID(from: dict) {
+                let post = [
+                    UserPayloadName.gender.rawValue: me.gender,
+                    UserPayloadName.partnerUID.rawValue: partnerUID
+                    ] as [String : Any]
+                
+                ref.child(FireBaseDirectoryName.users.rawValue).child("\(uid)").setValue(post, andPriority: nil) { (error, ref) in
+                    if let _ = error {
+                        completion(ShareResult.failure())
+                    } else {
+                        completion(ShareResult.success())
+                    }
+                }
+            } else {
+            
+            }
+            
+        })
+    }
+    
+    static private func partnerUID(from json: [String:Any]) -> String? {
+        guard
+            let partnerUID = json[SharePayloadName.uid.rawValue] else {
+                return nil
+        }
+        
+        return partnerUID as? String
+    }
+    
 }

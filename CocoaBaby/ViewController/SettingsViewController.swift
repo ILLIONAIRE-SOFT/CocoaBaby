@@ -44,7 +44,6 @@ class SettingsViewController: BaseViewController {
     
     @IBAction func tappedShare(_ sender: UIButton) {
         
-        
         let alertController = UIAlertController(title: "646223", message: "상대방 휴대폰에서 위의 번호를 입력하세요.\n 연결이 완료되기 전에 이 창을 끄지 마십시오.", preferredStyle: .alert)
         
         let doneAction = UIAlertAction(title: "Done", style: .default) { (action) in
@@ -59,4 +58,25 @@ class SettingsViewController: BaseViewController {
             self.present(alertController, animated: true, completion: nil)
         }
     }
+    
+    @IBAction func tappedLink(_ sender: UIButton) {
+        let alertController = UIAlertController(title: "Enter Code", message: "Enter mom's code", preferredStyle: .alert)
+        
+        alertController.addTextField { (textField) in
+            textField.keyboardType = .numberPad
+        }
+        
+        let doneAction = UIAlertAction(title: "Done", style: .default) { (action) in
+            if let linkCode = alertController.textFields?.first?.text {
+                ShareHelper.linkWithPartner(sixDigits: Int(linkCode)!, completion: {
+                    print("link complete")
+                })
+            }
+        }
+        
+        alertController.addAction(doneAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
 }

@@ -73,8 +73,15 @@
                                             <action selector="tappedShare:" destination="IMQ-YG-anA" eventType="touchUpInside" id="uxx-oC-XcQ"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="66g-VN-aE8">
+                                        <rect key="frame" x="0.0" y="297.5" width="303" height="30"/>
+                                        <state key="normal" title="Link with mom"/>
+                                        <connections>
+                                            <action selector="tappedLink:" destination="IMQ-YG-anA" eventType="touchUpInside" id="D0w-rf-Mra"/>
+                                        </connections>
+                                    </button>
                                     <view contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="B4x-cg-lWU">
-                                        <rect key="frame" x="0.0" y="297.5" width="303" height="277.5"/>
+                                        <rect key="frame" x="0.0" y="343.5" width="303" height="231.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
