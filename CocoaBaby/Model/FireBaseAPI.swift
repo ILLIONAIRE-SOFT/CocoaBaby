@@ -76,7 +76,7 @@ enum TipsResult {
 
 enum UserResult {
     case success(User?)
-    case failure(Error)
+    case failure(Error?)
 }
 
 enum ShareResult {
@@ -112,8 +112,12 @@ struct FireBaseAPI {
     }
     
     static func fetchDiaries(date: Diary.Date, completion: @escaping ([Diary]) -> ()) {
-        guard let uid = Auth.auth().currentUser?.uid else {
+        guard var uid = Auth.auth().currentUser?.uid else {
             return
+        }
+        
+        if let partnerUID = UserStore.shared.user?.partnerUID {
+            uid = partnerUID
         }
         
         ref.child(FireBaseDirectoryName.diaries.rawValue).child(uid).child("\(date.year)").child("\(date.month)").observeSingleEvent(of: .value, with: { (snapshot) in
@@ -394,7 +398,7 @@ extension FireBaseAPI {
         completion(ShareResult.success())
     }
     
-    static func linkWithPartner(me: User, sixDigits: Int, completion: @escaping (ShareResult) -> ()) {
+    static func linkWithPartner(me: User, sixDigits: Int, completion: @escaping (UserResult) -> ()) {
         guard let uid = Auth.auth().currentUser?.uid else {
             print(FireBaseAPIError.invalidUser)
             return
@@ -403,23 +407,25 @@ extension FireBaseAPI {
         ref.child(FireBaseDirectoryName.share.rawValue).child("\(sixDigits)").observeSingleEvent(of: .value, with: { (snapshot) in
             
             guard snapshot.exists() else {
-                completion(ShareResult.failure())
+                completion(UserResult.failure(nil))
                 return
             }
             
             let dict = snapshot.value as! [String:Any]
             
             if let partnerUID = partnerUID(from: dict) {
+                let user = User(gender: me.gender, partnerUID: partnerUID)
+                
                 let post = [
                     UserPayloadName.gender.rawValue: me.gender,
                     UserPayloadName.partnerUID.rawValue: partnerUID
                     ] as [String : Any]
                 
                 ref.child(FireBaseDirectoryName.users.rawValue).child("\(uid)").setValue(post, andPriority: nil) { (error, ref) in
-                    if let _ = error {
-                        completion(ShareResult.failure())
+                    if let error = error {
+                        completion(UserResult.failure(error))
                     } else {
-                        completion(ShareResult.success())
+                        completion(UserResult.success(user))
                     }
                 }
             } else {
