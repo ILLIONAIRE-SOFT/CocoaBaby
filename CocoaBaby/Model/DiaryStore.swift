@@ -13,7 +13,7 @@ class DiaryStore {
     
     static let shared = DiaryStore()
     
-    var currentDiaries: [Int:Diary] = [:]
+    private(set) var currentDiaries: [Int:Diary] = [:]
     
     func fetchDiaries(date: Diary.Date, completion: @escaping () -> ()) {
         
