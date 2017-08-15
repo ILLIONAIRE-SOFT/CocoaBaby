@@ -38,10 +38,16 @@ class ShareHelper {
         
         FireBaseAPI.linkWithPartner(me: UserStore.shared.user!, sixDigits: sixDigits) { (shareResult) in
             switch shareResult {
-            case .success():
-                return
-            case .failure():
-                return
+            case let .success(user):
+                if let user = user {
+                    UserStore.shared.setUser(user: user)
+                }
+                completion()
+            case let .failure(error):
+                if let error = error {
+                    print(error)
+                }
+                completion()
             }
         }
     }

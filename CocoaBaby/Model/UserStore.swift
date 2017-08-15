@@ -45,4 +45,8 @@ class UserStore {
             }
         }
     }
+    
+    func setUser(user: User) {
+        self.user = user
+    }
 }
