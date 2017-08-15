@@ -206,6 +206,8 @@ extension FireBaseAPI {
 extension FireBaseAPI {
     
     static func saveUser(user: User, completion: @escaping (UserResult) -> ()) {
+        print("saveUser")
+        print(user)
         guard let uid = Auth.auth().currentUser?.uid else {
             print(FireBaseAPIError.invalidUser)
             return
@@ -216,7 +218,7 @@ extension FireBaseAPI {
             UserPayloadName.partnerUID.rawValue: user.partnerUID ?? ""
             ] as [String : Any]
         
-        ref.child(FireBaseDirectoryName.babies.rawValue).child("\(uid)").setValue(post, andPriority: nil) { (error, ref) in
+        ref.child(FireBaseDirectoryName.users.rawValue).child("\(uid)").setValue(post, andPriority: nil) { (error, ref) in
             if let error = error {
                 print(error)
                 completion(UserResult.failure(error))
