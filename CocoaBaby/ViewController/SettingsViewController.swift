@@ -42,4 +42,21 @@ class SettingsViewController: BaseViewController {
         }
     }
     
+    @IBAction func tappedShare(_ sender: UIButton) {
+        
+        
+        let alertController = UIAlertController(title: "646223", message: "상대방 휴대폰에서 위의 번호를 입력하세요.\n 연결이 완료되기 전에 이 창을 끄지 마십시오.", preferredStyle: .alert)
+        
+        let doneAction = UIAlertAction(title: "Done", style: .default) { (action) in
+            ShareHelper.removeShareSession(completion: { 
+                print("share quit")
+            })
+        }
+        
+        alertController.addAction(doneAction)
+        
+        ShareHelper.createShareSession {
+            self.present(alertController, animated: true, completion: nil)
+        }
+    }
 }

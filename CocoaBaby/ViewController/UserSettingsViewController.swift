@@ -47,8 +47,6 @@ class UserSettingsViewController: BaseViewController {
             }
             self.stopLoading()
         }
-        
-        //go to splash view
     }
     
     func presentSplashViewController() {
