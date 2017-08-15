@@ -15,11 +15,6 @@ class DiaryStore {
     
     var currentDiaries: [Int:Diary] = [:]
     
-    /// Description
-    /// <주의>기존 다이어리 데이터인 currentDiaries 데이터 모두 삭제 후 데이터 fetch
-    /// - Parameters:
-    ///   - date: date
-    ///   - completion: com
     func fetchDiaries(date: Diary.Date, completion: @escaping () -> ()) {
         
         currentDiaries.removeAll()
