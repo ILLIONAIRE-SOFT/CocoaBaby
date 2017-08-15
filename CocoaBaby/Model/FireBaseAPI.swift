@@ -38,6 +38,16 @@ enum BabyPayloadName: String {
     case birthDate = "birthDate"
 }
 
+enum TipsPayloadName: String {
+    case babyTitle = "babyTitle"
+    case babyContent = "babyContent"
+    case mamaTitle = "mamaTitle"
+    case mamaContent = "mamaContent"
+    case papaTitle = "papaTitle"
+    case papaContent = "papaContent"
+    case week = "week"
+}
+
 enum DiaryResult {
     case success(Diary)
     case failure(Error)
@@ -49,7 +59,7 @@ enum BabyResult {
 }
 
 enum TipsResult {
-    case success(Tips)
+    case success([Int:Tips])
     case failure(Error)
 }
 
@@ -91,6 +101,7 @@ struct FireBaseAPI {
             
             for snap in snapshot.children.allObjects as! [DataSnapshot] {
                 let dict = snap.value as! [String:Any]
+                print(dict)
                 if let diary = diary(from: dict) {
                     result.append(diary)
                 }
@@ -192,48 +203,61 @@ extension FireBaseAPI {
 }
 
 // MARK: - Tips
-/*
+
 extension FireBaseAPI {
     static func fetchTips(completion: @escaping (TipsResult) -> ()) {
+        
+        
+        
         
         ref.child(FireBaseDirectoryName.tips.rawValue).observeSingleEvent(of: .value, with: {
             (snapshot) in
             
             guard snapshot.exists() else {
                 completion(TipsResult.failure(FireBaseAPIError.noTips))
+                return
             }
             
-            var result: Tips? = nil
+            var result = [Int:Tips]()
             
-//            let dict = snapshot.value as! [String:Any]
-//            if let tips = baby(from: dict) {
-//                result = baby
-//                
-//                completion(BabyResult.success(result))
-//                
-//            } else {
-//                completion(BabyResult.failure(FireBaseAPIError.noBaby))
-//            }
-
+            for snap in snapshot.children.allObjects as! [DataSnapshot] {
+                let dict = snap.value as! [String:Any]
+                if let tips = tips(from: dict) {
+                    let week = tips.0
+                    let tips = tips.1
+                    result[week] = tips
+                }
+            }
+            print(result)
+            completion(TipsResult.success(result))
         })
         
     }
     
-    static private func baby(from json: [String: Any]) -> Baby? {
-        var baby = Baby()
+    static private func tips(from json: [String: Any]) -> (Int,Tips)? {
+        var tips = Tips()
         
         guard
-            let name = json[BabyPayloadName.name.rawValue],
-            let pregnantDate = json[BabyPayloadName.pregnantDate.rawValue],
-            let birthDate = json[BabyPayloadName.birthDate.rawValue] else {
+            let babyTitle = json[TipsPayloadName.babyTitle.rawValue],
+            let babyContent = json[TipsPayloadName.babyContent.rawValue],
+            let mamaTitle = json[TipsPayloadName.mamaTitle.rawValue],
+            let mamaContent = json[TipsPayloadName.mamaContent.rawValue],
+            let papaTitle = json[TipsPayloadName.papaTitle.rawValue],
+            let papaContent = json[TipsPayloadName.papaContent.rawValue],
+            let week = json[TipsPayloadName.week.rawValue] as? Int
+        else {
                 return nil
         }
         
-        baby.name = name as! String
-        baby.pregnantDate = pregnantDate as! Double
-        baby.birthDate = birthDate as! Double
+        tips.babyTitle = babyTitle as! String
+        tips.babyContent = babyContent as! String
+        tips.mamaTitle = mamaTitle as! String
+        tips.mamaContent = mamaContent as! String
+        tips.papaTitle = papaTitle as! String
+        tips.papaContent = papaContent as! String
         
-        return baby
+    return (week,tips)
+    
     }
 
-}*/
+}
