@@ -18,7 +18,7 @@ class DiaryEmptyCell: UITableViewCell {
         // Initialization code
         
         self.selectionStyle = .none
-        emptyLine.layer.cornerRadius = 1
+        emptyLine.layer.cornerRadius = 4
         //emptyLine.backgroundColor = UIColor.black.withAlphaComponent(0.8)
     }
 

@@ -11,7 +11,6 @@ import Foundation
 struct Diary {
     var text: String
     var date: Date
-    
     struct Date {
         var year: Int
         var month: Int
@@ -22,6 +21,7 @@ struct Diary {
             self.month = month
             self.day = day
         }
+        
     }
     
     init() {
