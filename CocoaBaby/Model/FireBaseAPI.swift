@@ -32,6 +32,7 @@ enum DiaryPayloadName: String {
     case year = "year"
     case month = "month"
     case day = "day"
+    case comment = "comment"
 }
 
 enum BabyPayloadName: String {
@@ -104,7 +105,8 @@ struct FireBaseAPI {
             DiaryPayloadName.text.rawValue: diary.text,
             DiaryPayloadName.year.rawValue: diary.date.year,
             DiaryPayloadName.month.rawValue: diary.date.month,
-            DiaryPayloadName.day.rawValue: diary.date.day
+            DiaryPayloadName.day.rawValue: diary.date.day,
+            DiaryPayloadName.comment.rawValue: diary.comment ?? ""
             ] as [String : Any]
         
         ref.child(FireBaseDirectoryName.diaries.rawValue).child("\(uid)/\(diary.date.year)/\(diary.date.month)/\(diary.date.day)").setValue(post, andPriority: nil) { (error, ref) in
@@ -159,6 +161,10 @@ struct FireBaseAPI {
         diary.date.year = year as! Int
         diary.date.month = month as! Int
         diary.date.day = day as! Int
+        
+        if let comment = json[DiaryPayloadName.comment.rawValue] {
+            diary.comment = comment as? String
+        }
         
         return diary
     }

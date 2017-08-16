@@ -10,6 +10,7 @@ import Foundation
 
 struct Diary {
     var text: String
+    var comment: String?
     var date: Date
     struct Date {
         var year: Int
