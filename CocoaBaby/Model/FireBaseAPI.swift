@@ -439,7 +439,7 @@ extension FireBaseAPI {
                     if let error = error {
                         completion(UserResult.failure(error))
                     } else {
-                        ref.child(FireBaseDirectoryName.users.rawValue).child("\(partnerUID)").updateChildValues(partnerPost, withCompletionBlock: { (error, ref) in
+                        self.ref.child(FireBaseDirectoryName.users.rawValue).child("\(partnerUID)").updateChildValues(partnerPost, withCompletionBlock: { (error, ref) in
                             if let error = error {
                                 completion(UserResult.failure(error))
                             } else {
