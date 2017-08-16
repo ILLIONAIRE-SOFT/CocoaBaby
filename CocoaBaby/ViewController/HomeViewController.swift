@@ -60,9 +60,6 @@ class HomeViewController: BaseViewController {
         
     }
     
-    
-    
-    
     // MARK: - Methods
     private func updateBabyInfo() {
         self.nameLabel.text = BabyStore.shared.getName()
@@ -75,7 +72,10 @@ class HomeViewController: BaseViewController {
         self.weekLabel.text = "Week \(week)"
     }
     
+    
     // Info label content randomly
+    // 만약 Tips 가 없으면 여기서 처음으로 업데이트
+    
     
     private func updateInfoLabel(week: Int) {
         let randomNum = arc4random_uniform(2)
@@ -97,6 +97,17 @@ class HomeViewController: BaseViewController {
                 self.infoLabel.text = TipsStore.shared.Tips[week]?.papaTitle
             }
         }
+    }
+    
+    // MARK: - Actions
+    
+    @IBAction func presentCameraView() {
+        let cameraSB = UIStoryboard(name: "Camera", bundle: nil)
+        let viewController = cameraSB.instantiateViewController(withIdentifier: "CameraViewController")
+        
+        self.present(viewController, animated: true, completion: nil)
+        
+
     }
 
 }

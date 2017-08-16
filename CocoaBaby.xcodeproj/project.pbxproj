@@ -51,6 +51,11 @@
 		D45189C71F3AD25200937869 /* DiaryBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45189C61F3AD25200937869 /* DiaryBaseViewController.swift */; };
 		DA5C8F2E1F415F0C00AA3185 /* TipsDetailContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5C8F2C1F415F0C00AA3185 /* TipsDetailContentTableViewCell.swift */; };
 		DA5C8F321F41AA1000AA3185 /* TipsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5C8F311F41AA1000AA3185 /* TipsStore.swift */; };
+		DA7460FF1F4405F800568F1C /* CameraViewController_camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7460FA1F4405F800568F1C /* CameraViewController_camera.swift */; };
+		DA7461011F4405F800568F1C /* CameraViewController_main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7460FC1F4405F800568F1C /* CameraViewController_main.swift */; };
+		DA7461021F4405F800568F1C /* CameraViewController_services.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7460FD1F4405F800568F1C /* CameraViewController_services.swift */; };
+		DA7461031F4405F800568F1C /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7460FE1F4405F800568F1C /* ImageService.swift */; };
+		DA7461051F4407D900568F1C /* Camera.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA7461041F4407D900568F1C /* Camera.storyboard */; };
 		DAB5A40B1F31B0C4000235B0 /* TutorialSetNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB5A40A1F31B0C4000235B0 /* TutorialSetNameViewController.swift */; };
 		DAB5A40D1F31B185000235B0 /* TutorialSetDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB5A40C1F31B185000235B0 /* TutorialSetDateViewController.swift */; };
 		DAB5A40F1F32126C000235B0 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = DAB5A40E1F32126C000235B0 /* Extension.swift */; };
@@ -135,6 +140,12 @@
 		D45189C61F3AD25200937869 /* DiaryBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryBaseViewController.swift; sourceTree = "<group>"; };
 		DA5C8F2C1F415F0C00AA3185 /* TipsDetailContentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsDetailContentTableViewCell.swift; sourceTree = "<group>"; };
 		DA5C8F311F41AA1000AA3185 /* TipsStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsStore.swift; sourceTree = "<group>"; };
+		DA6C03451F4357A20092443F /* CocoaBaby.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CocoaBaby.entitlements; sourceTree = "<group>"; };
+		DA7460FA1F4405F800568F1C /* CameraViewController_camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController_camera.swift; sourceTree = "<group>"; };
+		DA7460FC1F4405F800568F1C /* CameraViewController_main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController_main.swift; sourceTree = "<group>"; };
+		DA7460FD1F4405F800568F1C /* CameraViewController_services.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController_services.swift; sourceTree = "<group>"; };
+		DA7460FE1F4405F800568F1C /* ImageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
+		DA7461041F4407D900568F1C /* Camera.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Camera.storyboard; sourceTree = "<group>"; };
 		DAB5A40A1F31B0C4000235B0 /* TutorialSetNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TutorialSetNameViewController.swift; path = ViewController/TutorialSetNameViewController.swift; sourceTree = "<group>"; };
 		DAB5A40C1F31B185000235B0 /* TutorialSetDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TutorialSetDateViewController.swift; sourceTree = "<group>"; };
 		DAB5A40E1F32126C000235B0 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
@@ -326,6 +337,7 @@
 		49D7F4461F319D5A004DF036 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				DA7460F91F4405E500568F1C /* Camera */,
 				492057831F41704000F232E2 /* Splash */,
 				49CBF1881F3C338300426D61 /* Login */,
 				4911D9D21F3446140031B74A /* Settings */,
@@ -350,6 +362,7 @@
 				D45189BC1F3968C100937869 /* Tips.storyboard */,
 				D45189BF1F39692E00937869 /* Settings.storyboard */,
 				49E659111F42C64A00D85C53 /* UserSettings.storyboard */,
+				DA7461041F4407D900568F1C /* Camera.storyboard */,
 			);
 			name = Storyboard;
 			sourceTree = "<group>";
@@ -404,6 +417,7 @@
 		49F6C77B1F318AF200373F06 /* CocoaBaby */ = {
 			isa = PBXGroup;
 			children = (
+				DA6C03451F4357A20092443F /* CocoaBaby.entitlements */,
 				4911D9D71F344D920031B74A /* Supporting Files */,
 				DAB5A4141F3332DB000235B0 /* Utilities */,
 				DAB5A4131F3332C4000235B0 /* Asset */,
@@ -460,6 +474,17 @@
 				DA5C8F311F41AA1000AA3185 /* TipsStore.swift */,
 			);
 			name = Tips;
+			sourceTree = "<group>";
+		};
+		DA7460F91F4405E500568F1C /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				DA7460FC1F4405F800568F1C /* CameraViewController_main.swift */,
+				DA7460FA1F4405F800568F1C /* CameraViewController_camera.swift */,
+				DA7460FD1F4405F800568F1C /* CameraViewController_services.swift */,
+				DA7460FE1F4405F800568F1C /* ImageService.swift */,
+			);
+			name = Camera;
 			sourceTree = "<group>";
 		};
 		DAB5A4121F3332B9000235B0 /* AppDelegate */ = {
@@ -626,6 +651,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D45189BB1F39679700937869 /* Home.storyboard in Resources */,
+				DA7461051F4407D900568F1C /* Camera.storyboard in Resources */,
 				4911D9DA1F344DCA0031B74A /* Localizable.strings in Resources */,
 				49E659131F42C64A00D85C53 /* UserSettings.storyboard in Resources */,
 				49F6C7871F318AF200373F06 /* LaunchScreen.storyboard in Resources */,
@@ -827,6 +853,7 @@
 				496FB1E11F31986E00E4042D /* BabyStore.swift in Sources */,
 				DAB5A40D1F31B185000235B0 /* TutorialSetDateViewController.swift in Sources */,
 				493631DE1F31C662008C774E /* TabBarViewController.swift in Sources */,
+				DA7461031F4405F800568F1C /* ImageService.swift in Sources */,
 				4911D9CB1F3444A70031B74A /* BaseViewController.swift in Sources */,
 				DAB5A40F1F32126C000235B0 /* Extension.swift in Sources */,
 				4911D9D41F34461F0031B74A /* SettingsViewController.swift in Sources */,
@@ -836,8 +863,10 @@
 				4911D9CE1F34455D0031B74A /* DiaryViewController.swift in Sources */,
 				D45189C31F3ACD0700937869 /* DiaryAddViewController.swift in Sources */,
 				DA5C8F321F41AA1000AA3185 /* TipsStore.swift in Sources */,
+				DA7461021F4405F800568F1C /* CameraViewController_services.swift in Sources */,
 				DA5C8F2E1F415F0C00AA3185 /* TipsDetailContentTableViewCell.swift in Sources */,
 				4911D9E31F3450EF0031B74A /* ErrorMessage.swift in Sources */,
+				DA7461011F4405F800568F1C /* CameraViewController_main.swift in Sources */,
 				DAB5A40B1F31B0C4000235B0 /* TutorialSetNameViewController.swift in Sources */,
 				49CBF18A1F3C33E400426D61 /* LoginViewController.swift in Sources */,
 				DAB5A4171F33331C000235B0 /* ColorExtension.swift in Sources */,
@@ -849,6 +878,7 @@
 				D45189C71F3AD25200937869 /* DiaryBaseViewController.swift in Sources */,
 				492057801F4143C500F232E2 /* CocoaDatePickerView.swift in Sources */,
 				DAEE34BF1F3834FC0090DBF5 /* TipsDetailViewController.swift in Sources */,
+				DA7460FF1F4405F800568F1C /* CameraViewController_camera.swift in Sources */,
 				4920577E1F41427100F232E2 /* CocoaDatePickerDelegate.swift in Sources */,
 				4948E0A61F39799C008542F6 /* EditBabyViewController.swift in Sources */,
 				49B88EAE1F3BF5A4005043B6 /* UserStore.swift in Sources */,
