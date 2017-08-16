@@ -302,10 +302,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view alpha="0.90000000000000002" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="FL6-eK-92a">
-                                <rect key="frame" x="28" y="135" width="319" height="454"/>
+                                <rect key="frame" x="28" y="135" width="319" height="403"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Pee-sP-GhJ">
-                                        <rect key="frame" x="22" y="20" width="275" height="414"/>
+                                        <rect key="frame" x="22" y="20" width="275" height="363"/>
                                         <color key="textColor" red="0.22154757957559679" green="0.22154757957559679" blue="0.22154757957559679" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
@@ -358,10 +358,21 @@
                                 <color key="tintColor" red="0.96078431372549022" green="0.80784313725490198" blue="0.792156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="barTintColor" red="0.96078431372549022" green="0.80784313725490198" blue="0.792156862745098" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                             </toolbar>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ch6-W9-ica">
+                                <rect key="frame" x="280" y="50" width="67" height="30"/>
+                                <state key="normal" title="Comment"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lyg-e7-sbV">
+                                <rect key="frame" x="166" y="570" width="42" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="6xb-29-cOe" firstAttribute="centerX" secondItem="46e-b3-zYS" secondAttribute="centerX" id="BNd-Ll-U8k"/>
+                            <constraint firstItem="Lyg-e7-sbV" firstAttribute="top" secondItem="FL6-eK-92a" secondAttribute="bottom" constant="32" id="EfL-FL-MLr"/>
                             <constraint firstItem="FL6-eK-92a" firstAttribute="leading" secondItem="46e-b3-zYS" secondAttribute="leadingMargin" constant="12" id="FfU-A5-zTb"/>
                             <constraint firstAttribute="trailing" secondItem="v0f-U7-kzh" secondAttribute="trailing" id="KRq-7H-MTd"/>
                             <constraint firstItem="v0f-U7-kzh" firstAttribute="leading" secondItem="46e-b3-zYS" secondAttribute="leading" id="QNy-oD-DSk"/>
@@ -370,8 +381,11 @@
                             <constraint firstItem="481-QA-cKe" firstAttribute="centerX" secondItem="46e-b3-zYS" secondAttribute="centerX" id="VaA-ZS-NOe"/>
                             <constraint firstAttribute="trailingMargin" secondItem="FL6-eK-92a" secondAttribute="trailing" constant="12" id="WbT-Tp-Xkl"/>
                             <constraint firstItem="6xb-29-cOe" firstAttribute="top" secondItem="s9d-mp-6hl" secondAttribute="bottom" constant="30" id="bRc-h3-VGJ"/>
+                            <constraint firstItem="Lyg-e7-sbV" firstAttribute="centerX" secondItem="46e-b3-zYS" secondAttribute="centerX" id="exS-OO-Y4S"/>
+                            <constraint firstItem="v0f-U7-kzh" firstAttribute="top" secondItem="Lyg-e7-sbV" secondAttribute="bottom" constant="32" id="hf2-1U-2IF"/>
                             <constraint firstItem="FL6-eK-92a" firstAttribute="top" secondItem="481-QA-cKe" secondAttribute="bottom" constant="32" id="iCa-d3-Kep"/>
-                            <constraint firstItem="v0f-U7-kzh" firstAttribute="top" secondItem="FL6-eK-92a" secondAttribute="bottom" constant="34" id="ySn-97-3m4"/>
+                            <constraint firstItem="ch6-W9-ica" firstAttribute="trailing" secondItem="FL6-eK-92a" secondAttribute="trailing" id="plH-yX-hCZ"/>
+                            <constraint firstItem="ch6-W9-ica" firstAttribute="top" secondItem="6xb-29-cOe" secondAttribute="top" id="xEa-0O-7zM"/>
                             <constraint firstItem="C3W-Eo-JCX" firstAttribute="top" secondItem="v0f-U7-kzh" secondAttribute="bottom" id="zWR-X2-ogD"/>
                         </constraints>
                         <connections>
@@ -379,9 +393,11 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="addCommentButton" destination="ch6-W9-ica" id="Qtw-Zd-ksq"/>
                         <outlet property="addDiraryUIToolbar" destination="v0f-U7-kzh" id="22y-PI-LBO"/>
                         <outlet property="dateLabel" destination="481-QA-cKe" id="ZW7-KV-UPX"/>
                         <outlet property="doneAddDiaryBtn" destination="eL4-Q2-2Kx" id="RjT-wl-dhU"/>
+                        <outlet property="fatherCommentLabel" destination="Lyg-e7-sbV" id="nzC-DL-OKN"/>
                         <outlet property="keyBoardHideBtn" destination="AzH-RN-g3p" id="TC9-zs-tJx"/>
                         <outlet property="textView" destination="Pee-sP-GhJ" id="ccY-zd-DWT"/>
                         <outlet property="textViewBg" destination="FL6-eK-92a" id="Vwb-E9-osM"/>
