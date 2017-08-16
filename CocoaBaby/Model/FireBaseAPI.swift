@@ -32,6 +32,7 @@ enum DiaryPayloadName: String {
     case year = "year"
     case month = "month"
     case day = "day"
+    case comment = "comment"
 }
 
 enum BabyPayloadName: String {
@@ -80,7 +81,7 @@ enum UserResult {
 }
 
 enum ShareResult {
-    case success()
+    case success(Int)
     case failure()
 }
 
@@ -89,16 +90,23 @@ struct FireBaseAPI {
     static fileprivate var ref: DatabaseReference = Database.database().reference()
     
     static func saveDiary(diary: Diary, completion: @escaping (DiaryResult) -> ()) {
-        guard let uid = Auth.auth().currentUser?.uid else {
+        guard var uid = Auth.auth().currentUser?.uid else {
             print(FireBaseAPIError.invalidUser)
             return
+        }
+        
+        if let partnerUID = UserStore.shared.user?.partnerUID {
+            if UserStore.shared.user?.gender == "male" {
+                uid = partnerUID
+            }
         }
         
         let post = [
             DiaryPayloadName.text.rawValue: diary.text,
             DiaryPayloadName.year.rawValue: diary.date.year,
             DiaryPayloadName.month.rawValue: diary.date.month,
-            DiaryPayloadName.day.rawValue: diary.date.day
+            DiaryPayloadName.day.rawValue: diary.date.day,
+            DiaryPayloadName.comment.rawValue: diary.comment ?? ""
             ] as [String : Any]
         
         ref.child(FireBaseDirectoryName.diaries.rawValue).child("\(uid)/\(diary.date.year)/\(diary.date.month)/\(diary.date.day)").setValue(post, andPriority: nil) { (error, ref) in
@@ -113,12 +121,10 @@ struct FireBaseAPI {
     
     static func fetchDiaries(date: Diary.Date, completion: @escaping ([Diary]) -> ()) {
         guard var uid = Auth.auth().currentUser?.uid else {
-            print("Uid가 없습니다")
             return
         }
         
         if let partnerUID = UserStore.shared.user?.partnerUID {
-            print("partner uid 존재합니다. \(partnerUID)")
             if UserStore.shared.user?.gender == "male" {
                 uid = partnerUID
             }
@@ -155,6 +161,10 @@ struct FireBaseAPI {
         diary.date.year = year as! Int
         diary.date.month = month as! Int
         diary.date.day = day as! Int
+        
+        if let comment = json[DiaryPayloadName.comment.rawValue] {
+            diary.comment = comment as? String
+        }
         
         return diary
     }
@@ -382,14 +392,21 @@ extension FireBaseAPI {
             ] as [String : Any]
         
         // 먼저 observe single event로 해당 번호의 세션이 있는지 확인해줘야 한다. 없는 경우에 fail 줘서 다시 번호를 생성하도록..
-        
-        ref.child(FireBaseDirectoryName.share.rawValue).child("\(sixDigits)").setValue(post, andPriority: nil) { (error, ref) in
-            if let _ = error {
+        ref.child(FireBaseDirectoryName.share.rawValue).child("\(sixDigits)").observeSingleEvent(of: .value, with: {
+            (snapshot) in
+            
+            if snapshot.exists() {
                 completion(ShareResult.failure())
             } else {
-                completion(ShareResult.success())
+                ref.child(FireBaseDirectoryName.share.rawValue).child("\(sixDigits)").setValue(post, andPriority: nil) { (error, ref) in
+                    if let _ = error {
+                        completion(ShareResult.failure())
+                    } else {
+                        completion(ShareResult.success(sixDigits))
+                    }
+                }
             }
-        }
+        })
     }
     
     static func removeShareSection(sixDigits: Int, completion: @escaping (ShareResult) -> ()) {
@@ -399,7 +416,7 @@ extension FireBaseAPI {
         //        }
         
         ref.child(FireBaseDirectoryName.share.rawValue).child("\(sixDigits)").removeValue()
-        completion(ShareResult.success())
+        completion(ShareResult.success(0))
     }
     
     static func linkWithPartner(me: User, sixDigits: Int, completion: @escaping (UserResult) -> ()) {
@@ -421,21 +438,30 @@ extension FireBaseAPI {
                 let user = User(gender: me.gender, partnerUID: partnerUID)
                 
                 let post = [
-                    UserPayloadName.gender.rawValue: me.gender,
                     UserPayloadName.partnerUID.rawValue: partnerUID
                     ] as [String : Any]
                 
-                ref.child(FireBaseDirectoryName.users.rawValue).child("\(uid)").setValue(post, andPriority: nil) { (error, ref) in
+                let partnerPost = [
+                    UserPayloadName.partnerUID.rawValue: uid
+                ] as [String: Any]
+                
+                ref.child(FireBaseDirectoryName.users.rawValue).child("\(uid)").updateChildValues(post, withCompletionBlock: { (error, ref) in
                     if let error = error {
                         completion(UserResult.failure(error))
                     } else {
-                        completion(UserResult.success(user))
+                        self.ref.child(FireBaseDirectoryName.users.rawValue).child("\(partnerUID)").updateChildValues(partnerPost, withCompletionBlock: { (error, ref) in
+                            if let error = error {
+                                completion(UserResult.failure(error))
+                            } else {
+                                completion(UserResult.success(user))
+                            }
+                        })
                     }
-                }
+                })
             } else {
-            
+                completion(UserResult.failure(nil))
+                return
             }
-            
         })
     }
     

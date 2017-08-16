@@ -50,8 +50,11 @@ class DiaryStore {
                 case .failure(_):
                     completion(diaryResult)
                 }
-                
             }
         }
+    }
+    
+    func addComment(to diary: Diary, completion: @escaping (DiaryResult) -> ()) {
+        
     }
 }

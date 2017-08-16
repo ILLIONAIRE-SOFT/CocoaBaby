@@ -10,7 +10,8 @@ import UIKit
 
 class DiaryAddViewController: DiaryBaseViewController {
     
-    
+    @IBOutlet var fatherCommentLabel: UILabel!
+    @IBOutlet var addCommentButton: UIButton!
     @IBOutlet weak var weekLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet var addDiraryUIToolbar: UIToolbar!
@@ -31,6 +32,16 @@ class DiaryAddViewController: DiaryBaseViewController {
         
         if let diary = self.diary {
             initDate(with: diary)
+        }
+        
+        guard let user = UserStore.shared.user else {
+            return
+        }
+        
+        if user.gender == "male" {
+            updateMaleSettings()
+        } else {
+            updateFemaleSettings()
         }
     }
     
@@ -58,6 +69,11 @@ class DiaryAddViewController: DiaryBaseViewController {
     
     func updateOriginalValue(diary: Diary) {
         self.textView.text = diary.text
+        
+        if let comment = diary.comment {
+            self.fatherCommentLabel.text = "Father's comment: \(comment)"
+        }
+        
     }
     
     private func enableKeyboardHideOnTap(){
@@ -89,6 +105,48 @@ class DiaryAddViewController: DiaryBaseViewController {
         }
     }
     
+    func updateMaleSettings() {
+        self.textView.isEditable = false
+        self.addCommentButton.addTarget(self, action: #selector(showAddComment), for: .touchUpInside)
+    }
+    
+    func updateFemaleSettings() {
+        self.addCommentButton.isHidden = true
+    }
+    
+    func showAddComment() {
+        guard var diary = self.diary else {
+            return
+        }
+        
+        let alertController = UIAlertController(title: "Add Comment", message: nil, preferredStyle: .alert)
+        alertController.addTextField { (textField) in
+            
+        }
+        
+        let doneAction = UIAlertAction(title: "Done", style: .default) { (action) in
+            if let comment = alertController.textFields?.first?.text {
+                diary.comment = comment
+            }
+            
+            DiaryStore.shared.saveDiary(diary: diary, completion: { (result) in
+                switch result {
+                case let .success(diary):
+                    self.diary = diary
+                    self.view.layoutSubviews()
+                    return
+                case .failure(_):
+                    return
+                }
+            })
+        }
+        
+        alertController.addAction(doneAction)
+        
+        self.present(alertController, animated: true, completion: nil)
+    }
+    
+    // MARK: IBActions
     @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
         textView.resignFirstResponder()
     }
