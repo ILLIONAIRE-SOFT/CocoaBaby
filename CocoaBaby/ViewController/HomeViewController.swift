@@ -19,6 +19,7 @@ class HomeViewController: BaseViewController {
     @IBOutlet var weekLabel: UILabel!
     @IBOutlet weak var waterDrop: UIView!
     @IBOutlet weak var waterDropTwo: UIView!
+
     
     
     override func viewDidLoad() {
