@@ -62,11 +62,6 @@
                                                             <constraint firstAttribute="width" secondItem="5t2-ah-DW0" secondAttribute="height" multiplier="1:1" id="wQI-vf-3lC"/>
                                                         </constraints>
                                                     </imageView>
-                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="d5M-Jd-rlp">
-                                                        <rect key="frame" x="-14" y="210" width="240" height="128"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                    </view>
                                                 </subviews>
                                                 <color key="backgroundColor" red="1" green="0.82352941176470584" blue="0.8666666666666667" alpha="0.98157112730061347" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
@@ -86,7 +81,7 @@
                                             </view>
                                             <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="agz-Em-cfe">
                                                 <rect key="frame" x="100" y="336.5" width="6" height="6"/>
-                                                <color key="backgroundColor" red="0.88879103116710878" green="0.7380778046692773" blue="0.76475317985201141" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <color key="backgroundColor" red="0.8901960784313725" green="0.73725490196078436" blue="0.76470588235294112" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="6" id="YTb-ns-dXO"/>
                                                     <constraint firstAttribute="height" constant="6" id="up0-Pt-hKI"/>
