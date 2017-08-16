@@ -90,13 +90,13 @@ class BabyStore {
         guard let baby = self.baby else {
             return result
         }
-
+        
         let calendar = Calendar.current
         let startDate = calendar.startOfDay(for: Date())
-
+        
         let endDate = calendar.startOfDay(for: Date(timeIntervalSince1970: baby.birthDate))
         let components = calendar.dateComponents([.day], from: startDate, to: endDate)
-
+        
         guard let value = components.day else {
             return result
         }
@@ -129,13 +129,13 @@ class BabyStore {
             print(BabyError.invalidBaby)
             return week
         }
-
+        
         let calendar = Calendar.current
         let today = calendar.startOfDay(for: Date())
-
+        
         let pregnantDate = calendar.startOfDay(for: Date(timeIntervalSince1970: baby.pregnantDate))
         let components = calendar.dateComponents([.day], from: pregnantDate, to: today)
-
+        
         if let day = components.day {
             week.week = (day - 1) / 7 + 1
             week.dayOfWeek = (day - 1) % 7 + 1
@@ -158,15 +158,21 @@ class BabyStore {
         if let day = components.day {
             week.week = (day - 1) / 7 + 1
         }
-    
+        
         return week
     }
     
-    func getYearOfPregnantDate(from baby: Baby) -> Year {
+    func getYearOfPregnantDate() -> String {
         
-        var date = Date(timeIntervalSince1970: //baby의 프래그넌트 데이)
-    
+        var date = Date(timeIntervalSince1970: baby.pregnantDate)
+        // date에서 year만 뽑아내는 법
+        let dateFormatter = DateFormatter()
+        
+        dateFormatter.dateFormat = "yyyy"
+        var pregnantYear = dateFormatter.string(from: date)
+        
+        return pregnantYear
     }
-    
-    
+ 
 }
+

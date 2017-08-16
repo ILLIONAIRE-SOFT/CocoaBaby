@@ -38,6 +38,7 @@ class DiaryViewController: BaseViewController {
         
         initRefreshControl()
         initTodayLabel()
+     
     }
     
     override func viewWillAppear(_ animated: Bool) {

@@ -25,7 +25,7 @@ class CocoaDatePickerDelegate: NSObject, UIPickerViewDelegate, UIPickerViewDataS
         case 0:
             return 12
         case 1:
-            return currentYear - 2010 + 1 //여기서 pregnantdate의 year로
+            return currentYear - Int(BabyStore.shared.getYearOfPregnantDate())! + 1
         default:
             return 0
         }
@@ -40,7 +40,7 @@ class CocoaDatePickerDelegate: NSObject, UIPickerViewDelegate, UIPickerViewDataS
         case 0 :
             return month[row]
         case 1:
-            return "\(2010 + row)"
+            return "\(Int(BabyStore.shared.getYearOfPregnantDate())! + row)"
         default:
             return ""
         }
@@ -51,7 +51,7 @@ class CocoaDatePickerDelegate: NSObject, UIPickerViewDelegate, UIPickerViewDataS
         case 0:
             targetMonth = row + 1
         case 1:
-            targetYear = row + 2010
+            targetYear = row + Int(BabyStore.shared.getYearOfPregnantDate())!
         default:
             return
         }

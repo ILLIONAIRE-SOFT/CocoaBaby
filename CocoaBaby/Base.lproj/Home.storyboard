@@ -71,29 +71,9 @@
                                                     <constraint firstAttribute="width" secondItem="UoX-Al-Kmz" secondAttribute="height" multiplier="1:1" id="s0r-Pm-aQY"/>
                                                 </constraints>
                                             </view>
-                                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wXF-9m-qHA">
-                                                <rect key="frame" x="54" y="316.5" width="10" height="10"/>
-                                                <color key="backgroundColor" red="0.85642199933686991" green="0.69077262866893918" blue="0.71255483611108905" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="10" id="qsI-ez-KJV"/>
-                                                    <constraint firstAttribute="width" constant="10" id="rNq-IL-P7G"/>
-                                                </constraints>
-                                            </view>
-                                            <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="agz-Em-cfe">
-                                                <rect key="frame" x="100" y="336.5" width="6" height="6"/>
-                                                <color key="backgroundColor" red="0.8901960784313725" green="0.73725490196078436" blue="0.76470588235294112" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="6" id="YTb-ns-dXO"/>
-                                                    <constraint firstAttribute="height" constant="6" id="up0-Pt-hKI"/>
-                                                </constraints>
-                                            </view>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="agz-Em-cfe" firstAttribute="leading" secondItem="WSq-6I-iYr" secondAttribute="leading" constant="100" id="Irv-I6-R3l"/>
-                                            <constraint firstItem="wXF-9m-qHA" firstAttribute="leading" secondItem="WSq-6I-iYr" secondAttribute="leading" constant="54" id="JCn-fW-oXE"/>
                                             <constraint firstAttribute="trailing" secondItem="UoX-Al-Kmz" secondAttribute="trailing" constant="16" id="Kd9-sw-aQs"/>
-                                            <constraint firstAttribute="bottom" secondItem="wXF-9m-qHA" secondAttribute="bottom" constant="76" id="LZw-2u-Fji"/>
-                                            <constraint firstAttribute="bottom" secondItem="agz-Em-cfe" secondAttribute="bottom" constant="60" id="d2j-rW-4PF"/>
                                             <constraint firstItem="UoX-Al-Kmz" firstAttribute="centerY" secondItem="WSq-6I-iYr" secondAttribute="centerY" id="f8C-xe-GT8"/>
                                             <constraint firstItem="UoX-Al-Kmz" firstAttribute="centerX" secondItem="WSq-6I-iYr" secondAttribute="centerX" id="rpP-8O-NSn"/>
                                         </constraints>
@@ -125,8 +105,6 @@
                         <outlet property="dDayLabel" destination="59f-cp-ErD" id="BS0-0G-p1j"/>
                         <outlet property="infoLabel" destination="Op6-Ka-edG" id="et6-YY-grN"/>
                         <outlet property="nameLabel" destination="3cZ-ux-bAi" id="kqW-AF-EG0"/>
-                        <outlet property="waterDrop" destination="wXF-9m-qHA" id="mSj-9d-1AT"/>
-                        <outlet property="waterDropTwo" destination="agz-Em-cfe" id="as9-dF-D0C"/>
                         <outlet property="weekLabel" destination="ekc-pe-RTr" id="bS4-J7-X98"/>
                     </connections>
                 </viewController>
