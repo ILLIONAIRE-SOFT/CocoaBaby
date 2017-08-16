@@ -10,21 +10,25 @@ import Foundation
 
 class ShareHelper {
     
-    static func createShareSession(completion: @escaping () -> ()) {
+    static var shareCode: Int = 0
+    
+    static func createShareSession(completion: @escaping (Int) -> ()) {
         
-        FireBaseAPI.createShareSection(sixDigits: 646223) { (result) in
+        generateShareCode()
+        
+        FireBaseAPI.createShareSection(sixDigits: shareCode) { (result) in
             switch result {
             case .success():
-                completion()
+                completion(shareCode)
             case .failure():
-                completion()
+                completion(shareCode)
             }
         }
     }
     
     static func removeShareSession(completion: @escaping () -> ()) {
         
-        FireBaseAPI.removeShareSection(sixDigits: 646223) { (result) in
+        FireBaseAPI.removeShareSection(sixDigits: shareCode) { (result) in
             switch result {
             case .success():
                 completion()
@@ -50,5 +54,11 @@ class ShareHelper {
                 completion()
             }
         }
+    }
+    
+    static func generateShareCode() {
+        let code: Int = Int(arc4random_uniform(UInt32(899999)) + UInt32(10000))
+        
+        self.shareCode = code
     }
 }
