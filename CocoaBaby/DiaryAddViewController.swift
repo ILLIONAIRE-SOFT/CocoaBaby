@@ -24,6 +24,7 @@ class DiaryAddViewController: DiaryBaseViewController {
     
     var diary: Diary?
     let months: [String] = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+    var isUpdate: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -129,11 +130,11 @@ class DiaryAddViewController: DiaryBaseViewController {
                 diary.comment = comment
             }
             
-            DiaryStore.shared.saveDiary(diary: diary, completion: { (result) in
+            DiaryStore.shared.updateComment(diary: diary, completion: { (result) in
                 switch result {
                 case let .success(diary):
                     self.diary = diary
-                    self.view.layoutSubviews()
+                    self.updateOriginalValue(diary: diary)
                     return
                 case .failure(_):
                     return
@@ -156,8 +157,14 @@ class DiaryAddViewController: DiaryBaseViewController {
     }
     
     @IBAction func tappedDone(_ sender: UIBarButtonItem) {
-            saveDiary()
+        if let user = UserStore.shared.user {
+            if user.gender == "male" {
+                self.dismiss(animated: true, completion: nil)
+                return
+            }   
+        }
         
+        saveDiary()
     }
     
     // MARK: Methods
@@ -168,23 +175,34 @@ class DiaryAddViewController: DiaryBaseViewController {
         
         diary.text = textView.text
         
-        DiaryStore.shared.saveDiary(diary: diary) { (result) in
-            switch result {
-            case .success(_):
-                self.dismiss(animated: true, completion: nil)
-                
-            case let .failure(error):
-                print(error)
-                self.dismiss(animated: true, completion: nil)
+        if isUpdate {
+            DiaryStore.shared.updateDiary(diary: diary, completion: { (result) in
+                switch result {
+                case .success(_):
+                    self.dismiss(animated: true, completion: nil)
+                    
+                case let .failure(error):
+                    print(error)
+                    self.dismiss(animated: true, completion: nil)
+                }
+            })
+        } else {
+            DiaryStore.shared.saveDiary(diary: diary) { (result) in
+                switch result {
+                case .success(_):
+                    self.dismiss(animated: true, completion: nil)
+                    
+                case let .failure(error):
+                    print(error)
+                    self.dismiss(animated: true, completion: nil)
+                }
             }
         }
-        
-        
     }
     
-//    func updateDiary(diary: CKDiary) {
-//        CKDiaryStore.shared.updateDiary(diary: diary, text: self.textView.text)
-//        
-//        self.dismiss(animated: true, completion: nil)
-//    }
+    //    func updateDiary(diary: CKDiary) {
+    //        CKDiaryStore.shared.updateDiary(diary: diary, text: self.textView.text)
+    //
+    //        self.dismiss(animated: true, completion: nil)
+    //    }
 }

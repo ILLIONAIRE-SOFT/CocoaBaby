@@ -63,6 +63,7 @@ class DiaryViewController: BaseViewController {
             
             if let diary = DiaryStore.shared.currentDiaries[selectedIndexPath.row + 1] {
                 controller.diary = diary
+                controller.isUpdate = true
             } else {
                 let diary = Diary(text: "", date: Diary.Date(year: targetDate.year, month: targetDate.month, day: selectedIndexPath.row + 1))
                 controller.diary = diary
