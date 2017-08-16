@@ -89,9 +89,15 @@ struct FireBaseAPI {
     static fileprivate var ref: DatabaseReference = Database.database().reference()
     
     static func saveDiary(diary: Diary, completion: @escaping (DiaryResult) -> ()) {
-        guard let uid = Auth.auth().currentUser?.uid else {
+        guard var uid = Auth.auth().currentUser?.uid else {
             print(FireBaseAPIError.invalidUser)
             return
+        }
+        
+        if let partnerUID = UserStore.shared.user?.partnerUID {
+            if UserStore.shared.user?.gender == "male" {
+                uid = partnerUID
+            }
         }
         
         let post = [
@@ -113,12 +119,10 @@ struct FireBaseAPI {
     
     static func fetchDiaries(date: Diary.Date, completion: @escaping ([Diary]) -> ()) {
         guard var uid = Auth.auth().currentUser?.uid else {
-            print("Uid가 없습니다")
             return
         }
         
         if let partnerUID = UserStore.shared.user?.partnerUID {
-            print("partner uid 존재합니다. \(partnerUID)")
             if UserStore.shared.user?.gender == "male" {
                 uid = partnerUID
             }

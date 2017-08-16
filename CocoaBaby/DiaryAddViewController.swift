@@ -32,6 +32,14 @@ class DiaryAddViewController: DiaryBaseViewController {
         if let diary = self.diary {
             initDate(with: diary)
         }
+        
+        guard let user = UserStore.shared.user else {
+            return
+        }
+        
+        if user.gender == "male" {
+            updateMaleSettings()
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -89,6 +97,12 @@ class DiaryAddViewController: DiaryBaseViewController {
         }
     }
     
+    func updateMaleSettings() {
+        self.textView.isEditable = false
+        
+    }
+    
+    // MARK: IBActions
     @IBAction func dismissKeyboard(_ sender: UITapGestureRecognizer) {
         textView.resignFirstResponder()
     }
