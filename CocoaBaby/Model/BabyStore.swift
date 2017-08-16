@@ -29,6 +29,7 @@ struct Baby {
     var name: String = ""
     var birthDate: Double = 0
     var pregnantDate: Double = 0
+    
 }
 
 class BabyStore {
@@ -159,6 +160,12 @@ class BabyStore {
         }
     
         return week
+    }
+    
+    func getYearOfPregnantDate(from baby: Baby) -> Year {
+        
+        var date = Date(timeIntervalSince1970: //baby의 프래그넌트 데이)
+    
     }
     
     

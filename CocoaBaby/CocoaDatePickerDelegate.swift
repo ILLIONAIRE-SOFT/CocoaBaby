@@ -25,7 +25,7 @@ class CocoaDatePickerDelegate: NSObject, UIPickerViewDelegate, UIPickerViewDataS
         case 0:
             return 12
         case 1:
-            return currentYear - 2010 + 1
+            return currentYear - 2010 + 1 //여기서 pregnantdate의 year로
         default:
             return 0
         }
