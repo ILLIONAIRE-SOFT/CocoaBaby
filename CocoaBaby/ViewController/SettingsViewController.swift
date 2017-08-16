@@ -140,7 +140,7 @@ class SettingsViewController: BaseViewController {
             if let linkCode = alertController.textFields?.first?.text {
                 if let intCode = Int(linkCode) {
                     ShareHelper.linkWithPartner(sixDigits: intCode, completion: {
-                        print("link complete")
+                        self.showComplete()
                     })
                 }
             }
@@ -151,4 +151,13 @@ class SettingsViewController: BaseViewController {
         self.present(alertController, animated: true, completion: nil)
     }
     
+    func showComplete() {
+        let alertController = UIAlertController(title: "Success", message: "Link complete", preferredStyle: .alert)
+        
+        let doneAction = UIAlertAction(title: "Done", style: .default, handler: nil)
+        
+        alertController.addAction(doneAction)
+        
+        present(alertController, animated: true, completion: nil)
+    }
 }
