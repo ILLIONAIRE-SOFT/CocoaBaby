@@ -63,26 +63,28 @@ extension CameraViewController {
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
-        let screenSize = cameraView.bounds.size
-        if let touchPoint = touches.first {
-            let x = touchPoint.location(in: cameraView).y / screenSize.height
-            let y = 1.0 - touchPoint.location(in: cameraView).x / screenSize.width
-            let focusPoint = CGPoint(x: x, y: y)
-            
-            if let device = captureDevice {
-                do {
-                    try device.lockForConfiguration()
-                    
-                    device.focusPointOfInterest = focusPoint
-                    device.focusMode = .continuousAutoFocus
-                    device.focusMode = .autoFocus
-                    device.focusMode = .locked
-                    device.exposurePointOfInterest = focusPoint
-                    device.exposureMode = AVCaptureExposureMode.continuousAutoExposure
-                    device.unlockForConfiguration()
-                }
-                catch {
-                    // just ignore
+
+        if !self.frontCamera {
+            let screenSize = cameraView.bounds.size
+            if let touchPoint = touches.first {
+                let x = touchPoint.location(in: cameraView).y / screenSize.height
+                let y = 1.0 - touchPoint.location(in: cameraView).x / screenSize.width
+                let focusPoint = CGPoint(x: x, y: y)
+                
+                if let device = captureDevice {
+                    do {
+                        try device.lockForConfiguration()
+                        
+                        device.focusPointOfInterest = focusPoint
+                        device.focusMode = .continuousAutoFocus
+                        device.focusMode = .autoFocus
+                        device.focusMode = .locked
+                        device.exposurePointOfInterest = focusPoint
+                        device.exposureMode = AVCaptureExposureMode.continuousAutoExposure
+                        device.unlockForConfiguration()
+                    }
+                    catch {
+                    }
                 }
             }
         }
