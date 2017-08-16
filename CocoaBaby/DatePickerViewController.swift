@@ -30,8 +30,8 @@ class DatePickerViewController: UIViewController {
         
         pickerView.delegate = datePickerDelegate
         
-        pickerView.selectRow((currentDate?.year)! - 2010, inComponent: 0, animated: false)
-        pickerView.selectRow((currentDate?.month)! - 1, inComponent: 1, animated: false)
+        pickerView.selectRow((currentDate?.year)! - Int(BabyStore.shared.getYearOfPregnantDate())!, inComponent: 1, animated: false)
+        pickerView.selectRow((currentDate?.month)! - 1, inComponent: 0, animated: false)
         
         initViews()
         
