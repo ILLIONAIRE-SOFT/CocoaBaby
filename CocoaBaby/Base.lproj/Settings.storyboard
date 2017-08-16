@@ -80,8 +80,12 @@
                                             <action selector="tappedLink:" destination="IMQ-YG-anA" eventType="touchUpInside" id="D0w-rf-Mra"/>
                                         </connections>
                                     </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QNy-10-j5o">
+                                        <rect key="frame" x="0.0" y="343.5" width="303" height="30"/>
+                                        <state key="normal" title="gender button"/>
+                                    </button>
                                     <view contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="B4x-cg-lWU">
-                                        <rect key="frame" x="0.0" y="343.5" width="303" height="231.5"/>
+                                        <rect key="frame" x="0.0" y="389.5" width="303" height="185.5"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                     </view>
                                 </subviews>
@@ -99,6 +103,7 @@
                     <connections>
                         <outlet property="dataBackupButton" destination="3vQ-uZ-wUh" id="oiT-AT-9ri"/>
                         <outlet property="editBabyButton" destination="ihF-Wi-oFA" id="oNT-z9-e26"/>
+                        <outlet property="genderButton" destination="QNy-10-j5o" id="oI8-oZ-CHL"/>
                         <outlet property="sendEmailButton" destination="Q1N-Tp-ShP" id="1Oe-UP-hNM"/>
                     </connections>
                 </viewController>

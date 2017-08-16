@@ -12,16 +12,16 @@ class ShareHelper {
     
     static var shareCode: Int = 0
     
-    static func createShareSession(completion: @escaping (Int) -> ()) {
+    static func createShareSession(completion: @escaping (ShareResult) -> ()) {
         
         generateShareCode()
         
         FireBaseAPI.createShareSection(sixDigits: shareCode) { (result) in
             switch result {
-            case .success():
-                completion(shareCode)
+            case .success(_):
+                completion(result)
             case .failure():
-                completion(shareCode)
+                completion(result)
             }
         }
     }
@@ -30,7 +30,7 @@ class ShareHelper {
         
         FireBaseAPI.removeShareSection(sixDigits: shareCode) { (result) in
             switch result {
-            case .success():
+            case .success(_):
                 completion()
             case .failure():
                 completion()

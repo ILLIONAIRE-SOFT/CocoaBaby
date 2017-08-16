@@ -80,7 +80,7 @@ enum UserResult {
 }
 
 enum ShareResult {
-    case success()
+    case success(Int)
     case failure()
 }
 
@@ -382,14 +382,21 @@ extension FireBaseAPI {
             ] as [String : Any]
         
         // 먼저 observe single event로 해당 번호의 세션이 있는지 확인해줘야 한다. 없는 경우에 fail 줘서 다시 번호를 생성하도록..
-        
-        ref.child(FireBaseDirectoryName.share.rawValue).child("\(sixDigits)").setValue(post, andPriority: nil) { (error, ref) in
-            if let _ = error {
+        ref.child(FireBaseDirectoryName.share.rawValue).child("\(sixDigits)").observeSingleEvent(of: .value, with: {
+            (snapshot) in
+            
+            if snapshot.exists() {
                 completion(ShareResult.failure())
             } else {
-                completion(ShareResult.success())
+                ref.child(FireBaseDirectoryName.share.rawValue).child("\(sixDigits)").setValue(post, andPriority: nil) { (error, ref) in
+                    if let _ = error {
+                        completion(ShareResult.failure())
+                    } else {
+                        completion(ShareResult.success(sixDigits))
+                    }
+                }
             }
-        }
+        })
     }
     
     static func removeShareSection(sixDigits: Int, completion: @escaping (ShareResult) -> ()) {
@@ -399,7 +406,7 @@ extension FireBaseAPI {
         //        }
         
         ref.child(FireBaseDirectoryName.share.rawValue).child("\(sixDigits)").removeValue()
-        completion(ShareResult.success())
+        completion(ShareResult.success(0))
     }
     
     static func linkWithPartner(me: User, sixDigits: Int, completion: @escaping (UserResult) -> ()) {
@@ -421,21 +428,30 @@ extension FireBaseAPI {
                 let user = User(gender: me.gender, partnerUID: partnerUID)
                 
                 let post = [
-                    UserPayloadName.gender.rawValue: me.gender,
                     UserPayloadName.partnerUID.rawValue: partnerUID
                     ] as [String : Any]
                 
-                ref.child(FireBaseDirectoryName.users.rawValue).child("\(uid)").setValue(post, andPriority: nil) { (error, ref) in
+                let partnerPost = [
+                    UserPayloadName.partnerUID.rawValue: uid
+                ] as [String: Any]
+                
+                ref.child(FireBaseDirectoryName.users.rawValue).child("\(uid)").updateChildValues(post, withCompletionBlock: { (error, ref) in
                     if let error = error {
                         completion(UserResult.failure(error))
                     } else {
-                        completion(UserResult.success(user))
+                        ref.child(FireBaseDirectoryName.users.rawValue).child("\(partnerUID)").updateChildValues(partnerPost, withCompletionBlock: { (error, ref) in
+                            if let error = error {
+                                completion(UserResult.failure(error))
+                            } else {
+                                completion(UserResult.success(user))
+                            }
+                        })
                     }
-                }
+                })
             } else {
-            
+                completion(UserResult.failure(nil))
+                return
             }
-            
         })
     }
     
