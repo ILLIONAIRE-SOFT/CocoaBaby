@@ -54,6 +54,37 @@ class DiaryStore {
         }
     }
     
+    func updateDiary(diary: Diary, completion: @escaping (DiaryResult) -> ()) {
+        
+        FireBaseAPI.updateDiary(diary: diary) { (result) in
+            switch result {
+            case let .success(diary):
+                if diary.text == "" {
+                    self.currentDiaries[diary.date.day] = nil
+                } else {
+                    self.currentDiaries[diary.date.day] = diary
+                }
+                
+                completion(result)
+            case .failure(_):
+                completion(result)
+            }
+        }
+    }
+    
+    func updateComment(diary: Diary, completion: @escaping (DiaryResult) -> ()) {
+        
+        FireBaseAPI.updateComment(to: diary) { (diaryResult) in
+            switch diaryResult {
+            case let .success(diary):
+                self.currentDiaries[diary.date.day] = diary
+                completion(diaryResult)
+            case .failure(_):
+                completion(diaryResult)
+            }
+        }
+    }
+    
     func addComment(to diary: Diary, completion: @escaping (DiaryResult) -> ()) {
         
     }

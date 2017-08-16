@@ -119,6 +119,58 @@ struct FireBaseAPI {
         }
     }
     
+    static func updateDiary(diary: Diary, completion: @escaping (DiaryResult) -> ()) {
+        guard var uid = Auth.auth().currentUser?.uid else {
+            print(FireBaseAPIError.invalidUser)
+            return
+        }
+        
+        if let partnerUID = UserStore.shared.user?.partnerUID {
+            if UserStore.shared.user?.gender == "male" {
+                uid = partnerUID
+            }
+        }
+        
+        let post = [
+            DiaryPayloadName.text.rawValue: diary.text
+        ] as [String:Any]
+        
+        ref.child(FireBaseDirectoryName.diaries.rawValue).child("\(uid)/\(diary.date.year)/\(diary.date.month)/\(diary.date.day)").updateChildValues(post) { (error, ref) in
+            if let error = error {
+                completion(DiaryResult.failure(error))
+            } else {
+                completion(DiaryResult.success(diary))
+            }
+        }
+    }
+    
+    static func updateComment(to diary: Diary, completion: @escaping (DiaryResult) -> ()) {
+        guard
+            var uid = Auth.auth().currentUser?.uid,
+            let comment = diary.comment else {
+            print(FireBaseAPIError.invalidUser)
+            return
+        }
+        
+        if let partnerUID = UserStore.shared.user?.partnerUID {
+            if UserStore.shared.user?.gender == "male" {
+                uid = partnerUID
+            }
+        }
+        
+        let post = [
+            DiaryPayloadName.comment.rawValue: comment
+        ] as [String:Any]
+        
+        ref.child(FireBaseDirectoryName.diaries.rawValue).child("\(uid)/\(diary.date.year)/\(diary.date.month)/\(diary.date.day)").updateChildValues(post) { (error, ref) in
+            if let error = error {
+                completion(DiaryResult.failure(error))
+            } else {
+                completion(DiaryResult.success(diary))
+            }
+        }
+    }
+    
     static func fetchDiaries(date: Diary.Date, completion: @escaping ([Diary]) -> ()) {
         guard var uid = Auth.auth().currentUser?.uid else {
             return
