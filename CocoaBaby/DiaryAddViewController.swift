@@ -142,7 +142,12 @@ class DiaryAddViewController: DiaryBaseViewController {
             })
         }
         
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel) { (action) in
+            
+        }
+        
         alertController.addAction(doneAction)
+        alertController.addAction(cancelAction)
         
         self.present(alertController, animated: true, completion: nil)
     }
@@ -161,7 +166,7 @@ class DiaryAddViewController: DiaryBaseViewController {
             if user.gender == "male" {
                 self.dismiss(animated: true, completion: nil)
                 return
-            }   
+            }
         }
         
         saveDiary()
