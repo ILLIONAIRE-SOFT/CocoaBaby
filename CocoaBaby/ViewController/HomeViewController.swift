@@ -55,13 +55,6 @@ class HomeViewController: BaseViewController {
     }
     
     
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        waterDropView?.remove()
-        waterDropView = nil
-
-    }
-    
     // MARK: - Methods
     private func updateBabyInfo() {
         self.nameLabel.text = BabyStore.shared.getName()

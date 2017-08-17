@@ -16,11 +16,21 @@ class EditBabyViewController: BaseViewController {
     var pregnantDate: Date? = nil
     var birthDate: Date? = nil
     
+    @IBOutlet var cancelButton: UIButton!
+    @IBOutlet var saveButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         nameField.returnKeyType = .done
         nameField.delegate = self
+        
+        self.saveButton.layer.cornerRadius = 4
+        self.saveButton.backgroundColor = .white
+        self.cancelButton.layer.cornerRadius = 4
+        self.cancelButton.backgroundColor = .white
+        
+        self.nameField.text = BabyStore.shared.baby.name
         
         initGesture()
     }
@@ -52,10 +62,6 @@ class EditBabyViewController: BaseViewController {
                 name = nameFieldText
                 let baby = Baby(name: name!, birthDate: BabyStore.shared.baby.birthDate, pregnantDate: BabyStore.shared.baby.pregnantDate)
                 BabyStore.shared.updateBaby(baby: baby) { (_) in
-                    BabyStore.shared.fetchBaby(completion: { (baby) in
-                        // 에러 처리 필요
-                    
-                    })
                     self.dismiss(animated: true, completion: nil)
                 }
             } else {
@@ -67,6 +73,10 @@ class EditBabyViewController: BaseViewController {
                 return
             }
         }
+    }
+
+    @IBAction func tappedCancel(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
     }
     
 }
