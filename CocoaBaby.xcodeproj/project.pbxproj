@@ -37,6 +37,7 @@
 		49E659181F42E54800D85C53 /* ShareHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E659171F42E54800D85C53 /* ShareHelper.swift */; };
 		49E6591A1F455C9C00D85C53 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49E659191F455C9C00D85C53 /* UserNotifications.framework */; };
 		49E6591E1F45672C00D85C53 /* PushManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E6591D1F45672C00D85C53 /* PushManager.swift */; };
+		49E659201F458C8C00D85C53 /* FireBaseUserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E6591F1F458C8C00D85C53 /* FireBaseUserAPI.swift */; };
 		49F6C77D1F318AF200373F06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F6C77C1F318AF200373F06 /* AppDelegate.swift */; };
 		49F6C7821F318AF200373F06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49F6C7801F318AF200373F06 /* Main.storyboard */; };
 		49F6C7841F318AF200373F06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49F6C7831F318AF200373F06 /* Assets.xcassets */; };
@@ -119,6 +120,7 @@
 		49E659171F42E54800D85C53 /* ShareHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShareHelper.swift; path = Model/ShareHelper.swift; sourceTree = "<group>"; };
 		49E659191F455C9C00D85C53 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		49E6591D1F45672C00D85C53 /* PushManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PushManager.swift; path = Utilities/PushManager.swift; sourceTree = "<group>"; };
+		49E6591F1F458C8C00D85C53 /* FireBaseUserAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FireBaseUserAPI.swift; path = Model/FireBaseUserAPI.swift; sourceTree = "<group>"; };
 		49F6C7791F318AF200373F06 /* CocoaBaby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaBaby.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49F6C77C1F318AF200373F06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49F6C7811F318AF200373F06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -310,6 +312,7 @@
 			isa = PBXGroup;
 			children = (
 				49CBF1861F3C29DE00426D61 /* FireBaseAPI.swift */,
+				49E6591F1F458C8C00D85C53 /* FireBaseUserAPI.swift */,
 			);
 			name = FireBase;
 			sourceTree = "<group>";
@@ -620,11 +623,11 @@
 				TargetAttributes = {
 					49F6C7781F318AF200373F06 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 34UH748CF3;
+						DevelopmentTeam = 23EFP3FERN;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
-								enabled = 0;
+								enabled = 1;
 							};
 							com.apple.iCloud = {
 								enabled = 0;
@@ -870,6 +873,7 @@
 				49F6C77D1F318AF200373F06 /* AppDelegate.swift in Sources */,
 				4911D9D11F3446110031B74A /* TipsViewController.swift in Sources */,
 				49A4B0E51F3DEF5C00CC09A7 /* DiaryStore.swift in Sources */,
+				49E659201F458C8C00D85C53 /* FireBaseUserAPI.swift in Sources */,
 				49E659151F42C66200D85C53 /* UserSettingsViewController.swift in Sources */,
 				496FB1E11F31986E00E4042D /* BabyStore.swift in Sources */,
 				DAB5A40D1F31B185000235B0 /* TutorialSetDateViewController.swift in Sources */,
@@ -1106,7 +1110,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = CocoaBaby/CocoaBaby.entitlements;
-				DEVELOPMENT_TEAM = 34UH748CF3;
+				DEVELOPMENT_TEAM = 23EFP3FERN;
 				INFOPLIST_FILE = CocoaBaby/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1122,7 +1126,7 @@
 			baseConfigurationReference = 82B4242C76CF19998F67AC6F /* Pods-CocoaBaby.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 34UH748CF3;
+				DEVELOPMENT_TEAM = 23EFP3FERN;
 				INFOPLIST_FILE = CocoaBaby/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

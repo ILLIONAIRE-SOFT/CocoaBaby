@@ -49,8 +49,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, GIDSig
         
         application.registerForRemoteNotifications()
         
-        let token = Messaging.messaging().fcmToken
-        print("FCM token: \(token ?? "")")
+        // 실행안됨
+        if let token = Messaging.messaging().apnsToken {
+            let tokenString = token.reduce("", {$0 + String(format: "%02X", $1)})
+            print("APN token: \(tokenString)")
+        }
         
         return true
     }
@@ -91,8 +94,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, GIDSig
         Messaging.messaging().apnsToken = deviceToken
         
         let deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
-
-        print("APNs device token: \(deviceTokenString)")
+        
+        
+        
+        print("DidRegsister APNs device token: \(deviceTokenString)")
+        // 여기서 DeviceTokenString 저장
     }
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
