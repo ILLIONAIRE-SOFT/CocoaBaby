@@ -22,16 +22,17 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         let waterDropViewFrame = CGRect(x: 0, y: 0, width: self.babyView.frame.width, height: self.babyView.frame.height)
+        
         let waterDropView = WaterDropView(frame: waterDropViewFrame,
                                           direction: .up,
                                           waterDropNum: 10,
-                                          color: UIColor.red,
-                                          minDropSize: 5,
+                                          color: UIColor.init(colorWithHexValue: 0xFFFFFF, alpha: 0.6),
+                                          minDropSize: 4,
                                           maxDropSize: 10,
-                                          minLength: 30,
-                                          maxLength: 100,
-                                          minDuration: 3,
-                                          maxDuration: 5)
+                                          minLength: 40,
+                                          maxLength: 270,
+                                          minDuration: 8,
+                                          maxDuration: 14)
         self.babyView.addSubview(waterDropView)
 
         
@@ -44,22 +45,7 @@ class HomeViewController: BaseViewController {
         
         updateBabyInfo()
         updateInfoLabel(week: BabyStore.shared.getPregnantWeek().week)
-<<<<<<< HEAD
-        
-        let waterDropView = WaterDropView(frame: self.babyView.frame,
-                                          direction: .up,
-                                          waterDropNum: 10,
-                                          color: UIColor(colorWithHexValue: 0xE3BCC3, alpha: 0.7),
-                                          minDropSize: 5,
-                                          maxDropSize: 10,
-                                          minLength: 0,
-                                          maxLength: 100,
-                                          minDuration: 3,
-                                          maxDuration: 5)
-        self.view.addSubview(waterDropView)
 
-=======
->>>>>>> 7d66847d53f539aa7f8b69700f3ab283a703051e
     }
     
     override func viewDidAppear(_ animated: Bool) {

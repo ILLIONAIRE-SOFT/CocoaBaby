@@ -602,12 +602,7 @@
 				TargetAttributes = {
 					49F6C7781F318AF200373F06 = {
 						CreatedOnToolsVersion = 8.3.3;
-<<<<<<< HEAD
-
 						DevelopmentTeam = 23EFP3FERN;
-=======
-						DevelopmentTeam = 34UH748CF3;
->>>>>>> 7d66847d53f539aa7f8b69700f3ab283a703051e
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
@@ -1090,14 +1085,10 @@
 			baseConfigurationReference = 59B3D35B11C642E2AC5DE763 /* Pods-CocoaBaby.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-<<<<<<< HEAD
-
 				CODE_SIGN_ENTITLEMENTS = CocoaBaby/CocoaBaby.entitlements;
 				DEVELOPMENT_TEAM = 23EFP3FERN;
-=======
-				DEVELOPMENT_TEAM = 34UH748CF3;
->>>>>>> 7d66847d53f539aa7f8b69700f3ab283a703051e
 				INFOPLIST_FILE = CocoaBaby/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Sohn.CocoaBaby;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1111,8 +1102,9 @@
 			baseConfigurationReference = 82B4242C76CF19998F67AC6F /* Pods-CocoaBaby.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 34UH748CF3;
+				DEVELOPMENT_TEAM = 23EFP3FERN;
 				INFOPLIST_FILE = CocoaBaby/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Sohn.CocoaBaby;
 				PRODUCT_NAME = "$(TARGET_NAME)";
