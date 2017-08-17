@@ -11,6 +11,8 @@ import CloudKit
 
 class HomeViewController: BaseViewController {
     
+    
+    @IBOutlet weak var bgView: UIImageView!
     @IBOutlet var babyImageView: UIImageView!
     @IBOutlet var babyView: BabyView!
     @IBOutlet var nameLabel: UILabel!
@@ -25,6 +27,8 @@ class HomeViewController: BaseViewController {
         
         babyImageView.image = UIImage(named: "CocoaBaby")?.withRenderingMode(.alwaysTemplate)
         babyImageView.tintColor = UIColor.mainBlueColor
+        
+        changeBg()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -113,6 +117,39 @@ class HomeViewController: BaseViewController {
         }, completion: {completion in
             self.babyImageView.transform = CGAffineTransform(translationX: 14, y: 8)
         })
+        
+    }
+    
+    func changeBg() {
+        
+        let date = Date()
+        let currentHour = Calendar.current.component(.hour, from: date)
+        print("시간\(date)")
+        if currentHour > 19 || currentHour < 6 { //Night
+            
+            UIGraphicsBeginImageContext(self.view.frame.size)
+            UIImage(named: "bgNight")?.draw(in: self.view.bounds)
+
+            var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+            UIGraphicsEndImageContext()
+            self.view.backgroundColor = UIColor(patternImage: image)
+            
+            //self.babyView.backgroundColor = UIColor.init(colorWithHexValue: 0x000000, alpha: 0.7)
+            
+            
+        } else if currentHour >= 6 || currentHour <= 16{ //morning
+            self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bgNight")!)
+            self.view.contentMode = .scaleAspectFill
+
+        } else if currentHour >= 16 && currentHour <= 19 {
+            self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bgNight")!)
+            self.view.contentMode = .scaleAspectFill
+
+        } else {
+            self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bgNight")!)
+            self.view.contentMode = .scaleAspectFill
+
+        }
         
     }
     
