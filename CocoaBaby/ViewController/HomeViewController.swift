@@ -34,10 +34,10 @@ class HomeViewController: BaseViewController {
                                           minDuration: 8,
                                           maxDuration: 14)
         self.babyView.addSubview(waterDropView)
-
         
         babyImageView.image = UIImage(named: "CocoaBaby")?.withRenderingMode(.alwaysTemplate)
         babyImageView.tintColor = UIColor.mainBlueColor
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -45,7 +45,7 @@ class HomeViewController: BaseViewController {
         
         updateBabyInfo()
         updateInfoLabel(week: BabyStore.shared.getPregnantWeek().week)
-
+        self.beginBabyAnimation()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -100,13 +100,30 @@ class HomeViewController: BaseViewController {
         
         self.present(viewController, animated: true, completion: nil)
     }
-
-    class BabyView: UIView {
-        
-        override func draw(_ rect: CGRect) {
-            super.draw(rect)
-            self.layer.cornerRadius = self.frame.width/2
-        }
+    
+    
+    func beginBabyAnimation () {
+        UIImageView.animate(withDuration: 8.0, delay:0, options: [.repeat, .autoreverse, .curveEaseInOut], animations: {
+            UIImageView.setAnimationRepeatCount(10)
+            self.babyImageView.transform = CGAffineTransform(translationX: -12, y: -7)
+            self.babyImageView.transform = CGAffineTransform.identity.rotated(by: 0.3)
+            
+        }, completion: {completion in
+            self.babyImageView.transform = CGAffineTransform(translationX: 14, y: 8)
+        })
         
     }
+    
 }
+
+
+
+class BabyView: UIView {
+    
+    override func draw(_ rect: CGRect) {
+        super.draw(rect)
+        self.layer.cornerRadius = self.frame.width/2
+    }
+    
+}
+
