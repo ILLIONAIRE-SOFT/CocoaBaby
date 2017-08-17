@@ -95,10 +95,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, GIDSig
         
         let deviceTokenString = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
         
-        
-        
         print("DidRegsister APNs device token: \(deviceTokenString)")
         // 여기서 DeviceTokenString 저장
+        let post = [UserPayloadName.deviceToken.rawValue:deviceTokenString] as [String:Any]
+        
+        UserStore.shared.updateUser(post: post) { (userResult) in
+            switch userResult {
+            case .success(_):
+                return
+            case .failure(_):
+                return
+            }
+        }
     }
     
     func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {

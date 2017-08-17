@@ -80,12 +80,19 @@ extension FireBaseAPI {
         })
     }
     
-    static func updateUser(post: [String:Any], completion: @escaping() -> ()) {
+    static func updateUser(post: [String:Any], completion: @escaping(UserResult) -> ()) {
         guard let uid = Auth.auth().currentUser?.uid else {
             print(FireBaseAPIError.invalidUser)
             return
         }
         
+        ref.child(FireBaseDirectoryName.users.rawValue).child("\(uid)").updateChildValues(post) { (error, ref) in
+            if let error = error {
+                completion(UserResult.failure(error))
+            } else {
+                completion(UserResult.success(nil))
+            }
+        }
         
     }
     
