@@ -37,7 +37,7 @@ class HomeViewController: BaseViewController {
         super.viewDidAppear(animated)
         
 
-     animateRandomWaterDrop(num: 5)
+     animateRandomWaterDrop(num: 10)
 //        
 //        // WaterDropThree
 //        var waterDropThree = UIView(frame: CGRect(x: 170, y: 480, width: 8, height: 8))
@@ -128,23 +128,33 @@ class HomeViewController: BaseViewController {
     private func animateRandomWaterDrop (num : Int)  {
         
         for _ in 1...num {
-            let randomX: CGFloat = CGFloat(arc4random_uniform(UInt32(UIScreen.main.bounds.width)))
-            let randomY: CGFloat =  CGFloat(arc4random_uniform(40))
+//            let randomX: CGFloat = CGFloat(arc4random_uniform(UInt32(UIScreen.main.bounds.width)))
+//            let randomY: CGFloat =  CGFloat(arc4random_uniform(40))
+            
+            let randomX: CGFloat = CGFloat(arc4random_uniform(UInt32(babyView.bounds.width))) + CGFloat((self.babyView.frame.width)/4)
+            let randomY: CGFloat = CGFloat(arc4random_uniform(UInt32(babyView.bounds.height))) + CGFloat(self.babyView.frame.height)
             let randomSize: CGFloat =  CGFloat(4) + CGFloat(arc4random_uniform(5))
-            let randomDelay: TimeInterval = TimeInterval(arc4random_uniform(3) + 2)
-            let randomDuration: TimeInterval = TimeInterval(1) + TimeInterval(arc4random_uniform(3)/2)
-            let randomIncrease: CGFloat = CGFloat(100 + arc4random_uniform(100))
+            let randomDelay: TimeInterval = TimeInterval(1) + TimeInterval(arc4random_uniform(2))
+            let randomDuration: TimeInterval = TimeInterval(7) + TimeInterval(arc4random_uniform(10)/2)
+//            let randomDuration: TimeInterval = TimeInterval(0)
+            let randomIncrease: CGFloat = CGFloat(arc4random_uniform(150))
             
             let waterDrop = UIView(frame: CGRect(x: randomX, y: randomY, width: randomSize, height: randomSize))
             waterDrop.backgroundColor = UIColor.init(colorWithHexValue: 0xE3BCC3, alpha: 0.7)
             waterDrop.layer.cornerRadius = randomSize/2
             
             self.view.addSubview(waterDrop)
+            UIView.animate(withDuration: randomDuration, delay: randomDelay, options: [.repeat], animations: {
+                
+                waterDrop.alpha = 1.0
+                
+            }, completion: nil)
             
             // position
-            UIView.animate(withDuration: randomDelay, delay: randomDuration, options: [.repeat], animations: {
+            UIView.animate(withDuration: randomDuration, delay: randomDelay, options: [.repeat], animations: {
                 
-                waterDrop.frame.origin.y = randomY + randomIncrease
+                 waterDrop.frame.origin.y = randomY - (self.babyView.frame.height) - randomIncrease*4
+                //waterDrop.frame.origin.y = randomY + randomIncrease
                 waterDrop.alpha = 0.0
                 
             }, completion: nil)
