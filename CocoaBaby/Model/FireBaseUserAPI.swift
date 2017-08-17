@@ -106,6 +106,8 @@ extension FireBaseAPI {
         }
         
         let partnerUID = json[UserPayloadName.partnerUID.rawValue]
+        let deviceToken = json[UserPayloadName.deviceToken.rawValue]
+        let partnerDeviceToekn = json[UserPayloadName.partnerDeviceToken.rawValue]
         
         user.gender = gender as! String
         
@@ -117,6 +119,14 @@ extension FireBaseAPI {
             } else {
                 user.partnerUID = uid
             }
+        }
+        
+        if let deviceToken = deviceToken {
+            user.deviceToken = deviceToken as? String
+        }
+        
+        if let partnerToken = partnerDeviceToekn {
+            user.partnerDeviceToken = partnerToken as? String
         }
         
         return user

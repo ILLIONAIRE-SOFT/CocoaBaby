@@ -53,6 +53,7 @@ enum TipsPayloadName: String {
 
 enum SharePayloadName: String {
     case uid = "uid"
+    case deviceToken = "deviceToken"
 }
 
 enum DiaryResult {
@@ -365,100 +366,4 @@ extension FireBaseAPI {
     
 }
 
-// MARK: - Share
-extension FireBaseAPI {
-    
-    static func createShareSection(sixDigits: Int, completion: @escaping (ShareResult) -> ()) {
-        guard let uid = Auth.auth().currentUser?.uid else {
-            print(FireBaseAPIError.invalidUser)
-            return
-        }
-        
-        let post = [
-            SharePayloadName.uid.rawValue: uid
-            ] as [String : Any]
-        
-        // 먼저 observe single event로 해당 번호의 세션이 있는지 확인해줘야 한다. 없는 경우에 fail 줘서 다시 번호를 생성하도록..
-        ref.child(FireBaseDirectoryName.share.rawValue).child("\(sixDigits)").observeSingleEvent(of: .value, with: {
-            (snapshot) in
-            
-            if snapshot.exists() {
-                completion(ShareResult.failure())
-            } else {
-                ref.child(FireBaseDirectoryName.share.rawValue).child("\(sixDigits)").setValue(post, andPriority: nil) { (error, ref) in
-                    if let _ = error {
-                        completion(ShareResult.failure())
-                    } else {
-                        completion(ShareResult.success(sixDigits))
-                    }
-                }
-            }
-        })
-    }
-    
-    static func removeShareSection(sixDigits: Int, completion: @escaping (ShareResult) -> ()) {
-        //        guard let uid = Auth.auth().currentUser?.uid else {
-        //            print(FireBaseAPIError.invalidUser)
-        //            return
-        //        }
-        
-        ref.child(FireBaseDirectoryName.share.rawValue).child("\(sixDigits)").removeValue()
-        completion(ShareResult.success(0))
-    }
-    
-    static func linkWithPartner(me: User, sixDigits: Int, completion: @escaping (UserResult) -> ()) {
-        guard let uid = Auth.auth().currentUser?.uid else {
-            print(FireBaseAPIError.invalidUser)
-            return
-        }
-        
-        ref.child(FireBaseDirectoryName.share.rawValue).child("\(sixDigits)").observeSingleEvent(of: .value, with: { (snapshot) in
-            
-            guard snapshot.exists() else {
-                completion(UserResult.failure(nil))
-                return
-            }
-            
-            let dict = snapshot.value as! [String:Any]
-            
-            if let partnerUID = partnerUID(from: dict) {
-                let user = User(gender: me.gender, partnerUID: partnerUID, deviceToken: nil, partnerDeviceToken: nil)
-                
-                let post = [
-                    UserPayloadName.partnerUID.rawValue: partnerUID
-                    ] as [String : Any]
-                
-                let partnerPost = [
-                    UserPayloadName.partnerUID.rawValue: uid
-                ] as [String: Any]
-                
-                ref.child(FireBaseDirectoryName.users.rawValue).child("\(uid)").updateChildValues(post, withCompletionBlock: { (error, ref) in
-                    if let error = error {
-                        completion(UserResult.failure(error))
-                    } else {
-                        self.ref.child(FireBaseDirectoryName.users.rawValue).child("\(partnerUID)").updateChildValues(partnerPost, withCompletionBlock: { (error, ref) in
-                            if let error = error {
-                                completion(UserResult.failure(error))
-                            } else {
-                                completion(UserResult.success(user))
-                            }
-                        })
-                    }
-                })
-            } else {
-                completion(UserResult.failure(nil))
-                return
-            }
-        })
-    }
-    
-    static private func partnerUID(from json: [String:Any]) -> String? {
-        guard
-            let partnerUID = json[SharePayloadName.uid.rawValue] else {
-                return nil
-        }
-        
-        return partnerUID as? String
-    }
-    
-}
+

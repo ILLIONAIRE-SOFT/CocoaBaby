@@ -38,6 +38,7 @@
 		49E6591A1F455C9C00D85C53 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49E659191F455C9C00D85C53 /* UserNotifications.framework */; };
 		49E6591E1F45672C00D85C53 /* PushManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E6591D1F45672C00D85C53 /* PushManager.swift */; };
 		49E659201F458C8C00D85C53 /* FireBaseUserAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E6591F1F458C8C00D85C53 /* FireBaseUserAPI.swift */; };
+		49E659221F459C3C00D85C53 /* FireBaseShareAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E659211F459C3C00D85C53 /* FireBaseShareAPI.swift */; };
 		49F6C77D1F318AF200373F06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F6C77C1F318AF200373F06 /* AppDelegate.swift */; };
 		49F6C7821F318AF200373F06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49F6C7801F318AF200373F06 /* Main.storyboard */; };
 		49F6C7841F318AF200373F06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49F6C7831F318AF200373F06 /* Assets.xcassets */; };
@@ -121,6 +122,7 @@
 		49E659191F455C9C00D85C53 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		49E6591D1F45672C00D85C53 /* PushManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PushManager.swift; path = Utilities/PushManager.swift; sourceTree = "<group>"; };
 		49E6591F1F458C8C00D85C53 /* FireBaseUserAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FireBaseUserAPI.swift; path = Model/FireBaseUserAPI.swift; sourceTree = "<group>"; };
+		49E659211F459C3C00D85C53 /* FireBaseShareAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FireBaseShareAPI.swift; path = Model/FireBaseShareAPI.swift; sourceTree = "<group>"; };
 		49F6C7791F318AF200373F06 /* CocoaBaby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaBaby.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49F6C77C1F318AF200373F06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49F6C7811F318AF200373F06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -313,6 +315,7 @@
 			children = (
 				49CBF1861F3C29DE00426D61 /* FireBaseAPI.swift */,
 				49E6591F1F458C8C00D85C53 /* FireBaseUserAPI.swift */,
+				49E659211F459C3C00D85C53 /* FireBaseShareAPI.swift */,
 			);
 			name = FireBase;
 			sourceTree = "<group>";
@@ -871,6 +874,7 @@
 			files = (
 				D45189B61F38420400937869 /* CustomTableViewCell.swift in Sources */,
 				49F6C77D1F318AF200373F06 /* AppDelegate.swift in Sources */,
+				49E659221F459C3C00D85C53 /* FireBaseShareAPI.swift in Sources */,
 				4911D9D11F3446110031B74A /* TipsViewController.swift in Sources */,
 				49A4B0E51F3DEF5C00CC09A7 /* DiaryStore.swift in Sources */,
 				49E659201F458C8C00D85C53 /* FireBaseUserAPI.swift in Sources */,
