@@ -90,8 +90,6 @@ class HomeViewController: BaseViewController {
         }
     }
     
-
-    
     // MARK: - Actions
     
     @IBAction func presentCameraView() {
@@ -99,10 +97,7 @@ class HomeViewController: BaseViewController {
         let viewController = cameraSB.instantiateViewController(withIdentifier: "CameraViewController")
         
         self.present(viewController, animated: true, completion: nil)
-        
-
     }
-
 }
 
 
