@@ -35,6 +35,8 @@
 		49E659131F42C64A00D85C53 /* UserSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49E659111F42C64A00D85C53 /* UserSettings.storyboard */; };
 		49E659151F42C66200D85C53 /* UserSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E659141F42C66200D85C53 /* UserSettingsViewController.swift */; };
 		49E659181F42E54800D85C53 /* ShareHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E659171F42E54800D85C53 /* ShareHelper.swift */; };
+		49E6591A1F455C9C00D85C53 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49E659191F455C9C00D85C53 /* UserNotifications.framework */; };
+		49E6591E1F45672C00D85C53 /* PushManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E6591D1F45672C00D85C53 /* PushManager.swift */; };
 		49F6C77D1F318AF200373F06 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F6C77C1F318AF200373F06 /* AppDelegate.swift */; };
 		49F6C7821F318AF200373F06 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49F6C7801F318AF200373F06 /* Main.storyboard */; };
 		49F6C7841F318AF200373F06 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49F6C7831F318AF200373F06 /* Assets.xcassets */; };
@@ -115,6 +117,8 @@
 		49E659121F42C64A00D85C53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/UserSettings.storyboard; sourceTree = "<group>"; };
 		49E659141F42C66200D85C53 /* UserSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserSettingsViewController.swift; path = ViewController/UserSettingsViewController.swift; sourceTree = "<group>"; };
 		49E659171F42E54800D85C53 /* ShareHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShareHelper.swift; path = Model/ShareHelper.swift; sourceTree = "<group>"; };
+		49E659191F455C9C00D85C53 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		49E6591D1F45672C00D85C53 /* PushManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PushManager.swift; path = Utilities/PushManager.swift; sourceTree = "<group>"; };
 		49F6C7791F318AF200373F06 /* CocoaBaby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaBaby.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49F6C77C1F318AF200373F06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		49F6C7811F318AF200373F06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -165,6 +169,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49E6591A1F455C9C00D85C53 /* UserNotifications.framework in Frameworks */,
 				19E9F6C960A92BCD856D49E2 /* Pods_CocoaBaby.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -271,6 +276,7 @@
 		4948E0A81F39A103008542F6 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				49E659191F455C9C00D85C53 /* UserNotifications.framework */,
 				E058B86FDCDD49D6B0B683BE /* Pods_CocoaBaby.framework */,
 				3953CA1C89A8E8BE4183BDC5 /* Pods_CocoaBabyTests.framework */,
 				3D030A7C3DA05CE73E2A7E35 /* Pods_CocoaBabyUITests.framework */,
@@ -398,6 +404,14 @@
 			name = ShareHelper;
 			sourceTree = "<group>";
 		};
+		49E6591B1F45671900D85C53 /* PushManager */ = {
+			isa = PBXGroup;
+			children = (
+				49E6591D1F45672C00D85C53 /* PushManager.swift */,
+			);
+			name = PushManager;
+			sourceTree = "<group>";
+		};
 		49F6C7701F318AF200373F06 = {
 			isa = PBXGroup;
 			children = (
@@ -512,6 +526,7 @@
 		DAB5A4141F3332DB000235B0 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				49E6591B1F45671900D85C53 /* PushManager */,
 				49FEEE301F3844B00046D5A3 /* Formatter */,
 				4911D9E11F3450D40031B74A /* Enums */,
 				DAB5A4151F3332E2000235B0 /* Extension */,
@@ -866,6 +881,7 @@
 				492057821F41479100F232E2 /* DatePickerViewController.swift in Sources */,
 				49FEEE321F3844C70046D5A3 /* CocoaDateFormatter.swift in Sources */,
 				49CBF1871F3C29DE00426D61 /* FireBaseAPI.swift in Sources */,
+				49E6591E1F45672C00D85C53 /* PushManager.swift in Sources */,
 				4911D9CE1F34455D0031B74A /* DiaryViewController.swift in Sources */,
 				DA131A701F45641600DE12F7 /* EditBabyDateViewController.swift in Sources */,
 				D45189C31F3ACD0700937869 /* DiaryAddViewController.swift in Sources */,
