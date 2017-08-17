@@ -12,6 +12,8 @@ import CloudKit
 struct User {
     var gender: String = "female"
     var partnerUID: String? = nil
+    var deviceToken: String? = nil
+    var partnerDeviceToken: String? = nil
 }
 
 class UserStore {
