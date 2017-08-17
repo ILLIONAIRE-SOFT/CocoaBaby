@@ -511,7 +511,7 @@ extension FireBaseAPI {
             let dict = snapshot.value as! [String:Any]
             
             if let partnerUID = partnerUID(from: dict) {
-                let user = User(gender: me.gender, partnerUID: partnerUID)
+                let user = User(gender: me.gender, partnerUID: partnerUID, deviceToken: nil, partnerDeviceToken: nil)
                 
                 let post = [
                     UserPayloadName.partnerUID.rawValue: partnerUID
