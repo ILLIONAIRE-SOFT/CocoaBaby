@@ -67,6 +67,9 @@ class BabyStore {
         FireBaseAPI.updateBaby(baby: baby) { (result) in
             switch result {
             case .success(_):
+                BabyStore.shared.fetchBaby(completion: { (baby) in
+                    // 에러 처리 필요
+                })
                 completion(result)
             case .failure(_):
                 completion(result)

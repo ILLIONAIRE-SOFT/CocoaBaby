@@ -12,7 +12,7 @@ import FirebaseAuth
 class SettingsViewController: BaseViewController {
 
     @IBOutlet var editBabyButton: UIButton!
-    @IBOutlet var dataBackupButton: UIButton!
+    @IBOutlet var editDateButton: UIButton!
     @IBOutlet var sendEmailButton: UIButton!
     @IBOutlet var genderButton: UIButton!
     
@@ -26,8 +26,8 @@ class SettingsViewController: BaseViewController {
         editBabyButton.backgroundColor = UIColor.black.withAlphaComponent(0.15)
         editBabyButton.layer.cornerRadius = 16
         
-        dataBackupButton.backgroundColor = UIColor.black.withAlphaComponent(0.15)
-        dataBackupButton.layer.cornerRadius = 16
+        editDateButton.backgroundColor = UIColor.black.withAlphaComponent(0.15)
+        editDateButton.layer.cornerRadius = 16
         
         sendEmailButton.backgroundColor = UIColor.black.withAlphaComponent(0.15)
         sendEmailButton.layer.cornerRadius = 16

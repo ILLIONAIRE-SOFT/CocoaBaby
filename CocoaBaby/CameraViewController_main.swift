@@ -48,8 +48,9 @@ class CameraViewController: UIViewController {
         guideImageView = UIImageView(frame: cameraView.frame)
         guideImageView.image = UIImage(named: "camera_guide")
         view.addSubview(guideImageView)
-            
-        guideImageView.isHidden = true
+        
+        guideBtn.isSelected = true
+        guideImageView.isHidden = false
     }
     @IBAction func modalDismiss(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
