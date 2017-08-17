@@ -49,7 +49,8 @@
 		D45189C11F39692E00937869 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D45189BF1F39692E00937869 /* Settings.storyboard */; };
 		D45189C31F3ACD0700937869 /* DiaryAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45189C21F3ACD0700937869 /* DiaryAddViewController.swift */; };
 		D45189C71F3AD25200937869 /* DiaryBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45189C61F3AD25200937869 /* DiaryBaseViewController.swift */; };
-		DA131A6C1F44702800DE12F7 /* waterDropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA131A6B1F44702800DE12F7 /* waterDropView.swift */; };
+		DA131A6C1F44702800DE12F7 /* WaterDropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA131A6B1F44702800DE12F7 /* WaterDropView.swift */; };
+		DA131A701F45641600DE12F7 /* EditBabyDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA131A6F1F45641600DE12F7 /* EditBabyDateViewController.swift */; };
 		DA5C8F2E1F415F0C00AA3185 /* TipsDetailContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5C8F2C1F415F0C00AA3185 /* TipsDetailContentTableViewCell.swift */; };
 		DA5C8F321F41AA1000AA3185 /* TipsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5C8F311F41AA1000AA3185 /* TipsStore.swift */; };
 		DA7460FF1F4405F800568F1C /* CameraViewController_camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7460FA1F4405F800568F1C /* CameraViewController_camera.swift */; };
@@ -139,7 +140,8 @@
 		D45189C01F39692E00937869 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
 		D45189C21F3ACD0700937869 /* DiaryAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryAddViewController.swift; sourceTree = "<group>"; };
 		D45189C61F3AD25200937869 /* DiaryBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryBaseViewController.swift; sourceTree = "<group>"; };
-		DA131A6B1F44702800DE12F7 /* waterDropView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = waterDropView.swift; sourceTree = "<group>"; };
+		DA131A6B1F44702800DE12F7 /* WaterDropView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterDropView.swift; sourceTree = "<group>"; };
+		DA131A6F1F45641600DE12F7 /* EditBabyDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditBabyDateViewController.swift; sourceTree = "<group>"; };
 		DA5C8F2C1F415F0C00AA3185 /* TipsDetailContentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsDetailContentTableViewCell.swift; sourceTree = "<group>"; };
 		DA5C8F311F41AA1000AA3185 /* TipsStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsStore.swift; sourceTree = "<group>"; };
 		DA6C03451F4357A20092443F /* CocoaBaby.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CocoaBaby.entitlements; sourceTree = "<group>"; };
@@ -190,7 +192,7 @@
 			isa = PBXGroup;
 			children = (
 				4911D9CA1F3444A70031B74A /* BaseViewController.swift */,
-				DA131A6B1F44702800DE12F7 /* waterDropView.swift */,
+				DA131A6B1F44702800DE12F7 /* WaterDropView.swift */,
 			);
 			name = Base;
 			sourceTree = "<group>";
@@ -227,6 +229,7 @@
 				4911D9D31F34461F0031B74A /* SettingsViewController.swift */,
 				4948E0A51F39799C008542F6 /* EditBabyViewController.swift */,
 				49E659141F42C66200D85C53 /* UserSettingsViewController.swift */,
+				DA131A6F1F45641600DE12F7 /* EditBabyDateViewController.swift */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -602,7 +605,7 @@
 				TargetAttributes = {
 					49F6C7781F318AF200373F06 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 23EFP3FERN;
+						DevelopmentTeam = 34UH748CF3;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
@@ -864,6 +867,7 @@
 				49FEEE321F3844C70046D5A3 /* CocoaDateFormatter.swift in Sources */,
 				49CBF1871F3C29DE00426D61 /* FireBaseAPI.swift in Sources */,
 				4911D9CE1F34455D0031B74A /* DiaryViewController.swift in Sources */,
+				DA131A701F45641600DE12F7 /* EditBabyDateViewController.swift in Sources */,
 				D45189C31F3ACD0700937869 /* DiaryAddViewController.swift in Sources */,
 				DA5C8F321F41AA1000AA3185 /* TipsStore.swift in Sources */,
 				DA7461021F4405F800568F1C /* CameraViewController_services.swift in Sources */,
@@ -879,7 +883,7 @@
 				4920577C1F413FAB00F232E2 /* Diary.swift in Sources */,
 				49A4B0E71F3F17BD00CC09A7 /* DiaryEmptyCell.swift in Sources */,
 				D45189C71F3AD25200937869 /* DiaryBaseViewController.swift in Sources */,
-				DA131A6C1F44702800DE12F7 /* waterDropView.swift in Sources */,
+				DA131A6C1F44702800DE12F7 /* WaterDropView.swift in Sources */,
 				492057801F4143C500F232E2 /* CocoaDatePickerView.swift in Sources */,
 				DAEE34BF1F3834FC0090DBF5 /* TipsDetailViewController.swift in Sources */,
 				DA7460FF1F4405F800568F1C /* CameraViewController_camera.swift in Sources */,
@@ -1086,7 +1090,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = CocoaBaby/CocoaBaby.entitlements;
-				DEVELOPMENT_TEAM = 23EFP3FERN;
+				DEVELOPMENT_TEAM = 34UH748CF3;
 				INFOPLIST_FILE = CocoaBaby/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1102,7 +1106,7 @@
 			baseConfigurationReference = 82B4242C76CF19998F67AC6F /* Pods-CocoaBaby.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 23EFP3FERN;
+				DEVELOPMENT_TEAM = 34UH748CF3;
 				INFOPLIST_FILE = CocoaBaby/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

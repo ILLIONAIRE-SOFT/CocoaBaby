@@ -1,15 +1,15 @@
 //
-//  TutorialSetDateViewController.swift
+//  EditBabyDateViewController.swift
 //  CocoaBaby
 //
-//  Created by LEOFALCON on 2017. 8. 2..
+//  Created by LEOFALCON on 2017. 8. 17..
 //  Copyright © 2017년 Sohn. All rights reserved.
 //
 
 import UIKit
 
-class TutorialSetDateViewController: BaseViewController, UITextFieldDelegate {
-    
+class EditBabyDateViewController: BaseViewController, UITextFieldDelegate {
+
     var babyName : String?
     var pregnantDate : Date?
     var birthDate : Date?
@@ -20,10 +20,9 @@ class TutorialSetDateViewController: BaseViewController, UITextFieldDelegate {
     @IBOutlet var birthDateLabel: UILabel!
     @IBOutlet weak var pregnantDateTextField: UITextField!
     @IBOutlet weak var birthDateTextField: UITextField!
-    
     var datePicker : UIDatePicker!
-    let dateFormatter = DateFormatter()
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.pregnantDateTextField.delegate = self
@@ -42,20 +41,8 @@ class TutorialSetDateViewController: BaseViewController, UITextFieldDelegate {
         self.registerButton.layer.cornerRadius = 4
         self.registerButton.backgroundColor = .white
         
-        dateFormatter.dateStyle = .medium
-        dateFormatter.timeStyle = .none
-        dateFormatter.locale = Locale.current
-        
-        self.pregnantDateTextField.text = dateFormatter.string(from: Date(timeIntervalSince1970: BabyStore.shared.baby.pregnantDate))
-        self.birthDateTextField.text = dateFormatter.string(from: Date(timeIntervalSince1970: BabyStore.shared.baby.birthDate))
-        
         pregnantDateTextField.setBottomBorder()
         birthDateTextField.setBottomBorder()
-        
-    }
-    
-    @IBAction func back(_ sender: Any) {
-        self.navigationController?.popViewController(animated: true)
         
     }
     
@@ -96,6 +83,11 @@ class TutorialSetDateViewController: BaseViewController, UITextFieldDelegate {
     
     func doneClick() {
         if pregnantDateTextField.isFirstResponder {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .medium
+            dateFormatter.timeStyle = .none
+            dateFormatter.locale = Locale.current
+            
             pregnantDateTextField.text = dateFormatter.string(from: datePicker.date)
             pregnantDateTextField.resignFirstResponder()
             birthDateTextField.text = dateFormatter.string(from: datePicker.date.addingTimeInterval(60*60*24*280))
@@ -104,6 +96,9 @@ class TutorialSetDateViewController: BaseViewController, UITextFieldDelegate {
             birthDate = datePicker.date.addingTimeInterval(60*60*24*280)
             self.registerButton.isEnabled = true
         } else {
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .medium
+            dateFormatter.timeStyle = .none
             
             birthDateTextField.text = dateFormatter.string(from: datePicker.date)
             birthDateTextField.resignFirstResponder()
@@ -140,42 +135,30 @@ class TutorialSetDateViewController: BaseViewController, UITextFieldDelegate {
     @IBAction func registerBaby(_ sender: Any) {
         if
             let pregnantDate = pregnantDate,
-            let birthDate = birthDate,
-            let name = babyName
+            let birthDate = birthDate
         {
             if pregnantDate.timeIntervalSince1970 > birthDate.timeIntervalSince1970 {
                 let alertController = UIAlertController(title: "Fail", message: "출산 예정일은 임신 날짜 이전일 수 없습니다.", preferredStyle: .alert)
                 let ok = UIAlertAction(title: "확인", style: .default, handler: nil)
                 alertController.addAction(ok)
                 present(alertController, animated: true, completion: nil)
-            } else if birthDate < Date() {
+            }
+            else if birthDate < Date() {
                 let alertController = UIAlertController(title: "Fail", message: "출산 예정일은 오늘 이전일 수 없습니다.", preferredStyle: .alert)
                 let ok = UIAlertAction(title: "확인", style: .default, handler: nil)
                 alertController.addAction(ok)
                 present(alertController, animated: true, completion: nil)
-            } else {
-                let baby = Baby(name: name, birthDate: birthDate.timeIntervalSince1970, pregnantDate: pregnantDate.timeIntervalSince1970)
+            }
+            else {
+                let baby = Baby(name: BabyStore.shared.baby.name, birthDate: birthDate.timeIntervalSince1970, pregnantDate: pregnantDate.timeIntervalSince1970)
                 
-                BabyStore.shared.saveBaby(baby: baby, completion: { (result) in
-                    switch result {
-                    case .success(_):
-                        self.showSplashView()
-                    case .failure(_):
-                        return
-                    }
+                BabyStore.shared.updateBaby(baby: baby, completion: { (result) in
+                    BabyStore.shared.fetchBaby(completion: { (baby) in
+                    })
+                    self.dismiss(animated: true, completion: nil)
                 })
             }
         }
     }
-    
-    func showSplashView() {
-        let appDelegate = UIApplication.shared.delegate! as! AppDelegate
-        
-        let mainSB = UIStoryboard(name: "Main", bundle: nil)
-        let initialViewController = mainSB.instantiateViewController(withIdentifier: "SplashViewController")
-        appDelegate.window?.rootViewController = initialViewController
-        appDelegate.window?.makeKeyAndVisible()
-    }
-    
-        
+
 }

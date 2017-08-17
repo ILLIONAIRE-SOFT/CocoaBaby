@@ -43,20 +43,22 @@ class WaterDropView: UIView {
         
         let randomIncrease: CGFloat =  CGFloat(arc4random_uniform(UInt32(config.maxLength - config.minLength))) + config.minLength
         
+        var waterDrop : UIView?
         
-        let waterDrop = UIView(frame: CGRect(x: randomX, y: 0, width: randomSize, height: randomSize))
-        waterDrop.backgroundColor = config.color
-        waterDrop.layer.cornerRadius = randomSize/2
+        waterDrop?.frame = CGRect(x: randomX, y: 0, width: randomSize, height: randomSize)
         
-        self.addSubview(waterDrop)
+        waterDrop?.backgroundColor = config.color
+        waterDrop?.layer.cornerRadius = randomSize/2
+        
+        self.addSubview(waterDrop!)
         
         // position
         UIView.animate(withDuration: randomDuration, animations: {
-            waterDrop.frame.origin.y += randomIncrease
-            waterDrop.alpha = 0.0
+            waterDrop?.frame.origin.y += randomIncrease
+            waterDrop?.alpha = 0.0
         }, completion: { (Bool) -> Void in
-            waterDrop.removeFromSuperview()
-            self.downRandomWaterDrop(config: config)
+            waterDrop = nil
+            self.upRandomWaterDrop(config: config)
         })
     }
     
@@ -67,20 +69,34 @@ class WaterDropView: UIView {
         
         let randomDecrease: CGFloat =  CGFloat(arc4random_uniform(UInt32(config.maxLength - config.minLength))) + config.minLength
         
-        let waterDrop = UIView(frame: CGRect(x: randomX, y: self.frame.height, width: randomSize, height: randomSize))
-        waterDrop.backgroundColor = config.color
-        waterDrop.layer.cornerRadius = randomSize/2
+        var waterDrop : UIView? = UIView()
         
-        self.addSubview(waterDrop)
+        waterDrop?.frame = CGRect(x: randomX, y: self.frame.height, width: randomSize, height: randomSize)
+        
+        waterDrop?.backgroundColor = config.color
+        
+        waterDrop?.layer.cornerRadius = randomSize/2
+        
+        self.addSubview(waterDrop!)
         
         // position
         UIView.animate(withDuration: randomDuration, animations: {
-            waterDrop.frame.origin.y -= randomDecrease
-            waterDrop.alpha = 0.0
+            waterDrop?.frame.origin.y -= randomDecrease
+            waterDrop?.alpha = 0.0
         }, completion: { (Bool) -> Void in
-            waterDrop.removeFromSuperview()
-            self.upRandomWaterDrop(config: config)
+            if Bool {
+                waterDrop = nil
+                self.upRandomWaterDrop(config: config)
+            }
         })
+    }
+    
+    func remove() {
+        
+        for view in self.subviews {
+            view.layer.removeAllAnimations()
+            view.removeFromSuperview()
+        }
     }
     
     struct ViewConfig {
