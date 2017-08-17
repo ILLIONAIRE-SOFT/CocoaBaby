@@ -51,8 +51,7 @@ class SettingsViewController: BaseViewController {
             let alertController = UIAlertController(title: nil, message: "You already linked, if you want change partner. Unlink your partner.", preferredStyle: .alert)
             
             let doneAction = UIAlertAction(title: "Done", style: .default, handler: nil)
-            alertController.addAction(doneAction
-            )
+            alertController.addAction(doneAction)
             self.present(alertController, animated: true, completion: nil)
             return
         }
@@ -65,8 +64,7 @@ class SettingsViewController: BaseViewController {
             let alertController = UIAlertController(title: nil, message: "Only mom can share code", preferredStyle: .alert)
             
             let doneAction = UIAlertAction(title: "Done", style: .default, handler: nil)
-            alertController.addAction(doneAction
-            )
+            alertController.addAction(doneAction)
             self.present(alertController, animated: true, completion: nil)
             return
         }

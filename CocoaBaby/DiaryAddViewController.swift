@@ -30,6 +30,7 @@ class DiaryAddViewController: DiaryBaseViewController {
         super.viewDidLoad()
         
         textViewBg.layer.cornerRadius = 4
+        self.keyBoardHideBtn.tintColor = UIColor.darkGray.withAlphaComponent(0)
         
         if let diary = self.diary {
             initDate(with: diary)
@@ -80,6 +81,7 @@ class DiaryAddViewController: DiaryBaseViewController {
     private func enableKeyboardHideOnTap(){
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide(notification:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+        
     }
     
     func hideKeyboard() {
@@ -94,7 +96,9 @@ class DiaryAddViewController: DiaryBaseViewController {
         UIView.animate(withDuration: duration) { () -> Void in
             self.toolbarBottomConstraint.constant = keyboardFrame.size.height
             self.view.layoutIfNeeded()
+            self.keyBoardHideBtn.tintColor = UIColor.darkGray.withAlphaComponent(1)
         }
+        
     }
     
     func keyboardWillHide(notification: NSNotification) {
@@ -103,6 +107,7 @@ class DiaryAddViewController: DiaryBaseViewController {
         UIView.animate(withDuration: duration) { () -> Void in
             self.toolbarBottomConstraint.constant = self.toolbarBottomConstraintInitialValue!
             self.view.layoutIfNeeded()
+            self.keyBoardHideBtn.tintColor = UIColor.darkGray.withAlphaComponent(0)
         }
     }
     
