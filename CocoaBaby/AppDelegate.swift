@@ -7,12 +7,12 @@
 //
 
 import UIKit
-import CloudKit
 import Firebase
 import GoogleSignIn
+import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, GIDSignInUIDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, GIDSignInUIDelegate, UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
 
@@ -33,6 +33,21 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, GIDSig
         GIDSignIn.sharedInstance().delegate = self
         
         UINavigationBar.appearance().barStyle = .blackOpaque
+        
+        // MARK: Notification Settings
+        if #available(iOS 10.0, *) {
+            UNUserNotificationCenter.current().delegate = self
+            
+            let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+            UNUserNotificationCenter.current().requestAuthorization(options: authOptions, completionHandler: { (_, _) in
+                
+            })
+        } else {
+            let settings: UIUserNotificationSettings = UIUserNotificationSettings(types: [.alert, .badge, .sound], categories: nil)
+            application.registerUserNotificationSettings(settings)
+        }
+        
+        application.registerForRemoteNotifications()
         
         return true
     }
