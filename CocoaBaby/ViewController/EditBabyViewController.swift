@@ -43,18 +43,29 @@ class EditBabyViewController: BaseViewController {
     }
     
     // MARK: IBActions
+    
+    
     @IBAction func tappedSave(_ sender: UIButton) {
-        
+        print("tapped")
         if let nameFieldText = nameField.text {
             if nameFieldText != "" {
                 name = nameFieldText
+                let baby = Baby(name: name!, birthDate: BabyStore.shared.baby.birthDate, pregnantDate: BabyStore.shared.baby.pregnantDate)
+                BabyStore.shared.updateBaby(baby: baby) { (_) in
+                    BabyStore.shared.fetchBaby(completion: { (baby) in
+                        // 에러 처리 필요
+                    
+                    })
+                    self.dismiss(animated: true, completion: nil)
+                }
             } else {
                 name = nil
+                let alertController = UIAlertController(title: nil, message: "태명이 유효하지 않습니다.", preferredStyle: .alert)
+                let doneAction = UIAlertAction(title: "확인", style: .default, handler: nil)
+                alertController.addAction(doneAction)
+                self.present(alertController, animated: true, completion: nil)
+                return
             }
-        }
-        
-        BabyStore.shared.updateBaby(name: name, pregnantDate: pregnantDate, birthDate: birthDate) { (_) in
-            self.dismiss(animated: true, completion: nil)
         }
     }
     

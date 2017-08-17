@@ -275,6 +275,30 @@ extension FireBaseAPI {
         })
     }
     
+    static func updateBaby(baby: Baby, completion: @escaping (BabyResult)->()) {
+        guard let uid = Auth.auth().currentUser?.uid else {
+            print(FireBaseAPIError.invalidUser)
+            return
+        }
+        
+        let post = [
+            BabyPayloadName.name.rawValue: baby.name,
+            BabyPayloadName.pregnantDate.rawValue: baby.pregnantDate,
+            BabyPayloadName.birthDate.rawValue: baby.birthDate,
+            ] as [String : Any]
+
+        ref.child(FireBaseDirectoryName.babies.rawValue).child(uid).updateChildValues(post) { (error, ref) in
+            if let error = error {
+                print(error)
+                completion(BabyResult.failure(error))
+            } else {
+                completion(BabyResult.success(baby))
+            }
+        }
+    }
+
+    
+    
     static private func baby(from json: [String: Any]) -> Baby? {
         var baby = Baby()
         

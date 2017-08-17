@@ -92,7 +92,6 @@ class HomeViewController: BaseViewController {
         }
     }
     
-    
     // MARK: - Actions
     
     @IBAction func presentCameraView() {
@@ -100,9 +99,8 @@ class HomeViewController: BaseViewController {
         let viewController = cameraSB.instantiateViewController(withIdentifier: "CameraViewController")
         
         self.present(viewController, animated: true, completion: nil)
-        
-        
     }
+    
     
     func beginBabyAnimation () {
         UIImageView.animate(withDuration: 8.0, delay:0, options: [.repeat, .autoreverse, .curveEaseInOut], animations: {
@@ -119,6 +117,7 @@ class HomeViewController: BaseViewController {
 }
 
 
+
 class BabyView: UIView {
     
     override func draw(_ rect: CGRect) {
@@ -127,3 +126,4 @@ class BabyView: UIView {
     }
     
 }
+

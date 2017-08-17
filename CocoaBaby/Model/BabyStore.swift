@@ -63,8 +63,15 @@ class BabyStore {
         }
     }
     
-    func updateBaby(name: String?, pregnantDate: Date?, birthDate: Date?, completion: ((Baby) -> ())?) {
-        
+    func updateBaby(baby: Baby, completion: @escaping (BabyResult) -> ()) {
+        FireBaseAPI.updateBaby(baby: baby) { (result) in
+            switch result {
+            case .success(_):
+                completion(result)
+            case .failure(_):
+                completion(result)
+            }
+        }
     }
     
     func deleteBaby() {
