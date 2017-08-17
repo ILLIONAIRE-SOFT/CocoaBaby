@@ -18,12 +18,24 @@ class HomeViewController: BaseViewController {
     @IBOutlet var infoLabel: UILabel!
     @IBOutlet var weekLabel: UILabel!
     
+    var waterDropView : WaterDropView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let waterDropViewFrame = CGRect(x: 0, y: 0, width: self.babyView.frame.width, height: self.babyView.frame.height)
         
-        let waterDropView = WaterDropView(frame: waterDropViewFrame,
+        babyImageView.image = UIImage(named: "CocoaBaby")?.withRenderingMode(.alwaysTemplate)
+        babyImageView.tintColor = UIColor.mainBlueColor
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        updateBabyInfo()
+        updateInfoLabel(week: BabyStore.shared.getPregnantWeek().week)
+
+        let waterDropViewFrame = CGRect(x: 0, y: 0, width: self.babyView.frame.width, height: self.babyView.frame.height)
+
+        waterDropView = WaterDropView(frame: waterDropViewFrame,
                                           direction: .up,
                                           waterDropNum: 10,
                                           color: UIColor.init(colorWithHexValue: 0xFFFFFF, alpha: 0.6),
@@ -33,24 +45,21 @@ class HomeViewController: BaseViewController {
                                           maxLength: 270,
                                           minDuration: 8,
                                           maxDuration: 14)
-        self.babyView.addSubview(waterDropView)
-        
+        self.babyView.addSubview(waterDropView!)
         babyImageView.image = UIImage(named: "CocoaBaby")?.withRenderingMode(.alwaysTemplate)
         babyImageView.tintColor = UIColor.mainBlueColor
-        
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
         updateBabyInfo()
         updateInfoLabel(week: BabyStore.shared.getPregnantWeek().week)
         self.beginBabyAnimation()
+
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        waterDropView?.remove()
+        waterDropView = nil
+
     }
     
     // MARK: - Methods
