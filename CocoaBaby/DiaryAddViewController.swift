@@ -177,6 +177,11 @@ class DiaryAddViewController: DiaryBaseViewController {
         saveDiary()
     }
     
+    @IBAction func tappedPush(_ sender: UIButton) {
+        PushManager.pushToPartner(deviceToken: "")
+    }
+    
+    
     // MARK: Methods
     func saveDiary() {
         guard var diary = diary else {
