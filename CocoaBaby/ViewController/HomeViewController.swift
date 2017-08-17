@@ -21,6 +21,19 @@ class HomeViewController: BaseViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        let waterDropViewFrame = CGRect(x: 0, y: 0, width: self.babyView.frame.width, height: self.babyView.frame.height)
+        let waterDropView = WaterDropView(frame: waterDropViewFrame,
+                                          direction: .up,
+                                          waterDropNum: 10,
+                                          color: UIColor.red,
+                                          minDropSize: 5,
+                                          maxDropSize: 10,
+                                          minLength: 30,
+                                          maxLength: 100,
+                                          minDuration: 3,
+                                          maxDuration: 5)
+        self.babyView.addSubview(waterDropView)
+
         
         babyImageView.image = UIImage(named: "CocoaBaby")?.withRenderingMode(.alwaysTemplate)
         babyImageView.tintColor = UIColor.mainBlueColor
@@ -35,17 +48,6 @@ class HomeViewController: BaseViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        let waterDropView = WaterDropView(frame: self.view.frame,
-                                          direction: .up,
-                                          waterDropNum: 10,
-                                          color: UIColor(colorWithHexValue: 0xE3BCC3, alpha: 0.7),
-                                          minDropSize: 5,
-                                          maxDropSize: 10,
-                                          minLength: 30,
-                                          maxLength: 100,
-                                          minDuration: 3,
-                                          maxDuration: 5)
-        self.view.addSubview(waterDropView)
         
     }
     

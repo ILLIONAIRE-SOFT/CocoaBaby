@@ -602,11 +602,11 @@
 				TargetAttributes = {
 					49F6C7781F318AF200373F06 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 23EFP3FERN;
+						DevelopmentTeam = 34UH748CF3;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Push = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.iCloud = {
 								enabled = 0;
@@ -1085,8 +1085,7 @@
 			baseConfigurationReference = 59B3D35B11C642E2AC5DE763 /* Pods-CocoaBaby.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = CocoaBaby/CocoaBaby.entitlements;
-				DEVELOPMENT_TEAM = 23EFP3FERN;
+				DEVELOPMENT_TEAM = 34UH748CF3;
 				INFOPLIST_FILE = CocoaBaby/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Sohn.CocoaBaby;
@@ -1101,8 +1100,7 @@
 			baseConfigurationReference = 82B4242C76CF19998F67AC6F /* Pods-CocoaBaby.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = CocoaBaby/CocoaBaby.entitlements;
-				DEVELOPMENT_TEAM = 23EFP3FERN;
+				DEVELOPMENT_TEAM = 34UH748CF3;
 				INFOPLIST_FILE = CocoaBaby/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.Sohn.CocoaBaby;

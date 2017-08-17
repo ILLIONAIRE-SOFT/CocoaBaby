@@ -67,8 +67,6 @@ class WaterDropView: UIView {
         
         let randomDecrease: CGFloat =  CGFloat(arc4random_uniform(UInt32(config.maxLength - config.minLength))) + config.minLength
         
-        print(randomDecrease)
-        
         let waterDrop = UIView(frame: CGRect(x: randomX, y: self.frame.height, width: randomSize, height: randomSize))
         waterDrop.backgroundColor = config.color
         waterDrop.layer.cornerRadius = randomSize/2
