@@ -101,11 +101,12 @@ class HomeViewController: BaseViewController {
         self.present(viewController, animated: true, completion: nil)
     }
 
-class BabyView: UIView {
-    
-    override func draw(_ rect: CGRect) {
-        super.draw(rect)
-        self.layer.cornerRadius = self.frame.width/2
+    class BabyView: UIView {
+        
+        override func draw(_ rect: CGRect) {
+            super.draw(rect)
+            self.layer.cornerRadius = self.frame.width/2
+        }
+        
     }
-    
 }
