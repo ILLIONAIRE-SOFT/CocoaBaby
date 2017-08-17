@@ -8,6 +8,7 @@ target 'CocoaBaby' do
   pod 'Firebase/Core'
   pod 'Firebase/Database'
   pod 'Firebase/Auth'
+  pod 'Firebase/Messaging'
   pod 'GoogleSignIn'
 
   # Pods for CocoaBaby
