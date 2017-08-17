@@ -140,6 +140,9 @@ class DiaryAddViewController: DiaryBaseViewController {
                 case let .success(diary):
                     self.diary = diary
                     self.updateOriginalValue(diary: diary)
+                    if let token = UserStore.shared.user?.partnerDeviceToken {
+                        PushManager.notifyCommentWrite(deviceToken: token)
+                    }
                     return
                 case .failure(_):
                     return
@@ -178,7 +181,7 @@ class DiaryAddViewController: DiaryBaseViewController {
     }
     
     @IBAction func tappedPush(_ sender: UIButton) {
-        PushManager.pushToPartner(deviceToken: "")
+//        PushManager.pushToPartner(deviceToken: "")
     }
     
     
@@ -195,7 +198,10 @@ class DiaryAddViewController: DiaryBaseViewController {
                 switch result {
                 case .success(_):
                     // if partner 존재하면
-                    PushManager.pushToPartner(deviceToken: "")
+                    if let token = UserStore.shared.user?.partnerDeviceToken {
+                        PushManager.notifyDiaryWrite(deviceToken: token)
+                    }
+                    
                     self.dismiss(animated: true, completion: nil)
                     
                     
@@ -208,8 +214,10 @@ class DiaryAddViewController: DiaryBaseViewController {
             DiaryStore.shared.saveDiary(diary: diary) { (result) in
                 switch result {
                 case .success(_):
-                    // if partner 존재하면
-                    PushManager.pushToPartner(deviceToken: "")
+                    if let token = UserStore.shared.user?.partnerDeviceToken {
+                        PushManager.notifyDiaryWrite(deviceToken: token)
+                    }
+                    
                     self.dismiss(animated: true, completion: nil)
                     
                 case let .failure(error):

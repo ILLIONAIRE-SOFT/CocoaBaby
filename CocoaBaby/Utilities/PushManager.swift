@@ -13,17 +13,32 @@ struct PushManager {
     static var serverURL: String = "http://13.124.140.81"
     static var port: String = "8080"
     static var diaryNotiURL: String = "/notification/diary"
+    static var commentNotiURL: String = "/notification/comment"
     
-    static func pushToPartner(deviceToken: String) {
+    static func notifyDiaryWrite(deviceToken: String) {
         
-        guard let url = URL(string: "\(serverURL):\(port)") else {
+        guard let url = URL(string: "\(serverURL):\(port)\(diaryNotiURL)/\(deviceToken)") else {
             return
         }
         
         var request = URLRequest(url: url)
         request.httpMethod = "GET"
-
-//        var params = ["deviceToken": "1234"]
+        
+        let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
+            if let error = error {
+                print(error)
+            }
+        }
+        task.resume()
+    }
+    
+    static func notifyCommentWrite(deviceToken: String) {
+        guard let url = URL(string: "\(serverURL):\(port)\(commentNotiURL)/\(deviceToken)") else {
+            return
+        }
+        
+        var request = URLRequest(url: url)
+        request.httpMethod = "GET"
         
         let task = URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let error = error {
