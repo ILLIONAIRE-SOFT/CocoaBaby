@@ -38,18 +38,6 @@ class BabyStore {
     
     var baby: Baby! = nil
     
-    let persistentContainer: NSPersistentContainer = {
-        
-        let container = NSPersistentContainer(name: "CocoaBaby")
-        container.loadPersistentStores(completionHandler: { (description, error) in
-            if let error = error {
-                print("Error setting up Core Data (\(error))")
-            }
-        })
-        return container
-    }()
-    
-    
     func fetchBaby(completion: @escaping (Baby?) -> ()) {
         
         FireBaseAPI.fetchBaby { (result) in

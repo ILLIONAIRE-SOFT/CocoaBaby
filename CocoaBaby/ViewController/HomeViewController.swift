@@ -17,21 +17,22 @@ class HomeViewController: BaseViewController {
     @IBOutlet var dDayLabel: UILabel!
     @IBOutlet var infoLabel: UILabel!
     @IBOutlet var weekLabel: UILabel!
-
-
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let waterDropViewFrame = CGRect(x: 0, y: 0, width: self.babyView.frame.width, height: self.babyView.frame.height)
+        
         let waterDropView = WaterDropView(frame: waterDropViewFrame,
                                           direction: .up,
                                           waterDropNum: 10,
-                                          color: UIColor.red,
-                                          minDropSize: 5,
+                                          color: UIColor.init(colorWithHexValue: 0xFFFFFF, alpha: 0.6),
+                                          minDropSize: 4,
                                           maxDropSize: 10,
-                                          minLength: 30,
-                                          maxLength: 100,
-                                          minDuration: 3,
-                                          maxDuration: 5)
+                                          minLength: 40,
+                                          maxLength: 270,
+                                          minDuration: 8,
+                                          maxDuration: 14)
         self.babyView.addSubview(waterDropView)
 
         
@@ -44,6 +45,7 @@ class HomeViewController: BaseViewController {
         
         updateBabyInfo()
         updateInfoLabel(week: BabyStore.shared.getPregnantWeek().week)
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -98,8 +100,6 @@ class HomeViewController: BaseViewController {
         
         self.present(viewController, animated: true, completion: nil)
     }
-}
-
 
 class BabyView: UIView {
     
