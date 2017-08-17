@@ -194,7 +194,10 @@ class DiaryAddViewController: DiaryBaseViewController {
             DiaryStore.shared.updateDiary(diary: diary, completion: { (result) in
                 switch result {
                 case .success(_):
+                    // if partner 존재하면
+                    PushManager.pushToPartner(deviceToken: "")
                     self.dismiss(animated: true, completion: nil)
+                    
                     
                 case let .failure(error):
                     print(error)
@@ -205,6 +208,8 @@ class DiaryAddViewController: DiaryBaseViewController {
             DiaryStore.shared.saveDiary(diary: diary) { (result) in
                 switch result {
                 case .success(_):
+                    // if partner 존재하면
+                    PushManager.pushToPartner(deviceToken: "")
                     self.dismiss(animated: true, completion: nil)
                     
                 case let .failure(error):
