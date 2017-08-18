@@ -158,7 +158,7 @@ class SettingsViewController: BaseViewController {
         let doneAction = UIAlertAction(title: "Done", style: .default) { (action) in
             ShareHelper.unlinkWithPartner(completion: { (result) in
                 switch result {
-                case.success():
+                case .success():
                     UserStore.shared.fetchUser { (result) in
                         switch result {
                         case .success(_):

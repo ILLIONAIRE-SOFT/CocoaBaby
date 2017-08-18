@@ -12,30 +12,32 @@ import GoogleSignIn
 import UserNotifications
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, GIDSignInUIDelegate, UNUserNotificationCenterDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUserNotificationCenterDelegate {
 
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         FirebaseApp.configure()
-        Database.database().isPersistenceEnabled = false
-        
-        if let uid = Auth.auth().currentUser?.uid {
-            let babyRef = Database.database().reference(withPath: "babies/\(uid)")
-            babyRef.keepSynced(true)
-            
-            let diaryRef = Database.database().reference(withPath: "diaries/\(uid)")
-            diaryRef.keepSynced(true)
-        }
         
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
+        
+        Database.database().isPersistenceEnabled = false
+        
+//        if let uid = Auth.auth().currentUser?.uid {
+//            let babyRef = Database.database().reference(withPath: "babies/\(uid)")
+//            babyRef.keepSynced(true)
+//            
+//            let diaryRef = Database.database().reference(withPath: "diaries/\(uid)")
+//            diaryRef.keepSynced(true)
+//        }
         
         UINavigationBar.appearance().barStyle = .blackOpaque
         
         // MARK: Notification Settings
         if #available(iOS 10.0, *) {
+            print("Request Notification Authorization")
             UNUserNotificationCenter.current().delegate = self
             
             let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
@@ -50,10 +52,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, GIDSig
         application.registerForRemoteNotifications()
         
         // 실행안됨
-        if let token = Messaging.messaging().apnsToken {
-            let tokenString = token.reduce("", {$0 + String(format: "%02X", $1)})
-            print("APN token: \(tokenString)")
-        }
+//        if let token = Messaging.messaging().apnsToken {
+//            let tokenString = token.reduce("", {$0 + String(format: "%02X", $1)})
+//            print("APN token: \(tokenString)")
+//        }
         
         return true
     }
@@ -124,6 +126,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, GIDSig
                 print(error)
                 return
             }
+            
+            print("AppDelegate didSignInFor")
             
             let mainSB = UIStoryboard(name: "Main", bundle: nil)
             let viewController = mainSB.instantiateViewController(withIdentifier: "SplashViewController")

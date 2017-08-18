@@ -25,20 +25,25 @@ class SplashViewController: UIViewController {
         
         if Auth.auth().currentUser != nil {
             UserStore.shared.fetchUser(completion: { (result) in
+                print("SplashViewController: User is not nil fetch user")
                 switch result {
                 case .success(_):
                     BabyStore.shared.fetchBaby(completion: { (baby) in
                         if baby != nil {
+                            print("SplashViewController: Baby Exist go to MainTabBar")
                             self.presentMainTabViewController()
                         } else {
+                            print("SplashViewController: Baby not exist go to TutorialViewController")
                             self.presentTutorialViewController()
                         }
                     })                    
                 case .failure(_): // UserSettingsViewController로 이동
+                    print("SplashViewController: Go to user setting.")
                     self.presentUserSettingsViewController()
                 }
             })
         } else {
+            print("SplashViewController: User is nil go to LoginViewController")
             presentLoginViewController()
         }
     }
