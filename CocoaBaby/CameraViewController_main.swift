@@ -20,10 +20,14 @@ class CameraViewController: UIViewController {
     var captureDevice : AVCaptureDevice?
     var previewLayer : AVCaptureVideoPreviewLayer?
     var frontCamera : Bool = false
-    var stillImageOutput : AVCaptureStillImageOutput = AVCaptureStillImageOutput()
+    var photoOutput : AVCapturePhotoOutput = AVCapturePhotoOutput()
+    var photoSetting : AVCapturePhotoSettings = AVCapturePhotoSettings()
     
     @IBOutlet var flashBtn: UIButton!
     @IBOutlet var guideBtn: UIButton!
+    
+    var photoSampleBuffer: CMSampleBuffer?
+    var previewPhotoSampleBuffer: CMSampleBuffer?
     
     var guideImageView = UIImageView()
     var isGuideActive : Bool = false
@@ -53,6 +57,7 @@ class CameraViewController: UIViewController {
         guideImageView.isHidden = false
     }
     @IBAction func modalDismiss(_ sender: Any) {
+        captureSession.stopRunning()
         self.dismiss(animated: true, completion: nil)
     }
     

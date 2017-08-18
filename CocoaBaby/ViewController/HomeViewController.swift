@@ -129,7 +129,7 @@ class HomeViewController: BaseViewController {
             UIGraphicsBeginImageContext(self.view.frame.size)
             UIImage(named: "bgNight")?.draw(in: self.view.bounds)
 
-            var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+            let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
             UIGraphicsEndImageContext()
             self.view.backgroundColor = UIColor(patternImage: image)
             
