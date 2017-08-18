@@ -155,14 +155,21 @@ class SettingsViewController: BaseViewController {
         
         let doneAction = UIAlertAction(title: "Done", style: .default) { (action) in
             // unlink 처리
-            UserStore.shared.fetchUser { (result) in
+            ShareHelper.unlinkWithPartner(completion: { (result) in
                 switch result {
-                case .success(_):
-                    self.showComplete()
-                case .failure(_):
+                case.success():
+                    UserStore.shared.fetchUser { (result) in
+                        switch result {
+                        case .success(_):
+                            self.showComplete()
+                        case .failure(_):
+                            return
+                        }
+                    }
+                case .failure():
                     return
                 }
-            }
+            })
         }
         
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
