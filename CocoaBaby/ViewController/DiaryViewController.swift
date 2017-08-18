@@ -96,6 +96,19 @@ class DiaryViewController: BaseViewController {
         }
     }
     
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        switch identifier {
+        case "tappedEmptyCell":
+            if UserStore.shared.user?.gender == "male" {
+                return false
+            } else {
+                return true
+            }
+        default:
+            return true
+        }
+    }
+    
     // MARK: Methods
     func fetchDiaries() {
         startLoading()
