@@ -94,16 +94,35 @@
                                                                     </subviews>
                                                                 </stackView>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="NU7-pY-iK1">
-                                                                    <rect key="frame" x="42.5" y="0.0" width="258.5" height="48"/>
+                                                                    <rect key="frame" x="42.5" y="0.0" width="222.5" height="48"/>
                                                                     <subviews>
                                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="249" horizontalCompressionResistancePriority="749" text="Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="58A-Nt-Plp">
-                                                                            <rect key="frame" x="0.0" y="0.0" width="258.5" height="48"/>
+                                                                            <rect key="frame" x="0.0" y="0.0" width="222.5" height="48"/>
                                                                             <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                                             <nil key="textColor"/>
                                                                             <nil key="highlightedColor"/>
                                                                         </label>
                                                                     </subviews>
                                                                 </stackView>
+                                                                <view contentMode="scaleToFill" horizontalHuggingPriority="253" horizontalCompressionResistancePriority="748" translatesAutoresizingMaskIntoConstraints="NO" id="B0E-09-aFr">
+                                                                    <rect key="frame" x="281" y="0.0" width="20" height="48"/>
+                                                                    <subviews>
+                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_father_normal" highlightedImage="ic_father_highlited" translatesAutoresizingMaskIntoConstraints="NO" id="4A0-ye-9UC">
+                                                                            <rect key="frame" x="0.0" y="14" width="20" height="20"/>
+                                                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                                            <constraints>
+                                                                                <constraint firstAttribute="height" constant="20" id="U9R-KV-Z8t"/>
+                                                                                <constraint firstAttribute="width" constant="20" id="Ykc-Ok-2ug"/>
+                                                                            </constraints>
+                                                                        </imageView>
+                                                                    </subviews>
+                                                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                                    <constraints>
+                                                                        <constraint firstItem="4A0-ye-9UC" firstAttribute="centerY" secondItem="B0E-09-aFr" secondAttribute="centerY" id="35l-1M-JFY"/>
+                                                                        <constraint firstAttribute="trailing" secondItem="4A0-ye-9UC" secondAttribute="trailing" id="VSx-z6-ISA"/>
+                                                                        <constraint firstItem="4A0-ye-9UC" firstAttribute="leading" secondItem="B0E-09-aFr" secondAttribute="leading" id="sud-hJ-usB"/>
+                                                                    </constraints>
+                                                                </view>
                                                             </subviews>
                                                         </stackView>
                                                     </subviews>
@@ -129,6 +148,7 @@
                                         <connections>
                                             <outlet property="addtionalDate" destination="d2F-Es-fH4" id="i1D-l8-D0U"/>
                                             <outlet property="contentsLabel" destination="58A-Nt-Plp" id="Ta4-lg-8SM"/>
+                                            <outlet property="flagCommentImageView" destination="4A0-ye-9UC" id="3b7-YH-bAW"/>
                                             <outlet property="labelBackgroundView" destination="x4X-fh-F7X" id="LDK-kj-ki8"/>
                                             <outlet property="weekLabel" destination="yk1-r8-W0b" id="Eh4-PB-RQA"/>
                                             <segue destination="Uo9-5P-rrE" kind="show" identifier="tappedDiaryCell" id="JT0-1t-icX"/>
@@ -427,6 +447,8 @@
     <resources>
         <image name="ic_create_white" width="24" height="24"/>
         <image name="ic_date_range_white" width="24" height="24"/>
+        <image name="ic_father_highlited" width="24" height="24"/>
+        <image name="ic_father_normal" width="24" height="24"/>
         <image name="ic_keyboard_hide" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
