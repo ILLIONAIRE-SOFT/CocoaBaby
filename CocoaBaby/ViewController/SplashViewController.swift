@@ -17,9 +17,6 @@ class SplashViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    /// SplashViewController에서 유저 정보가 처음 로그인 한 경우 어떤 화면으로 넘어갈지 결정한다.
-    /// 1. User 정보가 입력되어 있는지 검사해서 UserSettingViewController로 넘어간다.
-    /// - Parameter animated: <#animated description#>
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
@@ -29,7 +26,7 @@ class SplashViewController: UIViewController {
                 switch result {
                 case .success(_):
                     BabyStore.shared.fetchBaby(completion: { (baby) in
-                        if baby != nil {
+                        if baby != nil || UserStore.shared.user?.gender == "male" {
                             print("SplashViewController: Baby Exist go to MainTabBar")
                             self.presentMainTabViewController()
                         } else {
