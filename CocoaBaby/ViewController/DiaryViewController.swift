@@ -156,11 +156,7 @@ class DiaryViewController: BaseViewController {
     
     @IBAction func tappedCalendar(_ sender: UIButton) {
         showDatePicker()
-        
     }
-    
-    
-    
 }
 
 // MARK: UITableViewDelegate, UITableViewDataSource
