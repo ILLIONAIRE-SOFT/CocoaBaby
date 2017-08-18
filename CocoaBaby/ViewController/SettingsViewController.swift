@@ -98,8 +98,6 @@ class SettingsViewController: BaseViewController {
                 
                 self.present(alertController, animated: true, completion: nil)
             }
-            
-            
         }
     }
     
@@ -154,7 +152,6 @@ class SettingsViewController: BaseViewController {
         let alertController = UIAlertController(title: "Unlink with partner", message: "You can`t see partner's diary", preferredStyle: .alert)
         
         let doneAction = UIAlertAction(title: "Done", style: .default) { (action) in
-            // unlink 처리
             ShareHelper.unlinkWithPartner(completion: { (result) in
                 switch result {
                 case.success():
