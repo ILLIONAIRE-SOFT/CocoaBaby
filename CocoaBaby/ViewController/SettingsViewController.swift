@@ -38,11 +38,24 @@ class SettingsViewController: BaseViewController {
     @IBAction func tappedLogout(_ sender: UIButton) {
         let firebaseAuth = Auth.auth()
         
-        do {
-            try firebaseAuth.signOut()
-        } catch let signOutError {
-            print("Error sigining out: %@", signOutError)
+        let alertController = UIAlertController(title: "Do you want logout?", message: nil, preferredStyle: .alert)
+        
+        let doneAction = UIAlertAction(title: "Yes", style: .default) { (_) in
+            do {
+                try firebaseAuth.signOut()
+            } catch let signOutError {
+                print("Error sigining out: %@", signOutError)
+            }
+            
+            // logout and Go to splash view
         }
+        
+        let cancelAction = UIAlertAction(title: "No", style: .cancel, handler: nil)
+        
+        alertController.addAction(doneAction)
+        alertController.addAction(cancelAction)
+        
+        present(alertController, animated: true, completion: nil)
     }
     
     @IBAction func tappedShare(_ sender: UIButton) {
