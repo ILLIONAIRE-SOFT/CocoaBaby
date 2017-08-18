@@ -81,28 +81,6 @@ extension CameraViewController : AVCapturePhotoCaptureDelegate {
             let photoSettings = AVCapturePhotoSettings(format: [AVVideoCodecKey : AVVideoCodecJPEG])
             self.photoOutput.capturePhoto(with: photoSettings, delegate: self)
         }
-        
-        
-
-        
-//        if let videoConnection = photoOutput.connection(withMediaType: AVMediaTypeVideo) {
-
-            //            photoOutput.captureStillImageAsynchronously(from: videoConnection, completionHandler: { (imageDataSampleBuffer, error) in
-//                let imageData = AVCaptureStillImageOutput.jpegStillImageNSDataRepresentation(imageDataSampleBuffer)
-//                let image = UIImage(data: imageData!)
-//                print("image taked : \(image!)")
-//                
-//                
-//                let cropImage = ImageService.cropImageToSquare(image: image!)
-//                
-//                _ = ImageService.merge(image: cropImage!, cameraViewLabel: self.weekUILabel, cameraViewWidth: self.cameraView.frame.width)
-//                
-//                
-//                print("image croped : \(cropImage!)")
-//                
-//                self.cameraView.backgroundColor = UIColor(patternImage: image!)
-//            })
-//        }
     }
     
     func capture(_ captureOutput: AVCapturePhotoOutput, didFinishProcessingPhotoSampleBuffer photoSampleBuffer: CMSampleBuffer?, previewPhotoSampleBuffer: CMSampleBuffer?, resolvedSettings: AVCaptureResolvedPhotoSettings, bracketSettings: AVCaptureBracketedStillImageSettings?, error: Error?) {
@@ -115,11 +93,6 @@ extension CameraViewController : AVCapturePhotoCaptureDelegate {
         self.photoSampleBuffer = photoSampleBuffer
         self.previewPhotoSampleBuffer = previewPhotoSampleBuffer
     }
-    
-//     func capture(_ captureOutput: AVCapturePhotoOutput, didFinishProcessingRawPhotoSampleBuffer rawSampleBuffer: CMSampleBuffer?, previewPhotoSampleBuffer: CMSampleBuffer?, resolvedSettings: AVCaptureResolvedPhotoSettings, bracketSettings: AVCaptureBracketedStillImageSettings?, error: Error?) {
-//        
-//
-//    }
     
     func capture(_ captureOutput: AVCapturePhotoOutput, didFinishCaptureForResolvedSettings resolvedSettings: AVCaptureResolvedPhotoSettings, error: Error?) {
         guard error == nil else {
@@ -160,27 +133,4 @@ extension CameraViewController : AVCapturePhotoCaptureDelegate {
         
         captureSession.commitConfiguration()
     }
-    /*
-    func saveSampleBufferToPhotoLibrary(_ sampleBuffer: CMSampleBuffer,
-                                        previewSampleBuffer: CMSampleBuffer?,
-                                        completionHandler: ((_ success: Bool, _ error: Error?) -> Void)?) {
-        guard let jpegData = AVCapturePhotoOutput.jpegPhotoDataRepresentation(
-            forJPEGSampleBuffer: sampleBuffer,
-            previewPhotoSampleBuffer: previewSampleBuffer)
-            else {
-                print("Unable to create JPEG data.")
-                completionHandler?(false, nil)
-                return
-        }
-        
-        PHPhotoLibrary.shared().performChanges( {
-            let creationRequest = PHAssetCreationRequest.forAsset()
-            creationRequest.addResource(with: PHAssetResourceType.photo, data: jpegData, options: nil)
-        }, completionHandler: { success, error in
-            DispatchQueue.main.async {
-                completionHandler?(success, error)
-            }
-        })
-    }*/
-
 }
