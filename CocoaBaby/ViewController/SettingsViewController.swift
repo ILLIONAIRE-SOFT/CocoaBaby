@@ -121,6 +121,7 @@ class SettingsViewController: BaseViewController {
             let alertController = UIAlertController(title: nil, message: "Only father can link with mom change your gender.", preferredStyle: .alert)
             
             let doneAction = UIAlertAction(title: "Done", style: .default, handler: nil)
+            
             alertController.addAction(doneAction)
             self.present(alertController, animated: true, completion: nil)
             return
@@ -142,7 +143,10 @@ class SettingsViewController: BaseViewController {
             }
         }
         
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
         alertController.addAction(doneAction)
+        alertController.addAction(cancelAction)
         
         self.present(alertController, animated: true, completion: nil)
     }
