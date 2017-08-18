@@ -127,7 +127,7 @@ class HomeViewController: BaseViewController {
         if currentHour > 19 || currentHour < 6 { //Night
             
             UIGraphicsBeginImageContext(self.view.frame.size)
-            UIImage(named: "bgNight")?.draw(in: self.view.bounds)
+            UIImage(named: "cocoaBabyBgNight")?.draw(in: self.view.bounds)
 
             var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
             UIGraphicsEndImageContext()
@@ -137,17 +137,33 @@ class HomeViewController: BaseViewController {
             
             
         } else if currentHour >= 6 || currentHour <= 16{ //morning
-            self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bgNight")!)
-            self.view.contentMode = .scaleAspectFill
+            UIGraphicsBeginImageContext(self.view.frame.size)
+            UIImage(named: "cocoaBabyBgNight")?.draw(in: self.view.bounds)
+            
+            var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+            UIGraphicsEndImageContext()
+            self.view.backgroundColor = UIColor(patternImage: image)
+            
+            //self.babyView.backgroundColor = UIColor.init(colorWithHexValue: 0x000000, alpha: 0.7)
 
         } else if currentHour >= 16 && currentHour <= 19 {
-            self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bgNight")!)
-            self.view.contentMode = .scaleAspectFill
-
+            UIGraphicsBeginImageContext(self.view.frame.size)
+            UIImage(named: "cocoaBabyBgNight")?.draw(in: self.view.bounds)
+            
+            var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+            UIGraphicsEndImageContext()
+            self.view.backgroundColor = UIColor(patternImage: image)
+            
+            //self.babyView.backgroundColor = UIColor.init(colorWithHexValue: 0x000000, alpha: 0.7)
         } else {
-            self.view.backgroundColor = UIColor(patternImage: UIImage(named: "bgNight")!)
-            self.view.contentMode = .scaleAspectFill
-
+            UIGraphicsBeginImageContext(self.view.frame.size)
+            UIImage(named: "cocoaBabyBgNight")?.draw(in: self.view.bounds)
+            
+            var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+            UIGraphicsEndImageContext()
+            self.view.backgroundColor = UIColor(patternImage: image)
+            
+            //self.babyView.backgroundColor = UIColor.init(colorWithHexValue: 0x000000, alpha: 0.7)
         }
         
     }
