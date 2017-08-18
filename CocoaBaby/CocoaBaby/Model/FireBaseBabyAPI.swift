@@ -50,7 +50,7 @@ extension FireBaseAPI {
             return
         }
         
-        if let partnerUID = UserStore.shared.user?.partnerUID {
+        if let partnerUID = UserStore.shared.user?.partnerUID, UserStore.shared.user?.gender == "male" {
             uid = partnerUID
         }
         
