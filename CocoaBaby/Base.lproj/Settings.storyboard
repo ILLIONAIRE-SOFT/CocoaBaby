@@ -71,28 +71,36 @@
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dW6-Fo-bNZ">
                                         <rect key="frame" x="0.0" y="251.5" width="303" height="30"/>
-                                        <state key="normal" title="Share"/>
+                                        <state key="normal" title="Share">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <connections>
                                             <action selector="tappedShare:" destination="IMQ-YG-anA" eventType="touchUpInside" id="uxx-oC-XcQ"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="66g-VN-aE8">
                                         <rect key="frame" x="0.0" y="297.5" width="303" height="30"/>
-                                        <state key="normal" title="Link with mom"/>
+                                        <state key="normal" title="Link with mom">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <connections>
                                             <action selector="tappedLink:" destination="IMQ-YG-anA" eventType="touchUpInside" id="D0w-rf-Mra"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4bq-6a-AVE">
                                         <rect key="frame" x="0.0" y="343.5" width="303" height="30"/>
-                                        <state key="normal" title="Unlink"/>
+                                        <state key="normal" title="Unlink">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                         <connections>
                                             <action selector="tappedUnlink:" destination="IMQ-YG-anA" eventType="touchUpInside" id="vXA-Qg-aDO"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QNy-10-j5o">
                                         <rect key="frame" x="0.0" y="389.5" width="303" height="30"/>
-                                        <state key="normal" title="gender button"/>
+                                        <state key="normal" title="gender button">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
                                     </button>
                                     <view contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="B4x-cg-lWU">
                                         <rect key="frame" x="0.0" y="435.5" width="303" height="139.5"/>
