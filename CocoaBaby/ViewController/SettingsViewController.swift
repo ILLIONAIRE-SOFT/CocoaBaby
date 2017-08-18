@@ -47,7 +47,12 @@ class SettingsViewController: BaseViewController {
                 print("Error sigining out: %@", signOutError)
             }
             
-            // logout and Go to splash view
+            let appDelegate = UIApplication.shared.delegate! as! AppDelegate
+            let mainSB = UIStoryboard(name: "Main", bundle: nil)
+            let viewController = mainSB.instantiateViewController(withIdentifier: "SplashViewController")
+            
+            appDelegate.window?.rootViewController = viewController
+            appDelegate.window?.makeKeyAndVisible()
         }
         
         let cancelAction = UIAlertAction(title: "No", style: .cancel, handler: nil)
