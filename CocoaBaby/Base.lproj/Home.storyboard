@@ -24,7 +24,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="251" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="UXk-Ov-myg">
-                                <rect key="frame" x="28" y="50" width="318" height="553"/>
+                                <rect key="frame" x="28" y="60" width="318" height="543"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cZ-ux-bAi">
                                         <rect key="frame" x="0.0" y="0.0" width="318" height="27.5"/>
@@ -50,13 +50,13 @@
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="748" translatesAutoresizingMaskIntoConstraints="NO" id="WSq-6I-iYr">
-                                        <rect key="frame" x="0.0" y="127" width="318" height="402.5"/>
+                                        <rect key="frame" x="0.0" y="127" width="318" height="392.5"/>
                                         <subviews>
-                                            <view clipsSubviews="YES" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="UoX-Al-Kmz" customClass="BabyView" customModule="CocoaBaby" customModuleProvider="target">
-                                                <rect key="frame" x="16" y="58.5" width="286" height="286"/>
+                                            <view clipsSubviews="YES" alpha="0.88" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="UoX-Al-Kmz" customClass="BabyView" customModule="CocoaBaby" customModuleProvider="target">
+                                                <rect key="frame" x="22" y="59.5" width="274" height="274"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="CocoaBaby" translatesAutoresizingMaskIntoConstraints="NO" id="5t2-ah-DW0">
-                                                        <rect key="frame" x="40" y="40" width="206" height="206"/>
+                                                        <rect key="frame" x="40" y="40" width="194" height="194"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                         <constraints>
                                                             <constraint firstAttribute="width" secondItem="5t2-ah-DW0" secondAttribute="height" multiplier="1:1" id="wQI-vf-3lC"/>
@@ -74,13 +74,13 @@
                                             </view>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="UoX-Al-Kmz" secondAttribute="trailing" constant="16" id="Kd9-sw-aQs"/>
+                                            <constraint firstAttribute="trailing" secondItem="UoX-Al-Kmz" secondAttribute="trailing" constant="22" id="Kd9-sw-aQs"/>
                                             <constraint firstItem="UoX-Al-Kmz" firstAttribute="centerY" secondItem="WSq-6I-iYr" secondAttribute="centerY" id="f8C-xe-GT8"/>
                                             <constraint firstItem="UoX-Al-Kmz" firstAttribute="centerX" secondItem="WSq-6I-iYr" secondAttribute="centerX" id="rpP-8O-NSn"/>
                                         </constraints>
                                     </view>
                                     <label opaque="NO" userInteractionEnabled="NO" alpha="0.89999997615814209" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Op6-Ka-edG">
-                                        <rect key="frame" x="0.0" y="533.5" width="318" height="19.5"/>
+                                        <rect key="frame" x="0.0" y="523.5" width="318" height="19.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
@@ -88,12 +88,12 @@
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gmg-1O-h2v">
-                                <rect key="frame" x="20" y="40" width="25" height="18"/>
+                                <rect key="frame" x="321" y="35" width="25" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="25" id="3ky-MS-8un"/>
-                                    <constraint firstAttribute="width" secondItem="gmg-1O-h2v" secondAttribute="height" multiplier="452:328" id="8RK-xI-6Of"/>
+                                    <constraint firstAttribute="width" secondItem="gmg-1O-h2v" secondAttribute="height" multiplier="1:1" id="8RK-xI-6Of"/>
                                 </constraints>
-                                <state key="normal" image="ic_camera"/>
+                                <state key="normal" image="ic_photo_camera_white"/>
                                 <connections>
                                     <action selector="presentCameraView" destination="r8V-ei-x0C" eventType="touchUpInside" id="KqK-f7-hkt"/>
                                 </connections>
@@ -101,11 +101,11 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
+                            <constraint firstItem="UXk-Ov-myg" firstAttribute="top" secondItem="gmg-1O-h2v" secondAttribute="bottom" id="9Yk-hP-NeW"/>
                             <constraint firstItem="UXk-Ov-myg" firstAttribute="centerX" secondItem="HF2-wf-7sp" secondAttribute="centerX" id="JyW-Tm-dUr"/>
-                            <constraint firstItem="gmg-1O-h2v" firstAttribute="top" secondItem="HF2-wf-7sp" secondAttribute="top" constant="40" id="fQh-DN-8cv"/>
                             <constraint firstItem="997-ew-oh3" firstAttribute="top" secondItem="UXk-Ov-myg" secondAttribute="bottom" constant="64" id="mQ6-Ta-ESz"/>
-                            <constraint firstItem="UXk-Ov-myg" firstAttribute="top" secondItem="Ka9-KU-qB1" secondAttribute="bottom" constant="30" id="q2D-ux-y4S"/>
-                            <constraint firstItem="gmg-1O-h2v" firstAttribute="leading" secondItem="HF2-wf-7sp" secondAttribute="leading" constant="20" id="t7T-ez-Ffg"/>
+                            <constraint firstItem="gmg-1O-h2v" firstAttribute="trailing" secondItem="UXk-Ov-myg" secondAttribute="trailing" id="nFv-SA-aFN"/>
+                            <constraint firstItem="UXk-Ov-myg" firstAttribute="top" secondItem="Ka9-KU-qB1" secondAttribute="bottom" constant="40" id="q2D-ux-y4S"/>
                             <constraint firstItem="UXk-Ov-myg" firstAttribute="leading" secondItem="HF2-wf-7sp" secondAttribute="leadingMargin" constant="12" id="vNo-zM-mcH"/>
                         </constraints>
                     </view>
@@ -129,7 +129,7 @@
     </scenes>
     <resources>
         <image name="CocoaBaby" width="640" height="640"/>
-        <image name="ic_camera" width="452" height="328"/>
         <image name="ic_face_white" width="24" height="24"/>
+        <image name="ic_photo_camera_white" width="24" height="24"/>
     </resources>
 </document>
