@@ -124,7 +124,6 @@ class HomeViewController: BaseViewController {
         
         let date = Date()
         let currentHour = Calendar.current.component(.hour, from: date)
-        print("시간\(date)")
         if currentHour > 19 || currentHour < 6 { //Night
             
             UIGraphicsBeginImageContext(self.view.frame.size)

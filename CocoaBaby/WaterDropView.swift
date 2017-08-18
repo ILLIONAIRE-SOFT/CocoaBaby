@@ -84,7 +84,6 @@ class WaterDropView: UIView {
             waterDrop?.frame.origin.y -= randomDecrease
             waterDrop?.alpha = 0.0
         }, completion: { (Bool) -> Void in
-            print(Bool)
             if Bool {
                 waterDrop = nil
                 self.upRandomWaterDrop(config: config)
