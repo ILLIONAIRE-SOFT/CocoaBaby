@@ -297,7 +297,6 @@
 			children = (
 				49E659161F42E53300D85C53 /* ShareHelper */,
 				49A4B0E31F3DEEF000CC09A7 /* Diary */,
-				49A4B0E21F3DEEC800CC09A7 /* CoreData */,
 				49A4B0E11F3DEDD000CC09A7 /* FireBase */,
 				49B88EAC1F3BF595005043B6 /* User */,
 				DA5C8F301F41A9C800AA3185 /* Tips */,
@@ -324,13 +323,6 @@
 				49C4FA451F46BC6D008068D8 /* FireBaseTipsAPI.swift */,
 			);
 			name = FireBase;
-			sourceTree = "<group>";
-		};
-		49A4B0E21F3DEEC800CC09A7 /* CoreData */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = CoreData;
 			sourceTree = "<group>";
 		};
 		49A4B0E31F3DEEF000CC09A7 /* Diary */ = {
