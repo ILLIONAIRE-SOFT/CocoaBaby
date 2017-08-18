@@ -11,7 +11,7 @@ import CloudKit
 
 class HomeViewController: BaseViewController {
     
-    
+
     @IBOutlet weak var bgView: UIImageView!
     @IBOutlet var babyImageView: UIImageView!
     @IBOutlet var babyView: BabyView!
