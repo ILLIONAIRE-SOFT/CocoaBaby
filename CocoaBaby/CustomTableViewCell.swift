@@ -39,7 +39,11 @@ class CustomTableViewCell: UITableViewCell {
         if let comment = diary.comment {
             if comment != "" {
                 flagCommentImageView.isHighlighted = true
+            } else {
+                flagCommentImageView.isHighlighted = false
             }
+        } else {
+            flagCommentImageView.isHighlighted = false
         }
         
         if weekLabel.text == "SAT" || weekLabel.text == "SUN" {
