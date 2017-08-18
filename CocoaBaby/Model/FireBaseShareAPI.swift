@@ -14,6 +14,16 @@ struct PartnerInfo {
     var deviceToken: String
 }
 
+enum SharePayloadName: String {
+    case uid = "uid"
+    case deviceToken = "deviceToken"
+}
+
+enum ShareResult {
+    case success(Int)
+    case failure()
+}
+
 // MARK: - Share
 extension FireBaseAPI {
     

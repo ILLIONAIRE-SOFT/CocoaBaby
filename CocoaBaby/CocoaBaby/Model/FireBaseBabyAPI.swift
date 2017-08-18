@@ -46,8 +46,12 @@ extension FireBaseAPI {
     }
     
     static func fetchBaby(completion: @escaping (BabyResult) -> ()) {
-        guard let uid = Auth.auth().currentUser?.uid else {
+        guard var uid = Auth.auth().currentUser?.uid else {
             return
+        }
+        
+        if let partnerUID = UserStore.shared.user?.partnerUID {
+            uid = partnerUID
         }
         
         ref.child(FireBaseDirectoryName.babies.rawValue).child(uid).observeSingleEvent(of: .value, with: { (snapshot) in

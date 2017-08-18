@@ -45,11 +45,6 @@ enum TipsPayloadName: String {
     case week = "week"
 }
 
-enum SharePayloadName: String {
-    case uid = "uid"
-    case deviceToken = "deviceToken"
-}
-
 enum DiaryResult {
     case success(Diary)
     case failure(Error)
@@ -58,11 +53,6 @@ enum DiaryResult {
 enum TipsResult {
     case success([Int:Tips])
     case failure(Error)
-}
-
-enum ShareResult {
-    case success(Int)
-    case failure()
 }
 
 struct FireBaseAPI {
