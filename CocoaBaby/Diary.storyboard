@@ -388,20 +388,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2cF-Y4-gb0">
-                                <rect key="frame" x="28" y="50" width="35" height="30"/>
-                                <state key="normal" title="Push"/>
-                                <connections>
-                                    <action selector="tappedPush:" destination="Uo9-5P-rrE" eventType="touchUpInside" id="Y0e-OU-cNb"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="6xb-29-cOe" firstAttribute="centerX" secondItem="46e-b3-zYS" secondAttribute="centerX" id="BNd-Ll-U8k"/>
                             <constraint firstItem="Lyg-e7-sbV" firstAttribute="top" secondItem="FL6-eK-92a" secondAttribute="bottom" constant="32" id="EfL-FL-MLr"/>
                             <constraint firstItem="FL6-eK-92a" firstAttribute="leading" secondItem="46e-b3-zYS" secondAttribute="leadingMargin" constant="12" id="FfU-A5-zTb"/>
-                            <constraint firstItem="2cF-Y4-gb0" firstAttribute="leading" secondItem="FL6-eK-92a" secondAttribute="leading" id="GJi-YO-kCw"/>
                             <constraint firstAttribute="trailing" secondItem="v0f-U7-kzh" secondAttribute="trailing" id="KRq-7H-MTd"/>
                             <constraint firstItem="v0f-U7-kzh" firstAttribute="leading" secondItem="46e-b3-zYS" secondAttribute="leading" id="QNy-oD-DSk"/>
                             <constraint firstItem="481-QA-cKe" firstAttribute="top" secondItem="6xb-29-cOe" secondAttribute="bottom" constant="4" id="QYy-3e-w0P"/>
@@ -413,7 +405,6 @@
                             <constraint firstItem="v0f-U7-kzh" firstAttribute="top" secondItem="Lyg-e7-sbV" secondAttribute="bottom" constant="32" id="hf2-1U-2IF"/>
                             <constraint firstItem="FL6-eK-92a" firstAttribute="top" secondItem="481-QA-cKe" secondAttribute="bottom" constant="32" id="iCa-d3-Kep"/>
                             <constraint firstItem="ch6-W9-ica" firstAttribute="trailing" secondItem="FL6-eK-92a" secondAttribute="trailing" id="plH-yX-hCZ"/>
-                            <constraint firstItem="2cF-Y4-gb0" firstAttribute="top" secondItem="6xb-29-cOe" secondAttribute="top" id="wbG-Yj-htX"/>
                             <constraint firstItem="ch6-W9-ica" firstAttribute="top" secondItem="6xb-29-cOe" secondAttribute="top" id="xEa-0O-7zM"/>
                             <constraint firstItem="C3W-Eo-JCX" firstAttribute="top" secondItem="v0f-U7-kzh" secondAttribute="bottom" id="zWR-X2-ogD"/>
                         </constraints>
