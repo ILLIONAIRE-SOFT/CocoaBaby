@@ -56,6 +56,18 @@ class ShareHelper {
         }
     }
     
+    static func unlinkWithPartner(completion: @escaping (LinkResult) -> ()) {
+        
+        FireBaseAPI.unlinkWithPartner { (linkResult) in
+            switch linkResult {
+            case .success():
+                completion(linkResult)
+            case .failure():
+                completion(linkResult)
+            }
+        }
+    }
+    
     static func generateShareCode() {
         let code: Int = Int(arc4random_uniform(UInt32(899999)) + UInt32(10000))
         

@@ -24,6 +24,11 @@ enum ShareResult {
     case failure()
 }
 
+enum LinkResult {
+    case success()
+    case failure()
+}
+
 // MARK: - Share
 extension FireBaseAPI {
     
@@ -114,6 +119,31 @@ extension FireBaseAPI {
                 return
             }
         })
+    }
+    
+    static func unlinkWithPartner(completion: @escaping (LinkResult) -> ()) {
+        guard let uid = Auth.auth().currentUser?.uid,
+              let partnerUID = UserStore.shared.user?.partnerUID else {
+            print(FireBaseAPIError.invalidUser)
+            return
+        }
+        
+        let post = [
+            UserPayloadName.partnerUID.rawValue: "",
+            UserPayloadName.partnerDeviceToken.rawValue: ""
+            ] as [String : Any]
+        
+        ref.child(FireBaseDirectoryName.users.rawValue).child(partnerUID).updateChildValues(post) { (error, ref) in
+            self.ref.child(FireBaseDirectoryName.users.rawValue).child(uid).updateChildValues(post, withCompletionBlock: { (error, ref) in
+                if let _ = error {
+                    completion(LinkResult.failure())
+                } else {
+                    completion(LinkResult.success())
+                }
+            })
+        }
+        // 상대방의 uid로 접근해서 partner uid, partner device token 삭제하고 자신것도 삭제
+        
     }
     
     static private func partnerInfo(from json: [String:Any]) -> PartnerInfo? {

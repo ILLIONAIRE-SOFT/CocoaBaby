@@ -149,6 +149,30 @@ class SettingsViewController: BaseViewController {
         self.present(alertController, animated: true, completion: nil)
     }
     
+    @IBAction func tappedUnlink(_ sender: UIButton) {
+        
+        let alertController = UIAlertController(title: "Unlink with partner", message: "You can`t see partner's diary", preferredStyle: .alert)
+        
+        let doneAction = UIAlertAction(title: "Done", style: .default) { (action) in
+            // unlink 처리
+            UserStore.shared.fetchUser { (result) in
+                switch result {
+                case .success(_):
+                    self.showComplete()
+                case .failure(_):
+                    return
+                }
+            }
+        }
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        
+        alertController.addAction(doneAction)
+        alertController.addAction(cancelAction)
+        
+        present(alertController, animated: true, completion: nil)
+    }
+    
     func showComplete() {
         let alertController = UIAlertController(title: "Success", message: "Link complete", preferredStyle: .alert)
         
