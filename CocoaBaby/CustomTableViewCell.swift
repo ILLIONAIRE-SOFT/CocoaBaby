@@ -22,6 +22,7 @@ class CustomTableViewCell: UITableViewCell {
         
         labelBackgroundView.layer.cornerRadius = 30
         self.selectionStyle = UITableViewCellSelectionStyle.none
+        //self.flagCommentImageView.tintColor = UIColor.init(colorWithHexValue: 0xDF6C7E, alpha: 1)
         
     }
     
@@ -45,7 +46,8 @@ class CustomTableViewCell: UITableViewCell {
         } else {
             flagCommentImageView.isHighlighted = false
         }
-        
+   
+
         if weekLabel.text == "SAT" || weekLabel.text == "SUN" {
             self.weekLabel.textColor = UIColor.init(colorWithHexValue: 0xDF6C7E)
         } else {

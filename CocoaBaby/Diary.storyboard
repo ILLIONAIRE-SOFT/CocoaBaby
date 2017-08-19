@@ -107,7 +107,7 @@
                                                                 <view contentMode="scaleToFill" horizontalHuggingPriority="253" horizontalCompressionResistancePriority="748" translatesAutoresizingMaskIntoConstraints="NO" id="B0E-09-aFr">
                                                                     <rect key="frame" x="281" y="0.0" width="20" height="48"/>
                                                                     <subviews>
-                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_father_normal" highlightedImage="ic_father_highlited" translatesAutoresizingMaskIntoConstraints="NO" id="4A0-ye-9UC">
+                                                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_favorite_border" highlightedImage="ic_favorite" translatesAutoresizingMaskIntoConstraints="NO" id="4A0-ye-9UC">
                                                                             <rect key="frame" x="0.0" y="14" width="20" height="20"/>
                                                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                                             <constraints>
@@ -438,8 +438,8 @@
     <resources>
         <image name="ic_create_white" width="24" height="24"/>
         <image name="ic_date_range_white" width="24" height="24"/>
-        <image name="ic_father_highlited" width="24" height="24"/>
-        <image name="ic_father_normal" width="24" height="24"/>
+        <image name="ic_favorite" width="24" height="24"/>
+        <image name="ic_favorite_border" width="24" height="24"/>
         <image name="ic_keyboard_hide" width="24" height="24"/>
     </resources>
     <inferredMetricsTieBreakers>
