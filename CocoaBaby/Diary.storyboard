@@ -379,8 +379,11 @@
                                 <color key="barTintColor" red="0.96078431372549022" green="0.80784313725490198" blue="0.792156862745098" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
                             </toolbar>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ch6-W9-ica">
-                                <rect key="frame" x="280" y="50" width="67" height="30"/>
-                                <state key="normal" title="Comment"/>
+                                <rect key="frame" x="304" y="50" width="43" height="23"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="9"/>
+                                <state key="normal" title="Comment">
+                                    <color key="titleColor" red="0.87450980389999999" green="0.42352941179999998" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lyg-e7-sbV">
                                 <rect key="frame" x="47" y="595" width="0.0" height="0.0"/>
