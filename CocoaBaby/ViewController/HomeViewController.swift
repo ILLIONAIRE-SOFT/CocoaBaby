@@ -8,6 +8,7 @@
 
 import UIKit
 import CloudKit
+import WaterDrops
 
 class HomeViewController: BaseViewController {
     
@@ -20,7 +21,7 @@ class HomeViewController: BaseViewController {
     @IBOutlet var infoLabel: UILabel!
     @IBOutlet var weekLabel: UILabel!
     
-    var waterDropView : WaterDropView?
+    var waterDropsView : WaterDropsView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,19 +38,20 @@ class HomeViewController: BaseViewController {
         updateBabyInfo()
         updateInfoLabel(week: BabyStore.shared.getPregnantWeek().week)
 
-        let waterDropViewFrame = CGRect(x: 0, y: 0, width: self.babyView.frame.width, height: self.babyView.frame.height)
+        let waterDropsViewFrame = CGRect(x: 0, y: 0, width: self.babyView.frame.width, height: self.babyView.frame.height)
 
-        waterDropView = WaterDropView(frame: waterDropViewFrame,
-                                          direction: .up,
-                                          waterDropNum: 10,
-                                          color: UIColor.init(colorWithHexValue: 0xFFFFFF, alpha: 0.6),
-                                          minDropSize: 4,
-                                          maxDropSize: 10,
-                                          minLength: 40,
-                                          maxLength: 270,
-                                          minDuration: 8,
-                                          maxDuration: 14)
-        self.babyView.addSubview(waterDropView!)
+        waterDropsView = WaterDropsView(frame: waterDropsViewFrame,
+                                            direction: .up,
+                                            dropNum: 10,
+                                            color: UIColor.init(colorWithHexValue: 0xFFFFFF, alpha: 0.6),
+                                            minDropSize: 4,
+                                            maxDropSize: 10,
+                                            minLength: 40,
+                                            maxLength: 270,
+                                            minDuration: 8,
+                                            maxDuration: 14)
+        waterDropsView?.addAnimation()
+        self.babyView.addSubview(waterDropsView!)
         babyImageView.image = UIImage(named: "CocoaBaby")?.withRenderingMode(.alwaysTemplate)
         babyImageView.tintColor = UIColor.mainBlueColor
         updateBabyInfo()

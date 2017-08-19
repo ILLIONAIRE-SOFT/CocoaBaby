@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_CocoaBabyUITestsVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_CocoaBabyUITestsVersionString[];
+FOUNDATION_EXPORT double WaterDropsVersionNumber;
+FOUNDATION_EXPORT const unsigned char WaterDropsVersionString[];
 

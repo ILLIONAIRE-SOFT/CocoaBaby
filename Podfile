@@ -10,6 +10,7 @@ target 'CocoaBaby' do
   pod 'Firebase/Auth'
   pod 'Firebase/Messaging'
   pod 'GoogleSignIn'
+  pod 'WaterDrops'
 
   # Pods for CocoaBaby
 
