@@ -38,11 +38,29 @@ class SettingsViewController: BaseViewController {
     @IBAction func tappedLogout(_ sender: UIButton) {
         let firebaseAuth = Auth.auth()
         
-        do {
-            try firebaseAuth.signOut()
-        } catch let signOutError {
-            print("Error sigining out: %@", signOutError)
+        let alertController = UIAlertController(title: "Do you want logout?", message: nil, preferredStyle: .alert)
+        
+        let doneAction = UIAlertAction(title: "Yes", style: .default) { (_) in
+            do {
+                try firebaseAuth.signOut()
+            } catch let signOutError {
+                print("Error sigining out: %@", signOutError)
+            }
+            
+            let appDelegate = UIApplication.shared.delegate! as! AppDelegate
+            let mainSB = UIStoryboard(name: "Main", bundle: nil)
+            let viewController = mainSB.instantiateViewController(withIdentifier: "SplashViewController")
+            
+            appDelegate.window?.rootViewController = viewController
+            appDelegate.window?.makeKeyAndVisible()
         }
+        
+        let cancelAction = UIAlertAction(title: "No", style: .cancel, handler: nil)
+        
+        alertController.addAction(doneAction)
+        alertController.addAction(cancelAction)
+        
+        present(alertController, animated: true, completion: nil)
     }
     
     @IBAction func tappedShare(_ sender: UIButton) {
@@ -158,7 +176,7 @@ class SettingsViewController: BaseViewController {
         let doneAction = UIAlertAction(title: "Done", style: .default) { (action) in
             ShareHelper.unlinkWithPartner(completion: { (result) in
                 switch result {
-                case.success():
+                case .success():
                     UserStore.shared.fetchUser { (result) in
                         switch result {
                         case .success(_):
