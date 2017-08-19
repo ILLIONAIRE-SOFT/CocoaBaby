@@ -14,8 +14,8 @@ class TipsDetailContentTableViewCell: UITableViewCell {
     @IBOutlet var content: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        self.title.textColor = UIColor.white
-        self.content.textColor = UIColor.white
+        self.title.textColor = UIColor.darkGray
+        self.content.textColor = UIColor.darkGray
         self.backgroundColor = UIColor.clear
         
         let stringValue = content.text!

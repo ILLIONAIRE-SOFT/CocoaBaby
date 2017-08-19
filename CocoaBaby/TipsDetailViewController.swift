@@ -21,7 +21,9 @@ class TipsDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Gradation2")!)
+        //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Gradation2")!)
+        self.view.backgroundColor = UIColor.init(colorWithHexValue: 0xF9F9F9, alpha: 1)
+        self.view.layer.cornerRadius = 5
         
         tableView.dataSource = self
         tableView.delegate = self

@@ -22,7 +22,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rU4-ye-hvf">
-                                <rect key="frame" x="10" y="30" width="355" height="578"/>
+                                <rect key="frame" x="28" y="58" width="319" height="522"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <connections>
                                     <segue destination="Wma-sI-8je" kind="embed" id="S6S-Yz-3pr"/>
@@ -31,10 +31,10 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="rU4-ye-hvf" firstAttribute="leading" secondItem="xt2-vp-iJP" secondAttribute="leading" constant="10" id="HD7-7H-szt"/>
-                            <constraint firstItem="rU4-ye-hvf" firstAttribute="top" secondItem="4bY-GS-F4Y" secondAttribute="bottom" constant="10" id="JL2-PT-AQO"/>
-                            <constraint firstAttribute="trailing" secondItem="rU4-ye-hvf" secondAttribute="trailing" constant="10" id="nwh-8E-0Rg"/>
-                            <constraint firstItem="UKs-6m-psB" firstAttribute="top" secondItem="rU4-ye-hvf" secondAttribute="bottom" constant="10" id="uoF-A5-L7r"/>
+                            <constraint firstItem="rU4-ye-hvf" firstAttribute="leading" secondItem="xt2-vp-iJP" secondAttribute="leading" constant="28" id="HD7-7H-szt"/>
+                            <constraint firstItem="rU4-ye-hvf" firstAttribute="top" secondItem="4bY-GS-F4Y" secondAttribute="bottom" constant="38" id="JL2-PT-AQO"/>
+                            <constraint firstAttribute="trailing" secondItem="rU4-ye-hvf" secondAttribute="trailing" constant="28" id="nwh-8E-0Rg"/>
+                            <constraint firstItem="UKs-6m-psB" firstAttribute="top" secondItem="rU4-ye-hvf" secondAttribute="bottom" constant="38" id="uoF-A5-L7r"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="" image="ic_lightbulb_outline_white" id="PF2-yL-lmj"/>
@@ -65,7 +65,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="400" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qcH-v4-VJm">
-                                <rect key="frame" x="0.0" y="150" width="355" height="428"/>
+                                <rect key="frame" x="0.0" y="120" width="355" height="458"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TipsDetailContentTableViewCell" rowHeight="400" id="bqy-ES-Rmj" customClass="TipsDetailContentTableViewCell" customModule="CocoaBaby" customModuleProvider="target">
@@ -75,28 +75,28 @@
                                             <rect key="frame" x="0.0" y="0.0" width="355" height="399.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hou-nB-qVU">
-                                                    <rect key="frame" x="20" y="65.5" width="315" height="314"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hou-nB-qVU">
+                                                    <rect key="frame" x="28" y="39.5" width="299" height="310"/>
                                                     <string key="text">태아는 이미 성별, 피부색, 머리카락 모양 등 대부분의 유전형질이 결정되어 있는 상태입니다. 머리가 몸 전체의 1/3을 차지하며 눈의 색소 침착도 확실해집니다. 아직 태아처럼 보이지는 않지만 뇌가 생기기 시작합니다. 신장이나 심장과 같은 주요 장기들도 발달하며 손가락, 발가락, 눈이 생기며, 4cm까지 성장합니다. 그러나 아직 엄마는 몸 속에서 일어나는 이 드라마틱한 변화를 느낄 수는 없습니다</string>
                                                     <fontDescription key="fontDescription" name="AppleSDGothicNeo-Light" family="Apple SD Gothic Neo" pointSize="16"/>
-                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                    <color key="textColor" red="0.2363229443" green="0.2363229443" blue="0.2363229443" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="luV-kx-UmM">
-                                                    <rect key="frame" x="20" y="20" width="315" height="25.5"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                                    <rect key="frame" x="28" y="4" width="303" height="21.5"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstAttribute="trailing" secondItem="luV-kx-UmM" secondAttribute="trailing" constant="20" id="3FQ-hf-6KR"/>
-                                                <constraint firstItem="luV-kx-UmM" firstAttribute="top" secondItem="rkq-9o-ew4" secondAttribute="top" constant="20" id="Lxw-3a-YGF"/>
-                                                <constraint firstItem="hou-nB-qVU" firstAttribute="top" secondItem="luV-kx-UmM" secondAttribute="bottom" constant="20" id="TE6-iL-ezB"/>
-                                                <constraint firstItem="luV-kx-UmM" firstAttribute="leading" secondItem="rkq-9o-ew4" secondAttribute="leading" constant="20" id="iwx-Kl-9Hj"/>
-                                                <constraint firstAttribute="trailing" secondItem="hou-nB-qVU" secondAttribute="trailing" constant="20" id="kdP-kq-CES"/>
-                                                <constraint firstItem="hou-nB-qVU" firstAttribute="leading" secondItem="rkq-9o-ew4" secondAttribute="leading" constant="20" id="rri-RX-WSO"/>
-                                                <constraint firstAttribute="bottom" secondItem="hou-nB-qVU" secondAttribute="bottom" constant="20" id="sxu-72-BYF"/>
+                                                <constraint firstAttribute="trailing" secondItem="luV-kx-UmM" secondAttribute="trailing" constant="24" id="3FQ-hf-6KR"/>
+                                                <constraint firstItem="luV-kx-UmM" firstAttribute="top" secondItem="rkq-9o-ew4" secondAttribute="top" constant="4" id="Lxw-3a-YGF"/>
+                                                <constraint firstItem="hou-nB-qVU" firstAttribute="top" secondItem="luV-kx-UmM" secondAttribute="bottom" constant="14" id="TE6-iL-ezB"/>
+                                                <constraint firstItem="luV-kx-UmM" firstAttribute="leading" secondItem="rkq-9o-ew4" secondAttribute="leading" constant="28" id="iwx-Kl-9Hj"/>
+                                                <constraint firstAttribute="trailing" secondItem="hou-nB-qVU" secondAttribute="trailing" constant="28" id="kdP-kq-CES"/>
+                                                <constraint firstItem="hou-nB-qVU" firstAttribute="leading" secondItem="rkq-9o-ew4" secondAttribute="leading" constant="28" id="rri-RX-WSO"/>
+                                                <constraint firstAttribute="bottom" secondItem="hou-nB-qVU" secondAttribute="bottom" constant="50" id="sxu-72-BYF"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -109,37 +109,40 @@
                                 <sections/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ONB-mx-CaQ">
-                                <rect key="frame" x="0.0" y="0.0" width="355" height="150"/>
+                                <rect key="frame" x="0.0" y="0.0" width="355" height="120"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zm4-2H-B9U">
-                                        <rect key="frame" x="20" y="30" width="68.5" height="36"/>
+                                        <rect key="frame" x="27" y="30" width="68.5" height="36"/>
                                         <fontDescription key="fontDescription" type="system" weight="thin" pointSize="30"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="O37-w5-hNA">
-                                        <rect key="frame" x="20" y="102" width="315" height="29"/>
+                                        <rect key="frame" x="24" y="78" width="307" height="23"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="22" id="cfN-fL-W2d"/>
+                                        </constraints>
                                         <segments>
                                             <segment title="Baby"/>
                                             <segment title="Mama"/>
                                             <segment title="Papa"/>
                                         </segments>
-                                        <color key="tintColor" red="1" green="0.82352941176470584" blue="0.8666666666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     </segmentedControl>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="O37-w5-hNA" secondAttribute="trailing" constant="20" id="09x-db-lRb"/>
-                                    <constraint firstItem="O37-w5-hNA" firstAttribute="leading" secondItem="ONB-mx-CaQ" secondAttribute="leading" constant="20" id="4uY-nY-oFH"/>
+                                    <constraint firstAttribute="trailing" secondItem="O37-w5-hNA" secondAttribute="trailing" constant="24" id="09x-db-lRb"/>
+                                    <constraint firstItem="O37-w5-hNA" firstAttribute="leading" secondItem="ONB-mx-CaQ" secondAttribute="leading" constant="24" id="4uY-nY-oFH"/>
                                     <constraint firstItem="Zm4-2H-B9U" firstAttribute="top" secondItem="ONB-mx-CaQ" secondAttribute="top" constant="30" id="Aa1-zw-JcY"/>
-                                    <constraint firstAttribute="height" constant="150" id="cN1-M6-yeK"/>
+                                    <constraint firstItem="Zm4-2H-B9U" firstAttribute="leading" secondItem="ONB-mx-CaQ" secondAttribute="leading" constant="27" id="b6D-bH-xak"/>
+                                    <constraint firstAttribute="height" constant="120" id="cN1-M6-yeK"/>
                                     <constraint firstAttribute="bottom" secondItem="O37-w5-hNA" secondAttribute="bottom" constant="20" id="kyA-Be-H9t"/>
-                                    <constraint firstItem="Zm4-2H-B9U" firstAttribute="leading" secondItem="ONB-mx-CaQ" secondAttribute="leading" constant="20" id="or5-hg-0FQ"/>
                                 </constraints>
                             </view>
                         </subviews>
-                        <color key="backgroundColor" red="0.23137254901960785" green="0.29803921568627451" blue="0.4823529411764706" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ONB-mx-CaQ" firstAttribute="leading" secondItem="n0c-lD-Xxf" secondAttribute="leading" id="Het-Ox-mWy"/>
                             <constraint firstAttribute="trailing" secondItem="ONB-mx-CaQ" secondAttribute="trailing" id="MAg-hj-uA2"/>
