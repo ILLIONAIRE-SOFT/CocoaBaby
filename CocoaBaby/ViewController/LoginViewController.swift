@@ -18,6 +18,10 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
         GIDSignIn.sharedInstance().uiDelegate = self
     }
     
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
+    
     // MARK: - IBActions
     @IBAction func tappedLoginWithGoogle(_ sender: UIButton) {
         print("LoginViewController - tapped google login")
