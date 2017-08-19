@@ -73,7 +73,7 @@ class DiaryAddViewController: DiaryBaseViewController {
         self.textView.text = diary.text
         
         if let comment = diary.comment {
-            self.fatherCommentLabel.text = "Father's comment: \(comment)"
+            self.fatherCommentLabel.text = "\(comment)"
         }
         
     }
