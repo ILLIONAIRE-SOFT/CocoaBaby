@@ -55,7 +55,6 @@
 		D45189C11F39692E00937869 /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D45189BF1F39692E00937869 /* Settings.storyboard */; };
 		D45189C31F3ACD0700937869 /* DiaryAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45189C21F3ACD0700937869 /* DiaryAddViewController.swift */; };
 		D45189C71F3AD25200937869 /* DiaryBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45189C61F3AD25200937869 /* DiaryBaseViewController.swift */; };
-		DA131A6C1F44702800DE12F7 /* WaterDropView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA131A6B1F44702800DE12F7 /* WaterDropView.swift */; };
 		DA131A701F45641600DE12F7 /* EditBabyDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA131A6F1F45641600DE12F7 /* EditBabyDateViewController.swift */; };
 		DA5C8F2E1F415F0C00AA3185 /* TipsDetailContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5C8F2C1F415F0C00AA3185 /* TipsDetailContentTableViewCell.swift */; };
 		DA5C8F321F41AA1000AA3185 /* TipsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5C8F311F41AA1000AA3185 /* TipsStore.swift */; };
@@ -152,7 +151,6 @@
 		D45189C01F39692E00937869 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Settings.storyboard; sourceTree = "<group>"; };
 		D45189C21F3ACD0700937869 /* DiaryAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryAddViewController.swift; sourceTree = "<group>"; };
 		D45189C61F3AD25200937869 /* DiaryBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryBaseViewController.swift; sourceTree = "<group>"; };
-		DA131A6B1F44702800DE12F7 /* WaterDropView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WaterDropView.swift; sourceTree = "<group>"; };
 		DA131A6F1F45641600DE12F7 /* EditBabyDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditBabyDateViewController.swift; sourceTree = "<group>"; };
 		DA5C8F2C1F415F0C00AA3185 /* TipsDetailContentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsDetailContentTableViewCell.swift; sourceTree = "<group>"; };
 		DA5C8F311F41AA1000AA3185 /* TipsStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsStore.swift; sourceTree = "<group>"; };
@@ -205,7 +203,6 @@
 			isa = PBXGroup;
 			children = (
 				4911D9CA1F3444A70031B74A /* BaseViewController.swift */,
-				DA131A6B1F44702800DE12F7 /* WaterDropView.swift */,
 			);
 			name = Base;
 			sourceTree = "<group>";
@@ -907,7 +904,6 @@
 				4920577C1F413FAB00F232E2 /* Diary.swift in Sources */,
 				49A4B0E71F3F17BD00CC09A7 /* DiaryEmptyCell.swift in Sources */,
 				D45189C71F3AD25200937869 /* DiaryBaseViewController.swift in Sources */,
-				DA131A6C1F44702800DE12F7 /* WaterDropView.swift in Sources */,
 				492057801F4143C500F232E2 /* CocoaDatePickerView.swift in Sources */,
 				DAEE34BF1F3834FC0090DBF5 /* TipsDetailViewController.swift in Sources */,
 				DA7460FF1F4405F800568F1C /* CameraViewController_camera.swift in Sources */,
