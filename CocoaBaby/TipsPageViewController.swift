@@ -24,6 +24,7 @@ class TipsPageViewController: UIPageViewController {
         
         self.setViewControllers([ initialViewController ], direction: .forward, animated: true,completion: { bool in
             // 리팩토링 필요
+            initialViewController.view.frame = CGRect(x: -10, y: -30, width: 355, height: 578)
             initialViewController.week = self.weekIndex
             initialViewController.weekTitle.text = "Week \(initialViewController.week!)"
             initialViewController.segmentedControl.selectedSegmentIndex = 0

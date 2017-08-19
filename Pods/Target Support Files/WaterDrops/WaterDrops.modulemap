@@ -1,0 +1,6 @@
+framework module WaterDrops {
+  umbrella header "WaterDrops-umbrella.h"
+
+  export *
+  module * { export * }
+}
