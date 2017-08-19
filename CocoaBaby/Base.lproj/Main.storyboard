@@ -24,13 +24,22 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gradation2" translatesAutoresizingMaskIntoConstraints="NO" id="LZ4-aq-hGi">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CocoaBabyLoadingLogo" translatesAutoresizingMaskIntoConstraints="NO" id="CzG-6h-B5V">
+                                <rect key="frame" x="147" y="293" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="ibJ-dn-032"/>
+                                    <constraint firstAttribute="height" constant="80" id="mom-Uk-Qfg"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="LZ4-aq-hGi" firstAttribute="top" secondItem="2gS-6S-nyu" secondAttribute="top" id="5wo-ta-omf"/>
+                            <constraint firstItem="CzG-6h-B5V" firstAttribute="centerX" secondItem="2gS-6S-nyu" secondAttribute="centerX" id="Mh3-dP-meD"/>
                             <constraint firstItem="LZ4-aq-hGi" firstAttribute="leading" secondItem="2gS-6S-nyu" secondAttribute="leading" id="TWI-cg-M2i"/>
                             <constraint firstAttribute="trailing" secondItem="LZ4-aq-hGi" secondAttribute="trailing" id="ilw-KV-fq9"/>
                             <constraint firstItem="TqH-lQ-qMb" firstAttribute="top" secondItem="LZ4-aq-hGi" secondAttribute="bottom" id="vDn-Cj-s8i"/>
+                            <constraint firstItem="CzG-6h-B5V" firstAttribute="centerY" secondItem="2gS-6S-nyu" secondAttribute="centerY" id="wRN-bp-0Aw"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -146,6 +155,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="CocoaBabyLoadingLogo" width="512" height="512"/>
         <image name="Gradation2" width="621" height="1104"/>
         <image name="ic_create_white" width="24" height="24"/>
         <image name="ic_face_white" width="24" height="24"/>
