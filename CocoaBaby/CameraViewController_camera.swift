@@ -42,9 +42,10 @@ extension CameraViewController : AVCapturePhotoCaptureDelegate {
         }
     }
 
-    
+    // focus
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if !self.frontCamera {
+            
             let screenSize = cameraView.bounds.size
             if let touchPoint = touches.first {
                 let x = touchPoint.location(in: cameraView).y / screenSize.height
@@ -57,8 +58,6 @@ extension CameraViewController : AVCapturePhotoCaptureDelegate {
                         
                         device.focusPointOfInterest = focusPoint
                         device.focusMode = .continuousAutoFocus
-                        device.focusMode = .autoFocus
-                        device.focusMode = .locked
                         device.exposurePointOfInterest = focusPoint
                         device.exposureMode = AVCaptureExposureMode.continuousAutoExposure
                         device.unlockForConfiguration()

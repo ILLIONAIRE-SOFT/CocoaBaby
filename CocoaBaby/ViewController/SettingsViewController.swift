@@ -10,7 +10,7 @@ import UIKit
 import FirebaseAuth
 
 class SettingsViewController: BaseViewController {
-
+    
     @IBOutlet var editBabyButton: UIButton!
     @IBOutlet var editDateButton: UIButton!
     @IBOutlet var sendEmailButton: UIButton!
@@ -20,6 +20,7 @@ class SettingsViewController: BaseViewController {
         super.viewDidLoad()
         
         initViews()
+        changeSettingBg()
     }
     
     func initViews() {
@@ -109,7 +110,7 @@ class SettingsViewController: BaseViewController {
                 let alertController = UIAlertController(title: nil, message: "잠시 후 다시 시도해주십시오.", preferredStyle: .alert)
                 
                 let doneAction = UIAlertAction(title: "Done", style: .default) { (action) in
-                
+                    
                 }
                 
                 alertController.addAction(doneAction)
@@ -207,5 +208,25 @@ class SettingsViewController: BaseViewController {
         alertController.addAction(doneAction)
         
         present(alertController, animated: true, completion: nil)
+    }
+    
+    func changeSettingBg() {
+        
+        let date = Date()
+        let currentHour = Calendar.current.component(.hour, from: date)
+        if currentHour > 19 || currentHour < 6 { //Night
+            
+            //diaryTableView.backgroundColor = UIColor.init(colorWithHexValue: 0x3f305d, alpha: 1)
+            self.view.backgroundColor = UIColor.init(colorWithHexValue: 0x3f305d, alpha: 1)
+            
+        } else if currentHour >= 6 || currentHour <= 16{
+            //diaryTableView.backgroundColor = UIColor.init(colorWithHexValue: 0x4a3252, alpha: 1)
+            self.view.backgroundColor = UIColor.init(colorWithHexValue: 0x4a3252, alpha: 1)
+            
+        } else if currentHour >= 16 && currentHour <= 19 {
+            
+        } else {
+            
+        }
     }
 }

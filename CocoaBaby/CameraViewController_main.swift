@@ -37,8 +37,6 @@ class CameraViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-
         self.view.backgroundColor = .black
         captureSession.sessionPreset  = AVCaptureSessionPresetPhoto
         frontCamera(frontCamera)
@@ -53,8 +51,14 @@ class CameraViewController: UIViewController {
         guideImageView.image = UIImage(named: "camera_guide")
         view.addSubview(guideImageView)
         
-        guideBtn.isSelected = true
-        guideImageView.isHidden = false
+        
+        // if no cameraGuide set userDefault value as true
+        if UserDefaults.standard.object(forKey: "cameraGuide" ) == nil {
+            UserDefaults.standard.set(true, forKey: "cameraGuide")
+        }
+        
+        guideBtn.isSelected = UserDefaults.standard.bool(forKey: "cameraGuide")
+        guideImageView.isHidden = !UserDefaults.standard.bool(forKey: "cameraGuide")
     }
     @IBAction func modalDismiss(_ sender: Any) {
         captureSession.stopRunning()
@@ -66,10 +70,12 @@ class CameraViewController: UIViewController {
             guideImageView.isHidden = false
             isGuideActive = true
             self.guideBtn.isSelected = true
+            UserDefaults.standard.set(true, forKey: "cameraGuide")
         } else {
             guideImageView.isHidden = true
             isGuideActive = false
             self.guideBtn.isSelected = false
+            UserDefaults.standard.set(false, forKey: "cameraGuide")
         }
     }
 }
