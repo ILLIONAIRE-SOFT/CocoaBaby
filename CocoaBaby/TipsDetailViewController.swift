@@ -64,7 +64,9 @@ class TipsDetailViewController: UIViewController {
         self.tableView.reloadData()
     }
 
+    
 }
+
 
 extension TipsDetailViewController : UITableViewDelegate, UITableViewDataSource{
     

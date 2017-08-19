@@ -133,14 +133,12 @@ class HomeViewController: BaseViewController {
             UIGraphicsEndImageContext()
             self.view.backgroundColor = UIColor(patternImage: image)
             
-            //self.babyView.backgroundColor = UIColor.init(colorWithHexValue: 0x000000, alpha: 0.7)
-            
             
         } else if currentHour >= 6 || currentHour <= 16{ //morning
             UIGraphicsBeginImageContext(self.view.frame.size)
-            UIImage(named: "cocoaBabyBgNight")?.draw(in: self.view.bounds)
+            UIImage(named: "cocoaBabyBgAfternoon")?.draw(in: self.view.bounds)
             
-            var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+            let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
             UIGraphicsEndImageContext()
             self.view.backgroundColor = UIColor(patternImage: image)
             
@@ -148,18 +146,18 @@ class HomeViewController: BaseViewController {
 
         } else if currentHour >= 16 && currentHour <= 19 {
             UIGraphicsBeginImageContext(self.view.frame.size)
-            UIImage(named: "cocoaBabyBgNight")?.draw(in: self.view.bounds)
+            UIImage(named: "cocoaBabyBgNormal")?.draw(in: self.view.bounds)
             
-            var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+            let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
             UIGraphicsEndImageContext()
             self.view.backgroundColor = UIColor(patternImage: image)
             
             //self.babyView.backgroundColor = UIColor.init(colorWithHexValue: 0x000000, alpha: 0.7)
         } else {
             UIGraphicsBeginImageContext(self.view.frame.size)
-            UIImage(named: "cocoaBabyBgNight")?.draw(in: self.view.bounds)
+            UIImage(named: "cocoaBabyBgNormal")?.draw(in: self.view.bounds)
             
-            var image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+            let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
             UIGraphicsEndImageContext()
             self.view.backgroundColor = UIColor(patternImage: image)
             
