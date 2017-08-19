@@ -38,7 +38,7 @@ class DiaryViewController: BaseViewController {
         
         initRefreshControl()
         initTodayLabel()
-     
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -99,6 +99,12 @@ class DiaryViewController: BaseViewController {
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         switch identifier {
         case "tappedEmptyCell":
+            if UserStore.shared.user?.gender == "male" {
+                return false
+            } else {
+                return true
+            }
+        case "tappedAddDiary":
             if UserStore.shared.user?.gender == "male" {
                 return false
             } else {
