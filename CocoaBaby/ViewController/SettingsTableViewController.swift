@@ -28,13 +28,21 @@ class SettingsTableViewController: BaseTableViewController {
         switch (indexPath.section, indexPath.row) {
         case (1, 0):
             shareWithFather()
+        case (1, 1):
+            linkWithMother()
+        case (1, 2):
+            unlink()
+        case (2, 0):
+            break
+        case (2, 1):
+            logout()
         default:
             return
         }
         
     }
     
-    @IBAction func tappedLogout(_ sender: UIButton) {
+    func logout() {
         let firebaseAuth = Auth.auth()
         
         let alertController = UIAlertController(title: "Do you want logout?", message: nil, preferredStyle: .alert)
@@ -118,7 +126,7 @@ class SettingsTableViewController: BaseTableViewController {
         }
     }
     
-    @IBAction func tappedLink(_ sender: UIButton) {
+    func linkWithMother() {
         
         if (UserStore.shared.user?.partnerUID) != nil {
             let message = NSLocalizedString("Alert.FatherAlreadyLinked", comment: "")
@@ -169,7 +177,7 @@ class SettingsTableViewController: BaseTableViewController {
         self.present(alertController, animated: true, completion: nil)
     }
     
-    @IBAction func tappedUnlink(_ sender: UIButton) {
+    func unlink() {
         
         let alertController = UIAlertController(title: "Unlink with partner", message: "You can`t see partner's diary", preferredStyle: .alert)
         
