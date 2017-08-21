@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Ep6-Kd-y8z">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Splash View Controller-->
+        <scene sceneID="xDN-WU-nDX">
+            <objects>
+                <viewController storyboardIdentifier="SplashViewController" id="Ep6-Kd-y8z" customClass="SplashViewController" customModule="CocoaBaby" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="aLx-2H-IYH"/>
+                        <viewControllerLayoutGuide type="bottom" id="TqH-lQ-qMb"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="2gS-6S-nyu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gradation2" translatesAutoresizingMaskIntoConstraints="NO" id="LZ4-aq-hGi">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CocoaBabyLoadingLogo" translatesAutoresizingMaskIntoConstraints="NO" id="CzG-6h-B5V">
+                                <rect key="frame" x="147" y="293" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="ibJ-dn-032"/>
+                                    <constraint firstAttribute="height" constant="80" id="mom-Uk-Qfg"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LZ4-aq-hGi" firstAttribute="top" secondItem="2gS-6S-nyu" secondAttribute="top" id="5wo-ta-omf"/>
+                            <constraint firstItem="CzG-6h-B5V" firstAttribute="centerX" secondItem="2gS-6S-nyu" secondAttribute="centerX" id="Mh3-dP-meD"/>
+                            <constraint firstItem="LZ4-aq-hGi" firstAttribute="leading" secondItem="2gS-6S-nyu" secondAttribute="leading" id="TWI-cg-M2i"/>
+                            <constraint firstAttribute="trailing" secondItem="LZ4-aq-hGi" secondAttribute="trailing" id="ilw-KV-fq9"/>
+                            <constraint firstItem="TqH-lQ-qMb" firstAttribute="top" secondItem="LZ4-aq-hGi" secondAttribute="bottom" id="vDn-Cj-s8i"/>
+                            <constraint firstItem="CzG-6h-B5V" firstAttribute="centerY" secondItem="2gS-6S-nyu" secondAttribute="centerY" id="wRN-bp-0Aw"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cKu-BX-ODE" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="449" y="-2101"/>
+        </scene>
+        <!--Login View Controller-->
+        <scene sceneID="DNq-jM-N3y">
+            <objects>
+                <viewController storyboardIdentifier="LoginViewController" id="4Db-Yu-bUk" customClass="LoginViewController" customModule="CocoaBaby" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="IGl-9W-jsf"/>
+                        <viewControllerLayoutGuide type="bottom" id="Aw6-7i-vef"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ONT-pX-Tjt">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gradation2" translatesAutoresizingMaskIntoConstraints="NO" id="Srg-Vc-eB0">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bL6-i6-AME">
+                                <rect key="frame" x="125" y="318.5" width="124" height="30"/>
+                                <state key="normal" title="Login with Google">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="tappedLoginWithGoogle:" destination="4Db-Yu-bUk" eventType="touchUpInside" id="5xi-S0-0B1"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Srg-Vc-eB0" firstAttribute="leading" secondItem="ONT-pX-Tjt" secondAttribute="leading" id="46H-4C-Fjd"/>
+                            <constraint firstItem="bL6-i6-AME" firstAttribute="centerX" secondItem="ONT-pX-Tjt" secondAttribute="centerX" id="QoJ-p3-Nga"/>
+                            <constraint firstAttribute="trailing" secondItem="Srg-Vc-eB0" secondAttribute="trailing" id="aSt-16-DU7"/>
+                            <constraint firstItem="bL6-i6-AME" firstAttribute="centerY" secondItem="ONT-pX-Tjt" secondAttribute="centerY" id="c80-lw-Imh"/>
+                            <constraint firstItem="Aw6-7i-vef" firstAttribute="top" secondItem="Srg-Vc-eB0" secondAttribute="bottom" id="g1A-yU-FKk"/>
+                            <constraint firstItem="Srg-Vc-eB0" firstAttribute="top" secondItem="ONT-pX-Tjt" secondAttribute="top" id="olX-tE-FKv"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <segue destination="xmu-Gx-PNz" kind="show" identifier="showHomeController" id="fwg-Lx-zyY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PuR-OP-7RH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="448.80000000000001" y="-1369.5652173913045"/>
+        </scene>
+        <!--Tab Bar View Controller-->
+        <scene sceneID="u86-qa-NG0">
+            <objects>
+                <tabBarController storyboardIdentifier="mainTabBarViewController" automaticallyAdjustsScrollViewInsets="NO" id="xmu-Gx-PNz" customClass="TabBarViewController" customModule="CocoaBaby" customModuleProvider="target" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" id="cxh-Zq-ftf">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="selectedImageTintColor" red="0.96078431372549022" green="0.80784313725490198" blue="0.792156862745098" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="r9n-OU-Qmi" kind="relationship" relationship="viewControllers" id="HAN-42-Npe"/>
+                        <segue destination="pCB-UA-ebN" kind="relationship" relationship="viewControllers" id="bm5-qY-bgB"/>
+                        <segue destination="Gzn-1j-shM" kind="relationship" relationship="viewControllers" id="Zhv-0z-Rpf"/>
+                        <segue destination="XRN-cR-wfI" kind="relationship" relationship="viewControllers" id="VdP-8v-uKz"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="M8G-Zk-d3b" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="446" y="-627"/>
+        </scene>
+        <!--Home-->
+        <scene sceneID="DMU-j5-I9E">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Home" id="r9n-OU-Qmi" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="ic_face_white" id="Z14-yg-TAM"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="G9J-iT-4yf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-206" y="-176"/>
+        </scene>
+        <!--Diary-->
+        <scene sceneID="6ID-9O-bcK">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Diary" id="pCB-UA-ebN" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="ic_create_white" id="cAW-nP-fDg"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="54F-HY-A17" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="197" y="-176"/>
+        </scene>
+        <!--Tips-->
+        <scene sceneID="Lcm-w8-DWq">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Tips" id="Gzn-1j-shM" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="ic_lightbulb_outline_white" id="ZzP-jY-nEH"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="x7Y-uA-G62" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="582" y="-156"/>
+        </scene>
+        <!--Settings-->
+        <scene sceneID="qFf-rx-7ts">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Settings" id="XRN-cR-wfI" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="ic_settings_white" id="kx7-LT-bj0"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P0k-BU-ByW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="901" y="-175"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="CocoaBabyLoadingLogo" width="512" height="512"/>
+        <image name="Gradation2" width="621" height="1104"/>
+        <image name="ic_create_white" width="24" height="24"/>
+        <image name="ic_face_white" width="24" height="24"/>
+        <image name="ic_lightbulb_outline_white" width="24" height="24"/>
+        <image name="ic_settings_white" width="24" height="24"/>
+    </resources>
+</document>
