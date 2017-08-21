@@ -1,5 +1,5 @@
 //
-//  Localizable.swift
+//  LocalizableString.swift
 //  CocoaBaby
 //
 //  Created by Sohn on 21/08/2017.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct LocalizableString {
+struct LocalizableStringKey {
     static let logoutMessage: String = "Alert.DoYouWantLogout"
 }
 
