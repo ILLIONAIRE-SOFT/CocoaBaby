@@ -8,6 +8,7 @@
 
 import Foundation
 
-enum Localizable: String {
-    case logoutMessage = "Alert.DoYouWantLogout"
+struct LocalizableString {
+    static let logoutMessage: String = "Alert.DoYouWantLogout"
 }
+
