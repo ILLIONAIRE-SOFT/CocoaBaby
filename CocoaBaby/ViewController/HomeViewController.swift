@@ -28,15 +28,15 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        babyImageView.image = UIImage(named: "CocoaBaby")?.withRenderingMode(.alwaysTemplate)
-        babyImageView.tintColor = UIColor.mainBlueColor
-        
-        changeBg()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+        babyImageView.image = UIImage(named: "CocoaBaby")?.withRenderingMode(.alwaysTemplate)
+        babyImageView.tintColor = UIColor.mainBlueColor
+        
+        changeBg()
+        
         let waterDropsViewFrame = CGRect(x: 0, y: 0, width: self.babyView.frame.width, height: self.babyView.frame.height)
 
         waterDropsView = WaterDropsView(frame: waterDropsViewFrame,
@@ -194,9 +194,9 @@ class HomeViewController: BaseViewController {
             self.view.backgroundColor = UIColor(patternImage: image)
             
             
-        } else if currentHour >= 6 || currentHour <= 16{ //morning
+        } else if currentHour >= 6 && currentHour <= 16{ //morning
             UIGraphicsBeginImageContext(self.view.frame.size)
-            UIImage(named: "cocoaBabyBgAfternoon")?.draw(in: self.view.bounds)
+            UIImage(named: "cocoaBabyBgNormal")?.draw(in: self.view.bounds)
             
             let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
             UIGraphicsEndImageContext()
@@ -206,13 +206,12 @@ class HomeViewController: BaseViewController {
 
         } else if currentHour >= 16 && currentHour <= 19 {
             UIGraphicsBeginImageContext(self.view.frame.size)
-            UIImage(named: "cocoaBabyBgNormal")?.draw(in: self.view.bounds)
+            UIImage(named: "cocoaBabyBgAfternoon")?.draw(in: self.view.bounds)
             
             let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
             UIGraphicsEndImageContext()
             self.view.backgroundColor = UIColor(patternImage: image)
             
-            //self.babyView.backgroundColor = UIColor.init(colorWithHexValue: 0x000000, alpha: 0.7)
         } else {
             UIGraphicsBeginImageContext(self.view.frame.size)
             UIImage(named: "cocoaBabyBgNormal")?.draw(in: self.view.bounds)

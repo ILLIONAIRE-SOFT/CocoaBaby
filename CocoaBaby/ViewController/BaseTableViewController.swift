@@ -1,15 +1,15 @@
 //
-//  BaseViewController.swift
+//  BaseTableViewController.swift
 //  CocoaBaby
 //
-//  Created by Sohn on 04/08/2017.
+//  Created by Sohn on 21/08/2017.
 //  Copyright © 2017 Sohn. All rights reserved.
 //
 
 import UIKit
 
-class BaseViewController: UIViewController {
-    
+class BaseTableViewController: UITableViewController {
+
     var overlay: UIView?
     var activityIndicator: UIActivityIndicatorView?
     
@@ -20,14 +20,7 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Gradation2")!)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        
-        stopLoading()
-        //        hideOverlay()
+         self.clearsSelectionOnViewWillAppear = true
     }
     
     func startLoading() {
@@ -64,28 +57,6 @@ class BaseViewController: UIViewController {
         }
     }
     
-    func addOverlay() {
-        overlay = UIView(frame: view.frame)
-        overlay?.backgroundColor = UIColor.black.withAlphaComponent(0.5)
-        
-        view.addSubview(overlay!)
-    }
-    
-    func hideOverlay() {
-        print("Hide Overlay")
-        guard let overlay = overlay else {
-            print("Overlay not exist")
-            return
-        }
-        
-        UIView.animate(withDuration: 0.3, animations: {
-            print("Make overlay alpha 0")
-            overlay.alpha = 0
-        }) { (_) in
-            overlay.removeFromSuperview()
-        }
-    }
-    
     func changeBgColorBasedOnTime() {
         
         let date = Date()
@@ -106,5 +77,5 @@ class BaseViewController: UIViewController {
         
     }
 
-    
+
 }
