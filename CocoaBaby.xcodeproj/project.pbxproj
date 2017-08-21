@@ -17,6 +17,7 @@
 		4911D9E31F3450EF0031B74A /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4911D9E21F3450EF0031B74A /* ErrorMessage.swift */; };
 		49121B391F4ABAA40045A165 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49121B381F4ABAA40045A165 /* SettingsTableViewController.swift */; };
 		49121B3B1F4ADCDF0045A165 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49121B3A1F4ADCDF0045A165 /* BaseTableViewController.swift */; };
+		49121B3D1F4B05E20045A165 /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49121B3C1F4B05E20045A165 /* Localizable.swift */; };
 		4920577C1F413FAB00F232E2 /* Diary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920577B1F413FAB00F232E2 /* Diary.swift */; };
 		4920577E1F41427100F232E2 /* CocoaDatePickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920577D1F41427100F232E2 /* CocoaDatePickerDelegate.swift */; };
 		492057801F4143C500F232E2 /* CocoaDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920577F1F4143C500F232E2 /* CocoaDatePickerView.swift */; };
@@ -102,6 +103,7 @@
 		4911D9E21F3450EF0031B74A /* ErrorMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ErrorMessage.swift; path = Utilities/ErrorMessage.swift; sourceTree = "<group>"; };
 		49121B381F4ABAA40045A165 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsTableViewController.swift; path = ViewController/SettingsTableViewController.swift; sourceTree = "<group>"; };
 		49121B3A1F4ADCDF0045A165 /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseTableViewController.swift; path = ViewController/BaseTableViewController.swift; sourceTree = "<group>"; };
+		49121B3C1F4B05E20045A165 /* Localizable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Localizable.swift; path = CocoaBaby/Localizable.swift; sourceTree = "<group>"; };
 		4920577B1F413FAB00F232E2 /* Diary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Diary.swift; path = Model/Diary.swift; sourceTree = "<group>"; };
 		4920577D1F41427100F232E2 /* CocoaDatePickerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocoaDatePickerDelegate.swift; sourceTree = "<group>"; };
 		4920577F1F4143C500F232E2 /* CocoaDatePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocoaDatePickerView.swift; sourceTree = "<group>"; };
@@ -253,6 +255,7 @@
 				49B88EAF1F3C2774005043B6 /* GoogleService-Info.plist */,
 				49F6C7881F318AF200373F06 /* Info.plist */,
 				4911D9DC1F344DCA0031B74A /* Localizable.strings */,
+				49121B3C1F4B05E20045A165 /* Localizable.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -897,6 +900,7 @@
 				DA7461021F4405F800568F1C /* CameraViewController_services.swift in Sources */,
 				DA5C8F2E1F415F0C00AA3185 /* TipsDetailContentTableViewCell.swift in Sources */,
 				49121B391F4ABAA40045A165 /* SettingsTableViewController.swift in Sources */,
+				49121B3D1F4B05E20045A165 /* Localizable.swift in Sources */,
 				4911D9E31F3450EF0031B74A /* ErrorMessage.swift in Sources */,
 				DA7461011F4405F800568F1C /* CameraViewController_main.swift in Sources */,
 				DAB5A40B1F31B0C4000235B0 /* TutorialSetNameViewController.swift in Sources */,
