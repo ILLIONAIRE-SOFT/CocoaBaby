@@ -42,14 +42,16 @@ class TipsDetailViewController: UIViewController {
             self.segmentedControl.addTarget(self, action: #selector(tipTargetChanged(segControl:)), for: .valueChanged)
             tipTargetChanged(segControl: segmentedControl)
         }
+
         self.tableView.reloadData()
+        self.tableView.scrollsToTop = true
+        self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 80, right: 0)
     }
     
     func tipTargetChanged(segControl : UISegmentedControl)  {
         guard let tips = TipsStore.shared.Tips[week] else {
             return
         }
-        
         switch segmentedControl.selectedSegmentIndex {
         case 0:
             currentTitle = tips.babyTitle

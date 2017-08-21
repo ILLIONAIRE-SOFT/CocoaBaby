@@ -68,7 +68,6 @@ extension TipsPageViewController: UIPageViewControllerDataSource, UIPageViewCont
         }
         
         previousViewController.week = previousPageIndex
-        
         return previousViewController
     }
     
@@ -109,9 +108,7 @@ extension TipsPageViewController: UIPageViewControllerDataSource, UIPageViewCont
         if finished || completed{
             pageIsAnimating = false
             if let previousWeek = previousViewControllers.week,
-                let currentWeek = currentViewControllers.week {
-                print("\(previousWeek),, \(currentWeek)")
-                
+                let currentWeek = currentViewControllers.week {                
                 if previousWeek < currentWeek {
                     self.weekIndex += 1
                 } else if previousWeek > currentWeek {
