@@ -26,15 +26,15 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        babyImageView.image = UIImage(named: "CocoaBaby")?.withRenderingMode(.alwaysTemplate)
-        babyImageView.tintColor = UIColor.mainBlueColor
-        
-        changeBg()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+        babyImageView.image = UIImage(named: "CocoaBaby")?.withRenderingMode(.alwaysTemplate)
+        babyImageView.tintColor = UIColor.mainBlueColor
+        
+        changeBg()
+        
         let waterDropsViewFrame = CGRect(x: 0, y: 0, width: self.babyView.frame.width, height: self.babyView.frame.height)
 
         waterDropsView = WaterDropsView(frame: waterDropsViewFrame,

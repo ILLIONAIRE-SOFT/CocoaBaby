@@ -30,12 +30,10 @@ class DiaryViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        diaryTableView.backgroundColor = UIColor.mainBlueColor
         diaryTableView.estimatedRowHeight = 300
         diaryTableView.rowHeight = UITableViewAutomaticDimension
         diaryTableView.delegate = self
         diaryTableView.dataSource = self
-        changeDiaryBg()
         
         initRefreshControl()
         initTodayLabel()
@@ -47,6 +45,8 @@ class DiaryViewController: BaseViewController {
         
         addDiaryBtnBg.layer.cornerRadius = 20
         self.diaryTableView.reloadData()
+        diaryTableView.backgroundColor = UIColor.mainBlueColor
+        changeDiaryBg()
     }
     
     override func viewDidAppear(_ animated: Bool) {
