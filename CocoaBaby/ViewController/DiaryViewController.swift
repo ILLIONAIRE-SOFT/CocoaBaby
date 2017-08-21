@@ -30,12 +30,10 @@ class DiaryViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        diaryTableView.backgroundColor = UIColor.mainBlueColor
         diaryTableView.estimatedRowHeight = 300
         diaryTableView.rowHeight = UITableViewAutomaticDimension
         diaryTableView.delegate = self
         diaryTableView.dataSource = self
-        changeDiaryBg()
         
         initRefreshControl()
         initTodayLabel()
@@ -47,6 +45,8 @@ class DiaryViewController: BaseViewController {
         
         addDiaryBtnBg.layer.cornerRadius = 20
         self.diaryTableView.reloadData()
+        diaryTableView.backgroundColor = UIColor.mainBlueColor
+        changeDiaryBg()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -183,15 +183,14 @@ class DiaryViewController: BaseViewController {
         let date = Date()
         let currentHour = Calendar.current.component(.hour, from: date)
         if currentHour > 19 || currentHour < 6 { //Night
-            
             diaryTableView.backgroundColor = UIColor.init(colorWithHexValue: 0x3f305d, alpha: 1)
             self.view.backgroundColor = UIColor.init(colorWithHexValue: 0x3f305d, alpha: 1)
-
+            
         } else if currentHour >= 6 && currentHour <= 16{
-            diaryTableView.backgroundColor = UIColor.init(colorWithHexValue: 0x4a3252, alpha: 1)
-            self.view.backgroundColor = UIColor.init(colorWithHexValue: 0x4a3252, alpha: 1)
             
         } else if currentHour >= 16 && currentHour <= 19 {
+            diaryTableView.backgroundColor = UIColor.init(colorWithHexValue: 0x4a3252, alpha: 1)
+            self.view.backgroundColor = UIColor.init(colorWithHexValue: 0x4a3252, alpha: 1)
             
         } else {
             

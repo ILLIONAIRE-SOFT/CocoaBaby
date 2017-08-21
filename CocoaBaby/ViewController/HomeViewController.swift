@@ -20,21 +20,23 @@ class HomeViewController: BaseViewController {
     @IBOutlet var dDayLabel: UILabel!
     @IBOutlet var infoLabel: UILabel!
     @IBOutlet var weekLabel: UILabel!
+    @IBOutlet var cameraButton: UIButton!
+    @IBOutlet var captureScreenButton: UIButton!
     
     var waterDropsView : WaterDropsView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        babyImageView.image = UIImage(named: "CocoaBaby")?.withRenderingMode(.alwaysTemplate)
-        babyImageView.tintColor = UIColor.mainBlueColor
-        
-        changeBg()
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-
+        babyImageView.image = UIImage(named: "CocoaBaby")?.withRenderingMode(.alwaysTemplate)
+        babyImageView.tintColor = UIColor.mainBlueColor
+        
+        changeBg()
+        
         let waterDropsViewFrame = CGRect(x: 0, y: 0, width: self.babyView.frame.width, height: self.babyView.frame.height)
 
         waterDropsView = WaterDropsView(frame: waterDropsViewFrame,
@@ -99,6 +101,22 @@ class HomeViewController: BaseViewController {
         }
     }
     
+    @IBAction func captureScreen() {
+        //Create the UIImage
+        self.cameraButton.isHidden = true
+        self.captureScreenButton.isHidden = true
+        
+        UIGraphicsBeginImageContextWithOptions(self.view.frame.size, false, 0)
+        self.view.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        //Save it to the camera roll
+        UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
+        self.cameraButton.isHidden = false
+        self.captureScreenButton.isHidden = false
+    }
+
     // MARK: - Actions
     
     @IBAction func presentCameraView() {

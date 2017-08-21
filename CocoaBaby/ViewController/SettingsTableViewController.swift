@@ -15,12 +15,15 @@ class SettingsTableViewController: BaseTableViewController {
         super.viewDidLoad()
         
         self.tableView.backgroundColor = UIColor(patternImage: UIImage(named: "Gradation2")!)
-        
         self.clearsSelectionOnViewWillAppear = true
-        
-        changeSettingBg()
+
     }
 
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        changeBgColorBasedOnTime()
+    }
+    
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -217,26 +220,6 @@ class SettingsTableViewController: BaseTableViewController {
         alertController.addAction(doneAction)
         
         present(alertController, animated: true, completion: nil)
-    }
-    
-    func changeSettingBg() {
-        
-        let date = Date()
-        let currentHour = Calendar.current.component(.hour, from: date)
-        if currentHour > 19 || currentHour < 6 { //Night
-            
-            //diaryTableView.backgroundColor = UIColor.init(colorWithHexValue: 0x3f305d, alpha: 1)
-            self.view.backgroundColor = UIColor.init(colorWithHexValue: 0x3f305d, alpha: 1)
-            
-        } else if currentHour >= 6 || currentHour <= 16{
-            //diaryTableView.backgroundColor = UIColor.init(colorWithHexValue: 0x4a3252, alpha: 1)
-            self.view.backgroundColor = UIColor.init(colorWithHexValue: 0x4a3252, alpha: 1)
-            
-        } else if currentHour >= 16 && currentHour <= 19 {
-            
-        } else {
-            
-        }
     }
     
 }

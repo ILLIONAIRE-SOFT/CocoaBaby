@@ -109,11 +109,25 @@
                                     <action selector="presentCameraView" destination="r8V-ei-x0C" eventType="touchUpInside" id="KqK-f7-hkt"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uEu-bv-Yga">
+                                <rect key="frame" x="18" y="50" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="Krj-Dx-z45"/>
+                                    <constraint firstAttribute="width" constant="24" id="gdn-M4-Zuj"/>
+                                    <constraint firstAttribute="width" secondItem="uEu-bv-Yga" secondAttribute="height" multiplier="1:1" id="jgz-nj-b5f"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="ic_crop_white"/>
+                                <connections>
+                                    <action selector="captureScreen" destination="r8V-ei-x0C" eventType="touchUpInside" id="EsG-gY-HVf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="gmg-1O-h2v" secondAttribute="trailing" constant="2" id="8H5-OY-ceV"/>
+                            <constraint firstItem="uEu-bv-Yga" firstAttribute="leading" secondItem="HF2-wf-7sp" secondAttribute="leadingMargin" constant="2" id="Eqs-ho-pga"/>
                             <constraint firstItem="UXk-Ov-myg" firstAttribute="centerX" secondItem="HF2-wf-7sp" secondAttribute="centerX" id="JyW-Tm-dUr"/>
+                            <constraint firstItem="uEu-bv-Yga" firstAttribute="centerY" secondItem="gmg-1O-h2v" secondAttribute="centerY" id="LIl-MW-D0f"/>
                             <constraint firstItem="gmg-1O-h2v" firstAttribute="top" secondItem="Ka9-KU-qB1" secondAttribute="bottom" constant="30" id="hBK-hM-kc2"/>
                             <constraint firstItem="997-ew-oh3" firstAttribute="top" secondItem="UXk-Ov-myg" secondAttribute="bottom" constant="64" id="mQ6-Ta-ESz"/>
                             <constraint firstItem="UXk-Ov-myg" firstAttribute="top" secondItem="Ka9-KU-qB1" secondAttribute="bottom" constant="40" id="q2D-ux-y4S"/>
@@ -127,6 +141,8 @@
                     <connections>
                         <outlet property="babyImageView" destination="5t2-ah-DW0" id="5al-Z6-h1c"/>
                         <outlet property="babyView" destination="UoX-Al-Kmz" id="3Sg-hr-bIw"/>
+                        <outlet property="cameraButton" destination="gmg-1O-h2v" id="OVB-n5-ApS"/>
+                        <outlet property="captureScreenButton" destination="uEu-bv-Yga" id="KQm-vK-vJ2"/>
                         <outlet property="dDayLabel" destination="59f-cp-ErD" id="BS0-0G-p1j"/>
                         <outlet property="infoLabel" destination="Op6-Ka-edG" id="et6-YY-grN"/>
                         <outlet property="nameLabel" destination="3cZ-ux-bAi" id="kqW-AF-EG0"/>
@@ -140,6 +156,7 @@
     </scenes>
     <resources>
         <image name="CocoaBaby" width="640" height="640"/>
+        <image name="ic_crop_white" width="24" height="24"/>
         <image name="ic_face_white" width="24" height="24"/>
         <image name="ic_photo_camera_white" width="24" height="24"/>
     </resources>

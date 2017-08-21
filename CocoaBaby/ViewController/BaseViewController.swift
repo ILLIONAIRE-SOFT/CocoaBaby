@@ -85,4 +85,26 @@ class BaseViewController: UIViewController {
             overlay.removeFromSuperview()
         }
     }
+    
+    func changeBgColorBasedOnTime() {
+        
+        let date = Date()
+        let currentHour = Calendar.current.component(.hour, from: date)
+        if currentHour > 19 || currentHour < 6 { //Night
+            // diaryTableView.backgroundColor = UIColor.init(colorWithHexValue: 0x3f305d, alpha: 1)
+            self.view.backgroundColor = UIColor.init(colorWithHexValue: 0x3f305d, alpha: 1)
+            
+        } else if currentHour >= 6 && currentHour <= 16{
+            
+        } else if currentHour >= 16 && currentHour <= 19 {
+            // diaryTableView.backgroundColor = UIColor.init(colorWithHexValue: 0x4a3252, alpha: 1)
+            self.view.backgroundColor = UIColor.init(colorWithHexValue: 0x4a3252, alpha: 1)
+            
+        } else {
+            
+        }
+        
+    }
+
+    
 }
