@@ -96,7 +96,6 @@
 		4911D9D01F3446110031B74A /* TipsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TipsViewController.swift; path = ViewController/TipsViewController.swift; sourceTree = "<group>"; };
 		4911D9D31F34461F0031B74A /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = ViewController/SettingsViewController.swift; sourceTree = "<group>"; };
 		4911D9DB1F344DCA0031B74A /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
-		4911D9DD1F344DDD0031B74A /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4911D9DE1F344DDE0031B74A /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4911D9E21F3450EF0031B74A /* ErrorMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ErrorMessage.swift; path = Utilities/ErrorMessage.swift; sourceTree = "<group>"; };
 		4920577B1F413FAB00F232E2 /* Diary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Diary.swift; path = Model/Diary.swift; sourceTree = "<group>"; };
@@ -948,7 +947,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				4911D9DB1F344DCA0031B74A /* Base */,
-				4911D9DD1F344DDD0031B74A /* en */,
 				4911D9DE1F344DDE0031B74A /* ko */,
 			);
 			name = Localizable.strings;
