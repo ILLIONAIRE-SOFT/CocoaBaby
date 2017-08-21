@@ -151,6 +151,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         
+        // 앱이 꺼져있을 때 처리 필요
         if let tabBarVC = self.window?.rootViewController as? UITabBarController {
             tabBarVC.selectedIndex = 1
         }
