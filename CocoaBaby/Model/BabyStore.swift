@@ -162,12 +162,12 @@ class BabyStore {
     
     func getYearOfPregnantDate() -> String {
         
-        var date = Date(timeIntervalSince1970: baby.pregnantDate)
+        let date = Date(timeIntervalSince1970: baby.pregnantDate)
         // date에서 year만 뽑아내는 법
         let dateFormatter = DateFormatter()
         
         dateFormatter.dateFormat = "yyyy"
-        var pregnantYear = dateFormatter.string(from: date)
+        let pregnantYear = dateFormatter.string(from: date)
         
         return pregnantYear
     }
