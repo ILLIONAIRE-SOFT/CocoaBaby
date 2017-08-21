@@ -112,14 +112,15 @@ class HomeViewController: BaseViewController {
         
         babyImageView.clipsToBounds = false
         
-        let babySay = "엄마, 보고싶어요!"
+        let babySay = "엄마, 보고싶어요!\n두줄이면 어떻게?"
         
         let babySayLabel = UILabel()
         babySayLabel.text = babySay
         babySayLabel.textAlignment = .center
-        babySayLabel.font = UIFont(name: "Helvetica Neue", size: 13)
+        babySayLabel.font = UIFont(name: "Helvetica Neue", size: 11)
+        babySayLabel.numberOfLines = 0
         
-        babySayLabel.frame = CGRect(x: 0, y: 0, width: babySayLabel.intrinsicContentSize.width * 1.5, height: 50)
+        babySayLabel.frame = CGRect(x: 0, y: 0, width: babyImageView.frame.width * 0.85, height: babyImageView.frame.height * 0.22)
         let arrow = UIView(frame: CGRect(x: babySayLabel.frame.width/2, y: babySayLabel.frame.height - 10, width: 20, height: 20))
         
         babySayLabel.backgroundColor = .white

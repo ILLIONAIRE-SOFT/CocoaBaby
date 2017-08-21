@@ -17,6 +17,11 @@ class TabBarViewController: UITabBarController {
         tabBar.shadowImage = UIImage(named: "transparentBackground")
         tabBar.unselectedItemTintColor = UIColor.white
         
+        guard Locale.current.languageCode == "ko" || Locale.current.regionCode == "KR" else {
+            self.viewControllers?[2] = (self.viewControllers?[3])!
+            self.viewControllers?.removeLast()
+            return
+        }
     }
 
     override func didReceiveMemoryWarning() {
