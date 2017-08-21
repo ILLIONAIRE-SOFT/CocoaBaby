@@ -37,9 +37,11 @@ class SettingsTableViewController: BaseTableViewController {
         case (2, 1):
             logout()
         default:
+            tableView.deselectRow(at: indexPath, animated: true)
             return
         }
         
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     func logout() {
