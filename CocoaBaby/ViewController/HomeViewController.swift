@@ -34,9 +34,6 @@ class HomeViewController: BaseViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        updateBabyInfo()
-        updateInfoLabel(week: BabyStore.shared.getPregnantWeek().week)
 
         let waterDropsViewFrame = CGRect(x: 0, y: 0, width: self.babyView.frame.width, height: self.babyView.frame.height)
 
@@ -51,13 +48,15 @@ class HomeViewController: BaseViewController {
                                             minDuration: 8,
                                             maxDuration: 14)
         waterDropsView?.addAnimation()
+        self.waterDropsView?.isUserInteractionEnabled = false
         self.babyView.addSubview(waterDropsView!)
+        
         babyImageView.image = UIImage(named: "CocoaBaby")?.withRenderingMode(.alwaysTemplate)
         babyImageView.tintColor = UIColor.mainBlueColor
-        updateBabyInfo()
-        updateInfoLabel(week: BabyStore.shared.getPregnantWeek().week)
         self.beginBabyAnimation()
 
+        updateBabyInfo()
+        updateInfoLabel(week: BabyStore.shared.getPregnantWeek().week)
     }
     
     
@@ -108,7 +107,47 @@ class HomeViewController: BaseViewController {
         
         self.present(viewController, animated: true, completion: nil)
     }
-    
+    @IBAction func showBalloon() {
+        
+        
+        babyImageView.clipsToBounds = false
+        
+        let babySay = "엄마, 보고싶어요!"
+        
+        let babySayLabel = UILabel()
+        babySayLabel.text = babySay
+        babySayLabel.textAlignment = .center
+        babySayLabel.font = UIFont(name: "Helvetica Neue", size: 13)
+        
+        babySayLabel.frame = CGRect(x: 0, y: 0, width: babySayLabel.intrinsicContentSize.width * 1.5, height: 50)
+        let arrow = UIView(frame: CGRect(x: babySayLabel.frame.width/2, y: babySayLabel.frame.height - 10, width: 20, height: 20))
+        
+        babySayLabel.backgroundColor = .white
+        arrow.backgroundColor = .white
+        
+        babySayLabel.layer.masksToBounds = true
+        babySayLabel.layer.cornerRadius = babySayLabel.frame.height/2
+        arrow.layer.cornerRadius = 15
+        
+        babySayLabel.alpha = 0
+        arrow.alpha = 0
+        
+        
+        babyImageView.addSubview(babySayLabel)
+        babyImageView.addSubview(arrow)
+        
+        UIView.animate(withDuration: 2, animations: {
+            babySayLabel.alpha = 1
+            arrow.alpha = 1
+        }) { (isCompleted) in
+            UIView.animate(withDuration: 2
+                , delay : 1, animations: {
+                    babySayLabel.alpha = 0
+                    arrow.alpha = 0
+            })
+        }
+
+    }
     
     func beginBabyAnimation () {
         UIImageView.animate(withDuration: 8.0, delay:0, options: [.repeat, .autoreverse, .curveEaseInOut], animations: {
