@@ -187,7 +187,7 @@ class DiaryViewController: BaseViewController {
             diaryTableView.backgroundColor = UIColor.init(colorWithHexValue: 0x3f305d, alpha: 1)
             self.view.backgroundColor = UIColor.init(colorWithHexValue: 0x3f305d, alpha: 1)
 
-        } else if currentHour >= 6 || currentHour <= 16{
+        } else if currentHour >= 6 && currentHour <= 16{
             diaryTableView.backgroundColor = UIColor.init(colorWithHexValue: 0x4a3252, alpha: 1)
             self.view.backgroundColor = UIColor.init(colorWithHexValue: 0x4a3252, alpha: 1)
             
