@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -201,125 +200,6 @@
             </objects>
             <point key="canvasLocation" x="2096.8000000000002" y="296.40179910044981"/>
         </scene>
-        <!--Settings View Controller-->
-        <scene sceneID="rsd-Kt-2oa">
-            <objects>
-                <viewController id="IMQ-YG-anA" customClass="SettingsViewController" customModule="CocoaBaby" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="b03-Hp-WgS"/>
-                        <viewControllerLayoutGuide type="bottom" id="ELF-RE-Jae"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="6Qu-xd-r7S">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="PS5-Ra-D4E">
-                                <rect key="frame" x="36" y="56" width="303" height="575"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="uAg-Vf-Mct">
-                                        <rect key="frame" x="0.0" y="0.0" width="303" height="143.5"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ihF-Wi-oFA">
-                                                <rect key="frame" x="0.0" y="0.0" width="143.5" height="143.5"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="ihF-Wi-oFA" secondAttribute="height" multiplier="1:1" id="bPd-a0-p5F"/>
-                                                </constraints>
-                                                <state key="normal" title="Edit Baby">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <segue destination="s9y-kI-1Xb" kind="show" id="2gZ-qc-1m0"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3vQ-uZ-wUh">
-                                                <rect key="frame" x="159.5" y="0.0" width="143.5" height="143.5"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="3vQ-uZ-wUh" secondAttribute="height" multiplier="1:1" id="Nzj-6L-1Xp"/>
-                                                </constraints>
-                                                <state key="normal" title="Edit Date">
-                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <connections>
-                                                    <segue destination="71R-oA-mYM" kind="presentation" id="nyp-Ei-vBf"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q1N-Tp-ShP">
-                                        <rect key="frame" x="0.0" y="159.5" width="303" height="30"/>
-                                        <state key="normal" title="Send email to developer">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eVA-kw-LlC">
-                                        <rect key="frame" x="0.0" y="205.5" width="303" height="30"/>
-                                        <state key="normal" title="Logout">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="tappedLogout:" destination="IMQ-YG-anA" eventType="touchUpInside" id="R9i-Fr-fi5"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dW6-Fo-bNZ">
-                                        <rect key="frame" x="0.0" y="251.5" width="303" height="30"/>
-                                        <state key="normal" title="Share">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="tappedShare:" destination="IMQ-YG-anA" eventType="touchUpInside" id="uxx-oC-XcQ"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="66g-VN-aE8">
-                                        <rect key="frame" x="0.0" y="297.5" width="303" height="30"/>
-                                        <state key="normal" title="Link with mom">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="tappedLink:" destination="IMQ-YG-anA" eventType="touchUpInside" id="D0w-rf-Mra"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4bq-6a-AVE">
-                                        <rect key="frame" x="0.0" y="343.5" width="303" height="30"/>
-                                        <state key="normal" title="Unlink">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="tappedUnlink:" destination="IMQ-YG-anA" eventType="touchUpInside" id="vXA-Qg-aDO"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QNy-10-j5o">
-                                        <rect key="frame" x="0.0" y="389.5" width="303" height="30"/>
-                                        <state key="normal" title="gender button">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                    </button>
-                                    <view contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="B4x-cg-lWU">
-                                        <rect key="frame" x="0.0" y="435.5" width="303" height="139.5"/>
-                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                    </view>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="ELF-RE-Jae" firstAttribute="top" secondItem="PS5-Ra-D4E" secondAttribute="bottom" constant="36" id="9aA-Us-eaB"/>
-                            <constraint firstAttribute="trailing" secondItem="PS5-Ra-D4E" secondAttribute="trailing" constant="36" id="DYN-U3-bi5"/>
-                            <constraint firstItem="PS5-Ra-D4E" firstAttribute="leading" secondItem="6Qu-xd-r7S" secondAttribute="leading" constant="36" id="F7z-8e-Rv7"/>
-                            <constraint firstItem="PS5-Ra-D4E" firstAttribute="top" secondItem="b03-Hp-WgS" secondAttribute="bottom" constant="36" id="N8i-k8-JJr"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" image="ic_settings_white" id="ZOI-Tl-8QR"/>
-                    <connections>
-                        <outlet property="editBabyButton" destination="ihF-Wi-oFA" id="oNT-z9-e26"/>
-                        <outlet property="editDateButton" destination="3vQ-uZ-wUh" id="JJB-6s-1b6"/>
-                        <outlet property="genderButton" destination="QNy-10-j5o" id="oI8-oZ-CHL"/>
-                        <outlet property="sendEmailButton" destination="Q1N-Tp-ShP" id="1Oe-UP-hNM"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="deY-CE-vdK" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3111.1999999999998" y="297.30134932533736"/>
-        </scene>
         <!--Edit Baby View Controller-->
         <scene sceneID="PR4-ue-gWF">
             <objects>
@@ -427,7 +307,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KqJ-HE-Lvg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3932" y="297.30134932533736"/>
+            <point key="canvasLocation" x="2953" y="296"/>
         </scene>
         <!--Edit Baby Date View Controller-->
         <scene sceneID="VYe-Gl-nhj">
@@ -548,7 +428,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2993" y="1031"/>
+            <point key="canvasLocation" x="2097" y="1063"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="KQ2-WX-ALz">
@@ -573,8 +453,4 @@
     <resources>
         <image name="ic_settings_white" width="24" height="24"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="YLP-y4-AQ1"/>
-        <segue reference="w0f-0l-gZg"/>
-    </inferredMetricsTieBreakers>
 </document>
