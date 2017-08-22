@@ -1,4 +1,4 @@
-    //
+//
 //  AppDelegate.swift
 //  CocoaBaby
 //
@@ -11,12 +11,40 @@ import Firebase
 import GoogleSignIn
 import UserNotifications
 
+enum ShortcutIdentifier: String {
+    case First
+    case Second
+    case Third
+    case Fourth
+    
+    init?(fullType: String) {
+        guard let last = fullType.components(separatedBy: ".").last else {
+            return nil
+        }
+        
+        self.init(rawValue: last)
+    }
+    
+    var type: String {
+        return Bundle.main.bundleIdentifier! + ".\(self.rawValue)"
+    }
+}
+
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUserNotificationCenterDelegate {
-
+    
     var window: UIWindow?
-
+    var launchedShortcutItem: UIApplicationShortcutItem?
+    var isNeedHandleDiaryResponse: Bool = false
+    var isNeedHandleWriteDiaryQuickAction: Bool = false
+    var isNeedPresentWriteDiary: Bool = false
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        
+        // Quick Action으로 앱 실행했을 때 처리
+        if let shortcutItem = launchOptions?[UIApplicationLaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem {
+            launchedShortcutItem = shortcutItem
+        }
         
         FirebaseApp.configure()
         
@@ -58,28 +86,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
         
         return true
     }
-
-    func applicationWillResignActive(_ application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
-    }
-
-    func applicationDidEnterBackground(_ application: UIApplication) {
     
+    func applicationWillResignActive(_ application: UIApplication) {
+        
+    }
+    
+    func applicationDidEnterBackground(_ application: UIApplication) {
+        
         Messaging.messaging().shouldEstablishDirectChannel = false
     }
-
-    func applicationWillEnterForeground(_ application: UIApplication) {
     
+    func applicationWillEnterForeground(_ application: UIApplication) {
+        
         Messaging.messaging().shouldEstablishDirectChannel = true
     }
-
+    
     func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+        application.applicationIconBadgeNumber = 0
+        // 앱 첫 실행 시 Quick Action 처리
+        guard let shortcut = launchedShortcutItem else {
+            return
+        }
+        
+        handleShortcutItem(shortcutItem: shortcut)
+        
+        launchedShortcutItem = nil
     }
-
+    
     func applicationWillTerminate(_ application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
@@ -141,11 +176,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
         
     }
     
+    // MARK: - User Notification
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         
-        // 앱이 꺼져있을 때 처리 필요
         if let tabBarVC = self.window?.rootViewController as? UITabBarController {
             tabBarVC.selectedIndex = 1
+        } else {
+            // 앱이 꺼져있는 경우
+            isNeedHandleDiaryResponse = true
         }
         
         completionHandler()
@@ -156,5 +194,47 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
         completionHandler([UNNotificationPresentationOptions.alert,
                            UNNotificationPresentationOptions.badge])
     }
+    
+    // MARK: Quick Action
+    func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
+        // 앱이 완전히 꺼지지 않은 상태에서 Quick Action 처리
+        let handleShortcutItem = self.handleShortcutItem(shortcutItem: shortcutItem)
+        
+        completionHandler(handleShortcutItem)
+    }
+    
+    @discardableResult func handleShortcutItem(shortcutItem: UIApplicationShortcutItem) -> Bool {
+        
+        var handled: Bool = false
+        
+        guard ShortcutIdentifier(fullType: shortcutItem.type) != nil else {
+            return false
+        }
+        
+        guard let shortCutType = shortcutItem.type as String? else {
+            return false
+        }
+        
+        switch shortCutType {
+        case ShortcutIdentifier.First.type:
+            if let tabBarVC = self.window?.rootViewController as? UITabBarController {
+                // 켜져있는 상태
+                isNeedPresentWriteDiary = true
+                tabBarVC.selectedIndex = 0
+                tabBarVC.selectedIndex = 1
+            } else {
+                // 앱 첫 실행 시
+                isNeedPresentWriteDiary = true
+                isNeedHandleWriteDiaryQuickAction = true
+            }
+            
+            handled = true
+            break
+        default:
+            break
+        }
+        
+        return handled
+            
+    }
 }
-

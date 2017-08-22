@@ -25,6 +25,7 @@ class BaseViewController: UIViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
+        print("BaseViewController viewWillDisappear")
         
         stopLoading()
         //        hideOverlay()

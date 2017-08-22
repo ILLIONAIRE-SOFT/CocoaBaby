@@ -29,4 +29,6 @@ struct StoryboardName {
     static let mainTabBarViewController: String = "MainTabBarViewController"
     static let splashViewController: String = "SplashViewController"
     static let captureBabyViewController: String = "CaptureBabyViewController"
+    static let diaryAddViewController: String = "DiaryAddViewController"
+    static let datePickerViewController: String = "DatePickerViewController"
 }

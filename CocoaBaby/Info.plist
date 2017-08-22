@@ -51,5 +51,23 @@
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
 	</array>
+	<key>UIApplicationShortcutItems</key>
+	<array>
+		<dict>
+			<key>UIApplicationShortcutItemUserInfo</key>
+			<dict>
+				<key>firstShortcutKey1</key>
+				<string>firstShortcutKeyValue1</string>
+			</dict>
+			<key>UIApplicationShortcutItemType</key>
+			<string>com.Sohn.CocoaBaby.First</string>
+			<key>UIApplicationShortcutItemTitle</key>
+			<string>Write Diary</string>
+			<key>UIApplicationShortcutItemIconType</key>
+			<string>UIApplicationShortcutIconTypeAdd</string>
+			<key>UIApplicationShortcutItemSubtitle</key>
+			<string>Wirte today diary</string>
+		</dict>
+	</array>
 </dict>
 </plist>

@@ -40,70 +40,92 @@ class ImageService  {
         return nil
     }
     
-    static func merge(image : UIImage, cameraViewLabel : UILabel, cameraViewWidth : CGFloat) -> UIImage? {
+    static func merge(image : UIImage, cameraViewLabel : UILabel, cameraViewWidth : CGFloat, babyNameViewLabel : UILabel) -> UIImage? {
         
         UIGraphicsBeginImageContext(image.size)
         let imageAreaSize = CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height)
         
         image.draw(in: imageAreaSize)
-    
+        
         // merge label
-//        
-//        let label = UILabel()
-//        label.text = cameraViewLabel.text
-//        label.textAlignment = .center
-//        label.font = UIFont(name: "Helvetica Neue", size: 13 * image.size.width/cameraViewWidth)
-//        label.layer.backgroundColor = UIColor.white.cgColor
-//
-//        let labelWidth : CGFloat = label.intrinsicContentSize.width * 1.5
-//        let labelHeight : CGFloat = label.intrinsicContentSize.height * 1.5
-//        let labelPointX : CGFloat = image.size.width/2 - labelWidth/2
-//        let labelPointY : CGFloat = image.size.height/40
-//        let labelRect = CGRect(x: labelPointX, y: labelPointY, width: labelWidth, height: labelHeight)
-//        
-//        label.frame = labelRect
-//        
-//        label.layer.cornerRadius = labelHeight/2
-//        let labelImage = UIImage.imageWithLabel(label: label)
-//        
-//        labelImage.draw(in: labelRect)
-//        let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-//        UIGraphicsEndImageContext()
-//        
-//        UIImageWriteToSavedPhotosAlbum(newImage, nil, nil, nil)
-//        
-//        return newImage
+        //
+        //        let label = UILabel()
+        //        label.text = cameraViewLabel.text
+        //        label.textAlignment = .center
+        //        label.font = UIFont(name: "Helvetica Neue", size: 13 * image.size.width/cameraViewWidth)
+        //        label.layer.backgroundColor = UIColor.white.cgColor
+        //
+        //        let labelWidth : CGFloat = label.intrinsicContentSize.width * 1.5
+        //        let labelHeight : CGFloat = label.intrinsicContentSize.height * 1.5
+        //        let labelPointX : CGFloat = image.size.width/2 - labelWidth/2
+        //        let labelPointY : CGFloat = image.size.height/40
+        //        let labelRect = CGRect(x: labelPointX, y: labelPointY, width: labelWidth, height: labelHeight)
+        //
+        //        label.frame = labelRect
+        //
+        //        label.layer.cornerRadius = labelHeight/2
+        //        let labelImage = UIImage.imageWithLabel(label: label)
+        //
+        //        labelImage.draw(in: labelRect)
+        //        let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        //        UIGraphicsEndImageContext()
+        //
+        //        UIImageWriteToSavedPhotosAlbum(newImage, nil, nil, nil)
+        //
+        //        return newImage
+        
+        // MARK: WeekLabel
+        let label = UILabel()
+        label.text = cameraViewLabel.text
+        label.textAlignment = .left
+        label.font = UIFont(name: "AppleSDGothicNeo-Thin", size: 40 * image.size.width/cameraViewWidth)
+        
+        label.textColor = UIColor.white
+        
+        let labelWidth : CGFloat = label.intrinsicContentSize.width * 1.5
+        let labelHeight : CGFloat = label.intrinsicContentSize.height * 1.5
+        
+        let labelPointX : CGFloat = image.size.width/2 - (labelWidth/2)*2.1 + 200
+        let labelPointY : CGFloat = image.size.height/50
+        let labelRect = CGRect(x: labelPointX, y: labelPointY, width: labelWidth, height: labelHeight)
+        
+        label.frame = labelRect
+        
+        // MARK: babyNameLabel
+        let babyNameLabel = UILabel()
+        babyNameLabel.text = babyNameViewLabel.text
+        babyNameLabel.textAlignment = .left
+        babyNameLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 20 * image.size.width/cameraViewWidth)
+        
+        babyNameLabel.textColor = UIColor.white
+        
+        let babylabelWidth : CGFloat = babyNameLabel.intrinsicContentSize.width * 1.5
+        let babylabelHeight : CGFloat = babyNameLabel.intrinsicContentSize.height * 1.5
+        
+        let babylabelPointX : CGFloat = image.size.width/2 - (labelWidth/2)*2.1 + 200
+        let babylabelPointY : CGFloat = image.size.height/5 - 100
+        let babylabelRect = CGRect(x: babylabelPointX, y: babylabelPointY, width: babylabelWidth, height: babylabelHeight)
+        
+        babyNameLabel.frame = babylabelRect
         
         
-                let label = UILabel()
-                label.text = cameraViewLabel.text
-                label.textAlignment = .center
-                label.font = UIFont(name: "Helvetica Neue", size: 50 * image.size.width/cameraViewWidth)
-                label.layer.backgroundColor = UIColor.white.cgColor
+        let labelImage = UIImage.imageWithLabel(label: label)
+        let babylabelImage = UIImage.imageWithLabel(label: babyNameLabel)
         
-                let labelWidth : CGFloat = label.intrinsicContentSize.width * 1.5
-                let labelHeight : CGFloat = label.intrinsicContentSize.height * 1.5
-                let labelPointX : CGFloat = image.size.width/2 - labelWidth/2
-                let labelPointY : CGFloat = image.size.height/40
-                let labelRect = CGRect(x: labelPointX, y: labelPointY, width: labelWidth, height: labelHeight)
+        labelImage.draw(in: labelRect)
+        babylabelImage.draw(in: babylabelRect)
         
-                label.frame = labelRect
+        let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
+        UIGraphicsEndImageContext()
         
-                label.layer.cornerRadius = labelHeight/2
-                let labelImage = UIImage.imageWithLabel(label: label)
+        UIImageWriteToSavedPhotosAlbum(newImage, nil, nil, nil)
         
-                labelImage.draw(in: labelRect)
-                let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-                UIGraphicsEndImageContext()
-                
-                UIImageWriteToSavedPhotosAlbum(newImage, nil, nil, nil)
-                
-                return newImage
-
+        return newImage
+        
         
     }
     
-
+    
     
 }
 
