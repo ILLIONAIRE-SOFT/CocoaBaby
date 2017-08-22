@@ -13,7 +13,7 @@
         <!--Diary View Controller-->
         <scene sceneID="8d1-bp-YgX">
             <objects>
-                <viewController id="ggf-Te-aAy" customClass="DiaryViewController" customModule="CocoaBaby" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DiaryViewController" id="ggf-Te-aAy" customClass="DiaryViewController" customModule="CocoaBaby" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4f6-uQ-zxo"/>
                         <viewControllerLayoutGuide type="bottom" id="vIq-kd-Fgd"/>
@@ -220,7 +220,9 @@
                     <tabBarItem key="tabBarItem" image="ic_create_white" id="Aqt-9a-pt8"/>
                     <connections>
                         <outlet property="addDiaryBtnBg" destination="XYS-Cu-YL1" id="3t9-m8-PcZ"/>
+                        <outlet property="addDiaryButtonBackground" destination="XYS-Cu-YL1" id="ywb-mP-5xB"/>
                         <outlet property="diaryTableView" destination="vrF-dx-IH1" id="KZT-nf-GiG"/>
+                        <outlet property="tableViewBottomConstraint" destination="uEa-Yf-SBK" id="qt6-0J-qIw"/>
                         <outlet property="yearPickLabel" destination="XTh-bu-1Nw" id="5Ex-3M-c4s"/>
                     </connections>
                 </viewController>
@@ -312,7 +314,7 @@
         <!--Diary Add View Controller-->
         <scene sceneID="c4s-Cf-xjK">
             <objects>
-                <viewController id="Uo9-5P-rrE" customClass="DiaryAddViewController" customModule="CocoaBaby" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DiaryAddViewController" id="Uo9-5P-rrE" customClass="DiaryAddViewController" customModule="CocoaBaby" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="s9d-mp-6hl"/>
                         <viewControllerLayoutGuide type="bottom" id="C3W-Eo-JCX"/>
@@ -385,8 +387,8 @@
                                     <color key="titleColor" red="0.87450980389999999" green="0.42352941179999998" blue="0.4941176471" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lyg-e7-sbV">
-                                <rect key="frame" x="47" y="595" width="0.0" height="0.0"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lyg-e7-sbV">
+                                <rect key="frame" x="47" y="595" width="300" height="0.0"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                 <color key="textColor" red="0.2363229443" green="0.2363229443" blue="0.2363229443" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -421,6 +423,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="FL6-eK-92a" secondAttribute="trailing" constant="12" id="WbT-Tp-Xkl"/>
                             <constraint firstItem="5zg-rN-ewf" firstAttribute="top" secondItem="FL6-eK-92a" secondAttribute="bottom" constant="17" id="agA-tU-48C"/>
                             <constraint firstItem="6xb-29-cOe" firstAttribute="top" secondItem="s9d-mp-6hl" secondAttribute="bottom" constant="30" id="bRc-h3-VGJ"/>
+                            <constraint firstItem="Lyg-e7-sbV" firstAttribute="trailing" secondItem="FL6-eK-92a" secondAttribute="trailing" id="eak-GW-7TT"/>
                             <constraint firstItem="v0f-U7-kzh" firstAttribute="top" secondItem="Lyg-e7-sbV" secondAttribute="bottom" constant="28" id="hf2-1U-2IF"/>
                             <constraint firstItem="FL6-eK-92a" firstAttribute="top" secondItem="481-QA-cKe" secondAttribute="bottom" constant="28" id="iCa-d3-Kep"/>
                             <constraint firstItem="Lyg-e7-sbV" firstAttribute="top" secondItem="IyS-pl-KM7" secondAttribute="bottom" constant="6" id="lPg-lH-Eif"/>

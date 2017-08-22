@@ -27,4 +27,5 @@ struct StoryboardName {
     static let loginViewController: String = "LoginViewController"
     static let mainTabBarViewController: String = "MainTabBarViewController"
     static let splashViewController: String = "SplashViewController"
+    static let diaryAddViewController: String = "DiaryAddViewController"
 }
