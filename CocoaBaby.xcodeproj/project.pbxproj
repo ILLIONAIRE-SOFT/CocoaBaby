@@ -61,8 +61,10 @@
 		D45189C31F3ACD0700937869 /* DiaryAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45189C21F3ACD0700937869 /* DiaryAddViewController.swift */; };
 		D45189C71F3AD25200937869 /* DiaryBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45189C61F3AD25200937869 /* DiaryBaseViewController.swift */; };
 		DA131A701F45641600DE12F7 /* EditBabyDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA131A6F1F45641600DE12F7 /* EditBabyDateViewController.swift */; };
+		DA571F921F4C166C008EA81A /* CaptureBabyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA571F911F4C166C008EA81A /* CaptureBabyViewController.swift */; };
 		DA5C8F2E1F415F0C00AA3185 /* TipsDetailContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5C8F2C1F415F0C00AA3185 /* TipsDetailContentTableViewCell.swift */; };
 		DA5C8F321F41AA1000AA3185 /* TipsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5C8F311F41AA1000AA3185 /* TipsStore.swift */; };
+		DA6E7C111F4BEE5400F9D636 /* Share.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA6E7C101F4BEE5400F9D636 /* Share.storyboard */; };
 		DA7460FF1F4405F800568F1C /* CameraViewController_camera.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7460FA1F4405F800568F1C /* CameraViewController_camera.swift */; };
 		DA7461011F4405F800568F1C /* CameraViewController_main.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7460FC1F4405F800568F1C /* CameraViewController_main.swift */; };
 		DA7461021F4405F800568F1C /* CameraViewController_services.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA7460FD1F4405F800568F1C /* CameraViewController_services.swift */; };
@@ -159,9 +161,11 @@
 		D45189C21F3ACD0700937869 /* DiaryAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryAddViewController.swift; sourceTree = "<group>"; };
 		D45189C61F3AD25200937869 /* DiaryBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryBaseViewController.swift; sourceTree = "<group>"; };
 		DA131A6F1F45641600DE12F7 /* EditBabyDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditBabyDateViewController.swift; sourceTree = "<group>"; };
+		DA571F911F4C166C008EA81A /* CaptureBabyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureBabyViewController.swift; sourceTree = "<group>"; };
 		DA5C8F2C1F415F0C00AA3185 /* TipsDetailContentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsDetailContentTableViewCell.swift; sourceTree = "<group>"; };
 		DA5C8F311F41AA1000AA3185 /* TipsStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsStore.swift; sourceTree = "<group>"; };
 		DA6C03451F4357A20092443F /* CocoaBaby.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CocoaBaby.entitlements; sourceTree = "<group>"; };
+		DA6E7C101F4BEE5400F9D636 /* Share.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Share.storyboard; sourceTree = "<group>"; };
 		DA7460FA1F4405F800568F1C /* CameraViewController_camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController_camera.swift; sourceTree = "<group>"; };
 		DA7460FC1F4405F800568F1C /* CameraViewController_main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController_main.swift; sourceTree = "<group>"; };
 		DA7460FD1F4405F800568F1C /* CameraViewController_services.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraViewController_services.swift; sourceTree = "<group>"; };
@@ -362,6 +366,7 @@
 		49D7F4461F319D5A004DF036 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
+				DA571F901F4C1651008EA81A /* Share */,
 				DA7460F91F4405E500568F1C /* Camera */,
 				492057831F41704000F232E2 /* Splash */,
 				49CBF1881F3C338300426D61 /* Login */,
@@ -388,6 +393,7 @@
 				D45189BF1F39692E00937869 /* Settings.storyboard */,
 				49E659111F42C64A00D85C53 /* UserSettings.storyboard */,
 				DA7461041F4407D900568F1C /* Camera.storyboard */,
+				DA6E7C101F4BEE5400F9D636 /* Share.storyboard */,
 			);
 			name = Storyboard;
 			sourceTree = "<group>";
@@ -499,6 +505,14 @@
 				59BB0E835D394CED74697D47 /* Pods-CocoaBabyUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		DA571F901F4C1651008EA81A /* Share */ = {
+			isa = PBXGroup;
+			children = (
+				DA571F911F4C166C008EA81A /* CaptureBabyViewController.swift */,
+			);
+			name = Share;
 			sourceTree = "<group>";
 		};
 		DA5C8F301F41A9C800AA3185 /* Tips */ = {
@@ -686,6 +700,7 @@
 			files = (
 				D45189BB1F39679700937869 /* Home.storyboard in Resources */,
 				DA7461051F4407D900568F1C /* Camera.storyboard in Resources */,
+				DA6E7C111F4BEE5400F9D636 /* Share.storyboard in Resources */,
 				4911D9DA1F344DCA0031B74A /* Localizable.strings in Resources */,
 				49E659131F42C64A00D85C53 /* UserSettings.storyboard in Resources */,
 				49F6C7871F318AF200373F06 /* LaunchScreen.storyboard in Resources */,
@@ -900,6 +915,7 @@
 				49CBF1871F3C29DE00426D61 /* FireBaseAPI.swift in Sources */,
 				49E6591E1F45672C00D85C53 /* PushManager.swift in Sources */,
 				4911D9CE1F34455D0031B74A /* DiaryViewController.swift in Sources */,
+				DA571F921F4C166C008EA81A /* CaptureBabyViewController.swift in Sources */,
 				DA131A701F45641600DE12F7 /* EditBabyDateViewController.swift in Sources */,
 				D45189C31F3ACD0700937869 /* DiaryAddViewController.swift in Sources */,
 				DA5C8F321F41AA1000AA3185 /* TipsStore.swift in Sources */,

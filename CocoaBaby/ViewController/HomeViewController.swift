@@ -127,14 +127,24 @@ class HomeViewController: BaseViewController {
         
         UIGraphicsBeginImageContextWithOptions(backgroundView.frame.size, false, 0)
         backgroundView.layer.render(in: UIGraphicsGetCurrentContext()!)
-        let mergeImage = UIGraphicsGetImageFromCurrentImageContext()
+        let squareImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
 
         //Save it to the camera roll
-        UIImageWriteToSavedPhotosAlbum(mergeImage!, nil, nil, nil)
+        UIImageWriteToSavedPhotosAlbum(squareImage!, nil, nil, nil)
         
         self.cameraButton.isHidden = false
         self.captureScreenButton.isHidden = false
+        
+        
+        let shareSB = UIStoryboard(name: StoryboardName.share, bundle: nil)
+        let viewController = shareSB.instantiateViewController(withIdentifier: StoryboardName.captureBabyViewController) as! CaptureBabyViewController
+        viewController.modalPresentationStyle = .overCurrentContext
+        
+        viewController.squareImage = squareImage!
+        viewController.rectangleImage = image!
+        
+        present(viewController, animated: true, completion: nil)
     }
 
     // MARK: - Actions

@@ -19,6 +19,7 @@ struct StoryboardName {
     static let settings: String = "Settings"
     static let userSettings: String = "UserSettings"
     static let camera: String = "Camera"
+    static let share: String = "Share"
     
     // MARK: Storyboard ID
     static let welcomeViewController: String = "WelcomeViewController"
@@ -27,4 +28,5 @@ struct StoryboardName {
     static let loginViewController: String = "LoginViewController"
     static let mainTabBarViewController: String = "MainTabBarViewController"
     static let splashViewController: String = "SplashViewController"
+    static let captureBabyViewController: String = "CaptureBabyViewController"
 }
