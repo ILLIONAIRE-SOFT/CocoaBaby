@@ -110,7 +110,7 @@ extension CameraViewController : AVCapturePhotoCaptureDelegate {
             
             let cropImage = ImageService.cropImageToSquare(image: image!)
             
-            _ = ImageService.merge(image: cropImage!, cameraViewLabel: self.weekUILabel, cameraViewWidth: self.cameraView.frame.width)
+            _ = ImageService.merge(image: cropImage!, cameraViewLabel: self.weekUILabel, cameraViewWidth: self.cameraView.frame.width, babyNameViewLabel: self.babyNameUILabel)
             
             
             print("image croped : \(cropImage!)")
