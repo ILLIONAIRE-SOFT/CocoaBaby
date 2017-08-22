@@ -36,8 +36,14 @@ class DiaryViewController: BaseViewController {
         diaryTableView.dataSource = self
         
         initRefreshControl()
-        initTodayLabel()
         
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            if appDelegate.isNeedPresentWriteDiary {
+                
+            } else {
+                initTodayLabel()
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -47,6 +53,12 @@ class DiaryViewController: BaseViewController {
         self.diaryTableView.reloadData()
         diaryTableView.backgroundColor = UIColor.mainBlueColor
         changeDiaryBg()
+        
+        if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+            if appDelegate.isNeedPresentWriteDiary {
+                initTodayLabel()
+            }
+        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -121,11 +133,33 @@ class DiaryViewController: BaseViewController {
         startLoading()
         
         DiaryStore.shared.fetchDiaries(date: targetDate) {
-            self.diaryTableView.reloadData()
             self.stopLoading()
+            self.diaryTableView.reloadData()
             
             if self.refreshControl.isRefreshing {
                 self.refreshControl.endRefreshing()
+            }
+            
+            if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
+                if appDelegate.isNeedPresentWriteDiary {
+                    appDelegate.isNeedPresentWriteDiary = false
+                    
+                    let diarySB = UIStoryboard(name: StoryboardName.diary, bundle: nil)
+                    let controller = diarySB.instantiateViewController(withIdentifier: StoryboardName.diaryAddViewController) as! DiaryAddViewController
+                    
+                    if let diary = DiaryStore.shared.currentDiaries[CocoaDateFormatter.getDay(from: Date())] {
+                        controller.diary = diary
+                    } else {
+                        let components = CocoaDateFormatter.createComponents(from: Date())
+                        let diary = Diary(text: "", date: Diary.Date(year: components.year!, month: components.month!, day: components.day!))
+                        controller.diary = diary
+                    }
+                    
+                    self.present(controller, animated: true, completion: nil)
+                    // write diary view controller present 하고
+                    
+                    
+                }
             }
         }
     }
@@ -197,7 +231,6 @@ class DiaryViewController: BaseViewController {
         }
         
     }
-    
     
 }
 

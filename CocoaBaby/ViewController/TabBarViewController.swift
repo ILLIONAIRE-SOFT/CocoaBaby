@@ -23,5 +23,22 @@ class TabBarViewController: UITabBarController {
             return
         }
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        print("Tab Bar viewWillAppear")
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        if appDelegate.isNeedHandleDiaryResponse {
+            self.selectedIndex = 1
+            appDelegate.isNeedHandleDiaryResponse = false
+        }
+        
+        if appDelegate.isNeedHandleWriteDiaryQuickAction {
+            self.selectedIndex = 1
+            appDelegate.isNeedHandleWriteDiaryQuickAction = false
+        }
+    }
 
 }

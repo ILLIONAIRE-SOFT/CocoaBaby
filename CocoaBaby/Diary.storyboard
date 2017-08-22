@@ -13,7 +13,7 @@
         <!--Diary View Controller-->
         <scene sceneID="8d1-bp-YgX">
             <objects>
-                <viewController id="ggf-Te-aAy" customClass="DiaryViewController" customModule="CocoaBaby" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DiaryViewController" id="ggf-Te-aAy" customClass="DiaryViewController" customModule="CocoaBaby" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4f6-uQ-zxo"/>
                         <viewControllerLayoutGuide type="bottom" id="vIq-kd-Fgd"/>
@@ -312,7 +312,7 @@
         <!--Diary Add View Controller-->
         <scene sceneID="c4s-Cf-xjK">
             <objects>
-                <viewController id="Uo9-5P-rrE" customClass="DiaryAddViewController" customModule="CocoaBaby" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DiaryAddViewController" id="Uo9-5P-rrE" customClass="DiaryAddViewController" customModule="CocoaBaby" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="s9d-mp-6hl"/>
                         <viewControllerLayoutGuide type="bottom" id="C3W-Eo-JCX"/>
