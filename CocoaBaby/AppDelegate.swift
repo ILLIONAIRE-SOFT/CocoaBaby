@@ -25,7 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
         
-        Database.database().isPersistenceEnabled = false
+        // MARK: Firebase disk persistency
+        Database.database().isPersistenceEnabled = true
         
         UINavigationBar.appearance().barStyle = .blackOpaque
         
