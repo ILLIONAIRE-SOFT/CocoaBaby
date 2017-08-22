@@ -53,8 +53,6 @@ class UserSettingsViewController: BaseViewController {
         papaButton.backgroundColor = .white
     }
     
-    
-    
     @IBAction func tappedDone(_ sender: UIButton) {
         guard let gender = selectedGender else {
             return
