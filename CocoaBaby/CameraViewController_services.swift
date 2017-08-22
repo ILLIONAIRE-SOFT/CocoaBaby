@@ -23,7 +23,7 @@ extension CameraViewController {
     
     func updateWeekLabel() {
         self.weekUILabel.text = "WEEK \(BabyStore.shared.getPregnantWeek().week)"
-        self.weekUILabel.font = UIFont(name: "AppleSDGothicNeo-Thin", size: 50 )
+        self.weekUILabel.font = UIFont(name: "AppleSDGothicNeo-Thin", size: 40 )
         //self.weekUILabel.font = UIFont.systemFont(ofSize: 50, weight: UIFontWeightThin)
         self.weekUILabel.textAlignment = .left
         //self.weekUILabel.layer.backgroundColor = UIColor.white.withAlphaComponent(0.7).cgColor
