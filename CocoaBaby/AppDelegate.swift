@@ -41,10 +41,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
+        // Quick Action으로 앱 실행했을 때 처리
         if let shortcutItem = launchOptions?[UIApplicationLaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem {
             launchedShortcutItem = shortcutItem
-            print("didFinishLaunching")
-            print(shortcutItem)
         }
         
         FirebaseApp.configure()
@@ -105,7 +104,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
     
     func applicationDidBecomeActive(_ application: UIApplication) {
         
-        // Handle quick action when app is terminated
+        // 앱 첫 실행 시 Quick Action 처리
         guard let shortcut = launchedShortcutItem else {
             return
         }
@@ -210,8 +209,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
     @discardableResult func handleShortcutItem(shortcutItem: UIApplicationShortcutItem) -> Bool {
         
         var handled: Bool = false
-        
-        print(shortcutItem.type)
         
         guard ShortcutIdentifier(fullType: shortcutItem.type) != nil else {
             return false

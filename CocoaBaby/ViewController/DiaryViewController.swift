@@ -156,9 +156,6 @@ class DiaryViewController: BaseViewController {
                     }
                     
                     self.present(controller, animated: true, completion: nil)
-                    // write diary view controller present 하고
-                    
-                    
                 }
             }
         }
