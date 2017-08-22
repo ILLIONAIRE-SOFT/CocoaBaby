@@ -31,7 +31,7 @@ extension CameraViewController {
         let labelWidth : CGFloat = self.weekUILabel.intrinsicContentSize.width + self.cameraView.frame.width/10
         let labelHeight : CGFloat = self.weekUILabel.intrinsicContentSize.height * 1.7
         
-        let labelPointX : CGFloat = self.cameraView.frame.width/2 - (labelWidth/2)*1.7
+        let labelPointX : CGFloat = self.cameraView.frame.width/2 - (labelWidth/2)*2.1
         let labelPointY : CGFloat = self.cameraView.frame.height/50
         
         
@@ -54,8 +54,8 @@ extension CameraViewController {
         let babyLabelWidth : CGFloat = self.babyNameUILabel.intrinsicContentSize.width + self.cameraView.frame.width/10
         let babyLabelHeight : CGFloat = self.babyNameUILabel.intrinsicContentSize.height * 1.7
         
-        let babyLabelPointX : CGFloat = self.cameraView.frame.width/2 - (babyLabelWidth*1.5)
-        let babyLabelPointY : CGFloat = self.cameraView.frame.height/5 + 8
+        let babyLabelPointX : CGFloat = self.cameraView.frame.width/2 - (babyLabelWidth*1.5) - 7
+        let babyLabelPointY : CGFloat = self.cameraView.frame.height/5 
         
         let point = CGPoint(x: babyLabelPointX, y: babyLabelPointY)
         let size = CGSize(width: babyLabelWidth, height: babyLabelHeight)
