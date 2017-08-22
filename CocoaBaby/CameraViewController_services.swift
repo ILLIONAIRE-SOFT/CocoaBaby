@@ -47,23 +47,44 @@ extension CameraViewController {
     func updateBabyNameLabel() {
     
         self.babyNameUILabel.text = "\(BabyStore.shared.getName())"
-        self.babyNameUILabel.font = UIFont(name:"AppleSDGothicNeo-Thin", size: 20)
+        self.babyNameUILabel.font = UIFont(name:"AppleSDGothicNeo-Light", size: 18)
         self.babyNameUILabel.textAlignment = .left
         self.babyNameUILabel.textColor = UIColor.white
         
         let babyLabelWidth : CGFloat = self.babyNameUILabel.intrinsicContentSize.width + self.cameraView.frame.width/10
         let babyLabelHeight : CGFloat = self.babyNameUILabel.intrinsicContentSize.height * 1.7
         
-        let babyLabelPointX : CGFloat = self.cameraView.frame.width/2 - (babyLabelWidth/2) * 1.7
-        let babyLabelPointY : CGFloat = self.cameraView.frame.height/30
+        let babyLabelPointX : CGFloat = self.cameraView.frame.width/2 - (babyLabelWidth*1.5)
+        let babyLabelPointY : CGFloat = self.cameraView.frame.height/5
         
         let point = CGPoint(x: babyLabelPointX, y: babyLabelPointY)
         let size = CGSize(width: babyLabelWidth, height: babyLabelHeight)
         
         self.babyNameUILabel.layer.frame = CGRect(origin: point, size: size)
         self.cameraView.layer.addSublayer(self.babyNameUILabel.layer)
+        
+        //X만 변동
+        let linePointFirstX : CGFloat = babyLabelPointX
+        let linePointFirstY : CGFloat = babyLabelPointY + 160
+        let linePointSecondX : CGFloat = linePointFirstX + 160
+        let linePointSecondY : CGFloat = linePointFirstY
+        
+        let linePointFirst = CGPoint(x: linePointFirstX, y:linePointFirstY)
+        let linePointSecond = CGPoint(x: linePointSecondX, y:linePointSecondY)
+
+        
+        let line = CAShapeLayer()
+        let linePath = UIBezierPath()
+        linePath.move(to: linePointFirst)
+        linePath.addLine(to: linePointSecond)
+        line.path = linePath.cgPath
+        line.strokeColor = UIColor.white.cgColor
+        line.lineWidth = 1
+        line.lineJoin = kCALineJoinRound
+        self.view.layer.addSublayer(line)
     
     }
+    
     
 }
 
