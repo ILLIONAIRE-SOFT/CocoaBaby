@@ -17,7 +17,14 @@ class DiaryBaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
         self.view.backgroundColor = UIColor(colorWithHexValue: 0xF5CECA)
+        
     }
     
 }

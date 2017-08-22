@@ -23,14 +23,14 @@ extension CameraViewController {
     
     func updateWeekLabel() {
         self.weekUILabel.text = "Week \(BabyStore.shared.getPregnantWeek().week)"
-        self.weekUILabel.font = UIFont(name: "Helvetica Neue", size: 13)
-        self.weekUILabel.textAlignment = .center
-        self.weekUILabel.layer.backgroundColor = UIColor.white.withAlphaComponent(0.7).cgColor
+        self.weekUILabel.font = UIFont(name: "Helvetica Neue", size: 50)
+        self.weekUILabel.textAlignment = .left
+        //self.weekUILabel.layer.backgroundColor = UIColor.white.withAlphaComponent(0.7).cgColor
         
         let labelWidth : CGFloat = self.weekUILabel.intrinsicContentSize.width + self.cameraView.frame.width/10
         let labelHeight : CGFloat = self.weekUILabel.intrinsicContentSize.height * 1.7
         
-        let labelPointX : CGFloat = self.cameraView.frame.width/2 - labelWidth/2
+        let labelPointX : CGFloat = self.cameraView.frame.width/2 - (labelWidth/2)*1.7
         let labelPointY : CGFloat = self.cameraView.frame.height/40
         
         
