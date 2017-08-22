@@ -27,7 +27,6 @@ class HomeViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -111,8 +110,29 @@ class HomeViewController: BaseViewController {
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
+        let backgroundView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.height, height: self.view.frame.height))
+        backgroundView.backgroundColor = UIColor.white
+        let imageView = UIImageView(image: image)
+        imageView.frame = CGRect(x: backgroundView.frame.width/2 - self.view.frame.width/2, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+        backgroundView.addSubview(imageView)
+        
+        let logoImage = UIImageView(image: UIImage(named: "CocoaBabyLoadingLogo"))
+        logoImage.frame = CGRect(x: backgroundView.frame.width - 120, y: backgroundView.frame.height - 150, width: 100, height: 100)
+        backgroundView.addSubview(logoImage)
+
+        let appLabel = UILabel(frame: CGRect(x: backgroundView.frame.width - 120, y: backgroundView.frame.height - 40, width: 100, height: 20))
+        appLabel.text = "CocoaBaby"
+        appLabel.textColor = UIColor.mainBlueColor
+        backgroundView.addSubview(appLabel)
+        
+        UIGraphicsBeginImageContextWithOptions(backgroundView.frame.size, false, 0)
+        backgroundView.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let mergeImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+
         //Save it to the camera roll
-        UIImageWriteToSavedPhotosAlbum(image!, nil, nil, nil)
+        UIImageWriteToSavedPhotosAlbum(mergeImage!, nil, nil, nil)
+        
         self.cameraButton.isHidden = false
         self.captureScreenButton.isHidden = false
     }
@@ -125,8 +145,8 @@ class HomeViewController: BaseViewController {
         
         self.present(viewController, animated: true, completion: nil)
     }
+    
     @IBAction func showBalloon() {
-        
         
         babyImageView.clipsToBounds = false
         
@@ -137,7 +157,6 @@ class HomeViewController: BaseViewController {
         babySayLabel.textAlignment = .center
         babySayLabel.font = UIFont(name: "Helvetica Neue", size: 11)
         babySayLabel.numberOfLines = 0
-        
         babySayLabel.frame = CGRect(x: 0, y: 0, width: babyImageView.frame.width * 0.85, height: babyImageView.frame.height * 0.22)
         let arrow = UIView(frame: CGRect(x: babySayLabel.frame.width/2, y: babySayLabel.frame.height - 10, width: 20, height: 20))
         
@@ -150,7 +169,6 @@ class HomeViewController: BaseViewController {
         
         babySayLabel.alpha = 0
         arrow.alpha = 0
-        
         
         babyImageView.addSubview(babySayLabel)
         babyImageView.addSubview(arrow)
@@ -222,9 +240,7 @@ class HomeViewController: BaseViewController {
             
             //self.babyView.backgroundColor = UIColor.init(colorWithHexValue: 0x000000, alpha: 0.7)
         }
-        
     }
-    
 }
 
 
@@ -235,6 +251,5 @@ class BabyView: UIView {
         super.draw(rect)
         self.layer.cornerRadius = self.frame.width/2
     }
-    
 }
 
