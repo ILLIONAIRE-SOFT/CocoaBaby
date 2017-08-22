@@ -93,7 +93,7 @@
         <!--Tab Bar View Controller-->
         <scene sceneID="u86-qa-NG0">
             <objects>
-                <tabBarController storyboardIdentifier="mainTabBarViewController" automaticallyAdjustsScrollViewInsets="NO" id="xmu-Gx-PNz" customClass="TabBarViewController" customModule="CocoaBaby" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBarViewController" automaticallyAdjustsScrollViewInsets="NO" id="xmu-Gx-PNz" customClass="TabBarViewController" customModule="CocoaBaby" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="cxh-Zq-ftf">
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>

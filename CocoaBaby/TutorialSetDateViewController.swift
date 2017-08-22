@@ -171,8 +171,8 @@ class TutorialSetDateViewController: BaseViewController, UITextFieldDelegate {
     func showSplashView() {
         let appDelegate = UIApplication.shared.delegate! as! AppDelegate
         
-        let mainSB = UIStoryboard(name: "Main", bundle: nil)
-        let initialViewController = mainSB.instantiateViewController(withIdentifier: "SplashViewController")
+        let mainSB = UIStoryboard(name: StoryboardName.main, bundle: nil)
+        let initialViewController = mainSB.instantiateViewController(withIdentifier: StoryboardName.splashViewController)
         appDelegate.window?.rootViewController = initialViewController
         appDelegate.window?.makeKeyAndVisible()
     }

@@ -14,7 +14,6 @@ class WelcomeViewController: BaseViewController {
         super.viewDidLoad()
 
         self.navigationController?.navigationBar.isHidden = true
-        self.hidesBottomBarWhenPushed = true
     }
     
 }

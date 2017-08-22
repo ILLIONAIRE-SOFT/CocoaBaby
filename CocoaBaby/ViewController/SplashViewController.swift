@@ -24,6 +24,11 @@ class SplashViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
+        // UserSetting Test
+//        self.presentUserSettingsViewController()
+//        return
+        //
+        
         if Auth.auth().currentUser != nil {
             UserStore.shared.fetchUser(completion: { (result) in
                 print("SplashViewController: User is not nil fetch user")
@@ -52,7 +57,7 @@ class SplashViewController: UIViewController {
     private func presentMainTabViewController() {
         let appDelegate = UIApplication.shared.delegate! as! AppDelegate
         
-        let initialViewController = self.storyboard!.instantiateViewController(withIdentifier: "mainTabBarViewController")
+        let initialViewController = self.storyboard!.instantiateViewController(withIdentifier: StoryboardName.mainTabBarViewController)
         appDelegate.window?.rootViewController = initialViewController
         appDelegate.window?.makeKeyAndVisible()
     }
@@ -60,8 +65,8 @@ class SplashViewController: UIViewController {
     private func presentTutorialViewController() {
         let appDelegate = UIApplication.shared.delegate! as! AppDelegate
         
-        let tutorialStoryboard = UIStoryboard(name: "Tutorial", bundle: nil)
-        let viewController = tutorialStoryboard.instantiateViewController(withIdentifier: "tutorialNavigationViewController")
+        let tutorialStoryboard = UIStoryboard(name: StoryboardName.tutorial, bundle: nil)
+        let viewController = tutorialStoryboard.instantiateViewController(withIdentifier: StoryboardName.tutorialNavigationController)
         
         appDelegate.window?.rootViewController = viewController
         appDelegate.window?.makeKeyAndVisible()
@@ -71,7 +76,7 @@ class SplashViewController: UIViewController {
     private func presentLoginViewController() {
         let appDelegate = UIApplication.shared.delegate! as! AppDelegate
         
-        let initialViewController = self.storyboard!.instantiateViewController(withIdentifier: "LoginViewController")
+        let initialViewController = self.storyboard!.instantiateViewController(withIdentifier: StoryboardName.loginViewController)
         appDelegate.window?.rootViewController = initialViewController
         appDelegate.window?.makeKeyAndVisible()
     }
@@ -79,8 +84,8 @@ class SplashViewController: UIViewController {
     private func presentUserSettingsViewController() {
         let appDelegate = UIApplication.shared.delegate! as! AppDelegate
         
-        let userSettingsSB = UIStoryboard(name: "UserSettings", bundle: nil)
-        let viewController = userSettingsSB.instantiateViewController(withIdentifier: StoryboardName.welcomeViewController)
+        let userSettingsSB = UIStoryboard(name: StoryboardName.userSettings, bundle: nil)
+        let viewController = userSettingsSB.instantiateViewController(withIdentifier: StoryboardName.welcomeNavigationController)
         
         appDelegate.window?.rootViewController = viewController
         appDelegate.window?.makeKeyAndVisible()

@@ -22,4 +22,9 @@ struct StoryboardName {
     
     // MARK: Storyboard ID
     static let welcomeViewController: String = "WelcomeViewController"
+    static let welcomeNavigationController: String = "WelcomeNavigationController"
+    static let tutorialNavigationController: String = "TutorialNavigationController"
+    static let loginViewController: String = "LoginViewController"
+    static let mainTabBarViewController: String = "MainTabBarViewController"
+    static let splashViewController: String = "SplashViewController"
 }

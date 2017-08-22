@@ -129,10 +129,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
                 return
             }
             
-            print("AppDelegate didSignInFor")
-            
-            let mainSB = UIStoryboard(name: "Main", bundle: nil)
-            let viewController = mainSB.instantiateViewController(withIdentifier: "SplashViewController")
+            let mainSB = UIStoryboard(name: StoryboardName.main, bundle: nil)
+            let viewController = mainSB.instantiateViewController(withIdentifier: StoryboardName.splashViewController)
             
             self.window?.rootViewController = viewController
             self.window?.makeKeyAndVisible()
