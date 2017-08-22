@@ -220,7 +220,9 @@
                     <tabBarItem key="tabBarItem" image="ic_create_white" id="Aqt-9a-pt8"/>
                     <connections>
                         <outlet property="addDiaryBtnBg" destination="XYS-Cu-YL1" id="3t9-m8-PcZ"/>
+                        <outlet property="addDiaryButtonBackground" destination="XYS-Cu-YL1" id="ywb-mP-5xB"/>
                         <outlet property="diaryTableView" destination="vrF-dx-IH1" id="KZT-nf-GiG"/>
+                        <outlet property="tableViewBottomConstraint" destination="uEa-Yf-SBK" id="qt6-0J-qIw"/>
                         <outlet property="yearPickLabel" destination="XTh-bu-1Nw" id="5Ex-3M-c4s"/>
                     </connections>
                 </viewController>

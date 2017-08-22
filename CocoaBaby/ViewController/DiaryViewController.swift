@@ -10,6 +10,8 @@ import UIKit
 
 class DiaryViewController: BaseViewController {
     
+    @IBOutlet var tableViewBottomConstraint: NSLayoutConstraint!
+    @IBOutlet var addDiaryButtonBackground: UIView!
     @IBOutlet var diaryTableView: UITableView!
     @IBOutlet var yearPickLabel: UILabel!
     @IBOutlet var addDiaryBtnBg: UIView!
@@ -34,6 +36,10 @@ class DiaryViewController: BaseViewController {
         diaryTableView.rowHeight = UITableViewAutomaticDimension
         diaryTableView.delegate = self
         diaryTableView.dataSource = self
+        
+        if UserStore.shared.user?.gender == "male" {
+            initMaleSettings()
+        }
         
         initRefreshControl()
         
@@ -227,6 +233,11 @@ class DiaryViewController: BaseViewController {
             
         }
         
+    }
+    
+    func initMaleSettings() {
+        addDiaryButtonBackground.isHidden = true
+        tableViewBottomConstraint.constant = 0
     }
     
 }

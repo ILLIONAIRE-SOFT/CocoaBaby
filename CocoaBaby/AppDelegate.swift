@@ -88,8 +88,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
+        
     }
     
     func applicationDidEnterBackground(_ application: UIApplication) {
@@ -115,7 +114,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+        
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
@@ -180,12 +179,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
     // MARK: - User Notification
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         
-        // 앱이 꺼져있을 때 처리 필요
         if let tabBarVC = self.window?.rootViewController as? UITabBarController {
             tabBarVC.selectedIndex = 1
         } else {
             // 앱이 꺼져있는 경우
-            // TabBar View Will Appear에서 처리했는데 viewWillAppear가 앱 처음 실행에만 실행되서 문제, 모든 뷰컨트롤러에서 체크??
             isNeedHandleDiaryResponse = true
         }
         
