@@ -65,7 +65,7 @@ class UserSettingsViewController: BaseViewController {
         var user = User()
         user.gender = gender
         
-        UserStore.shared.updateUser(post: [UserPayloadName.gender.rawValue:gender]) { (result) in
+        UserStore.shared.saveUser(user: user) { (result) in
             switch result {
             case .success(_):
                 self.presentSplashViewController()
@@ -74,17 +74,6 @@ class UserSettingsViewController: BaseViewController {
             }
             self.stopLoading()
         }
-        
-        
-        //        UserStore.shared.saveUser(user: user) { (result) in
-        //            switch result {
-        //            case .success(_):
-        //                self.presentSplashViewController()
-        //            case .failure(_):
-        //                self.presentSplashViewController()
-        //            }
-        //            self.stopLoading()
-        //        }
     }
     
     func presentSplashViewController() {
