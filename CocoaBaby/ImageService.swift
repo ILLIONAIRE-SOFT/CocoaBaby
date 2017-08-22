@@ -108,6 +108,8 @@ class ImageService  {
         
         babyNameLabel.frame = babylabelRect
         
+        // MARK: LineDrawing
+        let weeklabelWidth : CGFloat = label.intrinsicContentSize.width
         
         let labelImage = UIImage.imageWithLabel(label: label)
         let babylabelImage = UIImage.imageWithLabel(label: babyNameLabel)
