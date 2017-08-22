@@ -18,8 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        print(NSLocalizedString("Alert.AlreadyLinked", comment: ""))
-        
         FirebaseApp.configure()
         
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
@@ -27,6 +25,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
         
         // MARK: Firebase disk persistency
         Database.database().isPersistenceEnabled = true
+        
+        let diariesRef = Database.database().reference(withPath: "diaries")
+        let babiesRef = Database.database().reference(withPath: "babies")
+        let tipsRef = Database.database().reference(withPath: "tips")
+        diariesRef.keepSynced(true)
+        babiesRef.keepSynced(true)
+        tipsRef.keepSynced(true)
         
         UINavigationBar.appearance().barStyle = .blackOpaque
         
