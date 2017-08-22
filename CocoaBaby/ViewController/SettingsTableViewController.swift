@@ -50,7 +50,8 @@ class SettingsTableViewController: BaseTableViewController {
     func logout() {
         let firebaseAuth = Auth.auth()
         
-        let alertController = UIAlertController(title: "Do you want logout?", message: nil, preferredStyle: .alert)
+        let message = NSLocalizedString(LocalizableStringKey.logoutMessage, comment: "")
+        let alertController = UIAlertController(title: message, message: nil, preferredStyle: .alert)
         
         let doneAction = UIAlertAction(title: "Yes", style: .default) { (_) in
             do {
@@ -221,5 +222,7 @@ class SettingsTableViewController: BaseTableViewController {
         
         present(alertController, animated: true, completion: nil)
     }
+    
+
     
 }

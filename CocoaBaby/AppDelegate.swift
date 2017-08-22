@@ -18,22 +18,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        print(NSLocalizedString("Alert.AlreadyLinked", comment: ""))
-        
         FirebaseApp.configure()
         
         GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
         GIDSignIn.sharedInstance().delegate = self
         
-        Database.database().isPersistenceEnabled = false
+        // MARK: Firebase disk persistency
+        Database.database().isPersistenceEnabled = true
         
-//        if let uid = Auth.auth().currentUser?.uid {
-//            let babyRef = Database.database().reference(withPath: "babies/\(uid)")
-//            babyRef.keepSynced(true)
-//            
-//            let diaryRef = Database.database().reference(withPath: "diaries/\(uid)")
-//            diaryRef.keepSynced(true)
-//        }
+        let diariesRef = Database.database().reference(withPath: "diaries")
+        let babiesRef = Database.database().reference(withPath: "babies")
+        let tipsRef = Database.database().reference(withPath: "tips")
+        diariesRef.keepSynced(true)
+        babiesRef.keepSynced(true)
+        tipsRef.keepSynced(true)
         
         UINavigationBar.appearance().barStyle = .blackOpaque
         
@@ -52,12 +50,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
         }
         
         application.registerForRemoteNotifications()
-        
-        // 실행안됨
-//        if let token = Messaging.messaging().apnsToken {
-//            let tokenString = token.reduce("", {$0 + String(format: "%02X", $1)})
-//            print("APN token: \(tokenString)")
-//        }
         
         return true
     }
@@ -129,10 +121,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
                 return
             }
             
-            print("AppDelegate didSignInFor")
-            
-            let mainSB = UIStoryboard(name: "Main", bundle: nil)
-            let viewController = mainSB.instantiateViewController(withIdentifier: "SplashViewController")
+            let mainSB = UIStoryboard(name: StoryboardName.main, bundle: nil)
+            let viewController = mainSB.instantiateViewController(withIdentifier: StoryboardName.splashViewController)
             
             self.window?.rootViewController = viewController
             self.window?.makeKeyAndVisible()

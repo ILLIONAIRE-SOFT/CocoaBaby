@@ -6,4 +6,7 @@
   Copyright © 2017 Sohn. All rights reserved.
 */
 
+
+"Alert.DoYouWantLogout" = "Do you want logout?";
 "Alert.FatherAlreadyLinked" = "You alread link with mother";
+

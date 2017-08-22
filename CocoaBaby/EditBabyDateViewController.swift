@@ -24,7 +24,6 @@ class EditBabyDateViewController: BaseViewController, UITextFieldDelegate {
     var datePicker : UIDatePicker!
     
     var dateFormatter = DateFormatter()
-
     
     override func viewDidLoad() {
         super.viewDidLoad()

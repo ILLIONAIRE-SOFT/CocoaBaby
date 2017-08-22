@@ -146,7 +146,6 @@ class BabyStore {
         
         var week = Week(week: 0, dayOfWeek: 0)
         let calendar = Calendar.current
-        _ = calendar.startOfDay(for: Date())
         
         let diaryDate = CocoaDateFormatter.createDate(from: diary.date)
         let pregnantDate = calendar.startOfDay(for: Date(timeIntervalSince1970: baby.pregnantDate))
@@ -163,6 +162,7 @@ class BabyStore {
     func getYearOfPregnantDate() -> String {
         
         let date = Date(timeIntervalSince1970: baby.pregnantDate)
+        
         // date에서 year만 뽑아내는 법
         let dateFormatter = DateFormatter()
         

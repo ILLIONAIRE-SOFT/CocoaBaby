@@ -61,8 +61,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jpQ-8c-F2O">
-                                <rect key="frame" x="314" y="35" width="41" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <rect key="frame" x="309" y="33.5" width="46" height="33"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <state key="normal" title="Guide"/>
                                 <connections>
                                     <action selector="toggleGuide:" destination="C8f-wz-sPg" eventType="touchUpInside" id="aii-Ys-cVd"/>

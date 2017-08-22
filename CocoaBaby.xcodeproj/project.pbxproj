@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		105AB5AF7E0CBBBFC7A1C2A5 /* Pods_CocoaBabyTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3953CA1C89A8E8BE4183BDC5 /* Pods_CocoaBabyTests.framework */; };
 		19E9F6C960A92BCD856D49E2 /* Pods_CocoaBaby.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E058B86FDCDD49D6B0B683BE /* Pods_CocoaBaby.framework */; };
+		490066421F4BDCB000C40E48 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490066411F4BDCB000C40E48 /* WelcomeViewController.swift */; };
+		490066441F4BDD4300C40E48 /* StoryboardName.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490066431F4BDD4300C40E48 /* StoryboardName.swift */; };
 		4911D9CB1F3444A70031B74A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4911D9CA1F3444A70031B74A /* BaseViewController.swift */; };
 		4911D9CE1F34455D0031B74A /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4911D9CD1F34455D0031B74A /* DiaryViewController.swift */; };
 		4911D9D11F3446110031B74A /* TipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4911D9D01F3446110031B74A /* TipsViewController.swift */; };
@@ -17,6 +19,7 @@
 		4911D9E31F3450EF0031B74A /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4911D9E21F3450EF0031B74A /* ErrorMessage.swift */; };
 		49121B391F4ABAA40045A165 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49121B381F4ABAA40045A165 /* SettingsTableViewController.swift */; };
 		49121B3B1F4ADCDF0045A165 /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49121B3A1F4ADCDF0045A165 /* BaseTableViewController.swift */; };
+		49121B3D1F4B05E20045A165 /* LocalizableString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49121B3C1F4B05E20045A165 /* LocalizableString.swift */; };
 		4920577C1F413FAB00F232E2 /* Diary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920577B1F413FAB00F232E2 /* Diary.swift */; };
 		4920577E1F41427100F232E2 /* CocoaDatePickerDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920577D1F41427100F232E2 /* CocoaDatePickerDelegate.swift */; };
 		492057801F4143C500F232E2 /* CocoaDatePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4920577F1F4143C500F232E2 /* CocoaDatePickerView.swift */; };
@@ -93,6 +96,8 @@
 /* Begin PBXFileReference section */
 		3953CA1C89A8E8BE4183BDC5 /* Pods_CocoaBabyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CocoaBabyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D030A7C3DA05CE73E2A7E35 /* Pods_CocoaBabyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CocoaBabyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		490066411F4BDCB000C40E48 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = CocoaBaby/ViewController/WelcomeViewController.swift; sourceTree = "<group>"; };
+		490066431F4BDD4300C40E48 /* StoryboardName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StoryboardName.swift; path = CocoaBaby/Utilities/StoryboardName.swift; sourceTree = "<group>"; };
 		4911D9CA1F3444A70031B74A /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = ViewController/BaseViewController.swift; sourceTree = "<group>"; };
 		4911D9CD1F34455D0031B74A /* DiaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiaryViewController.swift; path = ViewController/DiaryViewController.swift; sourceTree = "<group>"; };
 		4911D9D01F3446110031B74A /* TipsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TipsViewController.swift; path = ViewController/TipsViewController.swift; sourceTree = "<group>"; };
@@ -102,6 +107,7 @@
 		4911D9E21F3450EF0031B74A /* ErrorMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ErrorMessage.swift; path = Utilities/ErrorMessage.swift; sourceTree = "<group>"; };
 		49121B381F4ABAA40045A165 /* SettingsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsTableViewController.swift; path = ViewController/SettingsTableViewController.swift; sourceTree = "<group>"; };
 		49121B3A1F4ADCDF0045A165 /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseTableViewController.swift; path = ViewController/BaseTableViewController.swift; sourceTree = "<group>"; };
+		49121B3C1F4B05E20045A165 /* LocalizableString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocalizableString.swift; path = CocoaBaby/LocalizableString.swift; sourceTree = "<group>"; };
 		4920577B1F413FAB00F232E2 /* Diary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Diary.swift; path = Model/Diary.swift; sourceTree = "<group>"; };
 		4920577D1F41427100F232E2 /* CocoaDatePickerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocoaDatePickerDelegate.swift; sourceTree = "<group>"; };
 		4920577F1F4143C500F232E2 /* CocoaDatePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocoaDatePickerView.swift; sourceTree = "<group>"; };
@@ -243,6 +249,7 @@
 				4948E0A51F39799C008542F6 /* EditBabyViewController.swift */,
 				49E659141F42C66200D85C53 /* UserSettingsViewController.swift */,
 				DA131A6F1F45641600DE12F7 /* EditBabyDateViewController.swift */,
+				490066411F4BDCB000C40E48 /* WelcomeViewController.swift */,
 			);
 			name = Settings;
 			sourceTree = "<group>";
@@ -253,6 +260,8 @@
 				49B88EAF1F3C2774005043B6 /* GoogleService-Info.plist */,
 				49F6C7881F318AF200373F06 /* Info.plist */,
 				4911D9DC1F344DCA0031B74A /* Localizable.strings */,
+				49121B3C1F4B05E20045A165 /* LocalizableString.swift */,
+				490066431F4BDD4300C40E48 /* StoryboardName.swift */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -897,11 +906,13 @@
 				DA7461021F4405F800568F1C /* CameraViewController_services.swift in Sources */,
 				DA5C8F2E1F415F0C00AA3185 /* TipsDetailContentTableViewCell.swift in Sources */,
 				49121B391F4ABAA40045A165 /* SettingsTableViewController.swift in Sources */,
+				49121B3D1F4B05E20045A165 /* LocalizableString.swift in Sources */,
 				4911D9E31F3450EF0031B74A /* ErrorMessage.swift in Sources */,
 				DA7461011F4405F800568F1C /* CameraViewController_main.swift in Sources */,
 				DAB5A40B1F31B0C4000235B0 /* TutorialSetNameViewController.swift in Sources */,
 				49CBF18A1F3C33E400426D61 /* LoginViewController.swift in Sources */,
 				DAB5A4171F33331C000235B0 /* ColorExtension.swift in Sources */,
+				490066421F4BDCB000C40E48 /* WelcomeViewController.swift in Sources */,
 				49E659181F42E54800D85C53 /* ShareHelper.swift in Sources */,
 				DAEE35071F3CC4B70090DBF5 /* TipsPageViewController.swift in Sources */,
 				49121B3B1F4ADCDF0045A165 /* BaseTableViewController.swift in Sources */,
@@ -912,6 +923,7 @@
 				492057801F4143C500F232E2 /* CocoaDatePickerView.swift in Sources */,
 				DAEE34BF1F3834FC0090DBF5 /* TipsDetailViewController.swift in Sources */,
 				DA7460FF1F4405F800568F1C /* CameraViewController_camera.swift in Sources */,
+				490066441F4BDD4300C40E48 /* StoryboardName.swift in Sources */,
 				4920577E1F41427100F232E2 /* CocoaDatePickerDelegate.swift in Sources */,
 				4948E0A61F39799C008542F6 /* EditBabyViewController.swift in Sources */,
 				49B88EAE1F3BF5A4005043B6 /* UserStore.swift in Sources */,

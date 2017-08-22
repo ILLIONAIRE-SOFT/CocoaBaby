@@ -10,6 +10,46 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Welcome View Controller-->
+        <scene sceneID="XgP-Mv-cnC">
+            <objects>
+                <viewController storyboardIdentifier="WelcomeViewController" id="2RW-Ir-aHB" customClass="WelcomeViewController" customModule="CocoaBaby" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="PzL-dF-gwS"/>
+                        <viewControllerLayoutGuide type="bottom" id="dQo-CY-sOF"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Zi9-Hd-POG">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BIe-06-BBE">
+                                <rect key="frame" x="170" y="573" width="34" height="30"/>
+                                <state key="normal" title="Start"/>
+                                <connections>
+                                    <segue destination="0lr-z3-xOo" kind="show" id="8QS-hi-cOb"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Conglaturations" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cH7-4s-Ms8">
+                                <rect key="frame" x="126" y="323" width="122" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dQo-CY-sOF" firstAttribute="top" secondItem="BIe-06-BBE" secondAttribute="bottom" constant="64" id="B5A-qT-JfU"/>
+                            <constraint firstItem="cH7-4s-Ms8" firstAttribute="centerY" secondItem="Zi9-Hd-POG" secondAttribute="centerY" id="H9E-f6-eNV"/>
+                            <constraint firstItem="BIe-06-BBE" firstAttribute="centerX" secondItem="Zi9-Hd-POG" secondAttribute="centerX" id="J9m-yN-qXa"/>
+                            <constraint firstItem="cH7-4s-Ms8" firstAttribute="centerX" secondItem="Zi9-Hd-POG" secondAttribute="centerX" id="Wpv-zk-W1r"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="Uva-Cr-zbG"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nqf-nd-asD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-142" y="123"/>
+        </scene>
         <!--User Settings View Controller-->
         <scene sceneID="9V8-wf-TlR">
             <objects>
@@ -56,7 +96,7 @@
                                 </constraints>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mother or Father?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k5m-HZ-BcS">
-                                <rect key="frame" x="119" y="103" width="137" height="20.5"/>
+                                <rect key="frame" x="119" y="147" width="137" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -81,7 +121,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NCk-8i-VSc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-172" y="129"/>
+            <point key="canvasLocation" x="692" y="123"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="zMg-sl-FOi">
+            <objects>
+                <navigationController storyboardIdentifier="WelcomeNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="XZc-Oc-H3m" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="m1N-Pw-Kqz">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="2RW-Ir-aHB" kind="relationship" relationship="rootViewController" id="54G-JO-lSL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="J7e-SU-uox" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-980" y="122.78860569715144"/>
         </scene>
     </scenes>
 </document>

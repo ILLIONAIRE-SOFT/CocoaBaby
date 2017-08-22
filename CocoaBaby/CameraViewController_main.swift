@@ -13,6 +13,7 @@ class CameraViewController: UIViewController {
 
     
     let weekUILabel = UILabel()
+    let babyNameUILabel = UILabel()
     var mapImageView = UIImageView()
     
     @IBOutlet var cameraView: UIView!
@@ -44,6 +45,7 @@ class CameraViewController: UIViewController {
             beginSession()
         }
         updateWeekLabel()
+        updateBabyNameLabel()
         guideBtn.setTitleColor(.yellow, for: .selected)
         guideBtn.setTitleColor(.white, for: .normal)
         
