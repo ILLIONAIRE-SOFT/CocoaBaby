@@ -27,14 +27,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
         
         Database.database().isPersistenceEnabled = false
         
-//        if let uid = Auth.auth().currentUser?.uid {
-//            let babyRef = Database.database().reference(withPath: "babies/\(uid)")
-//            babyRef.keepSynced(true)
-//            
-//            let diaryRef = Database.database().reference(withPath: "diaries/\(uid)")
-//            diaryRef.keepSynced(true)
-//        }
-        
         UINavigationBar.appearance().barStyle = .blackOpaque
         
         // MARK: Notification Settings
@@ -52,12 +44,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
         }
         
         application.registerForRemoteNotifications()
-        
-        // 실행안됨
-//        if let token = Messaging.messaging().apnsToken {
-//            let tokenString = token.reduce("", {$0 + String(format: "%02X", $1)})
-//            print("APN token: \(tokenString)")
-//        }
         
         return true
     }
@@ -129,10 +115,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
                 return
             }
             
-            print("AppDelegate didSignInFor")
-            
-            let mainSB = UIStoryboard(name: "Main", bundle: nil)
-            let viewController = mainSB.instantiateViewController(withIdentifier: "SplashViewController")
+            let mainSB = UIStoryboard(name: StoryboardName.main, bundle: nil)
+            let viewController = mainSB.instantiateViewController(withIdentifier: StoryboardName.splashViewController)
             
             self.window?.rootViewController = viewController
             self.window?.makeKeyAndVisible()

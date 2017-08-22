@@ -11,4 +11,3 @@ import Foundation
 struct LocalizableStringKey {
     static let logoutMessage: String = "Alert.DoYouWantLogout"
 }
-
