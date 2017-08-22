@@ -55,7 +55,7 @@ extension CameraViewController {
         let babyLabelHeight : CGFloat = self.babyNameUILabel.intrinsicContentSize.height * 1.7
         
         let babyLabelPointX : CGFloat = self.cameraView.frame.width/2 - (babyLabelWidth*1.5)
-        let babyLabelPointY : CGFloat = self.cameraView.frame.height/5
+        let babyLabelPointY : CGFloat = self.cameraView.frame.height/5 + 8
         
         let point = CGPoint(x: babyLabelPointX, y: babyLabelPointY)
         let size = CGSize(width: babyLabelWidth, height: babyLabelHeight)
@@ -63,10 +63,13 @@ extension CameraViewController {
         self.babyNameUILabel.layer.frame = CGRect(origin: point, size: size)
         self.cameraView.layer.addSublayer(self.babyNameUILabel.layer)
         
+        //MARK: Line Drawing
+        let labelWidth : CGFloat = self.weekUILabel.intrinsicContentSize.width
+        
         //X만 변동
         let linePointFirstX : CGFloat = babyLabelPointX
-        let linePointFirstY : CGFloat = babyLabelPointY + 160
-        let linePointSecondX : CGFloat = linePointFirstX + 160
+        let linePointFirstY : CGFloat = babyLabelPointY + 126
+        let linePointSecondX : CGFloat = linePointFirstX + labelWidth
         let linePointSecondY : CGFloat = linePointFirstY
         
         let linePointFirst = CGPoint(x: linePointFirstX, y:linePointFirstY)
@@ -78,8 +81,10 @@ extension CameraViewController {
         linePath.move(to: linePointFirst)
         linePath.addLine(to: linePointSecond)
         line.path = linePath.cgPath
-        line.strokeColor = UIColor.white.cgColor
         line.lineWidth = 1
+        line.strokeColor = UIColor.white.withAlphaComponent(0.3).cgColor
+        //line.strokeColor = UIColor.white.cgColor
+
         line.lineJoin = kCALineJoinRound
         self.view.layer.addSublayer(line)
     
