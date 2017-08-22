@@ -196,8 +196,8 @@ class DiaryViewController: BaseViewController {
     }
     
     func showDatePicker() {
-        let diarySB = UIStoryboard(name: "Diary", bundle: nil)
-        let modalViewCotroller = diarySB.instantiateViewController(withIdentifier: "DatePickerViewController") as! DatePickerViewController
+        let diarySB = UIStoryboard(name: StoryboardName.diary, bundle: nil)
+        let modalViewCotroller = diarySB.instantiateViewController(withIdentifier: StoryboardName.datePickerViewController) as! DatePickerViewController
         modalViewCotroller.modalPresentationStyle = .overCurrentContext
         modalViewCotroller.currentDate = targetDate
         modalViewCotroller.datePicked = { (year, month) in

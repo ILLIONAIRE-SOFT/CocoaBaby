@@ -102,7 +102,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
     }
     
     func applicationDidBecomeActive(_ application: UIApplication) {
-        
+        application.applicationIconBadgeNumber = 0
         // 앱 첫 실행 시 Quick Action 처리
         guard let shortcut = launchedShortcutItem else {
             return
