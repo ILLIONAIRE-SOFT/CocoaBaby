@@ -56,7 +56,6 @@ class ImageService  {
         weekLabel.text = cameraViewLabel.text
         weekLabel.font = UIFont(name: "AppleSDGothicNeo-Thin", size: 40 * expandRatio)
         weekLabel.sizeToFit()
-        weekLabel.backgroundColor = UIColor.blue
         
         weekLabel.textColor = UIColor.white
         
