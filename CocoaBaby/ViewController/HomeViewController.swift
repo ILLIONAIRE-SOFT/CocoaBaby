@@ -110,6 +110,9 @@ class HomeViewController: BaseViewController {
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
+        
+        // 리팩토링 필요
+        
         let backgroundView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.height, height: self.view.frame.height))
         backgroundView.backgroundColor = UIColor.white
         let imageView = UIImageView(image: image)
@@ -135,18 +138,52 @@ class HomeViewController: BaseViewController {
         
         self.cameraButton.isHidden = false
         self.captureScreenButton.isHidden = false
-        
-        
+
         let shareSB = UIStoryboard(name: StoryboardName.share, bundle: nil)
-        let viewController = shareSB.instantiateViewController(withIdentifier: StoryboardName.captureBabyViewController) as! CaptureBabyViewController
-        viewController.modalPresentationStyle = .overCurrentContext
+        let captureBabyViewController = shareSB.instantiateViewController(withIdentifier: StoryboardName.captureBabyViewController) as! CaptureBabyViewController
         
-        viewController.squareImage = squareImage!
-        viewController.rectangleImage = image!
+        let actionSheet = UIAlertController(title: "Capture your baby", message: nil, preferredStyle: .actionSheet)
+        let captureRectangle = UIAlertAction(title: "Normal", style: .default) { _ -> Void in
+            self.captureAnimataion(completion: {
+                if let image = image {
+                    captureBabyViewController.selectedImage = image
+                }
+                captureBabyViewController.modalPresentationStyle = .overCurrentContext
+                self.present(captureBabyViewController, animated: true, completion: nil)
+            })
+        }
+        let captureSquare = UIAlertAction(title: "Square", style: .default) { _ -> Void in
+            self.captureAnimataion(completion: {
+                if let squareImage = squareImage {
+                    captureBabyViewController.selectedImage = squareImage
+                }
+                captureBabyViewController.modalPresentationStyle = .overCurrentContext
+                self.present(captureBabyViewController, animated: true, completion: nil)
+            })
+        }
+        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
         
-        present(viewController, animated: true, completion: nil)
+        actionSheet.addAction(captureRectangle)
+        actionSheet.addAction(captureSquare)
+        actionSheet.addAction(cancel)
+        
+        present(actionSheet, animated: true, completion: nil)
     }
 
+    
+    func captureAnimataion(completion : @escaping () -> ())  {
+        let captureWhiteView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
+        captureWhiteView.backgroundColor = .white
+        self.view.addSubview(captureWhiteView)
+        captureWhiteView.isHidden = false
+        UIView.animate(withDuration: 1.2, animations: {
+            captureWhiteView.alpha = 0
+        }) { (isCompleted) in
+            captureWhiteView.isHidden = true
+            completion()
+        }
+    }
+    
     // MARK: - Actions
     
     @IBAction func presentCameraView() {

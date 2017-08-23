@@ -47,33 +47,6 @@ class ImageService  {
         
         image.draw(in: imageAreaSize)
         
-        // merge label
-        //
-        //        let label = UILabel()
-        //        label.text = cameraViewLabel.text
-        //        label.textAlignment = .center
-        //        label.font = UIFont(name: "Helvetica Neue", size: 13 * image.size.width/cameraViewWidth)
-        //        label.layer.backgroundColor = UIColor.white.cgColor
-        //
-        //        let labelWidth : CGFloat = label.intrinsicContentSize.width * 1.5
-        //        let labelHeight : CGFloat = label.intrinsicContentSize.height * 1.5
-        //        let labelPointX : CGFloat = image.size.width/2 - labelWidth/2
-        //        let labelPointY : CGFloat = image.size.height/40
-        //        let labelRect = CGRect(x: labelPointX, y: labelPointY, width: labelWidth, height: labelHeight)
-        //
-        //        label.frame = labelRect
-        //
-        //        label.layer.cornerRadius = labelHeight/2
-        //        let labelImage = UIImage.imageWithLabel(label: label)
-        //
-        //        labelImage.draw(in: labelRect)
-        //        let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
-        //        UIGraphicsEndImageContext()
-        //
-        //        UIImageWriteToSavedPhotosAlbum(newImage, nil, nil, nil)
-        //
-        //        return newImage
-        
         // MARK: WeekLabel
         let label = UILabel()
         label.text = cameraViewLabel.text
