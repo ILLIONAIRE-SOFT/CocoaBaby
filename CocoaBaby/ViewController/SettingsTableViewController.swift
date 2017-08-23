@@ -13,10 +13,9 @@ class SettingsTableViewController: BaseTableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        self.clearsSelectionOnViewWillAppear = true
 
+        self.clearsSelectionOnViewWillAppear = true
+//        self.hidesBottomBarWhenPushed = true
     }
 
     override func viewWillAppear(_ animated: Bool) {
