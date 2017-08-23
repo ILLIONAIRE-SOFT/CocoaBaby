@@ -44,7 +44,7 @@ class DiaryViewController: BaseViewController {
         initRefreshControl()
         
         if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
-            if appDelegate.isNeedPresentWriteDiary {
+            if appDelegate.isNeedPresentWriteDiary || appDelegate.isNeedDiaryRefresh {
                 
             } else {
                 initTodayLabel()
@@ -62,6 +62,10 @@ class DiaryViewController: BaseViewController {
         
         if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
             if appDelegate.isNeedPresentWriteDiary {
+                appDelegate.isNeedPresentWriteDiary = false
+                initTodayLabel()
+            } else if appDelegate.isNeedDiaryRefresh {
+                appDelegate.isNeedDiaryRefresh = false
                 initTodayLabel()
             }
         }
