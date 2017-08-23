@@ -6,7 +6,22 @@
   Copyright © 2017 Sohn. All rights reserved.
 */
 
-
 "Alert.DoYouWantLogout" = "Do you want logout?";
 "Alert.FatherAlreadyLinked" = "You alread link with mother";
+"Alert.AlreadyLinked" = "You already linked. If you want change partner, unlink"
+"Alert.OnlyMomCanShare" = "Only mom can share code"
+"Alert.ShareCodeMessage" = ""
+"Alert.PleaseRetry" = "Try later"
+"Alert.OnlyFatherCanLinkWithMom" = "Only father can link with mother"
+"Alert.EnterCodeTitle" = "Enter Code"
+"Alert.EnterCodeMessage" = "Input mother's 6 inteager code"
+"Alert.LinkSuccess" = "Link success"
+"Alert.UnlinkTitle" = "Unlink"
+"Alert.UnlinkMessage" = "You do not read partner's diary and baby"
+"Alert.UnlinkSuccess" = "Unlinked"
 
+"Yes" = "Yes"
+"No" = "No"
+"Done" = "Done"
+"Cancel" = "Cancel"
+"Success" = "Success"
