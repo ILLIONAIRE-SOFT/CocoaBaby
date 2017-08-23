@@ -143,7 +143,7 @@
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YnE-8r-Clh">
                                 <rect key="frame" x="0.0" y="548" width="355" height="30"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -165,6 +165,7 @@
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="355" height="578"/>
                     <connections>
+                        <outlet property="bottomView" destination="YnE-8r-Clh" id="h0b-IX-087"/>
                         <outlet property="segmentedControl" destination="O37-w5-hNA" id="GIm-Lb-lA9"/>
                         <outlet property="tableView" destination="qcH-v4-VJm" id="zd0-ve-dEP"/>
                         <outlet property="weekTitle" destination="Zm4-2H-B9U" id="fac-i3-KIp"/>
