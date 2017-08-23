@@ -111,7 +111,8 @@ class SettingsTableViewController: BaseTableViewController {
                 
                 let doneAction = UIAlertAction(title: "Done", style: .default) { (action) in
                     ShareHelper.removeShareSession(completion: {
-                        print("share quit")
+                        UserStore.shared.fetchUser(completion: { (result) in
+                        })
                     })
                 }
                 
