@@ -31,9 +31,9 @@ class SettingsTableViewController: BaseTableViewController {
     func fetchOriginData() {
         if let gender = UserStore.shared.user?.gender {
             switch gender {
-            case "female":
+            case Gender.female:
                 genderLabel.text = "Female"
-            case "male":
+            case Gender.male:
                 genderLabel.text = "Male"
             default:
                 break
@@ -112,7 +112,7 @@ class SettingsTableViewController: BaseTableViewController {
             return
         }
         
-        if gender == "male" {
+        if gender == Gender.male {
             let alertController = UIAlertController(title: nil, message: LocalizableString.onlyMomCanShare, preferredStyle: .alert)
             
             let doneAction = UIAlertAction(title: LocalizableString.done, style: .default, handler: nil)
@@ -170,7 +170,7 @@ class SettingsTableViewController: BaseTableViewController {
             return
         }
         
-        if gender == "female" {
+        if gender == Gender.female {
             let alertController = UIAlertController(title: nil, message: LocalizableString.onlyFatherCanLinkWithMom, preferredStyle: .alert)
             
             let doneAction = UIAlertAction(title: LocalizableString.done, style: .default, handler: nil)

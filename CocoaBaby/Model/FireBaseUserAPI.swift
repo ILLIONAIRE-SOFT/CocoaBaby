@@ -9,6 +9,11 @@
 import Foundation
 import FirebaseAuth
 
+struct Gender {
+    static let female: String = "female"
+    static let male: String = "male"
+}
+
 struct User {
     var gender: String = "female"
     var partnerUID: String? = nil

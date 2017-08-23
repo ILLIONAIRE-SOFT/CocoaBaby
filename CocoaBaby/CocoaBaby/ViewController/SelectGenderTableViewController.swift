@@ -26,10 +26,10 @@ class SelectGenderTableViewController: BaseTableViewController {
         let indexPath: IndexPath
         
         if let gender = UserStore.shared.user?.gender {
-            if gender == "female" {
+            if gender == Gender.female {
                 indexPath = IndexPath(row: 0, section: 0)
                 tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
-            } else if gender == "male" {
+            } else if gender == Gender.male {
                 indexPath = IndexPath(row: 1, section: 0)
                 tableView.cellForRow(at: indexPath)?.accessoryType = .checkmark
             }
@@ -64,10 +64,10 @@ class SelectGenderTableViewController: BaseTableViewController {
         switch indexPath.row {
         case 0:
             tableView.cellForRow(at: IndexPath(row: 1, section: 0))?.accessoryType = .none
-            changeGender(gender: "female")
+            changeGender(gender: Gender.female)
         case 1:
             tableView.cellForRow(at: IndexPath(row: 0, section: 0))?.accessoryType = .none
-            changeGender(gender: "male")
+            changeGender(gender: Gender.male)
         default:
             break
         }
