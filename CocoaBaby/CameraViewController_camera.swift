@@ -111,8 +111,6 @@ extension CameraViewController : AVCapturePhotoCaptureDelegate {
             showShareViewController(image: mergeImage)
             
             self.cameraView.backgroundColor = UIColor(patternImage: image!)
-            
-            
         }
     }
     
