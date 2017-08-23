@@ -20,6 +20,10 @@ class BaseViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Gradation2")!)
     }
     
@@ -95,7 +99,7 @@ class BaseViewController: UIViewController {
             // diaryTableView.backgroundColor = UIColor.init(colorWithHexValue: 0x3f305d, alpha: 1)
             self.view.backgroundColor = UIColor.init(colorWithHexValue: 0x3f305d, alpha: 1)
             
-        } else if currentHour >= 6 && currentHour <= 16{
+        } else if currentHour >= 6 && currentHour < 16{
             
         } else if currentHour >= 16 && currentHour <= 19 {
             // diaryTableView.backgroundColor = UIColor.init(colorWithHexValue: 0x4a3252, alpha: 1)

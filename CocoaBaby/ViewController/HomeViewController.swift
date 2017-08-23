@@ -264,7 +264,7 @@ class HomeViewController: BaseViewController {
             self.view.backgroundColor = UIColor(patternImage: image)
             
             
-        } else if currentHour >= 6 && currentHour <= 16{ //morning
+        } else if currentHour >= 6 && currentHour < 16{ //morning
             UIGraphicsBeginImageContext(self.view.frame.size)
             UIImage(named: "cocoaBabyBgNormal")?.draw(in: self.view.bounds)
             

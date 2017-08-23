@@ -14,13 +14,14 @@ class SettingsTableViewController: BaseTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.tableView.backgroundColor = UIColor(patternImage: UIImage(named: "Gradation2")!)
+        
         self.clearsSelectionOnViewWillAppear = true
 
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        self.tableView.backgroundColor = UIColor(patternImage: UIImage(named: "Gradation2")!)
         changeBgColorBasedOnTime()
     }
     
