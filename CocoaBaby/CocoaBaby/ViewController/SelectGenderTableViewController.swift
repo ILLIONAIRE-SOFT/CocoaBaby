@@ -16,7 +16,19 @@ class SelectGenderTableViewController: BaseTableViewController {
         self.tableView.backgroundColor = UIColor(patternImage: UIImage(named: "Gradation2")!)
 
     }
-
+    
+    func changeGender(gender: String) {
+        UserStore.shared.updateUser(post: [UserPayloadName.gender.rawValue:gender]) { (result) in
+            switch result {
+            case let .success(user):
+                break
+            case let .failure(error):
+                break
+            }
+        }
+    }
+    
+    // MARK: Table View Delegate, Data Source
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         tableView.deselectRow(at: indexPath, animated: true)
