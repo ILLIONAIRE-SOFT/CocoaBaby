@@ -78,5 +78,4 @@ class SelectGenderTableViewController: BaseTableViewController {
             headerTitle.textLabel?.textColor = UIColor.lightGray
         }
     }
-    
 }
