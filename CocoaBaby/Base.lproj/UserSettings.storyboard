@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -63,72 +64,81 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1nd-9V-sb9">
-                                <rect key="frame" x="169" y="540" width="37" height="30"/>
-                                <state key="normal" title="Done">
+                                <rect key="frame" x="172" y="487" width="32" height="30"/>
+                                <state key="normal" title="Next">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="tappedDone:" destination="0lr-z3-xOo" eventType="touchUpInside" id="k3n-1d-zXu"/>
                                 </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="1gr-hD-gy5">
-                                <rect key="frame" x="36" y="233.5" width="303" height="200"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kGC-N8-T1z">
-                                        <rect key="frame" x="0.0" y="0.0" width="131.5" height="200"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="mama"/>
-                                        <connections>
-                                            <action selector="tappedFemaleButton:" destination="0lr-z3-xOo" eventType="touchUpInside" id="yhR-0o-9nw"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h1J-in-FqW">
-                                        <rect key="frame" x="171.5" y="0.0" width="131.5" height="200"/>
-                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <state key="normal" title="papa"/>
-                                        <connections>
-                                            <action selector="tappedMaleButton:" destination="0lr-z3-xOo" eventType="touchUpInside" id="hdF-cq-HMR"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="200" id="My0-oR-JSP"/>
-                                </constraints>
-                            </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mother or Father?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k5m-HZ-BcS">
-                                <rect key="frame" x="119" y="147" width="137" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mom or Dad?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="k5m-HZ-BcS">
+                                <rect key="frame" x="98" y="190" width="180" height="38.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="32"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="mom" translatesAutoresizingMaskIntoConstraints="NO" id="n06-ug-yYW">
+                                <rect key="frame" x="76" y="308.5" width="80" height="110"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="LGn-SE-GNQ"/>
+                                    <constraint firstAttribute="width" secondItem="n06-ug-yYW" secondAttribute="height" multiplier="137:189" id="TFV-Ei-JG6"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dad" translatesAutoresizingMaskIntoConstraints="NO" id="TSk-fk-sc8">
+                                <rect key="frame" x="229" y="309" width="80" height="110"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_favorite" translatesAutoresizingMaskIntoConstraints="NO" id="KM0-SU-8QI">
+                                <rect key="frame" x="175.5" y="349" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="7f5-Td-gn8"/>
+                                    <constraint firstAttribute="width" constant="24" id="WZl-Ps-aWI"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mom" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bYN-ix-TNo">
+                                <rect key="frame" x="103" y="426" width="26" height="13.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="11"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wss-yh-EIN">
+                                <rect key="frame" x="258.5" y="427" width="21" height="13.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="11"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.23529411759999999" green="0.29411764709999999" blue="0.4823529412" alpha="0.98157112729999996" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="1gr-hD-gy5" firstAttribute="leading" secondItem="3Ij-KM-TcG" secondAttribute="leadingMargin" constant="20" id="6iK-6y-KI5"/>
+                            <constraint firstItem="bYN-ix-TNo" firstAttribute="centerX" secondItem="n06-ug-yYW" secondAttribute="centerX" id="2BO-uB-tEd"/>
+                            <constraint firstItem="wss-yh-EIN" firstAttribute="centerX" secondItem="TSk-fk-sc8" secondAttribute="centerX" id="5DN-SR-gwy"/>
+                            <constraint firstItem="7bx-Of-dbZ" firstAttribute="top" secondItem="1nd-9V-sb9" secondAttribute="bottom" constant="150" id="Azh-Fu-9CK"/>
+                            <constraint firstItem="KM0-SU-8QI" firstAttribute="centerX" secondItem="3Ij-KM-TcG" secondAttribute="centerX" id="CN7-WG-WUf"/>
+                            <constraint firstItem="n06-ug-yYW" firstAttribute="leading" secondItem="3Ij-KM-TcG" secondAttribute="leadingMargin" constant="60" id="DP0-MG-He5"/>
                             <constraint firstItem="1nd-9V-sb9" firstAttribute="centerX" secondItem="3Ij-KM-TcG" secondAttribute="centerX" id="FR0-E8-LDH"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="1gr-hD-gy5" secondAttribute="trailing" constant="20" id="Hcz-1X-7h1"/>
-                            <constraint firstItem="k5m-HZ-BcS" firstAttribute="top" secondItem="yw2-jE-jbb" secondAttribute="bottom" constant="83" id="Jjh-wC-b6n"/>
-                            <constraint firstItem="1gr-hD-gy5" firstAttribute="centerY" secondItem="3Ij-KM-TcG" secondAttribute="centerY" id="LCv-dk-82s"/>
-                            <constraint firstItem="1gr-hD-gy5" firstAttribute="centerX" secondItem="3Ij-KM-TcG" secondAttribute="centerX" id="MH8-8j-Jx4"/>
-                            <constraint firstItem="1nd-9V-sb9" firstAttribute="top" secondItem="1gr-hD-gy5" secondAttribute="bottom" constant="106.5" id="UWq-fJ-3g5"/>
+                            <constraint firstItem="KM0-SU-8QI" firstAttribute="top" secondItem="TSk-fk-sc8" secondAttribute="top" constant="40" id="GtH-PC-Bf1"/>
+                            <constraint firstItem="k5m-HZ-BcS" firstAttribute="top" secondItem="yw2-jE-jbb" secondAttribute="bottom" constant="126" id="Jjh-wC-b6n"/>
+                            <constraint firstItem="wss-yh-EIN" firstAttribute="top" secondItem="TSk-fk-sc8" secondAttribute="bottom" constant="8" id="Krr-NX-Xwf"/>
+                            <constraint firstItem="bYN-ix-TNo" firstAttribute="top" secondItem="n06-ug-yYW" secondAttribute="bottom" constant="8" id="Rc7-4l-pfh"/>
                             <constraint firstItem="k5m-HZ-BcS" firstAttribute="centerX" secondItem="3Ij-KM-TcG" secondAttribute="centerX" id="f6a-yk-QDP"/>
+                            <constraint firstItem="TSk-fk-sc8" firstAttribute="width" secondItem="n06-ug-yYW" secondAttribute="width" id="j61-Rl-rpP"/>
+                            <constraint firstItem="TSk-fk-sc8" firstAttribute="centerY" secondItem="n06-ug-yYW" secondAttribute="centerY" id="l5m-4W-owr"/>
+                            <constraint firstItem="n06-ug-yYW" firstAttribute="top" secondItem="k5m-HZ-BcS" secondAttribute="bottom" constant="80" id="mtY-SL-J64"/>
+                            <constraint firstItem="TSk-fk-sc8" firstAttribute="height" secondItem="n06-ug-yYW" secondAttribute="height" id="rzZ-ld-Hdn"/>
+                            <constraint firstAttribute="trailing" secondItem="TSk-fk-sc8" secondAttribute="trailing" constant="66" id="s5p-WM-0lQ"/>
                         </constraints>
                     </view>
-                    <connections>
-                        <outlet property="mamaButton" destination="kGC-N8-T1z" id="y6S-Tc-PKe"/>
-                        <outlet property="papaButton" destination="h1J-in-FqW" id="3U9-aa-4SL"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NCk-8i-VSc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="692" y="123"/>
+            <point key="canvasLocation" x="692" y="122.78860569715144"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zMg-sl-FOi">
             <objects>
                 <navigationController storyboardIdentifier="WelcomeNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="XZc-Oc-H3m" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="m1N-Pw-Kqz">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="m1N-Pw-Kqz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -142,4 +152,9 @@
             <point key="canvasLocation" x="-980" y="122.78860569715144"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="dad" width="414" height="515"/>
+        <image name="ic_favorite" width="24" height="24"/>
+        <image name="mom" width="407" height="515"/>
+    </resources>
 </document>
