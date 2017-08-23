@@ -92,11 +92,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
     }
     
     func applicationDidEnterBackground(_ application: UIApplication) {
+        application.applicationIconBadgeNumber = 0
         
         Messaging.messaging().shouldEstablishDirectChannel = false
     }
     
     func applicationWillEnterForeground(_ application: UIApplication) {
+        application.applicationIconBadgeNumber = 0
         
         Messaging.messaging().shouldEstablishDirectChannel = true
     }
@@ -114,7 +116,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
     }
     
     func applicationWillTerminate(_ application: UIApplication) {
-        
+        application.applicationIconBadgeNumber = 0
     }
     
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey : Any] = [:]) -> Bool {
