@@ -65,7 +65,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="400" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qcH-v4-VJm">
-                                <rect key="frame" x="0.0" y="120" width="355" height="458"/>
+                                <rect key="frame" x="0.0" y="120" width="355" height="428"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TipsDetailContentTableViewCell" rowHeight="400" id="bqy-ES-Rmj" customClass="TipsDetailContentTableViewCell" customModule="CocoaBaby" customModuleProvider="target">
@@ -141,16 +141,24 @@
                                     <constraint firstAttribute="bottom" secondItem="O37-w5-hNA" secondAttribute="bottom" constant="20" id="kyA-Be-H9t"/>
                                 </constraints>
                             </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YnE-8r-Clh">
+                                <rect key="frame" x="0.0" y="548" width="355" height="30"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="bottom" secondItem="YnE-8r-Clh" secondAttribute="bottom" id="60h-M3-0RR"/>
                             <constraint firstItem="ONB-mx-CaQ" firstAttribute="leading" secondItem="n0c-lD-Xxf" secondAttribute="leading" id="Het-Ox-mWy"/>
                             <constraint firstAttribute="trailing" secondItem="ONB-mx-CaQ" secondAttribute="trailing" id="MAg-hj-uA2"/>
-                            <constraint firstItem="DeE-4S-K1t" firstAttribute="top" secondItem="qcH-v4-VJm" secondAttribute="bottom" id="T7i-ri-erb"/>
+                            <constraint firstItem="YnE-8r-Clh" firstAttribute="top" secondItem="qcH-v4-VJm" secondAttribute="bottom" id="Nsi-AI-bVp"/>
+                            <constraint firstItem="DeE-4S-K1t" firstAttribute="top" secondItem="qcH-v4-VJm" secondAttribute="bottom" constant="30" id="T7i-ri-erb"/>
                             <constraint firstAttribute="trailing" secondItem="qcH-v4-VJm" secondAttribute="trailing" id="VMW-mw-cM8"/>
                             <constraint firstItem="qcH-v4-VJm" firstAttribute="top" secondItem="ONB-mx-CaQ" secondAttribute="bottom" id="h26-Tp-WuE"/>
                             <constraint firstItem="ONB-mx-CaQ" firstAttribute="top" secondItem="RDF-6N-d2k" secondAttribute="bottom" id="iNV-xz-m4F"/>
                             <constraint firstItem="qcH-v4-VJm" firstAttribute="leading" secondItem="n0c-lD-Xxf" secondAttribute="leading" id="jDr-Hp-R8P"/>
+                            <constraint firstItem="YnE-8r-Clh" firstAttribute="leading" secondItem="n0c-lD-Xxf" secondAttribute="leading" id="sv4-1p-6Oy"/>
+                            <constraint firstAttribute="trailing" secondItem="YnE-8r-Clh" secondAttribute="trailing" id="y2O-If-DVF"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>

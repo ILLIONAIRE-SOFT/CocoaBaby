@@ -32,7 +32,7 @@ class CaptureBabyViewController: UIViewController {
         let activityItem: [AnyObject] = [self.imageView.image as AnyObject]
         
         let avc = UIActivityViewController(activityItems: activityItem as [AnyObject], applicationActivities: nil)
-        
+
         self.present(avc, animated: true, completion: nil)
     }
     

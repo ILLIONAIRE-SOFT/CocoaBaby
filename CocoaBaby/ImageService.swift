@@ -112,8 +112,6 @@ class ImageService  {
         let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
         
-        UIImageWriteToSavedPhotosAlbum(newImage, nil, nil, nil)
-        
         return newImage
     }
 }
