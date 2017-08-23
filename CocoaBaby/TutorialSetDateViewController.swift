@@ -15,7 +15,6 @@ class TutorialSetDateViewController: BaseViewController, UITextFieldDelegate {
     var birthDate : Date?
     
     @IBOutlet var registerButton: UIButton!
-    
     @IBOutlet var pregnantDateLabel: UILabel!
     @IBOutlet var birthDateLabel: UILabel!
     @IBOutlet weak var pregnantDateTextField: UITextField!
@@ -30,14 +29,11 @@ class TutorialSetDateViewController: BaseViewController, UITextFieldDelegate {
         self.birthDateTextField.delegate = self
         self.registerButton.isEnabled = false
         
-        
-        self.pregnantDateLabel.text = "임신 전 마지막 생리일이 언제인가요?" // localize 필요
-        self.birthDateLabel.text = "출산 예정일이 언제인가요?" // localize 필요
-        
+        self.pregnantDateLabel.text = "임신 전 마지막 생리일이 언제인가요?"
+        self.birthDateLabel.text = "출산 예정일이 언제인가요?"
         
         self.pregnantDateTextField.tintColor = .clear
         self.birthDateTextField.tintColor = .clear
-        
         
         self.registerButton.layer.cornerRadius = 4
         self.registerButton.backgroundColor = .white
@@ -46,12 +42,8 @@ class TutorialSetDateViewController: BaseViewController, UITextFieldDelegate {
         dateFormatter.timeStyle = .none
         dateFormatter.locale = Locale.current
         
-        self.pregnantDateTextField.text = dateFormatter.string(from: Date(timeIntervalSince1970: BabyStore.shared.baby.pregnantDate))
-        self.birthDateTextField.text = dateFormatter.string(from: Date(timeIntervalSince1970: BabyStore.shared.baby.birthDate))
-        
         pregnantDateTextField.setBottomBorder()
         birthDateTextField.setBottomBorder()
-        
     }
     
     @IBAction func back(_ sender: Any) {
@@ -90,9 +82,7 @@ class TutorialSetDateViewController: BaseViewController, UITextFieldDelegate {
         textField.inputAccessoryView = toolBar
     }
     
-    //
-    // Mark : relate to date Picker
-    //
+    // MARK: Date Picker
     
     func doneClick() {
         if pregnantDateTextField.isFirstResponder {
@@ -135,7 +125,7 @@ class TutorialSetDateViewController: BaseViewController, UITextFieldDelegate {
         }
     }
     
-    // register Baby
+    // MARK: Register Baby
     
     @IBAction func registerBaby(_ sender: Any) {
         if
@@ -176,6 +166,5 @@ class TutorialSetDateViewController: BaseViewController, UITextFieldDelegate {
         appDelegate.window?.rootViewController = initialViewController
         appDelegate.window?.makeKeyAndVisible()
     }
-    
         
 }

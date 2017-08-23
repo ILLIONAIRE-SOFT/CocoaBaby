@@ -127,7 +127,9 @@ class DiaryAddViewController: DiaryBaseViewController {
         
         let alertController = UIAlertController(title: "Add Comment", message: nil, preferredStyle: .alert)
         alertController.addTextField { (textField) in
-            
+            if let comment = diary.comment {
+                textField.text = comment
+            }
         }
         
         let doneAction = UIAlertAction(title: "Done", style: .default) { (action) in
