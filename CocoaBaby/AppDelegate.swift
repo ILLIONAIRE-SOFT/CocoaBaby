@@ -38,6 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
     var isNeedHandleDiaryResponse: Bool = false
     var isNeedHandleWriteDiaryQuickAction: Bool = false
     var isNeedPresentWriteDiary: Bool = false
+    var isNeedDiaryRefresh: Bool = false
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
@@ -182,6 +183,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         
         if let tabBarVC = self.window?.rootViewController as? UITabBarController {
+            isNeedDiaryRefresh = true
+            tabBarVC.selectedIndex = 0
             tabBarVC.selectedIndex = 1
         } else {
             // 앱이 꺼져있는 경우

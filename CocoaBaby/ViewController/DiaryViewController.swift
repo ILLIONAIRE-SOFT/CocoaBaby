@@ -63,8 +63,11 @@ class DiaryViewController: BaseViewController {
         if let appDelegate = UIApplication.shared.delegate as? AppDelegate {
             if appDelegate.isNeedPresentWriteDiary {
                 initTodayLabel()
+            } else if appDelegate.isNeedDiaryRefresh {
+                initTodayLabel()
             }
         }
+        
     }
     
     override func viewDidAppear(_ animated: Bool) {
