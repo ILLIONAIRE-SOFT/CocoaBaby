@@ -15,7 +15,6 @@ class EditBabyDateViewController: BaseViewController, UITextFieldDelegate {
     var birthDate = Date()
     
     @IBOutlet var registerButton: UIButton!
-    @IBOutlet var cancelButton: UIButton!
     
     @IBOutlet var pregnantDateLabel: UILabel!
     @IBOutlet var birthDateLabel: UILabel!
@@ -49,8 +48,6 @@ class EditBabyDateViewController: BaseViewController, UITextFieldDelegate {
 
         self.registerButton.layer.cornerRadius = 4
         self.registerButton.backgroundColor = .white
-        self.cancelButton.layer.cornerRadius = 4
-        self.cancelButton.backgroundColor = .white
         
         pregnantDateTextField.setBottomBorder()
         birthDateTextField.setBottomBorder()
@@ -155,12 +152,10 @@ class EditBabyDateViewController: BaseViewController, UITextFieldDelegate {
             BabyStore.shared.updateBaby(baby: baby, completion: { (result) in
                 BabyStore.shared.fetchBaby(completion: { (baby) in
                 })
-                self.dismiss(animated: true, completion: nil)
+                self.showSuccessToastMessage()
+                self.navigationController?.popViewController(animated: true)
             })
         }
     }
 
-    @IBAction func cancel(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
-    }
 }

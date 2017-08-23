@@ -62,6 +62,7 @@
 		D45189C71F3AD25200937869 /* DiaryBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45189C61F3AD25200937869 /* DiaryBaseViewController.swift */; };
 		DA131A701F45641600DE12F7 /* EditBabyDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA131A6F1F45641600DE12F7 /* EditBabyDateViewController.swift */; };
 		DA571F921F4C166C008EA81A /* CaptureBabyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA571F911F4C166C008EA81A /* CaptureBabyViewController.swift */; };
+		DA571F9F1F4D5F4A008EA81A /* ShareImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA571F9E1F4D5F4A008EA81A /* ShareImageService.swift */; };
 		DA5C8F2E1F415F0C00AA3185 /* TipsDetailContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5C8F2C1F415F0C00AA3185 /* TipsDetailContentTableViewCell.swift */; };
 		DA5C8F321F41AA1000AA3185 /* TipsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5C8F311F41AA1000AA3185 /* TipsStore.swift */; };
 		DA6E7C111F4BEE5400F9D636 /* Share.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA6E7C101F4BEE5400F9D636 /* Share.storyboard */; };
@@ -162,6 +163,7 @@
 		D45189C61F3AD25200937869 /* DiaryBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryBaseViewController.swift; sourceTree = "<group>"; };
 		DA131A6F1F45641600DE12F7 /* EditBabyDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditBabyDateViewController.swift; sourceTree = "<group>"; };
 		DA571F911F4C166C008EA81A /* CaptureBabyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureBabyViewController.swift; sourceTree = "<group>"; };
+		DA571F9E1F4D5F4A008EA81A /* ShareImageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareImageService.swift; sourceTree = "<group>"; };
 		DA5C8F2C1F415F0C00AA3185 /* TipsDetailContentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsDetailContentTableViewCell.swift; sourceTree = "<group>"; };
 		DA5C8F311F41AA1000AA3185 /* TipsStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsStore.swift; sourceTree = "<group>"; };
 		DA6C03451F4357A20092443F /* CocoaBaby.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CocoaBaby.entitlements; sourceTree = "<group>"; };
@@ -511,6 +513,7 @@
 			isa = PBXGroup;
 			children = (
 				DA571F911F4C166C008EA81A /* CaptureBabyViewController.swift */,
+				DA571F9E1F4D5F4A008EA81A /* ShareImageService.swift */,
 			);
 			name = Share;
 			sourceTree = "<group>";
@@ -905,6 +908,7 @@
 				DAB5A40D1F31B185000235B0 /* TutorialSetDateViewController.swift in Sources */,
 				49C4FA461F46BC6D008068D8 /* FireBaseTipsAPI.swift in Sources */,
 				49C4FA441F469DAB008068D8 /* FireBaseBabyAPI.swift in Sources */,
+				DA571F9F1F4D5F4A008EA81A /* ShareImageService.swift in Sources */,
 				493631DE1F31C662008C774E /* TabBarViewController.swift in Sources */,
 				DA7461031F4405F800568F1C /* ImageService.swift in Sources */,
 				4911D9CB1F3444A70031B74A /* BaseViewController.swift in Sources */,

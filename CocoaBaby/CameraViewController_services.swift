@@ -9,9 +9,7 @@ import UIKit
 import AVFoundation
 
 extension CameraViewController {
-    
-    
-    
+
     @IBAction func activateFlash(_ sender: Any) {
         if captureDevice!.hasTorch {
             do {

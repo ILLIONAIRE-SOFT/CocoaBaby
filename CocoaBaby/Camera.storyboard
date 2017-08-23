@@ -69,8 +69,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i5R-zR-au8">
-                                <rect key="frame" x="40" y="588.5" width="34" height="30"/>
-                                <state key="normal" title="Back">
+                                <rect key="frame" x="30" y="588.5" width="54" height="30"/>
+                                <state key="normal" title="Dismiss">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
@@ -82,7 +82,7 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="LuR-JH-54O" secondAttribute="trailing" id="16c-6s-Mer"/>
                             <constraint firstItem="8Fm-m9-CKp" firstAttribute="top" secondItem="Mri-vX-sSl" secondAttribute="top" constant="40" id="4Tt-D1-nOb"/>
-                            <constraint firstItem="MX0-0B-kGL" firstAttribute="leading" secondItem="i5R-zR-au8" secondAttribute="trailing" constant="80" id="9gC-Tz-Cdo"/>
+                            <constraint firstItem="MX0-0B-kGL" firstAttribute="leading" secondItem="i5R-zR-au8" secondAttribute="trailing" constant="70" id="9gC-Tz-Cdo"/>
                             <constraint firstItem="i5R-zR-au8" firstAttribute="centerY" secondItem="MX0-0B-kGL" secondAttribute="centerY" id="BS8-uu-AnX"/>
                             <constraint firstItem="8Fm-m9-CKp" firstAttribute="leading" secondItem="Mri-vX-sSl" secondAttribute="leading" constant="20" id="BrJ-hT-24z"/>
                             <constraint firstItem="LuR-JH-54O" firstAttribute="leading" secondItem="Mri-vX-sSl" secondAttribute="leading" id="E8Y-RG-DrF"/>

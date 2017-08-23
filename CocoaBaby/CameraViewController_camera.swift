@@ -108,21 +108,12 @@ extension CameraViewController : AVCapturePhotoCaptureDelegate {
             let cropImage = ImageService.cropImageToSquare(image: image!)
             
             let mergeImage = ImageService.merge(image: cropImage!, cameraViewLabel: self.weekUILabel, cameraViewWidth: self.cameraView.frame.width, babyNameViewLabel: self.babyNameUILabel)
-            showShareViewController(image: mergeImage)
+            ShareImageService.showShareViewController(presentViewController: self, image: mergeImage)
             
             self.cameraView.backgroundColor = UIColor(patternImage: image!)
         }
     }
     
-    func showShareViewController(image : UIImage?) {
-        let shareSB = UIStoryboard(name: StoryboardName.share, bundle: nil)
-        let captureBabyViewController = shareSB.instantiateViewController(withIdentifier: StoryboardName.captureBabyViewController) as! CaptureBabyViewController
-        if let image = image {
-            captureBabyViewController.selectedImage = image
-        }
-        captureBabyViewController.modalPresentationStyle = .overCurrentContext
-        self.present(captureBabyViewController, animated: true, completion: nil)
-    }
     
     @IBAction func changeCamera(_ sender: Any) {
         frontCamera = !frontCamera

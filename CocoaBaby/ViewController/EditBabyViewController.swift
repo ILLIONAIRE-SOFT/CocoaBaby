@@ -16,7 +16,6 @@ class EditBabyViewController: BaseViewController {
     var pregnantDate: Date? = nil
     var birthDate: Date? = nil
     
-    @IBOutlet var cancelButton: UIButton!
     @IBOutlet var saveButton: UIButton!
     
     override func viewDidLoad() {
@@ -27,8 +26,6 @@ class EditBabyViewController: BaseViewController {
         
         self.saveButton.layer.cornerRadius = 4
         self.saveButton.backgroundColor = .white
-        self.cancelButton.layer.cornerRadius = 4
-        self.cancelButton.backgroundColor = .white
         
         self.nameField.text = BabyStore.shared.baby.name
         
@@ -62,7 +59,8 @@ class EditBabyViewController: BaseViewController {
                 name = nameFieldText
                 let baby = Baby(name: name!, birthDate: BabyStore.shared.baby.birthDate, pregnantDate: BabyStore.shared.baby.pregnantDate)
                 BabyStore.shared.updateBaby(baby: baby) { (_) in
-                    self.dismiss(animated: true, completion: nil)
+                    self.showSuccessToastMessage()
+                    self.navigationController?.popViewController(animated: true)
                 }
             } else {
                 name = nil
@@ -73,10 +71,6 @@ class EditBabyViewController: BaseViewController {
                 return
             }
         }
-    }
-
-    @IBAction func tappedCancel(_ sender: Any) {
-        self.dismiss(animated: true, completion: nil)
     }
     
 }

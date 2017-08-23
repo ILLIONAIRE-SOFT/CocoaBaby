@@ -1,5 +1,5 @@
 //
-//  ShareService.swift
+//  ShareImageService.swift
 //  CocoaBaby
 //
 //  Created by LEOFALCON on 2017. 8. 23..
@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class ShareService {
+class ShareImageService {
     static func showShareViewController(presentViewController : UIViewController, image : UIImage?) {
         let shareSB = UIStoryboard(name: StoryboardName.share, bundle: nil)
         let captureBabyViewController = shareSB.instantiateViewController(withIdentifier: StoryboardName.captureBabyViewController) as! CaptureBabyViewController

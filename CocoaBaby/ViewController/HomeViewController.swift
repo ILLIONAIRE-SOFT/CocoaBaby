@@ -105,6 +105,7 @@ class HomeViewController: BaseViewController {
         self.cameraButton.isHidden = true
         self.captureScreenButton.isHidden = true
         
+        // 이미지 3개 만들어야함.
         // make rectangle size image
         
         UIGraphicsBeginImageContextWithOptions(self.view.frame.size, false, 0)
@@ -113,7 +114,6 @@ class HomeViewController: BaseViewController {
         UIGraphicsEndImageContext()
         
         self.view.backgroundColor = UIColor.clear
-        
         // make square size image
         
         let backgroundView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.view.frame.height, height: self.view.frame.height))
@@ -122,15 +122,6 @@ class HomeViewController: BaseViewController {
         let imageView = UIImageView(image: image)
         imageView.frame = CGRect(x: backgroundView.frame.width/2 - self.view.frame.width/2, y: 0, width: self.view.frame.width, height: self.view.frame.height)
         backgroundView.addSubview(imageView)
-//        
-//        let logoImage = UIImageView(image: UIImage(named: "CocoaBabyLoadingLogo"))
-//        logoImage.frame = CGRect(x: backgroundView.frame.width - 120, y: backgroundView.frame.height - 150, width: 100, height: 100)
-//        backgroundView.addSubview(logoImage)
-//
-//        let appLabel = UILabel(frame: CGRect(x: backgroundView.frame.width - 120, y: backgroundView.frame.height - 40, width: 100, height: 20))
-//        appLabel.text = "CocoaBaby"
-//        appLabel.textColor = UIColor.mainBlueColor
-//        backgroundView.addSubview(appLabel)
         
         UIGraphicsBeginImageContextWithOptions(backgroundView.frame.size, false, 0)
         backgroundView.layer.render(in: UIGraphicsGetCurrentContext()!)
@@ -144,26 +135,19 @@ class HomeViewController: BaseViewController {
         self.cameraButton.isHidden = false
         self.changeBg()
         
-        let shareSB = UIStoryboard(name: StoryboardName.share, bundle: nil)
-        let captureBabyViewController = shareSB.instantiateViewController(withIdentifier: StoryboardName.captureBabyViewController) as! CaptureBabyViewController
-        
         let actionSheet = UIAlertController(title: "Capture your baby", message: nil, preferredStyle: .actionSheet)
         let captureRectangle = UIAlertAction(title: "Normal", style: .default) { _ -> Void in
             self.captureAnimataion(completion: {
                 if let image = image {
-                    captureBabyViewController.selectedImage = image
+                    ShareImageService.showShareViewController(presentViewController: self, image: image)
                 }
-                captureBabyViewController.modalPresentationStyle = .overCurrentContext
-                self.present(captureBabyViewController, animated: true, completion: nil)
             })
         }
         let captureSquare = UIAlertAction(title: "Square", style: .default) { _ -> Void in
             self.captureAnimataion(completion: {
                 if let squareImage = squareImage {
-                    captureBabyViewController.selectedImage = squareImage
+                    ShareImageService.showShareViewController(presentViewController: self, image: squareImage)
                 }
-                captureBabyViewController.modalPresentationStyle = .overCurrentContext
-                self.present(captureBabyViewController, animated: true, completion: nil)
             })
         }
         let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
@@ -175,7 +159,6 @@ class HomeViewController: BaseViewController {
         present(actionSheet, animated: true, completion: nil)
     }
 
-    
     func captureAnimataion(completion : @escaping () -> ())  {
         let captureWhiteView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height))
         captureWhiteView.backgroundColor = .white
@@ -235,7 +218,6 @@ class HomeViewController: BaseViewController {
                     arrow.alpha = 0
             })
         }
-
     }
     
     func beginBabyAnimation () {
