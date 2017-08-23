@@ -15,6 +15,7 @@ struct Tips {
     var mamaContent: String = ""
     var papaTitle: String = ""
     var papaContent: String = ""
+    var babySpeech: [String] = []
 }
 
 class TipsStore {

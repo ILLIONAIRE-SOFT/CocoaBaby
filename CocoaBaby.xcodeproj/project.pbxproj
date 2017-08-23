@@ -28,6 +28,7 @@
 		493631DE1F31C662008C774E /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493631DD1F31C662008C774E /* TabBarViewController.swift */; };
 		4948E0A61F39799C008542F6 /* EditBabyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4948E0A51F39799C008542F6 /* EditBabyViewController.swift */; };
 		496B8A8F1F4D90D300DDD8AC /* SelectGenderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496B8A8E1F4D90D300DDD8AC /* SelectGenderTableViewController.swift */; };
+		496B8A931F4DA31800DDD8AC /* EditBabyNameTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496B8A921F4DA31800DDD8AC /* EditBabyNameTableViewController.swift */; };
 		496FB1E11F31986E00E4042D /* BabyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496FB1E01F31986E00E4042D /* BabyStore.swift */; };
 		499B6AE799D70C5EF0497B9D /* Pods_CocoaBabyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D030A7C3DA05CE73E2A7E35 /* Pods_CocoaBabyUITests.framework */; };
 		49A4B0E51F3DEF5C00CC09A7 /* DiaryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A4B0E41F3DEF5C00CC09A7 /* DiaryStore.swift */; };
@@ -121,6 +122,7 @@
 		493631DD1F31C662008C774E /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarViewController.swift; path = ViewController/TabBarViewController.swift; sourceTree = "<group>"; };
 		4948E0A51F39799C008542F6 /* EditBabyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditBabyViewController.swift; path = ViewController/EditBabyViewController.swift; sourceTree = "<group>"; };
 		496B8A8E1F4D90D300DDD8AC /* SelectGenderTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectGenderTableViewController.swift; path = CocoaBaby/ViewController/SelectGenderTableViewController.swift; sourceTree = "<group>"; };
+		496B8A921F4DA31800DDD8AC /* EditBabyNameTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditBabyNameTableViewController.swift; path = ViewController/EditBabyNameTableViewController.swift; sourceTree = "<group>"; };
 		496FB1E01F31986E00E4042D /* BabyStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BabyStore.swift; path = Model/BabyStore.swift; sourceTree = "<group>"; };
 		49A4B0E41F3DEF5C00CC09A7 /* DiaryStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiaryStore.swift; path = Model/DiaryStore.swift; sourceTree = "<group>"; };
 		49A4B0E61F3F17BD00CC09A7 /* DiaryEmptyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiaryEmptyCell.swift; path = View/DiaryEmptyCell.swift; sourceTree = "<group>"; };
@@ -254,13 +256,12 @@
 		4911D9D21F3446140031B74A /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				496B8A941F4DAB8400DDD8AC /* UserSettings */,
+				496B8A901F4DA2D800DDD8AC /* BabySettings */,
 				49121B381F4ABAA40045A165 /* SettingsTableViewController.swift */,
 				4911D9D31F34461F0031B74A /* SettingsViewController.swift */,
-				4948E0A51F39799C008542F6 /* EditBabyViewController.swift */,
 				49E659141F42C66200D85C53 /* UserSettingsViewController.swift */,
-				DA131A6F1F45641600DE12F7 /* EditBabyDateViewController.swift */,
 				490066411F4BDCB000C40E48 /* WelcomeViewController.swift */,
-				496B8A8E1F4D90D300DDD8AC /* SelectGenderTableViewController.swift */,
 				D4E670531F4D95DE00AEBADB /* SettingUINavigationController.swift */,
 			);
 			name = Settings;
@@ -311,6 +312,24 @@
 				3D030A7C3DA05CE73E2A7E35 /* Pods_CocoaBabyUITests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		496B8A901F4DA2D800DDD8AC /* BabySettings */ = {
+			isa = PBXGroup;
+			children = (
+				4948E0A51F39799C008542F6 /* EditBabyViewController.swift */,
+				DA131A6F1F45641600DE12F7 /* EditBabyDateViewController.swift */,
+				496B8A921F4DA31800DDD8AC /* EditBabyNameTableViewController.swift */,
+			);
+			name = BabySettings;
+			sourceTree = "<group>";
+		};
+		496B8A941F4DAB8400DDD8AC /* UserSettings */ = {
+			isa = PBXGroup;
+			children = (
+				496B8A8E1F4D90D300DDD8AC /* SelectGenderTableViewController.swift */,
+			);
+			name = UserSettings;
 			sourceTree = "<group>";
 		};
 		496FB1D71F3193CB00E4042D /* Model */ = {
@@ -951,6 +970,7 @@
 				496B8A8F1F4D90D300DDD8AC /* SelectGenderTableViewController.swift in Sources */,
 				DAEE34BF1F3834FC0090DBF5 /* TipsDetailViewController.swift in Sources */,
 				DA7460FF1F4405F800568F1C /* CameraViewController_camera.swift in Sources */,
+				496B8A931F4DA31800DDD8AC /* EditBabyNameTableViewController.swift in Sources */,
 				490066441F4BDD4300C40E48 /* StoryboardName.swift in Sources */,
 				4920577E1F41427100F232E2 /* CocoaDatePickerDelegate.swift in Sources */,
 				4948E0A61F39799C008542F6 /* EditBabyViewController.swift in Sources */,
