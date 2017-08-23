@@ -13,6 +13,9 @@ import CoreImage
 
 
 class ImageService  {
+    
+//    static let leftMargin: CGFloat = 16 * 10
+    
     static func cropImageToSquare(image: UIImage) -> UIImage? {
         var imageHeight = image.size.height
         var imageWidth = image.size.width
@@ -42,6 +45,9 @@ class ImageService  {
     
     static func merge(image : UIImage, cameraViewLabel : UILabel, cameraViewWidth : CGFloat, babyNameViewLabel : UILabel) -> UIImage? {
         
+        let expandRatio: CGFloat = image.size.width/cameraViewWidth
+        let leftMargin: CGFloat = expandRatio * 16
+        
         UIGraphicsBeginImageContext(image.size)
         let imageAreaSize = CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height)
         
@@ -58,7 +64,7 @@ class ImageService  {
         let labelWidth : CGFloat = label.intrinsicContentSize.width * 1.5
         let labelHeight : CGFloat = label.intrinsicContentSize.height * 1.5
         
-        let labelPointX : CGFloat = image.size.width/2 - (labelWidth/2)*2.1 + 200
+        let labelPointX : CGFloat = leftMargin
         let labelPointY : CGFloat = image.size.height/50
         let labelRect = CGRect(x: labelPointX, y: labelPointY, width: labelWidth, height: labelHeight)
         
@@ -75,15 +81,16 @@ class ImageService  {
         let babylabelWidth : CGFloat = babyNameLabel.intrinsicContentSize.width * 1.5
         let babylabelHeight : CGFloat = babyNameLabel.intrinsicContentSize.height * 1.5
         
-        let babylabelPointX : CGFloat = image.size.width/2 - (labelWidth/2)*2.1 + 200
+        let babylabelPointX : CGFloat = leftMargin
         let babylabelPointY : CGFloat = image.size.height/5 - 100
         let babylabelRect = CGRect(x: babylabelPointX, y: babylabelPointY, width: babylabelWidth, height: babylabelHeight)
         
         babyNameLabel.frame = babylabelRect
         
-        // MARK: LineDrawing
-//        let weeklabelWidth : CGFloat = label.intrinsicContentSize.width
+        // MARK: Separator
         
+        
+        // MARK: Image draw
         let labelImage = UIImage.imageWithLabel(label: label)
         let babylabelImage = UIImage.imageWithLabel(label: babyNameLabel)
         

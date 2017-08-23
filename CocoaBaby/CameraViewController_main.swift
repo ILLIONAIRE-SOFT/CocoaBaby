@@ -10,7 +10,8 @@ import UIKit
 import AVFoundation
 
 class CameraViewController: UIViewController {
-
+    
+    let leftMargin: CGFloat = 16
     
     let weekUILabel = UILabel()
     let babyNameUILabel = UILabel()

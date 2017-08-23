@@ -10,6 +10,8 @@ import AVFoundation
 
 extension CameraViewController {
     
+    
+    
     @IBAction func activateFlash(_ sender: Any) {
         if captureDevice!.hasTorch {
             do {
@@ -31,9 +33,9 @@ extension CameraViewController {
         let labelWidth : CGFloat = self.weekUILabel.intrinsicContentSize.width + self.cameraView.frame.width/10
         let labelHeight : CGFloat = self.weekUILabel.intrinsicContentSize.height * 1.7
         
-        let labelPointX : CGFloat = self.cameraView.frame.width/2 - (labelWidth/2)*2.1
+//        let labelPointX : CGFloat = self.cameraView.frame.width/2 - (labelWidth/2)*2.1
+        let labelPointX : CGFloat = leftMargin
         let labelPointY : CGFloat = self.cameraView.frame.height/50
-        
         
         let point = CGPoint(x: labelPointX, y: labelPointY)
         let size = CGSize(width: labelWidth, height: labelHeight)
@@ -54,7 +56,8 @@ extension CameraViewController {
         let babyLabelWidth : CGFloat = self.babyNameUILabel.intrinsicContentSize.width + self.cameraView.frame.width/10
         let babyLabelHeight : CGFloat = self.babyNameUILabel.intrinsicContentSize.height * 1.7
         
-        let babyLabelPointX : CGFloat = self.cameraView.frame.width/2 - (babyLabelWidth*1.5) - 7
+//        let babyLabelPointX : CGFloat = self.cameraView.frame.width/2 - (babyLabelWidth*1.5) - 7
+        let babyLabelPointX : CGFloat = leftMargin
         let babyLabelPointY : CGFloat = self.cameraView.frame.height/5 
         
         let point = CGPoint(x: babyLabelPointX, y: babyLabelPointY)
