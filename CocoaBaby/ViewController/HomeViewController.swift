@@ -201,7 +201,15 @@ class HomeViewController: BaseViewController {
         let randomX = arc4random_uniform(UInt32(moveRangeX))
         let randomY = arc4random_uniform(UInt32(moveRangeY))
         
-        speechBubbleLabel.text = "엄마 아빠 보고싶어요"
+        let babyWeek = BabyStore.shared.getPregnantWeek().week
+        
+        guard let babySpeechTexts = TipsStore.shared.Tips[babyWeek]?.babySpeech else { return }
+        
+        let randomSpeechNum = arc4random_uniform(UInt32(babySpeechTexts.count))
+        
+        
+        speechBubbleLabel.text = babySpeechTexts[Int(randomSpeechNum)]
+        
         // 애니메이션이 진행중이 아닐때만 동작할수 있도록
         if !isSpeechBubbleAnimated {
             isSpeechBubbleAnimated = true
