@@ -132,7 +132,6 @@ extension CameraViewController : AVCapturePhotoCaptureDelegate {
             captureSession.removeInput(oldInput)
         }
         frontCamera(frontCamera)
-        
         captureSession.commitConfiguration()
     }
 }
