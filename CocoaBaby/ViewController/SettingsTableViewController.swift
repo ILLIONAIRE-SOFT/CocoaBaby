@@ -48,6 +48,12 @@ class SettingsTableViewController: BaseTableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view:UIView, forSection: Int) {
+        if let headerTitle = view as? UITableViewHeaderFooterView {
+            headerTitle.textLabel?.textColor = UIColor.lightGray
+        }
+    }
+    
     func logout() {
         let firebaseAuth = Auth.auth()
         
@@ -214,11 +220,12 @@ class SettingsTableViewController: BaseTableViewController {
     func showComplete(message: String) {
         let alertController = UIAlertController(title: LocalizableString.success, message: message, preferredStyle: .alert)
         
-        let doneAction = UIAlertAction(title: LocalizableString.done, style: .default, handler: nil)
+        let doneAction = UIAlertAction(title: LocalizableString.done, style: .default,handler: nil)
         
         alertController.addAction(doneAction)
         
         present(alertController, animated: true, completion: nil)
     }
+
     
 }
