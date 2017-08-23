@@ -14,8 +14,6 @@ import CoreImage
 
 class ImageService  {
     
-//    static let leftMargin: CGFloat = 16 * 10
-    
     static func cropImageToSquare(image: UIImage) -> UIImage? {
         var imageHeight = image.size.height
         var imageWidth = image.size.width
@@ -54,48 +52,63 @@ class ImageService  {
         image.draw(in: imageAreaSize)
         
         // MARK: WeekLabel
-        let label = UILabel()
-        label.text = cameraViewLabel.text
-        label.textAlignment = .left
-        label.font = UIFont(name: "AppleSDGothicNeo-Thin", size: 40 * image.size.width/cameraViewWidth)
+        let weekLabel = UILabel()
+        weekLabel.text = cameraViewLabel.text
+        weekLabel.font = UIFont(name: "AppleSDGothicNeo-Thin", size: 40 * expandRatio)
+        weekLabel.sizeToFit()
+        weekLabel.backgroundColor = UIColor.blue
         
-        label.textColor = UIColor.white
+        weekLabel.textColor = UIColor.white
         
-        let labelWidth : CGFloat = label.intrinsicContentSize.width * 1.5
-        let labelHeight : CGFloat = label.intrinsicContentSize.height * 1.5
+        let weekLabelWidth: CGFloat = weekLabel.intrinsicContentSize.width
+        let weekLabelHeight: CGFloat = weekLabel.intrinsicContentSize.height
         
-        let labelPointX : CGFloat = leftMargin
-        let labelPointY : CGFloat = image.size.height/50
-        let labelRect = CGRect(x: labelPointX, y: labelPointY, width: labelWidth, height: labelHeight)
+        let weekLabelPointX: CGFloat = leftMargin
+        let weekLabelPointY: CGFloat = 16 * expandRatio
         
-        label.frame = labelRect
+        let weekLabelRect = CGRect(x: weekLabelPointX, y: weekLabelPointY, width: weekLabelWidth, height: weekLabelHeight)
+        
+        weekLabel.frame = weekLabelRect
+        
+        // MARK: Separator
+        let separatorLabel = UILabel()
+        separatorLabel.backgroundColor = .white
+        
+        let separatorWidth: CGFloat = weekLabel.intrinsicContentSize.width
+        let separatorHeight: CGFloat = 0.5 * expandRatio
+        
+        let separatorPointX: CGFloat = leftMargin
+        let separatorPointY: CGFloat = weekLabel.frame.maxY + (4 * expandRatio)
+        
+        let separatorRect: CGRect = CGRect(x: separatorPointX, y: separatorPointY, width: separatorWidth, height: separatorHeight)
+        
+        separatorLabel.frame = separatorRect
         
         // MARK: babyNameLabel
         let babyNameLabel = UILabel()
         babyNameLabel.text = babyNameViewLabel.text
         babyNameLabel.textAlignment = .left
-        babyNameLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 20 * image.size.width/cameraViewWidth)
+        babyNameLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 20 * expandRatio)
         
         babyNameLabel.textColor = UIColor.white
         
-        let babylabelWidth : CGFloat = babyNameLabel.intrinsicContentSize.width * 1.5
-        let babylabelHeight : CGFloat = babyNameLabel.intrinsicContentSize.height * 1.5
+        let babylabelWidth: CGFloat = babyNameLabel.intrinsicContentSize.width
+        let babylabelHeight: CGFloat = babyNameLabel.intrinsicContentSize.height
         
-        let babylabelPointX : CGFloat = leftMargin
-        let babylabelPointY : CGFloat = image.size.height/5 - 100
+        let babylabelPointX: CGFloat = leftMargin
+        let babylabelPointY: CGFloat = separatorLabel.frame.maxY + (4 * expandRatio)
         let babylabelRect = CGRect(x: babylabelPointX, y: babylabelPointY, width: babylabelWidth, height: babylabelHeight)
         
         babyNameLabel.frame = babylabelRect
         
-        // MARK: Separator
-        
-        
         // MARK: Image draw
-        let labelImage = UIImage.imageWithLabel(label: label)
+        let weekLabelImage = UIImage.imageWithLabel(label: weekLabel)
         let babylabelImage = UIImage.imageWithLabel(label: babyNameLabel)
+        let separatorImage = UIImage.imageWithLabel(label: separatorLabel)
         
-        labelImage.draw(in: labelRect)
+        weekLabelImage.draw(in: weekLabelRect)
         babylabelImage.draw(in: babylabelRect)
+        separatorImage.draw(in: separatorRect)
         
         let newImage:UIImage = UIGraphicsGetImageFromCurrentImageContext()!
         UIGraphicsEndImageContext()
@@ -103,12 +116,7 @@ class ImageService  {
         UIImageWriteToSavedPhotosAlbum(newImage, nil, nil, nil)
         
         return newImage
-        
-        
     }
-    
-    
-    
 }
 
 extension UIImage {
