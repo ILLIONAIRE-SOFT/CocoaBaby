@@ -105,18 +105,10 @@ extension CameraViewController : AVCapturePhotoCaptureDelegate {
                 previewPhotoSampleBuffer: previewPhotoSampleBuffer) else { return }
             
             let image = UIImage(data: jpegData)
-            print("image taked : \(image!)")
-            
-            
             let cropImage = ImageService.cropImageToSquare(image: image!)
             
             _ = ImageService.merge(image: cropImage!, cameraViewLabel: self.weekUILabel, cameraViewWidth: self.cameraView.frame.width, babyNameViewLabel: self.babyNameUILabel)
-            
-            
-            print("image croped : \(cropImage!)")
-            
             self.cameraView.backgroundColor = UIColor(patternImage: image!)
-            
         }
     }
     
