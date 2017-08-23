@@ -42,7 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
-        // Quick Action으로 앱 실행했을 때 처리
+        // For launch with shortcut
         if let shortcutItem = launchOptions?[UIApplicationLaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem {
             launchedShortcutItem = shortcutItem
         }
@@ -106,7 +106,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
     
     func applicationDidBecomeActive(_ application: UIApplication) {
         application.applicationIconBadgeNumber = 0
-        // 앱 첫 실행 시 Quick Action 처리
+        
+        // For short cut item wtih app launch
         guard let shortcut = launchedShortcutItem else {
             return
         }
@@ -183,11 +184,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         
         if let tabBarVC = self.window?.rootViewController as? UITabBarController {
+            // Case: App not terminated
             isNeedDiaryRefresh = true
             tabBarVC.selectedIndex = 0
             tabBarVC.selectedIndex = 1
         } else {
-            // 앱이 꺼져있는 경우
+            // Case: App terminated
             isNeedHandleDiaryResponse = true
         }
         
@@ -202,7 +204,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
     
     // MARK: Quick Action
     func application(_ application: UIApplication, performActionFor shortcutItem: UIApplicationShortcutItem, completionHandler: @escaping (Bool) -> Void) {
-        // 앱이 완전히 꺼지지 않은 상태에서 Quick Action 처리
+        
+        // general quick actions
         let handleShortcutItem = self.handleShortcutItem(shortcutItem: shortcutItem)
         
         completionHandler(handleShortcutItem)
@@ -223,12 +226,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
         switch shortCutType {
         case ShortcutIdentifier.First.type:
             if let tabBarVC = self.window?.rootViewController as? UITabBarController {
-                // 켜져있는 상태
+                // Case: app not terminated
                 isNeedPresentWriteDiary = true
                 tabBarVC.selectedIndex = 0
                 tabBarVC.selectedIndex = 1
             } else {
-                // 앱 첫 실행 시
+                // Case: launch with quick action
                 isNeedPresentWriteDiary = true
                 isNeedHandleWriteDiaryQuickAction = true
             }
