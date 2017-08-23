@@ -23,6 +23,7 @@ class SettingsViewController: BaseViewController {
         changeSettingBg()
     }
     
+    
     func initViews() {
         editBabyButton.backgroundColor = UIColor.black.withAlphaComponent(0.15)
         editBabyButton.layer.cornerRadius = 16

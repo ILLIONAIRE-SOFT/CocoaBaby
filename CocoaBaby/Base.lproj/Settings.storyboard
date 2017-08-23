@@ -156,10 +156,18 @@
                                                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Male" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aOy-8P-bYX">
+                                                    <rect key="frame" x="289" y="11" width="37" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="P7E-dz-hJQ" firstAttribute="leading" secondItem="KDM-A1-KNW" secondAttribute="leading" constant="16" id="Qat-e2-66E"/>
                                                 <constraint firstItem="P7E-dz-hJQ" firstAttribute="centerY" secondItem="KDM-A1-KNW" secondAttribute="centerY" id="Uza-fw-eYh"/>
+                                                <constraint firstAttribute="trailing" secondItem="aOy-8P-bYX" secondAttribute="trailing" constant="16" id="ZkM-qG-ik5"/>
+                                                <constraint firstItem="aOy-8P-bYX" firstAttribute="centerY" secondItem="KDM-A1-KNW" secondAttribute="centerY" id="zaL-VY-QUY"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -198,6 +206,9 @@
                     </tableView>
                     <navigationItem key="navigationItem" title="Settings" id="PCX-zf-cwG"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="genderLabel" destination="aOy-8P-bYX" id="0XD-R3-B5h"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ta3-Ge-I0G" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -457,17 +468,16 @@
             </objects>
             <point key="canvasLocation" x="2953" y="1063"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--SettingUI Navigation Controller-->
         <scene sceneID="KQ2-WX-ALz">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BuD-IF-LrT" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BuD-IF-LrT" customClass="SettingUINavigationController" customModule="CocoaBaby" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="ic_settings_white" id="2fi-fG-rT0"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ezE-F5-8Kz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <color key="barTintColor" red="0.23529411764705882" green="0.29411764705882354" blue="0.4823529411764706" alpha="0.98157112729999996" colorSpace="custom" customColorSpace="sRGB"/>
                         <textAttributes key="titleTextAttributes">
                             <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         </textAttributes>
