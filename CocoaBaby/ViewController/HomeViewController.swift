@@ -23,10 +23,18 @@ class HomeViewController: BaseViewController {
     @IBOutlet var cameraButton: UIButton!
     @IBOutlet var captureScreenButton: UIButton!
     
+    // 말풍선 만들기 위한 뷰
+    @IBOutlet var babyAroundView: UIView!
+    @IBOutlet var speechBubble: UIImageView!
+    var isSpeechBubbleAnimated : Bool = false
+    @IBOutlet var speechBubbleLabel: UILabel!
+
     var waterDropsView : WaterDropsView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        speechBubble.alpha = 0
+        speechBubbleLabel.alpha = 0
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -105,21 +113,26 @@ class HomeViewController: BaseViewController {
         self.cameraButton.isHidden = true
         self.captureScreenButton.isHidden = true
         
-        // 이미지 3개 만들어야함.
-        // make rectangle size image
         
+        // make rectangle size image
         UIGraphicsBeginImageContextWithOptions(self.view.frame.size, false, 0)
         self.view.layer.render(in: UIGraphicsGetCurrentContext()!)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
-        self.view.backgroundColor = UIColor.clear
+        
+        
         // make square size image
+        self.view.backgroundColor = UIColor.clear
+        UIGraphicsBeginImageContextWithOptions(self.view.frame.size, false, 0)
+        self.view.layer.render(in: UIGraphicsGetCurrentContext()!)
+        let backgroundClearImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
         
         let backgroundView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.view.frame.height, height: self.view.frame.height))
         backgroundView.image = UIImage(named: "cocoaBabyBgAfternoonSquareVer")
         
-        let imageView = UIImageView(image: image)
+        let imageView = UIImageView(image: backgroundClearImage)
         imageView.frame = CGRect(x: backgroundView.frame.width/2 - self.view.frame.width/2, y: 0, width: self.view.frame.width, height: self.view.frame.height)
         backgroundView.addSubview(imageView)
         
@@ -128,12 +141,11 @@ class HomeViewController: BaseViewController {
         let squareImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
 
-        //Save it to the camera roll
-        UIImageWriteToSavedPhotosAlbum(squareImage!, nil, nil, nil)
-        
         self.captureScreenButton.isHidden = false
         self.cameraButton.isHidden = false
         self.changeBg()
+
+        // present action Sheet
         
         let actionSheet = UIAlertController(title: "Capture your baby", message: nil, preferredStyle: .actionSheet)
         let captureRectangle = UIAlertAction(title: "Normal", style: .default) { _ -> Void in
@@ -183,40 +195,43 @@ class HomeViewController: BaseViewController {
     
     @IBAction func showBalloon() {
         
-        babyImageView.clipsToBounds = false
+        let moveRangeX = self.babyAroundView.frame.width - speechBubble.frame.width
+        let moveRangeY = 15
         
-        let babySay = "엄마, 보고싶어요!\n두줄이면 어떻게?"
+        let randomX = arc4random_uniform(UInt32(moveRangeX))
+        let randomY = arc4random_uniform(UInt32(moveRangeY))
         
-        let babySayLabel = UILabel()
-        babySayLabel.text = babySay
-        babySayLabel.textAlignment = .center
-        babySayLabel.font = UIFont(name: "Helvetica Neue", size: 11)
-        babySayLabel.numberOfLines = 0
-        babySayLabel.frame = CGRect(x: 0, y: 0, width: babyImageView.frame.width * 0.85, height: babyImageView.frame.height * 0.22)
-        let arrow = UIView(frame: CGRect(x: babySayLabel.frame.width/2, y: babySayLabel.frame.height - 10, width: 20, height: 20))
-        
-        babySayLabel.backgroundColor = .white
-        arrow.backgroundColor = .white
-        
-        babySayLabel.layer.masksToBounds = true
-        babySayLabel.layer.cornerRadius = babySayLabel.frame.height/2
-        arrow.layer.cornerRadius = 15
-        
-        babySayLabel.alpha = 0
-        arrow.alpha = 0
-        
-        babyImageView.addSubview(babySayLabel)
-        babyImageView.addSubview(arrow)
-        
-        UIView.animate(withDuration: 2, animations: {
-            babySayLabel.alpha = 1
-            arrow.alpha = 1
-        }) { (isCompleted) in
-            UIView.animate(withDuration: 2
-                , delay : 1, animations: {
-                    babySayLabel.alpha = 0
-                    arrow.alpha = 0
-            })
+        speechBubbleLabel.text = "엄마 아빠 보고싶어요"
+        // 애니메이션이 진행중이 아닐때만 동작할수 있도록
+        if !isSpeechBubbleAnimated {
+            isSpeechBubbleAnimated = true
+            
+            // 랜덤만큼 프레임을 옮긴 뒤에
+            self.speechBubble.frame.origin.x += CGFloat(randomX)
+            self.speechBubble.frame.origin.y += (CGFloat(randomY) - 15)
+            self.speechBubbleLabel.frame.origin.x += CGFloat(randomX)
+            self.speechBubbleLabel.frame.origin.y += (CGFloat(randomY) - 15)
+
+            
+            UIView.animate(withDuration: 1, animations: {
+                // 알파값을 1로 만들어주고
+                self.speechBubble.alpha = 1
+                self.speechBubbleLabel.alpha = 1
+            }) { (isCompleted) in
+                UIView.animate(withDuration: 1, delay: 1, animations: {
+                    // 1초가 기다린뒤 다시 알파를 0으로 만들어준다
+                    self.speechBubble.alpha = 0
+                    self.speechBubbleLabel.alpha = 0
+                }, completion: { (isCompeted) in
+                    // 그리고 다시 프레임을 원래 위치로 돌려놓는다.
+                    self.speechBubble.frame.origin.x -= CGFloat(randomX)
+                    self.speechBubble.frame.origin.y -= (CGFloat(randomY) - 15)
+                    self.speechBubbleLabel.frame.origin.x -= CGFloat(randomX)
+                    self.speechBubbleLabel.frame.origin.y -= (CGFloat(randomY) - 15)
+
+                    self.isSpeechBubbleAnimated = false
+                })
+            }
         }
     }
     

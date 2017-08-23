@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -41,7 +42,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MX0-0B-kGL">
-                                <rect key="frame" x="154" y="570" width="67" height="67"/>
+                                <rect key="frame" x="154" y="551" width="67" height="67"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="MX0-0B-kGL" secondAttribute="height" multiplier="1:1" id="Apg-PY-Y0Y"/>
                                 </constraints>
@@ -51,7 +52,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yRL-58-vgi" userLabel="switch">
-                                <rect key="frame" x="316.5" y="591.5" width="33.5" height="25"/>
+                                <rect key="frame" x="300.5" y="572.5" width="33.5" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="yRL-58-vgi" secondAttribute="height" multiplier="512:385" id="aWX-Ai-2rk"/>
                                 </constraints>
@@ -69,7 +70,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i5R-zR-au8">
-                                <rect key="frame" x="30" y="588.5" width="54" height="30"/>
+                                <rect key="frame" x="36" y="569.5" width="54" height="30"/>
                                 <state key="normal" title="Dismiss">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -82,21 +83,21 @@
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="LuR-JH-54O" secondAttribute="trailing" id="16c-6s-Mer"/>
                             <constraint firstItem="8Fm-m9-CKp" firstAttribute="top" secondItem="Mri-vX-sSl" secondAttribute="top" constant="40" id="4Tt-D1-nOb"/>
-                            <constraint firstItem="MX0-0B-kGL" firstAttribute="leading" secondItem="i5R-zR-au8" secondAttribute="trailing" constant="70" id="9gC-Tz-Cdo"/>
                             <constraint firstItem="i5R-zR-au8" firstAttribute="centerY" secondItem="MX0-0B-kGL" secondAttribute="centerY" id="BS8-uu-AnX"/>
                             <constraint firstItem="8Fm-m9-CKp" firstAttribute="leading" secondItem="Mri-vX-sSl" secondAttribute="leading" constant="20" id="BrJ-hT-24z"/>
                             <constraint firstItem="LuR-JH-54O" firstAttribute="leading" secondItem="Mri-vX-sSl" secondAttribute="leading" id="E8Y-RG-DrF"/>
                             <constraint firstItem="MX0-0B-kGL" firstAttribute="centerX" secondItem="Mri-vX-sSl" secondAttribute="centerX" id="MP7-XI-o7D"/>
                             <constraint firstItem="LuR-JH-54O" firstAttribute="centerX" secondItem="Mri-vX-sSl" secondAttribute="centerX" id="OL0-fC-fgu"/>
-                            <constraint firstAttribute="trailing" secondItem="yRL-58-vgi" secondAttribute="trailing" constant="25" id="Pae-oT-saW"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="yRL-58-vgi" secondAttribute="trailing" constant="25" id="Pae-oT-saW"/>
+                            <constraint firstItem="i5R-zR-au8" firstAttribute="leading" secondItem="Mri-vX-sSl" secondAttribute="leadingMargin" constant="20" id="Q18-1R-Pbm"/>
                             <constraint firstItem="8Fm-m9-CKp" firstAttribute="width" secondItem="LuR-JH-54O" secondAttribute="width" multiplier="0.03" id="V3o-BB-XTq"/>
                             <constraint firstItem="yRL-58-vgi" firstAttribute="width" secondItem="MX0-0B-kGL" secondAttribute="width" multiplier="0.5" id="av9-fN-RGT"/>
-                            <constraint firstItem="oQ5-xT-v1w" firstAttribute="top" secondItem="MX0-0B-kGL" secondAttribute="bottom" constant="30" id="e25-5q-Iql"/>
                             <constraint firstItem="LuR-JH-54O" firstAttribute="centerY" secondItem="Mri-vX-sSl" secondAttribute="centerY" constant="-20" id="fF6-0i-Xa6"/>
                             <constraint firstItem="MX0-0B-kGL" firstAttribute="width" secondItem="LuR-JH-54O" secondAttribute="width" multiplier="0.18" id="gu1-tJ-RHi"/>
                             <constraint firstItem="jpQ-8c-F2O" firstAttribute="centerY" secondItem="8Fm-m9-CKp" secondAttribute="centerY" id="iHn-hw-AoZ"/>
                             <constraint firstAttribute="trailing" secondItem="jpQ-8c-F2O" secondAttribute="trailing" constant="20" id="ocM-g3-jV1"/>
                             <constraint firstItem="yRL-58-vgi" firstAttribute="centerY" secondItem="MX0-0B-kGL" secondAttribute="centerY" id="sg0-Ch-bZq"/>
+                            <constraint firstItem="MX0-0B-kGL" firstAttribute="top" secondItem="LuR-JH-54O" secondAttribute="bottom" constant="50" id="wiM-tT-bs5"/>
                         </constraints>
                     </view>
                     <connections>

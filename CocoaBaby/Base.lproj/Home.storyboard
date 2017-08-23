@@ -84,9 +84,27 @@
                                                     <constraint firstItem="Qhc-ag-71c" firstAttribute="leading" secondItem="5t2-ah-DW0" secondAttribute="leading" id="tGZ-gp-kRl"/>
                                                 </constraints>
                                             </view>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="speechBubble" translatesAutoresizingMaskIntoConstraints="NO" id="wOK-yq-j3c">
+                                                <rect key="frame" x="0.0" y="60" width="210" height="70"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="70" id="dFM-TB-1cG"/>
+                                                    <constraint firstAttribute="width" constant="210" id="kwF-n4-ngV"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a6B-bn-Jby">
+                                                <rect key="frame" x="30" y="87" width="150" height="16"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                         </subviews>
                                         <constraints>
+                                            <constraint firstItem="wOK-yq-j3c" firstAttribute="top" secondItem="WSq-6I-iYr" secondAttribute="top" constant="60" id="0M4-OJ-OgB"/>
                                             <constraint firstAttribute="trailing" secondItem="UoX-Al-Kmz" secondAttribute="trailing" constant="22" id="Kd9-sw-aQs"/>
+                                            <constraint firstItem="a6B-bn-Jby" firstAttribute="leading" secondItem="wOK-yq-j3c" secondAttribute="leading" constant="30" id="Qhj-ur-WAf"/>
+                                            <constraint firstItem="a6B-bn-Jby" firstAttribute="centerY" secondItem="wOK-yq-j3c" secondAttribute="centerY" id="VmL-Yd-zIx"/>
+                                            <constraint firstItem="wOK-yq-j3c" firstAttribute="leading" secondItem="WSq-6I-iYr" secondAttribute="leading" id="XKe-1l-rls"/>
+                                            <constraint firstItem="a6B-bn-Jby" firstAttribute="trailing" secondItem="wOK-yq-j3c" secondAttribute="trailing" constant="-30" id="eWS-25-G80"/>
                                             <constraint firstItem="UoX-Al-Kmz" firstAttribute="centerY" secondItem="WSq-6I-iYr" secondAttribute="centerY" id="f8C-xe-GT8"/>
                                             <constraint firstItem="UoX-Al-Kmz" firstAttribute="centerX" secondItem="WSq-6I-iYr" secondAttribute="centerX" id="rpP-8O-NSn"/>
                                         </constraints>
@@ -139,6 +157,7 @@
                     </tabBarItem>
                     <navigationItem key="navigationItem" title="Baby" id="NRJ-hH-oUj"/>
                     <connections>
+                        <outlet property="babyAroundView" destination="WSq-6I-iYr" id="bBh-Kk-Y4M"/>
                         <outlet property="babyImageView" destination="5t2-ah-DW0" id="5al-Z6-h1c"/>
                         <outlet property="babyView" destination="UoX-Al-Kmz" id="3Sg-hr-bIw"/>
                         <outlet property="cameraButton" destination="gmg-1O-h2v" id="OVB-n5-ApS"/>
@@ -146,6 +165,8 @@
                         <outlet property="dDayLabel" destination="59f-cp-ErD" id="BS0-0G-p1j"/>
                         <outlet property="infoLabel" destination="Op6-Ka-edG" id="et6-YY-grN"/>
                         <outlet property="nameLabel" destination="3cZ-ux-bAi" id="kqW-AF-EG0"/>
+                        <outlet property="speechBubble" destination="wOK-yq-j3c" id="6ed-bi-c6a"/>
+                        <outlet property="speechBubbleLabel" destination="a6B-bn-Jby" id="fJT-vI-01i"/>
                         <outlet property="weekLabel" destination="ekc-pe-RTr" id="bS4-J7-X98"/>
                     </connections>
                 </viewController>
@@ -159,5 +180,6 @@
         <image name="ic_crop_white" width="24" height="24"/>
         <image name="ic_face_white" width="24" height="24"/>
         <image name="ic_photo_camera_white" width="24" height="24"/>
+        <image name="speechBubble" width="448" height="156"/>
     </resources>
 </document>
