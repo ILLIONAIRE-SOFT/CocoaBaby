@@ -35,7 +35,7 @@ class SplashViewController: UIViewController {
                 switch result {
                 case .success(_):
                     BabyStore.shared.fetchBaby(completion: { (baby) in
-                        if baby != nil || UserStore.shared.user?.gender == "male" {
+                        if baby != nil {
                             print("SplashViewController: Baby Exist go to MainTabBar")
                             self.presentMainTabViewController()
                         } else {
