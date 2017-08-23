@@ -169,7 +169,7 @@ class SettingsTableViewController: BaseTableViewController {
             if let linkCode = alertController.textFields?.first?.text {
                 if let intCode = Int(linkCode) {
                     ShareHelper.linkWithPartner(sixDigits: intCode, completion: {
-                        self.showComplete()
+                        self.showComplete(message: "Now you link with mother")
                     })
                 }
             }
@@ -194,7 +194,7 @@ class SettingsTableViewController: BaseTableViewController {
                     UserStore.shared.fetchUser { (result) in
                         switch result {
                         case .success(_):
-                            self.showComplete()
+                            self.showComplete(message: "Unlinked")
                         case .failure(_):
                             return
                         }
@@ -213,8 +213,8 @@ class SettingsTableViewController: BaseTableViewController {
         present(alertController, animated: true, completion: nil)
     }
     
-    func showComplete() {
-        let alertController = UIAlertController(title: "Success", message: "Link complete", preferredStyle: .alert)
+    func showComplete(message: String) {
+        let alertController = UIAlertController(title: "Success", message: message, preferredStyle: .alert)
         
         let doneAction = UIAlertAction(title: "Done", style: .default, handler: nil)
         
