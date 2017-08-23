@@ -256,7 +256,7 @@
 		4911D9D21F3446140031B74A /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				496B8A911F4DA30100DDD8AC /* Tutorial */,
+				496B8A941F4DAB8400DDD8AC /* UserSettings */,
 				496B8A901F4DA2D800DDD8AC /* BabySettings */,
 				49121B381F4ABAA40045A165 /* SettingsTableViewController.swift */,
 				4911D9D31F34461F0031B74A /* SettingsViewController.swift */,
@@ -317,7 +317,6 @@
 		496B8A901F4DA2D800DDD8AC /* BabySettings */ = {
 			isa = PBXGroup;
 			children = (
-				496B8A8E1F4D90D300DDD8AC /* SelectGenderTableViewController.swift */,
 				4948E0A51F39799C008542F6 /* EditBabyViewController.swift */,
 				DA131A6F1F45641600DE12F7 /* EditBabyDateViewController.swift */,
 				496B8A921F4DA31800DDD8AC /* EditBabyNameTableViewController.swift */,
@@ -325,11 +324,12 @@
 			name = BabySettings;
 			sourceTree = "<group>";
 		};
-		496B8A911F4DA30100DDD8AC /* Tutorial */ = {
+		496B8A941F4DAB8400DDD8AC /* UserSettings */ = {
 			isa = PBXGroup;
 			children = (
+				496B8A8E1F4D90D300DDD8AC /* SelectGenderTableViewController.swift */,
 			);
-			name = Tutorial;
+			name = UserSettings;
 			sourceTree = "<group>";
 		};
 		496FB1D71F3193CB00E4042D /* Model */ = {
