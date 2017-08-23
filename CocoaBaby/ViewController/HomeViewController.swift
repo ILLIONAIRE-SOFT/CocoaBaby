@@ -105,28 +105,32 @@ class HomeViewController: BaseViewController {
         self.cameraButton.isHidden = true
         self.captureScreenButton.isHidden = true
         
+        // make rectangle size image
+        
         UIGraphicsBeginImageContextWithOptions(self.view.frame.size, false, 0)
         self.view.layer.render(in: UIGraphicsGetCurrentContext()!)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
+        self.view.backgroundColor = UIColor.clear
         
-        // 리팩토링 필요
+        // make square size image
         
-        let backgroundView = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.height, height: self.view.frame.height))
-        backgroundView.backgroundColor = UIColor.white
+        let backgroundView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.view.frame.height, height: self.view.frame.height))
+        backgroundView.image = UIImage(named: "cocoaBabyBgAfternoonSquareVer")
+        
         let imageView = UIImageView(image: image)
         imageView.frame = CGRect(x: backgroundView.frame.width/2 - self.view.frame.width/2, y: 0, width: self.view.frame.width, height: self.view.frame.height)
         backgroundView.addSubview(imageView)
-        
-        let logoImage = UIImageView(image: UIImage(named: "CocoaBabyLoadingLogo"))
-        logoImage.frame = CGRect(x: backgroundView.frame.width - 120, y: backgroundView.frame.height - 150, width: 100, height: 100)
-        backgroundView.addSubview(logoImage)
-
-        let appLabel = UILabel(frame: CGRect(x: backgroundView.frame.width - 120, y: backgroundView.frame.height - 40, width: 100, height: 20))
-        appLabel.text = "CocoaBaby"
-        appLabel.textColor = UIColor.mainBlueColor
-        backgroundView.addSubview(appLabel)
+//        
+//        let logoImage = UIImageView(image: UIImage(named: "CocoaBabyLoadingLogo"))
+//        logoImage.frame = CGRect(x: backgroundView.frame.width - 120, y: backgroundView.frame.height - 150, width: 100, height: 100)
+//        backgroundView.addSubview(logoImage)
+//
+//        let appLabel = UILabel(frame: CGRect(x: backgroundView.frame.width - 120, y: backgroundView.frame.height - 40, width: 100, height: 20))
+//        appLabel.text = "CocoaBaby"
+//        appLabel.textColor = UIColor.mainBlueColor
+//        backgroundView.addSubview(appLabel)
         
         UIGraphicsBeginImageContextWithOptions(backgroundView.frame.size, false, 0)
         backgroundView.layer.render(in: UIGraphicsGetCurrentContext()!)
@@ -136,9 +140,10 @@ class HomeViewController: BaseViewController {
         //Save it to the camera roll
         UIImageWriteToSavedPhotosAlbum(squareImage!, nil, nil, nil)
         
-        self.cameraButton.isHidden = false
         self.captureScreenButton.isHidden = false
-
+        self.cameraButton.isHidden = false
+        self.changeBg()
+        
         let shareSB = UIStoryboard(name: StoryboardName.share, bundle: nil)
         let captureBabyViewController = shareSB.instantiateViewController(withIdentifier: StoryboardName.captureBabyViewController) as! CaptureBabyViewController
         
