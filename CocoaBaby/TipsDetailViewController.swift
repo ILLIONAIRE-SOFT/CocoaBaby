@@ -13,6 +13,7 @@ class TipsDetailViewController: UIViewController {
     @IBOutlet var weekTitle: UILabel!
     @IBOutlet var tableView: UITableView!
     @IBOutlet var segmentedControl: UISegmentedControl!
+    @IBOutlet weak var bottomView: UIView!
     
     var currentTitle: String = ""
     var currentContent: String = ""
@@ -24,6 +25,7 @@ class TipsDetailViewController: UIViewController {
         //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Gradation2")!)
         self.view.backgroundColor = UIColor.init(colorWithHexValue: 0xF9F9F9, alpha: 1)
         self.view.layer.cornerRadius = 5
+        self.bottomView.layer.cornerRadius = 5
         
         tableView.dataSource = self
         tableView.delegate = self
