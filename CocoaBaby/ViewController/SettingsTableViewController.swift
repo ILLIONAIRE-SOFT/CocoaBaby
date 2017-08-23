@@ -12,6 +12,7 @@ import FirebaseAuth
 class SettingsTableViewController: BaseTableViewController {
 
     @IBOutlet var genderLabel: UILabel!
+    @IBOutlet var babyNameLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +39,10 @@ class SettingsTableViewController: BaseTableViewController {
             default:
                 break
             }
+        }
+        
+        if let baby = BabyStore.shared.baby {
+            babyNameLabel.text = baby.name
         }
     }
     
