@@ -27,7 +27,7 @@ class TutorialSetNameViewController: BaseViewController, UITextFieldDelegate {
     }
     
     @IBAction func resignKeyBoard() {
-        self.resignFirstResponder()
+        self.babyNameTextField.resignFirstResponder()
     }
     
     @IBAction func babyNameTextFieldEditChange(_ textField: UITextField) {
@@ -38,10 +38,9 @@ class TutorialSetNameViewController: BaseViewController, UITextFieldDelegate {
         }
     }
     
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        if string == "#" || string == "$" || string == "!"{
-            return false
-        }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
         return true
     }
     
