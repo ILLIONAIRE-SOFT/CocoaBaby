@@ -11,18 +11,34 @@ import FirebaseAuth
 
 class SettingsTableViewController: BaseTableViewController {
 
+    @IBOutlet var genderLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        
-        self.clearsSelectionOnViewWillAppear = true
 
+        self.clearsSelectionOnViewWillAppear = true
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.tableView.backgroundColor = UIColor(patternImage: UIImage(named: "Gradation2")!)
         changeBgColorBasedOnTime()
+        
+        fetchOriginData()
+    }
+    
+    // MARK: - Method
+    func fetchOriginData() {
+        if let gender = UserStore.shared.user?.gender {
+            switch gender {
+            case Gender.female:
+                genderLabel.text = "Female"
+            case Gender.male:
+                genderLabel.text = "Male"
+            default:
+                break
+            }
+        }
     }
     
     // MARK: - Table view data source
@@ -46,6 +62,12 @@ class SettingsTableViewController: BaseTableViewController {
         }
         
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view:UIView, forSection: Int) {
+        if let headerTitle = view as? UITableViewHeaderFooterView {
+            headerTitle.textLabel?.textColor = UIColor.lightGray
+        }
     }
     
     func logout() {
@@ -90,7 +112,7 @@ class SettingsTableViewController: BaseTableViewController {
             return
         }
         
-        if gender == "male" {
+        if gender == Gender.male {
             let alertController = UIAlertController(title: nil, message: LocalizableString.onlyMomCanShare, preferredStyle: .alert)
             
             let doneAction = UIAlertAction(title: LocalizableString.done, style: .default, handler: nil)
@@ -148,7 +170,7 @@ class SettingsTableViewController: BaseTableViewController {
             return
         }
         
-        if gender == "female" {
+        if gender == Gender.female {
             let alertController = UIAlertController(title: nil, message: LocalizableString.onlyFatherCanLinkWithMom, preferredStyle: .alert)
             
             let doneAction = UIAlertAction(title: LocalizableString.done, style: .default, handler: nil)
@@ -214,11 +236,12 @@ class SettingsTableViewController: BaseTableViewController {
     func showComplete(message: String) {
         let alertController = UIAlertController(title: LocalizableString.success, message: message, preferredStyle: .alert)
         
-        let doneAction = UIAlertAction(title: LocalizableString.done, style: .default, handler: nil)
+        let doneAction = UIAlertAction(title: LocalizableString.done, style: .default,handler: nil)
         
         alertController.addAction(doneAction)
         
         present(alertController, animated: true, completion: nil)
     }
+
     
 }
