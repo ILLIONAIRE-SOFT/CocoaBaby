@@ -17,20 +17,21 @@ class TipsDetailContentTableViewCell: UITableViewCell {
         self.title.textColor = UIColor.darkGray
         self.content.textColor = UIColor.darkGray
         self.backgroundColor = UIColor.clear
-        
-        let stringValue = content.text!
-        let attrString = NSMutableAttributedString(string: stringValue)
-        let style = NSMutableParagraphStyle()
-        style.lineSpacing = 24
-        style.minimumLineHeight = 20
-        attrString.addAttribute(NSParagraphStyleAttributeName, value: style, range: NSRange(location: 0, length: stringValue.characters.count))
-        content.attributedText = attrString
 
     }
 
     func setContent(title: String, content: String)  {
         self.title.text = title
         self.content.text = content
+        let stringValue = content
+        let attrString = NSMutableAttributedString(string: stringValue)
+        let style = NSMutableParagraphStyle()
+        style.lineSpacing = 5
+        style.minimumLineHeight = 20
+        style.alignment = .justified
+        attrString.addAttribute(NSParagraphStyleAttributeName, value: style, range: NSRange(location: 0, length: stringValue.characters.count))
+        self.content.attributedText = attrString
+
     }
     
     

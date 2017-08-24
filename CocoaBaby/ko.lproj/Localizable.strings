@@ -43,7 +43,7 @@
 "Camera.Dismiss" = "닫기";
 
 // Tutorial
-"Tutorial.BabyNameTitle" = "엄마 제 이름은 뭔가요?";
+"Tutorial.BabyNameTitle" = "아기의 태명은 무엇인가요?";
 "Tutorial.BabyNamePlaceHolder" = "아기의 태명을 입력해주세요.";
 "Tutorial.LastMenstrualDayTitle" = "임신 전 마지막 생리일이 언제인가요?";
 "Tutorial.LastMenstrualDayPlaceHolder" = "임신 전 마지막 생리일을 선택해주세요";
