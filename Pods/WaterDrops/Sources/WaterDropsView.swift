@@ -23,7 +23,7 @@ open class WaterDropsView: UIView {
     }
 
     ///Waterdrop's color
-    open var color: UIColor = UIColor.blue.withAlphaComponent(1.0)
+    open var color: UIColor = UIColor.blue.withAlphaComponent(0.7)
     ///The minimum size of a waterdrop
     open var minDropSize: CGFloat = 4
     ///The maximum size of a waterdrop
@@ -39,7 +39,7 @@ open class WaterDropsView: UIView {
     
     public override init(frame: CGRect) {
         self.dropNum = 10
-        self.color = UIColor.blue.withAlphaComponent(1.0)
+        self.color = UIColor.blue.withAlphaComponent(0.7)
         self.minDropSize = 4
         self.maxDropSize = 10
         self.minLength = 0
@@ -103,13 +103,13 @@ open class WaterDropsView: UIView {
         var waterdrop : UIView? = UIView()
         waterdrop?.frame = CGRect(x: randomX, y: positionY, width: randomSize, height: randomSize)
         waterdrop?.backgroundColor = config.color
-        waterdrop?.layer.cornerRadius = 1
+        waterdrop?.layer.cornerRadius = randomSize/2
         self.addSubview(waterdrop!)
         
         // animation
         UIView.animate(withDuration: randomDuration, animations: {
             waterdrop?.frame.origin.y += length
-            //waterdrop?.alpha = 0.0
+            waterdrop?.alpha = 0.0
         }, completion: { (isCompleted: Bool) -> Void in
             if isCompleted {
                 waterdrop = nil
