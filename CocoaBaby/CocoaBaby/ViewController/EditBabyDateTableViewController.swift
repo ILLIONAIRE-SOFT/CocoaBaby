@@ -41,7 +41,7 @@ class EditBabyDateTableViewController: BaseTableViewController {
     
     func initViews() {
         // MARK: Save Bar Button
-        let rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: nil)
+        let rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(registerBaby))
         
         self.navigationItem.rightBarButtonItem = rightBarButtonItem
         
@@ -98,6 +98,27 @@ class EditBabyDateTableViewController: BaseTableViewController {
             pregnantDateField.resignFirstResponder()
         } else if birthDateField.isFirstResponder {
             birthDateField.resignFirstResponder()
+        }
+    }
+    
+    func registerBaby() {
+        if pregnantDate.timeIntervalSince1970 > birthDate.timeIntervalSince1970 {
+            let alertController = UIAlertController(title: "Fail", message: "출산 예정일은 임신 날짜 이전일 수 없습니다.", preferredStyle: .alert)
+            let doneAction = UIAlertAction(title: LocalizableString.done, style: .default, handler: nil)
+            alertController.addAction(doneAction)
+            present(alertController, animated: true, completion: nil)
+        } else {
+            let baby = Baby(name: BabyStore.shared.baby.name, birthDate: birthDate.timeIntervalSince1970, pregnantDate: pregnantDate.timeIntervalSince1970)
+            
+            BabyStore.shared.updateBaby(baby: baby, completion: { (result) in
+                
+                switch result {
+                case .success(_):
+                    self.navigationController?.popViewController(animated: true)
+                case .failure(_):
+                    self.navigationController?.popViewController(animated: true)
+                }
+            })
         }
     }
 }
