@@ -10,14 +10,60 @@ import UIKit
 
 class UserSettingsViewController: BaseViewController {
     
-    private var selectedGender: String? = nil
-
+    private var selectedGender: String? = nil {
+        didSet {
+            guard let gender = selectedGender else {
+                return
+            }
+            
+            switch gender {
+            case Gender.female:
+                self.momImage.tintColor = UIColor.init(colorWithHexValue: 0xDF6C7E)
+                self.dadImage.tintColor = UIColor.white
+            case Gender.male:
+                self.dadImage.tintColor = UIColor.init(colorWithHexValue: 0xDF6C7E)
+                self.momImage.tintColor = UIColor.white
+            default:
+                break
+            }
+        }
+    }
+    
+    @IBOutlet weak var nextBtn: UIButton!
+    @IBOutlet weak var momImage: UIImageView!
+    @IBOutlet weak var dadImage: UIImageView!
+    var momButtonFlag = 0
+    var dadButtonFlag = 0
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        self.nextBtn.layer.cornerRadius = 15
+        self.nextBtn!.layer.borderColor = UIColor.white.withAlphaComponent(1.0).cgColor
+        self.nextBtn.layer.borderWidth = 1.0
+        
+        let MomTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(momTapped(MomTapGestureRecognizer:)))
+        momImage.isUserInteractionEnabled = true
+        momImage.addGestureRecognizer(MomTapGestureRecognizer)
+        momButtonFlag = 0
+        
+        let DadTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dadTapped(DadTapGestureRecognizer:)))
+        dadImage.isUserInteractionEnabled = true
+        dadImage.addGestureRecognizer(DadTapGestureRecognizer)
+        dadButtonFlag = 0
+        
     }
     
+    func momTapped(MomTapGestureRecognizer: UITapGestureRecognizer) {
+        
+        selectedGender = Gender.female
+    }
+    
+    func dadTapped(DadTapGestureRecognizer: UITapGestureRecognizer) {
+        
+        selectedGender = Gender.male
+    }
     
     @IBAction func tappedDone(_ sender: UIButton) {
         guard let gender = selectedGender else {
