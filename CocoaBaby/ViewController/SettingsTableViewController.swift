@@ -49,6 +49,29 @@ class SettingsTableViewController: BaseTableViewController {
         }
     }
     
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        switch identifier {
+        case "selectGender":
+            if let user = UserStore.shared.user {
+                if let partnerUID = user.partnerUID, partnerUID != "" {
+                    let alertController = UIAlertController(title: nil, message: LocalizableString.unlinkBeforeChangeGender, preferredStyle: .alert)
+                    let doneAction = UIAlertAction(title: LocalizableString.done, style: .default, handler: nil)
+                    alertController.addAction(doneAction)
+                    
+                    self.present(alertController, animated: true, completion: nil)
+                    
+                    return false
+                } else {
+                    return true
+                }
+            } else {
+                return false
+            }
+        default:
+            return true
+        }
+    }
+    
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {

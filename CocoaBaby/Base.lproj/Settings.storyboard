@@ -188,7 +188,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
-                                            <segue destination="GFa-gS-bG2" kind="show" id="6bX-qI-fl4"/>
+                                            <segue destination="GFa-gS-bG2" kind="show" identifier="selectGender" id="6bX-qI-fl4"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" id="Xc1-Ne-9c3">
@@ -441,7 +441,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BuD-IF-LrT" customClass="SettingUINavigationController" customModule="CocoaBaby" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="ic_settings_white" id="2fi-fG-rT0"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ezE-F5-8Kz">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ezE-F5-8Kz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

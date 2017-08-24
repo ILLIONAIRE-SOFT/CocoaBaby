@@ -37,6 +37,8 @@ class SettingsViewController: BaseViewController {
         genderButton.setTitle("I'm \(UserStore.shared.user?.gender ?? "female")", for: .normal)
     }
     
+    
+    
     @IBAction func tappedLogout(_ sender: UIButton) {
         let firebaseAuth = Auth.auth()
         

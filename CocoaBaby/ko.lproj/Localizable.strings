@@ -19,7 +19,8 @@
 "Alert.UnlinkTitle" = "연결 해제";
 "Alert.UnlinkMessage" = "파트너의 다이어리와 아기를 볼 수 없습니다.";
 "Alert.UnlinkSuccess" = "해제 성공";
-"Alert.BirthDateBeforePregnantDate" = "Birth date cannot before pregnant date";
+"Alert.BirthDateBeforePregnantDate" = "출산일은 임신일 이전이 될 수 없습니다.";
+"Alert.UnlinkBeforeChangeGender" = "성별을 바꾸기 전에 파트너와 연결을 해제하세요";
 
 "Yes" = "예";
 "No" = "아니오";
