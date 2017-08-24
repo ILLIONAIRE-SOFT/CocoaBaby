@@ -38,9 +38,7 @@ extension FireBaseAPI {
             }
             
             var result = [Int:Tips]()
-            print(snapshot)
             for snap in snapshot.children.allObjects as! [DataSnapshot] {
-                print(snap)
                 let dict = snap.value as! [String:Any]
                 if let tips = tips(from: dict) {
                     let week = tips.0

@@ -23,6 +23,7 @@ class CaptureBabyViewController: UIViewController {
 
         self.imageView.image = selectedImage
         self.imageView.contentMode = .scaleAspectFit
+        self.imageView.isUserInteractionEnabled = false
         
         captureAnimataion()
     }

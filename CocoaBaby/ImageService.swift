@@ -44,7 +44,7 @@ class ImageService  {
     static func merge(image : UIImage, cameraViewLabel : UILabel, cameraViewWidth : CGFloat, babyNameViewLabel : UILabel) -> UIImage? {
         
         let expandRatio: CGFloat = image.size.width/cameraViewWidth
-        let leftMargin: CGFloat = expandRatio * 16
+        let margin: CGFloat = expandRatio * 16
         
         UIGraphicsBeginImageContext(image.size)
         let imageAreaSize = CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height)
@@ -55,15 +55,14 @@ class ImageService  {
         let weekLabel = UILabel()
         weekLabel.text = cameraViewLabel.text
         weekLabel.font = UIFont(name: "AppleSDGothicNeo-Thin", size: 40 * expandRatio)
-        weekLabel.sizeToFit()
-        
+        weekLabel.textAlignment = .left
         weekLabel.textColor = UIColor.white
         
         let weekLabelWidth: CGFloat = weekLabel.intrinsicContentSize.width
         let weekLabelHeight: CGFloat = weekLabel.intrinsicContentSize.height
         
-        let weekLabelPointX: CGFloat = leftMargin
-        let weekLabelPointY: CGFloat = 16 * expandRatio
+        let weekLabelPointX: CGFloat = margin
+        let weekLabelPointY: CGFloat = margin
         
         let weekLabelRect = CGRect(x: weekLabelPointX, y: weekLabelPointY, width: weekLabelWidth, height: weekLabelHeight)
         
@@ -74,10 +73,10 @@ class ImageService  {
         separatorLabel.backgroundColor = .white
         
         let separatorWidth: CGFloat = weekLabel.intrinsicContentSize.width
-        let separatorHeight: CGFloat = 0.5 * expandRatio
+        let separatorHeight: CGFloat = 1 * expandRatio
         
-        let separatorPointX: CGFloat = leftMargin
-        let separatorPointY: CGFloat = weekLabel.frame.maxY + (4 * expandRatio)
+        let separatorPointX: CGFloat = margin
+        let separatorPointY: CGFloat = margin + weekLabel.layer.frame.height
         
         let separatorRect: CGRect = CGRect(x: separatorPointX, y: separatorPointY, width: separatorWidth, height: separatorHeight)
         
@@ -87,15 +86,14 @@ class ImageService  {
         let babyNameLabel = UILabel()
         babyNameLabel.text = babyNameViewLabel.text
         babyNameLabel.textAlignment = .left
-        babyNameLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 20 * expandRatio)
-        
+        babyNameLabel.font = UIFont(name: "AppleSDGothicNeo-Regular", size: 18 * expandRatio)
         babyNameLabel.textColor = UIColor.white
         
         let babylabelWidth: CGFloat = babyNameLabel.intrinsicContentSize.width
         let babylabelHeight: CGFloat = babyNameLabel.intrinsicContentSize.height
         
-        let babylabelPointX: CGFloat = leftMargin
-        let babylabelPointY: CGFloat = separatorLabel.frame.maxY + (4 * expandRatio)
+        let babylabelPointX: CGFloat = margin
+        let babylabelPointY: CGFloat = margin + weekLabel.layer.frame.height + (10 * expandRatio)
         let babylabelRect = CGRect(x: babylabelPointX, y: babylabelPointY, width: babylabelWidth, height: babylabelHeight)
         
         babyNameLabel.frame = babylabelRect
