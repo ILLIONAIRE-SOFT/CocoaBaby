@@ -44,6 +44,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         // For launch with shortcut
+//        launchOptions?[UIApplicationLaunchOptionsKey.remoteNotification]
+        // remote notification으로 실행됬을 때 여기로 정보 넘어옴
+        // 노티 종류 확인해서 어떤 화면을 띄울지 플래그 설정
+        
         if let shortcutItem = launchOptions?[UIApplicationLaunchOptionsKey.shortcutItem] as? UIApplicationShortcutItem {
             launchedShortcutItem = shortcutItem
         }
@@ -187,16 +191,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
     
     func sign(_ signIn: GIDSignIn!, didDisconnectWith user: GIDGoogleUser!, withError error: Error!) {
         
+        print("logout")
     }
     
     // MARK: - User Notification
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         
+        // 앱이 실행되있는 상태 확인
         if let tabBarVC = self.window?.rootViewController as? UITabBarController {
             // Case: App not terminated
             isNeedDiaryRefresh = true
             tabBarVC.selectedIndex = 0
             tabBarVC.selectedIndex = 1
+            // 모달이 떠있을 때 안넘어간다.
         } else {
             // Case: App terminated
             isNeedHandleDiaryResponse = true
@@ -237,12 +244,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
             if let tabBarVC = self.window?.rootViewController as? UITabBarController {
                 // Case: app not terminated
                 isNeedPresentWriteDiary = true
+                
+                // 앱이 켜져있는 상황에서는 Notificiation Center이 더 좋다.
                 tabBarVC.selectedIndex = 0
                 tabBarVC.selectedIndex = 1
             } else {
                 // Case: launch with quick action
                 isNeedPresentWriteDiary = true
                 isNeedHandleWriteDiaryQuickAction = true
+                
+                // 플래그보다 UserDefault 사용해서 처음 실행될 때 화면
             }
             
             handled = true

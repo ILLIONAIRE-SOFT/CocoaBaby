@@ -32,9 +32,6 @@ class UserSettingsViewController: BaseViewController {
     @IBOutlet weak var nextBtn: UIButton!
     @IBOutlet weak var momImage: UIImageView!
     @IBOutlet weak var dadImage: UIImageView!
-    var momButtonFlag = 0
-    var dadButtonFlag = 0
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,12 +43,10 @@ class UserSettingsViewController: BaseViewController {
         let MomTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(momTapped(MomTapGestureRecognizer:)))
         momImage.isUserInteractionEnabled = true
         momImage.addGestureRecognizer(MomTapGestureRecognizer)
-        momButtonFlag = 0
         
         let DadTapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(dadTapped(DadTapGestureRecognizer:)))
         dadImage.isUserInteractionEnabled = true
         dadImage.addGestureRecognizer(DadTapGestureRecognizer)
-        dadButtonFlag = 0
         
     }
     
@@ -70,7 +65,7 @@ class UserSettingsViewController: BaseViewController {
             
            let dialog = UIAlertController(title: "Select Mom or Dad", message: nil, preferredStyle: .alert)
         
-            let action = UIAlertAction(title: "확인", style: UIAlertActionStyle.default)
+            let action = UIAlertAction(title: LocalizableString.done, style: UIAlertActionStyle.default)
             dialog.addAction(action)
             
             self.present(dialog, animated: true, completion: nil)
@@ -81,10 +76,10 @@ class UserSettingsViewController: BaseViewController {
             return
         }
         
-        startLoading()
-        
         var user = User()
         user.gender = gender
+        
+        startLoading()
         
         UserStore.shared.saveUser(user: user) { (result) in
             switch result {
@@ -100,8 +95,8 @@ class UserSettingsViewController: BaseViewController {
     func presentSplashViewController() {
         let appDelegate = UIApplication.shared.delegate! as! AppDelegate
         
-        let mainSB = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = mainSB.instantiateViewController(withIdentifier: "SplashViewController")
+        let mainSB = UIStoryboard(name: StoryboardName.main, bundle: nil)
+        let viewController = mainSB.instantiateViewController(withIdentifier: StoryboardName.splashViewController)
         
         appDelegate.window?.rootViewController = viewController
         appDelegate.window?.makeKeyAndVisible()
