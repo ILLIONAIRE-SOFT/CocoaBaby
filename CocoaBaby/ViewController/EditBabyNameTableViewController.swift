@@ -55,7 +55,7 @@ class EditBabyNameTableViewController: BaseTableViewController {
         let baby = Baby(name: name, birthDate: BabyStore.shared.baby.birthDate, pregnantDate: BabyStore.shared.baby.pregnantDate)
         
         BabyStore.shared.updateBaby(baby: baby) { (_) in
-//            self.showSuccessToastMessage()
+            self.showSuccessToastMessage()
             self.navigationController?.popViewController(animated: true)
         }
     }
