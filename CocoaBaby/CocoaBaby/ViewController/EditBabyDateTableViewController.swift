@@ -49,6 +49,9 @@ class EditBabyDateTableViewController: BaseTableViewController {
         pregnantDateField.delegate = self
         birthDateField.delegate = self
         
+        pregnantDateField.tintColor = .clear
+        birthDateField.tintColor = .clear
+        
         // MARK: Date
         pregnantDate = Date(timeIntervalSince1970: BabyStore.shared.baby.pregnantDate)
         birthDate = Date(timeIntervalSince1970: BabyStore.shared.baby.birthDate)
@@ -58,8 +61,8 @@ class EditBabyDateTableViewController: BaseTableViewController {
         datePicker = UIDatePicker(frame:CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 216))
         datePicker.backgroundColor = UIColor.white
         datePicker.datePickerMode = UIDatePickerMode.date
-        datePicker.minimumDate = Date.init(timeIntervalSinceNow: -60*60*24*100)
-        datePicker.maximumDate = Date.init(timeIntervalSinceNow: 60*60*24*400)
+        datePicker.minimumDate = Date.init(timeIntervalSinceNow: -60*60*24*280)
+        datePicker.maximumDate = Date.init(timeIntervalSinceNow: 60*60*24*280)
         textField.inputView = self.datePicker
         
         if textField == pregnantDateField {

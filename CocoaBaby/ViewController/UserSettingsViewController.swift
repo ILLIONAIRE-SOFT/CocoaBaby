@@ -67,6 +67,17 @@ class UserSettingsViewController: BaseViewController {
     
     @IBAction func tappedDone(_ sender: UIButton) {
         guard let gender = selectedGender else {
+            
+           let dialog = UIAlertController(title: "Select Mom or Dad", message: nil, preferredStyle: .alert)
+        
+            let action = UIAlertAction(title: "확인", style: UIAlertActionStyle.default)
+            dialog.addAction(action)
+            
+            self.present(dialog, animated: true, completion: nil)
+            
+            self.momImage.tintColor = UIColor.white
+            self.dadImage.tintColor = UIColor.white
+            
             return
         }
         
