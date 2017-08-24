@@ -117,6 +117,7 @@ class EditBabyDateTableViewController: BaseTableViewController {
                 switch result {
                 case .success(_):
                     self.navigationController?.popViewController(animated: true)
+                    self.showSuccessToastMessage()
                 case .failure(_):
                     self.navigationController?.popViewController(animated: true)
                 }
