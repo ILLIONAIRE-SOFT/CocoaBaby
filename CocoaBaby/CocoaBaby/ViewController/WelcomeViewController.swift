@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import WaterDrops
 
 class WelcomeViewController: BaseViewController {
 
     @IBOutlet weak var startBtn: UIButton!
+    var waterDropsView : WaterDropsView?
+
     
     
     override func viewDidLoad() {
@@ -24,4 +27,28 @@ class WelcomeViewController: BaseViewController {
 
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
+        
+        let waterDropsViewFrame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
+        
+        waterDropsView = WaterDropsView(frame: waterDropsViewFrame,
+                                        direction: .down,
+                                        dropNum:100,
+                                        color: UIColor.init(colorWithHexValue: 0xFFFFFF, alpha: 0.8),
+                                        minDropSize: 2,
+                                        maxDropSize: 6,
+                                        minLength: 80,
+                                        maxLength: 500,
+                                        minDuration: 3,
+                                        maxDuration: 6)
+        
+        waterDropsView?.addAnimation()
+        self.waterDropsView?.isUserInteractionEnabled = false
+        self.view.addSubview(waterDropsView!)
+    }
+    
 }
+
