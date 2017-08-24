@@ -9,11 +9,19 @@
 import UIKit
 import Firebase
 import GoogleSignIn
+import FBSDKLoginKit
 
-class LoginViewController: UIViewController, GIDSignInUIDelegate {
+
+class LoginViewController: UIViewController, GIDSignInUIDelegate, FBSDKLoginButtonDelegate {
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        let loginButton = FBSDKLoginButton()
+        loginButton.delegate = self
+        loginButton.center = view.center
+        view.addSubview(loginButton)
         
         GIDSignIn.sharedInstance().uiDelegate = self
     }
@@ -27,5 +35,27 @@ class LoginViewController: UIViewController, GIDSignInUIDelegate {
         print("LoginViewController - tapped google login")
         GIDSignIn.sharedInstance().signIn()
     }
+    
+    
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error?) {
+        if let error = error {
+            print(error.localizedDescription)
+            return
+        }
+        let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+        Auth.auth().signIn(with: credential) { (user, error) in
+            if let error = error {
+                // ...
+                return
+            }
+            // User is signed in
+            // ...
+        }
+    }
+
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+        
+    }
+
 
 }
