@@ -63,7 +63,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bL6-i6-AME">
-                                <rect key="frame" x="125" y="318.5" width="124" height="30"/>
+                                <rect key="frame" x="125" y="368.5" width="124" height="30"/>
                                 <state key="normal" title="Login with Google">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -77,7 +77,7 @@
                             <constraint firstItem="Srg-Vc-eB0" firstAttribute="leading" secondItem="ONT-pX-Tjt" secondAttribute="leading" id="46H-4C-Fjd"/>
                             <constraint firstItem="bL6-i6-AME" firstAttribute="centerX" secondItem="ONT-pX-Tjt" secondAttribute="centerX" id="QoJ-p3-Nga"/>
                             <constraint firstAttribute="trailing" secondItem="Srg-Vc-eB0" secondAttribute="trailing" id="aSt-16-DU7"/>
-                            <constraint firstItem="bL6-i6-AME" firstAttribute="centerY" secondItem="ONT-pX-Tjt" secondAttribute="centerY" id="c80-lw-Imh"/>
+                            <constraint firstItem="bL6-i6-AME" firstAttribute="centerY" secondItem="ONT-pX-Tjt" secondAttribute="centerY" constant="50" id="c80-lw-Imh"/>
                             <constraint firstItem="Aw6-7i-vef" firstAttribute="top" secondItem="Srg-Vc-eB0" secondAttribute="bottom" id="g1A-yU-FKk"/>
                             <constraint firstItem="Srg-Vc-eB0" firstAttribute="top" secondItem="ONT-pX-Tjt" secondAttribute="top" id="olX-tE-FKv"/>
                         </constraints>

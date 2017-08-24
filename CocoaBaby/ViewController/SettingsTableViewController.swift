@@ -8,6 +8,8 @@
 
 import UIKit
 import FirebaseAuth
+import FacebookCore
+import FBSDKLoginKit
 
 class SettingsTableViewController: BaseTableViewController {
 
@@ -17,7 +19,6 @@ class SettingsTableViewController: BaseTableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         self.clearsSelectionOnViewWillAppear = true
     }
 
@@ -112,6 +113,8 @@ class SettingsTableViewController: BaseTableViewController {
             } catch let signOutError {
                 print("Error sigining out: %@", signOutError)
             }
+            
+            FBSDKLoginManager().logOut()
             
             let appDelegate = UIApplication.shared.delegate! as! AppDelegate
             let mainSB = UIStoryboard(name: StoryboardName.main, bundle: nil)

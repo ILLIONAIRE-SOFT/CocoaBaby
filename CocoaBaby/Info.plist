@@ -26,6 +26,7 @@
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>com.googleusercontent.apps.1074270664593-lj1jpug16nf2k2tkfqs8e041u5givfen</string>
+                <string>fb294759951000247</string>
 			</array>
 		</dict>
 	</array>
@@ -70,15 +71,6 @@
 		</dict>
 	</array>
     
-    <key>CFBundleURLTypes</key>
-    <array>
-        <dict>
-            <key>CFBundleURLSchemes</key>
-            <array>
-                <string>fb294759951000247</string>
-            </array>
-        </dict>
-    </array>
     <key>FacebookAppID</key>
     <string>294759951000247</string>
     <key>FacebookDisplayName</key>
