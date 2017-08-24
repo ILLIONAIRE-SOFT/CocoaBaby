@@ -76,10 +76,10 @@ class UserSettingsViewController: BaseViewController {
             return
         }
         
-        startLoading()
-        
         var user = User()
         user.gender = gender
+        
+        startLoading()
         
         UserStore.shared.saveUser(user: user) { (result) in
             switch result {
@@ -95,8 +95,8 @@ class UserSettingsViewController: BaseViewController {
     func presentSplashViewController() {
         let appDelegate = UIApplication.shared.delegate! as! AppDelegate
         
-        let mainSB = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = mainSB.instantiateViewController(withIdentifier: "SplashViewController")
+        let mainSB = UIStoryboard(name: StoryboardName.main, bundle: nil)
+        let viewController = mainSB.instantiateViewController(withIdentifier: StoryboardName.splashViewController)
         
         appDelegate.window?.rootViewController = viewController
         appDelegate.window?.makeKeyAndVisible()
