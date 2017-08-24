@@ -20,6 +20,7 @@
 "Alert.UnlinkMessage" = "파트너의 다이어리와 아기를 볼 수 없습니다.";
 "Alert.UnlinkSuccess" = "해제 성공";
 "Alert.BirthDateBeforePregnantDate" = "Birth date cannot before pregnant date";
+"Alert.UnlinkBeforeChangeGender" = "Unlink before change gender";
 
 "Yes" = "예";
 "No" = "아니오";

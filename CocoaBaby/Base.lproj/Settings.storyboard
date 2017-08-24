@@ -188,7 +188,7 @@
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         <connections>
-                                            <segue destination="GFa-gS-bG2" kind="show" id="6bX-qI-fl4"/>
+                                            <segue destination="GFa-gS-bG2" kind="show" identifier="selectGender" id="6bX-qI-fl4"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" indentationWidth="10" id="Xc1-Ne-9c3">
