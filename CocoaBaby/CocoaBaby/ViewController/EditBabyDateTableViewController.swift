@@ -49,6 +49,9 @@ class EditBabyDateTableViewController: BaseTableViewController {
         pregnantDateField.delegate = self
         birthDateField.delegate = self
         
+        pregnantDateField.tintColor = .clear
+        birthDateField.tintColor = .clear
+        
         // MARK: Date
         pregnantDate = Date(timeIntervalSince1970: BabyStore.shared.baby.pregnantDate)
         birthDate = Date(timeIntervalSince1970: BabyStore.shared.baby.birthDate)
