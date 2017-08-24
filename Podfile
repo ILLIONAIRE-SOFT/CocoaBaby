@@ -11,6 +11,9 @@ target 'CocoaBaby' do
   pod 'Firebase/Messaging'
   pod 'GoogleSignIn'
   pod 'WaterDrops'
+  pod 'FacebookCore'
+  pod 'FacebookLogin'
+
 
   # Pods for CocoaBaby
 
