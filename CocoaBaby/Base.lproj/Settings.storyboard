@@ -84,6 +84,9 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        <connections>
+                                            <segue destination="53p-8E-Bic" kind="show" id="Yzo-nG-GVk"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -229,6 +232,88 @@
             </objects>
             <point key="canvasLocation" x="2096.8000000000002" y="296.40179910044981"/>
         </scene>
+        <!--Edit Baby Date Table View Controller-->
+        <scene sceneID="0Lb-ZC-C84">
+            <objects>
+                <tableViewController storyboardIdentifier="EditBabyDateTableViewController" id="53p-8E-Bic" customClass="EditBabyDateTableViewController" customModule="CocoaBaby" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" id="Se7-vz-Izg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <sections>
+                            <tableViewSection headerTitle="Pregnant date" id="Mj8-EC-gH0">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="85C-WX-0Jb">
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="85C-WX-0Jb" id="iMH-vW-Van">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="iFp-DZ-CLj">
+                                                    <rect key="frame" x="16" y="7" width="343" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="uda-Yi-8Wb"/>
+                                                    </constraints>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="iFp-DZ-CLj" firstAttribute="leading" secondItem="iMH-vW-Van" secondAttribute="leading" constant="16" id="2py-fn-uXf"/>
+                                                <constraint firstAttribute="trailing" secondItem="iFp-DZ-CLj" secondAttribute="trailing" constant="16" id="uQ6-64-HYc"/>
+                                                <constraint firstItem="iFp-DZ-CLj" firstAttribute="centerY" secondItem="iMH-vW-Van" secondAttribute="centerY" id="wvC-10-JJ3"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                            <tableViewSection headerTitle="Birth Date" id="WvF-bm-IkY">
+                                <cells>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="uMD-H2-hVU">
+                                        <rect key="frame" x="0.0" y="155.5" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uMD-H2-hVU" id="Yea-fk-Pj5">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4ms-Yw-D0K">
+                                                    <rect key="frame" x="16" y="7" width="343" height="30"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="30" id="KP4-02-fLZ"/>
+                                                    </constraints>
+                                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="4ms-Yw-D0K" firstAttribute="centerY" secondItem="Yea-fk-Pj5" secondAttribute="centerY" id="ad9-sJ-ezn"/>
+                                                <constraint firstItem="4ms-Yw-D0K" firstAttribute="leading" secondItem="Yea-fk-Pj5" secondAttribute="leading" constant="16" id="evA-c4-cAP"/>
+                                                <constraint firstAttribute="trailing" secondItem="4ms-Yw-D0K" secondAttribute="trailing" constant="16" id="l45-d4-UJN"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
+                                </cells>
+                            </tableViewSection>
+                        </sections>
+                        <connections>
+                            <outlet property="dataSource" destination="53p-8E-Bic" id="l9f-8T-LWM"/>
+                            <outlet property="delegate" destination="53p-8E-Bic" id="mcK-rE-ha4"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="birthDateField" destination="4ms-Yw-D0K" id="pS7-fU-Qeg"/>
+                        <outlet property="pregnantDateField" destination="iFp-DZ-CLj" id="KzE-hb-fsl"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oRT-YI-sfN" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3175" y="288"/>
+        </scene>
         <!--Edit Baby Name Table View Controller-->
         <scene sceneID="mSZ-jq-RZ9">
             <objects>
@@ -279,7 +364,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AhF-WO-toR" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2953" y="296"/>
+            <point key="canvasLocation" x="3174" y="-444"/>
         </scene>
         <!--Edit Baby Date View Controller-->
         <scene sceneID="VYe-Gl-nhj">
@@ -447,7 +532,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Moz-u7-qmq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2953" y="1063"/>
+            <point key="canvasLocation" x="3175" y="1056"/>
         </scene>
         <!--SettingUI Navigation Controller-->
         <scene sceneID="KQ2-WX-ALz">
