@@ -103,7 +103,7 @@ class EditBabyDateTableViewController: BaseTableViewController {
     
     func registerBaby() {
         if pregnantDate.timeIntervalSince1970 > birthDate.timeIntervalSince1970 {
-            let alertController = UIAlertController(title: "Fail", message: "출산 예정일은 임신 날짜 이전일 수 없습니다.", preferredStyle: .alert)
+            let alertController = UIAlertController(title: LocalizableString.fail, message: LocalizableString.birthDateBeforePregnantDate, preferredStyle: .alert)
             let doneAction = UIAlertAction(title: LocalizableString.done, style: .default, handler: nil)
             alertController.addAction(doneAction)
             present(alertController, animated: true, completion: nil)
