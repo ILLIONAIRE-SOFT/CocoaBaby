@@ -223,7 +223,7 @@ class HomeViewController: BaseViewController {
             
             UIView.animate(withDuration: 1, animations: {
                 // 알파값을 1로 만들어주고
-                self.speechBubble.alpha = 1
+                self.speechBubble.alpha = 0.9
                 self.speechBubbleLabel.alpha = 1
             }) { (isCompleted) in
                 UIView.animate(withDuration: 1, delay: 1, animations: {
