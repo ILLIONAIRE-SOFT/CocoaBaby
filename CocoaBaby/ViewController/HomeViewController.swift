@@ -28,6 +28,8 @@ class HomeViewController: BaseViewController {
     @IBOutlet var speechBubble: UIImageView!
     var isSpeechBubbleAnimated : Bool = false
     @IBOutlet var speechBubbleLabel: UILabel!
+    @IBOutlet weak var popSpeechBubble: UIButton!
+    
 
     var waterDropsView : WaterDropsView?
     
@@ -195,6 +197,8 @@ class HomeViewController: BaseViewController {
     
     @IBAction func showBalloon() {
         
+        self.popSpeechBubble.isUserInteractionEnabled = false
+        
         let moveRangeX = self.babyAroundView.frame.width - speechBubble.frame.width
         let moveRangeY = 15
         
@@ -223,10 +227,10 @@ class HomeViewController: BaseViewController {
             
             UIView.animate(withDuration: 1, animations: {
                 // 알파값을 1로 만들어주고
-                self.speechBubble.alpha = 0.9
+                self.speechBubble.alpha = 1
                 self.speechBubbleLabel.alpha = 1
             }) { (isCompleted) in
-                UIView.animate(withDuration: 1, delay: 1, animations: {
+                UIView.animate(withDuration: 2, delay: 1, animations: {
                     // 1초가 기다린뒤 다시 알파를 0으로 만들어준다
                     self.speechBubble.alpha = 0
                     self.speechBubbleLabel.alpha = 0
@@ -238,9 +242,12 @@ class HomeViewController: BaseViewController {
                     self.speechBubbleLabel.frame.origin.y -= (CGFloat(randomY) - 15)
 
                     self.isSpeechBubbleAnimated = false
+                     self.popSpeechBubble.isUserInteractionEnabled = true
                 })
             }
         }
+       
+       
     }
     
     func beginBabyAnimation () {

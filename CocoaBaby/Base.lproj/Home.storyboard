@@ -92,7 +92,7 @@
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a6B-bn-Jby">
-                                                <rect key="frame" x="99.5" y="48.5" width="120" height="13.5"/>
+                                                <rect key="frame" x="99.5" y="45.5" width="120" height="13.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -103,7 +103,7 @@
                                             <constraint firstItem="wOK-yq-j3c" firstAttribute="centerX" secondItem="Qhc-ag-71c" secondAttribute="centerX" id="6hJ-CK-6Te"/>
                                             <constraint firstAttribute="trailing" secondItem="UoX-Al-Kmz" secondAttribute="trailing" constant="22" id="Kd9-sw-aQs"/>
                                             <constraint firstItem="a6B-bn-Jby" firstAttribute="leading" secondItem="wOK-yq-j3c" secondAttribute="leading" constant="30" id="Qhj-ur-WAf"/>
-                                            <constraint firstItem="a6B-bn-Jby" firstAttribute="centerY" secondItem="wOK-yq-j3c" secondAttribute="centerY" id="VmL-Yd-zIx"/>
+                                            <constraint firstItem="a6B-bn-Jby" firstAttribute="centerY" secondItem="wOK-yq-j3c" secondAttribute="centerY" constant="-3" id="VmL-Yd-zIx"/>
                                             <constraint firstItem="a6B-bn-Jby" firstAttribute="trailing" secondItem="wOK-yq-j3c" secondAttribute="trailing" constant="-30" id="eWS-25-G80"/>
                                             <constraint firstItem="UoX-Al-Kmz" firstAttribute="centerY" secondItem="WSq-6I-iYr" secondAttribute="centerY" id="f8C-xe-GT8"/>
                                             <constraint firstItem="UoX-Al-Kmz" firstAttribute="centerX" secondItem="WSq-6I-iYr" secondAttribute="centerX" id="rpP-8O-NSn"/>
@@ -165,6 +165,7 @@
                         <outlet property="dDayLabel" destination="59f-cp-ErD" id="BS0-0G-p1j"/>
                         <outlet property="infoLabel" destination="Op6-Ka-edG" id="et6-YY-grN"/>
                         <outlet property="nameLabel" destination="3cZ-ux-bAi" id="kqW-AF-EG0"/>
+                        <outlet property="popSpeechBubble" destination="Qhc-ag-71c" id="9he-mM-J1k"/>
                         <outlet property="speechBubble" destination="wOK-yq-j3c" id="6ed-bi-c6a"/>
                         <outlet property="speechBubbleLabel" destination="a6B-bn-Jby" id="fJT-vI-01i"/>
                         <outlet property="weekLabel" destination="ekc-pe-RTr" id="bS4-J7-X98"/>
