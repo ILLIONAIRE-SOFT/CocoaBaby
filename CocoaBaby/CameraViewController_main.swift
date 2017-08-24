@@ -11,11 +11,11 @@ import AVFoundation
 
 class CameraViewController: UIViewController {
     
-    let leftMargin: CGFloat = 16
+    let margin: CGFloat = 16
     
     let weekUILabel = UILabel()
     let babyNameUILabel = UILabel()
-    var mapImageView = UIImageView()
+    let separateLine = UIView()
     
     @IBOutlet var cameraView: UIView!
     let captureSession = AVCaptureSession()
@@ -31,7 +31,7 @@ class CameraViewController: UIViewController {
     var photoSampleBuffer: CMSampleBuffer?
     var previewPhotoSampleBuffer: CMSampleBuffer?
     
-    var guideImageView = UIImageView()
+    @IBOutlet var guideImageView : UIImageView!
     var isGuideActive : Bool = false
 
     
@@ -45,15 +45,9 @@ class CameraViewController: UIViewController {
         if captureDevice != nil {
             beginSession()
         }
-        updateWeekLabel()
-        updateBabyNameLabel()
+        
         guideBtn.setTitleColor(.yellow, for: .selected)
         guideBtn.setTitleColor(.white, for: .normal)
-        
-        guideImageView = UIImageView(frame: cameraView.frame)
-        guideImageView.image = UIImage(named: "camera_guide")
-        view.addSubview(guideImageView)
-        
         
         // if no cameraGuide set userDefault value as true
         if UserDefaults.standard.object(forKey: "cameraGuide" ) == nil {
@@ -63,6 +57,13 @@ class CameraViewController: UIViewController {
         guideBtn.isSelected = UserDefaults.standard.bool(forKey: "cameraGuide")
         guideImageView.isHidden = !UserDefaults.standard.bool(forKey: "cameraGuide")
     }
+    
+    override func viewDidLayoutSubviews() {
+        updateWeekLabel()
+        updateBabyNameLabel()
+        updateSeperateLine()
+    }
+    
     @IBAction func modalDismiss(_ sender: Any) {
         captureSession.stopRunning()
         self.dismiss(animated: true, completion: nil)
