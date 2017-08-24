@@ -26,7 +26,6 @@
 		492057821F41479100F232E2 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492057811F41479100F232E2 /* DatePickerViewController.swift */; };
 		492057861F41705700F232E2 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492057851F41705700F232E2 /* SplashViewController.swift */; };
 		493631DE1F31C662008C774E /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493631DD1F31C662008C774E /* TabBarViewController.swift */; };
-		4948E0A61F39799C008542F6 /* EditBabyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4948E0A51F39799C008542F6 /* EditBabyViewController.swift */; };
 		496B8A8F1F4D90D300DDD8AC /* SelectGenderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496B8A8E1F4D90D300DDD8AC /* SelectGenderTableViewController.swift */; };
 		496B8A931F4DA31800DDD8AC /* EditBabyNameTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496B8A921F4DA31800DDD8AC /* EditBabyNameTableViewController.swift */; };
 		496FB1E11F31986E00E4042D /* BabyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496FB1E01F31986E00E4042D /* BabyStore.swift */; };
@@ -41,6 +40,7 @@
 		49CBF18A1F3C33E400426D61 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CBF1891F3C33E400426D61 /* LoginViewController.swift */; };
 		49D7F44A1F319D99004DF036 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D7F4481F319D99004DF036 /* HomeViewController.swift */; };
 		49D7F44D1F31A32E004DF036 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49D7F44C1F31A32E004DF036 /* Tutorial.storyboard */; };
+		49D8A3F91F4E9815009AB84C /* EditBabyDateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D8A3F81F4E9815009AB84C /* EditBabyDateTableViewController.swift */; };
 		49E659131F42C64A00D85C53 /* UserSettings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49E659111F42C64A00D85C53 /* UserSettings.storyboard */; };
 		49E659151F42C66200D85C53 /* UserSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E659141F42C66200D85C53 /* UserSettingsViewController.swift */; };
 		49E659181F42E54800D85C53 /* ShareHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E659171F42E54800D85C53 /* ShareHelper.swift */; };
@@ -120,7 +120,6 @@
 		492057811F41479100F232E2 /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		492057851F41705700F232E2 /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SplashViewController.swift; path = ViewController/SplashViewController.swift; sourceTree = "<group>"; };
 		493631DD1F31C662008C774E /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarViewController.swift; path = ViewController/TabBarViewController.swift; sourceTree = "<group>"; };
-		4948E0A51F39799C008542F6 /* EditBabyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditBabyViewController.swift; path = ViewController/EditBabyViewController.swift; sourceTree = "<group>"; };
 		496B8A8E1F4D90D300DDD8AC /* SelectGenderTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectGenderTableViewController.swift; path = CocoaBaby/ViewController/SelectGenderTableViewController.swift; sourceTree = "<group>"; };
 		496B8A921F4DA31800DDD8AC /* EditBabyNameTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditBabyNameTableViewController.swift; path = ViewController/EditBabyNameTableViewController.swift; sourceTree = "<group>"; };
 		496FB1E01F31986E00E4042D /* BabyStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BabyStore.swift; path = Model/BabyStore.swift; sourceTree = "<group>"; };
@@ -134,6 +133,7 @@
 		49CBF1891F3C33E400426D61 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = ViewController/LoginViewController.swift; sourceTree = "<group>"; };
 		49D7F4481F319D99004DF036 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ViewController/HomeViewController.swift; sourceTree = "<group>"; };
 		49D7F44C1F31A32E004DF036 /* Tutorial.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Tutorial.storyboard; path = Storyboard/Tutorial.storyboard; sourceTree = "<group>"; };
+		49D8A3F81F4E9815009AB84C /* EditBabyDateTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditBabyDateTableViewController.swift; path = CocoaBaby/ViewController/EditBabyDateTableViewController.swift; sourceTree = "<group>"; };
 		49E659121F42C64A00D85C53 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/UserSettings.storyboard; sourceTree = "<group>"; };
 		49E659141F42C66200D85C53 /* UserSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserSettingsViewController.swift; path = ViewController/UserSettingsViewController.swift; sourceTree = "<group>"; };
 		49E659171F42E54800D85C53 /* ShareHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShareHelper.swift; path = Model/ShareHelper.swift; sourceTree = "<group>"; };
@@ -317,9 +317,9 @@
 		496B8A901F4DA2D800DDD8AC /* BabySettings */ = {
 			isa = PBXGroup;
 			children = (
-				4948E0A51F39799C008542F6 /* EditBabyViewController.swift */,
 				DA131A6F1F45641600DE12F7 /* EditBabyDateViewController.swift */,
 				496B8A921F4DA31800DDD8AC /* EditBabyNameTableViewController.swift */,
+				49D8A3F81F4E9815009AB84C /* EditBabyDateTableViewController.swift */,
 			);
 			name = BabySettings;
 			sourceTree = "<group>";
@@ -947,6 +947,7 @@
 				D4E670541F4D95DE00AEBADB /* SettingUINavigationController.swift in Sources */,
 				DA571F921F4C166C008EA81A /* CaptureBabyViewController.swift in Sources */,
 				DA131A701F45641600DE12F7 /* EditBabyDateViewController.swift in Sources */,
+				49D8A3F91F4E9815009AB84C /* EditBabyDateTableViewController.swift in Sources */,
 				D45189C31F3ACD0700937869 /* DiaryAddViewController.swift in Sources */,
 				DA5C8F321F41AA1000AA3185 /* TipsStore.swift in Sources */,
 				DA7461021F4405F800568F1C /* CameraViewController_services.swift in Sources */,
@@ -973,7 +974,6 @@
 				496B8A931F4DA31800DDD8AC /* EditBabyNameTableViewController.swift in Sources */,
 				490066441F4BDD4300C40E48 /* StoryboardName.swift in Sources */,
 				4920577E1F41427100F232E2 /* CocoaDatePickerDelegate.swift in Sources */,
-				4948E0A61F39799C008542F6 /* EditBabyViewController.swift in Sources */,
 				49B88EAE1F3BF5A4005043B6 /* UserStore.swift in Sources */,
 				492057861F41705700F232E2 /* SplashViewController.swift in Sources */,
 			);

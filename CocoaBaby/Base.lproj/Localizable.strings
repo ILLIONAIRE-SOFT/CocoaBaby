@@ -19,9 +19,11 @@
 "Alert.UnlinkTitle" = "Unlink";
 "Alert.UnlinkMessage" = "You do not read partner's diary and baby";
 "Alert.UnlinkSuccess" = "Unlinked";
+"Alert.BirthDateBeforePregnantDate" = "Birth date cannot before pregnant date";
 
 "Yes" = "Yes";
 "No" = "No";
 "Done" = "Done";
 "Cancel" = "Cancel";
 "Success" = "Success";
+"Fail" = "Fail";
