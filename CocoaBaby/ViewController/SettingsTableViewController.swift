@@ -35,9 +35,9 @@ class SettingsTableViewController: BaseTableViewController {
         if let gender = UserStore.shared.user?.gender {
             switch gender {
             case Gender.female:
-                genderLabel.text = "Female"
+                genderLabel.text = "Mom"
             case Gender.male:
-                genderLabel.text = "Male"
+                genderLabel.text = "Dad"
             default:
                 break
             }

@@ -84,22 +84,22 @@
                                                     <constraint firstItem="Qhc-ag-71c" firstAttribute="leading" secondItem="5t2-ah-DW0" secondAttribute="leading" id="tGZ-gp-kRl"/>
                                                 </constraints>
                                             </view>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="speechBubble" translatesAutoresizingMaskIntoConstraints="NO" id="wOK-yq-j3c">
-                                                <rect key="frame" x="0.0" y="60" width="210" height="70"/>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="speechBubble" translatesAutoresizingMaskIntoConstraints="NO" id="wOK-yq-j3c">
+                                                <rect key="frame" x="0.0" y="28" width="180" height="70"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="70" id="dFM-TB-1cG"/>
-                                                    <constraint firstAttribute="width" constant="210" id="kwF-n4-ngV"/>
+                                                    <constraint firstAttribute="width" constant="180" id="kwF-n4-ngV"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a6B-bn-Jby">
-                                                <rect key="frame" x="30" y="87" width="150" height="16"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                                <nil key="textColor"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a6B-bn-Jby">
+                                                <rect key="frame" x="30" y="56.5" width="120" height="13.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="wOK-yq-j3c" firstAttribute="top" secondItem="WSq-6I-iYr" secondAttribute="top" constant="60" id="0M4-OJ-OgB"/>
+                                            <constraint firstItem="wOK-yq-j3c" firstAttribute="top" secondItem="WSq-6I-iYr" secondAttribute="top" constant="28" id="0M4-OJ-OgB"/>
                                             <constraint firstAttribute="trailing" secondItem="UoX-Al-Kmz" secondAttribute="trailing" constant="22" id="Kd9-sw-aQs"/>
                                             <constraint firstItem="a6B-bn-Jby" firstAttribute="leading" secondItem="wOK-yq-j3c" secondAttribute="leading" constant="30" id="Qhj-ur-WAf"/>
                                             <constraint firstItem="a6B-bn-Jby" firstAttribute="centerY" secondItem="wOK-yq-j3c" secondAttribute="centerY" id="VmL-Yd-zIx"/>
