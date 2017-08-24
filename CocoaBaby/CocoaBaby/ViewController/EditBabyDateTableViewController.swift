@@ -111,7 +111,6 @@ class EditBabyDateTableViewController: BaseTableViewController {
             let baby = Baby(name: BabyStore.shared.baby.name, birthDate: birthDate.timeIntervalSince1970, pregnantDate: pregnantDate.timeIntervalSince1970)
             
             BabyStore.shared.updateBaby(baby: baby, completion: { (result) in
-                
                 switch result {
                 case .success(_):
                     self.navigationController?.popViewController(animated: true)
