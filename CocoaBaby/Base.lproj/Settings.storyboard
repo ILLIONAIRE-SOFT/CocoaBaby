@@ -84,9 +84,6 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                        <connections>
-                                            <segue destination="71R-oA-mYM" kind="show" id="YLP-y4-AQ1"/>
-                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -284,92 +281,6 @@
             </objects>
             <point key="canvasLocation" x="2953" y="296"/>
         </scene>
-        <!--Edit Baby View Controller-->
-        <scene sceneID="PR4-ue-gWF">
-            <objects>
-                <viewController id="s9y-kI-1Xb" customClass="EditBabyViewController" customModule="CocoaBaby" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Nhz-Qj-RTm"/>
-                        <viewControllerLayoutGuide type="bottom" id="tWE-FB-SHi"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="aLf-pX-XhV">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UM1-fq-rQn">
-                                <rect key="frame" x="24" y="80" width="327" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="V3U-CU-7q1"/>
-                                </constraints>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sFJ-M9-d43">
-                                <rect key="frame" x="24" y="118" width="327" height="0.5"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="0.5" id="Sk0-23-sUF"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="태명 설정" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0AU-DC-iP0">
-                                <rect key="frame" x="24" y="51.5" width="63.5" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="Avj-Ow-hNj">
-                                <rect key="frame" x="157.5" y="210" width="60" height="30"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3xa-4d-9xI">
-                                        <rect key="frame" x="0.0" y="0.0" width="60" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="60" id="K4q-kT-Uly"/>
-                                            <constraint firstAttribute="height" constant="30" id="YgH-7c-Ea6"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <state key="normal" title="완료"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.borderWidth" value="1"/>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="layer.borderColor">
-                                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="string" keyPath="layer.cornerRadius" value="5"/>
-                                        </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <action selector="registerBaby:" destination="71R-oA-mYM" eventType="touchUpInside" id="ggi-qr-tHC"/>
-                                            <action selector="tappedSave:" destination="s9y-kI-1Xb" eventType="touchUpInside" id="UZf-Zq-YKi"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                            </stackView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="Avj-Ow-hNj" firstAttribute="centerX" secondItem="UM1-fq-rQn" secondAttribute="centerX" id="0MU-bt-NRH"/>
-                            <constraint firstItem="0AU-DC-iP0" firstAttribute="leading" secondItem="UM1-fq-rQn" secondAttribute="leading" id="2lb-PZ-HvR"/>
-                            <constraint firstItem="UM1-fq-rQn" firstAttribute="top" secondItem="0AU-DC-iP0" secondAttribute="bottom" constant="8" id="5PM-cJ-eno"/>
-                            <constraint firstItem="sFJ-M9-d43" firstAttribute="top" secondItem="UM1-fq-rQn" secondAttribute="bottom" constant="8" id="A5Q-UZ-5Z3"/>
-                            <constraint firstAttribute="trailing" secondItem="UM1-fq-rQn" secondAttribute="trailing" constant="24" id="B1O-Mc-tgw"/>
-                            <constraint firstItem="sFJ-M9-d43" firstAttribute="leading" secondItem="UM1-fq-rQn" secondAttribute="leading" id="QkN-mG-USd"/>
-                            <constraint firstItem="sFJ-M9-d43" firstAttribute="trailing" secondItem="UM1-fq-rQn" secondAttribute="trailing" id="TT8-KC-tQG"/>
-                            <constraint firstItem="UM1-fq-rQn" firstAttribute="top" secondItem="Nhz-Qj-RTm" secondAttribute="bottom" constant="60" id="ftM-Yt-lY8"/>
-                            <constraint firstItem="UM1-fq-rQn" firstAttribute="leading" secondItem="aLf-pX-XhV" secondAttribute="leading" constant="24" id="tc6-vA-hSI"/>
-                            <constraint firstItem="Avj-Ow-hNj" firstAttribute="top" secondItem="UM1-fq-rQn" secondAttribute="bottom" constant="100" id="zlf-hf-GcZ"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="nameField" destination="UM1-fq-rQn" id="VCQ-ip-SPk"/>
-                        <outlet property="saveButton" destination="3xa-4d-9xI" id="Thh-OV-Bx7"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="KqJ-HE-Lvg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3668" y="296"/>
-        </scene>
         <!--Edit Baby Date View Controller-->
         <scene sceneID="VYe-Gl-nhj">
             <objects>
@@ -383,7 +294,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="아이를 임신한 날짜를 선택해 주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="n9p-Gm-6Ah">
-                                <rect key="frame" x="62.5" y="154.5" width="250" height="30"/>
+                                <rect key="frame" x="62.5" y="110.5" width="250" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="ATr-1P-1ew"/>
                                     <constraint firstAttribute="height" constant="30" id="CY0-XR-Wka"/>
@@ -393,19 +304,19 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="엄마! 저는 언제 생겼나요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="86o-UU-dAD">
-                                <rect key="frame" x="62.5" y="124" width="173.5" height="20.5"/>
+                                <rect key="frame" x="62.5" y="80" width="173.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="엄마! 저는 태어나나요?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uO1-Ob-6d1">
-                                <rect key="frame" x="62.5" y="254.5" width="154.5" height="20.5"/>
+                                <rect key="frame" x="62.5" y="210.5" width="154.5" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="아이의 출산 예정일을 선택해 주세요" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="b9n-kk-XnN">
-                                <rect key="frame" x="62.5" y="285" width="250" height="30"/>
+                                <rect key="frame" x="62.5" y="241" width="250" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="lpb-Zy-YHd"/>
                                     <constraint firstAttribute="width" constant="250" id="u0x-tT-xCX"/>
@@ -415,7 +326,7 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no"/>
                             </textField>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="0oK-Wp-mmw">
-                                <rect key="frame" x="157.5" y="362" width="60" height="30"/>
+                                <rect key="frame" x="157.5" y="318" width="60" height="30"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lJ9-ER-wda">
                                         <rect key="frame" x="0.0" y="0.0" width="60" height="30"/>
