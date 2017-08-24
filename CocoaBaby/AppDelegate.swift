@@ -244,12 +244,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
             if let tabBarVC = self.window?.rootViewController as? UITabBarController {
                 // Case: app not terminated
                 isNeedPresentWriteDiary = true
+                
+                // 앱이 켜져있는 상황에서는 Notificiation Center이 더 좋다.
                 tabBarVC.selectedIndex = 0
                 tabBarVC.selectedIndex = 1
             } else {
                 // Case: launch with quick action
                 isNeedPresentWriteDiary = true
                 isNeedHandleWriteDiaryQuickAction = true
+                
+                // 플래그보다 UserDefault 사용해서 처음 실행될 때 화면
             }
             
             handled = true
