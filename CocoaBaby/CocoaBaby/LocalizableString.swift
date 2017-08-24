@@ -22,6 +22,7 @@ struct LocalizableString {
     static let unlinkTitle = NSLocalizedString("Alert.UnlinkTitle", comment: "")
     static let unlinkMessage = NSLocalizedString("Alert.UnlinkMessage", comment: "")
     static let unlinkSuccess = NSLocalizedString("Alert.UnlinkSuccess", comment: "")
+    static let birthDateBeforePregnantDate = NSLocalizedString("Alert.BirthDateBeforePregnantDate", comment: "")
     
     static let yes: String = NSLocalizedString("Yes", comment: "")
     static let no: String = NSLocalizedString("No", comment: "")
@@ -29,4 +30,5 @@ struct LocalizableString {
     static let cancel: String = NSLocalizedString("Cancel", comment: "")
     
     static let success: String = NSLocalizedString("Success", comment: "")
+    static let fail: String = NSLocalizedString("Fail", comment: "")
 }

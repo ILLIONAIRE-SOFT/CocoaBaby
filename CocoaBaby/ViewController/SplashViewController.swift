@@ -25,8 +25,8 @@ class SplashViewController: UIViewController {
         super.viewDidAppear(animated)
         
         // UserSetting Test
-        self.presentUserSettingsViewController()
-        return
+//        self.presentUserSettingsViewController()
+//        return
         //
         
         if Auth.auth().currentUser != nil {

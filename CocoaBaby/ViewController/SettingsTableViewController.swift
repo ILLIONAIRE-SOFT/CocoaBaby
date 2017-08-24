@@ -11,6 +11,7 @@ import FirebaseAuth
 
 class SettingsTableViewController: BaseTableViewController {
 
+    @IBOutlet var dDayLabel: UILabel!
     @IBOutlet var genderLabel: UILabel!
     @IBOutlet var babyNameLabel: UILabel!
     
@@ -43,6 +44,8 @@ class SettingsTableViewController: BaseTableViewController {
         
         if let baby = BabyStore.shared.baby {
             babyNameLabel.text = baby.name
+            let dDay = BabyStore.shared.getDday()
+            dDayLabel.text = "D\(dDay.mark)\(dDay.value)"
         }
     }
     
