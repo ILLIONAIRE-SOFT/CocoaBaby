@@ -25,8 +25,6 @@ struct TodayHelper {
         
         let components = Calendar.current.dateComponents([.day], from: Date(timeIntervalSince1970: pregnantDate), to: Date())
         
-        print(components.day!)
-        
         if let day = components.day {
             return day/7 + 1
         } else {
