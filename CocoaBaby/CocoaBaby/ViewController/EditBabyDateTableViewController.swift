@@ -38,7 +38,10 @@ class EditBabyDateTableViewController: BaseTableViewController {
         
         initViews()
     }
-    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        changeBgColorBasedOnTime()
+    }
     func initViews() {
         // MARK: Save Bar Button
         let rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(registerBaby))
