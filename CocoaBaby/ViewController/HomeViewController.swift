@@ -110,6 +110,15 @@ class HomeViewController: BaseViewController {
         }
     }
     
+    func localization()  {
+        guard Locale.current.languageCode == "ko" || Locale.current.regionCode == "KR" else {
+            infoLabel.isHidden = true
+            popSpeechBubble.isEnabled = false
+            popSpeechBubble.isHidden = true
+            return
+        }
+    }
+    
     @IBAction func captureScreen() {
         //Create the UIImage
         self.cameraButton.isHidden = true
@@ -121,8 +130,6 @@ class HomeViewController: BaseViewController {
         self.view.layer.render(in: UIGraphicsGetCurrentContext()!)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        
-        
         
         // make square size image
         self.view.backgroundColor = UIColor.clear
@@ -246,8 +253,6 @@ class HomeViewController: BaseViewController {
                 })
             }
         }
-       
-       
     }
     
     func beginBabyAnimation () {
