@@ -25,7 +25,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CocoaBabyLoadingLogo" translatesAutoresizingMaskIntoConstraints="NO" id="CzG-6h-B5V">
-                                <rect key="frame" x="147" y="293" width="80" height="80"/>
+                                <rect key="frame" x="147.5" y="293.5" width="80" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="ibJ-dn-032"/>
                                     <constraint firstAttribute="height" constant="80" id="mom-Uk-Qfg"/>
@@ -59,27 +59,60 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Gradation2" translatesAutoresizingMaskIntoConstraints="NO" id="Srg-Vc-eB0">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bL6-i6-AME">
-                                <rect key="frame" x="125" y="368.5" width="124" height="30"/>
+                                <rect key="frame" x="67.5" y="547" width="240" height="50"/>
+                                <color key="backgroundColor" red="0.8666666666666667" green="0.29411764705882354" blue="0.2196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" title="Login with Google">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="tappedLoginWithGoogle:" destination="4Db-Yu-bUk" eventType="touchUpInside" id="5xi-S0-0B1"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="CocoaBabyLoadingLogo" translatesAutoresizingMaskIntoConstraints="NO" id="y7R-i0-2ld">
+                                <rect key="frame" x="147.5" y="253.5" width="80" height="80"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="IWS-qY-TAo"/>
+                                    <constraint firstAttribute="height" constant="80" id="S7P-dO-TEe"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FUG-JK-4Dj">
+                                <rect key="frame" x="67.5" y="467" width="240" height="50"/>
+                                <color key="backgroundColor" red="0.32156862745098036" green="0.49019607843137253" blue="0.74117647058823533" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="9gq-a0-9la"/>
+                                    <constraint firstAttribute="width" constant="240" id="AV6-79-06c"/>
+                                </constraints>
+                                <state key="normal" title="Login with Facebook">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="tappedLoginWithFacebook:" destination="4Db-Yu-bUk" eventType="touchUpInside" id="npn-hs-zk5"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Srg-Vc-eB0" firstAttribute="leading" secondItem="ONT-pX-Tjt" secondAttribute="leading" id="46H-4C-Fjd"/>
+                            <constraint firstItem="FUG-JK-4Dj" firstAttribute="leading" secondItem="bL6-i6-AME" secondAttribute="leading" id="4oc-CY-9mM"/>
+                            <constraint firstItem="Aw6-7i-vef" firstAttribute="top" secondItem="FUG-JK-4Dj" secondAttribute="bottom" constant="150" id="MBq-i9-yPl"/>
                             <constraint firstItem="bL6-i6-AME" firstAttribute="centerX" secondItem="ONT-pX-Tjt" secondAttribute="centerX" id="QoJ-p3-Nga"/>
-                            <constraint firstAttribute="trailing" secondItem="Srg-Vc-eB0" secondAttribute="trailing" id="aSt-16-DU7"/>
-                            <constraint firstItem="bL6-i6-AME" firstAttribute="centerY" secondItem="ONT-pX-Tjt" secondAttribute="centerY" constant="50" id="c80-lw-Imh"/>
-                            <constraint firstItem="Aw6-7i-vef" firstAttribute="top" secondItem="Srg-Vc-eB0" secondAttribute="bottom" id="g1A-yU-FKk"/>
-                            <constraint firstItem="Srg-Vc-eB0" firstAttribute="top" secondItem="ONT-pX-Tjt" secondAttribute="top" id="olX-tE-FKv"/>
+                            <constraint firstItem="bL6-i6-AME" firstAttribute="top" secondItem="FUG-JK-4Dj" secondAttribute="bottom" constant="30" id="SLb-Ag-w7q"/>
+                            <constraint firstItem="y7R-i0-2ld" firstAttribute="centerX" secondItem="ONT-pX-Tjt" secondAttribute="centerX" id="Yjf-DP-568"/>
+                            <constraint firstItem="FUG-JK-4Dj" firstAttribute="centerX" secondItem="y7R-i0-2ld" secondAttribute="centerX" id="a2f-fd-YAq"/>
+                            <constraint firstItem="y7R-i0-2ld" firstAttribute="centerX" secondItem="ONT-pX-Tjt" secondAttribute="centerX" id="akv-Lg-mPE"/>
+                            <constraint firstItem="bL6-i6-AME" firstAttribute="height" secondItem="FUG-JK-4Dj" secondAttribute="height" id="fDt-2w-d2g"/>
+                            <constraint firstItem="FUG-JK-4Dj" firstAttribute="trailing" secondItem="bL6-i6-AME" secondAttribute="trailing" id="nkj-gA-SDv"/>
+                            <constraint firstItem="y7R-i0-2ld" firstAttribute="centerY" secondItem="ONT-pX-Tjt" secondAttribute="centerY" constant="-40" id="rKj-fN-VlF"/>
                         </constraints>
                     </view>
                     <connections>
