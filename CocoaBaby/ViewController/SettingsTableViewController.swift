@@ -226,6 +226,16 @@ class SettingsTableViewController: BaseTableViewController {
     }
     
     func unlink() {
+        guard let user = UserStore.shared.user else {
+            return
+        }
+        
+        if let partnerUID = user.partnerUID, partnerUID != "" {
+            
+        } else {
+            
+        }
+        
         let alertController = UIAlertController(title: LocalizableString.unlinkTitle, message: LocalizableString.unlinkMessage, preferredStyle: .alert)
         
         let doneAction = UIAlertAction(title: LocalizableString.done, style: .default) { (action) in
