@@ -22,6 +22,7 @@
 "Alert.BirthDateBeforePregnantDate" = "Birth date cannot before pregnant date";
 "Alert.UnlinkBeforeChangeGender" = "Unlink before change gender";
 "Alert.BirthDateBeforeToday" = "Birth date cannot before today";
+"Alert.NotLinked" = "You not linked";
 
 
 "Yes" = "Yes";

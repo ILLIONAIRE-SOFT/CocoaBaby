@@ -22,6 +22,7 @@
 "Alert.BirthDateBeforePregnantDate" = "출산일은 임신일 이전이 될 수 없습니다.";
 "Alert.UnlinkBeforeChangeGender" = "성별을 바꾸기 전에 파트너와 연결을 해제하세요";
 "Alert.BirthDateBeforeToday" = "출산 예정일은 오늘 이전일 수 없습니다.";
+"Alert.NotLinked" = "You not linked";
 
 // Base
 "Yes" = "예";

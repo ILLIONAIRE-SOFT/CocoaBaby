@@ -231,37 +231,57 @@ class SettingsTableViewController: BaseTableViewController {
         }
         
         if let partnerUID = user.partnerUID, partnerUID != "" {
-            
-        } else {
-            
-        }
-        
-        let alertController = UIAlertController(title: LocalizableString.unlinkTitle, message: LocalizableString.unlinkMessage, preferredStyle: .alert)
-        
-        let doneAction = UIAlertAction(title: LocalizableString.done, style: .default) { (action) in
-            ShareHelper.unlinkWithPartner(completion: { (result) in
-                switch result {
-                case .success():
-                    UserStore.shared.fetchUser { (result) in
-                        switch result {
-                        case .success(_):
-                            self.showComplete(message: LocalizableString.unlinkSuccess)
-                        case .failure(_):
-                            return
+            let alertController = UIAlertController(style: .doneCancel, title: LocalizableString.unlinkTitle, message: LocalizableString.unlinkMessage, doneHandler: { (action) in
+                ShareHelper.unlinkWithPartner(completion: { (result) in
+                    switch result {
+                    case .success():
+                        UserStore.shared.fetchUser { (result) in
+                            switch result {
+                            case .success(_):
+                                self.showComplete(message: LocalizableString.unlinkSuccess)
+                            case .failure(_):
+                                return
+                            }
                         }
+                    case .failure():
+                        return
                     }
-                case .failure():
-                    return
-                }
+                })
             })
+            
+            self.present(alertController, animated: true, completion: nil)
+        } else {
+            let alertController = UIAlertController(style: .done, title: LocalizableString.unlinkTitle, message: LocalizableString.notLinked, doneHandler: nil)
+            
+            self.present(alertController, animated: true, completion: nil)
         }
         
-        let cancelAction = UIAlertAction(title: LocalizableString.cancel, style: .cancel, handler: nil)
-        
-        alertController.addAction(doneAction)
-        alertController.addAction(cancelAction)
-        
-        present(alertController, animated: true, completion: nil)
+//        let alertController = UIAlertController(title: LocalizableString.unlinkTitle, message: LocalizableString.unlinkMessage, preferredStyle: .alert)
+//        
+//        let doneAction = UIAlertAction(title: LocalizableString.done, style: .default) { (action) in
+//            ShareHelper.unlinkWithPartner(completion: { (result) in
+//                switch result {
+//                case .success():
+//                    UserStore.shared.fetchUser { (result) in
+//                        switch result {
+//                        case .success(_):
+//                            self.showComplete(message: LocalizableString.unlinkSuccess)
+//                        case .failure(_):
+//                            return
+//                        }
+//                    }
+//                case .failure():
+//                    return
+//                }
+//            })
+//        }
+//        
+//        let cancelAction = UIAlertAction(title: LocalizableString.cancel, style: .cancel, handler: nil)
+//        
+//        alertController.addAction(doneAction)
+//        alertController.addAction(cancelAction)
+//        
+//        present(alertController, animated: true, completion: nil)
     }
     
     func showComplete(message: String) {

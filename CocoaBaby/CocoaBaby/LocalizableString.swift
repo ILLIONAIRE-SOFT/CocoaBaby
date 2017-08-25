@@ -27,7 +27,7 @@ struct LocalizableString {
     static let birthDateBeforePregnantDate = NSLocalizedString("Alert.BirthDateBeforePregnantDate", comment: "")
     static let unlinkBeforeChangeGender = NSLocalizedString("Alert.UnlinkBeforeChangeGender", comment: "")
     static let birthDateBeforeToday = NSLocalizedString("Alert.BirthDateBeforeToday", comment: "")
-
+    static let notLinked = NSLocalizedString("Alert.NotLinked", comment: "")
     
     
     // Base

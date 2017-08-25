@@ -30,7 +30,7 @@
 		496034801F4FDEDB0050AA3E /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4960347E1F4FDEDB0050AA3E /* MainInterface.storyboard */; };
 		496034841F4FDEDB0050AA3E /* TodayExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 496034781F4FDEDB0050AA3E /* TodayExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4960348B1F4FE5E20050AA3E /* TodayHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4960348A1F4FE5E20050AA3E /* TodayHelper.swift */; };
-		4960348F1F502DE10050AA3E /* CocoaAlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4960348E1F502DE10050AA3E /* CocoaAlertController.swift */; };
+		4960348F1F502DE10050AA3E /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4960348E1F502DE10050AA3E /* AlertController.swift */; };
 		496B8A8F1F4D90D300DDD8AC /* SelectGenderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496B8A8E1F4D90D300DDD8AC /* SelectGenderTableViewController.swift */; };
 		496B8A931F4DA31800DDD8AC /* EditBabyNameTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496B8A921F4DA31800DDD8AC /* EditBabyNameTableViewController.swift */; };
 		496FB1E11F31986E00E4042D /* BabyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496FB1E01F31986E00E4042D /* BabyStore.swift */; };
@@ -152,7 +152,7 @@
 		496034811F4FDEDB0050AA3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		496034891F4FE0E00050AA3E /* TodayExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TodayExtension.entitlements; sourceTree = "<group>"; };
 		4960348A1F4FE5E20050AA3E /* TodayHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayHelper.swift; sourceTree = "<group>"; };
-		4960348E1F502DE10050AA3E /* CocoaAlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CocoaAlertController.swift; path = CocoaBaby/Utilities/CocoaAlertController.swift; sourceTree = "<group>"; };
+		4960348E1F502DE10050AA3E /* AlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertController.swift; path = CocoaBaby/Utilities/AlertController.swift; sourceTree = "<group>"; };
 		496B8A8E1F4D90D300DDD8AC /* SelectGenderTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectGenderTableViewController.swift; path = CocoaBaby/ViewController/SelectGenderTableViewController.swift; sourceTree = "<group>"; };
 		496B8A921F4DA31800DDD8AC /* EditBabyNameTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditBabyNameTableViewController.swift; path = ViewController/EditBabyNameTableViewController.swift; sourceTree = "<group>"; };
 		496FB1E01F31986E00E4042D /* BabyStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BabyStore.swift; path = Model/BabyStore.swift; sourceTree = "<group>"; };
@@ -370,7 +370,7 @@
 		4960348D1F502DC30050AA3E /* Alert */ = {
 			isa = PBXGroup;
 			children = (
-				4960348E1F502DE10050AA3E /* CocoaAlertController.swift */,
+				4960348E1F502DE10050AA3E /* AlertController.swift */,
 			);
 			name = Alert;
 			sourceTree = "<group>";
@@ -1048,7 +1048,7 @@
 				49C4FA461F46BC6D008068D8 /* FireBaseTipsAPI.swift in Sources */,
 				49C4FA441F469DAB008068D8 /* FireBaseBabyAPI.swift in Sources */,
 				DA571F9F1F4D5F4A008EA81A /* ShareImageService.swift in Sources */,
-				4960348F1F502DE10050AA3E /* CocoaAlertController.swift in Sources */,
+				4960348F1F502DE10050AA3E /* AlertController.swift in Sources */,
 				493631DE1F31C662008C774E /* TabBarViewController.swift in Sources */,
 				DA7461031F4405F800568F1C /* ImageService.swift in Sources */,
 				4911D9CB1F3444A70031B74A /* BaseViewController.swift in Sources */,
