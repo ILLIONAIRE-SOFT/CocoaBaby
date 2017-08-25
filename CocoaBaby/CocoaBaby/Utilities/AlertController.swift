@@ -27,7 +27,9 @@ extension UIAlertController {
         }
         
         if style == .doneCancel || style == .cancel {
-            let cancelAction = UIAlertAction(title: LocalizableString.cancel, style: .default, handler: nil)
+            let cancelAction = UIAlertAction(title: LocalizableString.cancel, style: .cancel, handler: nil)
+            
+            self.addAction(cancelAction)
         }
     }
 }
