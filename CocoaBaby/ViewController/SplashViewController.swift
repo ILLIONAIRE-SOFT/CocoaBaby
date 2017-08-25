@@ -26,8 +26,8 @@ class SplashViewController: UIViewController {
         
         // UserSetting Test
 
-        //self.presentUserSettingsViewController()
-        //return
+        self.presentUserSettingsViewController()
+        return
 
         //
         
