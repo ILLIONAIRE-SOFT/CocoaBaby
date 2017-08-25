@@ -10,10 +10,34 @@ import UIKit
 import NotificationCenter
 
 class TodayViewController: UIViewController, NCWidgetProviding {
-        
+    
+    @IBOutlet var dDayLabel: UILabel!
+    @IBOutlet var weekLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view from its nib.
+
+        initLabels()
+    }
+    
+    func initLabels() {
+        
+        if let birthDate = UserDefaults.init(suiteName: "group.com.Sohn.CocoaBaby")?.value(forKey: "babyBirthDate") {
+            
+            let dDay = TodayHelper.getDday(to: birthDate as! Double)
+            dDayLabel.text = "D-\(dDay)"
+        } else {
+            print("Birth date is not exist")
+        }
+        
+        if let pregnantDate = UserDefaults.init(suiteName: "group.com.Sohn.CocoaBaby")?.value(forKey: "babyPregnantDate") {
+            
+            let currentWeek = TodayHelper.getCurrentWeek(from: pregnantDate as! Double)
+            weekLabel.text = "Week \(currentWeek)"
+        } else {
+            print("Pregnant date is not exist")
+        }
     }
     
     override func didReceiveMemoryWarning() {
