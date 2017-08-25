@@ -35,6 +35,7 @@ class HomeViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        checkLocalization()
         speechBubble.alpha = 0
         speechBubbleLabel.alpha = 0
     }
@@ -110,6 +111,16 @@ class HomeViewController: BaseViewController {
         }
     }
     
+    // 지역설정이 한국이나 언어설정이 한국어가 아니면 말풍선이랑 인포 라벨빼도록
+    func checkLocalization()  {
+        guard Locale.current.languageCode == "ko" || Locale.current.regionCode == "KR" else {
+            infoLabel.isHidden = true
+            popSpeechBubble.isEnabled = false
+            popSpeechBubble.isHidden = true
+            return
+        }
+    }
+    
     @IBAction func captureScreen() {
         //Create the UIImage
         self.cameraButton.isHidden = true
@@ -121,8 +132,6 @@ class HomeViewController: BaseViewController {
         self.view.layer.render(in: UIGraphicsGetCurrentContext()!)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        
-        
         
         // make square size image
         self.view.backgroundColor = UIColor.clear
@@ -149,22 +158,22 @@ class HomeViewController: BaseViewController {
 
         // present action Sheet
         
-        let actionSheet = UIAlertController(title: "Capture your baby", message: nil, preferredStyle: .actionSheet)
-        let captureRectangle = UIAlertAction(title: "Normal", style: .default) { _ -> Void in
+        let actionSheet = UIAlertController(title: LocalizableString.captureBabyTitle, message: nil, preferredStyle: .actionSheet)
+        let captureRectangle = UIAlertAction(title: LocalizableString.captureRectangle, style: .default) { _ -> Void in
             self.captureAnimataion(completion: {
                 if let image = image {
                     ShareImageService.showShareViewController(presentViewController: self, image: image)
                 }
             })
         }
-        let captureSquare = UIAlertAction(title: "Square", style: .default) { _ -> Void in
+        let captureSquare = UIAlertAction(title: LocalizableString.captureSquare, style: .default) { _ -> Void in
             self.captureAnimataion(completion: {
                 if let squareImage = squareImage {
                     ShareImageService.showShareViewController(presentViewController: self, image: squareImage)
                 }
             })
         }
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancel = UIAlertAction(title: LocalizableString.cancel, style: .cancel, handler: nil)
         
         actionSheet.addAction(captureRectangle)
         actionSheet.addAction(captureSquare)
@@ -246,8 +255,6 @@ class HomeViewController: BaseViewController {
                 })
             }
         }
-       
-       
     }
     
     func beginBabyAnimation () {
@@ -306,8 +313,6 @@ class HomeViewController: BaseViewController {
         }
     }
 }
-
-
 
 class BabyView: UIView {
     

@@ -21,7 +21,10 @@
 "Alert.UnlinkSuccess" = "해제 성공";
 "Alert.BirthDateBeforePregnantDate" = "출산일은 임신일 이전이 될 수 없습니다.";
 "Alert.UnlinkBeforeChangeGender" = "성별을 바꾸기 전에 파트너와 연결을 해제하세요";
+"Alert.BirthDateBeforeToday" = "출산 예정일은 오늘 이전일 수 없습니다.";
+"Alert.NotLinked" = "You not linked";
 
+// Base
 "Yes" = "예";
 "No" = "아니오";
 "Done" = "확인";
@@ -44,9 +47,10 @@
 
 // Tutorial
 "Tutorial.BabyNameTitle" = "아기의 태명은 무엇인가요?";
-"Tutorial.BabyNamePlaceHolder" = "아기의 태명을 입력해주세요.";
+"Tutorial.BabyNamePlaceholder" = "아기의 태명을 입력해주세요.";
 "Tutorial.LastMenstrualDayTitle" = "임신 전 마지막 생리일이 언제인가요?";
-"Tutorial.LastMenstrualDayPlaceHolder" = "임신 전 마지막 생리일을 선택해주세요";
+"Tutorial.LastMenstrualDayPlaceholder" = "임신 전 마지막 생리일을 선택해주세요";
 "Tutorial.BirthDayTitle" = "출산 예정일이 언제인가요?";
-"Tutorial.BirthDayPlaceHolder" = "아기의 출산 예정일을 선택해주세요.";
+"Tutorial.BirthDayPlaceholder" = "아기의 출산 예정일을 선택해주세요.";
+
 

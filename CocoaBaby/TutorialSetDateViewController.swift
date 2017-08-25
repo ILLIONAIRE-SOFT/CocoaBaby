@@ -29,11 +29,14 @@ class TutorialSetDateViewController: BaseViewController, UITextFieldDelegate {
         self.birthDateTextField.delegate = self
         self.registerButton.isEnabled = false
         
-        self.pregnantDateLabel.text = "임신 전 마지막 생리일이 언제인가요?"
-        self.birthDateLabel.text = "출산 예정일이 언제인가요?"
+        self.pregnantDateLabel.text = LocalizableString.lastMenstrualDayTitle
+        self.birthDateLabel.text = LocalizableString.birthDayTitle
         
         self.pregnantDateTextField.tintColor = .clear
         self.birthDateTextField.tintColor = .clear
+        
+        self.pregnantDateTextField.placeholder = LocalizableString.lastMenstrualDayPlaceholder
+        self.birthDateTextField.placeholder = LocalizableString.birthDayPlaceholder
         
         self.registerButton.layer.cornerRadius = 4
         self.registerButton.backgroundColor = .white
@@ -74,9 +77,9 @@ class TutorialSetDateViewController: BaseViewController, UITextFieldDelegate {
         toolBar.sizeToFit()
         
         // Adding Button ToolBar
-        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(self.doneClick))
+        let doneButton = UIBarButtonItem(title: LocalizableString.done, style: .plain, target: self, action: #selector(self.doneClick))
         let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
-        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(self.cancelClick))
+        let cancelButton = UIBarButtonItem(title: LocalizableString.cancel, style: .plain, target: self, action: #selector(self.cancelClick))
         toolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
         toolBar.isUserInteractionEnabled = true
         textField.inputAccessoryView = toolBar
@@ -134,13 +137,13 @@ class TutorialSetDateViewController: BaseViewController, UITextFieldDelegate {
             let name = babyName
         {
             if pregnantDate.timeIntervalSince1970 > birthDate.timeIntervalSince1970 {
-                let alertController = UIAlertController(title: "Fail", message: "출산 예정일은 임신 날짜 이전일 수 없습니다.", preferredStyle: .alert)
-                let ok = UIAlertAction(title: "확인", style: .default, handler: nil)
+                let alertController = UIAlertController(title: LocalizableString.fail, message: LocalizableString.birthDateBeforePregnantDate, preferredStyle: .alert)
+                let ok = UIAlertAction(title: LocalizableString.done, style: .default, handler: nil)
                 alertController.addAction(ok)
                 present(alertController, animated: true, completion: nil)
             } else if birthDate < Date() {
-                let alertController = UIAlertController(title: "Fail", message: "출산 예정일은 오늘 이전일 수 없습니다.", preferredStyle: .alert)
-                let ok = UIAlertAction(title: "확인", style: .default, handler: nil)
+                let alertController = UIAlertController(title: LocalizableString.fail, message: LocalizableString.birthDateBeforeToday, preferredStyle: .alert)
+                let ok = UIAlertAction(title: LocalizableString.done, style: .default, handler: nil)
                 alertController.addAction(ok)
                 present(alertController, animated: true, completion: nil)
             } else {

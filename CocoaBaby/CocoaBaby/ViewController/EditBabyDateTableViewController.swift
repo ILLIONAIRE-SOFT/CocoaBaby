@@ -136,6 +136,14 @@ extension EditBabyDateTableViewController: UITextFieldDelegate {
             self.showDatePicker(birthDateField)
         }
     }
+    
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if UserStore.shared.user?.gender == Gender.male {
+            return false
+        } else {
+            return true
+        }
+    }
 }
 
 // MARK: Table View Delegate

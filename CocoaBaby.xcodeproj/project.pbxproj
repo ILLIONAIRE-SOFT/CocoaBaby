@@ -14,7 +14,6 @@
 		4911D9CB1F3444A70031B74A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4911D9CA1F3444A70031B74A /* BaseViewController.swift */; };
 		4911D9CE1F34455D0031B74A /* DiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4911D9CD1F34455D0031B74A /* DiaryViewController.swift */; };
 		4911D9D11F3446110031B74A /* TipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4911D9D01F3446110031B74A /* TipsViewController.swift */; };
-		4911D9D41F34461F0031B74A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4911D9D31F34461F0031B74A /* SettingsViewController.swift */; };
 		4911D9DA1F344DCA0031B74A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 4911D9DC1F344DCA0031B74A /* Localizable.strings */; };
 		4911D9E31F3450EF0031B74A /* ErrorMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4911D9E21F3450EF0031B74A /* ErrorMessage.swift */; };
 		49121B391F4ABAA40045A165 /* SettingsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49121B381F4ABAA40045A165 /* SettingsTableViewController.swift */; };
@@ -26,6 +25,12 @@
 		492057821F41479100F232E2 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492057811F41479100F232E2 /* DatePickerViewController.swift */; };
 		492057861F41705700F232E2 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492057851F41705700F232E2 /* SplashViewController.swift */; };
 		493631DE1F31C662008C774E /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493631DD1F31C662008C774E /* TabBarViewController.swift */; };
+		4960347A1F4FDEDB0050AA3E /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 496034791F4FDEDB0050AA3E /* NotificationCenter.framework */; };
+		4960347D1F4FDEDB0050AA3E /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4960347C1F4FDEDB0050AA3E /* TodayViewController.swift */; };
+		496034801F4FDEDB0050AA3E /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4960347E1F4FDEDB0050AA3E /* MainInterface.storyboard */; };
+		496034841F4FDEDB0050AA3E /* TodayExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 496034781F4FDEDB0050AA3E /* TodayExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		4960348B1F4FE5E20050AA3E /* TodayHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4960348A1F4FE5E20050AA3E /* TodayHelper.swift */; };
+		4960348F1F502DE10050AA3E /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4960348E1F502DE10050AA3E /* AlertController.swift */; };
 		496B8A8F1F4D90D300DDD8AC /* SelectGenderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496B8A8E1F4D90D300DDD8AC /* SelectGenderTableViewController.swift */; };
 		496B8A931F4DA31800DDD8AC /* EditBabyNameTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496B8A921F4DA31800DDD8AC /* EditBabyNameTableViewController.swift */; };
 		496FB1E11F31986E00E4042D /* BabyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496FB1E01F31986E00E4042D /* BabyStore.swift */; };
@@ -83,6 +88,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		496034821F4FDEDB0050AA3E /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 49F6C7711F318AF200373F06 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 496034771F4FDEDB0050AA3E;
+			remoteInfo = TodayExtension;
+		};
 		49F6C78E1F318AF200373F06 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 49F6C7711F318AF200373F06 /* Project object */;
@@ -99,6 +111,20 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		496034881F4FDEDB0050AA3E /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				496034841F4FDEDB0050AA3E /* TodayExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		3953CA1C89A8E8BE4183BDC5 /* Pods_CocoaBabyTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CocoaBabyTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3D030A7C3DA05CE73E2A7E35 /* Pods_CocoaBabyUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CocoaBabyUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,7 +133,6 @@
 		4911D9CA1F3444A70031B74A /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseViewController.swift; path = ViewController/BaseViewController.swift; sourceTree = "<group>"; };
 		4911D9CD1F34455D0031B74A /* DiaryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiaryViewController.swift; path = ViewController/DiaryViewController.swift; sourceTree = "<group>"; };
 		4911D9D01F3446110031B74A /* TipsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TipsViewController.swift; path = ViewController/TipsViewController.swift; sourceTree = "<group>"; };
-		4911D9D31F34461F0031B74A /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = ViewController/SettingsViewController.swift; sourceTree = "<group>"; };
 		4911D9DB1F344DCA0031B74A /* Base */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = Base; path = Base.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4911D9DE1F344DDE0031B74A /* ko */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ko; path = ko.lproj/Localizable.strings; sourceTree = "<group>"; };
 		4911D9E21F3450EF0031B74A /* ErrorMessage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ErrorMessage.swift; path = Utilities/ErrorMessage.swift; sourceTree = "<group>"; };
@@ -120,6 +145,14 @@
 		492057811F41479100F232E2 /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		492057851F41705700F232E2 /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SplashViewController.swift; path = ViewController/SplashViewController.swift; sourceTree = "<group>"; };
 		493631DD1F31C662008C774E /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarViewController.swift; path = ViewController/TabBarViewController.swift; sourceTree = "<group>"; };
+		496034781F4FDEDB0050AA3E /* TodayExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TodayExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		496034791F4FDEDB0050AA3E /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		4960347C1F4FDEDB0050AA3E /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		4960347F1F4FDEDB0050AA3E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		496034811F4FDEDB0050AA3E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		496034891F4FE0E00050AA3E /* TodayExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TodayExtension.entitlements; sourceTree = "<group>"; };
+		4960348A1F4FE5E20050AA3E /* TodayHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayHelper.swift; sourceTree = "<group>"; };
+		4960348E1F502DE10050AA3E /* AlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertController.swift; path = CocoaBaby/Utilities/AlertController.swift; sourceTree = "<group>"; };
 		496B8A8E1F4D90D300DDD8AC /* SelectGenderTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectGenderTableViewController.swift; path = CocoaBaby/ViewController/SelectGenderTableViewController.swift; sourceTree = "<group>"; };
 		496B8A921F4DA31800DDD8AC /* EditBabyNameTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditBabyNameTableViewController.swift; path = ViewController/EditBabyNameTableViewController.swift; sourceTree = "<group>"; };
 		496FB1E01F31986E00E4042D /* BabyStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BabyStore.swift; path = Model/BabyStore.swift; sourceTree = "<group>"; };
@@ -190,6 +223,14 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		496034751F4FDEDB0050AA3E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4960347A1F4FDEDB0050AA3E /* NotificationCenter.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		49F6C7761F318AF200373F06 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -259,7 +300,6 @@
 				496B8A941F4DAB8400DDD8AC /* UserSettings */,
 				496B8A901F4DA2D800DDD8AC /* BabySettings */,
 				49121B381F4ABAA40045A165 /* SettingsTableViewController.swift */,
-				4911D9D31F34461F0031B74A /* SettingsViewController.swift */,
 				49E659141F42C66200D85C53 /* UserSettingsViewController.swift */,
 				490066411F4BDCB000C40E48 /* WelcomeViewController.swift */,
 				D4E670531F4D95DE00AEBADB /* SettingUINavigationController.swift */,
@@ -310,8 +350,29 @@
 				E058B86FDCDD49D6B0B683BE /* Pods_CocoaBaby.framework */,
 				3953CA1C89A8E8BE4183BDC5 /* Pods_CocoaBabyTests.framework */,
 				3D030A7C3DA05CE73E2A7E35 /* Pods_CocoaBabyUITests.framework */,
+				496034791F4FDEDB0050AA3E /* NotificationCenter.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4960347B1F4FDEDB0050AA3E /* TodayExtension */ = {
+			isa = PBXGroup;
+			children = (
+				496034891F4FE0E00050AA3E /* TodayExtension.entitlements */,
+				4960347C1F4FDEDB0050AA3E /* TodayViewController.swift */,
+				4960347E1F4FDEDB0050AA3E /* MainInterface.storyboard */,
+				496034811F4FDEDB0050AA3E /* Info.plist */,
+				4960348A1F4FE5E20050AA3E /* TodayHelper.swift */,
+			);
+			path = TodayExtension;
+			sourceTree = "<group>";
+		};
+		4960348D1F502DC30050AA3E /* Alert */ = {
+			isa = PBXGroup;
+			children = (
+				4960348E1F502DE10050AA3E /* AlertController.swift */,
+			);
+			name = Alert;
 			sourceTree = "<group>";
 		};
 		496B8A901F4DA2D800DDD8AC /* BabySettings */ = {
@@ -464,6 +525,7 @@
 				49F6C77B1F318AF200373F06 /* CocoaBaby */,
 				49F6C7901F318AF200373F06 /* CocoaBabyTests */,
 				49F6C79B1F318AF200373F06 /* CocoaBabyUITests */,
+				4960347B1F4FDEDB0050AA3E /* TodayExtension */,
 				49F6C77A1F318AF200373F06 /* Products */,
 				4948E0A81F39A103008542F6 /* Frameworks */,
 				64715B0FB9A819D414F18667 /* Pods */,
@@ -476,6 +538,7 @@
 				49F6C7791F318AF200373F06 /* CocoaBaby.app */,
 				49F6C78D1F318AF200373F06 /* CocoaBabyTests.xctest */,
 				49F6C7981F318AF200373F06 /* CocoaBabyUITests.xctest */,
+				496034781F4FDEDB0050AA3E /* TodayExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -581,6 +644,7 @@
 		DAB5A4141F3332DB000235B0 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				4960348D1F502DC30050AA3E /* Alert */,
 				49E6591B1F45671900D85C53 /* PushManager */,
 				49FEEE301F3844B00046D5A3 /* Formatter */,
 				4911D9E11F3450D40031B74A /* Enums */,
@@ -601,6 +665,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		496034771F4FDEDB0050AA3E /* TodayExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 496034871F4FDEDB0050AA3E /* Build configuration list for PBXNativeTarget "TodayExtension" */;
+			buildPhases = (
+				496034741F4FDEDB0050AA3E /* Sources */,
+				496034751F4FDEDB0050AA3E /* Frameworks */,
+				496034761F4FDEDB0050AA3E /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TodayExtension;
+			productName = TodayExtension;
+			productReference = 496034781F4FDEDB0050AA3E /* TodayExtension.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		49F6C7781F318AF200373F06 /* CocoaBaby */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 49F6C7A11F318AF200373F06 /* Build configuration list for PBXNativeTarget "CocoaBaby" */;
@@ -611,10 +692,12 @@
 				49F6C7771F318AF200373F06 /* Resources */,
 				FB9479DDB685C4B806D9A402 /* [CP] Embed Pods Frameworks */,
 				88AE8DB8980C1E1B9F5089F8 /* [CP] Copy Pods Resources */,
+				496034881F4FDEDB0050AA3E /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				496034831F4FDEDB0050AA3E /* PBXTargetDependency */,
 			);
 			name = CocoaBaby;
 			productName = CocoaBaby;
@@ -673,11 +756,24 @@
 				LastUpgradeCheck = 0830;
 				ORGANIZATIONNAME = Sohn;
 				TargetAttributes = {
+					496034771F4FDEDB0050AA3E = {
+						CreatedOnToolsVersion = 8.3.3;
+						DevelopmentTeam = 23EFP3FERN;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
 					49F6C7781F318AF200373F06 = {
 						CreatedOnToolsVersion = 8.3.3;
 						DevelopmentTeam = 23EFP3FERN;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
 							com.apple.Push = {
 								enabled = 1;
 							};
@@ -717,11 +813,20 @@
 				49F6C7781F318AF200373F06 /* CocoaBaby */,
 				49F6C78C1F318AF200373F06 /* CocoaBabyTests */,
 				49F6C7971F318AF200373F06 /* CocoaBabyUITests */,
+				496034771F4FDEDB0050AA3E /* TodayExtension */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		496034761F4FDEDB0050AA3E /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				496034801F4FDEDB0050AA3E /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		49F6C7771F318AF200373F06 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -918,6 +1023,15 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		496034741F4FDEDB0050AA3E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4960347D1F4FDEDB0050AA3E /* TodayViewController.swift in Sources */,
+				4960348B1F4FE5E20050AA3E /* TodayHelper.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		49F6C7751F318AF200373F06 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -934,11 +1048,11 @@
 				49C4FA461F46BC6D008068D8 /* FireBaseTipsAPI.swift in Sources */,
 				49C4FA441F469DAB008068D8 /* FireBaseBabyAPI.swift in Sources */,
 				DA571F9F1F4D5F4A008EA81A /* ShareImageService.swift in Sources */,
+				4960348F1F502DE10050AA3E /* AlertController.swift in Sources */,
 				493631DE1F31C662008C774E /* TabBarViewController.swift in Sources */,
 				DA7461031F4405F800568F1C /* ImageService.swift in Sources */,
 				4911D9CB1F3444A70031B74A /* BaseViewController.swift in Sources */,
 				DAB5A40F1F32126C000235B0 /* Extension.swift in Sources */,
-				4911D9D41F34461F0031B74A /* SettingsViewController.swift in Sources */,
 				492057821F41479100F232E2 /* DatePickerViewController.swift in Sources */,
 				49FEEE321F3844C70046D5A3 /* CocoaDateFormatter.swift in Sources */,
 				49CBF1871F3C29DE00426D61 /* FireBaseAPI.swift in Sources */,
@@ -998,6 +1112,11 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		496034831F4FDEDB0050AA3E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 496034771F4FDEDB0050AA3E /* TodayExtension */;
+			targetProxy = 496034821F4FDEDB0050AA3E /* PBXContainerItemProxy */;
+		};
 		49F6C78F1F318AF200373F06 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 49F6C7781F318AF200373F06 /* CocoaBaby */;
@@ -1018,6 +1137,14 @@
 				4911D9DE1F344DDE0031B74A /* ko */,
 			);
 			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		4960347E1F4FDEDB0050AA3E /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4960347F1F4FDEDB0050AA3E /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 		49E659111F42C64A00D85C53 /* UserSettings.storyboard */ = {
@@ -1071,6 +1198,36 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		496034851F4FDEDB0050AA3E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TodayExtension/TodayExtension.entitlements;
+				DEVELOPMENT_TEAM = 23EFP3FERN;
+				INFOPLIST_FILE = TodayExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Sohn.CocoaBaby.TodayExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		496034861F4FDEDB0050AA3E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = TodayExtension/TodayExtension.entitlements;
+				DEVELOPMENT_TEAM = 23EFP3FERN;
+				INFOPLIST_FILE = TodayExtension/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.Sohn.CocoaBaby.TodayExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		49F6C79F1F318AF200373F06 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1170,6 +1327,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 59B3D35B11C642E2AC5DE763 /* Pods-CocoaBaby.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = CocoaBaby/CocoaBaby.entitlements;
 				DEVELOPMENT_TEAM = 23EFP3FERN;
@@ -1191,6 +1349,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 82B4242C76CF19998F67AC6F /* Pods-CocoaBaby.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 23EFP3FERN;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1272,6 +1431,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		496034871F4FDEDB0050AA3E /* Build configuration list for PBXNativeTarget "TodayExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				496034851F4FDEDB0050AA3E /* Debug */,
+				496034861F4FDEDB0050AA3E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		49F6C7741F318AF200373F06 /* Build configuration list for PBXProject "CocoaBaby" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

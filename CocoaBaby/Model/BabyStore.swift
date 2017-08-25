@@ -44,6 +44,15 @@ class BabyStore {
             switch result {
             case let .success(baby):
                 self.baby = baby
+                
+                // 다른 스레드에서 돌리는게 좋을듯
+                let userDefaultsValues: [String : Any] =  [
+                    "babyPregnantDate" : baby?.pregnantDate ?? 0,
+                    "babyBirthDate" : baby?.birthDate ?? 0
+                ]
+                
+                UserDefaults.init(suiteName: "group.com.Sohn.CocoaBaby")?.setValuesForKeys(userDefaultsValues)
+                
                 completion(baby)
             case .failure(_):
                 completion(nil)
