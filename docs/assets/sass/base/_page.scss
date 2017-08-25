@@ -1,5 +1,5 @@
 ///
-/// Stellar by HTML5 UP
+/// Story by HTML5 UP
 /// html5up.net | @ajlkn
 /// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 ///
@@ -24,11 +24,7 @@
 		}
 
 	body {
-		background-color: _palette(bg);
-		@include vendor('background-image', (
-			'url("images/overlay.png")',
-			'linear-gradient(45deg, #{_palette(bg1)} 15%, #{_palette(bg2) 85%})',
-		));
+		background: _palette(bg);
 
 		// Prevents animation/transition "flicker" on page load.
 		// Automatically added/removed by js/main.js.

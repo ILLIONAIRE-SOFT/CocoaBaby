@@ -4,12 +4,12 @@
 /// Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 ///
 
-/* Spotlight (transitions) */
+/* Banner (transitions) */
 
-	.spotlight {
+	.banner {
 
 		// Mixin.
-			@mixin transition-spotlight($event) {
+			@mixin transition-banner($event) {
 				$x: null;
 				$y: null;
 
@@ -219,40 +219,39 @@
 			}
 
 		// On Load.
-			@include transition-spotlight('load');
+			@include transition-banner('load');
 
 		// On Scroll.
-			@include transition-spotlight('scroll');
+			@include transition-banner('scroll');
 
 	}
 
-/* Spotlight (style1) */
+/* Banner (style1) */
 
-	.spotlight.style1 {
+	.banner.style1 {
 		@include vendor('align-items', 'stretch');
 		@include vendor('display', 'flex');
 		@include vendor('flex-direction', 'row');
 		@include vendor('justify-content', 'flex-end');
 		position: relative;
-		overflow-x: hidden;
 		text-align: left;
+		overflow-x: hidden;
 
 		.content {
 			@include padding(_size(padding, default), _size(padding, default));
 			@include vendor('align-self', 'center');
 			@include vendor('flex-grow', '1');
 			@include vendor('flex-shrink', '1');
-			width: 65%;
-			max-width: _size(inner);
+			width: 50%;
+			max-width: (_size(inner) * 0.75);
 			margin: 0 auto;
 		}
 
 		.image {
 			@include vendor('flex-grow', '0');
 			@include vendor('flex-shrink', '0');
-			width: 35%;
-			min-width: 25rem;
 			border-radius: 0;
+			width: 50%;
 
 			img {
 				@include vendor('object-fit', 'cover');
@@ -282,13 +281,6 @@
 		@include breakpoint(medium) {
 			.content {
 				@include padding(_size(padding, medium) * 1.25, _size(padding, medium));
-				width: 50%;
-				min-width: 0;
-			}
-
-			.image {
-				width: 50%;
-				min-width: 0;
 			}
 		}
 
@@ -296,26 +288,43 @@
 			.content {
 				@include padding(_size(padding, small) * 1.25, _size(padding, small));
 			}
+		}
 
-			@include orientation(portrait) {
-				@include vendor('flex-direction', 'column-reverse');
-				text-align: center !important;
+		@include orientation(portrait) {
+			@include vendor('flex-direction', 'column-reverse');
+			text-align: center;
 
-				.content {
-					width: 100%;
-				}
+			.content {
+				@include vendor('display', 'flex');
+				@include vendor('flex-direction', 'column');
+				@include vendor('justify-content', 'center');
+				width: 100%;
+				max-width: 100%;
+			}
 
-				.image {
-					width: 100%;
-
-					img {
-						position: relative;
-					}
-				}
+			.image {
+				width: 100%;
+				max-width: 100%;
+				height: 45vh;
 			}
 		}
 
 		// Modifiers.
+
+			// Size.
+				&.fullscreen {
+					min-height: 100vh;
+
+					@include orientation(portrait) {
+						.content {
+							min-height: 50vh;
+						}
+
+						.image {
+							height: 50vh;
+						}
+					}
+				}
 
 			// Orientation.
 				&.orient-left {
@@ -325,10 +334,8 @@
 				&.orient-right {
 					@include vendor('flex-direction', 'row-reverse');
 
-					@include breakpoint(small) {
-						@include orientation(portrait) {
-							@include vendor('flex-direction', 'column-reverse');
-						}
+					@include orientation(portrait) {
+						@include vendor('flex-direction', 'column-reverse');
 					}
 				}
 
@@ -339,6 +346,160 @@
 
 				&.content-align-center {
 					text-align: center;
+				}
+
+				&.content-align-right {
+					text-align: right;
+
+					@include orientation(portrait) {
+						text-align: center;
+					}
+				}
+
+			// Image Position.
+				&.image-position-left {
+					.image {
+						img {
+							@include vendor('object-position', 'left');
+						}
+					}
+				}
+
+				&.image-position-center {
+					.image {
+						img {
+							// ...
+						}
+					}
+				}
+
+				&.image-position-right {
+					.image {
+						img {
+							@include vendor('object-position', 'right');
+						}
+					}
+				}
+
+	}
+
+/* Banner (style2) */
+
+	.banner.style2 {
+		@include padding(_size(padding, default) * 0.75, _size(padding, default) * 0.75);
+		@include vendor('align-items', 'center');
+		@include vendor('display', 'flex');
+		@include vendor('justify-content', 'center');
+		background-color: inherit;
+		position: relative;
+		text-align: center;
+		overflow-x: hidden;
+
+		.content {
+			@include padding(_size(padding, default) * 0.75, _size(padding, default) * 0.75);
+			position: relative;
+			width: (_size(inner) * 0.625);
+			max-width: 100%;
+			background-color: inherit;
+			border-radius: _size(border-radius-alt);
+			margin-bottom: _size(element-margin);
+			z-index: 1;
+		}
+
+		.image {
+			@include vendor('flex-grow', '0');
+			@include vendor('flex-shrink', '0');
+			position: absolute;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			left: 0;
+			border-radius: 0;
+
+			img {
+				@include vendor('object-fit', 'cover');
+				@include vendor('object-position', 'center');
+				display: block;
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				border-radius: 0;
+			}
+		}
+
+		@include breakpoint(xlarge) {
+			@include padding(_size(padding, xlarge) * 0.75, _size(padding, xlarge) * 0.75);
+
+			.content {
+				@include padding(_size(padding, xlarge) * 0.75, _size(padding, xlarge) * 0.75);
+			}
+		}
+
+		@include breakpoint(large) {
+			@include padding(_size(padding, large), _size(padding, large) * 0.75);
+
+			.content {
+				@include padding(_size(padding, large), _size(padding, large) * 0.75);
+			}
+		}
+
+		@include breakpoint(medium) {
+			@include padding(_size(padding, medium), _size(padding, medium));
+
+			.content {
+				@include padding(_size(padding, medium) * 1.25, _size(padding, medium) * 0.75);
+			}
+		}
+
+		@include breakpoint(small) {
+			@include padding(_size(padding, small), _size(padding, small));
+
+			.content {
+				@include padding(_size(padding, small) * 1.25, _size(padding, small) * 0.75);
+			}
+		}
+
+		// Modifiers.
+
+			// Size.
+				&.fullscreen {
+					min-height: 100vh;
+				}
+
+			// Orientation.
+				&.orient-left {
+					@include vendor('justify-content', 'flex-start');
+					padding-left: 0;
+
+					.content {
+						border-top-left-radius: 0;
+						border-bottom-left-radius: 0;
+					}
+				}
+
+				&.orient-center {
+					// ...
+				}
+
+				&.orient-right {
+					@include vendor('justify-content', 'flex-end');
+					padding-right: 0;
+
+					.content {
+						border-top-right-radius: 0;
+						border-bottom-right-radius: 0;
+					}
+				}
+
+			// Content Alignment.
+				&.content-align-left {
+					text-align: left;
+				}
+
+				&.content-align-center {
+					// ...
 				}
 
 				&.content-align-right {
@@ -355,7 +516,11 @@
 				}
 
 				&.image-position-center {
-					// ...
+					.image {
+						img {
+							// ...
+						}
+					}
 				}
 
 				&.image-position-right {
@@ -368,11 +533,11 @@
 
 	}
 
-/* Spotlight (style2) */
+/* Banner (style3) */
 
-	.spotlight.style2 {
+	.banner.style3 {
 		$image-size: 21rem;
-		$content-size: (_size(inner) * 0.75) - (_size(element-margin) * 1.75);
+		$content-size: (_size(inner) * 0.875) - $image-size - (_size(element-margin) * 1.75);
 
 		@include padding(_size(padding, default), _size(padding, default));
 		@include vendor('align-items', 'center');
@@ -380,8 +545,8 @@
 		@include vendor('flex-direction', 'row-reverse');
 		@include vendor('justify-content', 'center');
 		position: relative;
-		overflow-x: hidden;
 		text-align: left;
+		overflow-x: hidden;
 
 		.content {
 			width: $content-size;
@@ -437,7 +602,7 @@
 		@include orientation(portrait) {
 			@include vendor('align-items', 'center');
 			@include vendor('flex-direction', 'column-reverse');
-			text-align: center !important;
+			text-align: center;
 
 			.content {
 				width: 34rem;
@@ -450,6 +615,11 @@
 		}
 
 		// Modifiers.
+
+			// Size.
+				&.fullscreen {
+					min-height: 100vh;
+				}
 
 			// Orientation.
 				&.orient-left {
@@ -514,11 +684,11 @@
 
 	}
 
-/* Spotlight (style3) */
+/* Banner (style4) */
 
-	.spotlight.style3 {
+	.banner.style4 {
 		$image-width: 13rem;
-		$content-size: (_size(inner) * 0.75) - (_size(element-margin) * 1.75);
+		$content-size: (_size(inner) * 0.75) - $image-width - (_size(element-margin) * 1.75);
 
 		@include padding(_size(padding, default), _size(padding, default));
 		@include vendor('align-items', 'center');
@@ -526,8 +696,8 @@
 		@include vendor('flex-direction', 'row-reverse');
 		@include vendor('justify-content', 'center');
 		position: relative;
-		overflow-x: hidden;
 		text-align: left;
+		overflow-x: hidden;
 
 		.content {
 			width: $content-size;
@@ -567,7 +737,7 @@
 		@include orientation(portrait) {
 			@include vendor('align-items', 'center');
 			@include vendor('flex-direction', 'column-reverse');
-			text-align: center !important;
+			text-align: center;
 
 			.content {
 				width: 34rem;
@@ -581,6 +751,11 @@
 		}
 
 		// Modifiers.
+
+			// Size.
+				&.fullscreen {
+					min-height: 100vh;
+				}
 
 			// Variant.
 				&.iphone {
@@ -650,25 +825,22 @@
 
 	}
 
-/* Spotlight (style4) */
+/* Banner (style5) */
 
-	.spotlight.style4 {
-		@include padding(_size(padding, default), _size(padding, default) * 0.75);
+	.banner.style5 {
+		@include padding(_size(padding, default), _size(padding, default));
 		@include vendor('align-items', 'center');
 		@include vendor('display', 'flex');
 		@include vendor('justify-content', 'center');
 		background-color: inherit;
 		position: relative;
-		overflow-x: hidden;
 		text-align: center;
+		overflow-x: hidden;
 
 		.content {
-			@include padding(_size(padding, default) * 0.5, _size(padding, default) * 0.5);
 			position: relative;
 			width: (_size(inner) * 0.625);
-			max-width: 50%;
-			background-color: inherit;
-			border-radius: _size(border-radius-alt);
+			max-width: 100%;
 			margin-bottom: _size(element-margin);
 			z-index: 1;
 		}
@@ -682,6 +854,7 @@
 			top: 0;
 			left: 0;
 			border-radius: 0;
+			opacity: _misc(overlay-opacity);
 
 			img {
 				@include vendor('object-fit', 'cover');
@@ -697,41 +870,19 @@
 		}
 
 		@include breakpoint(xlarge) {
-			@include padding(_size(padding, xlarge), _size(padding, xlarge) * 0.75);
-
-			.content {
-				@include padding(_size(padding, xlarge) * 0.5, _size(padding, xlarge) * 0.5);
-			}
+			@include padding(_size(padding, xlarge), _size(padding, xlarge));
 		}
 
 		@include breakpoint(large) {
-			@include padding(_size(padding, large), _size(padding, large) * 0.75);
-
-			.content {
-				@include padding(_size(padding, large) * 0.75, _size(padding, large) * 0.75);
-			}
+			@include padding(_size(padding, large), _size(padding, large));
 		}
 
 		@include breakpoint(medium) {
-			@include padding(_size(padding, medium), _size(padding, medium) * 0.75);
-
-			.content {
-				@include padding(_size(padding, medium) * 0.75, _size(padding, medium) * 0.75);
-			}
+			@include padding(_size(padding, medium) * 1.25, _size(padding, medium));
 		}
 
 		@include breakpoint(small) {
-			@include padding(_size(padding, small), _size(padding, small) * 0.75);
-
-			.content {
-				@include padding(_size(padding, small) * 0.75, _size(padding, small) * 0.75);
-			}
-		}
-
-		@include breakpoint(xsmall) {
-			.content {
-				max-width: 80%;
-			}
+			@include padding(_size(padding, small) * 1.25, _size(padding, small));
 		}
 
 		// Modifiers.
@@ -739,179 +890,6 @@
 			// Size.
 				&.fullscreen {
 					min-height: 100vh;
-				}
-
-				&.halfscreen {
-					min-height: 50vh;
-				}
-
-			// Orientation.
-				&.orient-left {
-					@include vendor('justify-content', 'flex-start');
-					padding-left: 0;
-
-					.content {
-						border-top-left-radius: 0;
-						border-bottom-left-radius: 0;
-					}
-				}
-
-				&.orient-center {
-					// ...
-				}
-
-				&.orient-right {
-					@include vendor('justify-content', 'flex-end');
-					padding-right: 0;
-
-					.content {
-						border-top-right-radius: 0;
-						border-bottom-right-radius: 0;
-					}
-				}
-
-			// Content Alignment.
-				&.content-align-left {
-					text-align: left;
-				}
-
-				&.content-align-center {
-					// ...
-				}
-
-				&.content-align-right {
-					text-align: right;
-				}
-
-			// Image Position.
-				&.image-position-left {
-					.image {
-						img {
-							@include vendor('object-position', 'left');
-						}
-					}
-				}
-
-				&.image-position-center {
-					// ...
-				}
-
-				&.image-position-right {
-					.image {
-						img {
-							@include vendor('object-position', 'right');
-						}
-					}
-				}
-
-	}
-
-/* Spotlight (style5) */
-
-	.spotlight.style5 {
-		@include padding(_size(padding, default), _size(padding, default) * 0.75);
-		@include vendor('align-items', 'center');
-		@include vendor('display', 'flex');
-		@include vendor('justify-content', 'center');
-		background-color: inherit;
-		position: relative;
-		overflow-x: hidden;
-		text-align: center;
-
-		.content {
-			@include padding(_size(padding, default) * 0.5, _size(padding, default) * 0.5);
-			position: relative;
-			width: (_size(inner) * 0.625);
-			max-width: 52.5%;
-			background-color: inherit;
-			border-radius: _size(border-radius-alt);
-			margin-bottom: _size(element-margin);
-			z-index: 1;
-		}
-
-		.image {
-			@include vendor('flex-grow', '0');
-			@include vendor('flex-shrink', '0');
-			position: absolute;
-			width: 100%;
-			height: 100%;
-			top: 0;
-			left: 0;
-			border-radius: 0;
-
-			img {
-				@include vendor('object-fit', 'cover');
-				@include vendor('object-position', 'center');
-				display: block;
-				position: absolute;
-				top: 0;
-				left: 0;
-				width: 100%;
-				height: 100%;
-				border-radius: 0;
-			}
-		}
-
-		@include breakpoint(xlarge) {
-			@include padding(_size(padding, xlarge), _size(padding, xlarge) * 0.75);
-
-			.content {
-				@include padding(_size(padding, xlarge) * 0.5, _size(padding, xlarge) * 0.5);
-			}
-		}
-
-		@include breakpoint(large) {
-			@include padding(_size(padding, large), _size(padding, large) * 0.75);
-
-			.content {
-				@include padding(_size(padding, large) * 0.75, _size(padding, large) * 0.75);
-			}
-		}
-
-		@include breakpoint(medium) {
-			@include padding(_size(padding, medium), _size(padding, medium) * 0.75);
-
-			.content {
-				@include padding(_size(padding, medium) * 0.75, _size(padding, medium) * 0.75);
-			}
-		}
-
-		@include breakpoint(small) {
-			@include padding(_size(padding, small), _size(padding, small) * 0.75);
-
-			.content {
-				@include padding(_size(padding, small) * 0.75, _size(padding, small) * 0.75);
-			}
-		}
-
-		@include breakpoint(xsmall) {
-			.content {
-				max-width: 80%;
-			}
-		}
-
-		// Modifiers.
-
-			// Size.
-				&.fullscreen {
-					min-height: 100vh;
-				}
-
-				&.halfscreen {
-					min-height: 50vh;
-				}
-
-			// Orientation.
-				&.orient-left {
-					@include vendor('justify-content', 'flex-start');
-				}
-
-				&.orient-center {
-					// ...
-				}
-
-				&.orient-right {
-					@include vendor('justify-content', 'flex-end');
 				}
 
 			// Content Alignment.
@@ -952,8 +930,8 @@
 
 // Mixin
 
-	@mixin color-spotlight($p: null) {
-		.spotlight {
+	@mixin color-banner($p: null) {
+		.banner {
 			.image {
 				background-color: transparentize(_palette($p, fg-bold), 0.875);
 			}
@@ -967,7 +945,7 @@
 			}
 		}
 
-		.spotlight.style3 {
+		.banner.style4 {
 			.image {
 				@include color-phone($p);
 			}
@@ -1009,4 +987,4 @@
 		}
 	}
 
-	@include color-spotlight;
+	@include color-banner;
