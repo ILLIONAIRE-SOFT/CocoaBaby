@@ -35,6 +35,7 @@ class HomeViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        checkLocalization()
         speechBubble.alpha = 0
         speechBubbleLabel.alpha = 0
     }
@@ -110,7 +111,8 @@ class HomeViewController: BaseViewController {
         }
     }
     
-    func localization()  {
+    // 지역설정이 한국이나 언어설정이 한국어가 아니면 말풍선이랑 인포 라벨빼도록
+    func checkLocalization()  {
         guard Locale.current.languageCode == "ko" || Locale.current.regionCode == "KR" else {
             infoLabel.isHidden = true
             popSpeechBubble.isEnabled = false
