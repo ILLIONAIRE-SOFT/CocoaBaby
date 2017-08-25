@@ -125,8 +125,8 @@
                                         </constraints>
                                         <segments>
                                             <segment title="Baby"/>
-                                            <segment title="Mama"/>
-                                            <segment title="Papa"/>
+                                            <segment title="Mom"/>
+                                            <segment title="Dad"/>
                                         </segments>
                                         <color key="tintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                     </segmentedControl>

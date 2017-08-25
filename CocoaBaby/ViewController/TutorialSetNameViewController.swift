@@ -10,6 +10,7 @@ import UIKit
 
 class TutorialSetNameViewController: BaseViewController, UITextFieldDelegate {
 
+    @IBOutlet var babyNameTitle: UILabel!
     @IBOutlet var babyNameTextField : UITextField!
     @IBOutlet var nextButton: UIButton!
     
@@ -21,8 +22,10 @@ class TutorialSetNameViewController: BaseViewController, UITextFieldDelegate {
         self.navigationController?.navigationBar.isHidden = true
         nextButton.isEnabled = false
         
+        babyNameTitle.text = LocalizableString.babyNameTitle
+        
         babyNameTextField.textColor = .white
-        babyNameTextField.attributedPlaceholder = NSAttributedString(string: "아이의 태명을 입력해 주세요", attributes: [NSForegroundColorAttributeName: UIColor.lightGray])
+        babyNameTextField.attributedPlaceholder = NSAttributedString(string: LocalizableString.babyNamePlaceholder, attributes: [NSForegroundColorAttributeName: UIColor.lightGray])
         self.nextButton.layer.cornerRadius = 5
     }
     
