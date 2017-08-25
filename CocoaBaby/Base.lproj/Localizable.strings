@@ -21,6 +21,8 @@
 "Alert.UnlinkSuccess" = "Unlinked";
 "Alert.BirthDateBeforePregnantDate" = "Birth date cannot before pregnant date";
 "Alert.UnlinkBeforeChangeGender" = "Unlink before change gender";
+"Alert.BirthDateBeforeToday" = "Birth date cannot before today";
+
 
 "Yes" = "Yes";
 "No" = "No";
@@ -31,9 +33,9 @@
 "Save" = "Save";
 
 // Home
-"Home.CaptureBabyTitle" = "아기의 사진을 캡쳐해보세요.";
-"Home.CaptureRectangle" = "직사각형으로 캡쳐";
-"Home.CaptureSquare" = "정사각형으로 캡쳐";
+"Home.CaptureBabyTitle" = "Capture your baby";
+"Home.CaptureRectangle" = "Rectangle";
+"Home.CaptureSquare" = "Square";
 
 // Share
 "Share.Share" = "Share";
@@ -43,10 +45,10 @@
 "Camera.Dismiss" = "Dismiss";
 
 // Tutorial
-"Tutorial.BabyNameTitle" = "아기의 태명은 무엇인가요?";
-"Tutorial.BabyNamePlaceHolder" = "Please enter your baby's name";
-"Tutorial.LastMenstrualDayTitle" = "임신 전 마지막 생리일이 언제인가요?";
-"Tutorial.LastMenstrualDayPlaceHolder" = "임신 전 마지막 생리일을 선택해주세요";
-"Tutorial.BirthDayTitle" = "출산 예정일이 언제인가요?";
-"Tutorial.BirthDayPlaceHolder" = "아기의 출산 예정일을 선택해주세요.";
+"Tutorial.BabyNameTitle" = "What is the baby's name?";
+"Tutorial.BabyNamePlaceholder" = "Please enter your baby's name";
+"Tutorial.LastMenstrualDayTitle" = "When is your last menstrual day before pregnancy?";
+"Tutorial.LastMenstrualDayPlaceholder" = "Please choose your last menstrual day";
+"Tutorial.BirthDayTitle" = "When is the baby's expected date of birth";
+"Tutorial.BirthDayPlaceholder" = "Please choose baby's expected date of birth";
 

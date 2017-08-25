@@ -120,6 +120,7 @@
                     </view>
                     <connections>
                         <outlet property="cameraView" destination="LuR-JH-54O" id="V8X-JH-eV3"/>
+                        <outlet property="dismissBtn" destination="i5R-zR-au8" id="a9M-VI-Pxe"/>
                         <outlet property="flashBtn" destination="8Fm-m9-CKp" id="yu5-HR-fdv"/>
                         <outlet property="guideBtn" destination="jpQ-8c-F2O" id="MVf-Lv-dKs"/>
                         <outlet property="guideImageView" destination="3XY-hv-etn" id="s0x-gZ-JrG"/>
