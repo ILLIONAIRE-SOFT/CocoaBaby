@@ -71,9 +71,7 @@ class SettingsTableViewController: BaseTableViewController {
         case "selectGender":
             if let user = UserStore.shared.user {
                 if let partnerUID = user.partnerUID, partnerUID != "" {
-                    let alertController = UIAlertController(title: nil, message: LocalizableString.unlinkBeforeChangeGender, preferredStyle: .alert)
-                    let doneAction = UIAlertAction(title: LocalizableString.done, style: .default, handler: nil)
-                    alertController.addAction(doneAction)
+                    let alertController = UIAlertController(style: .done, title: nil, message: LocalizableString.unlinkBeforeChangeGender, doneHandler: nil)
                     
                     self.present(alertController, animated: true, completion: nil)
                     
@@ -92,9 +90,7 @@ class SettingsTableViewController: BaseTableViewController {
     func logout() {
         let firebaseAuth = Auth.auth()
         
-        let alertController = UIAlertController(title: LocalizableString.logoutMessage, message: nil, preferredStyle: .alert)
-        
-        let doneAction = UIAlertAction(title: LocalizableString.yes, style: .default) { (_) in
+        let alertController = UIAlertController(style: .doneCancel, title: LocalizableString.logoutMessage, message: nil) { (action) in
             do {
                 try firebaseAuth.signOut()
             } catch let signOutError {
@@ -111,20 +107,12 @@ class SettingsTableViewController: BaseTableViewController {
             appDelegate.window?.makeKeyAndVisible()
         }
         
-        let cancelAction = UIAlertAction(title: LocalizableString.no, style: .cancel, handler: nil)
-        
-        alertController.addAction(doneAction)
-        alertController.addAction(cancelAction)
-        
         present(alertController, animated: true, completion: nil)
     }
     
     func shareWithFather() {
         if (UserStore.shared.user?.partnerUID) != nil {
-            let alertController = UIAlertController(title: nil, message: LocalizableString.alreadyLinked, preferredStyle: .alert)
-            
-            let doneAction = UIAlertAction(title: LocalizableString.done, style: .default, handler: nil)
-            alertController.addAction(doneAction)
+            let alertController = UIAlertController(style: .done, title: nil, message: LocalizableString.alreadyLinked, doneHandler: nil)
             self.present(alertController, animated: true, completion: nil)
             return
         }
@@ -134,10 +122,7 @@ class SettingsTableViewController: BaseTableViewController {
         }
         
         if gender == Gender.male {
-            let alertController = UIAlertController(title: nil, message: LocalizableString.onlyMomCanShare, preferredStyle: .alert)
-            
-            let doneAction = UIAlertAction(title: LocalizableString.done, style: .default, handler: nil)
-            alertController.addAction(doneAction)
+            let alertController = UIAlertController(style: .done, title: nil, message: LocalizableString.onlyMomCanShare, doneHandler: nil)
             self.present(alertController, animated: true, completion: nil)
             return
         }
@@ -149,26 +134,16 @@ class SettingsTableViewController: BaseTableViewController {
             
             switch shareResult {
             case let .success(code):
-                let alertController = UIAlertController(title: "\(code)", message: LocalizableString.shareCodeMessage, preferredStyle: .alert)
-                
-                let doneAction = UIAlertAction(title: LocalizableString.done, style: .default) { (action) in
+                let alertController = UIAlertController(style: .done, title: "\(code)", message: LocalizableString.shareCodeMessage, doneHandler: { (action) in
                     ShareHelper.removeShareSession(completion: {
                         UserStore.shared.fetchUser(completion: { (result) in
                         })
                     })
-                }
-                
-                alertController.addAction(doneAction)
-                
+                })
+
                 self.present(alertController, animated: true, completion: nil)
             case .failure():
-                let alertController = UIAlertController(title: nil, message: LocalizableString.pleaseRetryMessage, preferredStyle: .alert)
-                
-                let doneAction = UIAlertAction(title: LocalizableString.done, style: .default) { (action) in
-                    
-                }
-                
-                alertController.addAction(doneAction)
+                let alertController = UIAlertController(style: .done, title: nil, message: LocalizableString.pleaseRetryMessage, doneHandler: nil)
                 
                 self.present(alertController, animated: true, completion: nil)
             }
@@ -178,10 +153,7 @@ class SettingsTableViewController: BaseTableViewController {
     func linkWithMother() {
         
         if (UserStore.shared.user?.partnerUID) != nil {
-            let alertController = UIAlertController(title: nil, message: LocalizableString.fatherAlreadyLinked, preferredStyle: .alert)
-            
-            let doneAction = UIAlertAction(title: LocalizableString.done, style: .default, handler: nil)
-            alertController.addAction(doneAction)
+            let alertController = UIAlertController(style: .done, title: nil, message: LocalizableString.fatherAlreadyLinked, doneHandler: nil)
             
             self.present(alertController, animated: true, completion: nil)
             return
@@ -192,11 +164,8 @@ class SettingsTableViewController: BaseTableViewController {
         }
         
         if gender == Gender.female {
-            let alertController = UIAlertController(title: nil, message: LocalizableString.onlyFatherCanLinkWithMom, preferredStyle: .alert)
+            let alertController = UIAlertController(style: .done, title: nil, message: LocalizableString.onlyFatherCanLinkWithMom, doneHandler: nil)
             
-            let doneAction = UIAlertAction(title: LocalizableString.done, style: .default, handler: nil)
-            
-            alertController.addAction(doneAction)
             self.present(alertController, animated: true, completion: nil)
             return
         }
@@ -226,40 +195,40 @@ class SettingsTableViewController: BaseTableViewController {
     }
     
     func unlink() {
-        let alertController = UIAlertController(title: LocalizableString.unlinkTitle, message: LocalizableString.unlinkMessage, preferredStyle: .alert)
-        
-        let doneAction = UIAlertAction(title: LocalizableString.done, style: .default) { (action) in
-            ShareHelper.unlinkWithPartner(completion: { (result) in
-                switch result {
-                case .success():
-                    UserStore.shared.fetchUser { (result) in
-                        switch result {
-                        case .success(_):
-                            self.showComplete(message: LocalizableString.unlinkSuccess)
-                        case .failure(_):
-                            return
-                        }
-                    }
-                case .failure():
-                    return
-                }
-            })
+        guard let user = UserStore.shared.user else {
+            return
         }
         
-        let cancelAction = UIAlertAction(title: LocalizableString.cancel, style: .cancel, handler: nil)
+        if let partnerUID = user.partnerUID, partnerUID != "" {
+            let alertController = UIAlertController(style: .doneCancel, title: LocalizableString.unlinkTitle, message: LocalizableString.unlinkMessage, doneHandler: { (action) in
+                ShareHelper.unlinkWithPartner(completion: { (result) in
+                    switch result {
+                    case .success():
+                        UserStore.shared.fetchUser { (result) in
+                            switch result {
+                            case .success(_):
+                                self.showComplete(message: LocalizableString.unlinkSuccess)
+                            case .failure(_):
+                                return
+                            }
+                        }
+                    case .failure():
+                        return
+                    }
+                })
+            })
+            
+            self.present(alertController, animated: true, completion: nil)
+        } else {
+            let alertController = UIAlertController(style: .done, title: LocalizableString.unlinkTitle, message: LocalizableString.notLinked, doneHandler: nil)
+            
+            self.present(alertController, animated: true, completion: nil)
+        }
         
-        alertController.addAction(doneAction)
-        alertController.addAction(cancelAction)
-        
-        present(alertController, animated: true, completion: nil)
     }
     
     func showComplete(message: String) {
-        let alertController = UIAlertController(title: LocalizableString.success, message: message, preferredStyle: .alert)
-        
-        let doneAction = UIAlertAction(title: LocalizableString.done, style: .default,handler: nil)
-        
-        alertController.addAction(doneAction)
+        let alertController = UIAlertController(style: .done, title: LocalizableString.success, message: message, doneHandler: nil)
         
         present(alertController, animated: true, completion: nil)
     }

@@ -7,7 +7,7 @@
 */
 
 "Alert.DoYouWantLogout" = "Do you want logout?";
-"Alert.FatherAlreadyLinked" = "You alread link with mother";
+"Alert.FatherAlreadyLinked" = "You already link with mother";
 "Alert.AlreadyLinked" = "You already linked. If you want change partner, unlink";
 "Alert.OnlyMomCanShare" = "Only mom can share code";
 "Alert.ShareCodeMessage" = "Enter this code on father's phone.\nDon't quit this message";
@@ -22,6 +22,7 @@
 "Alert.BirthDateBeforePregnantDate" = "Birth date cannot before pregnant date";
 "Alert.UnlinkBeforeChangeGender" = "Unlink before change gender";
 "Alert.BirthDateBeforeToday" = "Birth date cannot before today";
+"Alert.NotLinked" = "You not linked";
 
 
 "Yes" = "Yes";
