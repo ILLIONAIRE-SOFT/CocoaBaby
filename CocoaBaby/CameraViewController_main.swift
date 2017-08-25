@@ -60,12 +60,21 @@ class CameraViewController: UIViewController {
         
         guideBtn.isSelected = UserDefaults.standard.bool(forKey: "cameraGuide")
         guideImageView.isHidden = !UserDefaults.standard.bool(forKey: "cameraGuide")
+        localization()
     }
     
     override func viewDidLayoutSubviews() {
         updateWeekLabel()
         updateBabyNameLabel()
         updateSeperateLine()
+    }
+    
+    func localization() {
+        if Locale.current.languageCode == "ko" || Locale.current.regionCode == "KR" {
+            self.guideImageView.image = UIImage(named: "camera_guide_KO")
+        } else {
+            self.guideImageView.image = UIImage(named: "camera_guide_EN")
+        }
     }
     
     @IBAction func modalDismiss(_ sender: Any) {
