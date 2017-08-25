@@ -25,6 +25,7 @@ class CameraViewController: UIViewController {
     var photoOutput : AVCapturePhotoOutput = AVCapturePhotoOutput()
     var photoSetting : AVCapturePhotoSettings = AVCapturePhotoSettings()
     
+    @IBOutlet var dismissBtn: UIButton!
     @IBOutlet var flashBtn: UIButton!
     @IBOutlet var guideBtn: UIButton!
     
@@ -45,6 +46,9 @@ class CameraViewController: UIViewController {
         if captureDevice != nil {
             beginSession()
         }
+        
+        dismissBtn.setTitle(LocalizableString.dismiss, for: .normal)
+        dismissBtn.setTitle(LocalizableString.dismiss, for: .focused)
         
         guideBtn.setTitleColor(.yellow, for: .selected)
         guideBtn.setTitleColor(.white, for: .normal)

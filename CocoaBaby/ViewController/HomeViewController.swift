@@ -158,22 +158,22 @@ class HomeViewController: BaseViewController {
 
         // present action Sheet
         
-        let actionSheet = UIAlertController(title: "Capture your baby", message: nil, preferredStyle: .actionSheet)
-        let captureRectangle = UIAlertAction(title: "Normal", style: .default) { _ -> Void in
+        let actionSheet = UIAlertController(title: LocalizableString.captureBabyTitle, message: nil, preferredStyle: .actionSheet)
+        let captureRectangle = UIAlertAction(title: LocalizableString.captureRectangle, style: .default) { _ -> Void in
             self.captureAnimataion(completion: {
                 if let image = image {
                     ShareImageService.showShareViewController(presentViewController: self, image: image)
                 }
             })
         }
-        let captureSquare = UIAlertAction(title: "Square", style: .default) { _ -> Void in
+        let captureSquare = UIAlertAction(title: LocalizableString.captureSquare, style: .default) { _ -> Void in
             self.captureAnimataion(completion: {
                 if let squareImage = squareImage {
                     ShareImageService.showShareViewController(presentViewController: self, image: squareImage)
                 }
             })
         }
-        let cancel = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        let cancel = UIAlertAction(title: LocalizableString.cancel, style: .cancel, handler: nil)
         
         actionSheet.addAction(captureRectangle)
         actionSheet.addAction(captureSquare)
@@ -313,8 +313,6 @@ class HomeViewController: BaseViewController {
         }
     }
 }
-
-
 
 class BabyView: UIView {
     
