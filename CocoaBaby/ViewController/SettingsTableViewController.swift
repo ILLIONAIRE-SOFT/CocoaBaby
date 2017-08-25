@@ -16,6 +16,8 @@ class SettingsTableViewController: BaseTableViewController {
     @IBOutlet var dDayLabel: UILabel!
     @IBOutlet var genderLabel: UILabel!
     @IBOutlet var babyNameLabel: UILabel!
+    @IBOutlet var shareCodeLabel: UILabel!
+    @IBOutlet var linkWithMomLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,6 +30,7 @@ class SettingsTableViewController: BaseTableViewController {
         changeBgColorBasedOnTime()
         
         fetchOriginData()
+        setForGender()
     }
     
     // MARK: - Method
@@ -50,6 +53,19 @@ class SettingsTableViewController: BaseTableViewController {
         }
     }
     
+    func setForGender() {
+        let gender = UserStore.shared.user?.gender
+        
+        if gender == Gender.female {
+            shareCodeLabel.textColor = .white
+            linkWithMomLabel.textColor = .darkGray
+        } else {
+            shareCodeLabel.textColor = .darkGray
+            linkWithMomLabel.textColor = .white
+        }
+        
+    }
+    
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         switch identifier {
         case "selectGender":
@@ -70,35 +86,6 @@ class SettingsTableViewController: BaseTableViewController {
             }
         default:
             return true
-        }
-    }
-    
-    // MARK: - Table view data source
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
-        switch (indexPath.section, indexPath.row) {
-        case (1, 0):
-            shareWithFather()
-        case (1, 1):
-            linkWithMother()
-        case (1, 2):
-            unlink()
-        case (2, 0):
-            break
-        case (2, 1):
-            logout()
-        default:
-            tableView.deselectRow(at: indexPath, animated: true)
-            return
-        }
-        
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
-    
-    override func tableView(_ tableView: UITableView, willDisplayHeaderView view:UIView, forSection: Int) {
-        if let headerTitle = view as? UITableViewHeaderFooterView {
-            headerTitle.textLabel?.textColor = UIColor.lightGray
         }
     }
     
@@ -276,6 +263,58 @@ class SettingsTableViewController: BaseTableViewController {
         
         present(alertController, animated: true, completion: nil)
     }
+    
+    // MARK: - Tableview nondynamic function
+    override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        if let headerTitle = view as? UITableViewHeaderFooterView {
+            headerTitle.textLabel?.textColor = UIColor.lightGray
+        }
+    }
 
+}
+
+// MARK: - TableView Delegate, Datasource
+extension SettingsTableViewController {
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        switch (indexPath.section, indexPath.row) {
+        case (1, 0):
+            shareWithFather()
+        case (1, 1):
+            linkWithMother()
+        case (1, 2):
+            unlink()
+        case (2, 0):
+            break
+        case (2, 1):
+            logout()
+        default:
+            tableView.deselectRow(at: indexPath, animated: true)
+            return
+        }
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
+    override func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
+        
+        switch (indexPath.section, indexPath.row) {
+        case (1, 0):
+            if UserStore.shared.user?.gender == Gender.male {
+                return nil
+            } else {
+                return indexPath
+            }
+        case (1, 1):
+            if UserStore.shared.user?.gender == Gender.female {
+                return nil
+            } else {
+                return indexPath
+            }
+        default:
+            return indexPath
+        }
+    }
     
 }

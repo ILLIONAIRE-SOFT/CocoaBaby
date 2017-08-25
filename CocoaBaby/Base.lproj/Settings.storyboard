@@ -226,6 +226,8 @@
                         <outlet property="babyNameLabel" destination="wWi-YF-3s8" id="Efy-dF-Zyw"/>
                         <outlet property="dDayLabel" destination="bOo-Q5-uoo" id="a5L-vm-epR"/>
                         <outlet property="genderLabel" destination="aOy-8P-bYX" id="0XD-R3-B5h"/>
+                        <outlet property="linkWithMomLabel" destination="Bww-ST-85L" id="REV-1v-1zW"/>
+                        <outlet property="shareCodeLabel" destination="sR7-Ax-ASP" id="qwH-Rx-rQ4"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ta3-Ge-I0G" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -441,7 +443,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BuD-IF-LrT" customClass="SettingUINavigationController" customModule="CocoaBaby" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="ic_settings_white" id="2fi-fG-rT0"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ezE-F5-8Kz">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ezE-F5-8Kz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
