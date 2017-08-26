@@ -49,10 +49,10 @@ class TipsPageViewController: UIPageViewController {
     }
     
     func setOrder() -> Int {
-        if UserDefaults.standard.object(forKey: "savedPreviousPage" ) == nil {
-            UserDefaults.standard.set(1, forKey: "savedPreviousPage")
+        if UserDefaults.standard.object(forKey: "savedLastPage" ) == nil {
+            UserDefaults.standard.set(1, forKey: "savedLastPage")
         }
-        return UserDefaults.standard.integer(forKey: "savedPreviousPage")
+        return UserDefaults.standard.integer(forKey: "savedLastPage")
     }
 }
 
@@ -119,10 +119,10 @@ extension TipsPageViewController: UIPageViewControllerDataSource, UIPageViewCont
                 let currentOrder = currentViewControllers.order {
                 if previousOrder < currentOrder {
                     self.order? += 1
-                    UserDefaults.standard.set(self.order, forKey: "savedPreviousPage")
+                    UserDefaults.standard.set(self.order, forKey: "savedLastPage")
                 } else if previousOrder > currentOrder {
                     self.order? -= 1
-                    UserDefaults.standard.set(self.order, forKey: "savedPreviousPage")
+                    UserDefaults.standard.set(self.order, forKey: "savedLastPage")
                 }
             }
         }
