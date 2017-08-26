@@ -45,7 +45,6 @@ class TipsDetailViewController: UIViewController {
             self.segmentedControl.addTarget(self, action: #selector(tipTargetChanged(segControl:)), for: .valueChanged)
             tipTargetChanged(segControl: segmentedControl)
         }
-
         
         self.tableView.reloadData()
         self.tableView.scrollsToTop = true

@@ -11,7 +11,7 @@ import UIKit
 class TipsPageViewController: UIPageViewController {
 
     private var reusableViewControllers = Set<TipsDetailViewController>()
-    var order = (BabyStore.shared.getPregnantWeek().week + 3)/4
+    var order : Int!
     var pageIsAnimating: Bool = false
     
     override func viewDidLoad() {
@@ -20,6 +20,7 @@ class TipsPageViewController: UIPageViewController {
         self.pageIsAnimating = false
         self.dataSource = self
         self.delegate = self
+        order = setOrder()
         
         let initialViewController = self.unusedViewController()
         
@@ -31,7 +32,6 @@ class TipsPageViewController: UIPageViewController {
             initialViewController.segmentedControl.addTarget(initialViewController, action: #selector(initialViewController.tipTargetChanged(segControl:)), for: .valueChanged)
             initialViewController.tipTargetChanged(segControl: initialViewController.segmentedControl)
         })
-        
     }
 
     // Tips pageView에서 재사용되는 뷰를 만들기 위함. 만약 reusableViewControllers set에 남은 것이 있으면 그것을 사용하고
@@ -46,6 +46,13 @@ class TipsPageViewController: UIPageViewController {
             reusableViewControllers.insert(newViewController)
             return newViewController
         } 
+    }
+    
+    func setOrder() -> Int {
+        if UserDefaults.standard.object(forKey: "savedPreviousPage" ) == nil {
+            UserDefaults.standard.set(1, forKey: "savedPreviousPage")
+        }
+        return UserDefaults.standard.integer(forKey: "savedPreviousPage")
     }
 }
 
@@ -111,9 +118,11 @@ extension TipsPageViewController: UIPageViewControllerDataSource, UIPageViewCont
             if let previousOrder = previousViewControllers.order,
                 let currentOrder = currentViewControllers.order {
                 if previousOrder < currentOrder {
-                    self.order += 1
+                    self.order? += 1
+                    UserDefaults.standard.set(self.order, forKey: "savedPreviousPage")
                 } else if previousOrder > currentOrder {
-                    self.order -= 1
+                    self.order? -= 1
+                    UserDefaults.standard.set(self.order, forKey: "savedPreviousPage")
                 }
             }
         }

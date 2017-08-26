@@ -76,9 +76,7 @@ extension FireBaseAPI {
         tips.papaTitle = papaTitle as! String
         tips.papaContent = papaContent as! String
         tips.title = title as! String
-        
-        print(tips)
-        
+                
         return (order,tips)
         
     }
