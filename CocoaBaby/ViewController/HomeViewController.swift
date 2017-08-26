@@ -12,7 +12,6 @@ import WaterDrops
 
 class HomeViewController: BaseViewController {
     
-
     @IBOutlet weak var bgView: UIImageView!
     @IBOutlet var babyImageView: UIImageView!
     @IBOutlet var babyView: BabyView!
@@ -36,7 +35,7 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         checkLocalization()
-        speechBubble.alpha = 0
+        speechBubble.alpha = 0                                      
         speechBubbleLabel.alpha = 0
     }
     
@@ -63,7 +62,7 @@ class HomeViewController: BaseViewController {
         self.waterDropsView?.isUserInteractionEnabled = false
         self.babyView.addSubview(waterDropsView!)
         
-        babyImageView.image = UIImage(named: "CocoaBaby")?.withRenderingMode(.alwaysTemplate)
+        babyImageView.image = UIImage(named: "babyweek23")?.withRenderingMode(.alwaysTemplate)
         babyImageView.tintColor = UIColor.mainBlueColor
         self.beginBabyAnimation()
 
