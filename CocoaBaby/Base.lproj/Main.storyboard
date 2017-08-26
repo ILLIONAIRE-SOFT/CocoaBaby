@@ -60,14 +60,15 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bL6-i6-AME">
-                                <rect key="frame" x="67.5" y="547" width="240" height="50"/>
+                                <rect key="frame" x="67.5" y="515" width="240" height="44"/>
                                 <color key="backgroundColor" red="0.8666666666666667" green="0.29411764705882354" blue="0.2196078431372549" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="Login with Google">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="10"/>
+                                        <integer key="value" value="4"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -82,18 +83,19 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FUG-JK-4Dj">
-                                <rect key="frame" x="67.5" y="467" width="240" height="50"/>
+                                <rect key="frame" x="67.5" y="457" width="240" height="44"/>
                                 <color key="backgroundColor" red="0.32156862745098036" green="0.49019607843137253" blue="0.74117647058823533" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="9gq-a0-9la"/>
+                                    <constraint firstAttribute="height" constant="44" id="9gq-a0-9la"/>
                                     <constraint firstAttribute="width" constant="240" id="AV6-79-06c"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <state key="normal" title="Login with Facebook">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                        <integer key="value" value="10"/>
+                                        <integer key="value" value="4"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -104,9 +106,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="FUG-JK-4Dj" firstAttribute="leading" secondItem="bL6-i6-AME" secondAttribute="leading" id="4oc-CY-9mM"/>
-                            <constraint firstItem="Aw6-7i-vef" firstAttribute="top" secondItem="FUG-JK-4Dj" secondAttribute="bottom" constant="150" id="MBq-i9-yPl"/>
+                            <constraint firstItem="Aw6-7i-vef" firstAttribute="top" secondItem="FUG-JK-4Dj" secondAttribute="bottom" constant="166" id="MBq-i9-yPl"/>
                             <constraint firstItem="bL6-i6-AME" firstAttribute="centerX" secondItem="ONT-pX-Tjt" secondAttribute="centerX" id="QoJ-p3-Nga"/>
-                            <constraint firstItem="bL6-i6-AME" firstAttribute="top" secondItem="FUG-JK-4Dj" secondAttribute="bottom" constant="30" id="SLb-Ag-w7q"/>
+                            <constraint firstItem="bL6-i6-AME" firstAttribute="top" secondItem="FUG-JK-4Dj" secondAttribute="bottom" constant="14" id="SLb-Ag-w7q"/>
                             <constraint firstItem="y7R-i0-2ld" firstAttribute="centerX" secondItem="ONT-pX-Tjt" secondAttribute="centerX" id="Yjf-DP-568"/>
                             <constraint firstItem="FUG-JK-4Dj" firstAttribute="centerX" secondItem="y7R-i0-2ld" secondAttribute="centerX" id="a2f-fd-YAq"/>
                             <constraint firstItem="y7R-i0-2ld" firstAttribute="centerX" secondItem="ONT-pX-Tjt" secondAttribute="centerX" id="akv-Lg-mPE"/>

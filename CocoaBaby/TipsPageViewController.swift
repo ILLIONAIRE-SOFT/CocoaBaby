@@ -11,7 +11,7 @@ import UIKit
 class TipsPageViewController: UIPageViewController {
 
     private var reusableViewControllers = Set<TipsDetailViewController>()
-    var weekIndex = BabyStore.shared.getPregnantWeek().week
+    var order : Int!
     var pageIsAnimating: Bool = false
     
     override func viewDidLoad() {
@@ -20,18 +20,18 @@ class TipsPageViewController: UIPageViewController {
         self.pageIsAnimating = false
         self.dataSource = self
         self.delegate = self
+        order = setOrder()
+        
         let initialViewController = self.unusedViewController()
         
         self.setViewControllers([ initialViewController ], direction: .forward, animated: true,completion: { bool in
-            // 리팩토링 필요
             initialViewController.view.frame = CGRect(x: -10, y: -30, width: 355, height: 578)
-            initialViewController.week = self.weekIndex
-            initialViewController.weekTitle.text = "Week \(initialViewController.week!)"
+            initialViewController.order = self.order
+            initialViewController.tipTitle.text = TipsStore.shared.Tips[self.order]?.title
             initialViewController.segmentedControl.selectedSegmentIndex = 0
             initialViewController.segmentedControl.addTarget(initialViewController, action: #selector(initialViewController.tipTargetChanged(segControl:)), for: .valueChanged)
             initialViewController.tipTargetChanged(segControl: initialViewController.segmentedControl)
         })
-        
     }
 
     // Tips pageView에서 재사용되는 뷰를 만들기 위함. 만약 reusableViewControllers set에 남은 것이 있으면 그것을 사용하고
@@ -47,7 +47,15 @@ class TipsPageViewController: UIPageViewController {
             return newViewController
         } 
     }
+    
+    func setOrder() -> Int {
+        if UserDefaults.standard.object(forKey: "savedLastPage" ) == nil {
+            UserDefaults.standard.set(1, forKey: "savedLastPage")
+        }
+        return UserDefaults.standard.integer(forKey: "savedLastPage")
+    }
 }
+
 
 
 extension TipsPageViewController: UIPageViewControllerDataSource, UIPageViewControllerDelegate {
@@ -57,7 +65,7 @@ extension TipsPageViewController: UIPageViewControllerDataSource, UIPageViewCont
 
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         let previousViewController = unusedViewController()
-        let previousPageIndex = weekIndex - 1
+        let previousPageIndex = order - 1
         
         if pageIsAnimating {
             return nil
@@ -67,7 +75,7 @@ extension TipsPageViewController: UIPageViewControllerDataSource, UIPageViewCont
             return nil
         }
         
-        previousViewController.week = previousPageIndex
+        previousViewController.order = previousPageIndex
         return previousViewController
     }
     
@@ -78,13 +86,13 @@ extension TipsPageViewController: UIPageViewControllerDataSource, UIPageViewCont
         }
 
         let nextViewController = unusedViewController()
-        let nextPageIndex = weekIndex + 1
+        let nextPageIndex = order + 1
         
-        guard nextPageIndex < 41 else {
+        guard nextPageIndex <= TipsStore.shared.Tips.count else {
             return nil
         }
         
-        nextViewController.week = nextPageIndex
+        nextViewController.order = nextPageIndex
         return nextViewController
     }
     
@@ -107,12 +115,14 @@ extension TipsPageViewController: UIPageViewControllerDataSource, UIPageViewCont
         
         if finished || completed{
             pageIsAnimating = false
-            if let previousWeek = previousViewControllers.week,
-                let currentWeek = currentViewControllers.week {                
-                if previousWeek < currentWeek {
-                    self.weekIndex += 1
-                } else if previousWeek > currentWeek {
-                    self.weekIndex -= 1
+            if let previousOrder = previousViewControllers.order,
+                let currentOrder = currentViewControllers.order {
+                if previousOrder < currentOrder {
+                    self.order? += 1
+                    UserDefaults.standard.set(self.order, forKey: "savedLastPage")
+                } else if previousOrder > currentOrder {
+                    self.order? -= 1
+                    UserDefaults.standard.set(self.order, forKey: "savedLastPage")
                 }
             }
         }

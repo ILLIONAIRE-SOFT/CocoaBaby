@@ -10,7 +10,7 @@ import UIKit
 
 class TipsDetailViewController: UIViewController {
     
-    @IBOutlet var weekTitle: UILabel!
+    @IBOutlet var tipTitle: UILabel!
     @IBOutlet var tableView: UITableView!
     @IBOutlet var segmentedControl: UISegmentedControl!
     @IBOutlet weak var bottomView: UIView!
@@ -18,11 +18,11 @@ class TipsDetailViewController: UIViewController {
     var currentTitle: String = ""
     var currentContent: String = ""
     
-    var week : Int!
+    var tips : Tips!
+    var order : Int!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //self.view.backgroundColor = UIColor(patternImage: UIImage(named: "Gradation2")!)
         self.view.backgroundColor = UIColor.init(colorWithHexValue: 0xF9F9F9, alpha: 1)
         self.view.layer.cornerRadius = 5
         self.bottomView.layer.cornerRadius = 5
@@ -38,20 +38,21 @@ class TipsDetailViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        if let week = week {
-            weekTitle.text = "Week \(week)"
+        if let order = order {
+            tips = TipsStore.shared.Tips[order]
+            tipTitle.text = tips.title
             segmentedControl.selectedSegmentIndex = 0
             self.segmentedControl.addTarget(self, action: #selector(tipTargetChanged(segControl:)), for: .valueChanged)
             tipTargetChanged(segControl: segmentedControl)
         }
-
+        
         self.tableView.reloadData()
         self.tableView.scrollsToTop = true
         self.tableView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 80, right: 0)
     }
     
     func tipTargetChanged(segControl : UISegmentedControl)  {
-        guard let tips = TipsStore.shared.Tips[week] else {
+        guard let tips = TipsStore.shared.Tips[order] else {
             return
         }
         switch segmentedControl.selectedSegmentIndex {
@@ -75,7 +76,6 @@ class TipsDetailViewController: UIViewController {
 
 
 extension TipsDetailViewController : UITableViewDelegate, UITableViewDataSource{
-    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 1

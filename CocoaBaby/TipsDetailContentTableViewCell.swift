@@ -26,9 +26,10 @@ class TipsDetailContentTableViewCell: UITableViewCell {
         let stringValue = content
         let attrString = NSMutableAttributedString(string: stringValue)
         let style = NSMutableParagraphStyle()
-        style.lineSpacing = 5
+        style.lineSpacing = 3
         style.minimumLineHeight = 20
         style.alignment = .justified
+        attrString.addAttribute(NSKernAttributeName, value: -0.4, range: NSMakeRange(0, attrString.length))
         attrString.addAttribute(NSParagraphStyleAttributeName, value: style, range: NSRange(location: 0, length: stringValue.characters.count))
         self.content.attributedText = attrString
 

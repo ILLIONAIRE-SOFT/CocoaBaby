@@ -14,6 +14,7 @@ enum FireBaseAPIError: Error {
     case invalidUser
     case noBaby
     case noTips
+    case noInfos
 }
 
 enum FireBaseDirectoryName: String {
@@ -25,6 +26,7 @@ enum FireBaseDirectoryName: String {
     case month = "month"
     case day = "day"
     case share = "share"
+    case infos = "infos"
 }
 
 enum DiaryPayloadName: String {

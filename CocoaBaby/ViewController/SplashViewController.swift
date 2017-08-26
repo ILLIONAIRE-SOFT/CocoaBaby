@@ -54,6 +54,12 @@ class SplashViewController: UIViewController {
             print("SplashViewController: User is nil go to LoginViewController")
             presentLoginViewController()
         }
+
+        // Tips 없으면 fetch
+        if TipsStore.shared.Tips == nil {
+            TipsStore.shared.fetchTips(completion: { (_) in
+            })
+        }
     }
     
     private func presentMainTabViewController() {

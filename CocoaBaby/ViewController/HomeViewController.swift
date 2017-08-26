@@ -37,6 +37,7 @@ class HomeViewController: BaseViewController {
         checkLocalization()
         speechBubble.alpha = 0                                      
         speechBubbleLabel.alpha = 0
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -85,27 +86,21 @@ class HomeViewController: BaseViewController {
     
     
     // Info label content randomly
-    // 만약 Tips 가 없으면 여기서 처음으로 업데이트
+    // 만약 Info 가 없으면 여기서 처음으로 업데이트
     
     
     private func updateInfoLabel(week: Int) {
-        let randomNum = arc4random_uniform(2)
-        if TipsStore.shared.Tips == nil {
-            TipsStore.shared.fetchTips(completion: { (tips) in
-                self.infoLabel.text = TipsStore.shared.Tips[week]?.babyTitle
+        if InfosStore.shared.Infos == nil {
+            InfosStore.shared.fetchInfos(completion: { (infos) in
+                if let babyInfos = infos?[week]?.babyInfos {
+                    let randomNum = arc4random_uniform(UInt32(babyInfos.count))
+                    self.infoLabel.text = babyInfos[Int(randomNum)]
+                }
             })
-        }
-        else if UserStore.shared.user?.gender == "female" {
-            if randomNum == 1 {
-                self.infoLabel.text = TipsStore.shared.Tips[week]?.babyTitle
-            } else {
-                self.infoLabel.text = TipsStore.shared.Tips[week]?.mamaTitle
-            }
         } else {
-            if randomNum == 1 {
-                self.infoLabel.text = TipsStore.shared.Tips[week]?.babyTitle
-            } else {
-                self.infoLabel.text = TipsStore.shared.Tips[week]?.papaTitle
+            if let babyInfos = InfosStore.shared.Infos[week]?.babyInfos {
+                let randomNum = arc4random_uniform(UInt32(babyInfos.count))
+                self.infoLabel.text = babyInfos[Int(randomNum)]
             }
         }
     }
@@ -207,7 +202,7 @@ class HomeViewController: BaseViewController {
         
         self.popSpeechBubble.isUserInteractionEnabled = false
         
-        let moveRangeX = self.babyAroundView.frame.width - speechBubble.frame.width
+        let moveRangeX = self.babyAroundView.frame.width/5
         let moveRangeY = 15
         
         let randomX = arc4random_uniform(UInt32(moveRangeX))
@@ -215,7 +210,7 @@ class HomeViewController: BaseViewController {
         
         let babyWeek = BabyStore.shared.getPregnantWeek().week
         
-        guard let babySpeechTexts = TipsStore.shared.Tips[babyWeek]?.babySpeech else { return }
+        guard let babySpeechTexts = InfosStore.shared.Infos[babyWeek]?.babySpeech else { return }
         
         let randomSpeechNum = arc4random_uniform(UInt32(babySpeechTexts.count))
         
@@ -258,7 +253,7 @@ class HomeViewController: BaseViewController {
     
     func beginBabyAnimation () {
         UIImageView.animate(withDuration: 8.0, delay:0, options: [.repeat, .autoreverse, .curveEaseInOut], animations: {
-            UIImageView.setAnimationRepeatCount(10)
+            UIImageView.setAnimationRepeatCount(20)
             self.babyImageView.transform = CGAffineTransform(translationX: -12, y: -7)
             self.babyImageView.transform = CGAffineTransform.identity.rotated(by: 0.3)
             
