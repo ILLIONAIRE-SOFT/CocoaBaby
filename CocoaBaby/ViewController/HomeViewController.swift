@@ -207,7 +207,7 @@ class HomeViewController: BaseViewController {
         
         self.popSpeechBubble.isUserInteractionEnabled = false
         
-        let moveRangeX = self.babyAroundView.frame.width - speechBubble.frame.width
+        let moveRangeX = self.babyAroundView.frame.width/5
         let moveRangeY = 15
         
         let randomX = arc4random_uniform(UInt32(moveRangeX))
@@ -258,7 +258,7 @@ class HomeViewController: BaseViewController {
     
     func beginBabyAnimation () {
         UIImageView.animate(withDuration: 8.0, delay:0, options: [.repeat, .autoreverse, .curveEaseInOut], animations: {
-            UIImageView.setAnimationRepeatCount(10)
+            UIImageView.setAnimationRepeatCount(20)
             self.babyImageView.transform = CGAffineTransform(translationX: -12, y: -7)
             self.babyImageView.transform = CGAffineTransform.identity.rotated(by: 0.3)
             
