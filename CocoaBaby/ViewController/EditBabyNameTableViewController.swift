@@ -24,6 +24,8 @@ class EditBabyNameTableViewController: BaseTableViewController {
         super.viewWillAppear(animated)
         
         updateOriginName()
+        changeBgColorBasedOnTime()
+
     }
     
     override func viewDidAppear(_ animated: Bool) {
