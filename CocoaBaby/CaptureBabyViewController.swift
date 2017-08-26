@@ -40,6 +40,7 @@ class CaptureBabyViewController: UIViewController {
     @IBAction func saveToDevice(_ sender: Any) {
         if let image = imageView.image {
             UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+            showSuccessToastMessage()
         }
         self.dismiss(animated: true, completion: nil)
     }
@@ -59,6 +60,26 @@ class CaptureBabyViewController: UIViewController {
             captureWhiteView.isHidden = true
         }
     }
-
-
+    
+    func showSuccessToastMessage()  {
+        let message = UIView(frame: CGRect(x: 0, y: -40, width: self.view.frame.width, height: 40))
+        message.backgroundColor = UIColor(colorWithHexValue: 0xFFFFFF)
+        
+        let label = UILabel(frame: CGRect(x: 0, y: 20, width: self.view.frame.width, height: 20))
+        label.textAlignment = .center
+        label.text = "Saved"
+        label.textColor = UIColor.darkGray
+        label.font = UIFont.systemFont(ofSize: 13)
+        message.addSubview(label)
+        
+        UIApplication.shared.keyWindow?.addSubview(message)
+        
+        UIView.animate(withDuration: 0.5, animations: {
+            message.frame.origin.y += message.frame.height
+        }) { (isCompleted) in
+            UIView.animateKeyframes(withDuration: 0.5, delay: 1, animations: {
+                message.frame.origin.y -= message.frame.height
+            })
+        }
+    }
 }
