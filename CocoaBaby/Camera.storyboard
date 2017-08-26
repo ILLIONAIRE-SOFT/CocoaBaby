@@ -30,7 +30,7 @@
                                     <constraint firstAttribute="width" secondItem="LuR-JH-54O" secondAttribute="height" multiplier="1:1" id="6tb-OC-aJc"/>
                                 </constraints>
                             </view>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="camera_guide" translatesAutoresizingMaskIntoConstraints="NO" id="3XY-hv-etn">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3XY-hv-etn">
                                 <rect key="frame" x="0.0" y="146" width="375" height="375"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Fm-m9-CKp" userLabel="flash">
@@ -134,7 +134,6 @@
     </scenes>
     <resources>
         <image name="camera_flash" width="256" height="450"/>
-        <image name="camera_guide" width="1024" height="1024"/>
         <image name="camera_switchCamera" width="512" height="385"/>
         <image name="camera_takeBtn" width="512" height="512"/>
     </resources>
