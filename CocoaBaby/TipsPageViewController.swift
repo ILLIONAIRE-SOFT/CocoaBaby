@@ -20,6 +20,7 @@ class TipsPageViewController: UIPageViewController {
         self.pageIsAnimating = false
         self.dataSource = self
         self.delegate = self
+        
         let initialViewController = self.unusedViewController()
         
         self.setViewControllers([ initialViewController ], direction: .forward, animated: true,completion: { bool in
@@ -48,6 +49,7 @@ class TipsPageViewController: UIPageViewController {
         } 
     }
 }
+
 
 
 extension TipsPageViewController: UIPageViewControllerDataSource, UIPageViewControllerDelegate {

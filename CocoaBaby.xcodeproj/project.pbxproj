@@ -68,6 +68,8 @@
 		D45189C31F3ACD0700937869 /* DiaryAddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45189C21F3ACD0700937869 /* DiaryAddViewController.swift */; };
 		D45189C71F3AD25200937869 /* DiaryBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45189C61F3AD25200937869 /* DiaryBaseViewController.swift */; };
 		D4E670541F4D95DE00AEBADB /* SettingUINavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D4E670531F4D95DE00AEBADB /* SettingUINavigationController.swift */; };
+		DA1F4A331F5143FA00FF1103 /* FireBaseInfosAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F4A321F5143FA00FF1103 /* FireBaseInfosAPI.swift */; };
+		DA1F4A361F51444300FF1103 /* InfosStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA1F4A351F51444300FF1103 /* InfosStore.swift */; };
 		DA571F921F4C166C008EA81A /* CaptureBabyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA571F911F4C166C008EA81A /* CaptureBabyViewController.swift */; };
 		DA571F9F1F4D5F4A008EA81A /* ShareImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA571F9E1F4D5F4A008EA81A /* ShareImageService.swift */; };
 		DA5C8F2E1F415F0C00AA3185 /* TipsDetailContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA5C8F2C1F415F0C00AA3185 /* TipsDetailContentTableViewCell.swift */; };
@@ -199,6 +201,8 @@
 		D45189C21F3ACD0700937869 /* DiaryAddViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryAddViewController.swift; sourceTree = "<group>"; };
 		D45189C61F3AD25200937869 /* DiaryBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DiaryBaseViewController.swift; sourceTree = "<group>"; };
 		D4E670531F4D95DE00AEBADB /* SettingUINavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingUINavigationController.swift; path = ViewController/SettingUINavigationController.swift; sourceTree = "<group>"; };
+		DA1F4A321F5143FA00FF1103 /* FireBaseInfosAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FireBaseInfosAPI.swift; path = Model/FireBaseInfosAPI.swift; sourceTree = "<group>"; };
+		DA1F4A351F51444300FF1103 /* InfosStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfosStore.swift; sourceTree = "<group>"; };
 		DA571F911F4C166C008EA81A /* CaptureBabyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CaptureBabyViewController.swift; sourceTree = "<group>"; };
 		DA571F9E1F4D5F4A008EA81A /* ShareImageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareImageService.swift; sourceTree = "<group>"; };
 		DA5C8F2C1F415F0C00AA3185 /* TipsDetailContentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsDetailContentTableViewCell.swift; sourceTree = "<group>"; };
@@ -393,6 +397,7 @@
 		496FB1D71F3193CB00E4042D /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				DA1F4A341F51442E00FF1103 /* Infos */,
 				49E659161F42E53300D85C53 /* ShareHelper */,
 				49A4B0E31F3DEEF000CC09A7 /* Diary */,
 				49A4B0E11F3DEDD000CC09A7 /* FireBase */,
@@ -419,6 +424,7 @@
 				49E659211F459C3C00D85C53 /* FireBaseShareAPI.swift */,
 				49C4FA431F469DAB008068D8 /* FireBaseBabyAPI.swift */,
 				49C4FA451F46BC6D008068D8 /* FireBaseTipsAPI.swift */,
+				DA1F4A321F5143FA00FF1103 /* FireBaseInfosAPI.swift */,
 			);
 			name = FireBase;
 			sourceTree = "<group>";
@@ -453,8 +459,8 @@
 			children = (
 				DA571F901F4C1651008EA81A /* Share */,
 				DA7460F91F4405E500568F1C /* Camera */,
-				492057831F41704000F232E2 /* Splash */,
 				49CBF1881F3C338300426D61 /* Login */,
+				492057831F41704000F232E2 /* Splash */,
 				4911D9D21F3446140031B74A /* Settings */,
 				4911D9CF1F3445FD0031B74A /* Tips */,
 				4911D9CC1F34453D0031B74A /* Diary */,
@@ -592,6 +598,14 @@
 				59BB0E835D394CED74697D47 /* Pods-CocoaBabyUITests.release.xcconfig */,
 			);
 			name = Pods;
+			sourceTree = "<group>";
+		};
+		DA1F4A341F51442E00FF1103 /* Infos */ = {
+			isa = PBXGroup;
+			children = (
+				DA1F4A351F51444300FF1103 /* InfosStore.swift */,
+			);
+			name = Infos;
 			sourceTree = "<group>";
 		};
 		DA571F901F4C1651008EA81A /* Share */ = {
@@ -1050,6 +1064,7 @@
 				DA7461031F4405F800568F1C /* ImageService.swift in Sources */,
 				4911D9CB1F3444A70031B74A /* BaseViewController.swift in Sources */,
 				DAB5A40F1F32126C000235B0 /* Extension.swift in Sources */,
+				DA1F4A331F5143FA00FF1103 /* FireBaseInfosAPI.swift in Sources */,
 				492057821F41479100F232E2 /* DatePickerViewController.swift in Sources */,
 				49FEEE321F3844C70046D5A3 /* CocoaDateFormatter.swift in Sources */,
 				49CBF1871F3C29DE00426D61 /* FireBaseAPI.swift in Sources */,
@@ -1064,6 +1079,7 @@
 				DA5C8F2E1F415F0C00AA3185 /* TipsDetailContentTableViewCell.swift in Sources */,
 				49121B391F4ABAA40045A165 /* SettingsTableViewController.swift in Sources */,
 				49121B3D1F4B05E20045A165 /* LocalizableString.swift in Sources */,
+				DA1F4A361F51444300FF1103 /* InfosStore.swift in Sources */,
 				4911D9E31F3450EF0031B74A /* ErrorMessage.swift in Sources */,
 				DA7461011F4405F800568F1C /* CameraViewController_main.swift in Sources */,
 				DAB5A40B1F31B0C4000235B0 /* TutorialSetNameViewController.swift in Sources */,

@@ -64,10 +64,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
         let babiesRef = Database.database().reference(withPath: "babies")
         let tipsRef = Database.database().reference(withPath: "tips")
         let userRef = Database.database().reference(withPath: "users")
+        let infosRef = Database.database().reference(withPath: "infos")
+        
         diariesRef.keepSynced(true)
         babiesRef.keepSynced(true)
         tipsRef.keepSynced(true)
         userRef.keepSynced(true)
+        infosRef.keepSynced(true)
         
         UINavigationBar.appearance().barStyle = .blackOpaque
         
