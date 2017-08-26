@@ -168,7 +168,7 @@
                         <outlet property="bottomView" destination="YnE-8r-Clh" id="h0b-IX-087"/>
                         <outlet property="segmentedControl" destination="O37-w5-hNA" id="GIm-Lb-lA9"/>
                         <outlet property="tableView" destination="qcH-v4-VJm" id="zd0-ve-dEP"/>
-                        <outlet property="weekTitle" destination="Zm4-2H-B9U" id="fac-i3-KIp"/>
+                        <outlet property="tipTitle" destination="Zm4-2H-B9U" id="Kuy-pk-Wjk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3Kd-vG-Tox" userLabel="First Responder" sceneMemberID="firstResponder"/>

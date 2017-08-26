@@ -17,7 +17,8 @@ enum TipsPayloadName: String {
     case papaTitle = "papaTitle"
     case papaContent = "papaContent"
     case babySpeech = "babySpeech"
-    case week = "week"
+    case title = "title"
+    case order = "order"
 }
 
 enum TipsResult {
@@ -41,9 +42,9 @@ extension FireBaseAPI {
             for snap in snapshot.children.allObjects as! [DataSnapshot] {
                 let dict = snap.value as! [String:Any]
                 if let tips = tips(from: dict) {
-                    let week = tips.0
+                    let order = tips.0
                     let tips = tips.1
-                    result[week] = tips
+                    result[order] = tips
                 }
             }
             completion(TipsResult.success(result))
@@ -62,7 +63,8 @@ extension FireBaseAPI {
             let mamaContent = json[TipsPayloadName.mamaContent.rawValue],
             let papaTitle = json[TipsPayloadName.papaTitle.rawValue],
             let papaContent = json[TipsPayloadName.papaContent.rawValue],
-            let week = json[TipsPayloadName.week.rawValue] as? Int
+            let title = json[TipsPayloadName.title.rawValue],
+            let order = json[TipsPayloadName.order.rawValue] as? Int
             else {
                 return nil
         }
@@ -73,8 +75,11 @@ extension FireBaseAPI {
         tips.mamaContent = mamaContent as! String
         tips.papaTitle = papaTitle as! String
         tips.papaContent = papaContent as! String
+        tips.title = title as! String
         
-        return (week,tips)
+        print(tips)
+        
+        return (order,tips)
         
     }
 }
