@@ -163,6 +163,8 @@
 		49C4FA431F469DAB008068D8 /* FireBaseBabyAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FireBaseBabyAPI.swift; path = CocoaBaby/Model/FireBaseBabyAPI.swift; sourceTree = "<group>"; };
 		49C4FA451F46BC6D008068D8 /* FireBaseTipsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FireBaseTipsAPI.swift; path = CocoaBaby/Model/FireBaseTipsAPI.swift; sourceTree = "<group>"; };
 		49C593751F52BECC00996F86 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		49C593771F52C6D400996F86 /* development.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = development.entitlements; sourceTree = "<group>"; };
+		49C593781F52C6E400996F86 /* production.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = production.entitlements; sourceTree = "<group>"; };
 		49CBF1861F3C29DE00426D61 /* FireBaseAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FireBaseAPI.swift; path = Model/FireBaseAPI.swift; sourceTree = "<group>"; };
 		49CBF1891F3C33E400426D61 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = ViewController/LoginViewController.swift; sourceTree = "<group>"; };
 		49D7F4481F319D99004DF036 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ViewController/HomeViewController.swift; sourceTree = "<group>"; };
@@ -550,6 +552,8 @@
 		49F6C77B1F318AF200373F06 /* CocoaBaby */ = {
 			isa = PBXGroup;
 			children = (
+				49C593781F52C6E400996F86 /* production.entitlements */,
+				49C593771F52C6D400996F86 /* development.entitlements */,
 				DA6C03451F4357A20092443F /* CocoaBaby.entitlements */,
 				4911D9D71F344D920031B74A /* Supporting Files */,
 				DAB5A4141F3332DB000235B0 /* Utilities */,
@@ -1343,7 +1347,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = CocoaBaby/CocoaBaby.entitlements;
+				CODE_SIGN_ENTITLEMENTS = CocoaBaby/development.entitlements;
 				DEVELOPMENT_TEAM = 87BH34CAP6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1365,6 +1369,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = CocoaBaby/production.entitlements;
 				DEVELOPMENT_TEAM = 87BH34CAP6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
