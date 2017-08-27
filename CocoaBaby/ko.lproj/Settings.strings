@@ -1,60 +1,60 @@
 
 /* Class = "UITableViewSection"; headerTitle = "Select Gender"; ObjectID = "014-G3-xYr"; */
-"014-G3-xYr.headerTitle" = "Select Gender";
+"014-G3-xYr.headerTitle" = "성별 선택";
 
 /* Class = "UILabel"; text = "Logout"; ObjectID = "4A7-yF-JGT"; */
-"4A7-yF-JGT.text" = "Logout";
+"4A7-yF-JGT.text" = "로그아웃";
 
 /* Class = "UILabel"; text = "Name"; ObjectID = "Af5-kn-rtx"; */
-"Af5-kn-rtx.text" = "Name";
+"Af5-kn-rtx.text" = "이름";
 
 /* Class = "UILabel"; text = "Link with Mom"; ObjectID = "Bww-ST-85L"; */
-"Bww-ST-85L.text" = "Link with Mom";
+"Bww-ST-85L.text" = "엄마와 연결하기";
 
 /* Class = "UITableViewSection"; headerTitle = "Pregnant date"; ObjectID = "Mj8-EC-gH0"; */
-"Mj8-EC-gH0.headerTitle" = "Pregnant date";
+"Mj8-EC-gH0.headerTitle" = "임신 일자";
 
 /* Class = "UITableViewSection"; headerTitle = "BABY NAME"; ObjectID = "OLH-6u-H8t"; */
-"OLH-6u-H8t.headerTitle" = "BABY NAME";
+"OLH-6u-H8t.headerTitle" = "아기 이름";
 
 /* Class = "UILabel"; text = "Gender"; ObjectID = "P7E-dz-hJQ"; */
-"P7E-dz-hJQ.text" = "Gender";
+"P7E-dz-hJQ.text" = "성별";
 
 /* Class = "UINavigationItem"; title = "Settings"; ObjectID = "PCX-zf-cwG"; */
-"PCX-zf-cwG.title" = "Settings";
+"PCX-zf-cwG.title" = "설정";
 
 /* Class = "UILabel"; text = "Unlink"; ObjectID = "Skc-3i-qec"; */
-"Skc-3i-qec.text" = "Unlink";
+"Skc-3i-qec.text" = "연결 해제";
 
 /* Class = "UITableViewSection"; headerTitle = "Birth Date"; ObjectID = "WvF-bm-IkY"; */
-"WvF-bm-IkY.headerTitle" = "Birth Date";
+"WvF-bm-IkY.headerTitle" = "출산 일자";
 
 /* Class = "UILabel"; text = "Male"; ObjectID = "aOy-8P-bYX"; */
-"aOy-8P-bYX.text" = "Male";
+"aOy-8P-bYX.text" = "남";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "bOo-Q5-uoo"; */
 "bOo-Q5-uoo.text" = "Label";
 
 /* Class = "UITableViewSection"; headerTitle = "Baby settings"; ObjectID = "ed6-K8-oov"; */
-"ed6-K8-oov.headerTitle" = "Baby settings";
+"ed6-K8-oov.headerTitle" = "아기 설정";
 
 /* Class = "UILabel"; text = "Date"; ObjectID = "iet-2D-AuS"; */
-"iet-2D-AuS.text" = "Date";
+"iet-2D-AuS.text" = "날짜";
 
 /* Class = "UITableViewSection"; headerTitle = "Account Settings"; ObjectID = "pE1-yF-Ett"; */
-"pE1-yF-Ett.headerTitle" = "Account Settings";
+"pE1-yF-Ett.headerTitle" = "계정 설정";
 
 /* Class = "UITableViewSection"; headerTitle = "Share settings"; ObjectID = "rPb-Dp-ZjX"; */
-"rPb-Dp-ZjX.headerTitle" = "Share settings";
+"rPb-Dp-ZjX.headerTitle" = "공유 설정";
 
 /* Class = "UILabel"; text = "Link with Dad"; ObjectID = "sR7-Ax-ASP"; */
-"sR7-Ax-ASP.text" = "Link with Dad";
+"sR7-Ax-ASP.text" = "아빠와 공유하기";
 
 /* Class = "UILabel"; text = "Mom"; ObjectID = "uny-nf-pVD"; */
-"uny-nf-pVD.text" = "Mom";
+"uny-nf-pVD.text" = "엄마";
 
 /* Class = "UILabel"; text = "Dad"; ObjectID = "vdI-La-E08"; */
-"vdI-La-E08.text" = "Dad";
+"vdI-La-E08.text" = "아빠";
 
 /* Class = "UILabel"; text = "Label"; ObjectID = "wWi-YF-3s8"; */
 "wWi-YF-3s8.text" = "Label";
