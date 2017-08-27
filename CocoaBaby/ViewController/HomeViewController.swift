@@ -312,7 +312,7 @@ class HomeViewController: BaseViewController {
             self.popSpeechBubble.isEnabled = false
             return UIImage(named: "babyweekBorn")!
         }
-
+        
         switch week {
         case -100...1:
             return UIImage(named: "babyweek0")!

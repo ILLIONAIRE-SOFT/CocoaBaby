@@ -60,6 +60,7 @@
 		49F6C7921F318AF200373F06 /* CocoaBabyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F6C7911F318AF200373F06 /* CocoaBabyTests.swift */; };
 		49F6C79D1F318AF200373F06 /* CocoaBabyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F6C79C1F318AF200373F06 /* CocoaBabyUITests.swift */; };
 		49FEEE321F3844C70046D5A3 /* CocoaDateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FEEE311F3844C70046D5A3 /* CocoaDateFormatter.swift */; };
+		D4061BC21F52F30E00D33A2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 49F6C7831F318AF200373F06 /* Assets.xcassets */; };
 		D45189B61F38420400937869 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D45189B51F38420400937869 /* CustomTableViewCell.swift */; };
 		D45189B81F39669D00937869 /* Diary.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D45189B71F39669D00937869 /* Diary.storyboard */; };
 		D45189BB1F39679700937869 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D45189B91F39679700937869 /* Home.storyboard */; };
@@ -842,6 +843,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D4061BC21F52F30E00D33A2C /* Assets.xcassets in Resources */,
 				496034801F4FDEDB0050AA3E /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -6,23 +6,23 @@
   Copyright © 2017 Sohn. All rights reserved.
 */
 
-"Alert.DoYouWantLogout" = "Do you want logout?";
-"Alert.FatherAlreadyLinked" = "You already link with mother";
-"Alert.AlreadyLinked" = "You already linked. If you want change partner, unlink";
-"Alert.OnlyMomCanShare" = "Only mom can share code";
-"Alert.ShareCodeMessage" = "Enter this code on father's phone.(Setting > Link with Dad)\nDo not exit this message before linking.";
+"Alert.DoYouWantLogout" = "Do you want to logout?";
+"Alert.FatherAlreadyLinked" = "You have already linked with mom";
+"Alert.AlreadyLinked" = "You have already linked. If you want to change partner, unlink it";
+"Alert.OnlyMomCanShare" = "Only mom can share the code";
+"Alert.ShareCodeMessage" = "Enter this code on Dad's phone.(Setting > Link with Dad)\nDo not exit this message before linking.";
 "Alert.PleaseRetry" = "Try later";
-"Alert.OnlyFatherCanLinkWithMom" = "Only father can link with mother\nMom share code with father";
+"Alert.OnlyFatherCanLinkWithMom" = "Only Dad can link with mom\nMom should share the code with Dad";
 "Alert.EnterCodeTitle" = "Enter Code";
-"Alert.EnterCodeMessage" = "Input mother's 6 inteager code";
-"Alert.LinkSuccess" = "Link success";
+"Alert.EnterCodeMessage" = "Enter the 6 digit code given by mom";
+"Alert.LinkSuccess" = "Linked successfully";
 "Alert.UnlinkTitle" = "Unlink";
-"Alert.UnlinkMessage" = "You do not read partner's diary and baby";
+"Alert.UnlinkMessage" = "You can't read partner's diary and baby anymore";
 "Alert.UnlinkSuccess" = "Unlinked";
-"Alert.BirthDateBeforePregnantDate" = "Birth date cannot before pregnant date";
-"Alert.UnlinkBeforeChangeGender" = "Unlink before change gender";
-"Alert.BirthDateBeforeToday" = "Birth date cannot before today";
-"Alert.NotLinked" = "You not linked";
+"Alert.BirthDateBeforePregnantDate" = "Birth date can't be earlier than pregnant date";
+"Alert.UnlinkBeforeChangeGender" = "Unlink before change the gender";
+"Alert.BirthDateBeforeToday" = "Birth date cannot be before the date of today";
+"Alert.NotLinked" = "You are not linked";
 
 
 "Yes" = "Yes";
@@ -48,8 +48,9 @@
 // Tutorial
 "Tutorial.BabyNameTitle" = "What is the baby's name?";
 "Tutorial.BabyNamePlaceholder" = "Please enter your baby's name";
-"Tutorial.LastMenstrualDayTitle" = "When is your last menstrual day before pregnancy?";
-"Tutorial.LastMenstrualDayPlaceholder" = "Please choose your last menstrual day";
-"Tutorial.BirthDayTitle" = "When is the baby's expected date of birth";
+"Tutorial.LastMenstrualDayTitle" = "When's your last date of menstruation just before getting pregnant?";
+"Tutorial.LastMenstrualDayPlaceholder" = "Please select your date of menstruation";
+"Tutorial.BirthDayTitle" = "When is the baby's expected date of birth?";
 "Tutorial.BirthDayPlaceholder" = "Select baby's expected date of birth";
+
 
