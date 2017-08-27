@@ -11,7 +11,7 @@ import Foundation
 struct PushManager {
     
     static var serverURL: String = "http://13.124.140.81"
-    static var port: String = "8080"
+    static var port: String = "80"
     static var diaryNotiURL: String = "/notification/diary"
     static var commentNotiURL: String = "/notification/comment"
     
