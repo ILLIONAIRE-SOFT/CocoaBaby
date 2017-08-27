@@ -24,20 +24,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="D-280" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="E1f-EI-Dda">
-                                <rect key="frame" x="106.5" y="16" width="119.5" height="50.5"/>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="42"/>
+                                <rect key="frame" x="102" y="17.5" width="114" height="48"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="40"/>
                                 <color key="textColor" red="0.23529411759999999" green="0.29411764709999999" blue="0.4823529412" alpha="0.98157112729999996" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="babyweekWidget" translatesAutoresizingMaskIntoConstraints="NO" id="Pv4-d1-6Ut">
-                                <rect key="frame" x="14" y="15" width="70" height="70"/>
+                                <rect key="frame" x="16" y="15" width="70" height="70"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Pv4-d1-6Ut" secondAttribute="height" multiplier="1:1" id="6bF-hF-DsK"/>
                                     <constraint firstAttribute="width" constant="70" id="sRC-Of-Ee3"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Week 1" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="637-8q-VnZ">
-                                <rect key="frame" x="106" y="70" width="47" height="17"/>
+                                <rect key="frame" x="102" y="67.5" width="47" height="17"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                 <color key="textColor" red="0.23529411759999999" green="0.29411764709999999" blue="0.4823529412" alpha="0.98157112729999996" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -46,11 +46,11 @@
                         <color key="backgroundColor" red="1" green="0.82352941180000006" blue="0.86666666670000003" alpha="0.98157112729999996" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="Pv4-d1-6Ut" firstAttribute="centerY" secondItem="S3S-Oj-5AN" secondAttribute="centerY" id="HVK-Cv-ezu"/>
+                            <constraint firstItem="637-8q-VnZ" firstAttribute="leading" secondItem="E1f-EI-Dda" secondAttribute="leading" id="JaK-7Z-Zu6"/>
                             <constraint firstItem="E1f-EI-Dda" firstAttribute="centerY" secondItem="S3S-Oj-5AN" secondAttribute="centerY" multiplier="0.8" constant="1" id="Q1c-gH-Tqw"/>
-                            <constraint firstItem="637-8q-VnZ" firstAttribute="leading" secondItem="Pv4-d1-6Ut" secondAttribute="trailing" constant="22" id="Tmj-0Q-FCi"/>
-                            <constraint firstItem="Pv4-d1-6Ut" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" constant="14" id="XTe-Sq-ZRR"/>
-                            <constraint firstItem="E1f-EI-Dda" firstAttribute="leading" secondItem="Pv4-d1-6Ut" secondAttribute="trailing" constant="22.5" id="XZr-Z7-hRJ"/>
-                            <constraint firstItem="637-8q-VnZ" firstAttribute="top" secondItem="E1f-EI-Dda" secondAttribute="bottom" constant="3.5" id="aNu-ym-1lc"/>
+                            <constraint firstItem="Pv4-d1-6Ut" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" constant="16" id="XTe-Sq-ZRR"/>
+                            <constraint firstItem="E1f-EI-Dda" firstAttribute="leading" secondItem="Pv4-d1-6Ut" secondAttribute="trailing" constant="16" id="XZr-Z7-hRJ"/>
+                            <constraint firstItem="637-8q-VnZ" firstAttribute="top" secondItem="E1f-EI-Dda" secondAttribute="bottom" constant="2" id="aNu-ym-1lc"/>
                         </constraints>
                     </view>
                     <extendedEdge key="edgesForExtendedLayout"/>
