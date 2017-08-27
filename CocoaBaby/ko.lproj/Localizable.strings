@@ -48,7 +48,7 @@
 // Tutorial
 "Tutorial.BabyNameTitle" = "아기의 태명은 무엇인가요?";
 "Tutorial.BabyNamePlaceholder" = "아기의 태명을 입력해주세요.";
-"Tutorial.LastMenstrualDayTitle" = "임신 전 마지막 생리일이 언제인가요?";
+"Tutorial.LastMenstrualDayTitle" = "임신 전 마지막 생리가 시작된 날이 언제인가요?";
 "Tutorial.LastMenstrualDayPlaceholder" = "임신 전 마지막 생리일을 선택해주세요";
 "Tutorial.BirthDayTitle" = "출산 예정일이 언제인가요?";
 "Tutorial.BirthDayPlaceholder" = "아기의 출산 예정일을 선택해주세요.";

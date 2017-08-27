@@ -35,14 +35,13 @@ class HomeViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         checkLocalization()
-        speechBubble.alpha = 0                                      
+        speechBubble.alpha = 0
         speechBubbleLabel.alpha = 0
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        babyImageView.image = UIImage(named: "CocoaBaby")?.withRenderingMode(.alwaysTemplate)
+        babyImageView.image = setBabyImage(week: BabyStore.shared.getPregnantWeek().week).withRenderingMode(.alwaysTemplate)
         babyImageView.tintColor = UIColor.mainBlueColor
         
         changeBg()
@@ -63,7 +62,6 @@ class HomeViewController: BaseViewController {
         self.waterDropsView?.isUserInteractionEnabled = false
         self.babyView.addSubview(waterDropsView!)
         
-        babyImageView.image = UIImage(named: "babyweek23")?.withRenderingMode(.alwaysTemplate)
         babyImageView.tintColor = UIColor.mainBlueColor
         self.beginBabyAnimation()
 
@@ -187,6 +185,30 @@ class HomeViewController: BaseViewController {
             captureWhiteView.isHidden = true
             completion()
         }
+    }
+    
+    func setBabyImage(week : Int) -> UIImage {
+        switch week {
+        case -100...2:
+            return UIImage(named: "babyweek1")!
+        case 3:
+            return UIImage(named: "babyweek3")!
+        case 4:
+            return UIImage(named: "babyweek4")!
+        case 5...6:
+            return UIImage(named: "babyweek5")!
+        case 7...8:
+            return UIImage(named: "babyweek7")!
+        case 9...10:
+            return UIImage(named: "babyweek9")!
+        case 11...12:
+            return UIImage(named: "babyweek11")!
+        case 13...100:
+            return UIImage(named: "babyweek13")!
+        default:
+            break
+        }
+        return UIImage(named: "babyweek13")!
     }
     
     // MARK: - Actions

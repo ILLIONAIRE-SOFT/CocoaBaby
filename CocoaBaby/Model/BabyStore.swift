@@ -143,7 +143,7 @@ class BabyStore {
         let components = calendar.dateComponents([.day], from: pregnantDate, to: today)
         
         if let day = components.day {
-            week.week = (day - 1) / 7 + 1
+            week.week = (day - 1) / 7
             week.dayOfWeek = (day - 1) % 7 + 1
         }
         
