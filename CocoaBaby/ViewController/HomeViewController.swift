@@ -235,7 +235,7 @@ class HomeViewController: BaseViewController {
                 self.speechBubble.alpha = 1
                 self.speechBubbleLabel.alpha = 1
             }) { (isCompleted) in
-                UIView.animate(withDuration: 2, delay: 1, animations: {
+                UIView.animate(withDuration: 2, delay: 2, animations: {
                     // 1초가 기다린뒤 다시 알파를 0으로 만들어준다
                     self.speechBubble.alpha = 0
                     self.speechBubbleLabel.alpha = 0
