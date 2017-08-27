@@ -31,6 +31,7 @@ class HomeViewController: BaseViewController {
     
 
     var waterDropsView : WaterDropsView?
+    var backgroundImageName: String = "cocoaBabyBgNormal"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -133,7 +134,9 @@ class HomeViewController: BaseViewController {
         UIGraphicsEndImageContext()
         
         let backgroundView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.view.frame.height, height: self.view.frame.height))
-        backgroundView.image = UIImage(named: "cocoaBabyBgAfternoonSquareVer")
+        
+        let imageName = "\(backgroundImageName)Square"
+        backgroundView.image = UIImage(named: imageName)
         
         let imageView = UIImageView(image: backgroundClearImage)
         imageView.frame = CGRect(x: backgroundView.frame.width/2 - self.view.frame.width/2, y: 0, width: self.view.frame.width, height: self.view.frame.height)
@@ -187,29 +190,6 @@ class HomeViewController: BaseViewController {
         }
     }
     
-    func setBabyImage(week : Int) -> UIImage {
-        switch week {
-        case -100...2:
-            return UIImage(named: "babyweek1")!
-        case 3:
-            return UIImage(named: "babyweek3")!
-        case 4:
-            return UIImage(named: "babyweek4")!
-        case 5...6:
-            return UIImage(named: "babyweek5")!
-        case 7...8:
-            return UIImage(named: "babyweek7")!
-        case 9...10:
-            return UIImage(named: "babyweek9")!
-        case 11...12:
-            return UIImage(named: "babyweek11")!
-        case 13...100:
-            return UIImage(named: "babyweek13")!
-        default:
-            break
-        }
-        return UIImage(named: "babyweek13")!
-    }
     
     // MARK: - Actions
     
@@ -293,25 +273,24 @@ class HomeViewController: BaseViewController {
             
             UIGraphicsBeginImageContext(self.view.frame.size)
             UIImage(named: "cocoaBabyBgNight")?.draw(in: self.view.bounds)
-
+            backgroundImageName = "cocoaBabyBgNight"
+            
             let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
             UIGraphicsEndImageContext()
             self.view.backgroundColor = UIColor(patternImage: image)
-            
-            
         } else if currentHour >= 6 && currentHour < 16{ //morning
             UIGraphicsBeginImageContext(self.view.frame.size)
             UIImage(named: "cocoaBabyBgNormal")?.draw(in: self.view.bounds)
+            backgroundImageName = "cocoaBabyBgNormal"
             
             let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
             UIGraphicsEndImageContext()
             self.view.backgroundColor = UIColor(patternImage: image)
             
-            //self.babyView.backgroundColor = UIColor.init(colorWithHexValue: 0x000000, alpha: 0.7)
-
         } else if currentHour >= 16 && currentHour <= 19 {
             UIGraphicsBeginImageContext(self.view.frame.size)
             UIImage(named: "cocoaBabyBgAfternoon")?.draw(in: self.view.bounds)
+            backgroundImageName = "cocoaBabyBgAfternoon"
             
             let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
             UIGraphicsEndImageContext()
@@ -324,10 +303,49 @@ class HomeViewController: BaseViewController {
             let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()!
             UIGraphicsEndImageContext()
             self.view.backgroundColor = UIColor(patternImage: image)
-            
-            //self.babyView.backgroundColor = UIColor.init(colorWithHexValue: 0x000000, alpha: 0.7)
         }
     }
+    
+    func setBabyImage(week : Int) -> UIImage {
+        if BabyStore.shared.baby.birthDate < Date().timeIntervalSince1970 {
+            return UIImage(named: "babyweekBorn")!
+        }
+
+        switch week {
+        case -100...1:
+            return UIImage(named: "babyweek0")!
+        case 2:
+            return UIImage(named: "babyweek2")!
+        case 3:
+            return UIImage(named: "babyweek3")!
+        case 4:
+            return UIImage(named: "babyweek4")!
+        case 5...6:
+            return UIImage(named: "babyweek5")!
+        case 7...8:
+            return UIImage(named: "babyweek7")!
+        case 9...10:
+            return UIImage(named: "babyweek9")!
+        case 11...12:
+            return UIImage(named: "babyweek11")!
+        case 13...15:
+            return UIImage(named: "babyweek13")!
+        case 16...17:
+            return UIImage(named: "babyweek16")!
+        case 18...23:
+            return UIImage(named: "babyweek18")!
+        case 24...27:
+            return UIImage(named: "babyweek24")!
+        case 28...29:
+            return UIImage(named: "babyweek28")!
+        case 30...100:
+            return UIImage(named: "babyweek30")!
+        default:
+            break
+        }
+        return UIImage(named: "babyweek13")!
+    }
+
 }
 
 class BabyView: UIView {
