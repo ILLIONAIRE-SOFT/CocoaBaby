@@ -74,7 +74,6 @@ class TipsDetailViewController: UIViewController {
     
 }
 
-
 extension TipsDetailViewController : UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

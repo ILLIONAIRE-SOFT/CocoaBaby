@@ -10,7 +10,7 @@
 "Alert.FatherAlreadyLinked" = "You already link with mother";
 "Alert.AlreadyLinked" = "You already linked. If you want change partner, unlink";
 "Alert.OnlyMomCanShare" = "Only mom can share code";
-"Alert.ShareCodeMessage" = "Enter this code on father's phone.\nDon't quit this message";
+"Alert.ShareCodeMessage" = "Enter this code on father's phone.(Setting > Link with Dad)\nDo not exit this message before linking.";
 "Alert.PleaseRetry" = "Try later";
 "Alert.OnlyFatherCanLinkWithMom" = "Only father can link with mother\nMom share code with father";
 "Alert.EnterCodeTitle" = "Enter Code";
