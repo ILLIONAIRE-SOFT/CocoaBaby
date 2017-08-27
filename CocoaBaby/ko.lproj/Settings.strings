@@ -12,7 +12,7 @@
 "Bww-ST-85L.text" = "엄마와 연결하기";
 
 /* Class = "UITableViewSection"; headerTitle = "Pregnant date"; ObjectID = "Mj8-EC-gH0"; */
-"Mj8-EC-gH0.headerTitle" = "임신 전 마지막 생리일";
+"Mj8-EC-gH0.headerTitle" = "임신 전 마지막 생리가 시작된 날";
 
 /* Class = "UITableViewSection"; headerTitle = "BABY NAME"; ObjectID = "OLH-6u-H8t"; */
 "OLH-6u-H8t.headerTitle" = "아기 태명";
