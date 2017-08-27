@@ -308,6 +308,8 @@ class HomeViewController: BaseViewController {
     
     func setBabyImage(week : Int) -> UIImage {
         if BabyStore.shared.baby.birthDate < Date().timeIntervalSince1970 {
+            self.speechBubble.isHidden = true
+            self.popSpeechBubble.isEnabled = false
             return UIImage(named: "babyweekBorn")!
         }
 
