@@ -1,0 +1,60 @@
+
+/* Class = "UITableViewSection"; headerTitle = "Select Gender"; ObjectID = "014-G3-xYr"; */
+"014-G3-xYr.headerTitle" = "Select Gender";
+
+/* Class = "UILabel"; text = "Logout"; ObjectID = "4A7-yF-JGT"; */
+"4A7-yF-JGT.text" = "Logout";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "Af5-kn-rtx"; */
+"Af5-kn-rtx.text" = "Name";
+
+/* Class = "UILabel"; text = "Link with Mom"; ObjectID = "Bww-ST-85L"; */
+"Bww-ST-85L.text" = "Link with Mom";
+
+/* Class = "UITableViewSection"; headerTitle = "Pregnant date"; ObjectID = "Mj8-EC-gH0"; */
+"Mj8-EC-gH0.headerTitle" = "Pregnant date";
+
+/* Class = "UITableViewSection"; headerTitle = "BABY NAME"; ObjectID = "OLH-6u-H8t"; */
+"OLH-6u-H8t.headerTitle" = "BABY NAME";
+
+/* Class = "UILabel"; text = "Gender"; ObjectID = "P7E-dz-hJQ"; */
+"P7E-dz-hJQ.text" = "Gender";
+
+/* Class = "UINavigationItem"; title = "Settings"; ObjectID = "PCX-zf-cwG"; */
+"PCX-zf-cwG.title" = "Settings";
+
+/* Class = "UILabel"; text = "Unlink"; ObjectID = "Skc-3i-qec"; */
+"Skc-3i-qec.text" = "Unlink";
+
+/* Class = "UITableViewSection"; headerTitle = "Birth Date"; ObjectID = "WvF-bm-IkY"; */
+"WvF-bm-IkY.headerTitle" = "Birth Date";
+
+/* Class = "UILabel"; text = "Male"; ObjectID = "aOy-8P-bYX"; */
+"aOy-8P-bYX.text" = "Male";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "bOo-Q5-uoo"; */
+"bOo-Q5-uoo.text" = "Label";
+
+/* Class = "UITableViewSection"; headerTitle = "Baby settings"; ObjectID = "ed6-K8-oov"; */
+"ed6-K8-oov.headerTitle" = "Baby settings";
+
+/* Class = "UILabel"; text = "Date"; ObjectID = "iet-2D-AuS"; */
+"iet-2D-AuS.text" = "Date";
+
+/* Class = "UITableViewSection"; headerTitle = "Account Settings"; ObjectID = "pE1-yF-Ett"; */
+"pE1-yF-Ett.headerTitle" = "Account Settings";
+
+/* Class = "UITableViewSection"; headerTitle = "Share settings"; ObjectID = "rPb-Dp-ZjX"; */
+"rPb-Dp-ZjX.headerTitle" = "Share settings";
+
+/* Class = "UILabel"; text = "Link with Dad"; ObjectID = "sR7-Ax-ASP"; */
+"sR7-Ax-ASP.text" = "Link with Dad";
+
+/* Class = "UILabel"; text = "Mom"; ObjectID = "uny-nf-pVD"; */
+"uny-nf-pVD.text" = "Mom";
+
+/* Class = "UILabel"; text = "Dad"; ObjectID = "vdI-La-E08"; */
+"vdI-La-E08.text" = "Dad";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "wWi-YF-3s8"; */
+"wWi-YF-3s8.text" = "Label";
