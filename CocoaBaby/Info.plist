@@ -31,7 +31,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>3</string>
 	<key>FacebookAppID</key>
 	<string>294759951000247</string>
 	<key>FacebookDisplayName</key>
@@ -46,9 +46,9 @@
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSCameraUsageDescription</key>
-	<string></string>
+	<string>We use camera for take photo</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string></string>
+	<string>To save your photo</string>
 	<key>UIApplicationShortcutItems</key>
 	<array>
 		<dict>
