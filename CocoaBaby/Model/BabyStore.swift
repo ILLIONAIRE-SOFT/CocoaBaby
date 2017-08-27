@@ -51,7 +51,7 @@ class BabyStore {
                     "babyBirthDate" : baby?.birthDate ?? 0
                 ]
                 
-                UserDefaults.init(suiteName: "group.com.Sohn.CocoaBaby")?.setValuesForKeys(userDefaultsValues)
+                UserDefaults.init(suiteName: "group.ILSO.CocoaBaby")?.setValuesForKeys(userDefaultsValues)
                 
                 completion(baby)
             case .failure(_):

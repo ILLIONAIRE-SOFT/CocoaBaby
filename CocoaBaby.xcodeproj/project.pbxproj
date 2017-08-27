@@ -38,9 +38,9 @@
 		49A4B0E51F3DEF5C00CC09A7 /* DiaryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A4B0E41F3DEF5C00CC09A7 /* DiaryStore.swift */; };
 		49A4B0E71F3F17BD00CC09A7 /* DiaryEmptyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A4B0E61F3F17BD00CC09A7 /* DiaryEmptyCell.swift */; };
 		49B88EAE1F3BF5A4005043B6 /* UserStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B88EAD1F3BF5A4005043B6 /* UserStore.swift */; };
-		49B88EB01F3C2774005043B6 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49B88EAF1F3C2774005043B6 /* GoogleService-Info.plist */; };
 		49C4FA441F469DAB008068D8 /* FireBaseBabyAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C4FA431F469DAB008068D8 /* FireBaseBabyAPI.swift */; };
 		49C4FA461F46BC6D008068D8 /* FireBaseTipsAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C4FA451F46BC6D008068D8 /* FireBaseTipsAPI.swift */; };
+		49C593761F52BECC00996F86 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49C593751F52BECC00996F86 /* GoogleService-Info.plist */; };
 		49CBF1871F3C29DE00426D61 /* FireBaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CBF1861F3C29DE00426D61 /* FireBaseAPI.swift */; };
 		49CBF18A1F3C33E400426D61 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CBF1891F3C33E400426D61 /* LoginViewController.swift */; };
 		49D7F44A1F319D99004DF036 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D7F4481F319D99004DF036 /* HomeViewController.swift */; };
@@ -160,9 +160,9 @@
 		49A4B0E41F3DEF5C00CC09A7 /* DiaryStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiaryStore.swift; path = Model/DiaryStore.swift; sourceTree = "<group>"; };
 		49A4B0E61F3F17BD00CC09A7 /* DiaryEmptyCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiaryEmptyCell.swift; path = View/DiaryEmptyCell.swift; sourceTree = "<group>"; };
 		49B88EAD1F3BF5A4005043B6 /* UserStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserStore.swift; path = Model/UserStore.swift; sourceTree = "<group>"; };
-		49B88EAF1F3C2774005043B6 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		49C4FA431F469DAB008068D8 /* FireBaseBabyAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FireBaseBabyAPI.swift; path = CocoaBaby/Model/FireBaseBabyAPI.swift; sourceTree = "<group>"; };
 		49C4FA451F46BC6D008068D8 /* FireBaseTipsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FireBaseTipsAPI.swift; path = CocoaBaby/Model/FireBaseTipsAPI.swift; sourceTree = "<group>"; };
+		49C593751F52BECC00996F86 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		49CBF1861F3C29DE00426D61 /* FireBaseAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FireBaseAPI.swift; path = Model/FireBaseAPI.swift; sourceTree = "<group>"; };
 		49CBF1891F3C33E400426D61 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = ViewController/LoginViewController.swift; sourceTree = "<group>"; };
 		49D7F4481F319D99004DF036 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ViewController/HomeViewController.swift; sourceTree = "<group>"; };
@@ -313,7 +313,7 @@
 		4911D9D71F344D920031B74A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				49B88EAF1F3C2774005043B6 /* GoogleService-Info.plist */,
+				49C593751F52BECC00996F86 /* GoogleService-Info.plist */,
 				49F6C7881F318AF200373F06 /* Info.plist */,
 				4911D9DC1F344DCA0031B74A /* Localizable.strings */,
 				49121B3C1F4B05E20045A165 /* LocalizableString.swift */,
@@ -770,7 +770,7 @@
 				TargetAttributes = {
 					496034771F4FDEDB0050AA3E = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 23EFP3FERN;
+						DevelopmentTeam = 87BH34CAP6;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -780,7 +780,7 @@
 					};
 					49F6C7781F318AF200373F06 = {
 						CreatedOnToolsVersion = 8.3.3;
-						DevelopmentTeam = 23EFP3FERN;
+						DevelopmentTeam = 87BH34CAP6;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -843,6 +843,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49C593761F52BECC00996F86 /* GoogleService-Info.plist in Resources */,
 				D45189BB1F39679700937869 /* Home.storyboard in Resources */,
 				DA7461051F4407D900568F1C /* Camera.storyboard in Resources */,
 				DA6E7C111F4BEE5400F9D636 /* Share.storyboard in Resources */,
@@ -853,7 +854,6 @@
 				49F6C7841F318AF200373F06 /* Assets.xcassets in Resources */,
 				49D7F44D1F31A32E004DF036 /* Tutorial.storyboard in Resources */,
 				D45189C11F39692E00937869 /* Settings.storyboard in Resources */,
-				49B88EB01F3C2774005043B6 /* GoogleService-Info.plist in Resources */,
 				D45189BE1F3968C100937869 /* Tips.storyboard in Resources */,
 				49F6C7821F318AF200373F06 /* Main.storyboard in Resources */,
 			);
@@ -1216,11 +1216,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = TodayExtension/TodayExtension.entitlements;
-				DEVELOPMENT_TEAM = 23EFP3FERN;
+				DEVELOPMENT_TEAM = 87BH34CAP6;
 				INFOPLIST_FILE = TodayExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Sohn.CocoaBaby.TodayExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ILSO.CocoaBaby.TodayExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -1231,11 +1231,11 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = TodayExtension/TodayExtension.entitlements;
-				DEVELOPMENT_TEAM = 23EFP3FERN;
+				DEVELOPMENT_TEAM = 87BH34CAP6;
 				INFOPLIST_FILE = TodayExtension/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Sohn.CocoaBaby.TodayExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ILSO.CocoaBaby.TodayExtension;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 3.0;
@@ -1344,7 +1344,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = CocoaBaby/CocoaBaby.entitlements;
-				DEVELOPMENT_TEAM = 23EFP3FERN;
+				DEVELOPMENT_TEAM = 87BH34CAP6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1352,7 +1352,7 @@
 				INFOPLIST_FILE = CocoaBaby/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Sohn.CocoaBaby;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ILSO.CocoaBaby;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1365,7 +1365,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 23EFP3FERN;
+				DEVELOPMENT_TEAM = 87BH34CAP6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1373,7 +1373,7 @@
 				INFOPLIST_FILE = CocoaBaby/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.Sohn.CocoaBaby;
+				PRODUCT_BUNDLE_IDENTIFIER = com.ILSO.CocoaBaby;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = 1;

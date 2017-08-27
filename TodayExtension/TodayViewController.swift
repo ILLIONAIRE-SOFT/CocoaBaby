@@ -23,7 +23,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
     func initLabels() {
         
-        if let birthDate = UserDefaults.init(suiteName: "group.com.Sohn.CocoaBaby")?.value(forKey: "babyBirthDate") {
+        if let birthDate = UserDefaults.init(suiteName: "group.ILSO.CocoaBaby")?.value(forKey: "babyBirthDate") {
             
             let dDay = TodayHelper.getDday(to: birthDate as! Double)
             dDayLabel.text = "D-\(dDay)"
@@ -31,7 +31,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             print("Birth date is not exist")
         }
         
-        if let pregnantDate = UserDefaults.init(suiteName: "group.com.Sohn.CocoaBaby")?.value(forKey: "babyPregnantDate") {
+        if let pregnantDate = UserDefaults.init(suiteName: "group.ILSO.CocoaBaby")?.value(forKey: "babyPregnantDate") {
             
             let currentWeek = TodayHelper.getCurrentWeek(from: pregnantDate as! Double)
             weekLabel.text = "Week \(currentWeek)"
