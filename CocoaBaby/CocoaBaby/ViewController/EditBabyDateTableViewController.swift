@@ -154,6 +154,15 @@ extension EditBabyDateTableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
+        switch indexPath.section {
+        case 0:
+            pregnantDateField.becomeFirstResponder()
+        case 1:
+            birthDateField.becomeFirstResponder()
+        default:
+            break
+        }
+        
         tableView.deselectRow(at: indexPath, animated: true)
     }
 }

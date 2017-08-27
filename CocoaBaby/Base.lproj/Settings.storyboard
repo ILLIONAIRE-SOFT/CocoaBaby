@@ -245,7 +245,7 @@
                         <sections>
                             <tableViewSection headerTitle="Last Menstrual Day" id="Mj8-EC-gH0">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="85C-WX-0Jb">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="85C-WX-0Jb">
                                         <rect key="frame" x="0.0" y="55.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="85C-WX-0Jb" id="iMH-vW-Van">
@@ -274,7 +274,7 @@
                             </tableViewSection>
                             <tableViewSection headerTitle="Expected Birth Date" id="WvF-bm-IkY">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="uMD-H2-hVU">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="uMD-H2-hVU">
                                         <rect key="frame" x="0.0" y="155.5" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uMD-H2-hVU" id="Yea-fk-Pj5">
@@ -443,7 +443,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="BuD-IF-LrT" customClass="SettingUINavigationController" customModule="CocoaBaby" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="" image="ic_settings_white" id="2fi-fG-rT0"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ezE-F5-8Kz">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="ezE-F5-8Kz">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
