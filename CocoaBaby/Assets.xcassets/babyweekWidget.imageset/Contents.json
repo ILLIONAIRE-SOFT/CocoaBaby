@@ -2,11 +2,11 @@
   "images" : [
     {
       "idiom" : "universal",
+      "filename" : "babyweekWidget.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "cocoaBabyBgNormalSquare.png",
       "scale" : "2x"
     },
     {
