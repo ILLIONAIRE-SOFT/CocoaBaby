@@ -31,7 +31,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>5</string>
+	<string>6</string>
 	<key>FacebookAppID</key>
 	<string>294759951000247</string>
 	<key>FacebookDisplayName</key>
@@ -59,7 +59,7 @@
 			<key>UIApplicationShortcutItemTitle</key>
 			<string>Write Diary</string>
 			<key>UIApplicationShortcutItemType</key>
-			<string>com.Sohn.CocoaBaby.First</string>
+			<string>com.ILSO.CocoaBaby.First</string>
 			<key>UIApplicationShortcutItemUserInfo</key>
 			<dict>
 				<key>firstShortcutKey1</key>
