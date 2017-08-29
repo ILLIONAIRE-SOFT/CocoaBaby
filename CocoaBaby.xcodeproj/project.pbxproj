@@ -25,13 +25,13 @@
 		492057821F41479100F232E2 /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492057811F41479100F232E2 /* DatePickerViewController.swift */; };
 		492057861F41705700F232E2 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492057851F41705700F232E2 /* SplashViewController.swift */; };
 		493631DE1F31C662008C774E /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493631DD1F31C662008C774E /* TabBarViewController.swift */; };
+		493E33001F5557ED009AF9F3 /* SelectGenderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493E32FF1F5557ED009AF9F3 /* SelectGenderTableViewController.swift */; };
 		4960347A1F4FDEDB0050AA3E /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 496034791F4FDEDB0050AA3E /* NotificationCenter.framework */; };
 		4960347D1F4FDEDB0050AA3E /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4960347C1F4FDEDB0050AA3E /* TodayViewController.swift */; };
 		496034801F4FDEDB0050AA3E /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4960347E1F4FDEDB0050AA3E /* MainInterface.storyboard */; };
 		496034841F4FDEDB0050AA3E /* TodayExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 496034781F4FDEDB0050AA3E /* TodayExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		4960348B1F4FE5E20050AA3E /* TodayHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4960348A1F4FE5E20050AA3E /* TodayHelper.swift */; };
 		4960348F1F502DE10050AA3E /* AlertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4960348E1F502DE10050AA3E /* AlertController.swift */; };
-		496B8A8F1F4D90D300DDD8AC /* SelectGenderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496B8A8E1F4D90D300DDD8AC /* SelectGenderTableViewController.swift */; };
 		496B8A931F4DA31800DDD8AC /* EditBabyNameTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496B8A921F4DA31800DDD8AC /* EditBabyNameTableViewController.swift */; };
 		496FB1E11F31986E00E4042D /* BabyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496FB1E01F31986E00E4042D /* BabyStore.swift */; };
 		499B6AE799D70C5EF0497B9D /* Pods_CocoaBabyUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D030A7C3DA05CE73E2A7E35 /* Pods_CocoaBabyUITests.framework */; };
@@ -147,6 +147,7 @@
 		492057811F41479100F232E2 /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		492057851F41705700F232E2 /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SplashViewController.swift; path = ViewController/SplashViewController.swift; sourceTree = "<group>"; };
 		493631DD1F31C662008C774E /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarViewController.swift; path = ViewController/TabBarViewController.swift; sourceTree = "<group>"; };
+		493E32FF1F5557ED009AF9F3 /* SelectGenderTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectGenderTableViewController.swift; path = ViewController/SelectGenderTableViewController.swift; sourceTree = "<group>"; };
 		496034781F4FDEDB0050AA3E /* TodayExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = TodayExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		496034791F4FDEDB0050AA3E /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		4960347C1F4FDEDB0050AA3E /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
@@ -155,7 +156,6 @@
 		496034891F4FE0E00050AA3E /* TodayExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TodayExtension.entitlements; sourceTree = "<group>"; };
 		4960348A1F4FE5E20050AA3E /* TodayHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TodayHelper.swift; sourceTree = "<group>"; };
 		4960348E1F502DE10050AA3E /* AlertController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = AlertController.swift; path = Utilities/AlertController.swift; sourceTree = "<group>"; };
-		496B8A8E1F4D90D300DDD8AC /* SelectGenderTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SelectGenderTableViewController.swift; path = CocoaBaby/ViewController/SelectGenderTableViewController.swift; sourceTree = "<group>"; };
 		496B8A921F4DA31800DDD8AC /* EditBabyNameTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditBabyNameTableViewController.swift; path = ViewController/EditBabyNameTableViewController.swift; sourceTree = "<group>"; };
 		496FB1E01F31986E00E4042D /* BabyStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BabyStore.swift; path = Model/BabyStore.swift; sourceTree = "<group>"; };
 		49A4B0E41F3DEF5C00CC09A7 /* DiaryStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiaryStore.swift; path = Model/DiaryStore.swift; sourceTree = "<group>"; };
@@ -393,7 +393,7 @@
 		496B8A941F4DAB8400DDD8AC /* UserSettings */ = {
 			isa = PBXGroup;
 			children = (
-				496B8A8E1F4D90D300DDD8AC /* SelectGenderTableViewController.swift */,
+				493E32FF1F5557ED009AF9F3 /* SelectGenderTableViewController.swift */,
 			);
 			name = UserSettings;
 			sourceTree = "<group>";
@@ -1077,6 +1077,7 @@
 				DA1F4A331F5143FA00FF1103 /* FireBaseInfosAPI.swift in Sources */,
 				492057821F41479100F232E2 /* DatePickerViewController.swift in Sources */,
 				49FEEE321F3844C70046D5A3 /* CocoaDateFormatter.swift in Sources */,
+				493E33001F5557ED009AF9F3 /* SelectGenderTableViewController.swift in Sources */,
 				49CBF1871F3C29DE00426D61 /* FireBaseAPI.swift in Sources */,
 				49E6591E1F45672C00D85C53 /* PushManager.swift in Sources */,
 				4911D9CE1F34455D0031B74A /* DiaryViewController.swift in Sources */,
@@ -1104,7 +1105,6 @@
 				49A4B0E71F3F17BD00CC09A7 /* DiaryEmptyCell.swift in Sources */,
 				D45189C71F3AD25200937869 /* DiaryBaseViewController.swift in Sources */,
 				492057801F4143C500F232E2 /* CocoaDatePickerView.swift in Sources */,
-				496B8A8F1F4D90D300DDD8AC /* SelectGenderTableViewController.swift in Sources */,
 				DAEE34BF1F3834FC0090DBF5 /* TipsDetailViewController.swift in Sources */,
 				DA7460FF1F4405F800568F1C /* CameraViewController_camera.swift in Sources */,
 				496B8A931F4DA31800DDD8AC /* EditBabyNameTableViewController.swift in Sources */,
