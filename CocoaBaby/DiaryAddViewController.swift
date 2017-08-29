@@ -188,6 +188,11 @@ class DiaryAddViewController: DiaryBaseViewController {
             return
         }
         
+        if diary.text == textView.text {
+            self.dismiss(animated: true, completion: nil)
+            return
+        }
+        
         diary.text = textView.text
         
         if isUpdate {
