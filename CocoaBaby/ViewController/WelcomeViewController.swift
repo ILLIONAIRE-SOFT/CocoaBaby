@@ -30,8 +30,6 @@ class WelcomeViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        
-        
         let waterDropsViewFrame = CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height)
         
         waterDropsView = WaterDropsView(frame: waterDropsViewFrame,
