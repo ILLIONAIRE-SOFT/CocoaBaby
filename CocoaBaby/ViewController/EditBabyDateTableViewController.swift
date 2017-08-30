@@ -64,8 +64,8 @@ class EditBabyDateTableViewController: BaseTableViewController {
         datePicker = UIDatePicker(frame:CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 216))
         datePicker.backgroundColor = UIColor.white
         datePicker.datePickerMode = UIDatePickerMode.date
-        datePicker.minimumDate = Date.init(timeIntervalSinceNow: -60*60*24*280)
-        datePicker.maximumDate = Date.init(timeIntervalSinceNow: 60*60*24*280)
+        datePicker.minimumDate = Date.init(timeIntervalSinceNow: -60*60*24*280*2)
+        datePicker.maximumDate = Date.init(timeIntervalSinceNow: 60*60*24*280*2)
         textField.inputView = self.datePicker
         
         if textField == pregnantDateField {

@@ -64,7 +64,7 @@ class TutorialSetDateViewController: BaseViewController, UITextFieldDelegate {
         self.datePicker = UIDatePicker(frame:CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 216))
         self.datePicker.backgroundColor = UIColor.white
         self.datePicker.datePickerMode = UIDatePickerMode.date
-        self.datePicker.minimumDate = Date.init(timeIntervalSinceNow: -60*60*24*100)
+        self.datePicker.minimumDate = Date.init(timeIntervalSinceNow: -60*60*24*400)
         self.datePicker.maximumDate = Date.init(timeIntervalSinceNow: 60*60*24*400)
         
         textField.inputView = self.datePicker
