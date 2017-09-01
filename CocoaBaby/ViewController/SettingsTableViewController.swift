@@ -128,7 +128,6 @@ class SettingsTableViewController: BaseTableViewController {
         }
         
         startLoading()
-        
         ShareHelper.createShareSession { (shareResult) in
             self.stopLoading()
             
@@ -145,6 +144,9 @@ class SettingsTableViewController: BaseTableViewController {
             case .failure():
                 let alertController = UIAlertController(style: .done, title: nil, message: LocalizableString.pleaseRetryMessage, doneHandler: nil)
                 
+                self.present(alertController, animated: true, completion: nil)
+            case .noDeviceToken():
+                let alertController = UIAlertController(style: .done, title: nil, message: LocalizableString.pleaseAllowNotification, doneHandler: nil)
                 self.present(alertController, animated: true, completion: nil)
             }
         }

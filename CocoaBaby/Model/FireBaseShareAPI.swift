@@ -22,6 +22,7 @@ enum SharePayloadName: String {
 enum ShareResult {
     case success(Int)
     case failure()
+    case noDeviceToken()
 }
 
 enum LinkResult {
@@ -36,8 +37,9 @@ extension FireBaseAPI {
         guard
             let uid = Auth.auth().currentUser?.uid,
             let token = UserStore.shared.user?.deviceToken else {
-            print(FireBaseAPIError.invalidUser)
-            return
+                print(FireBaseAPIError.invalidUser)
+                completion(ShareResult.noDeviceToken())
+                return
         }
         
         let post = [
@@ -123,9 +125,9 @@ extension FireBaseAPI {
     
     static func unlinkWithPartner(completion: @escaping (LinkResult) -> ()) {
         guard let uid = Auth.auth().currentUser?.uid,
-              let partnerUID = UserStore.shared.user?.partnerUID else {
-            print(FireBaseAPIError.invalidUser)
-            return
+            let partnerUID = UserStore.shared.user?.partnerUID else {
+                print(FireBaseAPIError.invalidUser)
+                return
         }
         
         let post = [

@@ -23,6 +23,7 @@
 "Alert.UnlinkBeforeChangeGender" = "Unlink before change the gender";
 "Alert.BirthDateBeforeToday" = "Birth date cannot be before the date of today";
 "Alert.NotLinked" = "You are not linked";
+"Alert.PleaseAllowNotification" = "Please allow notification(Settings -> Notifications)";
 
 
 "Yes" = "Yes";

@@ -22,6 +22,8 @@ class ShareHelper {
                 completion(result)
             case .failure():
                 completion(result)
+            case .noDeviceToken():
+                completion(result)
             }
         }
     }
@@ -33,6 +35,8 @@ class ShareHelper {
             case .success(_):
                 completion()
             case .failure():
+                completion()
+            default:
                 completion()
             }
         }

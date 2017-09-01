@@ -23,6 +23,7 @@
 "Alert.UnlinkBeforeChangeGender" = "성별을 바꾸기 전에 파트너와 연결을 해제하세요";
 "Alert.BirthDateBeforeToday" = "출산 예정일은 오늘 이전일 수 없습니다";
 "Alert.NotLinked" = "연결이 되어있지 않습니다";
+"Alert.PleaseAllowNotification" = "알림 센터에서 알람을 허용해 주세요(설정 -> 알림)";
 
 // Base
 "Yes" = "예";

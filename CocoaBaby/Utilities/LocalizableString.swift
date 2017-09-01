@@ -28,6 +28,7 @@ struct LocalizableString {
     static let unlinkBeforeChangeGender = NSLocalizedString("Alert.UnlinkBeforeChangeGender", comment: "")
     static let birthDateBeforeToday = NSLocalizedString("Alert.BirthDateBeforeToday", comment: "")
     static let notLinked = NSLocalizedString("Alert.NotLinked", comment: "")
+    static let pleaseAllowNotification = NSLocalizedString("Alert.PleaseAllowNotification", comment: "")
     
     
     // Base
