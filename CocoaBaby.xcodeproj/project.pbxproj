@@ -43,6 +43,7 @@
 		49C593761F52BECC00996F86 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49C593751F52BECC00996F86 /* GoogleService-Info.plist */; };
 		49CBF1871F3C29DE00426D61 /* FireBaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CBF1861F3C29DE00426D61 /* FireBaseAPI.swift */; };
 		49CBF18A1F3C33E400426D61 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CBF1891F3C33E400426D61 /* LoginViewController.swift */; };
+		49D1AD711F59E8B900599863 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49D1AD701F59E8B900599863 /* Default-568h@2x.png */; };
 		49D7F44A1F319D99004DF036 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D7F4481F319D99004DF036 /* HomeViewController.swift */; };
 		49D7F44D1F31A32E004DF036 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49D7F44C1F31A32E004DF036 /* Tutorial.storyboard */; };
 		49D8A3F91F4E9815009AB84C /* EditBabyDateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D8A3F81F4E9815009AB84C /* EditBabyDateTableViewController.swift */; };
@@ -142,8 +143,8 @@
 		49121B3A1F4ADCDF0045A165 /* BaseTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BaseTableViewController.swift; path = ViewController/BaseTableViewController.swift; sourceTree = "<group>"; };
 		49121B3C1F4B05E20045A165 /* LocalizableString.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LocalizableString.swift; path = Utilities/LocalizableString.swift; sourceTree = "<group>"; };
 		4920577B1F413FAB00F232E2 /* Diary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Diary.swift; path = Model/Diary.swift; sourceTree = "<group>"; };
-		4920577D1F41427100F232E2 /* CocoaDatePickerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocoaDatePickerDelegate.swift; sourceTree = "<group>"; };
-		4920577F1F4143C500F232E2 /* CocoaDatePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CocoaDatePickerView.swift; sourceTree = "<group>"; };
+		4920577D1F41427100F232E2 /* CocoaDatePickerDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CocoaDatePickerDelegate.swift; path = Model/CocoaDatePickerDelegate.swift; sourceTree = "<group>"; };
+		4920577F1F4143C500F232E2 /* CocoaDatePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CocoaDatePickerView.swift; path = View/CocoaDatePickerView.swift; sourceTree = "<group>"; };
 		492057811F41479100F232E2 /* DatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DatePickerViewController.swift; path = ViewController/DatePickerViewController.swift; sourceTree = "<group>"; };
 		492057851F41705700F232E2 /* SplashViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SplashViewController.swift; path = ViewController/SplashViewController.swift; sourceTree = "<group>"; };
 		493631DD1F31C662008C774E /* TabBarViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TabBarViewController.swift; path = ViewController/TabBarViewController.swift; sourceTree = "<group>"; };
@@ -168,6 +169,7 @@
 		49C593781F52C6E400996F86 /* production.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = production.entitlements; sourceTree = "<group>"; };
 		49CBF1861F3C29DE00426D61 /* FireBaseAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FireBaseAPI.swift; path = Model/FireBaseAPI.swift; sourceTree = "<group>"; };
 		49CBF1891F3C33E400426D61 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = ViewController/LoginViewController.swift; sourceTree = "<group>"; };
+		49D1AD701F59E8B900599863 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		49D7F4481F319D99004DF036 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ViewController/HomeViewController.swift; sourceTree = "<group>"; };
 		49D7F44C1F31A32E004DF036 /* Tutorial.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Tutorial.storyboard; path = Base.lproj/Tutorial.storyboard; sourceTree = "<group>"; };
 		49D8A3F81F4E9815009AB84C /* EditBabyDateTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditBabyDateTableViewController.swift; path = ViewController/EditBabyDateTableViewController.swift; sourceTree = "<group>"; };
@@ -179,7 +181,7 @@
 		49E6591F1F458C8C00D85C53 /* FireBaseUserAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FireBaseUserAPI.swift; path = Model/FireBaseUserAPI.swift; sourceTree = "<group>"; };
 		49E659211F459C3C00D85C53 /* FireBaseShareAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FireBaseShareAPI.swift; path = Model/FireBaseShareAPI.swift; sourceTree = "<group>"; };
 		49F6C7791F318AF200373F06 /* CocoaBaby.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CocoaBaby.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		49F6C77C1F318AF200373F06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		49F6C77C1F318AF200373F06 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = AppDelegate/AppDelegate.swift; sourceTree = "<group>"; };
 		49F6C7811F318AF200373F06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		49F6C7831F318AF200373F06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49F6C7861F318AF200373F06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -197,7 +199,7 @@
 		82B4242C76CF19998F67AC6F /* Pods-CocoaBaby.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaBaby.release.xcconfig"; path = "Pods/Target Support Files/Pods-CocoaBaby/Pods-CocoaBaby.release.xcconfig"; sourceTree = "<group>"; };
 		92BF7F3D2234DC8D6A2FCFFA /* Pods-CocoaBabyTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaBabyTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CocoaBabyTests/Pods-CocoaBabyTests.release.xcconfig"; sourceTree = "<group>"; };
 		C6926E057D3C9C942A77E732 /* Pods-CocoaBabyUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CocoaBabyUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CocoaBabyUITests/Pods-CocoaBabyUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		D45189B51F38420400937869 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		D45189B51F38420400937869 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CustomTableViewCell.swift; path = View/CustomTableViewCell.swift; sourceTree = "<group>"; };
 		D45189B71F39669D00937869 /* Diary.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Diary.storyboard; path = Base.lproj/Diary.storyboard; sourceTree = "<group>"; };
 		D45189BA1F39679700937869 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Home.storyboard; sourceTree = "<group>"; };
 		D45189BD1F3968C100937869 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Tips.storyboard; sourceTree = "<group>"; };
@@ -206,21 +208,21 @@
 		D45189C61F3AD25200937869 /* DiaryBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DiaryBaseViewController.swift; path = ViewController/DiaryBaseViewController.swift; sourceTree = "<group>"; };
 		D4E670531F4D95DE00AEBADB /* SettingUINavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingUINavigationController.swift; path = ViewController/SettingUINavigationController.swift; sourceTree = "<group>"; };
 		DA1F4A321F5143FA00FF1103 /* FireBaseInfosAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FireBaseInfosAPI.swift; path = Model/FireBaseInfosAPI.swift; sourceTree = "<group>"; };
-		DA1F4A351F51444300FF1103 /* InfosStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InfosStore.swift; sourceTree = "<group>"; };
+		DA1F4A351F51444300FF1103 /* InfosStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfosStore.swift; path = Model/InfosStore.swift; sourceTree = "<group>"; };
 		DA571F911F4C166C008EA81A /* CaptureBabyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CaptureBabyViewController.swift; path = ViewController/CaptureBabyViewController.swift; sourceTree = "<group>"; };
-		DA571F9E1F4D5F4A008EA81A /* ShareImageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareImageService.swift; sourceTree = "<group>"; };
-		DA5C8F2C1F415F0C00AA3185 /* TipsDetailContentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsDetailContentTableViewCell.swift; sourceTree = "<group>"; };
-		DA5C8F311F41AA1000AA3185 /* TipsStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsStore.swift; sourceTree = "<group>"; };
+		DA571F9E1F4D5F4A008EA81A /* ShareImageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShareImageService.swift; path = Extension/ShareImageService.swift; sourceTree = "<group>"; };
+		DA5C8F2C1F415F0C00AA3185 /* TipsDetailContentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TipsDetailContentTableViewCell.swift; path = View/TipsDetailContentTableViewCell.swift; sourceTree = "<group>"; };
+		DA5C8F311F41AA1000AA3185 /* TipsStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TipsStore.swift; path = Model/TipsStore.swift; sourceTree = "<group>"; };
 		DA6C03451F4357A20092443F /* CocoaBaby.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CocoaBaby.entitlements; sourceTree = "<group>"; };
 		DA6E7C101F4BEE5400F9D636 /* Share.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Share.storyboard; path = Base.lproj/Share.storyboard; sourceTree = "<group>"; };
 		DA7460FA1F4405F800568F1C /* CameraViewController_camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraViewController_camera.swift; path = ViewController/CameraViewController_camera.swift; sourceTree = "<group>"; };
 		DA7460FC1F4405F800568F1C /* CameraViewController_main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraViewController_main.swift; path = ViewController/CameraViewController_main.swift; sourceTree = "<group>"; };
 		DA7460FD1F4405F800568F1C /* CameraViewController_services.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraViewController_services.swift; path = ViewController/CameraViewController_services.swift; sourceTree = "<group>"; };
-		DA7460FE1F4405F800568F1C /* ImageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
+		DA7460FE1F4405F800568F1C /* ImageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageService.swift; path = Extension/ImageService.swift; sourceTree = "<group>"; };
 		DA7461041F4407D900568F1C /* Camera.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Camera.storyboard; path = Base.lproj/Camera.storyboard; sourceTree = "<group>"; };
 		DAB5A40A1F31B0C4000235B0 /* TutorialSetNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TutorialSetNameViewController.swift; path = ViewController/TutorialSetNameViewController.swift; sourceTree = "<group>"; };
 		DAB5A40C1F31B185000235B0 /* TutorialSetDateViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TutorialSetDateViewController.swift; path = ViewController/TutorialSetDateViewController.swift; sourceTree = "<group>"; };
-		DAB5A40E1F32126C000235B0 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		DAB5A40E1F32126C000235B0 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Extension.swift; path = Extension/Extension.swift; sourceTree = "<group>"; };
 		DAB5A4161F33331C000235B0 /* ColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ColorExtension.swift; path = Extension/ColorExtension.swift; sourceTree = "<group>"; };
 		DAEE34BE1F3834FC0090DBF5 /* TipsDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TipsDetailViewController.swift; path = ViewController/TipsDetailViewController.swift; sourceTree = "<group>"; };
 		DAEE35061F3CC4B70090DBF5 /* TipsPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TipsPageViewController.swift; path = ViewController/TipsPageViewController.swift; sourceTree = "<group>"; };
@@ -529,6 +531,7 @@
 		49F6C7701F318AF200373F06 = {
 			isa = PBXGroup;
 			children = (
+				49D1AD701F59E8B900599863 /* Default-568h@2x.png */,
 				49F6C77B1F318AF200373F06 /* CocoaBaby */,
 				49F6C7901F318AF200373F06 /* CocoaBabyTests */,
 				49F6C79B1F318AF200373F06 /* CocoaBabyUITests */,
@@ -857,6 +860,7 @@
 				DA7461051F4407D900568F1C /* Camera.storyboard in Resources */,
 				DA6E7C111F4BEE5400F9D636 /* Share.storyboard in Resources */,
 				4911D9DA1F344DCA0031B74A /* Localizable.strings in Resources */,
+				49D1AD711F59E8B900599863 /* Default-568h@2x.png in Resources */,
 				49E659131F42C64A00D85C53 /* UserSettings.storyboard in Resources */,
 				49F6C7871F318AF200373F06 /* LaunchScreen.storyboard in Resources */,
 				D45189B81F39669D00937869 /* Diary.storyboard in Resources */,
