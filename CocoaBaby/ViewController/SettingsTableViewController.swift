@@ -172,6 +172,12 @@ class SettingsTableViewController: BaseTableViewController {
             return
         }
         
+        guard let _ = UserStore.shared.user?.deviceToken else {
+            let alertController = UIAlertController(style: .done, title: nil, message: LocalizableString.pleaseAllowNotification, doneHandler: nil)
+            self.present(alertController, animated: true, completion: nil)
+            return
+        }
+        
         let alertController = UIAlertController(title: LocalizableString.enterCodeTitle, message: LocalizableString.enterCodeMessage, preferredStyle: .alert)
         
         alertController.addTextField { (textField) in

@@ -53,6 +53,18 @@ class UserStore {
         }
     }
     
+    func updatePartnerUser(post: [String: Any], completion: @escaping (UserResult) -> ()) {
+        
+        FireBaseAPI.updatePartnerUser(post: post) { (userResult) in
+            switch userResult {
+            case .success(_):
+                completion(userResult)
+            case .failure(_):
+                completion(userResult)
+            }
+        }
+    }
+    
     func setUser(user: User) {
         self.user = user
     }

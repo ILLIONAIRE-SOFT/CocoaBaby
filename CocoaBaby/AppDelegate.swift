@@ -42,6 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
     var isNeedDiaryRefresh: Bool = false
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+        print("didFinishLaunchingWithOptions")
         
         // For launch with shortcut
 //        launchOptions?[UIApplicationLaunchOptionsKey.remoteNotification]
@@ -140,7 +141,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
         return googleSignInHandler && facebookSignInHandler
     }
     
-    
+    // MARK: - Device Token
     func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
         Messaging.messaging().apnsToken = deviceToken
         
@@ -149,6 +150,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate, UNUser
         let post = [UserPayloadName.deviceToken.rawValue:deviceTokenString] as [String:Any]
         
         UserStore.shared.updateUser(post: post) { (userResult) in
+            switch userResult {
+            case .success(_):
+                UserStore.shared.fetchUser(completion: { (_) in
+                })
+                return
+            case .failure(_):
+                return
+            }
+        }
+        
+        let partnerPost = [UserPayloadName.partnerDeviceToken.rawValue:deviceTokenString] as [String:Any]
+        
+        UserStore.shared.updatePartnerUser(post: partnerPost) { (userResult) in
             switch userResult {
             case .success(_):
                 return

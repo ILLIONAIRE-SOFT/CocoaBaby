@@ -88,6 +88,7 @@ extension FireBaseAPI {
     static func updateUser(post: [String:Any], completion: @escaping(UserResult) -> ()) {
         guard let uid = Auth.auth().currentUser?.uid else {
             print(FireBaseAPIError.invalidUser)
+            completion(UserResult.failure(nil))
             return
         }
         
@@ -99,6 +100,21 @@ extension FireBaseAPI {
             }
         }
         
+    }
+    
+    static func updatePartnerUser(post: [String:Any], completion: @escaping(UserResult) -> ()) {
+        guard let partnerUid = UserStore.shared.user?.partnerUID else {
+            completion(UserResult.failure(nil))
+            return
+        }
+        
+        ref.child(FireBaseDirectoryName.users.rawValue).child("\(partnerUid)").updateChildValues(post) { (error, ref) in
+            if let error = error {
+                completion(UserResult.failure(error))
+            } else {
+                completion(UserResult.success(nil))
+            }
+        }
     }
     
     private static func user(from json: [String:Any]) -> User? {
