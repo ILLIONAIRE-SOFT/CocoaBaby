@@ -43,6 +43,7 @@
 		49C593761F52BECC00996F86 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 49C593751F52BECC00996F86 /* GoogleService-Info.plist */; };
 		49CBF1871F3C29DE00426D61 /* FireBaseAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CBF1861F3C29DE00426D61 /* FireBaseAPI.swift */; };
 		49CBF18A1F3C33E400426D61 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CBF1891F3C33E400426D61 /* LoginViewController.swift */; };
+		49D1AD711F59E8B900599863 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49D1AD701F59E8B900599863 /* Default-568h@2x.png */; };
 		49D7F44A1F319D99004DF036 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D7F4481F319D99004DF036 /* HomeViewController.swift */; };
 		49D7F44D1F31A32E004DF036 /* Tutorial.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 49D7F44C1F31A32E004DF036 /* Tutorial.storyboard */; };
 		49D8A3F91F4E9815009AB84C /* EditBabyDateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D8A3F81F4E9815009AB84C /* EditBabyDateTableViewController.swift */; };
@@ -163,11 +164,12 @@
 		49B88EAD1F3BF5A4005043B6 /* UserStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = UserStore.swift; path = Model/UserStore.swift; sourceTree = "<group>"; };
 		49C4FA431F469DAB008068D8 /* FireBaseBabyAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FireBaseBabyAPI.swift; path = Model/FireBaseBabyAPI.swift; sourceTree = "<group>"; };
 		49C4FA451F46BC6D008068D8 /* FireBaseTipsAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FireBaseTipsAPI.swift; path = Model/FireBaseTipsAPI.swift; sourceTree = "<group>"; };
-		49C593751F52BECC00996F86 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Plist/GoogleService-Info.plist"; sourceTree = "<group>"; };
-		49C593771F52C6D400996F86 /* development.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; name = development.entitlements; path = Entitlements/development.entitlements; sourceTree = "<group>"; };
-		49C593781F52C6E400996F86 /* production.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; name = production.entitlements; path = Entitlements/production.entitlements; sourceTree = "<group>"; };
+		49C593751F52BECC00996F86 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		49C593771F52C6D400996F86 /* development.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = development.entitlements; sourceTree = "<group>"; };
+		49C593781F52C6E400996F86 /* production.entitlements */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.entitlements; path = production.entitlements; sourceTree = "<group>"; };
 		49CBF1861F3C29DE00426D61 /* FireBaseAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FireBaseAPI.swift; path = Model/FireBaseAPI.swift; sourceTree = "<group>"; };
 		49CBF1891F3C33E400426D61 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = ViewController/LoginViewController.swift; sourceTree = "<group>"; };
+		49D1AD701F59E8B900599863 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		49D7F4481F319D99004DF036 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = ViewController/HomeViewController.swift; sourceTree = "<group>"; };
 		49D7F44C1F31A32E004DF036 /* Tutorial.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Tutorial.storyboard; path = Base.lproj/Tutorial.storyboard; sourceTree = "<group>"; };
 		49D8A3F81F4E9815009AB84C /* EditBabyDateTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = EditBabyDateTableViewController.swift; path = ViewController/EditBabyDateTableViewController.swift; sourceTree = "<group>"; };
@@ -183,7 +185,7 @@
 		49F6C7811F318AF200373F06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		49F6C7831F318AF200373F06 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		49F6C7861F318AF200373F06 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		49F6C7881F318AF200373F06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = Info.plist; path = Plist/Info.plist; sourceTree = "<group>"; };
+		49F6C7881F318AF200373F06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49F6C78D1F318AF200373F06 /* CocoaBabyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CocoaBabyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49F6C7911F318AF200373F06 /* CocoaBabyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CocoaBabyTests.swift; sourceTree = "<group>"; };
 		49F6C7931F318AF200373F06 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -211,7 +213,7 @@
 		DA571F9E1F4D5F4A008EA81A /* ShareImageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ShareImageService.swift; path = Extension/ShareImageService.swift; sourceTree = "<group>"; };
 		DA5C8F2C1F415F0C00AA3185 /* TipsDetailContentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TipsDetailContentTableViewCell.swift; path = View/TipsDetailContentTableViewCell.swift; sourceTree = "<group>"; };
 		DA5C8F311F41AA1000AA3185 /* TipsStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = TipsStore.swift; path = Model/TipsStore.swift; sourceTree = "<group>"; };
-		DA6C03451F4357A20092443F /* CocoaBaby.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = CocoaBaby.entitlements; path = Entitlements/CocoaBaby.entitlements; sourceTree = "<group>"; };
+		DA6C03451F4357A20092443F /* CocoaBaby.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CocoaBaby.entitlements; sourceTree = "<group>"; };
 		DA6E7C101F4BEE5400F9D636 /* Share.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = Share.storyboard; path = Base.lproj/Share.storyboard; sourceTree = "<group>"; };
 		DA7460FA1F4405F800568F1C /* CameraViewController_camera.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraViewController_camera.swift; path = ViewController/CameraViewController_camera.swift; sourceTree = "<group>"; };
 		DA7460FC1F4405F800568F1C /* CameraViewController_main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CameraViewController_main.swift; path = ViewController/CameraViewController_main.swift; sourceTree = "<group>"; };
@@ -529,6 +531,7 @@
 		49F6C7701F318AF200373F06 = {
 			isa = PBXGroup;
 			children = (
+				49D1AD701F59E8B900599863 /* Default-568h@2x.png */,
 				49F6C77B1F318AF200373F06 /* CocoaBaby */,
 				49F6C7901F318AF200373F06 /* CocoaBabyTests */,
 				49F6C79B1F318AF200373F06 /* CocoaBabyUITests */,
@@ -857,6 +860,7 @@
 				DA7461051F4407D900568F1C /* Camera.storyboard in Resources */,
 				DA6E7C111F4BEE5400F9D636 /* Share.storyboard in Resources */,
 				4911D9DA1F344DCA0031B74A /* Localizable.strings in Resources */,
+				49D1AD711F59E8B900599863 /* Default-568h@2x.png in Resources */,
 				49E659131F42C64A00D85C53 /* UserSettings.storyboard in Resources */,
 				49F6C7871F318AF200373F06 /* LaunchScreen.storyboard in Resources */,
 				D45189B81F39669D00937869 /* Diary.storyboard in Resources */,
