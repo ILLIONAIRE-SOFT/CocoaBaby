@@ -202,6 +202,10 @@ class HomeViewController: BaseViewController {
     
     @IBAction func showBalloon() {
         
+        // haptic feedback
+        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        generator.impactOccurred()
+        
         self.popSpeechBubble.isUserInteractionEnabled = false
         
         let moveRangeX = self.babyAroundView.frame.width/5
