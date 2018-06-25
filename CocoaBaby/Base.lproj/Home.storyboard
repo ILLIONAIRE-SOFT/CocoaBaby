@@ -1,16 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="r8V-ei-x0C">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="r8V-ei-x0C">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="AppleSDGothicNeo.ttc">
+            <string>AppleSDGothicNeo-Thin</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Baby-->
         <scene sceneID="YqO-hO-aNa">
@@ -28,13 +33,13 @@
                                 <rect key="frame" x="28" y="60" width="319" height="543"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3cZ-ux-bAi">
-                                        <rect key="frame" x="0.0" y="0.0" width="319" height="27.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="319" height="0.0"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="QmG-Uq-CpJ">
-                                        <rect key="frame" x="0.0" y="31.5" width="319" height="91.5"/>
+                                        <rect key="frame" x="0.0" y="4" width="319" height="72"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" text="D - 150" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="59f-cp-ErD">
                                                 <rect key="frame" x="0.0" y="0.0" width="319" height="72"/>
@@ -43,7 +48,7 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Week 3" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ekc-pe-RTr">
-                                                <rect key="frame" x="0.0" y="72" width="319" height="19.5"/>
+                                                <rect key="frame" x="0.0" y="72" width="319" height="0.0"/>
                                                 <fontDescription key="fontDescription" type="system" weight="thin" pointSize="16"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <nil key="highlightedColor"/>
@@ -51,13 +56,13 @@
                                         </subviews>
                                     </stackView>
                                     <view contentMode="scaleToFill" horizontalCompressionResistancePriority="749" verticalCompressionResistancePriority="748" translatesAutoresizingMaskIntoConstraints="NO" id="WSq-6I-iYr">
-                                        <rect key="frame" x="0.0" y="127" width="319" height="392.5"/>
+                                        <rect key="frame" x="0.0" y="80" width="319" height="0.0"/>
                                         <subviews>
                                             <view clipsSubviews="YES" alpha="0.88" contentMode="scaleToFill" verticalHuggingPriority="249" verticalCompressionResistancePriority="749" translatesAutoresizingMaskIntoConstraints="NO" id="UoX-Al-Kmz" customClass="BabyView" customModule="CocoaBaby" customModuleProvider="target">
-                                                <rect key="frame" x="22" y="59" width="275" height="275"/>
+                                                <rect key="frame" x="22" y="-137" width="275" height="275"/>
                                                 <subviews>
                                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="babyweek18" translatesAutoresizingMaskIntoConstraints="NO" id="5t2-ah-DW0">
-                                                        <rect key="frame" x="33" y="-13.5" width="236.5" height="236.5"/>
+                                                        <rect key="frame" x="33" y="-14" width="236.5" height="237"/>
                                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </imageView>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qhc-ag-71c">
@@ -108,8 +113,8 @@
                                             <constraint firstItem="UoX-Al-Kmz" firstAttribute="centerX" secondItem="WSq-6I-iYr" secondAttribute="centerX" id="rpP-8O-NSn"/>
                                         </constraints>
                                     </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.89999997615814209" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Op6-Ka-edG">
-                                        <rect key="frame" x="0.0" y="523.5" width="319" height="19.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.89999997615814209" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Op6-Ka-edG">
+                                        <rect key="frame" x="0.0" y="84" width="319" height="459"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
